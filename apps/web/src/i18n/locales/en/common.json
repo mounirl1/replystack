@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "reviews": "Reviews",
+    "history": "History",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "pricing": "Pricing",
+    "upgrade": "Upgrade",
+    "plans": "Plans",
+    "signIn": "Sign in",
+    "getStarted": "Get Started",
+    "logout": "Logout"
+  },
+  "sidebar": {
+    "monthlyQuota": "Monthly Quota",
+    "upgradeForMore": "Upgrade for more",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "planLabel": "Plan",
+    "soon": "Soon"
+  },
+  "footer": {
+    "tagline": "AI-powered review responses for modern businesses.",
+    "product": "Product",
+    "features": "Features",
+    "extension": "Extension",
+    "company": "Company",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "sales": "Terms of Sale",
+    "cookies": "Cookie Policy",
+    "legalNotice": "Legal Notice",
+    "copyright": "All rights reserved.",
+    "language": "Language"
+  },
+  "buttons": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "retry": "Retry"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "minLength": "Must be at least {{count}} characters",
+    "maxLength": "Must be at most {{count}} characters"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "unauthorized": "Please sign in to continue.",
+    "forbidden": "You don't have permission to do this."
+  },
+  "plan": {
+    "free": "Free",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise"
+  }
+}

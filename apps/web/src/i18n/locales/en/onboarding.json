@@ -1,0 +1,65 @@
+{
+  "parts": {
+    "essential": "Essential",
+    "complementary": "Advanced"
+  },
+  "navigation": {
+    "next": "Next",
+    "previous": "Back",
+    "skip": "Skip",
+    "finish": "Finish"
+  },
+  "trigger": {
+    "title": "Product Tour"
+  },
+  "transition": {
+    "title": "Great job!",
+    "description": "You've completed the essential tour. Would you like to discover additional features?",
+    "continue": "Explore advanced features",
+    "finish": "I'm good for now"
+  },
+  "essential": {
+    "dashboardLink": {
+      "title": "Dashboard",
+      "description": "Your main dashboard. Get a quick overview of your activity, statistics, and remaining quota at a glance."
+    },
+    "reviewsLink": {
+      "title": "Reviews",
+      "description": "Access all your customer reviews here. See pending reviews that need responses and manage your reply workflow."
+    },
+    "historyLink": {
+      "title": "History",
+      "description": "View all your past AI-generated replies. Search, filter, and reuse successful response templates."
+    },
+    "dashboardStats": {
+      "title": "Your Statistics",
+      "description": "Track your AI-generated replies at a glance. Monitor your remaining quota, daily activity, and overall performance."
+    },
+    "extensionCta": {
+      "title": "Browser Extension",
+      "description": "Install our Chrome or Firefox extension to generate AI replies directly on review platforms like Google Business, TripAdvisor, and more."
+    },
+    "responseStyle": {
+      "title": "Response Style",
+      "description": "Customize how your AI responds to reviews. Set your preferred tone, add business context, and create personalized reply templates."
+    }
+  },
+  "complementary": {
+    "settingsLink": {
+      "title": "Settings",
+      "description": "Manage your account settings, response preferences, connected platforms, and subscription details."
+    },
+    "themeToggle": {
+      "title": "Theme Toggle",
+      "description": "Switch between light and dark mode for a comfortable viewing experience day or night."
+    },
+    "quotaBar": {
+      "title": "Usage Quota",
+      "description": "Keep track of your monthly reply quota. When running low, consider upgrading your plan for unlimited responses."
+    },
+    "userProfile": {
+      "title": "Your Profile",
+      "description": "Access your profile information, current plan details, and quickly log out from your account."
+    }
+  }
+}

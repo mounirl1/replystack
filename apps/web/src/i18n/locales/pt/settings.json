@@ -1,0 +1,118 @@
+{
+  "title": "Configurações",
+  "subtitle": "Gerencie as preferências da sua conta",
+  "profile": {
+    "title": "Perfil",
+    "description": "Atualize suas informações pessoais",
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "Email",
+    "emailPlaceholder": "voce@exemplo.com",
+    "save": "Salvar alterações",
+    "success": "Perfil atualizado com sucesso"
+  },
+  "subscription": {
+    "title": "Assinatura",
+    "description": "Gerencie seu plano e faturamento",
+    "plan": "Plano {{plan}}",
+    "free": "10 respostas por mês",
+    "starter": "50 respostas por mês",
+    "unlimited": "Respostas ilimitadas",
+    "upgrade": "Atualizar plano",
+    "manageBilling": "Gerenciar faturamento"
+  },
+  "extension": {
+    "title": "Extensão do navegador",
+    "description": "Conecte sua extensão a esta conta",
+    "instructions": "Instale nossa extensão do navegador e faça login com suas credenciais do ReplyStack para gerar respostas com IA diretamente nas plataformas de avaliação.",
+    "chrome": "Extensão Chrome",
+    "firefox": "Add-on Firefox"
+  },
+  "danger": {
+    "title": "Zona de perigo",
+    "description": "Ações irreversíveis",
+    "deleteAccount": "Excluir conta",
+    "deleteMyAccount": "Excluir minha conta",
+    "cancel": "Cancelar",
+    "confirm": {
+      "title": "Tem certeza?",
+      "description": "Esta ação não pode ser desfeita. Todos os seus dados serão excluídos permanentemente.",
+      "password": "Digite sua senha para confirmar",
+      "passwordPlaceholder": "Sua senha"
+    }
+  },
+  "responseStyle": {
+    "title": "Estilo de resposta",
+    "subtitle": "Personalize o estilo das suas respostas às avaliações",
+    "noLocation": {
+      "title": "Nenhum estabelecimento",
+      "description": "Crie primeiro um estabelecimento para configurar seu estilo de resposta.",
+      "cta": "Criar estabelecimento"
+    },
+    "configure": {
+      "title": "Configure seu estilo de resposta",
+      "description": "Responda algumas perguntas para personalizar automaticamente suas respostas às avaliações de \"{{name}}\".",
+      "cta": "Iniciar configuração"
+    },
+    "success": "Perfil de resposta configurado com sucesso!",
+    "saved": "Alterações salvas!",
+    "reset": "Perfil redefinido",
+    "errors": {
+      "load": "Erro ao carregar dados",
+      "loadProfile": "Erro ao carregar perfil",
+      "save": "Erro ao salvar",
+      "reset": "Erro ao redefinir"
+    }
+  },
+  "language": {
+    "title": "Idioma",
+    "description": "Selecione seu idioma preferido para a interface"
+  },
+  "platforms": {
+    "title": "Plataformas conectadas",
+    "subtitle": "Conecte suas contas para sincronizar automaticamente suas avaliações",
+    "apiSection": "Extração + Publicação automáticas (API)",
+    "apiSectionDescription": "Conecte suas contas Google e Facebook para buscar avaliações automaticamente e publicar respostas.",
+    "extensionSection": "Extração via extensão",
+    "connected": "Conectado",
+    "notConnected": "Não conectado",
+    "urlConfigured": "URL configurada",
+    "notConfigured": "Não configurado",
+    "lastSync": "Última sync",
+    "justNow": "agora mesmo",
+    "hoursAgo": "há {{count}}h",
+    "daysAgo": "há {{count}}d",
+    "connect": "Conectar",
+    "disconnect": "Desconectar",
+    "reconnect": "Reconectar",
+    "confirmDisconnect": "Confirmar",
+    "cancel": "Cancelar",
+    "configure": "Configurar",
+    "modify": "Modificar",
+    "tokenExpired": "Reconexão necessária",
+    "loadError": "Falha ao carregar conexões",
+    "retry": "Tentar novamente",
+    "noLocations": "Nenhum estabelecimento encontrado",
+    "noLocationsDescription": "Crie primeiro um estabelecimento para configurar as conexões às plataformas.",
+    "oauthSuccess": "{{platform}} conectado com sucesso!",
+    "oauthError": "Falha ao conectar a plataforma",
+    "autoExtraction": {
+      "title": "Extração automática",
+      "enabled": "Ativada",
+      "disabled": "Desativada",
+      "upgradeMessage": "Atualize para Starter para desbloquear a extração automática de avaliações do TripAdvisor, Booking e Yelp ao abrir seu navegador.",
+      "description": "Suas avaliações do TripAdvisor, Booking e Yelp são buscadas automaticamente ao abrir seu navegador.",
+      "viewPlans": "Ver planos"
+    },
+    "urlModal": {
+      "title": "Configurar {{platform}}",
+      "instructions": "Como obter sua URL de gerenciamento:",
+      "urlLabel": "URL de gerenciamento",
+      "test": "Testar",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "remove": "Remover",
+      "invalidUrl": "A URL deve ser uma URL {{domain}} válida"
+    }
+  }
+}

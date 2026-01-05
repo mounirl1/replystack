@@ -1,0 +1,14 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "name": "@replystack/api",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "php artisan serve",
+        "build": "echo 'No build step for Laravel API'",
+        "horizon": "php artisan horizon",
+        "migrate": "php artisan migrate",
+        "test": "php artisan test"
+    },
+    "devDependencies": {}
+}

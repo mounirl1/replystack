@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "reviews": "Recensioni",
+    "history": "Cronologia",
+    "analytics": "Analisi",
+    "settings": "Impostazioni",
+    "pricing": "Prezzi",
+    "upgrade": "Aggiorna",
+    "plans": "Piani",
+    "signIn": "Accedi",
+    "getStarted": "Inizia",
+    "logout": "Esci"
+  },
+  "sidebar": {
+    "monthlyQuota": "Quota mensile",
+    "upgradeForMore": "Aggiorna per di più",
+    "lightMode": "Modalità chiara",
+    "darkMode": "Modalità scura",
+    "planLabel": "Piano",
+    "soon": "Prossimamente"
+  },
+  "footer": {
+    "tagline": "Risposte alle recensioni potenziate dall'IA per le aziende moderne.",
+    "product": "Prodotto",
+    "features": "Funzionalità",
+    "extension": "Estensione",
+    "company": "Azienda",
+    "about": "Chi siamo",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "legal": "Legale",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Utilizzo",
+    "sales": "Condizioni di Vendita",
+    "cookies": "Informativa sui Cookie",
+    "legalNotice": "Note Legali",
+    "copyright": "Tutti i diritti riservati.",
+    "language": "Lingua"
+  },
+  "buttons": {
+    "submit": "Invia",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "close": "Chiudi",
+    "next": "Avanti",
+    "previous": "Indietro",
+    "loading": "Caricamento...",
+    "retry": "Riprova"
+  },
+  "validation": {
+    "required": "Questo campo è obbligatorio",
+    "email": "Inserisci un'email valida",
+    "minLength": "Deve avere almeno {{count}} caratteri",
+    "maxLength": "Deve avere al massimo {{count}} caratteri"
+  },
+  "errors": {
+    "generic": "Qualcosa è andato storto. Per favore riprova.",
+    "network": "Errore di rete. Verifica la tua connessione.",
+    "unauthorized": "Per favore accedi per continuare.",
+    "forbidden": "Non hai il permesso per farlo."
+  },
+  "plan": {
+    "free": "Gratuito",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "parts": {
+    "essential": "Esencial",
+    "complementary": "Avanzado"
+  },
+  "navigation": {
+    "next": "Siguiente",
+    "previous": "Atras",
+    "skip": "Omitir",
+    "finish": "Finalizar"
+  },
+  "trigger": {
+    "title": "Tour del producto"
+  },
+  "transition": {
+    "title": "Excelente!",
+    "description": "Has completado el tour esencial. Te gustaria descubrir funciones adicionales?",
+    "continue": "Explorar funciones avanzadas",
+    "finish": "Por ahora estoy bien"
+  },
+  "essential": {
+    "dashboardLink": {
+      "title": "Panel de control",
+      "description": "Tu panel principal. Obtén una vista rápida de tu actividad, estadísticas y cuota restante."
+    },
+    "reviewsLink": {
+      "title": "Reseñas",
+      "description": "Accede a todas tus resenas de clientes aqui. Ve las resenas pendientes que necesitan respuesta y gestiona tu flujo de trabajo."
+    },
+    "historyLink": {
+      "title": "Historial",
+      "description": "Ve todas tus respuestas IA anteriores. Busca, filtra y reutiliza plantillas de respuesta exitosas."
+    },
+    "dashboardStats": {
+      "title": "Tus estadisticas",
+      "description": "Sigue tus respuestas generadas por IA de un vistazo. Monitorea tu cuota restante, actividad diaria y rendimiento general."
+    },
+    "extensionCta": {
+      "title": "Extension del navegador",
+      "description": "Instala nuestra extension de Chrome o Firefox para generar respuestas IA directamente en plataformas de resenas como Google Business, TripAdvisor y mas."
+    },
+    "responseStyle": {
+      "title": "Estilo de respuesta",
+      "description": "Personaliza como tu IA responde a las resenas. Configura tu tono preferido, anade contexto del negocio y crea plantillas de respuesta personalizadas."
+    }
+  },
+  "complementary": {
+    "settingsLink": {
+      "title": "Configuracion",
+      "description": "Gestiona la configuracion de tu cuenta, preferencias de respuesta, plataformas conectadas y detalles de suscripcion."
+    },
+    "themeToggle": {
+      "title": "Cambiar tema",
+      "description": "Alterna entre modo claro y oscuro para una experiencia de visualizacion comoda de dia o de noche."
+    },
+    "quotaBar": {
+      "title": "Cuota de uso",
+      "description": "Controla tu cuota mensual de respuestas. Cuando este baja, considera actualizar tu plan para respuestas ilimitadas."
+    },
+    "userProfile": {
+      "title": "Tu perfil",
+      "description": "Accede a la informacion de tu perfil, detalles del plan actual y cierra sesion rapidamente desde tu cuenta."
+    }
+  }
+}

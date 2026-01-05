@@ -1,0 +1,169 @@
+{
+  "title": "Dashboard",
+  "welcome": "Bentornato, {{name}}",
+  "welcomeSubtitle": "Ecco una panoramica della tua attività su ReplyStack.",
+  "upgrade": "Aggiorna piano",
+  "stats": {
+    "repliesRemaining": "Risposte rimanenti",
+    "repliesToday": "Risposte oggi",
+    "thisMonth": "Questo mese",
+    "totalReplies": "Totale risposte",
+    "unlimited": "Illimitato",
+    "resets": "Si resetta il {{date}}"
+  },
+  "quota": {
+    "title": "Utilizzo quota",
+    "description": "{{used}} di {{total}} risposte usate questo mese",
+    "lowWarning": "Stai esaurendo le risposte.",
+    "upgradePlan": "Aggiorna il tuo piano"
+  },
+  "responseStyle": {
+    "title": "Stile di risposta",
+    "setupRequired": "Configurazione richiesta",
+    "configured": "Stile configurato",
+    "notConfigured": "Stile non configurato",
+    "description": "Personalizza come l'IA risponde alle tue recensioni",
+    "edit": "Modifica stile",
+    "configure": "Configura stile"
+  },
+  "quickActions": {
+    "title": "Azioni rapide",
+    "googleBusiness": "Google Business",
+    "tripadvisor": "TripAdvisor",
+    "settings": "Impostazioni",
+    "manageReviews": "Gestisci recensioni",
+    "configurePreferences": "Configura preferenze"
+  },
+  "recentReplies": {
+    "title": "Risposte recenti",
+    "viewAll": "Vedi tutto",
+    "empty": {
+      "title": "Nessuna risposta ancora",
+      "description": "Installa la nostra estensione del browser per iniziare a generare risposte IA.",
+      "cta": "Ottieni estensione"
+    }
+  },
+  "extensionCta": {
+    "title": "Installa l'estensione del browser",
+    "description": "Rispondi alle recensioni direttamente da Google Business, TripAdvisor e altro. Genera risposte IA in pochi secondi.",
+    "chrome": "Chrome",
+    "firefox": "Firefox"
+  },
+  "history": {
+    "title": "Cronologia risposte",
+    "subtitle": "Visualizza tutte le tue risposte generate dall'IA",
+    "empty": {
+      "title": "Nessuna risposta ancora",
+      "description": "Installa la nostra estensione del browser e inizia a generare risposte IA per le recensioni dei tuoi clienti.",
+      "cta": "Ottieni estensione"
+    },
+    "totalReplies": "Totale risposte generate",
+    "originalReview": "Recensione originale",
+    "aiReply": "Risposta IA",
+    "tokens": "{{count}} token",
+    "loadMore": "Carica altre risposte",
+    "copyToClipboard": "Copia negli appunti"
+  },
+  "reviews": {
+    "title": "Recensioni",
+    "subtitle": "Gestisci e rispondi alle recensioni dei tuoi clienti",
+    "stats": {
+      "total": "Totale recensioni",
+      "pending": "In attesa",
+      "avgRating": "Valutazione media",
+      "responseRate": "Tasso di risposta",
+      "loading": "Caricamento..."
+    },
+    "filters": {
+      "search": "Cerca recensioni...",
+      "location": "Tutte le sedi",
+      "platform": "Tutte le piattaforme",
+      "status": "Tutti gli stati",
+      "rating": "Tutte le valutazioni",
+      "dateFrom": "Dal",
+      "clear": "Cancella filtri",
+      "showFilters": "Mostra filtri",
+      "hideFilters": "Nascondi filtri",
+      "resultsCount": "{{count}} recensioni"
+    },
+    "platforms": {
+      "all": "Tutte le piattaforme",
+      "google": "Google",
+      "facebook": "Facebook",
+      "tripadvisor": "TripAdvisor",
+      "booking": "Booking.com",
+      "yelp": "Yelp"
+    },
+    "statuses": {
+      "all": "Tutti gli stati",
+      "pending": "In attesa",
+      "replied": "Risposto",
+      "ignored": "Ignorato"
+    },
+    "ratings": {
+      "all": "Tutte le valutazioni",
+      "1": "1 stella",
+      "2": "2 stelle",
+      "3": "3 stelle",
+      "4": "4 stelle",
+      "5": "5 stelle"
+    },
+    "card": {
+      "replied": "Risposto",
+      "pending": "In attesa",
+      "ignored": "Ignorato",
+      "markReplied": "Segna come risposto",
+      "markIgnored": "Ignora",
+      "generateReply": "Genera risposta",
+      "copy": "Copia",
+      "publish": "Pubblica",
+      "viewMore": "Vedi dettagli"
+    },
+    "modal": {
+      "title": "Recensione di {{author}}",
+      "responses": "{{count}} risposta/e",
+      "generateTitle": "Genera risposta IA",
+      "lengths": {
+        "short": "Breve",
+        "medium": "Media",
+        "detailed": "Dettagliata"
+      },
+      "tones": {
+        "professional": "Professionale",
+        "friendly": "Amichevole",
+        "formal": "Formale",
+        "casual": "Informale"
+      },
+      "customPromptPlaceholder": "Aggiungi contesto o istruzioni specifiche...",
+      "generating": "Generazione in corso...",
+      "generate": "Genera risposta",
+      "generatedReply": "Risposta generata",
+      "regenerate": "Rigenera"
+    },
+    "actions": {
+      "publish": "Pubblica",
+      "copy": "Copia",
+      "copied": "Copiato!"
+    },
+    "fetch": {
+      "button": "Recupera recensioni",
+      "title": "Recupera recensioni",
+      "description": "Sincronizza le recensioni dalle piattaforme connesse",
+      "connected": "Connesso",
+      "useExtension": "Usa estensione",
+      "noConnections": "Nessuna piattaforma connessa. Configura le integrazioni nelle Impostazioni."
+    },
+    "empty": {
+      "title": "Nessuna recensione trovata",
+      "description": "Le recensioni appariranno qui una volta sincronizzate dalle tue piattaforme o tramite l'estensione del browser."
+    },
+    "error": {
+      "title": "Impossibile caricare le recensioni",
+      "description": "Si è verificato un errore durante il caricamento delle tue recensioni.",
+      "retry": "Riprova"
+    },
+    "noMore": "Non ci sono altre recensioni da caricare",
+    "published": "Pubblicato",
+    "notPublished": "Non pubblicato"
+  }
+}

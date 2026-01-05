@@ -1,0 +1,169 @@
+{
+  "title": "Tableau de bord",
+  "welcome": "Bienvenue, {{name}}",
+  "welcomeSubtitle": "Voici un aperçu de votre activité ReplyStack.",
+  "upgrade": "Passer à un plan supérieur",
+  "stats": {
+    "repliesRemaining": "Réponses restantes",
+    "repliesToday": "Réponses aujourd'hui",
+    "thisMonth": "Ce mois-ci",
+    "totalReplies": "Total des réponses",
+    "unlimited": "Illimité",
+    "resets": "Réinitialisation le {{date}}"
+  },
+  "quota": {
+    "title": "Utilisation du quota",
+    "description": "{{used}} sur {{total}} réponses utilisées ce mois-ci",
+    "lowWarning": "Vous êtes presque à court de réponses.",
+    "upgradePlan": "Passer à un plan supérieur"
+  },
+  "responseStyle": {
+    "title": "Style de réponse",
+    "setupRequired": "Configuration requise",
+    "configured": "Style configuré",
+    "notConfigured": "Style non configuré",
+    "description": "Personnalisez les réponses IA à vos avis",
+    "edit": "Modifier le style",
+    "configure": "Configurer le style"
+  },
+  "quickActions": {
+    "title": "Actions rapides",
+    "googleBusiness": "Google Business",
+    "tripadvisor": "TripAdvisor",
+    "settings": "Paramètres",
+    "manageReviews": "Gérer les avis",
+    "configurePreferences": "Configurer les préférences"
+  },
+  "recentReplies": {
+    "title": "Réponses récentes",
+    "viewAll": "Voir tout",
+    "empty": {
+      "title": "Aucune réponse",
+      "description": "Installez notre extension navigateur pour commencer à générer des réponses IA.",
+      "cta": "Obtenir l'extension"
+    }
+  },
+  "extensionCta": {
+    "title": "Installez l'extension navigateur",
+    "description": "Répondez aux avis directement depuis Google Business, TripAdvisor et plus encore. Générez des réponses IA en quelques secondes.",
+    "chrome": "Chrome",
+    "firefox": "Firefox"
+  },
+  "history": {
+    "title": "Historique des réponses",
+    "subtitle": "Consultez toutes vos réponses générées par IA",
+    "empty": {
+      "title": "Aucune réponse",
+      "description": "Installez notre extension navigateur et commencez à générer des réponses IA à vos avis clients.",
+      "cta": "Obtenir l'extension"
+    },
+    "totalReplies": "Total des réponses générées",
+    "originalReview": "Avis original",
+    "aiReply": "Réponse IA",
+    "tokens": "{{count}} tokens",
+    "loadMore": "Charger plus de réponses",
+    "copyToClipboard": "Copier dans le presse-papiers"
+  },
+  "reviews": {
+    "title": "Avis",
+    "subtitle": "Gérez et répondez aux avis de vos clients",
+    "stats": {
+      "total": "Total des avis",
+      "pending": "En attente",
+      "avgRating": "Note moyenne",
+      "responseRate": "Taux de réponse",
+      "loading": "Chargement..."
+    },
+    "filters": {
+      "search": "Rechercher des avis...",
+      "location": "Tous les établissements",
+      "platform": "Toutes les plateformes",
+      "status": "Tous les statuts",
+      "rating": "Toutes les notes",
+      "dateFrom": "À partir du",
+      "clear": "Effacer les filtres",
+      "showFilters": "Afficher les filtres",
+      "hideFilters": "Masquer les filtres",
+      "resultsCount": "{{count}} avis"
+    },
+    "platforms": {
+      "all": "Toutes les plateformes",
+      "google": "Google",
+      "facebook": "Facebook",
+      "tripadvisor": "TripAdvisor",
+      "booking": "Booking.com",
+      "yelp": "Yelp"
+    },
+    "statuses": {
+      "all": "Tous les statuts",
+      "pending": "En attente",
+      "replied": "Répondu",
+      "ignored": "Ignoré"
+    },
+    "ratings": {
+      "all": "Toutes les notes",
+      "1": "1 étoile",
+      "2": "2 étoiles",
+      "3": "3 étoiles",
+      "4": "4 étoiles",
+      "5": "5 étoiles"
+    },
+    "card": {
+      "replied": "Répondu",
+      "pending": "En attente",
+      "ignored": "Ignoré",
+      "markReplied": "Marquer comme répondu",
+      "markIgnored": "Ignorer",
+      "generateReply": "Générer une réponse",
+      "copy": "Copier",
+      "publish": "Publier",
+      "viewMore": "Voir les détails"
+    },
+    "modal": {
+      "title": "Avis de {{author}}",
+      "responses": "{{count}} réponse(s)",
+      "generateTitle": "Générer une réponse IA",
+      "lengths": {
+        "short": "Courte",
+        "medium": "Moyenne",
+        "detailed": "Détaillée"
+      },
+      "tones": {
+        "professional": "Professionnel",
+        "friendly": "Amical",
+        "formal": "Formel",
+        "casual": "Décontracté"
+      },
+      "customPromptPlaceholder": "Ajoutez un contexte ou des instructions spécifiques...",
+      "generating": "Génération en cours...",
+      "generate": "Générer la réponse",
+      "generatedReply": "Réponse générée",
+      "regenerate": "Régénérer"
+    },
+    "actions": {
+      "publish": "Publier",
+      "copy": "Copier",
+      "copied": "Copié !"
+    },
+    "fetch": {
+      "button": "Récupérer les avis",
+      "title": "Récupérer les avis",
+      "description": "Synchroniser les avis depuis les plateformes connectées",
+      "connected": "Connecté",
+      "useExtension": "Utiliser l'extension",
+      "noConnections": "Aucune plateforme connectée. Configurez les intégrations dans les Paramètres."
+    },
+    "empty": {
+      "title": "Aucun avis trouvé",
+      "description": "Les avis apparaîtront ici une fois synchronisés depuis vos plateformes ou via l'extension navigateur."
+    },
+    "error": {
+      "title": "Échec du chargement des avis",
+      "description": "Une erreur s'est produite lors du chargement de vos avis.",
+      "retry": "Réessayer"
+    },
+    "noMore": "Plus d'avis à charger",
+    "published": "Publié",
+    "notPublished": "Non publié"
+  }
+}

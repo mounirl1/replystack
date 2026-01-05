@@ -1,0 +1,118 @@
+{
+  "title": "Configuración",
+  "subtitle": "Gestiona las preferencias de tu cuenta",
+  "profile": {
+    "title": "Perfil",
+    "description": "Actualiza tu información personal",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "save": "Guardar cambios",
+    "success": "Perfil actualizado correctamente"
+  },
+  "subscription": {
+    "title": "Suscripción",
+    "description": "Gestiona tu plan y facturación",
+    "plan": "Plan {{plan}}",
+    "free": "10 respuestas por mes",
+    "starter": "50 respuestas por mes",
+    "unlimited": "Respuestas ilimitadas",
+    "upgrade": "Mejorar plan",
+    "manageBilling": "Gestionar facturación"
+  },
+  "extension": {
+    "title": "Extensión del navegador",
+    "description": "Conecta tu extensión a esta cuenta",
+    "instructions": "Instala nuestra extensión de navegador e inicia sesión con tus credenciales de ReplyStack para generar respuestas con IA directamente en las plataformas de reseñas.",
+    "chrome": "Extensión Chrome",
+    "firefox": "Complemento Firefox"
+  },
+  "danger": {
+    "title": "Zona de peligro",
+    "description": "Acciones irreversibles",
+    "deleteAccount": "Eliminar cuenta",
+    "deleteMyAccount": "Eliminar mi cuenta",
+    "cancel": "Cancelar",
+    "confirm": {
+      "title": "¿Estás seguro?",
+      "description": "Esta acción no se puede deshacer. Todos tus datos serán eliminados permanentemente.",
+      "password": "Introduce tu contraseña para confirmar",
+      "passwordPlaceholder": "Tu contraseña"
+    }
+  },
+  "responseStyle": {
+    "title": "Estilo de respuesta",
+    "subtitle": "Personaliza el estilo de tus respuestas a reseñas",
+    "noLocation": {
+      "title": "Sin establecimiento",
+      "description": "Crea primero un establecimiento para configurar tu estilo de respuesta.",
+      "cta": "Crear establecimiento"
+    },
+    "configure": {
+      "title": "Configura tu estilo de respuesta",
+      "description": "Responde algunas preguntas para personalizar automáticamente tus respuestas a las reseñas de \"{{name}}\".",
+      "cta": "Iniciar configuración"
+    },
+    "success": "¡Perfil de respuesta configurado correctamente!",
+    "saved": "¡Cambios guardados!",
+    "reset": "Perfil reiniciado",
+    "errors": {
+      "load": "Error al cargar los datos",
+      "loadProfile": "Error al cargar el perfil",
+      "save": "Error al guardar",
+      "reset": "Error al reiniciar"
+    }
+  },
+  "language": {
+    "title": "Idioma",
+    "description": "Selecciona tu idioma preferido para la interfaz"
+  },
+  "platforms": {
+    "title": "Plataformas conectadas",
+    "subtitle": "Conecta tus cuentas para sincronizar automáticamente tus reseñas",
+    "apiSection": "Extracción + Publicación automáticas (API)",
+    "apiSectionDescription": "Conecta tus cuentas de Google y Facebook para obtener automáticamente reseñas y publicar respuestas.",
+    "extensionSection": "Extracción vía extensión",
+    "connected": "Conectado",
+    "notConnected": "No conectado",
+    "urlConfigured": "URL configurada",
+    "notConfigured": "No configurado",
+    "lastSync": "Última sync",
+    "justNow": "ahora mismo",
+    "hoursAgo": "hace {{count}}h",
+    "daysAgo": "hace {{count}}d",
+    "connect": "Conectar",
+    "disconnect": "Desconectar",
+    "reconnect": "Reconectar",
+    "confirmDisconnect": "Confirmar",
+    "cancel": "Cancelar",
+    "configure": "Configurar",
+    "modify": "Modificar",
+    "tokenExpired": "Reconexión requerida",
+    "loadError": "Error al cargar conexiones",
+    "retry": "Reintentar",
+    "noLocations": "No se encontraron establecimientos",
+    "noLocationsDescription": "Crea primero un establecimiento para configurar las conexiones de plataformas.",
+    "oauthSuccess": "¡{{platform}} conectado correctamente!",
+    "oauthError": "Error al conectar la plataforma",
+    "autoExtraction": {
+      "title": "Extracción automática",
+      "enabled": "Activada",
+      "disabled": "Desactivada",
+      "upgradeMessage": "Pasa a Starter para desbloquear la extracción automática de reseñas de TripAdvisor, Booking y Yelp al abrir tu navegador.",
+      "description": "Tus reseñas de TripAdvisor, Booking y Yelp se obtienen automáticamente al abrir tu navegador.",
+      "viewPlans": "Ver planes"
+    },
+    "urlModal": {
+      "title": "Configurar {{platform}}",
+      "instructions": "Cómo obtener tu URL de gestión:",
+      "urlLabel": "URL de gestión",
+      "test": "Probar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "remove": "Eliminar",
+      "invalidUrl": "La URL debe ser una URL de {{domain}} válida"
+    }
+  }
+}

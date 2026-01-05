@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "badge": "Profili di risposta personalizzati ora disponibili",
+    "title": "Rispondi alle recensioni",
+    "titleHighlight": "10 volte più veloce",
+    "titleEnd": "con l'IA",
+    "subtitle": "Genera risposte professionali e personalizzate alle recensioni dei clienti in pochi secondi. Configura la voce del tuo brand una volta e lascia che l'IA faccia il resto.",
+    "cta": "Prova gratuita",
+    "viewPricing": "Vedi prezzi",
+    "noCreditCard": "Senza carta di credito. 10 risposte gratuite al mese."
+  },
+  "demo": {
+    "title": "Guardalo in azione",
+    "reviewAuthor": "Maria Rossi",
+    "reviewContent": "Ristorante eccellente! Il servizio era impeccabile e il cibo delizioso. Lo consiglio vivamente!",
+    "tone": "Caldo",
+    "language": "Italiano",
+    "sector": "Ristorante",
+    "aiReplyLabel": "Risposta generata dall'IA",
+    "aiReply": "Cara Maria, grazie mille per questa meravigliosa recensione! Siamo felici che abbia apprezzato il nostro servizio e la nostra cucina. La sua soddisfazione è la nostra più grande ricompensa. Speriamo di accoglierla di nuovo molto presto!\n\n— Il team del Ristorante",
+    "generatedIn": "Generato in {{time}}s",
+    "words": "{{count}} parole"
+  },
+  "allFeatures": {
+    "badge": "Tutte le funzionalità incluse in ogni piano",
+    "title": "Nessun limite nascosto. Nessun livello premium.",
+    "subtitle": "Ogni utente ha accesso a tutte le funzionalità, sia con il piano gratuito che con un abbonamento a pagamento.",
+    "tones": {
+      "title": "5 toni",
+      "description": "Professionale, Caldo, Casual, Lusso, Dinamico"
+    },
+    "customPrompts": {
+      "title": "Prompt personalizzati",
+      "description": "Aggiungi le tue istruzioni per personalizzare le risposte"
+    },
+    "responseProfiles": {
+      "title": "Profili di risposta",
+      "description": "Configura lo stile della tua attività una volta, rispondi all'istante"
+    },
+    "allPlatforms": {
+      "title": "Tutte le piattaforme",
+      "description": "Google, TripAdvisor, Booking, Yelp, Facebook..."
+    }
+  },
+  "profile": {
+    "badge": "Nuova funzionalità",
+    "title": "Profili di risposta personalizzati",
+    "subtitle": "Configura la voce, il tono e lo stile del tuo brand una sola volta attraverso un onboarding guidato. Ogni risposta corrisponderà automaticamente alla tua personalità e settore di attività.",
+    "sectorSpecific": {
+      "title": "Specifico per settore",
+      "description": "Scegli il tuo settore per risposte su misura"
+    },
+    "customTone": {
+      "title": "Tono personalizzato",
+      "description": "Professionale, caldo, casual, lusso o dinamico"
+    },
+    "smartLength": {
+      "title": "Lunghezza intelligente",
+      "description": "Risposte brevi, medie o dettagliate"
+    },
+    "negativeStrategy": {
+      "title": "Strategia negativa",
+      "description": "Empatico, orientato alla soluzione o invito a contattare"
+    },
+    "configTitle": "Configurazione del profilo",
+    "step": "Passo {{current}} di {{total}}",
+    "toneQuestion": "Quale tono vorresti adottare?",
+    "warm": "Caldo",
+    "professional": "Professionale",
+    "casual": "Casual"
+  },
+  "features": {
+    "title": "Tutto ciò di cui hai bisogno per gestire le recensioni",
+    "subtitle": "Funzionalità potenti per rispondere più velocemente e in modo più intelligente",
+    "aiPowered": {
+      "title": "Risposte con IA",
+      "description": "Genera risposte professionali e personalizzate alle recensioni dei clienti in pochi secondi usando l'IA avanzata."
+    },
+    "multiPlatform": {
+      "title": "Supporto multipiattaforma",
+      "description": "Funziona su Google Business, TripAdvisor, Booking.com, Yelp, Facebook e altro."
+    },
+    "personalizedProfiles": {
+      "title": "Profili di risposta personalizzati",
+      "description": "Configura la voce, il tono e lo stile del tuo brand una volta. Ogni risposta corrisponderà alla tua personalità."
+    },
+    "multiLanguage": {
+      "title": "Multilingua",
+      "description": "Rileva automaticamente e risponde nella stessa lingua della recensione."
+    },
+    "browserExtension": {
+      "title": "Estensione browser",
+      "description": "Rispondi direttamente da qualsiasi piattaforma con le nostre estensioni Chrome e Firefox."
+    },
+    "analytics": {
+      "title": "Dashboard analitica",
+      "description": "Monitora il tuo tasso di risposta, le tendenze del sentiment e le statistiche delle recensioni in un unico posto."
+    }
+  },
+  "testimonials": {
+    "title": "Aziende di tutto il mondo si fidano di noi",
+    "quote1": "ReplyStack ci ha fatto risparmiare ore ogni settimana. Il nostro tempo di risposta è passato da giorni a minuti.",
+    "author1": "Maria R.",
+    "role1": "Proprietaria di ristorante",
+    "quote2": "I profili di risposta personalizzati sono rivoluzionari. Ogni risposta sembra autentica per il nostro brand.",
+    "author2": "Giuseppe L.",
+    "role2": "Direttore d'hotel",
+    "quote3": "Finalmente una soluzione accessibile per gestire le recensioni su tutte le piattaforme.",
+    "author3": "Sofia M.",
+    "role3": "Proprietaria di boutique"
+  },
+  "cta": {
+    "title": "Pronto a risparmiare ore ogni settimana?",
+    "subtitle": "Unisciti a migliaia di aziende che usano ReplyStack per gestire le loro recensioni con risposte IA personalizzate.",
+    "button": "Inizia gratis"
+  }
+}

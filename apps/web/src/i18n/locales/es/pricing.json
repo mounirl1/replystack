@@ -1,0 +1,90 @@
+{
+  "title": "Precios simples y transparentes",
+  "subtitle": "Elige el plan que se adapte a tus necesidades. Todos los planes incluyen 7 días de prueba gratuita.",
+  "allFeaturesBanner": {
+    "badge": "Todas las funciones incluidas en cada plan",
+    "tones": {
+      "title": "5 tonos",
+      "description": "Profesional, Cálido, Casual, Lujoso, Dinámico"
+    },
+    "customPrompts": {
+      "title": "Prompts personalizados",
+      "description": "Personaliza tus respuestas de IA con instrucciones personalizadas"
+    },
+    "responseProfile": {
+      "title": "Perfil de respuesta",
+      "description": "Configura el estilo de tu negocio una vez, responde al instante"
+    }
+  },
+  "plans": {
+    "free": {
+      "name": "Gratis",
+      "description": "Perfecto para probar ReplyStack",
+      "price": "Gratis",
+      "cta": "Comenzar"
+    },
+    "starter": {
+      "name": "Starter",
+      "description": "Para pequeñas empresas que empiezan",
+      "cta": "Prueba gratuita"
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Para empresas en crecimiento",
+      "cta": "Prueba gratuita",
+      "popular": "Más popular"
+    },
+    "business": {
+      "name": "Business",
+      "description": "Para equipos y agencias",
+      "cta": "Contactar ventas"
+    }
+  },
+  "features": {
+    "repliesPerMonth": "{{count}} respuestas al mes",
+    "unlimitedReplies": "Respuestas ilimitadas",
+    "browserExtension": "Extensión del navegador",
+    "allPlatforms": "Todas las plataformas soportadas",
+    "allTones": "Los 5 tonos incluidos",
+    "customPrompts": "Prompts personalizados",
+    "responseProfile": "Perfil de respuesta",
+    "responseHistory": "Historial de respuestas",
+    "emailSupport": "Soporte por email",
+    "analyticsDashboard": "Panel de análisis",
+    "prioritySupport": "Soporte prioritario",
+    "negativeAlerts": "Alertas de reseñas negativas",
+    "everythingInPro": "Todo lo de Pro",
+    "locations": "Hasta {{count}} ubicaciones",
+    "teamMembers": "Hasta {{count}} miembros del equipo",
+    "slackIntegration": "Integración con Slack",
+    "customTemplates": "Plantillas personalizadas",
+    "dedicatedSupport": "Soporte dedicado",
+    "noAnalytics": "Sin análisis"
+  },
+  "perMonth": "/mes",
+  "currentPlan": "Plan actual",
+  "downgradeNotAvailable": "Degradación no disponible",
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "cancel": {
+      "question": "¿Puedo cancelar en cualquier momento?",
+      "answer": "Sí, puedes cancelar tu suscripción en cualquier momento. Seguirás teniendo acceso hasta el final de tu período de facturación."
+    },
+    "quota": {
+      "question": "¿Qué pasa cuando me quedo sin respuestas?",
+      "answer": "En los planes Gratis y Starter, tu cuota se reinicia al principio de cada mes. Los planes Pro y Business tienen respuestas ilimitadas."
+    },
+    "refund": {
+      "question": "¿Ofrecen reembolsos?",
+      "answer": "Ofrecemos 7 días de prueba gratuita en todos los planes de pago. Si no estás satisfecho en los primeros 30 días, contáctanos para un reembolso completo."
+    },
+    "switch": {
+      "question": "¿Puedo cambiar de plan?",
+      "answer": "Sí, puedes mejorar tu plan en cualquier momento. La diferencia se prorrateará. Las degradaciones toman efecto en el próximo ciclo de facturación."
+    }
+  },
+  "support": {
+    "text": "¿Tienes preguntas? Estamos aquí para ayudar.",
+    "link": "Contactar soporte →"
+  }
+}

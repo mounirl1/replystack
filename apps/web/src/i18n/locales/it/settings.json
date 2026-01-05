@@ -1,0 +1,118 @@
+{
+  "title": "Impostazioni",
+  "subtitle": "Gestisci le preferenze del tuo account",
+  "profile": {
+    "title": "Profilo",
+    "description": "Aggiorna le tue informazioni personali",
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "email": "Email",
+    "emailPlaceholder": "tu@esempio.com",
+    "save": "Salva modifiche",
+    "success": "Profilo aggiornato con successo"
+  },
+  "subscription": {
+    "title": "Abbonamento",
+    "description": "Gestisci il tuo piano e la fatturazione",
+    "plan": "Piano {{plan}}",
+    "free": "10 risposte al mese",
+    "starter": "50 risposte al mese",
+    "unlimited": "Risposte illimitate",
+    "upgrade": "Aggiorna piano",
+    "manageBilling": "Gestisci fatturazione"
+  },
+  "extension": {
+    "title": "Estensione browser",
+    "description": "Collega la tua estensione a questo account",
+    "instructions": "Installa la nostra estensione del browser e accedi con le tue credenziali ReplyStack per generare risposte IA direttamente sulle piattaforme di recensioni.",
+    "chrome": "Estensione Chrome",
+    "firefox": "Add-on Firefox"
+  },
+  "danger": {
+    "title": "Zona pericolosa",
+    "description": "Azioni irreversibili",
+    "deleteAccount": "Elimina account",
+    "deleteMyAccount": "Elimina il mio account",
+    "cancel": "Annulla",
+    "confirm": {
+      "title": "Sei sicuro?",
+      "description": "Questa azione non può essere annullata. Tutti i tuoi dati saranno eliminati permanentemente.",
+      "password": "Inserisci la tua password per confermare",
+      "passwordPlaceholder": "La tua password"
+    }
+  },
+  "responseStyle": {
+    "title": "Stile di risposta",
+    "subtitle": "Personalizza lo stile delle tue risposte alle recensioni",
+    "noLocation": {
+      "title": "Nessuna sede",
+      "description": "Crea prima una sede per configurare il tuo stile di risposta.",
+      "cta": "Crea sede"
+    },
+    "configure": {
+      "title": "Configura il tuo stile di risposta",
+      "description": "Rispondi a qualche domanda per personalizzare automaticamente le tue risposte alle recensioni di \"{{name}}\".",
+      "cta": "Inizia configurazione"
+    },
+    "success": "Profilo di risposta configurato con successo!",
+    "saved": "Modifiche salvate!",
+    "reset": "Profilo reimpostato",
+    "errors": {
+      "load": "Errore durante il caricamento dei dati",
+      "loadProfile": "Errore durante il caricamento del profilo",
+      "save": "Errore durante il salvataggio",
+      "reset": "Errore durante il reset"
+    }
+  },
+  "language": {
+    "title": "Lingua",
+    "description": "Seleziona la tua lingua preferita per l'interfaccia"
+  },
+  "platforms": {
+    "title": "Piattaforme collegate",
+    "subtitle": "Collega i tuoi account per sincronizzare automaticamente le tue recensioni",
+    "apiSection": "Estrazione + Pubblicazione automatiche (API)",
+    "apiSectionDescription": "Collega i tuoi account Google e Facebook per recuperare automaticamente le recensioni e pubblicare risposte.",
+    "extensionSection": "Estrazione via estensione",
+    "connected": "Collegato",
+    "notConnected": "Non collegato",
+    "urlConfigured": "URL configurato",
+    "notConfigured": "Non configurato",
+    "lastSync": "Ultima sync",
+    "justNow": "adesso",
+    "hoursAgo": "{{count}}h fa",
+    "daysAgo": "{{count}}g fa",
+    "connect": "Collega",
+    "disconnect": "Scollega",
+    "reconnect": "Ricollega",
+    "confirmDisconnect": "Conferma",
+    "cancel": "Annulla",
+    "configure": "Configura",
+    "modify": "Modifica",
+    "tokenExpired": "Riconnessione richiesta",
+    "loadError": "Impossibile caricare le connessioni",
+    "retry": "Riprova",
+    "noLocations": "Nessuna sede trovata",
+    "noLocationsDescription": "Crea prima una sede per configurare le connessioni alle piattaforme.",
+    "oauthSuccess": "{{platform}} collegato con successo!",
+    "oauthError": "Impossibile collegare la piattaforma",
+    "autoExtraction": {
+      "title": "Estrazione automatica",
+      "enabled": "Attivata",
+      "disabled": "Disattivata",
+      "upgradeMessage": "Passa a Starter per sbloccare l'estrazione automatica delle recensioni di TripAdvisor, Booking e Yelp all'apertura del browser.",
+      "description": "Le tue recensioni di TripAdvisor, Booking e Yelp vengono recuperate automaticamente all'apertura del browser.",
+      "viewPlans": "Vedi piani"
+    },
+    "urlModal": {
+      "title": "Configura {{platform}}",
+      "instructions": "Come ottenere il tuo URL di gestione:",
+      "urlLabel": "URL di gestione",
+      "test": "Testa",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "remove": "Rimuovi",
+      "invalidUrl": "L'URL deve essere un URL {{domain}} valido"
+    }
+  }
+}

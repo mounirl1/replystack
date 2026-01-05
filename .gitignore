@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+build
+.plasmo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Laravel specific (apps/api)
+apps/api/vendor
+apps/api/node_modules
+apps/api/.env
+apps/api/storage/*.key
+apps/api/storage/logs/*
+apps/api/storage/framework/cache/*
+apps/api/storage/framework/sessions/*
+apps/api/storage/framework/views/*
+apps/api/bootstrap/cache/*
+
+# Test coverage
+coverage
+
+# Misc
+*.local

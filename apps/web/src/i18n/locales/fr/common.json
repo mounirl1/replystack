@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "reviews": "Avis",
+    "history": "Historique",
+    "analytics": "Analytiques",
+    "settings": "Paramètres",
+    "pricing": "Tarifs",
+    "upgrade": "Upgrader",
+    "plans": "Offres",
+    "signIn": "Connexion",
+    "getStarted": "Commencer",
+    "logout": "Déconnexion"
+  },
+  "sidebar": {
+    "monthlyQuota": "Quota mensuel",
+    "upgradeForMore": "Passer au niveau supérieur",
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre",
+    "planLabel": "Forfait",
+    "soon": "Bientôt"
+  },
+  "footer": {
+    "tagline": "Réponses aux avis propulsées par l'IA pour les entreprises modernes.",
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "extension": "Extension",
+    "company": "Entreprise",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Légal",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "sales": "Conditions de Vente",
+    "cookies": "Politique des Cookies",
+    "legalNotice": "Mentions Légales",
+    "copyright": "Tous droits réservés.",
+    "language": "Langue"
+  },
+  "buttons": {
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "loading": "Chargement...",
+    "retry": "Réessayer"
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Veuillez entrer un email valide",
+    "minLength": "Doit contenir au moins {{count}} caractères",
+    "maxLength": "Doit contenir au maximum {{count}} caractères"
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "network": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "unauthorized": "Veuillez vous connecter pour continuer.",
+    "forbidden": "Vous n'avez pas la permission d'effectuer cette action."
+  },
+  "plan": {
+    "free": "Gratuit",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise"
+  }
+}

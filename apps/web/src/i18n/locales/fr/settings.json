@@ -1,0 +1,118 @@
+{
+  "title": "Paramètres",
+  "subtitle": "Gérez les préférences de votre compte",
+  "profile": {
+    "title": "Profil",
+    "description": "Mettez à jour vos informations personnelles",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "vous@exemple.com",
+    "save": "Enregistrer les modifications",
+    "success": "Profil mis à jour avec succès"
+  },
+  "subscription": {
+    "title": "Abonnement",
+    "description": "Gérez votre plan et votre facturation",
+    "plan": "Plan {{plan}}",
+    "free": "10 réponses par mois",
+    "starter": "50 réponses par mois",
+    "unlimited": "Réponses illimitées",
+    "upgrade": "Changer de plan",
+    "manageBilling": "Gérer la facturation"
+  },
+  "extension": {
+    "title": "Extension navigateur",
+    "description": "Connectez votre extension à ce compte",
+    "instructions": "Installez notre extension navigateur et connectez-vous avec vos identifiants ReplyStack pour générer des réponses IA directement sur les plateformes d'avis.",
+    "chrome": "Extension Chrome",
+    "firefox": "Module Firefox"
+  },
+  "danger": {
+    "title": "Zone de danger",
+    "description": "Actions irréversibles",
+    "deleteAccount": "Supprimer le compte",
+    "deleteMyAccount": "Supprimer mon compte",
+    "cancel": "Annuler",
+    "confirm": {
+      "title": "Êtes-vous sûr ?",
+      "description": "Cette action est irréversible. Toutes vos données seront définitivement supprimées.",
+      "password": "Entrez votre mot de passe pour confirmer",
+      "passwordPlaceholder": "Votre mot de passe"
+    }
+  },
+  "responseStyle": {
+    "title": "Style de réponse",
+    "subtitle": "Personnalisez le style de vos réponses aux avis",
+    "noLocation": {
+      "title": "Aucun établissement",
+      "description": "Créez d'abord un établissement pour configurer votre style de réponse.",
+      "cta": "Créer un établissement"
+    },
+    "configure": {
+      "title": "Configurez votre style de réponse",
+      "description": "Répondez à quelques questions pour personnaliser automatiquement vos réponses aux avis de \"{{name}}\".",
+      "cta": "Commencer la configuration"
+    },
+    "success": "Profil de réponse configuré avec succès !",
+    "saved": "Modifications enregistrées !",
+    "reset": "Profil réinitialisé",
+    "errors": {
+      "load": "Erreur lors du chargement des données",
+      "loadProfile": "Erreur lors du chargement du profil",
+      "save": "Erreur lors de la sauvegarde",
+      "reset": "Erreur lors de la réinitialisation"
+    }
+  },
+  "language": {
+    "title": "Langue",
+    "description": "Sélectionnez votre langue préférée pour l'interface"
+  },
+  "platforms": {
+    "title": "Plateformes connectées",
+    "subtitle": "Connectez vos comptes pour synchroniser automatiquement vos avis",
+    "apiSection": "Extraction + Publication automatiques (API)",
+    "apiSectionDescription": "Connectez vos comptes Google et Facebook pour récupérer automatiquement les avis et publier des réponses.",
+    "extensionSection": "Extraction via extension",
+    "connected": "Connecté",
+    "notConnected": "Non connecté",
+    "urlConfigured": "URL configurée",
+    "notConfigured": "Non configuré",
+    "lastSync": "Dernière sync",
+    "justNow": "à l'instant",
+    "hoursAgo": "il y a {{count}}h",
+    "daysAgo": "il y a {{count}}j",
+    "connect": "Connecter",
+    "disconnect": "Déconnecter",
+    "reconnect": "Reconnecter",
+    "confirmDisconnect": "Confirmer",
+    "cancel": "Annuler",
+    "configure": "Configurer",
+    "modify": "Modifier",
+    "tokenExpired": "Reconnexion requise",
+    "loadError": "Échec du chargement des connexions",
+    "retry": "Réessayer",
+    "noLocations": "Aucun établissement trouvé",
+    "noLocationsDescription": "Créez d'abord un établissement pour configurer les connexions aux plateformes.",
+    "oauthSuccess": "{{platform}} connecté avec succès !",
+    "oauthError": "Échec de la connexion à la plateforme",
+    "autoExtraction": {
+      "title": "Extraction automatique",
+      "enabled": "Activée",
+      "disabled": "Désactivée",
+      "upgradeMessage": "Passez à Starter pour débloquer l'extraction automatique des avis TripAdvisor, Booking et Yelp à l'ouverture de votre navigateur.",
+      "description": "Vos avis TripAdvisor, Booking et Yelp sont automatiquement récupérés à l'ouverture de votre navigateur.",
+      "viewPlans": "Voir les plans"
+    },
+    "urlModal": {
+      "title": "Configurer {{platform}}",
+      "instructions": "Comment obtenir votre URL de gestion :",
+      "urlLabel": "URL de gestion",
+      "test": "Tester",
+      "save": "Sauvegarder",
+      "cancel": "Annuler",
+      "remove": "Supprimer",
+      "invalidUrl": "L'URL doit être une URL {{domain}} valide"
+    }
+  }
+}

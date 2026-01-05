@@ -1,0 +1,199 @@
+/**
+ * Auth storage and utilities for the extension.
+ */
+
+export interface AuthUser {
+  id: number;
+  email: string;
+  name: string;
+  plan: string;
+  quota_remaining: number | 'unlimited';
+}
+
+export interface AuthState {
+  token: string | null;
+  user: AuthUser | null;
+}
+
+/**
+ * Get the current auth state from storage.
+ */
+export async function getAuthState(): Promise<AuthState> {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(['token', 'user'], (result) => {
+      resolve({
+        token: result.token || null,
+        user: result.user || null,
+      });
+    });
+  });
+}
+
+/**
+ * Set the auth state in storage.
+ */
+export async function setAuthState(token: string, user: AuthUser): Promise<void> {
+  return new Promise((resolve) => {
+    chrome.storage.local.set({ token, user }, () => {
+      resolve();
+    });
+  });
+}
+
+/**
+ * Clear the auth state from storage.
+ */
+export async function clearAuthState(): Promise<void> {
+  return new Promise((resolve) => {
+    chrome.storage.local.remove(['token', 'user'], () => {
+      resolve();
+    });
+  });
+}
+
+/**
+ * Check if the user is authenticated.
+ */
+export async function isAuthenticated(): Promise<boolean> {
+  const { token } = await getAuthState();
+  return !!token;
+}
+
+/**
+ * Update the user's quota in storage.
+ */
+export async function updateUserQuota(quota: number | 'unlimited'): Promise<void> {
+  const { user } = await getAuthState();
+  if (user) {
+    user.quota_remaining = quota;
+    await chrome.storage.local.set({ user });
+  }
+}
+
+/**
+ * Login with email and password.
+ * Returns the auth token and user on success.
+ */
+export async function login(
+  email: string,
+  password: string
+): Promise<{ token: string; user: AuthUser }> {
+  const apiUrl = process.env.PLASMO_PUBLIC_API_URL || 'http://localhost:8000';
+
+  const response = await fetch(`${apiUrl}/api/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Login failed');
+  }
+
+  const data = await response.json();
+
+  // Fetch user quota info
+  const userResponse = await fetch(`${apiUrl}/api/user/quota`, {
+    headers: {
+      Authorization: `Bearer ${data.token}`,
+      Accept: 'application/json',
+    },
+  });
+
+  let quotaRemaining: number | 'unlimited' = 0;
+  if (userResponse.ok) {
+    const quotaData = await userResponse.json();
+    quotaRemaining = quotaData.quota.remaining;
+  }
+
+  const user: AuthUser = {
+    id: data.user.id,
+    email: data.user.email,
+    name: data.user.name || data.user.email.split('@')[0],
+    plan: data.user.plan,
+    quota_remaining: quotaRemaining,
+  };
+
+  // Save to storage
+  await setAuthState(data.token, user);
+
+  return { token: data.token, user };
+}
+
+/**
+ * Logout the user.
+ */
+export async function logout(): Promise<void> {
+  const { token } = await getAuthState();
+  const apiUrl = process.env.PLASMO_PUBLIC_API_URL || 'http://localhost:8000';
+
+  // Try to logout on server (optional, don't fail if it doesn't work)
+  if (token) {
+    try {
+      await fetch(`${apiUrl}/api/auth/logout`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/json',
+        },
+      });
+    } catch {
+      // Ignore errors
+    }
+  }
+
+  await clearAuthState();
+}
+
+/**
+ * Refresh the user's profile and quota from the server.
+ */
+export async function refreshUserProfile(): Promise<AuthUser | null> {
+  const { token } = await getAuthState();
+  if (!token) return null;
+
+  const apiUrl = process.env.PLASMO_PUBLIC_API_URL || 'http://localhost:8000';
+
+  try {
+    const [userRes, quotaRes] = await Promise.all([
+      fetch(`${apiUrl}/api/auth/user`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/json',
+        },
+      }),
+      fetch(`${apiUrl}/api/user/quota`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/json',
+        },
+      }),
+    ]);
+
+    if (!userRes.ok) {
+      // Token might be invalid
+      await clearAuthState();
+      return null;
+    }
+
+    const userData = await userRes.json();
+    const quotaData = quotaRes.ok ? await quotaRes.json() : { quota: { remaining: 0 } };
+
+    const user: AuthUser = {
+      id: userData.user.id,
+      email: userData.user.email,
+      name: userData.user.name || userData.user.email.split('@')[0],
+      plan: userData.user.plan,
+      quota_remaining: quotaData.quota.remaining,
+    };
+
+    await setAuthState(token, user);
+    return user;
+  } catch {
+    return null;
+  }
+}

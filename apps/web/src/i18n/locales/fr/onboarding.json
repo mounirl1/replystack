@@ -1,0 +1,65 @@
+{
+  "parts": {
+    "essential": "Essentiel",
+    "complementary": "Avance"
+  },
+  "navigation": {
+    "next": "Suivant",
+    "previous": "Retour",
+    "skip": "Passer",
+    "finish": "Terminer"
+  },
+  "trigger": {
+    "title": "Visite guidee"
+  },
+  "transition": {
+    "title": "Excellent !",
+    "description": "Vous avez termine la visite essentielle. Souhaitez-vous decouvrir les fonctionnalites avancees ?",
+    "continue": "Explorer les fonctionnalites avancees",
+    "finish": "Ca me suffit pour l'instant"
+  },
+  "essential": {
+    "dashboardLink": {
+      "title": "Tableau de bord",
+      "description": "Votre tableau de bord principal. Obtenez un apercu rapide de votre activite, statistiques et quota restant."
+    },
+    "reviewsLink": {
+      "title": "Avis",
+      "description": "Accedez a tous vos avis clients ici. Voyez les avis en attente de reponse et gerez votre flux de travail."
+    },
+    "historyLink": {
+      "title": "Historique",
+      "description": "Consultez toutes vos reponses IA passees. Recherchez, filtrez et reutilisez les modeles de reponse reussis."
+    },
+    "dashboardStats": {
+      "title": "Vos statistiques",
+      "description": "Suivez vos reponses generees par l'IA en un coup d'oeil. Surveillez votre quota restant, votre activite quotidienne et vos performances globales."
+    },
+    "extensionCta": {
+      "title": "Extension navigateur",
+      "description": "Installez notre extension Chrome ou Firefox pour generer des reponses IA directement sur les plateformes d'avis comme Google Business, TripAdvisor, et plus encore."
+    },
+    "responseStyle": {
+      "title": "Style de reponse",
+      "description": "Personnalisez la facon dont votre IA repond aux avis. Definissez votre ton prefere, ajoutez du contexte sur votre entreprise et creez des modeles de reponse personnalises."
+    }
+  },
+  "complementary": {
+    "settingsLink": {
+      "title": "Parametres",
+      "description": "Gerez les parametres de votre compte, vos preferences de reponse, les plateformes connectees et les details de votre abonnement."
+    },
+    "themeToggle": {
+      "title": "Theme",
+      "description": "Basculez entre le mode clair et sombre pour une experience de lecture confortable de jour comme de nuit."
+    },
+    "quotaBar": {
+      "title": "Quota d'utilisation",
+      "description": "Suivez votre quota mensuel de reponses. Lorsqu'il est presque epuise, envisagez de passer a un forfait superieur pour des reponses illimitees."
+    },
+    "userProfile": {
+      "title": "Votre profil",
+      "description": "Accedez aux informations de votre profil, aux details de votre forfait actuel et deconnectez-vous rapidement de votre compte."
+    }
+  }
+}

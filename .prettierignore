@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+.plasmo
+coverage
+*.min.js
+apps/api/vendor
+apps/api/node_modules
+apps/api/storage
+apps/api/bootstrap/cache

@@ -1,0 +1,31 @@
+{
+  "name": "replystack",
+  "version": "0.0.1",
+  "private": true,
+  "description": "AI Review Reply Platform - Monorepo",
+  "scripts": {
+    "dev:api": "pnpm --filter @replystack/api dev",
+    "dev:web": "pnpm --filter @replystack/web dev",
+    "dev:extension": "pnpm --filter @replystack/extension dev",
+    "build:web": "pnpm --filter @replystack/web build",
+    "build:extension": "pnpm --filter @replystack/extension build",
+    "build:extension:firefox": "pnpm --filter @replystack/extension build:firefox",
+    "typecheck": "pnpm --filter @replystack/shared typecheck",
+    "lint": "pnpm -r lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "api:migrate": "pnpm --filter @replystack/api migrate",
+    "api:horizon": "pnpm --filter @replystack/api horizon",
+    "api:test": "pnpm --filter @replystack/api test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

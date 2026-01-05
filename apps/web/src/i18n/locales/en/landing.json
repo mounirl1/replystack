@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "badge": "Personalized response profiles now available",
+    "title": "Reply to Reviews",
+    "titleHighlight": "10x Faster",
+    "titleEnd": "with AI",
+    "subtitle": "Generate professional, personalized responses to customer reviews in seconds. Configure your brand voice once, and let AI handle the rest.",
+    "cta": "Start Free Trial",
+    "viewPricing": "View Pricing",
+    "noCreditCard": "No credit card required. 10 free replies per month."
+  },
+  "demo": {
+    "title": "See it in action",
+    "reviewAuthor": "Marie Dupont",
+    "reviewContent": "Excellent restaurant! The service was impeccable and the food delicious. I highly recommend!",
+    "tone": "Warm",
+    "language": "French",
+    "sector": "Restaurant",
+    "aiReplyLabel": "AI Generated Reply",
+    "aiReply": "Dear Marie, thank you so much for this wonderful review! We are delighted that you enjoyed our service and our cuisine. Your satisfaction is our greatest reward. We look forward to welcoming you back very soon!\n\n— The Restaurant Team",
+    "generatedIn": "Generated in {{time}}s",
+    "words": "{{count}} words"
+  },
+  "allFeatures": {
+    "badge": "All features included on every plan",
+    "title": "No hidden limits. No premium tiers.",
+    "subtitle": "Every user gets access to all features — whether you're on the free plan or a paid subscription.",
+    "tones": {
+      "title": "5 Tones",
+      "description": "Professional, Warm, Casual, Luxury, Dynamic"
+    },
+    "customPrompts": {
+      "title": "Custom Prompts",
+      "description": "Add your own instructions to personalize responses"
+    },
+    "responseProfiles": {
+      "title": "Response Profiles",
+      "description": "Configure your business style once, reply instantly"
+    },
+    "allPlatforms": {
+      "title": "All Platforms",
+      "description": "Google, TripAdvisor, Booking, Yelp, Facebook..."
+    }
+  },
+  "profile": {
+    "badge": "New Feature",
+    "title": "Personalized Response Profiles",
+    "subtitle": "Configure your brand voice, tone, and style once through a guided onboarding. Every response will automatically match your unique personality and business sector.",
+    "sectorSpecific": {
+      "title": "Sector-Specific",
+      "description": "Choose your business sector for tailored responses"
+    },
+    "customTone": {
+      "title": "Custom Tone",
+      "description": "Professional, warm, casual, luxury, or dynamic"
+    },
+    "smartLength": {
+      "title": "Smart Length",
+      "description": "Short, medium, or detailed responses"
+    },
+    "negativeStrategy": {
+      "title": "Negative Strategy",
+      "description": "Empathetic, solution-focused, or invitation to contact"
+    },
+    "configTitle": "Profile Configuration",
+    "step": "Step {{current}} of {{total}}",
+    "toneQuestion": "What tone would you like to adopt?",
+    "warm": "Warm",
+    "professional": "Professional",
+    "casual": "Casual"
+  },
+  "features": {
+    "title": "Everything you need to manage reviews",
+    "subtitle": "Powerful features to help you respond faster and smarter",
+    "aiPowered": {
+      "title": "AI-Powered Replies",
+      "description": "Generate professional, personalized responses to customer reviews in seconds using advanced AI."
+    },
+    "multiPlatform": {
+      "title": "Multi-Platform Support",
+      "description": "Works on Google Business, TripAdvisor, Booking.com, Yelp, Facebook, and more."
+    },
+    "personalizedProfiles": {
+      "title": "Personalized Response Profiles",
+      "description": "Configure your brand voice, tone, and style once. Every response will match your unique personality."
+    },
+    "multiLanguage": {
+      "title": "Multi-Language",
+      "description": "Automatically detects and responds in the same language as the review."
+    },
+    "browserExtension": {
+      "title": "Browser Extension",
+      "description": "Reply directly from any review platform with our Chrome and Firefox extensions."
+    },
+    "analytics": {
+      "title": "Analytics Dashboard",
+      "description": "Track your response rate, sentiment trends, and review statistics in one place."
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by businesses everywhere",
+    "quote1": "ReplyStack has saved us hours every week. Our response time went from days to minutes.",
+    "author1": "Marie D.",
+    "role1": "Restaurant Owner",
+    "quote2": "The personalized response profiles are a game-changer. Every reply feels authentic to our brand.",
+    "author2": "Jean-Pierre L.",
+    "role2": "Hotel Manager",
+    "quote3": "Finally, an affordable solution for managing reviews across all platforms.",
+    "author3": "Sophie M.",
+    "role3": "Boutique Owner"
+  },
+  "cta": {
+    "title": "Ready to save hours every week?",
+    "subtitle": "Join thousands of businesses using ReplyStack to manage their reviews with personalized AI responses.",
+    "button": "Get Started Free"
+  }
+}

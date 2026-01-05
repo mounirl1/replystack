@@ -1,0 +1,90 @@
+{
+  "title": "Tarification simple et transparente",
+  "subtitle": "Choisissez l'offre qui correspond à vos besoins. Toutes les offres incluent 7 jours d'essai gratuit.",
+  "allFeaturesBanner": {
+    "badge": "Toutes les fonctionnalités incluses dans chaque offre",
+    "tones": {
+      "title": "5 tons",
+      "description": "Professionnel, Chaleureux, Décontracté, Luxe, Dynamique"
+    },
+    "customPrompts": {
+      "title": "Prompts personnalisés",
+      "description": "Personnalisez vos réponses IA avec des instructions sur mesure"
+    },
+    "responseProfile": {
+      "title": "Profil de réponse",
+      "description": "Configurez le style de votre entreprise une fois, répondez instantanément"
+    }
+  },
+  "plans": {
+    "free": {
+      "name": "Gratuit",
+      "description": "Parfait pour découvrir ReplyStack",
+      "price": "Gratuit",
+      "cta": "Commencer"
+    },
+    "starter": {
+      "name": "Starter",
+      "description": "Pour les petites entreprises qui démarrent",
+      "cta": "Essai gratuit"
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Pour les entreprises en croissance",
+      "cta": "Essai gratuit",
+      "popular": "Le plus populaire"
+    },
+    "business": {
+      "name": "Business",
+      "description": "Pour les équipes et agences",
+      "cta": "Contacter les ventes"
+    }
+  },
+  "features": {
+    "repliesPerMonth": "{{count}} réponses par mois",
+    "unlimitedReplies": "Réponses illimitées",
+    "browserExtension": "Extension navigateur",
+    "allPlatforms": "Toutes les plateformes supportées",
+    "allTones": "Les 5 tons inclus",
+    "customPrompts": "Prompts personnalisés",
+    "responseProfile": "Profil de réponse",
+    "responseHistory": "Historique des réponses",
+    "emailSupport": "Support par email",
+    "analyticsDashboard": "Tableau de bord analytique",
+    "prioritySupport": "Support prioritaire",
+    "negativeAlerts": "Alertes avis négatifs",
+    "everythingInPro": "Tout ce qui est dans Pro",
+    "locations": "Jusqu'à {{count}} établissements",
+    "teamMembers": "Jusqu'à {{count}} membres d'équipe",
+    "slackIntegration": "Intégration Slack",
+    "customTemplates": "Templates personnalisés",
+    "dedicatedSupport": "Support dédié",
+    "noAnalytics": "Pas d'analytics"
+  },
+  "perMonth": "/mois",
+  "currentPlan": "Offre actuelle",
+  "downgradeNotAvailable": "Rétrogradation non disponible",
+  "faq": {
+    "title": "Questions fréquentes",
+    "cancel": {
+      "question": "Puis-je annuler à tout moment ?",
+      "answer": "Oui, vous pouvez annuler votre abonnement à tout moment. Vous continuerez à avoir accès jusqu'à la fin de votre période de facturation."
+    },
+    "quota": {
+      "question": "Que se passe-t-il quand j'épuise mes réponses ?",
+      "answer": "Sur les offres Gratuit et Starter, votre quota se réinitialise au début de chaque mois. Les offres Pro et Business ont des réponses illimitées."
+    },
+    "refund": {
+      "question": "Proposez-vous des remboursements ?",
+      "answer": "Nous offrons 7 jours d'essai gratuit sur toutes les offres payantes. Si vous n'êtes pas satisfait dans les 30 premiers jours, contactez-nous pour un remboursement complet."
+    },
+    "switch": {
+      "question": "Puis-je changer d'offre ?",
+      "answer": "Oui, vous pouvez upgrader votre offre à tout moment. La différence sera calculée au prorata. Les rétrogradations prennent effet au prochain cycle de facturation."
+    }
+  },
+  "support": {
+    "text": "Des questions ? Nous sommes là pour vous aider.",
+    "link": "Contacter le support →"
+  }
+}

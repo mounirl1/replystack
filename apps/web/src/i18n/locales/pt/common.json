@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Painel",
+    "reviews": "Avaliações",
+    "history": "Histórico",
+    "analytics": "Análises",
+    "settings": "Configurações",
+    "pricing": "Preços",
+    "upgrade": "Atualizar",
+    "plans": "Planos",
+    "signIn": "Entrar",
+    "getStarted": "Começar",
+    "logout": "Sair"
+  },
+  "sidebar": {
+    "monthlyQuota": "Cota mensal",
+    "upgradeForMore": "Atualize para mais",
+    "lightMode": "Modo claro",
+    "darkMode": "Modo escuro",
+    "planLabel": "Plano",
+    "soon": "Em breve"
+  },
+  "footer": {
+    "tagline": "Respostas a avaliações impulsionadas por IA para empresas modernas.",
+    "product": "Produto",
+    "features": "Funcionalidades",
+    "extension": "Extensão",
+    "company": "Empresa",
+    "about": "Sobre",
+    "blog": "Blog",
+    "contact": "Contato",
+    "legal": "Legal",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso",
+    "sales": "Condições de Venda",
+    "cookies": "Política de Cookies",
+    "legalNotice": "Aviso Legal",
+    "copyright": "Todos os direitos reservados.",
+    "language": "Idioma"
+  },
+  "buttons": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "loading": "Carregando...",
+    "retry": "Tentar novamente"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "email": "Por favor, insira um email válido",
+    "minLength": "Deve ter pelo menos {{count}} caracteres",
+    "maxLength": "Deve ter no máximo {{count}} caracteres"
+  },
+  "errors": {
+    "generic": "Algo deu errado. Por favor, tente novamente.",
+    "network": "Erro de rede. Verifique sua conexão.",
+    "unauthorized": "Por favor, faça login para continuar.",
+    "forbidden": "Você não tem permissão para fazer isso."
+  },
+  "plan": {
+    "free": "Grátis",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise"
+  }
+}

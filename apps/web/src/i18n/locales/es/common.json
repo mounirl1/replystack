@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Panel",
+    "reviews": "Reseñas",
+    "history": "Historial",
+    "analytics": "Analíticas",
+    "settings": "Configuración",
+    "pricing": "Precios",
+    "upgrade": "Mejorar",
+    "plans": "Planes",
+    "signIn": "Iniciar sesión",
+    "getStarted": "Comenzar",
+    "logout": "Cerrar sesión"
+  },
+  "sidebar": {
+    "monthlyQuota": "Cuota mensual",
+    "upgradeForMore": "Mejora para más",
+    "lightMode": "Modo claro",
+    "darkMode": "Modo oscuro",
+    "planLabel": "Plan",
+    "soon": "Próximamente"
+  },
+  "footer": {
+    "tagline": "Respuestas a reseñas impulsadas por IA para empresas modernas.",
+    "product": "Producto",
+    "features": "Características",
+    "extension": "Extensión",
+    "company": "Empresa",
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Condiciones de Uso",
+    "sales": "Condiciones de Venta",
+    "cookies": "Política de Cookies",
+    "legalNotice": "Aviso Legal",
+    "copyright": "Todos los derechos reservados.",
+    "language": "Idioma"
+  },
+  "buttons": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "loading": "Cargando...",
+    "retry": "Reintentar"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor, introduce un email válido",
+    "minLength": "Debe tener al menos {{count}} caracteres",
+    "maxLength": "Debe tener como máximo {{count}} caracteres"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "network": "Error de red. Por favor, verifica tu conexión.",
+    "unauthorized": "Por favor, inicia sesión para continuar.",
+    "forbidden": "No tienes permiso para hacer esto."
+  },
+  "plan": {
+    "free": "Gratis",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business",
+    "enterprise": "Enterprise"
+  }
+}

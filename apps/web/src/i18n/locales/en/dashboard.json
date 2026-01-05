@@ -1,0 +1,169 @@
+{
+  "title": "Dashboard",
+  "welcome": "Welcome back, {{name}}",
+  "welcomeSubtitle": "Here's an overview of your ReplyStack activity.",
+  "upgrade": "Upgrade",
+  "stats": {
+    "repliesRemaining": "Replies Remaining",
+    "repliesToday": "Replies Today",
+    "thisMonth": "This Month",
+    "totalReplies": "Total Replies",
+    "unlimited": "Unlimited",
+    "resets": "Resets {{date}}"
+  },
+  "quota": {
+    "title": "Quota Usage",
+    "description": "{{used}} of {{total}} replies used this month",
+    "lowWarning": "You're running low on replies.",
+    "upgradePlan": "Upgrade your plan"
+  },
+  "responseStyle": {
+    "title": "Response Style",
+    "setupRequired": "Setup required",
+    "configured": "Style configured",
+    "notConfigured": "Style not configured",
+    "description": "Customize how AI replies to your reviews",
+    "edit": "Edit style",
+    "configure": "Configure style"
+  },
+  "quickActions": {
+    "title": "Quick Actions",
+    "googleBusiness": "Google Business",
+    "tripadvisor": "TripAdvisor",
+    "settings": "Settings",
+    "manageReviews": "Manage reviews",
+    "configurePreferences": "Configure preferences"
+  },
+  "recentReplies": {
+    "title": "Recent Replies",
+    "viewAll": "View all",
+    "empty": {
+      "title": "No replies yet",
+      "description": "Install our browser extension to start generating AI replies.",
+      "cta": "Get Extension"
+    }
+  },
+  "extensionCta": {
+    "title": "Install the Browser Extension",
+    "description": "Reply to reviews directly from Google Business, TripAdvisor, and more. Generate AI-powered responses in seconds.",
+    "chrome": "Chrome",
+    "firefox": "Firefox"
+  },
+  "history": {
+    "title": "Response History",
+    "subtitle": "View all your AI-generated replies",
+    "empty": {
+      "title": "No replies yet",
+      "description": "Install our browser extension and start generating AI replies to your customer reviews.",
+      "cta": "Get Extension"
+    },
+    "totalReplies": "Total Replies Generated",
+    "originalReview": "Original Review",
+    "aiReply": "AI Reply",
+    "tokens": "{{count}} tokens",
+    "loadMore": "Load More Replies",
+    "copyToClipboard": "Copy to clipboard"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "subtitle": "Manage and respond to your customer reviews",
+    "stats": {
+      "total": "Total Reviews",
+      "pending": "Pending",
+      "avgRating": "Avg. Rating",
+      "responseRate": "Response Rate",
+      "loading": "Loading..."
+    },
+    "filters": {
+      "search": "Search reviews...",
+      "location": "All locations",
+      "platform": "All platforms",
+      "status": "All statuses",
+      "rating": "All ratings",
+      "dateFrom": "From date",
+      "clear": "Clear filters",
+      "showFilters": "Show filters",
+      "hideFilters": "Hide filters",
+      "resultsCount": "{{count}} reviews"
+    },
+    "platforms": {
+      "all": "All platforms",
+      "google": "Google",
+      "facebook": "Facebook",
+      "tripadvisor": "TripAdvisor",
+      "booking": "Booking.com",
+      "yelp": "Yelp"
+    },
+    "statuses": {
+      "all": "All statuses",
+      "pending": "Pending",
+      "replied": "Replied",
+      "ignored": "Ignored"
+    },
+    "ratings": {
+      "all": "All ratings",
+      "1": "1 star",
+      "2": "2 stars",
+      "3": "3 stars",
+      "4": "4 stars",
+      "5": "5 stars"
+    },
+    "card": {
+      "replied": "Replied",
+      "pending": "Pending",
+      "ignored": "Ignored",
+      "markReplied": "Mark as replied",
+      "markIgnored": "Ignore",
+      "generateReply": "Generate reply",
+      "copy": "Copy",
+      "publish": "Publish",
+      "viewMore": "View details"
+    },
+    "modal": {
+      "title": "Review by {{author}}",
+      "responses": "{{count}} response(s)",
+      "generateTitle": "Generate AI Reply",
+      "lengths": {
+        "short": "Short",
+        "medium": "Medium",
+        "detailed": "Detailed"
+      },
+      "tones": {
+        "professional": "Professional",
+        "friendly": "Friendly",
+        "formal": "Formal",
+        "casual": "Casual"
+      },
+      "customPromptPlaceholder": "Add specific context or instructions...",
+      "generating": "Generating...",
+      "generate": "Generate Reply",
+      "generatedReply": "Generated Reply",
+      "regenerate": "Regenerate"
+    },
+    "actions": {
+      "publish": "Publish",
+      "copy": "Copy",
+      "copied": "Copied!"
+    },
+    "fetch": {
+      "button": "Fetch Reviews",
+      "title": "Fetch reviews",
+      "description": "Sync reviews from connected platforms",
+      "connected": "Connected",
+      "useExtension": "Use extension",
+      "noConnections": "No platforms connected. Set up integrations in Settings."
+    },
+    "empty": {
+      "title": "No reviews found",
+      "description": "Reviews will appear here once you sync them from your platforms or use the browser extension."
+    },
+    "error": {
+      "title": "Failed to load reviews",
+      "description": "Something went wrong while loading your reviews.",
+      "retry": "Try again"
+    },
+    "noMore": "No more reviews to load",
+    "published": "Published",
+    "notPublished": "Not published"
+  }
+}

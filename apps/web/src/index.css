@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased font-sans;
+    @apply bg-light-bg text-text-dark-primary;
+    @apply dark:bg-dark-bg dark:text-text-primary;
+    @apply transition-colors duration-150;
+  }
+
+  /* Custom scrollbar for dark mode */
+  .dark ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-dark-surface;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-dark-border rounded-full;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-border-light;
+  }
+
+  /* Light mode scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+@layer components {
+  /* Skeleton loader */
+  .skeleton {
+    @apply animate-pulse bg-dark-hover dark:bg-dark-hover rounded;
+  }
+
+  .skeleton-light {
+    @apply animate-pulse bg-gray-200 dark:bg-dark-hover rounded;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 dark:bg-white/5;
+  }
+
+  /* Focus ring styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-dark-bg;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

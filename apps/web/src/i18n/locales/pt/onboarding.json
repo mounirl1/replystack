@@ -1,0 +1,65 @@
+{
+  "parts": {
+    "essential": "Essencial",
+    "complementary": "Avancado"
+  },
+  "navigation": {
+    "next": "Proximo",
+    "previous": "Voltar",
+    "skip": "Pular",
+    "finish": "Concluir"
+  },
+  "trigger": {
+    "title": "Tour do produto"
+  },
+  "transition": {
+    "title": "Otimo trabalho!",
+    "description": "Voce concluiu o tour essencial. Gostaria de descobrir recursos adicionais?",
+    "continue": "Explorar recursos avancados",
+    "finish": "Por enquanto estou bem"
+  },
+  "essential": {
+    "dashboardLink": {
+      "title": "Painel",
+      "description": "Seu painel principal. Obtenha uma visao rapida da sua atividade, estatisticas e cota restante."
+    },
+    "reviewsLink": {
+      "title": "Avaliacoes",
+      "description": "Acesse todas as avaliacoes dos seus clientes aqui. Veja as avaliacoes pendentes que precisam de resposta e gerencie seu fluxo de trabalho."
+    },
+    "historyLink": {
+      "title": "Historico",
+      "description": "Veja todas as suas respostas IA anteriores. Pesquise, filtre e reutilize modelos de resposta bem-sucedidos."
+    },
+    "dashboardStats": {
+      "title": "Suas estatisticas",
+      "description": "Acompanhe suas respostas geradas por IA de relance. Monitore sua cota restante, atividade diaria e desempenho geral."
+    },
+    "extensionCta": {
+      "title": "Extensao do navegador",
+      "description": "Instale nossa extensao do Chrome ou Firefox para gerar respostas IA diretamente em plataformas de avaliacoes como Google Business, TripAdvisor e mais."
+    },
+    "responseStyle": {
+      "title": "Estilo de resposta",
+      "description": "Personalize como sua IA responde as avaliacoes. Defina seu tom preferido, adicione contexto do negocio e crie modelos de resposta personalizados."
+    }
+  },
+  "complementary": {
+    "settingsLink": {
+      "title": "Configuracoes",
+      "description": "Gerencie as configuracoes da sua conta, preferencias de resposta, plataformas conectadas e detalhes da assinatura."
+    },
+    "themeToggle": {
+      "title": "Alternar tema",
+      "description": "Alterne entre o modo claro e escuro para uma experiencia de visualizacao confortavel de dia ou de noite."
+    },
+    "quotaBar": {
+      "title": "Cota de uso",
+      "description": "Acompanhe sua cota mensal de respostas. Quando estiver baixa, considere fazer upgrade do seu plano para respostas ilimitadas."
+    },
+    "userProfile": {
+      "title": "Seu perfil",
+      "description": "Acesse as informacoes do seu perfil, detalhes do plano atual e saia rapidamente da sua conta."
+    }
+  }
+}

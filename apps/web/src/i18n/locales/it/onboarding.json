@@ -1,0 +1,65 @@
+{
+  "parts": {
+    "essential": "Essenziale",
+    "complementary": "Avanzato"
+  },
+  "navigation": {
+    "next": "Avanti",
+    "previous": "Indietro",
+    "skip": "Salta",
+    "finish": "Fine"
+  },
+  "trigger": {
+    "title": "Tour del prodotto"
+  },
+  "transition": {
+    "title": "Ottimo lavoro!",
+    "description": "Hai completato il tour essenziale. Vuoi scoprire funzionalita aggiuntive?",
+    "continue": "Esplora funzionalita avanzate",
+    "finish": "Per ora va bene cosi"
+  },
+  "essential": {
+    "dashboardLink": {
+      "title": "Dashboard",
+      "description": "La tua dashboard principale. Ottieni una panoramica rapida della tua attivita, statistiche e quota rimanente."
+    },
+    "reviewsLink": {
+      "title": "Recensioni",
+      "description": "Accedi a tutte le tue recensioni dei clienti qui. Visualizza le recensioni in attesa di risposta e gestisci il tuo flusso di lavoro."
+    },
+    "historyLink": {
+      "title": "Cronologia",
+      "description": "Visualizza tutte le tue risposte IA precedenti. Cerca, filtra e riutilizza modelli di risposta di successo."
+    },
+    "dashboardStats": {
+      "title": "Le tue statistiche",
+      "description": "Tieni traccia delle tue risposte generate dall'IA a colpo d'occhio. Monitora la quota rimanente, l'attivita giornaliera e le prestazioni complessive."
+    },
+    "extensionCta": {
+      "title": "Estensione browser",
+      "description": "Installa la nostra estensione Chrome o Firefox per generare risposte IA direttamente su piattaforme di recensioni come Google Business, TripAdvisor e altre."
+    },
+    "responseStyle": {
+      "title": "Stile di risposta",
+      "description": "Personalizza come la tua IA risponde alle recensioni. Imposta il tuo tono preferito, aggiungi contesto aziendale e crea modelli di risposta personalizzati."
+    }
+  },
+  "complementary": {
+    "settingsLink": {
+      "title": "Impostazioni",
+      "description": "Gestisci le impostazioni del tuo account, le preferenze di risposta, le piattaforme connesse e i dettagli dell'abbonamento."
+    },
+    "themeToggle": {
+      "title": "Cambia tema",
+      "description": "Passa dalla modalita chiara a quella scura per un'esperienza di visualizzazione confortevole di giorno o di notte."
+    },
+    "quotaBar": {
+      "title": "Quota di utilizzo",
+      "description": "Tieni traccia della tua quota mensile di risposte. Quando e quasi esaurita, considera di passare a un piano superiore per risposte illimitate."
+    },
+    "userProfile": {
+      "title": "Il tuo profilo",
+      "description": "Accedi alle informazioni del tuo profilo, ai dettagli del piano attuale e disconnettiti rapidamente dal tuo account."
+    }
+  }
+}

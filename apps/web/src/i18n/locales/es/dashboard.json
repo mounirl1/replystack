@@ -1,0 +1,169 @@
+{
+  "title": "Panel de control",
+  "welcome": "Bienvenido de nuevo, {{name}}",
+  "welcomeSubtitle": "Aquí tienes un resumen de tu actividad en ReplyStack.",
+  "upgrade": "Mejorar plan",
+  "stats": {
+    "repliesRemaining": "Respuestas restantes",
+    "repliesToday": "Respuestas hoy",
+    "thisMonth": "Este mes",
+    "totalReplies": "Total de respuestas",
+    "unlimited": "Ilimitado",
+    "resets": "Se reinicia el {{date}}"
+  },
+  "quota": {
+    "title": "Uso de cuota",
+    "description": "{{used}} de {{total}} respuestas usadas este mes",
+    "lowWarning": "Te estás quedando sin respuestas.",
+    "upgradePlan": "Mejora tu plan"
+  },
+  "responseStyle": {
+    "title": "Estilo de respuesta",
+    "setupRequired": "Configuración requerida",
+    "configured": "Estilo configurado",
+    "notConfigured": "Estilo no configurado",
+    "description": "Personaliza cómo la IA responde a tus reseñas",
+    "edit": "Editar estilo",
+    "configure": "Configurar estilo"
+  },
+  "quickActions": {
+    "title": "Acciones rápidas",
+    "googleBusiness": "Google Business",
+    "tripadvisor": "TripAdvisor",
+    "settings": "Configuración",
+    "manageReviews": "Gestionar reseñas",
+    "configurePreferences": "Configurar preferencias"
+  },
+  "recentReplies": {
+    "title": "Respuestas recientes",
+    "viewAll": "Ver todo",
+    "empty": {
+      "title": "Sin respuestas aún",
+      "description": "Instala nuestra extensión de navegador para empezar a generar respuestas con IA.",
+      "cta": "Obtener extensión"
+    }
+  },
+  "extensionCta": {
+    "title": "Instala la extensión del navegador",
+    "description": "Responde a las reseñas directamente desde Google Business, TripAdvisor y más. Genera respuestas con IA en segundos.",
+    "chrome": "Chrome",
+    "firefox": "Firefox"
+  },
+  "history": {
+    "title": "Historial de respuestas",
+    "subtitle": "Ver todas tus respuestas generadas con IA",
+    "empty": {
+      "title": "Sin respuestas aún",
+      "description": "Instala nuestra extensión de navegador y empieza a generar respuestas con IA para las reseñas de tus clientes.",
+      "cta": "Obtener extensión"
+    },
+    "totalReplies": "Total de respuestas generadas",
+    "originalReview": "Reseña original",
+    "aiReply": "Respuesta IA",
+    "tokens": "{{count}} tokens",
+    "loadMore": "Cargar más respuestas",
+    "copyToClipboard": "Copiar al portapapeles"
+  },
+  "reviews": {
+    "title": "Reseñas",
+    "subtitle": "Gestiona y responde a las reseñas de tus clientes",
+    "stats": {
+      "total": "Total de reseñas",
+      "pending": "Pendientes",
+      "avgRating": "Nota media",
+      "responseRate": "Tasa de respuesta",
+      "loading": "Cargando..."
+    },
+    "filters": {
+      "search": "Buscar reseñas...",
+      "location": "Todos los establecimientos",
+      "platform": "Todas las plataformas",
+      "status": "Todos los estados",
+      "rating": "Todas las notas",
+      "dateFrom": "Desde",
+      "clear": "Borrar filtros",
+      "showFilters": "Mostrar filtros",
+      "hideFilters": "Ocultar filtros",
+      "resultsCount": "{{count}} reseñas"
+    },
+    "platforms": {
+      "all": "Todas las plataformas",
+      "google": "Google",
+      "facebook": "Facebook",
+      "tripadvisor": "TripAdvisor",
+      "booking": "Booking.com",
+      "yelp": "Yelp"
+    },
+    "statuses": {
+      "all": "Todos los estados",
+      "pending": "Pendiente",
+      "replied": "Respondida",
+      "ignored": "Ignorada"
+    },
+    "ratings": {
+      "all": "Todas las notas",
+      "1": "1 estrella",
+      "2": "2 estrellas",
+      "3": "3 estrellas",
+      "4": "4 estrellas",
+      "5": "5 estrellas"
+    },
+    "card": {
+      "replied": "Respondida",
+      "pending": "Pendiente",
+      "ignored": "Ignorada",
+      "markReplied": "Marcar como respondida",
+      "markIgnored": "Ignorar",
+      "generateReply": "Generar respuesta",
+      "copy": "Copiar",
+      "publish": "Publicar",
+      "viewMore": "Ver detalles"
+    },
+    "modal": {
+      "title": "Reseña de {{author}}",
+      "responses": "{{count}} respuesta(s)",
+      "generateTitle": "Generar respuesta IA",
+      "lengths": {
+        "short": "Corta",
+        "medium": "Media",
+        "detailed": "Detallada"
+      },
+      "tones": {
+        "professional": "Profesional",
+        "friendly": "Amigable",
+        "formal": "Formal",
+        "casual": "Casual"
+      },
+      "customPromptPlaceholder": "Añade contexto o instrucciones específicas...",
+      "generating": "Generando...",
+      "generate": "Generar respuesta",
+      "generatedReply": "Respuesta generada",
+      "regenerate": "Regenerar"
+    },
+    "actions": {
+      "publish": "Publicar",
+      "copy": "Copiar",
+      "copied": "¡Copiado!"
+    },
+    "fetch": {
+      "button": "Obtener reseñas",
+      "title": "Obtener reseñas",
+      "description": "Sincronizar reseñas desde plataformas conectadas",
+      "connected": "Conectado",
+      "useExtension": "Usar extensión",
+      "noConnections": "No hay plataformas conectadas. Configura las integraciones en Ajustes."
+    },
+    "empty": {
+      "title": "No se encontraron reseñas",
+      "description": "Las reseñas aparecerán aquí una vez sincronizadas desde tus plataformas o mediante la extensión del navegador."
+    },
+    "error": {
+      "title": "Error al cargar reseñas",
+      "description": "Algo salió mal al cargar tus reseñas.",
+      "retry": "Reintentar"
+    },
+    "noMore": "No hay más reseñas para cargar",
+    "published": "Publicada",
+    "notPublished": "No publicada"
+  }
+}
