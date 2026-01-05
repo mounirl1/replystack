@@ -3,7 +3,7 @@
 
 [build]
 builder = "nixpacks"
-buildCommand = "corepack enable && pnpm install && pnpm build"
+buildCommand = "npm install -g pnpm && pnpm install && pnpm build"
 
 [deploy]
 startCommand = "npx serve -s dist -l ${PORT:-8080}"
