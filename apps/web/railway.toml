@@ -3,7 +3,7 @@
 
 [build]
 builder = "nixpacks"
-buildCommand = "npm install -g pnpm && pnpm install && pnpm build"
+buildCommand = "npm install -g pnpm && export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm install && pnpm build"
 
 [deploy]
 startCommand = "npx serve -s dist -l ${PORT:-8080}"

@@ -2,10 +2,10 @@
 nixPkgs = ["nodejs_22"]
 
 [phases.install]
-cmds = ["npm install -g pnpm && pnpm install"]
+cmds = ["npm install -g pnpm && export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm install"]
 
 [phases.build]
-cmds = ["pnpm build"]
+cmds = ["export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm build"]
 
 [start]
 cmd = "npx serve -s dist -l ${PORT:-8080}"
