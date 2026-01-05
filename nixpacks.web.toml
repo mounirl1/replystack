@@ -1,0 +1,14 @@
+# Nixpacks configuration for ReplyStack Web (React/Vite)
+# Deploy from monorepo root to access workspace packages
+
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+
+[phases.install]
+cmds = ["npm install -g pnpm && export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm install"]
+
+[phases.build]
+cmds = ["export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm --filter @replystack/web build"]
+
+[start]
+cmd = "npx serve -s apps/web/dist -l ${PORT:-8080}"
