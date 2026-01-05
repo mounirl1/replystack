@@ -28,6 +28,14 @@ Route::get('/', function () {
     ]);
 });
 
+// Health check endpoint
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'ok',
+        'timestamp' => now()->toIso8601String(),
+    ]);
+});
+
 // Authentication routes
 Route::prefix('auth')->group(function () {
     // Public routes with rate limiting (5 attempts per minute)
