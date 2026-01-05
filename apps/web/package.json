@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@replystack/shared": "workspace:*",
     "@tanstack/react-query": "^5.64.0",
     "axios": "^1.7.0",
     "i18next": "^25.7.3",
