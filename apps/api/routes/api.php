@@ -36,6 +36,23 @@ Route::get('/health', function () {
     ]);
 });
 
+// Debug endpoint (remove in production after debugging)
+Route::get('/debug', function () {
+    return response()->json([
+        'app_env' => config('app.env'),
+        'app_debug' => config('app.debug'),
+        'app_url' => config('app.url'),
+        'app_key_set' => !empty(config('app.key')),
+        'db_connection' => config('database.default'),
+        'db_host' => config('database.connections.mysql.host'),
+        'db_database' => config('database.connections.mysql.database'),
+        'db_connected' => false,
+        'redis_connected' => false,
+        'php_version' => PHP_VERSION,
+        'laravel_version' => app()->version(),
+    ]);
+});
+
 // Authentication routes
 Route::prefix('auth')->group(function () {
     // Public routes with rate limiting (5 attempts per minute)
