@@ -1,0 +1,23 @@
+# Nixpacks configuration for ReplyStack Laravel API
+# Forces PHP detection instead of Node.js for the monorepo
+
+providers = ["php"]
+
+[phases.setup]
+nixPkgs = ["php82", "php82Extensions.redis", "php82Extensions.pdo_mysql", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.curl", "php82Packages.composer"]
+
+[phases.install]
+cmds = ["cd apps/api && composer install --no-dev --optimize-autoloader"]
+
+[phases.build]
+cmds = [
+  "cd apps/api && php artisan config:cache",
+  "cd apps/api && php artisan route:cache",
+  "cd apps/api && php artisan view:cache"
+]
+
+[start]
+cmd = "cd apps/api && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
+
+[variables]
+PHP_VERSION = "8.2"
