@@ -1,0 +1,9 @@
+# Railway configuration for ReplyStack Web (React/Vite)
+# Forces pnpm instead of npm for workspace:* protocol support
+
+[build]
+builder = "nixpacks"
+buildCommand = "corepack enable && pnpm install && pnpm build"
+
+[deploy]
+startCommand = "npx serve -s dist -l ${PORT:-8080}"

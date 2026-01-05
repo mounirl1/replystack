@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_22", "pnpm"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
-cmds = ["pnpm install"]
+cmds = ["corepack enable && corepack prepare pnpm@latest --activate && pnpm install"]
 
 [phases.build]
 cmds = ["pnpm build"]
 
 [start]
-cmd = "npx serve -s dist -l 8080"
+cmd = "npx serve -s dist -l ${PORT:-8080}"
