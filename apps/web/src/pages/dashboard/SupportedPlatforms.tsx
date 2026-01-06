@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, Chrome, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, Globe, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 interface Platform {
@@ -27,7 +27,7 @@ const platforms: Platform[] = [
   {
     id: 'tripadvisor',
     name: 'TripAdvisor',
-    url: 'https://www.tripadvisor.com/Owners',
+    url: 'https://www.tripadvisor.com/reviews?screen=allreviews',
     color: '#00AF87',
     logo: 'text',
     logoContent: 'TA',
@@ -212,7 +212,7 @@ export function SupportedPlatforms() {
       <div className="bg-primary-500/10 dark:bg-primary-500/20 border border-primary-500/20 rounded-2xl p-6 mb-8">
         <div className="flex items-start gap-4">
           <div className="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center flex-shrink-0">
-            <Chrome className="w-5 h-5 text-white" />
+            <Globe className="w-5 h-5 text-white" />
           </div>
           <div>
             <h3 className="font-semibold text-text-dark-primary dark:text-text-primary mb-1">

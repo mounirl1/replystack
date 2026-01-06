@@ -61,7 +61,7 @@ export const PLATFORM_URL_PATTERNS: Record<string, RegExp> = {
 };
 
 export const PLATFORM_URL_EXAMPLES: Record<string, string> = {
-  tripadvisor: 'https://www.tripadvisor.com/ManagementCenter/...',
+  tripadvisor: 'https://www.tripadvisor.com/reviews?locationId=...',
   booking: 'https://admin.booking.com/hotel/hoteladmin/...',
   yelp: 'https://biz.yelp.com/biz/...',
 };

@@ -1,4 +1,4 @@
-import type { ExtractedReview, Platform } from '../../types/review';
+import type { ExtractedReview, Platform } from '@/types/review';
 import { BaseExtractor } from './base-extractor';
 
 /**
@@ -12,12 +12,17 @@ export class TripAdvisorExtractor extends BaseExtractor {
 
   private selectors = {
     reviewContainer: [
+      // New management interface
+      'button.onXpl',
+      '.onXpl',
+      // Legacy selectors
       '[data-reviewid]',
       '[data-test-target="HR_CC_CARD"]',
       '.review-container',
       '[class*="reviewSelector"]',
       '.reviewCard',
     ],
+    // Legacy author selectors
     authorName: [
       '.member_info .username span',
       '.username',
@@ -25,10 +30,13 @@ export class TripAdvisorExtractor extends BaseExtractor {
       '[class*="memberName"]',
       '.ui_header_link',
     ],
+    // New interface author selectors
+    authorNameNew: ['.YLwnJ .biGQs'],
     authorAvatar: [
       '.member_info .avatar img',
       '.memberOverlayLink img',
       '[class*="avatar"] img',
+      '.xqWFK', // New interface
     ],
     rating: [
       '.ui_bubble_rating',
@@ -36,6 +44,8 @@ export class TripAdvisorExtractor extends BaseExtractor {
       '[data-test-target="review-rating"]',
       '[class*="rating"]',
     ],
+    // New interface rating selector
+    ratingNew: ['svg.UctUV title'],
     content: [
       '.entry .partial_entry',
       '.reviewText',
@@ -43,12 +53,17 @@ export class TripAdvisorExtractor extends BaseExtractor {
       '[data-test-target="review-body"]',
       '.prw_rup .text',
     ],
+    // New interface content selectors
+    contentTitleNew: ['.DyFaS .OgHoE .q', '.DyFaS .biGQs.SewaP.OgHoE .q'],
+    contentTextNew: ['.DyFaS .AWdfh .q', '.DyFaS .biGQs.VImYz.AWdfh .q'],
     date: [
       '.ratingDate',
       '[class*="ratingDate"]',
       '[class*="Date"]',
       'time',
     ],
+    // New interface date selector
+    dateNew: ['.YLwnJ .biGQs.SewaP.xENVe', '.pChLG .xENVe'],
     hasResponse: [
       '.mgrRspnInLine',
       '.mgmtResponse',
@@ -72,17 +87,50 @@ export class TripAdvisorExtractor extends BaseExtractor {
 
   private extractOne(el: Element): ExtractedReview | null {
     try {
+      // Check if this is the new management interface
+      const isNewInterface = el.classList.contains('onXpl');
+
+      let authorName: string;
+      let content: string;
+      let rating: number;
+      let dateStr: string;
+
+      if (isNewInterface) {
+        // New management interface extraction
+        authorName = this.extractText(el, this.selectors.authorNameNew) || 'Anonymous';
+
+        // Extract rating from SVG title like "5.0 of 5 bubbles"
+        const svgTitle = this.querySelectorFallback(el, this.selectors.ratingNew);
+        if (svgTitle?.textContent) {
+          const match = svgTitle.textContent.match(/(\d+\.?\d*)\s*of\s*5/);
+          if (match) {
+            rating = Math.round(parseFloat(match[1]));
+          }
+        }
+
+        // Extract content (title + text)
+        const titleText = this.extractText(el, this.selectors.contentTitleNew) || '';
+        const contentText = this.extractText(el, this.selectors.contentTextNew) || '';
+        content = this.cleanText(titleText ? `${titleText}\n${contentText}` : contentText);
+
+        // Extract date
+        dateStr = this.extractText(el, this.selectors.dateNew) || '';
+      } else {
+        // Legacy extraction
+        authorName = this.extractText(el, this.selectors.authorName) || 'Anonymous';
+        content = this.cleanText(this.extractText(el, this.selectors.content));
+        rating = this.parseRatingFromBubbles(el);
+        dateStr = this.extractDateFromElement(el);
+      }
+
       const externalId =
         el.getAttribute('data-reviewid') ||
         el.getAttribute('data-review-id') ||
         el.id ||
         this.generateFallbackId({
-          authorName: this.extractText(el, this.selectors.authorName),
-          content: this.extractText(el, this.selectors.content),
+          authorName,
+          content,
         });
-
-      const authorName = this.extractText(el, this.selectors.authorName) || 'Anonymous';
-      const content = this.cleanText(this.extractText(el, this.selectors.content));
 
       if (!content && !authorName) {
         return null;
@@ -91,8 +139,6 @@ export class TripAdvisorExtractor extends BaseExtractor {
       const avatarEl = this.querySelectorFallback(el, this.selectors.authorAvatar) as HTMLImageElement | null;
       const authorAvatar = avatarEl?.src;
 
-      const rating = this.parseRatingFromBubbles(el);
-      const dateStr = this.extractDateFromElement(el);
       const publishedAt = this.parseDate(dateStr);
       const hasResponse = !!this.querySelectorFallback(el, this.selectors.hasResponse);
 

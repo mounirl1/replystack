@@ -1,7 +1,7 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { t } from '../i18n';
-import { TripAdvisorExtractor } from '../services/extractors/tripadvisor-extractor';
-import { initializeExtraction } from '../services/extraction-handler';
+import { t } from '@/i18n';
+import { TripAdvisorExtractor } from '@/services/extractors/tripadvisor-extractor';
+import { initializeExtraction } from '@/services/extraction-handler';
 
 export const config: PlasmoCSConfig = {
   matches: [
@@ -324,7 +324,7 @@ function escapeHtml(text: string): string {
 }
 
 // Show popup
-function showReplyPopup(reviewData: ReviewData) {
+function showReplyPopup(reviewData: ReviewData, reviewEl: HTMLElement) {
   // Remove any existing popup
   const existingPopup = document.getElementById('replystack-popup-overlay');
   if (existingPopup) {
@@ -404,12 +404,13 @@ function showReplyPopup(reviewData: ReviewData) {
       });
 
       if (response.error) {
-        throw new Error(response.error);
+        errorDiv.textContent = response.error;
+        errorDiv.classList.remove('replystack-hidden');
+      } else {
+        replyTextarea.value = response.reply || '';
+        generateSection.classList.add('replystack-hidden');
+        replySection.classList.remove('replystack-hidden');
       }
-
-      replyTextarea.value = response.reply || '';
-      generateSection.classList.add('replystack-hidden');
-      replySection.classList.remove('replystack-hidden');
     } catch (err) {
       errorDiv.textContent = err instanceof Error ? err.message : 'Failed to generate reply';
       errorDiv.classList.remove('replystack-hidden');
@@ -448,30 +449,154 @@ function showReplyPopup(reviewData: ReviewData) {
   });
 
   // Insert
-  insertBtn.addEventListener('click', () => {
+  insertBtn.addEventListener('click', async () => {
     const text = replyTextarea.value;
-    // Try to find TripAdvisor's response textarea
+
     const textareaSelectors = [
-      'textarea[name="response"]',
+      // Overview page modal textarea
+      'textarea.GYDIs',
+      '.WMIKb[role="dialog"] textarea',
+      // Reviews page textareas
+      'textarea.VoyPg',
       'textarea[placeholder*="response"]',
       'textarea[placeholder*="Reply"]',
+      'textarea[name="response"]',
+      '.roAGK textarea',
       '.response-form textarea',
     ];
 
-    for (const selector of textareaSelectors) {
-      const textarea = document.querySelector(selector) as HTMLTextAreaElement;
-      if (textarea) {
-        textarea.value = text;
-        textarea.dispatchEvent(new Event('input', { bubbles: true }));
-        textarea.dispatchEvent(new Event('change', { bubbles: true }));
-        textarea.focus();
-        break;
-      }
-    }
+    // Helper function to insert text into textarea
+    const insertIntoTextarea = (textarea: HTMLTextAreaElement) => {
+      textarea.value = text;
+      textarea.dispatchEvent(new Event('input', { bubbles: true }));
+      textarea.dispatchEvent(new Event('change', { bubbles: true }));
+      textarea.focus();
+    };
 
-    // Copy to clipboard as fallback
-    navigator.clipboard.writeText(text).catch(() => {});
-    closePopup();
+    // Helper function to find and insert into textarea
+    const tryInsert = (): boolean => {
+      // First check for overview page modal
+      const responseModal = document.querySelector('.WMIKb[role="dialog"]') as HTMLElement;
+      if (responseModal) {
+        for (const selector of textareaSelectors) {
+          const textarea = responseModal.querySelector(selector) as HTMLTextAreaElement;
+          if (textarea) {
+            insertIntoTextarea(textarea);
+            return true;
+          }
+        }
+      }
+
+      // Then try to find expanded review on reviews page
+      const reviewsContainer = document.querySelector('.kXCMl, #REVIEWS, [class*="reviews"]');
+      if (reviewsContainer) {
+        const expandedReview = reviewsContainer.querySelector('[data-review-gid]') as HTMLElement;
+        if (expandedReview) {
+          for (const selector of textareaSelectors) {
+            const textarea = expandedReview.querySelector(selector) as HTMLTextAreaElement;
+            if (textarea) {
+              insertIntoTextarea(textarea);
+              return true;
+            }
+          }
+        }
+      }
+
+      // Try globally for any visible textarea
+      for (const selector of textareaSelectors) {
+        const textarea = document.querySelector(selector) as HTMLTextAreaElement;
+        if (textarea && textarea.offsetParent !== null) {
+          insertIntoTextarea(textarea);
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    // Check review type
+    const isCollapsedReview = reviewEl.classList.contains('onXpl') && reviewEl.tagName === 'BUTTON';
+    const isOverviewCard = reviewEl.matches('li.GDjZb');
+    const isResponseModal = reviewEl.matches('.WMIKb[role="dialog"]');
+
+    if (isOverviewCard) {
+      // Overview page card - need to click Respond button to open modal
+      const respondBtn = reviewEl.querySelector('button.QHaGY') as HTMLButtonElement;
+      if (respondBtn) {
+        respondBtn.click();
+
+        // Wait for the modal to appear
+        let attempts = 0;
+        const maxAttempts = 30; // 3 seconds max
+
+        const waitForModal = () => {
+          attempts++;
+          const modal = document.querySelector('.WMIKb[role="dialog"]') as HTMLElement;
+          if (modal) {
+            // Modal appeared, try to insert
+            if (tryInsert()) {
+              navigator.clipboard.writeText(text).catch(() => {});
+              closePopup();
+              return;
+            }
+          }
+
+          if (attempts < maxAttempts) {
+            setTimeout(waitForModal, 100);
+          } else {
+            // Fallback: copy to clipboard
+            navigator.clipboard.writeText(text).catch(() => {});
+            closePopup();
+          }
+        };
+
+        setTimeout(waitForModal, 200);
+      } else {
+        // No respond button found, copy to clipboard
+        navigator.clipboard.writeText(text).catch(() => {});
+        closePopup();
+      }
+    } else if (isResponseModal) {
+      // Already in modal, insert directly
+      if (!tryInsert()) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+      closePopup();
+    } else if (isCollapsedReview) {
+      // Collapsed review on reviews page - click to expand
+      reviewEl.click();
+
+      // Wait for the expanded review and textarea to appear
+      let attempts = 0;
+      const maxAttempts = 20; // 2 seconds max
+
+      const waitForTextarea = () => {
+        attempts++;
+        if (tryInsert()) {
+          navigator.clipboard.writeText(text).catch(() => {});
+          closePopup();
+          return;
+        }
+
+        if (attempts < maxAttempts) {
+          setTimeout(waitForTextarea, 100);
+        } else {
+          // Fallback: copy to clipboard
+          navigator.clipboard.writeText(text).catch(() => {});
+          closePopup();
+        }
+      };
+
+      // Start waiting after a short delay for the click to process
+      setTimeout(waitForTextarea, 150);
+    } else {
+      // Review is already expanded or using legacy interface
+      if (!tryInsert()) {
+        // Fallback: copy to clipboard
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+      closePopup();
+    }
   });
 }
 
@@ -498,101 +623,289 @@ function initReviewObserver() {
 }
 
 function injectReplyButtons(container: HTMLElement) {
-  const reviewSelectors = [
+  // Helper to get elements including the container itself if it matches
+  const querySelectorAllIncludingSelf = (el: HTMLElement, selector: string): Element[] => {
+    const descendants = Array.from(el.querySelectorAll(selector));
+    if (el.matches(selector)) {
+      return [el, ...descendants];
+    }
+    return descendants;
+  };
+
+  // Inject button next to Submit button in expanded reviews (.roAGK .aJvfh)
+  const submitButtonContainers = container.querySelectorAll('.roAGK .aJvfh, .roAGK .SKoPa');
+  submitButtonContainers.forEach((aJvfhEl) => {
+    // Check if button already exists in this container
+    if (aJvfhEl.querySelector('.replystack-btn')) return;
+
+    const submitBtn = aJvfhEl.querySelector('button[type="submit"], button.sOtnj');
+    if (!submitBtn) return;
+
+    // Find the parent .Fizlk or [data-review-gid] for extracting review data
+    const reviewEl = aJvfhEl.closest('.Fizlk, [data-review-gid]');
+    if (!reviewEl) return;
+
+    createAndInsertButton(aJvfhEl as HTMLElement, submitBtn as HTMLElement, reviewEl as HTMLElement, 'expanded');
+  });
+
+  // Inject button in collapsed reviews (button.onXpl)
+  // Use helper to also check if container itself is an .onXpl
+  const collapsedReviews = querySelectorAllIncludingSelf(container, 'button.onXpl, .onXpl');
+  collapsedReviews.forEach((reviewEl) => {
+    if (reviewEl.querySelector('.replystack-btn')) return;
+
+    const actionArea = reviewEl.querySelector('.DyFaS') || reviewEl;
+    createAndInsertButton(actionArea as HTMLElement, null, reviewEl as HTMLElement, 'collapsed');
+  });
+
+  // Inject button in overview page cards (li.GDjZb)
+  const overviewCards = querySelectorAllIncludingSelf(container, 'li.GDjZb');
+  overviewCards.forEach((reviewEl) => {
+    if (reviewEl.querySelector('.replystack-btn')) return;
+
+    const respondBtn = reviewEl.querySelector('button.QHaGY');
+    if (!respondBtn || !respondBtn.parentElement) return;
+
+    createAndInsertButton(respondBtn.parentElement as HTMLElement, respondBtn as HTMLElement, reviewEl as HTMLElement, 'overview');
+  });
+
+  // Inject button in response modal (.WMIKb[role="dialog"])
+  const responseModals = querySelectorAllIncludingSelf(container, '.WMIKb[role="dialog"]');
+  responseModals.forEach((reviewEl) => {
+    if (reviewEl.querySelector('.replystack-btn')) return;
+
+    const respondBtn = reviewEl.querySelector('.BVBSW button.sOtnj');
+    if (!respondBtn || !respondBtn.parentElement) return;
+
+    createAndInsertButton(respondBtn.parentElement as HTMLElement, respondBtn as HTMLElement, reviewEl as HTMLElement, 'modal');
+  });
+
+  // Legacy selectors
+  const legacySelectors = [
     '[data-reviewid]',
     '.review-container',
     '.reviewSelector',
     '[data-test-target="HR_CC_CARD"]',
     '.location-review-card',
   ];
-
-  const reviewElements = container.querySelectorAll(reviewSelectors.join(', '));
-
-  reviewElements.forEach((reviewEl) => {
+  const legacyReviews = container.querySelectorAll(legacySelectors.join(', '));
+  legacyReviews.forEach((reviewEl) => {
     if (reviewEl.querySelector('.replystack-btn')) return;
+    // Skip if this is actually a new interface element
+    if (reviewEl.closest('.Fizlk, .onXpl, .GDjZb, .WMIKb')) return;
 
     const actionArea = reviewEl.querySelector(
       '.helpful, .social-actions, .review-actions, [data-test-target="review-rating"]'
     );
     if (!actionArea) return;
 
-    const btn = document.createElement('button');
-    btn.className = 'replystack-btn';
-    btn.innerHTML = t('modal.aiReplyButton');
-    btn.style.cssText = `
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      margin-left: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.2s ease;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    `;
-
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transform = 'translateY(-1px)';
-      btn.style.boxShadow = '0 4px 12px rgba(14, 165, 233, 0.3)';
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translateY(0)';
-      btn.style.boxShadow = 'none';
-    });
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const reviewData = extractReviewData(reviewEl as HTMLElement);
-      showReplyPopup(reviewData);
-    });
-
-    actionArea.appendChild(btn);
+    createAndInsertButton(actionArea as HTMLElement, null, reviewEl as HTMLElement, 'legacy');
   });
 }
 
-function extractReviewData(reviewEl: HTMLElement): ReviewData {
-  const authorSelectors = [
-    '.member_info .username',
-    '[class*="username"]',
-    '[data-test-target="review-title"] + * a',
-    '.info_text',
-  ];
-  let author = 'Anonymous';
-  for (const selector of authorSelectors) {
-    const el = reviewEl.querySelector(selector);
-    if (el?.textContent?.trim()) {
-      author = el.textContent.trim();
-      break;
-    }
+function createAndInsertButton(
+  actionArea: HTMLElement,
+  targetBtn: HTMLElement | null,
+  reviewEl: HTMLElement,
+  type: 'expanded' | 'collapsed' | 'overview' | 'modal' | 'legacy'
+) {
+  const btn = document.createElement('button');
+  btn.className = 'replystack-btn';
+  btn.innerHTML = t('modal.aiReplyButton');
+
+  // Use margin-right when inserted before a button, margin-left otherwise
+  const insertBefore = type === 'expanded' || type === 'modal' || type === 'overview';
+  const marginStyle = insertBefore ? 'margin-right: 8px;' : 'margin-left: 8px;';
+
+  btn.style.cssText = `
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    ${marginStyle}
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  `;
+
+  btn.addEventListener('mouseenter', () => {
+    btn.style.transform = 'translateY(-1px)';
+    btn.style.boxShadow = '0 4px 12px rgba(14, 165, 233, 0.3)';
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translateY(0)';
+    btn.style.boxShadow = 'none';
+  });
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const reviewData = extractReviewData(reviewEl);
+    showReplyPopup(reviewData, reviewEl);
+  });
+
+  // Insert the button
+  if (targetBtn && insertBefore) {
+    // Insert directly before the target button
+    targetBtn.parentNode?.insertBefore(btn, targetBtn);
+  } else {
+    actionArea.appendChild(btn);
   }
+}
 
-  const rating = extractRating(reviewEl);
+function extractReviewData(reviewEl: HTMLElement): ReviewData {
+  // Check if this is the new management interface
+  const isCollapsedReview = reviewEl.classList.contains('onXpl');
+  const isExpandedReview = reviewEl.hasAttribute('data-review-gid') || reviewEl.classList.contains('Fizlk');
+  const isOverviewCard = reviewEl.matches('li.GDjZb');
+  const isResponseModal = reviewEl.matches('.WMIKb[role="dialog"]');
 
-  const contentSelectors = [
-    '.entry .partial_entry',
-    '[data-test-target="review-body"]',
-    '.prw_reviews_text_summary_hsx',
-    '.review-text',
-    '[class*="reviewText"]',
-  ];
+  let author = 'Anonymous';
   let content = '';
-  for (const selector of contentSelectors) {
-    const el = reviewEl.querySelector(selector);
-    if (el?.textContent?.trim()) {
-      content = el.textContent.trim();
-      break;
+  let rating = 5;
+  let externalId = '';
+
+  if (isResponseModal) {
+    // Response modal on overview page
+    // Author is in .biGQs._P.SewaP.OgHoE .o.W
+    const authorEl = reviewEl.querySelector('.biGQs.SewaP.OgHoE .o.W, .aaiAK .biGQs.SewaP');
+    if (authorEl?.textContent?.trim()) {
+      author = authorEl.textContent.trim();
+    }
+
+    // Rating is in svg.evwcZ title
+    const svgTitle = reviewEl.querySelector('svg.evwcZ title');
+    if (svgTitle?.textContent) {
+      const match = svgTitle.textContent.match(/(\d+\.?\d*)\s*of\s*5/);
+      if (match) {
+        rating = Math.round(parseFloat(match[1]));
+      }
+    }
+
+    // Content: title in [data-test-target="review-title"], text in [data-automation="reviewText_*"]
+    const titleEl = reviewEl.querySelector('[data-test-target="review-title"]');
+    const contentEl = reviewEl.querySelector('[data-automation^="reviewText_"], .fIrGe .biGQs');
+
+    const titleText = titleEl?.textContent?.trim() || '';
+    const contentText = contentEl?.textContent?.trim() || '';
+
+    content = titleText ? `${titleText}\n${contentText}` : contentText;
+  } else if (isOverviewCard) {
+    // Overview page card in carousel
+    // Author is in .biGQs._P span._c or .biGQs.oCpZu span._c
+    const authorEl = reviewEl.querySelector('.biGQs.oCpZu span._c, .joERX .biGQs span._c');
+    if (authorEl?.textContent?.trim()) {
+      author = authorEl.textContent.trim();
+    }
+
+    // Rating is in svg.evwcZ title
+    const svgTitle = reviewEl.querySelector('svg.evwcZ title');
+    if (svgTitle?.textContent) {
+      const match = svgTitle.textContent.match(/(\d+\.?\d*)\s*of\s*5/);
+      if (match) {
+        rating = Math.round(parseFloat(match[1]));
+      }
+    }
+
+    // Content is in .biGQs._P.alXOW.wSaDS or .biGQs._P.alXOW.NwcxK
+    const contentEl = reviewEl.querySelector('.biGQs.alXOW.wSaDS, .biGQs.alXOW.NwcxK');
+    content = contentEl?.textContent?.trim() || '';
+  } else if (isExpandedReview) {
+    // Expanded review in new management interface
+    externalId = reviewEl.getAttribute('data-review-gid') || '';
+
+    // Author is in .hcVjp .QIHsu .biGQs or similar
+    const authorEl = reviewEl.querySelector('.QIHsu .biGQs, .hcVjp .biGQs');
+    if (authorEl?.textContent?.trim()) {
+      author = authorEl.textContent.trim();
+    }
+
+    // Rating is in the SVG title
+    const svgTitle = reviewEl.querySelector('svg.UctUV title');
+    if (svgTitle?.textContent) {
+      const match = svgTitle.textContent.match(/(\d+\.?\d*)\s*of\s*5/);
+      if (match) {
+        rating = Math.round(parseFloat(match[1]));
+      }
+    }
+
+    // Content: title in .OgHoE, full text in .S4.H4
+    const titleEl = reviewEl.querySelector('.OgHoE');
+    const contentEl = reviewEl.querySelector('.S4.H4, .oJZss');
+
+    const titleText = titleEl?.textContent?.trim() || '';
+    const contentText = contentEl?.textContent?.trim() || '';
+
+    content = titleText ? `${titleText}\n${contentText}` : contentText;
+  } else if (isCollapsedReview) {
+    // Collapsed review in new management interface
+    // Author is in .YLwnJ .biGQs (first one)
+    const authorEl = reviewEl.querySelector('.YLwnJ .biGQs');
+    if (authorEl?.textContent?.trim()) {
+      author = authorEl.textContent.trim();
+    }
+
+    // Rating is in the SVG title like "5.0 of 5 bubbles"
+    const svgTitle = reviewEl.querySelector('svg.UctUV title');
+    if (svgTitle?.textContent) {
+      const match = svgTitle.textContent.match(/(\d+\.?\d*)\s*of\s*5/);
+      if (match) {
+        rating = Math.round(parseFloat(match[1]));
+      }
+    }
+
+    // Content is in .DyFaS .biGQs._P.VImYz.xARtZ.AWdfh .q.W.o (the review text)
+    // There can be a title and content - let's get both
+    const titleEl = reviewEl.querySelector('.DyFaS .biGQs.SewaP.OgHoE .q, .DyFaS .OgHoE .q');
+    const contentEl = reviewEl.querySelector('.DyFaS .biGQs.VImYz.AWdfh .q, .DyFaS .AWdfh .q');
+
+    const titleText = titleEl?.textContent?.trim() || '';
+    const contentText = contentEl?.textContent?.trim() || '';
+
+    content = titleText ? `${titleText}\n${contentText}` : contentText;
+  } else {
+    // Legacy selectors for older interface
+    const authorSelectors = [
+      '.member_info .username',
+      '[class*="username"]',
+      '[data-test-target="review-title"] + * a',
+      '.info_text',
+    ];
+    for (const selector of authorSelectors) {
+      const el = reviewEl.querySelector(selector);
+      if (el?.textContent?.trim()) {
+        author = el.textContent.trim();
+        break;
+      }
+    }
+
+    rating = extractRating(reviewEl);
+
+    const contentSelectors = [
+      '.entry .partial_entry',
+      '[data-test-target="review-body"]',
+      '.prw_reviews_text_summary_hsx',
+      '.review-text',
+      '[class*="reviewText"]',
+    ];
+    for (const selector of contentSelectors) {
+      const el = reviewEl.querySelector(selector);
+      if (el?.textContent?.trim()) {
+        content = el.textContent.trim();
+        break;
+      }
     }
   }
 
   return {
-    externalId: reviewEl.getAttribute('data-reviewid') || '',
+    externalId: externalId || reviewEl.getAttribute('data-reviewid') || '',
     author,
     rating,
     content,
