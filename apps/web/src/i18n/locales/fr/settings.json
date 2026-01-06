@@ -62,6 +62,23 @@
       "loadProfile": "Erreur lors du chargement du profil",
       "save": "Erreur lors de la sauvegarde",
       "reset": "Erreur lors de la réinitialisation"
+    },
+    "includeElements": {
+      "title": "Éléments à inclure selon le type d'avis",
+      "description": "Personnalisez le contenu de vos réponses selon le sentiment de l'avis.",
+      "element": "Élément",
+      "customerName": "Prénom du client",
+      "businessName": "Nom établissement",
+      "emojis": "Emojis",
+      "invitation": "Invitation à revenir",
+      "signature": "Signature",
+      "tip": "Conseil : Évitez les emojis et invitations à revenir pour les avis négatifs.",
+      "optional": "Cette étape est optionnelle. Vous pouvez passer à la suite."
+    },
+    "sentiment": {
+      "negative": "Négatif",
+      "neutral": "Neutre",
+      "positive": "Positif"
     }
   },
   "language": {

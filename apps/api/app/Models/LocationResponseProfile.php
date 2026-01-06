@@ -24,11 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $tone
  * @property string $default_length
  * @property string $negative_strategy
- * @property bool $include_customer_name
- * @property bool $include_business_name
- * @property bool $include_emojis
- * @property bool $include_invitation
- * @property bool $include_signature
+ * @property array|null $include_elements
  * @property string|null $highlights
  * @property string|null $avoid_topics
  * @property string|null $additional_context
@@ -55,11 +51,7 @@ class LocationResponseProfile extends Model
         'tone',
         'default_length',
         'negative_strategy',
-        'include_customer_name',
-        'include_business_name',
-        'include_emojis',
-        'include_invitation',
-        'include_signature',
+        'include_elements',
         'highlights',
         'avoid_topics',
         'additional_context',
@@ -72,11 +64,7 @@ class LocationResponseProfile extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'include_customer_name' => 'boolean',
-        'include_business_name' => 'boolean',
-        'include_emojis' => 'boolean',
-        'include_invitation' => 'boolean',
-        'include_signature' => 'boolean',
+        'include_elements' => 'array',
         'onboarding_completed' => 'boolean',
     ];
 
@@ -123,6 +111,70 @@ class LocationResponseProfile extends Model
     }
 
     /**
+     * Get the default include elements configuration.
+     *
+     * @return array<string, array<string, bool>>
+     */
+    public static function defaultIncludeElements(): array
+    {
+        return [
+            'negative' => [
+                'customer_name' => true,
+                'business_name' => true,
+                'emojis' => false,
+                'invitation' => false,
+                'signature' => true,
+            ],
+            'neutral' => [
+                'customer_name' => true,
+                'business_name' => true,
+                'emojis' => false,
+                'invitation' => true,
+                'signature' => true,
+            ],
+            'positive' => [
+                'customer_name' => true,
+                'business_name' => true,
+                'emojis' => true,
+                'invitation' => true,
+                'signature' => true,
+            ],
+        ];
+    }
+
+    /**
+     * Get the sentiment type from a rating.
+     *
+     * @param int $rating The review rating (1-5)
+     * @return string 'negative', 'neutral', or 'positive'
+     */
+    public static function getSentimentFromRating(int $rating): string
+    {
+        if ($rating <= 2) {
+            return 'negative';
+        }
+        if ($rating === 3) {
+            return 'neutral';
+        }
+
+        return 'positive';
+    }
+
+    /**
+     * Get the include elements configuration for a specific rating.
+     *
+     * @param int $rating The review rating (1-5)
+     * @return array<string, bool>
+     */
+    public function getIncludeElementsForRating(int $rating): array
+    {
+        $sentiment = self::getSentimentFromRating($rating);
+        $elements = $this->include_elements ?? self::defaultIncludeElements();
+
+        return $elements[$sentiment] ?? $elements['neutral'] ?? self::defaultIncludeElements()['neutral'];
+    }
+
+    /**
      * Build the AI system prompt from the profile settings.
      *
      * @param int $rating The review rating (1-5)
@@ -160,23 +212,25 @@ class LocationResponseProfile extends Model
         $prompt .= "Ton : {$tone->promptInstructions()}\n";
         $prompt .= "Longueur : Entre {$wordRange['min']} et {$wordRange['max']} mots.\n";
 
-        // Include options
+        // Include options (based on sentiment)
+        $elements = $this->getIncludeElementsForRating($rating);
+
         $prompt .= "\n## Éléments à inclure\n";
-        if ($this->include_customer_name) {
+        if ($elements['customer_name'] ?? false) {
             $prompt .= "- Utilise le prénom du client si disponible.\n";
         }
-        if ($this->include_business_name) {
+        if ($elements['business_name'] ?? false) {
             $prompt .= "- Mentionne le nom de l'établissement.\n";
         }
-        if ($this->include_emojis) {
+        if ($elements['emojis'] ?? false) {
             $prompt .= "- Utilise des emojis pertinents avec modération.\n";
         } else {
             $prompt .= "- N'utilise PAS d'emojis.\n";
         }
-        if ($this->include_invitation) {
+        if ($elements['invitation'] ?? false) {
             $prompt .= "- Termine par une invitation à revenir.\n";
         }
-        if ($this->include_signature && $this->signature) {
+        if (($elements['signature'] ?? false) && $this->signature) {
             $prompt .= "- Signe la réponse avec : {$this->signature}\n";
         }
 
@@ -231,11 +285,7 @@ class LocationResponseProfile extends Model
             'tone' => ResponseTone::PROFESSIONAL->value,
             'default_length' => ResponseLength::MEDIUM->value,
             'negative_strategy' => NegativeStrategy::EMPATHETIC->value,
-            'include_customer_name' => true,
-            'include_business_name' => true,
-            'include_emojis' => false,
-            'include_invitation' => true,
-            'include_signature' => true,
+            'include_elements' => self::defaultIncludeElements(),
             'highlights' => null,
             'avoid_topics' => null,
             'additional_context' => null,

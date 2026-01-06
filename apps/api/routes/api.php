@@ -44,11 +44,15 @@ Route::prefix('auth')->group(function () {
         Route::post('/login', [AuthController::class, 'login']);
     });
 
+    // Magic token validation (public, one-time use)
+    Route::get('/magic-token/{token}', [AuthController::class, 'validateMagicToken']);
+
     // Protected routes
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::post('/logout-all', [AuthController::class, 'revokeAllTokens']);
         Route::get('/user', [AuthController::class, 'user']);
+        Route::post('/magic-token', [AuthController::class, 'createMagicToken']);
     });
 });
 
@@ -95,6 +99,7 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
     Route::prefix('user')->group(function () {
         Route::get('/quota', [UserController::class, 'quota']);
         Route::get('/usage', [UserController::class, 'usage']);
+        Route::get('/response-style-status', [UserController::class, 'responseStyleStatus']);
         Route::patch('/settings', [UserController::class, 'updateSettings']);
         Route::delete('/', [UserController::class, 'destroy']);
     });

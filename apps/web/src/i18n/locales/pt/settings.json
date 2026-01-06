@@ -62,6 +62,23 @@
       "loadProfile": "Erro ao carregar perfil",
       "save": "Erro ao salvar",
       "reset": "Erro ao redefinir"
+    },
+    "includeElements": {
+      "title": "Elementos a incluir por tipo de avaliação",
+      "description": "Personalize o conteúdo das suas respostas com base no sentimento da avaliação.",
+      "element": "Elemento",
+      "customerName": "Nome do cliente",
+      "businessName": "Nome do estabelecimento",
+      "emojis": "Emojis",
+      "invitation": "Convite para voltar",
+      "signature": "Assinatura",
+      "tip": "Dica: Evite emojis e convites para voltar em avaliações negativas.",
+      "optional": "Esta etapa é opcional. Você pode pular para a próxima."
+    },
+    "sentiment": {
+      "negative": "Negativo",
+      "neutral": "Neutro",
+      "positive": "Positivo"
     }
   },
   "language": {

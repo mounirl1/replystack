@@ -62,6 +62,23 @@
       "loadProfile": "Error al cargar el perfil",
       "save": "Error al guardar",
       "reset": "Error al reiniciar"
+    },
+    "includeElements": {
+      "title": "Elementos a incluir según el tipo de reseña",
+      "description": "Personaliza el contenido de tus respuestas según el sentimiento de la reseña.",
+      "element": "Elemento",
+      "customerName": "Nombre del cliente",
+      "businessName": "Nombre del negocio",
+      "emojis": "Emojis",
+      "invitation": "Invitación a volver",
+      "signature": "Firma",
+      "tip": "Consejo: Evita emojis e invitaciones a volver para reseñas negativas.",
+      "optional": "Este paso es opcional. Puedes pasar al siguiente."
+    },
+    "sentiment": {
+      "negative": "Negativo",
+      "neutral": "Neutro",
+      "positive": "Positivo"
     }
   },
   "language": {

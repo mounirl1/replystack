@@ -68,5 +68,36 @@
     "pro": "Pro",
     "business": "Business",
     "enterprise": "Enterprise"
+  },
+  "auth": {
+    "magic": {
+      "validating": "Authenticating...",
+      "noToken": "No authentication token provided.",
+      "invalidToken": "This link has expired or is invalid.",
+      "errorTitle": "Authentication failed",
+      "goToLogin": "Go to login"
+    }
+  },
+  "supportedPlatforms": {
+    "title": "Supported Platforms",
+    "description": "ReplyStack works on any review platform. Our browser extension detects review pages and lets you generate AI replies instantly.",
+    "howItWorks": {
+      "title": "How it works",
+      "description": "Install our browser extension and navigate to any review platform. The AI Reply button will appear automatically.",
+      "step1": "Install extension",
+      "step2": "Go to reviews",
+      "step3": "Click AI Reply"
+    },
+    "categories": {
+      "popular": "Popular Platforms",
+      "hospitality": "Hospitality & Travel",
+      "saas": "SaaS & B2B",
+      "other": "Local & Food"
+    },
+    "requestPlatform": {
+      "title": "Don't see your platform?",
+      "description": "ReplyStack works on any website with reviews. If you need specific support, let us know!",
+      "button": "Request a platform"
+    }
   }
 }

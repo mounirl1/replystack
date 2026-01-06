@@ -68,5 +68,36 @@
     "pro": "Pro",
     "business": "Business",
     "enterprise": "Enterprise"
+  },
+  "auth": {
+    "magic": {
+      "validating": "Autenticando...",
+      "noToken": "Nenhum token de autenticação fornecido.",
+      "invalidToken": "Este link expirou ou é inválido.",
+      "errorTitle": "Autenticação falhou",
+      "goToLogin": "Ir para login"
+    }
+  },
+  "supportedPlatforms": {
+    "title": "Plataformas suportadas",
+    "description": "ReplyStack funciona em qualquer plataforma de avaliações. Nossa extensão de navegador detecta páginas de avaliações e permite gerar respostas IA instantaneamente.",
+    "howItWorks": {
+      "title": "Como funciona",
+      "description": "Instale nossa extensão de navegador e navegue para qualquer plataforma de avaliações. O botão Resposta IA aparecerá automaticamente.",
+      "step1": "Instalar extensão",
+      "step2": "Ir para avaliações",
+      "step3": "Clicar em Resposta IA"
+    },
+    "categories": {
+      "popular": "Plataformas populares",
+      "hospitality": "Hotelaria e Viagens",
+      "saas": "SaaS e B2B",
+      "other": "Local e Restauração"
+    },
+    "requestPlatform": {
+      "title": "Não vê sua plataforma?",
+      "description": "ReplyStack funciona em qualquer site com avaliações. Se precisar de suporte específico, nos avise!",
+      "button": "Solicitar uma plataforma"
+    }
   }
 }

@@ -142,14 +142,8 @@ export function OnboardingModal({
       case 4:
         return (
           <IncludeElementsStep
-            values={{
-              include_customer_name: formData.include_customer_name,
-              include_business_name: formData.include_business_name,
-              include_emojis: formData.include_emojis,
-              include_invitation: formData.include_invitation,
-              include_signature: formData.include_signature,
-            }}
-            onChange={(key, value) => setFormData({ ...formData, [key]: value })}
+            value={formData.include_elements}
+            onChange={(value) => setFormData({ ...formData, include_elements: value })}
           />
         );
       case 5:

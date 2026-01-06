@@ -62,6 +62,23 @@
       "loadProfile": "Errore durante il caricamento del profilo",
       "save": "Errore durante il salvataggio",
       "reset": "Errore durante il reset"
+    },
+    "includeElements": {
+      "title": "Elementi da includere per tipo di recensione",
+      "description": "Personalizza il contenuto delle tue risposte in base al sentimento della recensione.",
+      "element": "Elemento",
+      "customerName": "Nome del cliente",
+      "businessName": "Nome dell'attività",
+      "emojis": "Emoji",
+      "invitation": "Invito a tornare",
+      "signature": "Firma",
+      "tip": "Consiglio: Evita emoji e inviti a tornare per le recensioni negative.",
+      "optional": "Questo passaggio è opzionale. Puoi passare al successivo."
+    },
+    "sentiment": {
+      "negative": "Negativo",
+      "neutral": "Neutro",
+      "positive": "Positivo"
     }
   },
   "language": {

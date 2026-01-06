@@ -62,6 +62,23 @@
       "loadProfile": "Error loading profile",
       "save": "Error saving",
       "reset": "Error resetting"
+    },
+    "includeElements": {
+      "title": "Elements to include by review type",
+      "description": "Customize the content of your responses based on review sentiment.",
+      "element": "Element",
+      "customerName": "Customer name",
+      "businessName": "Business name",
+      "emojis": "Emojis",
+      "invitation": "Invitation to return",
+      "signature": "Signature",
+      "tip": "Tip: Avoid emojis and return invitations for negative reviews.",
+      "optional": "This step is optional. You can skip to the next step."
+    },
+    "sentiment": {
+      "negative": "Negative",
+      "neutral": "Neutral",
+      "positive": "Positive"
     }
   },
   "language": {

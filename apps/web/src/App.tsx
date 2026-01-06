@@ -7,6 +7,7 @@ import { Landing } from '@/pages/Landing';
 import { Pricing } from '@/pages/Pricing';
 import { Login } from '@/pages/auth/Login';
 import { Register } from '@/pages/auth/Register';
+import { MagicAuth } from '@/pages/auth/MagicAuth';
 import { Dashboard } from '@/pages/dashboard/Dashboard';
 import Reviews from '@/pages/dashboard/Reviews';
 import { History } from '@/pages/dashboard/History';
@@ -14,6 +15,7 @@ import { Settings } from '@/pages/dashboard/Settings';
 import { ResponseStylePage } from '@/pages/dashboard/settings/ResponseStylePage';
 import { PlatformsPage } from '@/pages/dashboard/settings/PlatformsPage';
 import { LanguagePage } from '@/pages/dashboard/settings/LanguagePage';
+import { SupportedPlatforms } from '@/pages/dashboard/SupportedPlatforms';
 
 function App() {
   return (
@@ -32,11 +34,15 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Route>
 
+        {/* Magic auth (no layout needed) */}
+        <Route path="/auth/magic" element={<MagicAuth />} />
+
         {/* Protected dashboard routes with new layout */}
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/history" element={<History />} />
+          <Route path="/platforms" element={<SupportedPlatforms />} />
 
           {/* Settings routes with nested layout */}
           <Route path="/settings" element={<SettingsLayout />}>

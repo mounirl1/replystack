@@ -19,8 +19,41 @@ const resources = {
         logout: 'Logout',
         repliesRemaining: 'Replies remaining',
         resetsMonthly: 'Resets monthly',
-        tip: 'Navigate to Google Business, TripAdvisor, or other review platforms to generate AI replies.',
+        goToReviews: 'Go to your reviews',
+        more: 'more',
+        andMore: 'And many more platforms...',
         upgradeUnlimited: 'Upgrade for unlimited replies →',
+        tabs: {
+          dashboard: 'Dashboard',
+          reply: 'Reply',
+        },
+        reply: {
+          pasteReview: 'Paste the review',
+          pasteReviewPlaceholder: 'Paste the customer review here...',
+          rating: 'Review rating',
+          length: 'Response length',
+          short: 'Short',
+          medium: 'Medium',
+          detailed: 'Detailed',
+          customInstructions: 'Custom instructions (optional)',
+          customInstructionsPlaceholder: 'Additional instructions...',
+          generate: 'Generate reply',
+          generating: 'Generating...',
+          generatedReply: 'Generated reply',
+          copy: 'Copy',
+          copied: '✓ Copied',
+          regenerate: 'Regenerate',
+          errorEmpty: 'Please paste a review first',
+        },
+        style: {
+          title: 'Personalize your replies',
+          description: 'Set the tone and style of your AI responses',
+          configure: 'Configure',
+          modify: 'Modify response style',
+        },
+        footer: {
+          upgrade: 'Go unlimited',
+        },
       },
       // Content scripts modal
       modal: {
@@ -48,6 +81,9 @@ const resources = {
         loginFailed: 'Login failed',
         noResponse: 'No response from extension',
         generateFailed: 'Failed to generate reply',
+        invalidCredentials: 'Invalid email or password',
+        tooManyAttempts: 'Too many attempts. Please try again later.',
+        networkError: 'Network error. Please check your connection.',
       },
     },
   },
@@ -67,8 +103,41 @@ const resources = {
         logout: 'Déconnexion',
         repliesRemaining: 'Réponses restantes',
         resetsMonthly: 'Réinitialisation mensuelle',
-        tip: 'Naviguez vers Google Business, TripAdvisor ou d\'autres plateformes d\'avis pour générer des réponses IA.',
+        goToReviews: 'Accéder à vos avis',
+        more: 'plus',
+        andMore: 'Et bien d\'autres plateformes...',
         upgradeUnlimited: 'Passez au illimité →',
+        tabs: {
+          dashboard: 'Dashboard',
+          reply: 'Répondre',
+        },
+        reply: {
+          pasteReview: 'Coller l\'avis',
+          pasteReviewPlaceholder: 'Collez l\'avis client ici...',
+          rating: 'Note de l\'avis',
+          length: 'Longueur de la réponse',
+          short: 'Courte',
+          medium: 'Moyenne',
+          detailed: 'Longue',
+          customInstructions: 'Instructions personnalisées (optionnel)',
+          customInstructionsPlaceholder: 'Instructions supplémentaires...',
+          generate: 'Générer la réponse',
+          generating: 'Génération...',
+          generatedReply: 'Réponse générée',
+          copy: 'Copier',
+          copied: '✓ Copié',
+          regenerate: 'Régénérer',
+          errorEmpty: 'Veuillez d\'abord coller un avis',
+        },
+        style: {
+          title: 'Personnalisez vos réponses',
+          description: 'Définissez le ton et le style de vos réponses IA',
+          configure: 'Configurer',
+          modify: 'Modifier le style de réponse',
+        },
+        footer: {
+          upgrade: 'Passer illimité',
+        },
       },
       modal: {
         title: 'Générer une réponse IA',
@@ -94,6 +163,9 @@ const resources = {
         loginFailed: 'Échec de la connexion',
         noResponse: 'Pas de réponse de l\'extension',
         generateFailed: 'Impossible de générer la réponse',
+        invalidCredentials: 'Email ou mot de passe incorrect',
+        tooManyAttempts: 'Trop de tentatives. Veuillez réessayer plus tard.',
+        networkError: 'Erreur réseau. Vérifiez votre connexion.',
       },
     },
   },
@@ -113,8 +185,41 @@ const resources = {
         logout: 'Cerrar sesión',
         repliesRemaining: 'Respuestas restantes',
         resetsMonthly: 'Se reinicia mensualmente',
-        tip: 'Navega a Google Business, TripAdvisor u otras plataformas de reseñas para generar respuestas con IA.',
+        goToReviews: 'Ir a tus reseñas',
+        more: 'más',
+        andMore: 'Y muchas más plataformas...',
         upgradeUnlimited: 'Actualiza para respuestas ilimitadas →',
+        tabs: {
+          dashboard: 'Panel',
+          reply: 'Responder',
+        },
+        reply: {
+          pasteReview: 'Pegar la reseña',
+          pasteReviewPlaceholder: 'Pega la reseña del cliente aquí...',
+          rating: 'Calificación de la reseña',
+          length: 'Longitud de la respuesta',
+          short: 'Corta',
+          medium: 'Media',
+          detailed: 'Detallada',
+          customInstructions: 'Instrucciones personalizadas (opcional)',
+          customInstructionsPlaceholder: 'Instrucciones adicionales...',
+          generate: 'Generar respuesta',
+          generating: 'Generando...',
+          generatedReply: 'Respuesta generada',
+          copy: 'Copiar',
+          copied: '✓ Copiado',
+          regenerate: 'Regenerar',
+          errorEmpty: 'Por favor, pega una reseña primero',
+        },
+        style: {
+          title: 'Personaliza tus respuestas',
+          description: 'Define el tono y estilo de tus respuestas IA',
+          configure: 'Configurar',
+          modify: 'Modificar estilo de respuesta',
+        },
+        footer: {
+          upgrade: 'Pasar a ilimitado',
+        },
       },
       modal: {
         title: 'Generar respuesta IA',
@@ -140,6 +245,9 @@ const resources = {
         loginFailed: 'Error de inicio de sesión',
         noResponse: 'Sin respuesta de la extensión',
         generateFailed: 'Error al generar respuesta',
+        invalidCredentials: 'Email o contraseña incorrectos',
+        tooManyAttempts: 'Demasiados intentos. Inténtelo más tarde.',
+        networkError: 'Error de red. Verifique su conexión.',
       },
     },
   },
@@ -159,8 +267,41 @@ const resources = {
         logout: 'Esci',
         repliesRemaining: 'Risposte rimanenti',
         resetsMonthly: 'Si resetta mensilmente',
-        tip: 'Naviga su Google Business, TripAdvisor o altre piattaforme di recensioni per generare risposte IA.',
+        goToReviews: 'Vai alle tue recensioni',
+        more: 'altro',
+        andMore: 'E molte altre piattaforme...',
         upgradeUnlimited: 'Aggiorna per risposte illimitate →',
+        tabs: {
+          dashboard: 'Dashboard',
+          reply: 'Rispondi',
+        },
+        reply: {
+          pasteReview: 'Incolla la recensione',
+          pasteReviewPlaceholder: 'Incolla la recensione del cliente qui...',
+          rating: 'Valutazione della recensione',
+          length: 'Lunghezza della risposta',
+          short: 'Breve',
+          medium: 'Media',
+          detailed: 'Dettagliata',
+          customInstructions: 'Istruzioni personalizzate (opzionale)',
+          customInstructionsPlaceholder: 'Istruzioni aggiuntive...',
+          generate: 'Genera risposta',
+          generating: 'Generazione...',
+          generatedReply: 'Risposta generata',
+          copy: 'Copia',
+          copied: '✓ Copiato',
+          regenerate: 'Rigenera',
+          errorEmpty: 'Per favore, incolla prima una recensione',
+        },
+        style: {
+          title: 'Personalizza le tue risposte',
+          description: 'Definisci il tono e lo stile delle tue risposte IA',
+          configure: 'Configura',
+          modify: 'Modifica stile risposta',
+        },
+        footer: {
+          upgrade: 'Passa a illimitato',
+        },
       },
       modal: {
         title: 'Genera risposta IA',
@@ -186,6 +327,9 @@ const resources = {
         loginFailed: 'Accesso fallito',
         noResponse: "Nessuna risposta dall'estensione",
         generateFailed: 'Impossibile generare la risposta',
+        invalidCredentials: 'Email o password non validi',
+        tooManyAttempts: 'Troppi tentativi. Riprova più tardi.',
+        networkError: 'Errore di rete. Verifica la connessione.',
       },
     },
   },
@@ -205,8 +349,41 @@ const resources = {
         logout: 'Sair',
         repliesRemaining: 'Respostas restantes',
         resetsMonthly: 'Reseta mensalmente',
-        tip: 'Navegue até o Google Business, TripAdvisor ou outras plataformas de avaliações para gerar respostas com IA.',
+        goToReviews: 'Ir para suas avaliações',
+        more: 'mais',
+        andMore: 'E muitas outras plataformas...',
         upgradeUnlimited: 'Atualize para respostas ilimitadas →',
+        tabs: {
+          dashboard: 'Painel',
+          reply: 'Responder',
+        },
+        reply: {
+          pasteReview: 'Colar a avaliação',
+          pasteReviewPlaceholder: 'Cole a avaliação do cliente aqui...',
+          rating: 'Nota da avaliação',
+          length: 'Tamanho da resposta',
+          short: 'Curta',
+          medium: 'Média',
+          detailed: 'Detalhada',
+          customInstructions: 'Instruções personalizadas (opcional)',
+          customInstructionsPlaceholder: 'Instruções adicionais...',
+          generate: 'Gerar resposta',
+          generating: 'Gerando...',
+          generatedReply: 'Resposta gerada',
+          copy: 'Copiar',
+          copied: '✓ Copiado',
+          regenerate: 'Regenerar',
+          errorEmpty: 'Por favor, cole uma avaliação primeiro',
+        },
+        style: {
+          title: 'Personalize suas respostas',
+          description: 'Defina o tom e estilo das suas respostas IA',
+          configure: 'Configurar',
+          modify: 'Modificar estilo de resposta',
+        },
+        footer: {
+          upgrade: 'Passar para ilimitado',
+        },
       },
       modal: {
         title: 'Gerar resposta IA',
@@ -232,9 +409,34 @@ const resources = {
         loginFailed: 'Falha no login',
         noResponse: 'Sem resposta da extensão',
         generateFailed: 'Falha ao gerar resposta',
+        invalidCredentials: 'Email ou senha inválidos',
+        tooManyAttempts: 'Muitas tentativas. Tente novamente mais tarde.',
+        networkError: 'Erro de rede. Verifique sua conexão.',
       },
     },
   },
+};
+
+// Map API error messages to translation keys
+const errorMap: Record<string, string> = {
+  'These credentials do not match our records.': 'errors.invalidCredentials',
+  'Too Many Attempts.': 'errors.tooManyAttempts',
+  'The provided credentials are incorrect.': 'errors.invalidCredentials',
+};
+
+/**
+ * Translate an API error message to the current language.
+ */
+export const translateError = (message: string): string => {
+  const key = errorMap[message];
+  if (key) {
+    return i18n.t(key);
+  }
+  // Check if it's a network error
+  if (message.toLowerCase().includes('network') || message.toLowerCase().includes('fetch')) {
+    return i18n.t('errors.networkError');
+  }
+  return message;
 };
 
 // Initialize i18next

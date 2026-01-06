@@ -82,6 +82,38 @@ class UserController extends Controller
     }
 
     /**
+     * Get the response style status for the user's first location.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function responseStyleStatus(Request $request): JsonResponse
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        // Get first location (own or via organization)
+        $location = $user->locations()->first()
+            ?? $user->organization?->locations()->first();
+
+        if (!$location) {
+            return response()->json([
+                'hasProfile' => false,
+                'onboardingCompleted' => false,
+                'locationId' => null,
+            ]);
+        }
+
+        $profile = $location->responseProfile;
+
+        return response()->json([
+            'hasProfile' => $profile !== null,
+            'onboardingCompleted' => $profile?->onboarding_completed ?? false,
+            'locationId' => $location->id,
+        ]);
+    }
+
+    /**
      * Get user's usage history/statistics.
      *
      * @param Request $request

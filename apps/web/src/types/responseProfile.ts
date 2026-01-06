@@ -36,6 +36,22 @@ export type NegativeStrategy =
   | 'factual'
   | 'reconquest';
 
+export type SentimentType = 'negative' | 'neutral' | 'positive';
+
+export interface IncludeElements {
+  customer_name: boolean;
+  business_name: boolean;
+  emojis: boolean;
+  invitation: boolean;
+  signature: boolean;
+}
+
+export interface IncludeElementsBySentiment {
+  negative: IncludeElements;
+  neutral: IncludeElements;
+  positive: IncludeElements;
+}
+
 export interface SectorOption {
   value: BusinessSector;
   label: string;
@@ -81,11 +97,7 @@ export interface ResponseProfile {
   tone: ResponseTone;
   default_length: ResponseLength;
   negative_strategy: NegativeStrategy;
-  include_customer_name: boolean;
-  include_business_name: boolean;
-  include_emojis: boolean;
-  include_invitation: boolean;
-  include_signature: boolean;
+  include_elements: IncludeElementsBySentiment;
   highlights: string | null;
   avoid_topics: string | null;
   additional_context: string | null;
@@ -101,16 +113,36 @@ export interface ResponseProfileFormData {
   tone: ResponseTone;
   default_length: ResponseLength;
   negative_strategy: NegativeStrategy;
-  include_customer_name: boolean;
-  include_business_name: boolean;
-  include_emojis: boolean;
-  include_invitation: boolean;
-  include_signature: boolean;
+  include_elements: IncludeElementsBySentiment;
   highlights: string;
   avoid_topics: string;
   additional_context: string;
   onboarding_completed: boolean;
 }
+
+export const DEFAULT_INCLUDE_ELEMENTS: IncludeElementsBySentiment = {
+  negative: {
+    customer_name: true,
+    business_name: true,
+    emojis: false,
+    invitation: false,
+    signature: true,
+  },
+  neutral: {
+    customer_name: true,
+    business_name: true,
+    emojis: false,
+    invitation: true,
+    signature: true,
+  },
+  positive: {
+    customer_name: true,
+    business_name: true,
+    emojis: true,
+    invitation: true,
+    signature: true,
+  },
+};
 
 export const DEFAULT_PROFILE: ResponseProfileFormData = {
   business_sector: null,
@@ -119,11 +151,7 @@ export const DEFAULT_PROFILE: ResponseProfileFormData = {
   tone: 'professional',
   default_length: 'medium',
   negative_strategy: 'empathetic',
-  include_customer_name: true,
-  include_business_name: true,
-  include_emojis: false,
-  include_invitation: true,
-  include_signature: true,
+  include_elements: DEFAULT_INCLUDE_ELEMENTS,
   highlights: '',
   avoid_topics: '',
   additional_context: '',

@@ -1,18 +1,10 @@
 import { useState } from 'react';
-import {
-  Building2,
-  User,
-  Smile,
-  ArrowRight,
-  PenLine,
-  Sparkles,
-  RotateCcw,
-  Save,
-} from 'lucide-react';
+import { Sparkles, RotateCcw, Save } from 'lucide-react';
 import { Card, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea, Select } from '@/components/ui/Input';
 import { Badge } from '@/components/ui/Badge';
+import { IncludeElementsTable } from './IncludeElementsTable';
 import type {
   ResponseProfileFormData,
   ResponseProfileOptions,
@@ -154,79 +146,13 @@ export function ResponseProfileForm({
       <Card>
         <CardHeader
           title="Éléments à inclure"
-          description="Personnalisez le contenu de vos réponses"
+          description="Personnalisez le contenu de vos réponses selon le type d'avis"
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            {
-              key: 'include_customer_name',
-              label: 'Prénom du client',
-              icon: User,
-            },
-            {
-              key: 'include_business_name',
-              label: 'Nom établissement',
-              icon: Building2,
-            },
-            {
-              key: 'include_emojis',
-              label: 'Emojis',
-              icon: Smile,
-            },
-            {
-              key: 'include_invitation',
-              label: 'Invitation à revenir',
-              icon: ArrowRight,
-            },
-            {
-              key: 'include_signature',
-              label: 'Signature',
-              icon: PenLine,
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            const isChecked = data[item.key as keyof typeof data] as boolean;
-
-            return (
-              <button
-                key={item.key}
-                type="button"
-                onClick={() => onChange({ [item.key]: !isChecked })}
-                className={`
-                  flex items-center gap-3 p-3 rounded-xl border-2 transition-all duration-150
-                  ${isChecked
-                    ? 'border-primary-500 bg-primary-500/10'
-                    : 'border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface hover:border-primary-500/50'
-                  }
-                `}
-              >
-                <div
-                  className={`
-                    w-8 h-8 rounded-lg flex items-center justify-center
-                    ${isChecked
-                      ? 'bg-primary-500 text-white'
-                      : 'bg-light-hover dark:bg-dark-hover text-text-tertiary'
-                    }
-                  `}
-                >
-                  <Icon size={16} />
-                </div>
-                <span
-                  className={`
-                    text-sm font-medium
-                    ${isChecked
-                      ? 'text-primary-500'
-                      : 'text-text-dark-primary dark:text-text-primary'
-                    }
-                  `}
-                >
-                  {item.label}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <IncludeElementsTable
+          value={data.include_elements}
+          onChange={(include_elements) => onChange({ include_elements })}
+        />
       </Card>
 
       {/* Advanced Settings */}

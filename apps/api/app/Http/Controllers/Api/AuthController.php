@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Location;
+use App\Models\MagicToken;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -147,6 +148,66 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => __('api.auth.all_devices_logged_out'),
+        ]);
+    }
+
+    /**
+     * Create a magic token for cross-platform authentication.
+     *
+     * Generates a one-time-use token that can be used to authenticate
+     * on the web app without re-entering credentials.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function createMagicToken(Request $request): JsonResponse
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        $redirectUrl = $request->input('redirect_url');
+
+        $magicToken = MagicToken::generateFor($user, $redirectUrl);
+
+        return response()->json([
+            'token' => $magicToken->token,
+            'expires_at' => $magicToken->expires_at->toIso8601String(),
+        ]);
+    }
+
+    /**
+     * Validate a magic token and authenticate the user.
+     *
+     * Consumes the token (one-time use) and returns user data with a new API token.
+     *
+     * @param string $token
+     * @return JsonResponse
+     */
+    public function validateMagicToken(string $token): JsonResponse
+    {
+        $magicToken = MagicToken::findValid($token);
+
+        if (!$magicToken) {
+            return response()->json([
+                'message' => __('api.auth.invalid_magic_token'),
+            ], 401);
+        }
+
+        // Mark token as used
+        $magicToken->markAsUsed();
+
+        // Get the user and create a new API token
+        $user = $magicToken->user;
+        $apiToken = $user->createToken('web-magic-token')->plainTextToken;
+
+        // Load organization relationship
+        $user->load('organization');
+
+        return response()->json([
+            'message' => __('api.auth.magic_token_valid'),
+            'user' => new UserResource($user),
+            'token' => $apiToken,
+            'redirect_url' => $magicToken->redirect_url,
         ]);
     }
 }
