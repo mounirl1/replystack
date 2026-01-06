@@ -12,7 +12,6 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
-  Sparkles,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -103,9 +102,7 @@ export function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
       {/* Logo */}
       <div className="flex items-center h-16 px-4 border-b border-light-border dark:border-dark-border">
         <Link to="/dashboard" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center flex-shrink-0">
-            <Sparkles size={18} className="text-white" />
-          </div>
+          <img src="/icon.png" alt="ReplyStack" className="w-8 h-8 flex-shrink-0" />
           {!collapsed && (
             <span className="text-lg font-semibold text-text-dark-primary dark:text-text-primary">
               ReplyStack

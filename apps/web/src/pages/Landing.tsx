@@ -440,9 +440,7 @@ export function Landing() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-                  <Sparkles size={18} />
-                </div>
+                <img src="/icon.png" alt="ReplyStack" className="w-8 h-8" />
                 <span className="text-xl font-bold">ReplyStack</span>
               </div>
               <p className="text-text-secondary text-sm">
