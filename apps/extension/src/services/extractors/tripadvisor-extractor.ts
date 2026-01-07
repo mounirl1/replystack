@@ -92,7 +92,7 @@ export class TripAdvisorExtractor extends BaseExtractor {
 
       let authorName: string;
       let content: string;
-      let rating: number;
+      let rating = 5; // Default rating if not found
       let dateStr: string;
 
       if (isNewInterface) {
