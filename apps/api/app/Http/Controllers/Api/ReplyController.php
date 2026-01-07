@@ -107,8 +107,15 @@ class ReplyController extends Controller
             // Generate the reply
             $result = $this->replyGenerator->generate($reviewData, $options);
 
-            // Decrement user quota
-            $user->decrementQuota();
+            // Decrement user quota (with Redis lock to prevent race conditions)
+            if (!$user->decrementQuota()) {
+                // This should be rare - quota was exhausted between middleware check and now
+                // or Redis lock failed. The reply was already generated, so we log it.
+                \Log::warning('Quota decrement failed after generation', [
+                    'user_id' => $user->id,
+                    'plan' => $user->plan,
+                ]);
+            }
 
             // Save the response to database
             $response = Response::create([

@@ -123,6 +123,11 @@ class ReplyGeneratorService
 
         $languageInstruction = $this->getLanguageInstruction($language);
 
+        // Sanitize user inputs to prevent prompt injection
+        $sanitizedContent = $this->sanitizeInput($review['content']);
+        $sanitizedAuthor = $this->sanitizeInput($review['author']);
+        $sanitizedPlatform = $this->sanitizeInput($review['platform']);
+
         return <<<PROMPT
 {$systemPrompt}
 
@@ -130,10 +135,10 @@ class ReplyGeneratorService
 {$languageInstruction}
 
 ## Avis à traiter
-Plateforme : {$review['platform']}
+Plateforme : {$sanitizedPlatform}
 Note : {$review['rating']}/5
-Auteur : {$review['author']}
-Avis : {$review['content']}
+Auteur : {$sanitizedAuthor}
+Avis : {$sanitizedContent}
 
 Génère maintenant la réponse :
 PROMPT;
@@ -150,16 +155,21 @@ PROMPT;
     ): string {
         $toneInstructions = $this->getToneInstructions($tone);
         $languageInstruction = $this->getLanguageInstruction($language);
-        $locationContext = $location ? "Etablissement : {$location->name}\n" : '';
+        $locationContext = $location ? "Etablissement : " . $this->sanitizeInput($location->name) . "\n" : '';
         $ratingContext = $this->getRatingContext($review['rating']);
+
+        // Sanitize user inputs to prevent prompt injection
+        $sanitizedContent = $this->sanitizeInput($review['content']);
+        $sanitizedAuthor = $this->sanitizeInput($review['author']);
+        $sanitizedPlatform = $this->sanitizeInput($review['platform']);
 
         return <<<PROMPT
 Tu es un assistant specialise dans la redaction de reponses aux avis clients.
 
-{$locationContext}Plateforme : {$review['platform']}
+{$locationContext}Plateforme : {$sanitizedPlatform}
 Note : {$review['rating']}/5
-Auteur : {$review['author']}
-Avis : {$review['content']}
+Auteur : {$sanitizedAuthor}
+Avis : {$sanitizedContent}
 
 Instructions :
 - {$toneInstructions}
@@ -300,5 +310,48 @@ PROMPT;
         }
 
         return $errors;
+    }
+
+    /**
+     * Sanitize user input to prevent prompt injection attacks.
+     *
+     * Removes potentially dangerous characters and patterns that could
+     * be used to manipulate the AI prompt.
+     *
+     * @param string $text The text to sanitize
+     * @return string The sanitized text
+     */
+    private function sanitizeInput(string $text): string
+    {
+        // Strip HTML tags
+        $text = strip_tags($text);
+
+        // Limit maximum length to prevent excessively long inputs
+        $text = mb_substr($text, 0, 5000);
+
+        // Remove potential prompt injection patterns
+        // These patterns could be used to escape the user content section
+        $dangerousPatterns = [
+            '{{',           // Template markers
+            '}}',
+            '<|',           // Claude system tokens
+            '|>',
+            '```',          // Code blocks (could be used to inject instructions)
+            'PROMPT',       // Prevent breaking out of heredoc
+            'Instructions:', // Prevent adding fake instructions
+            'System:',      // Prevent fake system messages
+            'Assistant:',   // Prevent fake assistant messages
+            'Human:',       // Prevent fake human messages
+        ];
+
+        foreach ($dangerousPatterns as $pattern) {
+            $text = str_replace($pattern, '', $text);
+        }
+
+        // Normalize whitespace (collapse multiple spaces/newlines)
+        $text = preg_replace('/\s+/', ' ', $text);
+        $text = trim($text);
+
+        return $text;
     }
 }

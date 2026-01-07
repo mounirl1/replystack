@@ -87,6 +87,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Horizon Admins
+    |--------------------------------------------------------------------------
+    |
+    | List of email addresses that are allowed to access Horizon dashboard.
+    | Comma-separated list in HORIZON_ADMINS environment variable.
+    | Example: HORIZON_ADMINS=admin@reply-stack.app,support@reply-stack.app
+    |
+    */
+
+    'admins' => array_filter(explode(',', env('HORIZON_ADMINS', ''))),
+
+    /*
+    |--------------------------------------------------------------------------
     | Queue Wait Time Thresholds
     |--------------------------------------------------------------------------
     |

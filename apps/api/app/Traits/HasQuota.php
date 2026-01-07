@@ -84,17 +84,42 @@ trait HasQuota
     /**
      * Decrement the user's quota after generating a reply.
      *
-     * @return void
+     * Uses Redis lock to prevent race conditions when multiple
+     * requests arrive simultaneously.
+     *
+     * @return bool True if quota was decremented, false if no quota remaining or lock failed
      */
-    public function decrementQuota(): void
+    public function decrementQuota(): bool
     {
         // Unlimited plans don't need quota tracking
         if (in_array($this->plan, self::$unlimitedPlans)) {
-            return;
+            return true;
         }
 
-        // Free and Starter plans use monthly quota
-        $this->increment('quota_used_month');
+        // Use Redis lock to prevent race conditions
+        $lock = \Illuminate\Support\Facades\Redis::lock("quota:user:{$this->id}", 5);
+
+        try {
+            if ($lock->get()) {
+                // Refresh model from DB to get latest quota values
+                $this->refresh();
+
+                // Double-check quota within lock
+                if (!$this->hasQuotaRemaining()) {
+                    return false;
+                }
+
+                // Free and Starter plans use monthly quota
+                $this->increment('quota_used_month');
+
+                return true;
+            }
+
+            // Failed to acquire lock
+            return false;
+        } finally {
+            optional($lock)->release();
+        }
     }
 
     /**
