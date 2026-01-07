@@ -50,8 +50,8 @@ class SyncReviewsRequest extends FormRequest
             'reviews.*.external_id' => ['required', 'string', 'max:255'],
             'reviews.*.author_name' => ['required', 'string', 'max:255'],
             'reviews.*.rating' => ['required', 'integer', 'between:1,5'],
-            'reviews.*.content' => ['required', 'string'],
-            'reviews.*.published_at' => ['required', 'date'],
+            'reviews.*.content' => ['nullable', 'string'],
+            'reviews.*.published_at' => ['nullable', 'date'],
             'reviews.*.has_response' => ['nullable', 'boolean'],
         ];
     }
@@ -74,8 +74,6 @@ class SyncReviewsRequest extends FormRequest
             'reviews.*.author_name.required' => 'Le nom de l\'auteur est requis.',
             'reviews.*.rating.required' => 'La note est requise.',
             'reviews.*.rating.between' => 'La note doit être entre 1 et 5.',
-            'reviews.*.content.required' => 'Le contenu de l\'avis est requis.',
-            'reviews.*.published_at.required' => 'La date de publication est requise.',
             'reviews.*.published_at.date' => 'La date de publication est invalide.',
         ];
     }
