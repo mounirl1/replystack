@@ -5,9 +5,7 @@ export interface User {
   email: string;
   name: string;
   plan: Plan;
-  daily_quota: number;
   monthly_quota: number;
-  quota_used_today: number;
   quota_used_month: number;
   quota_reset_at: string | null;
   organization_id: number | null;

@@ -212,7 +212,6 @@ class AuthTest extends TestCase
     {
         $user = User::factory()->create([
             'plan' => 'free',
-            'daily_quota' => 3,
         ]);
         $token = $user->createToken('api-token')->plainTextToken;
 

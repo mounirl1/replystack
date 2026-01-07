@@ -1,7 +1,9 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { t } from '../i18n';
+import { t, translateError } from '../i18n';
 import { YelpExtractor } from '../services/extractors/yelp-extractor';
 import { initializeExtraction } from '../services/extraction-handler';
+import { getLocationIdForCurrentPage } from '../utils/location-matcher';
+import { getAuthUser, hasQuotaRemaining } from '../services/auth';
 
 export const config: PlasmoCSConfig = {
   matches: ['https://biz.yelp.com/*'],
@@ -186,11 +188,14 @@ function injectStyles() {
       padding: 12px 16px;
       border: 1px solid #e5e7eb;
       border-radius: 8px;
-      resize: none;
+      resize: vertical;
       font-family: inherit;
       font-size: 14px;
+      line-height: 1.6;
       margin-bottom: 16px;
       box-sizing: border-box;
+      white-space: pre-wrap;
+      min-height: 120px;
     }
     .replystack-textarea:focus {
       outline: none;
@@ -242,6 +247,130 @@ function injectStyles() {
     .replystack-hidden {
       display: none !important;
     }
+    .replystack-auth-section {
+      margin-top: 0;
+    }
+    .replystack-auth-tabs {
+      display: flex;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+    }
+    .replystack-auth-tab {
+      flex: 1;
+      padding: 12px;
+      background: none;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6b7280;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .replystack-auth-tab:hover {
+      color: #111827;
+    }
+    .replystack-auth-tab.active {
+      color: #0ea5e9;
+      border-bottom-color: #0ea5e9;
+    }
+    .replystack-auth-form {
+      display: none;
+    }
+    .replystack-auth-form.active {
+      display: block;
+    }
+    .replystack-login-form-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .replystack-login-form-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .replystack-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    .replystack-input:focus {
+      outline: none;
+      border-color: #0ea5e9;
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+    .replystack-login-error {
+      background: #fef2f2;
+      color: #dc2626;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .replystack-signup-link {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .replystack-signup-link a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+    .replystack-signup-link a:hover {
+      text-decoration: underline;
+    }
+    .replystack-quota-exhausted {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .replystack-quota-exhausted-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+    }
+    .replystack-quota-exhausted-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .replystack-quota-exhausted-description {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .replystack-btn-upgrade {
+      width: 100%;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .replystack-btn-upgrade:hover {
+      opacity: 0.9;
+    }
   `;
   document.head.appendChild(style);
 }
@@ -261,39 +390,75 @@ function createPopupHTML(reviewData: ReviewData): string {
           <button class="replystack-popup-close" id="replystack-close">✕</button>
         </div>
         <div class="replystack-popup-body">
-          <div class="replystack-review-preview">
-            <div class="replystack-review-header">
-              <span class="replystack-review-author">${escapeHtml(reviewData.author)}</span>
-              <span class="replystack-review-stars">${stars}</span>
-              <span class="replystack-review-stars-empty">${emptyStars}</span>
+          <div id="replystack-initial-content">
+            <div class="replystack-review-preview">
+              <div class="replystack-review-header">
+                <span class="replystack-review-author">${escapeHtml(reviewData.author)}</span>
+                <span class="replystack-review-stars">${stars}</span>
+                <span class="replystack-review-stars-empty">${emptyStars}</span>
+              </div>
+              <p class="replystack-review-content">${escapeHtml(reviewData.content)}</p>
             </div>
-            <p class="replystack-review-content">${escapeHtml(reviewData.content)}</p>
+
+            <div>
+              <label class="replystack-label">${t('modal.responseLength')}</label>
+              <div class="replystack-length-grid">
+                <button class="replystack-length-btn" data-length="short">${t('modal.short')}</button>
+                <button class="replystack-length-btn active" data-length="medium">${t('modal.medium')}</button>
+                <button class="replystack-length-btn" data-length="detailed">${t('modal.detailed')}</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="replystack-label">${t('modal.customPrompt')}</label>
+              <textarea
+                id="replystack-custom-prompt"
+                class="replystack-custom-prompt"
+                placeholder="${t('modal.customPromptPlaceholder')}"
+                rows="2"
+              ></textarea>
+            </div>
+
+            <div id="replystack-generate-section">
+              <button class="replystack-btn-primary" id="replystack-generate">${t('modal.generate')}</button>
+            </div>
+
+            <div id="replystack-error" class="replystack-error replystack-hidden"></div>
           </div>
 
-          <div>
-            <label class="replystack-label">${t('modal.responseLength')}</label>
-            <div class="replystack-length-grid">
-              <button class="replystack-length-btn" data-length="short">${t('modal.short')}</button>
-              <button class="replystack-length-btn active" data-length="medium">${t('modal.medium')}</button>
-              <button class="replystack-length-btn" data-length="detailed">${t('modal.detailed')}</button>
+          <div id="replystack-login-section" class="replystack-auth-section replystack-hidden">
+            <div class="replystack-auth-tabs">
+              <button class="replystack-auth-tab active" data-tab="login">${t('popup.signIn')}</button>
+              <button class="replystack-auth-tab" data-tab="register">${t('popup.signUpFree')}</button>
+            </div>
+
+            <div id="replystack-login-form" class="replystack-auth-form active">
+              <div class="replystack-login-form-title">${t('modal.loginRequired')}</div>
+              <div class="replystack-login-form-subtitle">${t('modal.loginDescription')}</div>
+              <div id="replystack-login-error" class="replystack-login-error replystack-hidden"></div>
+              <input type="email" id="replystack-login-email" class="replystack-input" placeholder="${t('popup.emailPlaceholder')}" />
+              <input type="password" id="replystack-login-password" class="replystack-input" placeholder="${t('popup.passwordPlaceholder')}" />
+              <button class="replystack-btn-primary" id="replystack-login-btn">${t('popup.signIn')}</button>
+            </div>
+
+            <div id="replystack-register-form" class="replystack-auth-form">
+              <div class="replystack-login-form-title">${t('modal.registerTitle')}</div>
+              <div class="replystack-login-form-subtitle">${t('modal.registerDescription')}</div>
+              <div id="replystack-register-error" class="replystack-login-error replystack-hidden"></div>
+              <input type="text" id="replystack-register-name" class="replystack-input" placeholder="${t('modal.namePlaceholder')}" />
+              <input type="email" id="replystack-register-email" class="replystack-input" placeholder="${t('popup.emailPlaceholder')}" />
+              <input type="password" id="replystack-register-password" class="replystack-input" placeholder="${t('popup.passwordPlaceholder')}" />
+              <input type="password" id="replystack-register-password-confirm" class="replystack-input" placeholder="${t('modal.confirmPasswordPlaceholder')}" />
+              <button class="replystack-btn-primary" id="replystack-register-btn">${t('modal.registerButton')}</button>
             </div>
           </div>
 
-          <div>
-            <label class="replystack-label">${t('modal.customPrompt')}</label>
-            <textarea
-              id="replystack-custom-prompt"
-              class="replystack-custom-prompt"
-              placeholder="${t('modal.customPromptPlaceholder')}"
-              rows="2"
-            ></textarea>
+          <div id="replystack-quota-exhausted-section" class="replystack-quota-exhausted replystack-hidden">
+            <div class="replystack-quota-exhausted-icon">⚡</div>
+            <div class="replystack-quota-exhausted-title">${t('quotaExhausted.title')}</div>
+            <div class="replystack-quota-exhausted-description">${t('quotaExhausted.description')}</div>
+            <button class="replystack-btn-upgrade" id="replystack-upgrade-btn">${t('quotaExhausted.upgradeButton')}</button>
           </div>
-
-          <div id="replystack-generate-section">
-            <button class="replystack-btn-primary" id="replystack-generate">${t('modal.generate')}</button>
-          </div>
-
-          <div id="replystack-error" class="replystack-error replystack-hidden"></div>
 
           <div id="replystack-reply-section" class="replystack-reply-section replystack-hidden">
             <label class="replystack-label">${t('modal.generatedReply')}</label>
@@ -316,7 +481,7 @@ function escapeHtml(text: string): string {
   return div.innerHTML;
 }
 
-function showReplyPopup(reviewData: ReviewData) {
+async function showReplyPopup(reviewData: ReviewData) {
   const existingPopup = document.getElementById('replystack-popup-overlay');
   if (existingPopup) {
     existingPopup.remove();
@@ -340,6 +505,38 @@ function showReplyPopup(reviewData: ReviewData) {
   const replySection = document.getElementById('replystack-reply-section')!;
   const replyTextarea = document.getElementById('replystack-reply-text') as HTMLTextAreaElement;
   const errorDiv = document.getElementById('replystack-error')!;
+  const loginSection = document.getElementById('replystack-login-section')!;
+  const loginForm = document.getElementById('replystack-login-form')!;
+  const loginEmailInput = document.getElementById('replystack-login-email') as HTMLInputElement;
+  const loginPasswordInput = document.getElementById('replystack-login-password') as HTMLInputElement;
+  const loginBtn = document.getElementById('replystack-login-btn')!;
+  const loginErrorDiv = document.getElementById('replystack-login-error')!;
+  const registerForm = document.getElementById('replystack-register-form')!;
+  const registerNameInput = document.getElementById('replystack-register-name') as HTMLInputElement;
+  const registerEmailInput = document.getElementById('replystack-register-email') as HTMLInputElement;
+  const registerPasswordInput = document.getElementById('replystack-register-password') as HTMLInputElement;
+  const registerPasswordConfirmInput = document.getElementById('replystack-register-password-confirm') as HTMLInputElement;
+  const registerBtn = document.getElementById('replystack-register-btn')!;
+  const registerErrorDiv = document.getElementById('replystack-register-error')!;
+  const authTabs = document.querySelectorAll('.replystack-auth-tab');
+  const quotaExhaustedSection = document.getElementById('replystack-quota-exhausted-section')!;
+  const upgradeBtn = document.getElementById('replystack-upgrade-btn')!;
+  const initialContent = document.getElementById('replystack-initial-content')!;
+
+  // Check if user has quota remaining
+  const userHasQuota = await hasQuotaRemaining();
+  const user = await getAuthUser();
+
+  if (user && !userHasQuota) {
+    // User is logged in but has no quota - show quota exhausted section
+    generateSection.classList.add('replystack-hidden');
+    quotaExhaustedSection.classList.remove('replystack-hidden');
+  }
+
+  // Upgrade button handler
+  upgradeBtn.addEventListener('click', () => {
+    window.open('https://reply-stack.app/pricing', '_blank');
+  });
 
   const closePopup = () => {
     overlay.remove();
@@ -347,7 +544,10 @@ function showReplyPopup(reviewData: ReviewData) {
 
   closeBtn.addEventListener('click', closePopup);
   overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closePopup();
+    const popup = overlay.querySelector('.replystack-popup');
+    if (popup && !popup.contains(e.target as Node)) {
+      closePopup();
+    }
   });
 
   lengthButtons.forEach((btn) => {
@@ -367,8 +567,15 @@ function showReplyPopup(reviewData: ReviewData) {
 
     const specificContext = customPromptTextarea.value.trim() || undefined;
 
+    // Get location ID for this page
+    const locationId = await getLocationIdForCurrentPage();
+
     try {
-      const response = await new Promise<{ reply?: string; error?: string }>((resolve) => {
+      const response = await new Promise<{ reply?: string; error?: string }>((resolve, reject) => {
+        const timeout = setTimeout(() => {
+          reject(new Error('Request timeout. Please reload the page and try again.'));
+        }, 30000); // 30 second timeout
+
         chrome.runtime.sendMessage(
           {
             type: 'GENERATE_REPLY',
@@ -377,12 +584,18 @@ function showReplyPopup(reviewData: ReviewData) {
               review_rating: reviewData.rating,
               review_author: reviewData.author,
               platform: 'yelp',
+              location_id: locationId ?? undefined,
               length: currentLength,
               specific_context: specificContext,
               language: 'auto',
             },
           },
           (response) => {
+            clearTimeout(timeout);
+            if (chrome.runtime.lastError) {
+              reject(new Error(chrome.runtime.lastError.message || 'Extension error. Please reload the page.'));
+              return;
+            }
             resolve(response || { error: 'No response from extension' });
           }
         );
@@ -396,8 +609,17 @@ function showReplyPopup(reviewData: ReviewData) {
       generateSection.classList.add('replystack-hidden');
       replySection.classList.remove('replystack-hidden');
     } catch (err) {
-      errorDiv.textContent = err instanceof Error ? err.message : 'Failed to generate reply';
-      errorDiv.classList.remove('replystack-hidden');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to generate reply';
+
+      // Handle sign-in required error - show login form
+      if (errorMessage === 'SIGN_IN_REQUIRED') {
+        initialContent.classList.add('replystack-hidden');
+        loginSection.classList.remove('replystack-hidden');
+        loginEmailInput.focus();
+      } else {
+        errorDiv.textContent = translateError(errorMessage);
+        errorDiv.classList.remove('replystack-hidden');
+      }
     } finally {
       generateBtn.textContent = t('modal.generate');
       generateBtn.removeAttribute('disabled');
@@ -408,6 +630,158 @@ function showReplyPopup(reviewData: ReviewData) {
 
   generateBtn.addEventListener('click', handleGenerate);
   regenerateBtn.addEventListener('click', handleGenerate);
+
+  // Login form submission
+  const handleLogin = async () => {
+    const email = loginEmailInput.value.trim();
+    const password = loginPasswordInput.value;
+
+    if (!email || !password) {
+      loginErrorDiv.textContent = t('errors.invalidCredentials');
+      loginErrorDiv.classList.remove('replystack-hidden');
+      return;
+    }
+
+    loginBtn.textContent = t('popup.signingIn');
+    loginBtn.setAttribute('disabled', 'true');
+    loginErrorDiv.classList.add('replystack-hidden');
+
+    try {
+      const response = await new Promise<{ token?: string; user?: unknown; error?: string }>((resolve, reject) => {
+        chrome.runtime.sendMessage(
+          { type: 'LOGIN', payload: { email, password } },
+          (response) => {
+            if (chrome.runtime.lastError) {
+              reject(new Error(chrome.runtime.lastError.message || 'Login failed'));
+              return;
+            }
+            resolve(response || { error: 'No response' });
+          }
+        );
+      });
+
+      if (response.error) {
+        throw new Error(response.error);
+      }
+
+      // Login successful - hide login form, show initial content and trigger generation
+      loginSection.classList.add('replystack-hidden');
+      initialContent.classList.remove('replystack-hidden');
+      // Auto-generate after login
+      handleGenerate();
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Login failed';
+      loginErrorDiv.textContent = translateError(errorMessage);
+      loginErrorDiv.classList.remove('replystack-hidden');
+    } finally {
+      loginBtn.textContent = t('popup.signIn');
+      loginBtn.removeAttribute('disabled');
+    }
+  };
+
+  loginBtn.addEventListener('click', handleLogin);
+  loginPasswordInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  });
+
+  // Tab switching
+  authTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const tabName = tab.getAttribute('data-tab');
+      authTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      if (tabName === 'login') {
+        loginForm.classList.add('active');
+        registerForm.classList.remove('active');
+        loginErrorDiv.classList.add('replystack-hidden');
+      } else {
+        loginForm.classList.remove('active');
+        registerForm.classList.add('active');
+        registerErrorDiv.classList.add('replystack-hidden');
+      }
+    });
+  });
+
+  // Registration form submission
+  const handleRegister = async () => {
+    const name = registerNameInput.value.trim();
+    const email = registerEmailInput.value.trim();
+    const password = registerPasswordInput.value;
+    const passwordConfirm = registerPasswordConfirmInput.value;
+
+    // Client-side validation
+    if (!email || !password) {
+      registerErrorDiv.textContent = t('errors.invalidCredentials');
+      registerErrorDiv.classList.remove('replystack-hidden');
+      return;
+    }
+
+    if (password.length < 8) {
+      registerErrorDiv.textContent = t('errors.passwordTooWeak');
+      registerErrorDiv.classList.remove('replystack-hidden');
+      return;
+    }
+
+    if (password !== passwordConfirm) {
+      registerErrorDiv.textContent = t('errors.passwordMismatch');
+      registerErrorDiv.classList.remove('replystack-hidden');
+      return;
+    }
+
+    registerBtn.textContent = t('modal.registering');
+    registerBtn.setAttribute('disabled', 'true');
+    registerErrorDiv.classList.add('replystack-hidden');
+
+    try {
+      const response = await new Promise<{ token?: string; user?: unknown; error?: string }>((resolve, reject) => {
+        chrome.runtime.sendMessage(
+          {
+            type: 'REGISTER',
+            payload: {
+              name: name || undefined,
+              email,
+              password,
+              password_confirmation: passwordConfirm,
+            },
+          },
+          (response) => {
+            if (chrome.runtime.lastError) {
+              reject(new Error(chrome.runtime.lastError.message || 'Registration failed'));
+              return;
+            }
+            resolve(response || { error: 'No response' });
+          }
+        );
+      });
+
+      if (response.error) {
+        throw new Error(response.error);
+      }
+
+      // Registration successful - hide login section, show initial content and trigger generation
+      loginSection.classList.add('replystack-hidden');
+      initialContent.classList.remove('replystack-hidden');
+      // Auto-generate after registration
+      handleGenerate();
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Registration failed';
+      registerErrorDiv.textContent = translateError(errorMessage);
+      registerErrorDiv.classList.remove('replystack-hidden');
+    } finally {
+      registerBtn.textContent = t('modal.registerButton');
+      registerBtn.removeAttribute('disabled');
+    }
+  };
+
+  registerBtn.addEventListener('click', handleRegister);
+  registerPasswordConfirmInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleRegister();
+    }
+  });
 
   copyBtn.addEventListener('click', async () => {
     const text = replyTextarea.value;

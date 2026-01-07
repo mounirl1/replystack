@@ -98,24 +98,6 @@ trait HasQuota
     }
 
     /**
-     * Check and reset daily quota if a new day has started.
-     *
-     * @return void
-     */
-    public function checkAndResetDailyQuota(): void
-    {
-        $now = Carbon::now();
-
-        // If no reset date set, or it's a new day, reset the quota
-        if (
-            $this->quota_reset_at === null ||
-            $now->startOfDay()->gt(Carbon::parse($this->quota_reset_at)->startOfDay())
-        ) {
-            $this->resetDailyQuota();
-        }
-    }
-
-    /**
      * Check and reset monthly quota if a new month has started.
      *
      * @return void
@@ -131,19 +113,6 @@ trait HasQuota
         ) {
             $this->resetMonthlyQuota();
         }
-    }
-
-    /**
-     * Reset the daily quota counter.
-     *
-     * @return void
-     */
-    public function resetDailyQuota(): void
-    {
-        $this->update([
-            'quota_used_today' => 0,
-            'quota_reset_at' => Carbon::now(),
-        ]);
     }
 
     /**

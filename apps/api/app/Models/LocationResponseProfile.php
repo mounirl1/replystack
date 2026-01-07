@@ -47,6 +47,9 @@ class LocationResponseProfile extends Model
         'location_id',
         'business_sector',
         'business_name',
+        'city',
+        'seo_keywords',
+        'main_services',
         'signature',
         'tone',
         'default_length',
@@ -197,20 +200,54 @@ class LocationResponseProfile extends Model
 
         // Business context
         $prompt .= "## Contexte de l'établissement\n";
-        $prompt .= "Nom de l'établissement : {$this->business_name}\n";
+        $prompt .= "Nom : {$this->business_name}\n";
 
         if ($this->business_sector) {
             $sectorLabel = BusinessSector::from($this->business_sector)->label();
-            $prompt .= "Secteur d'activité : {$sectorLabel}\n";
+            $prompt .= "Secteur : {$sectorLabel}\n";
+        }
+
+        if ($this->city) {
+            $prompt .= "Localisation : {$this->city}\n";
         }
 
         if ($this->additional_context) {
-            $prompt .= "Contexte additionnel : {$this->additional_context}\n";
+            $prompt .= "Contexte : {$this->additional_context}\n";
         }
 
-        $prompt .= "\n## Style de réponse\n";
-        $prompt .= "Ton : {$tone->promptInstructions()}\n";
-        $prompt .= "Longueur : Entre {$wordRange['min']} et {$wordRange['max']} mots.\n";
+        // Strict length constraint
+        $prompt .= "\n## CONTRAINTE DE LONGUEUR (OBLIGATOIRE)\n";
+        $prompt .= "Ta réponse DOIT contenir EXACTEMENT entre {$wordRange['min']} et {$wordRange['max']} mots.\n";
+        $prompt .= "Compte les mots avant de répondre. Cette limite est STRICTE.\n";
+        $prompt .= "Une réponse trop longue ou trop courte sera rejetée.\n";
+
+        // Formatting instructions
+        $prompt .= "\n## Structure de la réponse\n";
+        $prompt .= $length->formatInstructions() . "\n";
+
+        // Tone
+        $prompt .= "\n## Ton\n";
+        $prompt .= $tone->promptInstructions() . "\n";
+
+        // SEO instructions
+        if ($this->city || $this->seo_keywords || $this->main_services) {
+            $prompt .= "\n## Optimisation SEO (intégrer naturellement)\n";
+
+            if ($this->city) {
+                $prompt .= "- Mentionne la localisation ({$this->city}) de manière naturelle si pertinent.\n";
+            }
+
+            if ($this->seo_keywords) {
+                $prompt .= "- Intègre si pertinent ces mots-clés : {$this->seo_keywords}\n";
+            }
+
+            if ($this->main_services) {
+                $prompt .= "- Mentionne les services/produits si en lien avec l'avis : {$this->main_services}\n";
+            }
+
+            $prompt .= "- Utilise le nom complet de l'établissement.\n";
+            $prompt .= "- L'intégration doit être naturelle, jamais forcée.\n";
+        }
 
         // Include options (based on sentiment)
         $elements = $this->getIncludeElementsForRating($rating);
@@ -269,6 +306,11 @@ class LocationResponseProfile extends Model
         $prompt .= "- N'utilise pas de formules génériques type \"Cher client\" ou \"Cher(e) client(e)\".\n";
         $prompt .= "- Personnalise la réponse en mentionnant des éléments spécifiques de l'avis.\n";
         $prompt .= "- Génère uniquement la réponse, sans introduction ni explication.\n";
+
+        // Final reminder for strict length
+        $prompt .= "\n## Rappel final\n";
+        $prompt .= "IMPORTANT : Respecte STRICTEMENT la limite de {$wordRange['min']}-{$wordRange['max']} mots.\n";
+        $prompt .= "La réponse doit être bien aérée selon la structure demandée.\n";
 
         return $prompt;
     }

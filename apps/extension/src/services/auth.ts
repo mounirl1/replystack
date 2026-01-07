@@ -54,11 +54,29 @@ export async function clearAuthState(): Promise<void> {
 }
 
 /**
+ * Get the current authenticated user from storage.
+ */
+export async function getAuthUser(): Promise<AuthUser | null> {
+  const { user } = await getAuthState();
+  return user;
+}
+
+/**
  * Check if the user is authenticated.
  */
 export async function isAuthenticated(): Promise<boolean> {
   const { token } = await getAuthState();
   return !!token;
+}
+
+/**
+ * Check if the user has quota remaining.
+ */
+export async function hasQuotaRemaining(): Promise<boolean> {
+  const user = await getAuthUser();
+  if (!user) return false;
+  if (user.quota_remaining === 'unlimited') return true;
+  return (user.quota_remaining ?? 0) > 0;
 }
 
 /**
@@ -115,6 +133,79 @@ export async function login(
   ]);
 
   const quotaData = quotaRes.ok ? await quotaRes.json() : { quota: { remaining: 0 } };
+  const styleData = styleRes.ok ? await styleRes.json() : { onboardingCompleted: false, locationId: null };
+
+  const user: AuthUser = {
+    id: data.user.id,
+    email: data.user.email,
+    name: data.user.name || data.user.email.split('@')[0],
+    plan: data.user.plan,
+    quota_remaining: quotaData.quota.remaining,
+    responseStyleConfigured: styleData.onboardingCompleted,
+    firstLocationId: styleData.locationId,
+  };
+
+  // Save to storage
+  await setAuthState(data.token, user);
+
+  return { token: data.token, user };
+}
+
+/**
+ * Register a new user with email and password.
+ * Returns the auth token and user on success.
+ */
+export async function register(
+  email: string,
+  password: string,
+  passwordConfirmation: string,
+  name?: string
+): Promise<{ token: string; user: AuthUser }> {
+  const apiUrl = process.env.PLASMO_PUBLIC_API_URL || 'http://localhost:8000';
+
+  const response = await fetch(`${apiUrl}/api/auth/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      name: name || undefined,
+      email,
+      password,
+      password_confirmation: passwordConfirmation,
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    // Handle validation errors
+    if (error.errors) {
+      const firstError = Object.values(error.errors)[0];
+      throw new Error(Array.isArray(firstError) ? firstError[0] : String(firstError));
+    }
+    throw new Error(error.message || 'Registration failed');
+  }
+
+  const data = await response.json();
+
+  // Fetch user quota and response style status in parallel
+  const [quotaRes, styleRes] = await Promise.all([
+    fetch(`${apiUrl}/api/user/quota`, {
+      headers: {
+        Authorization: `Bearer ${data.token}`,
+        Accept: 'application/json',
+      },
+    }),
+    fetch(`${apiUrl}/api/user/response-style-status`, {
+      headers: {
+        Authorization: `Bearer ${data.token}`,
+        Accept: 'application/json',
+      },
+    }),
+  ]);
+
+  const quotaData = quotaRes.ok ? await quotaRes.json() : { quota: { remaining: 10 } };
   const styleData = styleRes.ok ? await styleRes.json() : { onboardingCompleted: false, locationId: null };
 
   const user: AuthUser = {

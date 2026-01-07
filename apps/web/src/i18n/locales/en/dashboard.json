@@ -67,6 +67,11 @@
   "reviews": {
     "title": "Reviews",
     "subtitle": "Manage and respond to your customer reviews",
+    "status": {
+      "pending": "Pending",
+      "replied": "Replied",
+      "ignored": "Ignored"
+    },
     "stats": {
       "total": "Total Reviews",
       "pending": "Pending",
@@ -76,14 +81,29 @@
     },
     "filters": {
       "search": "Search reviews...",
+      "searchPlaceholder": "Search reviews...",
       "location": "All locations",
+      "allLocations": "All locations",
       "platform": "All platforms",
       "status": "All statuses",
+      "allStatuses": "All statuses",
       "rating": "All ratings",
       "dateFrom": "From date",
       "clear": "Clear filters",
+      "reset": "Reset",
       "showFilters": "Show filters",
       "hideFilters": "Hide filters",
+      "moreFilters": "More filters",
+      "platforms": "Platforms",
+      "minRating": "Minimum rating",
+      "andAbove": "{{rating}} stars and above",
+      "period": "Period",
+      "periods": {
+        "7days": "7 days",
+        "30days": "30 days",
+        "90days": "90 days",
+        "Alltime": "All time"
+      },
       "resultsCount": "{{count}} reviews"
     },
     "platforms": {

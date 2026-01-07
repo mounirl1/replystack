@@ -67,6 +67,11 @@
   "reviews": {
     "title": "Avis",
     "subtitle": "Gérez et répondez aux avis de vos clients",
+    "status": {
+      "pending": "En attente",
+      "replied": "Répondu",
+      "ignored": "Ignoré"
+    },
     "stats": {
       "total": "Total des avis",
       "pending": "En attente",
@@ -76,14 +81,29 @@
     },
     "filters": {
       "search": "Rechercher des avis...",
+      "searchPlaceholder": "Rechercher des avis...",
       "location": "Tous les établissements",
+      "allLocations": "Tous les établissements",
       "platform": "Toutes les plateformes",
       "status": "Tous les statuts",
+      "allStatuses": "Tous les statuts",
       "rating": "Toutes les notes",
       "dateFrom": "À partir du",
       "clear": "Effacer les filtres",
+      "reset": "Réinitialiser",
       "showFilters": "Afficher les filtres",
       "hideFilters": "Masquer les filtres",
+      "moreFilters": "Plus de filtres",
+      "platforms": "Plateformes",
+      "minRating": "Note minimum",
+      "andAbove": "{{rating}} étoiles et plus",
+      "period": "Période",
+      "periods": {
+        "7days": "7 jours",
+        "30days": "30 jours",
+        "90days": "90 jours",
+        "Alltime": "Tout le temps"
+      },
       "resultsCount": "{{count}} avis"
     },
     "platforms": {

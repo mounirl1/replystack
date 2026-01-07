@@ -50,9 +50,30 @@ enum ResponseLength: string
     public function maxTokens(): int
     {
         return match ($this) {
-            self::SHORT => 150,
-            self::MEDIUM => 300,
-            self::DETAILED => 500,
+            self::SHORT => 250,
+            self::MEDIUM => 500,
+            self::DETAILED => 800,
+        };
+    }
+
+    /**
+     * Get the formatting instructions for the prompt.
+     */
+    public function formatInstructions(): string
+    {
+        return match ($this) {
+            self::SHORT => "Réponse concise de 1 à 3 phrases.\n" .
+                "Adapte la longueur à l'avis (plus l'avis est court, plus la réponse l'est).\n" .
+                "Aère la réponse avec des retours à la ligne entre les idées pour faciliter la lecture.",
+            self::MEDIUM => "Structure en 2 paragraphes distincts séparés par une ligne vide :\n" .
+                "- Paragraphe 1 : Remerciement et reconnaissance\n" .
+                "- Paragraphe 2 : Réponse au contenu et/ou conclusion\n" .
+                "Assure une bonne aération pour faciliter la lecture.",
+            self::DETAILED => "Structure en 3 paragraphes distincts séparés par des lignes vides :\n" .
+                "- Paragraphe 1 : Remerciement chaleureux\n" .
+                "- Paragraphe 2 : Réponse détaillée au contenu de l'avis\n" .
+                "- Paragraphe 3 : Conclusion et/ou invitation à revenir\n" .
+                "Assure une bonne aération pour faciliter la lecture.",
         };
     }
 

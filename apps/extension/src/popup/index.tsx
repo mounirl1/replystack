@@ -6,6 +6,7 @@ import {
   type AuthUser,
   getAuthState,
   login,
+  register,
   logout,
   refreshUserProfile,
   openWithMagicAuth,
@@ -13,6 +14,7 @@ import {
 
 type TabType = 'dashboard' | 'reply';
 type LengthType = 'short' | 'medium' | 'detailed';
+type AuthTabType = 'login' | 'register';
 
 function IndexPopup() {
   // Force re-render on language change (for future language selector)
@@ -21,11 +23,21 @@ function IndexPopup() {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Auth tab state
+  const [authTab, setAuthTab] = useState<AuthTabType>('login');
 
   // Form state (login)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // Form state (register)
+  const [registerName, setRegisterName] = useState('');
+  const [registerEmail, setRegisterEmail] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+  const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState('');
 
   // Tab state
   const [activeTab, setActiveTab] = useState<TabType>('dashboard');
@@ -83,6 +95,54 @@ function IndexPopup() {
     } finally {
       setIsLoggingIn(false);
     }
+  };
+
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
+    // Client-side validation
+    if (!registerEmail || !registerPassword) {
+      setError(t('errors.invalidCredentials'));
+      return;
+    }
+
+    if (registerPassword.length < 8) {
+      setError(t('errors.passwordTooWeak'));
+      return;
+    }
+
+    if (registerPassword !== registerPasswordConfirm) {
+      setError(t('errors.passwordMismatch'));
+      return;
+    }
+
+    setIsRegistering(true);
+
+    try {
+      const { user } = await register(
+        registerEmail,
+        registerPassword,
+        registerPasswordConfirm,
+        registerName || undefined
+      );
+      setIsLoggedIn(true);
+      setUser(user);
+      setRegisterName('');
+      setRegisterEmail('');
+      setRegisterPassword('');
+      setRegisterPasswordConfirm('');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : t('errors.registrationFailed');
+      setError(translateError(message));
+    } finally {
+      setIsRegistering(false);
+    }
+  };
+
+  const switchAuthTab = (tab: AuthTabType) => {
+    setAuthTab(tab);
+    setError(null);
   };
 
   const handleLogout = async () => {
@@ -191,7 +251,7 @@ function IndexPopup() {
   if (!isLoggedIn) {
     return (
       <div className="w-80 p-6 bg-white">
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
           <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
             <span className="text-2xl">✨</span>
           </div>
@@ -199,63 +259,152 @@ function IndexPopup() {
           <p className="text-sm text-gray-500 mt-1">{t('popup.tagline')}</p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-4">
-          {error && (
-            <div className="bg-red-50 text-red-700 px-3 py-2 rounded-lg text-sm">
-              {error}
-            </div>
-          )}
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              {t('popup.email')}
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={t('popup.emailPlaceholder')}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-              {t('popup.password')}
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder={t('popup.passwordPlaceholder')}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
-            />
-          </div>
-
+        {/* Auth Tabs */}
+        <div className="flex border-b border-gray-200 mb-4">
           <button
-            type="submit"
-            disabled={isLoggingIn}
-            className="w-full bg-primary-600 text-white py-2.5 px-4 rounded-lg font-medium hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            type="button"
+            className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
+              authTab === 'login'
+                ? 'border-b-2 border-primary-500 text-primary-600'
+                : 'text-gray-500 hover:text-gray-700'
+            }`}
+            onClick={() => switchAuthTab('login')}
           >
-            {isLoggingIn ? t('popup.signingIn') : t('popup.signIn')}
+            {t('popup.signIn')}
           </button>
-        </form>
-
-        <p className="text-xs text-gray-500 text-center mt-4">
-          {t('popup.noAccount')}{' '}
-          <a
-            href={`${process.env.PLASMO_PUBLIC_WEB_URL || 'http://localhost:5173'}/register`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary-600 hover:underline"
+          <button
+            type="button"
+            className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
+              authTab === 'register'
+                ? 'border-b-2 border-primary-500 text-primary-600'
+                : 'text-gray-500 hover:text-gray-700'
+            }`}
+            onClick={() => switchAuthTab('register')}
           >
             {t('popup.signUpFree')}
-          </a>
-        </p>
+          </button>
+        </div>
+
+        {error && (
+          <div className="bg-red-50 text-red-700 px-3 py-2 rounded-lg text-sm mb-4">
+            {error}
+          </div>
+        )}
+
+        {/* Login Form */}
+        {authTab === 'login' && (
+          <form onSubmit={handleLogin} className="space-y-4">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('popup.email')}
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('popup.emailPlaceholder')}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('popup.password')}
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={t('popup.passwordPlaceholder')}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoggingIn}
+              className="w-full bg-primary-600 text-white py-2.5 px-4 rounded-lg font-medium hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {isLoggingIn ? t('popup.signingIn') : t('popup.signIn')}
+            </button>
+          </form>
+        )}
+
+        {/* Register Form */}
+        {authTab === 'register' && (
+          <form onSubmit={handleRegister} className="space-y-3">
+            <div>
+              <label htmlFor="registerName" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('modal.namePlaceholder')}
+              </label>
+              <input
+                id="registerName"
+                type="text"
+                value={registerName}
+                onChange={(e) => setRegisterName(e.target.value)}
+                placeholder={t('modal.namePlaceholder')}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="registerEmail" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('popup.email')}
+              </label>
+              <input
+                id="registerEmail"
+                type="email"
+                value={registerEmail}
+                onChange={(e) => setRegisterEmail(e.target.value)}
+                placeholder={t('popup.emailPlaceholder')}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="registerPassword" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('popup.password')}
+              </label>
+              <input
+                id="registerPassword"
+                type="password"
+                value={registerPassword}
+                onChange={(e) => setRegisterPassword(e.target.value)}
+                placeholder={t('popup.passwordPlaceholder')}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="registerPasswordConfirm" className="block text-sm font-medium text-gray-700 mb-1">
+                {t('modal.confirmPasswordPlaceholder')}
+              </label>
+              <input
+                id="registerPasswordConfirm"
+                type="password"
+                value={registerPasswordConfirm}
+                onChange={(e) => setRegisterPasswordConfirm(e.target.value)}
+                placeholder={t('modal.confirmPasswordPlaceholder')}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isRegistering}
+              className="w-full bg-primary-600 text-white py-2.5 px-4 rounded-lg font-medium hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {isRegistering ? t('modal.registering') : t('modal.registerButton')}
+            </button>
+          </form>
+        )}
       </div>
     );
   }

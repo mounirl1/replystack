@@ -79,6 +79,19 @@
       "negative": "Negativo",
       "neutral": "Neutro",
       "positive": "Positivo"
+    },
+    "seo": {
+      "title": "Otimização SEO",
+      "description": "Melhore o posicionamento das suas respostas",
+      "optional": "Opcional",
+      "city": "Cidade / Localização",
+      "cityPlaceholder": "Ex: Lisboa, Porto, São Paulo...",
+      "keywords": "Palavras-chave SEO",
+      "keywordsPlaceholder": "Ex: restaurante gourmet, cozinha portuguesa, terraço...",
+      "keywordsHint": "Palavras-chave para integrar naturalmente nas suas respostas",
+      "services": "Serviços / Produtos principais",
+      "servicesPlaceholder": "Ex: brunch de domingo, menu degustação, adega de vinhos...",
+      "servicesHint": "Serviços ou produtos principais para mencionar quando relevante"
     }
   },
   "language": {

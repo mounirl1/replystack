@@ -32,6 +32,7 @@
   },
   "manifest": {
     "host_permissions": [
+      "https://api.reply-stack.app/*",
       "https://business.google.com/*",
       "https://www.tripadvisor.com/*",
       "https://www.tripadvisor.fr/*",

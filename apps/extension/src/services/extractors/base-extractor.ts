@@ -247,7 +247,20 @@ export abstract class BaseExtractor {
       review.content?.substring(0, 50) || '',
       Date.now().toString(36),
     ];
-    return btoa(components.join('|')).replace(/[^a-zA-Z0-9]/g, '').substring(0, 24);
+    const str = components.join('|');
+    // Use encodeURIComponent to handle UTF-8 characters before btoa
+    try {
+      return btoa(encodeURIComponent(str)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 24);
+    } catch {
+      // Fallback: simple hash if btoa fails
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+      }
+      return Math.abs(hash).toString(36).padStart(12, '0').substring(0, 24);
+    }
   }
 
   /**
@@ -274,8 +287,7 @@ export abstract class BaseExtractor {
     const maxScore = Math.max(...Object.values(scores));
     if (maxScore < 2) return undefined;
 
-    const lang = Object.entries(scores).find(([, score]) => score === maxScore)?.[0];
-    return lang;
+    return Object.entries(scores).find(([, score]) => score === maxScore)?.[0];
   }
 
   /**

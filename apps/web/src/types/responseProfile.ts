@@ -93,6 +93,9 @@ export interface ResponseProfile {
   location_id: number;
   business_sector: BusinessSector | null;
   business_name: string;
+  city: string | null;
+  seo_keywords: string | null;
+  main_services: string | null;
   signature: string | null;
   tone: ResponseTone;
   default_length: ResponseLength;
@@ -109,6 +112,9 @@ export interface ResponseProfile {
 export interface ResponseProfileFormData {
   business_sector: BusinessSector | null;
   business_name: string;
+  city: string;
+  seo_keywords: string;
+  main_services: string;
   signature: string;
   tone: ResponseTone;
   default_length: ResponseLength;
@@ -147,6 +153,9 @@ export const DEFAULT_INCLUDE_ELEMENTS: IncludeElementsBySentiment = {
 export const DEFAULT_PROFILE: ResponseProfileFormData = {
   business_sector: null,
   business_name: '',
+  city: '',
+  seo_keywords: '',
+  main_services: '',
   signature: '',
   tone: 'professional',
   default_length: 'medium',

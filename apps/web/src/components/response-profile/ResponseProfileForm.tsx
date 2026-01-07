@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sparkles, RotateCcw, Save } from 'lucide-react';
+import { Sparkles, RotateCcw, Save, Search } from 'lucide-react';
 import { Card, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea, Select } from '@/components/ui/Input';
@@ -99,6 +99,15 @@ export function ResponseProfileForm({
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
+            <Input
+              label="Ville / Localisation"
+              value={data.city}
+              onChange={(e) => onChange({ city: e.target.value })}
+              placeholder="Ex: Paris, Lyon, Marseille..."
+            />
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-5">
             <Select
               label="Ton par défaut"
               options={toneOptions}
@@ -188,6 +197,40 @@ export function ResponseProfileForm({
             placeholder="Ex: Nous venons de rénover notre espace..."
             hint="Informations supplémentaires pour contextualiser vos réponses"
             rows={3}
+          />
+        </div>
+      </Card>
+
+      {/* SEO Optimization */}
+      <Card>
+        <CardHeader
+          title="Optimisation SEO"
+          description="Améliorez le référencement de vos réponses"
+          action={
+            <div className="flex items-center gap-2 text-text-tertiary">
+              <Search size={16} />
+              <span className="text-xs">Optionnel</span>
+            </div>
+          }
+        />
+
+        <div className="space-y-5">
+          <Textarea
+            label="Mots-clés SEO"
+            value={data.seo_keywords}
+            onChange={(e) => onChange({ seo_keywords: e.target.value })}
+            placeholder="Ex: restaurant gastronomique, cuisine française, terrasse..."
+            hint="Mots-clés à intégrer naturellement dans vos réponses"
+            rows={2}
+          />
+
+          <Textarea
+            label="Services / Produits principaux"
+            value={data.main_services}
+            onChange={(e) => onChange({ main_services: e.target.value })}
+            placeholder="Ex: brunch du dimanche, menu dégustation, cave à vin..."
+            hint="Services ou produits phares à mentionner si pertinent"
+            rows={2}
           />
         </div>
       </Card>

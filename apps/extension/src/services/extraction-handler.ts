@@ -3,11 +3,63 @@
  * Handles extraction, sync, and message communication
  */
 
-import type { SyncResult, ExtractionRequestMessage } from '../types/review';
+import type { SyncResult, ExtractionRequestMessage, Platform, ExtractedReview } from '../types/review';
 import type { BaseExtractor } from './extractors/base-extractor';
-import { syncReviews, cacheLocations } from './review-sync';
 import { getLocationIdForCurrentPage } from '../utils/location-matcher';
 import { debounce } from '../utils/debounce';
+
+/**
+ * Sync reviews via background script (to avoid CORS issues)
+ */
+async function syncReviewsViaBackground(
+  locationId: number,
+  platform: Platform,
+  reviews: ExtractedReview[]
+): Promise<SyncResult> {
+  return new Promise((resolve, reject) => {
+    chrome.runtime.sendMessage(
+      {
+        type: 'SYNC_REVIEWS',
+        payload: {
+          locationId,
+          platform,
+          reviews: reviews.map((r) => ({
+            external_id: r.externalId,
+            author_name: r.authorName,
+            author_avatar: r.authorAvatar,
+            rating: r.rating,
+            content: r.content,
+            language: r.language,
+            published_at: r.publishedAt,
+            has_response: r.hasResponse,
+          })),
+        },
+      },
+      (response) => {
+        if (chrome.runtime.lastError) {
+          reject(new Error(chrome.runtime.lastError.message || 'Sync failed'));
+          return;
+        }
+        if (response?.error) {
+          reject(new Error(response.error));
+          return;
+        }
+        resolve(response || { created: 0, updated: 0, unchanged: 0 });
+      }
+    );
+  });
+}
+
+/**
+ * Cache locations via background script (to avoid CORS issues)
+ */
+async function cacheLocationsViaBackground(): Promise<void> {
+  return new Promise((resolve) => {
+    chrome.runtime.sendMessage({ type: 'CACHE_LOCATIONS' }, () => {
+      resolve();
+    });
+  });
+}
 
 /**
  * Show a toast notification for sync results
@@ -140,7 +192,7 @@ export async function extractAndSync(
   }
 
   try {
-    const result = await syncReviews(locationId, extractor.platform, reviews);
+    const result = await syncReviewsViaBackground(locationId, extractor.platform, reviews);
 
     if (showNotification) {
       showSyncNotification(result);
@@ -220,9 +272,9 @@ export function handleExtractionMessages(extractor: BaseExtractor): void {
             const reviews = extractor.extractAll();
 
             if (reviews.length > 0) {
-              const result = await syncReviews(
+              const result = await syncReviewsViaBackground(
                 message.locationId,
-                message.platform,
+                message.platform as Platform,
                 reviews
               );
 
@@ -263,7 +315,7 @@ export async function initializeExtraction(
   console.log(`[ExtractionHandler] Initializing extraction for ${extractor.platform}`);
 
   // Cache locations on first load
-  await cacheLocations();
+  await cacheLocationsViaBackground();
 
   // Initial extraction (silent, no notification on first load)
   setTimeout(async () => {

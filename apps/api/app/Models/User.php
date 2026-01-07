@@ -21,9 +21,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * @property string|null $name
  * @property string $plan
- * @property int $daily_quota
  * @property int $monthly_quota
- * @property int $quota_used_today
  * @property int $quota_used_month
  * @property \Carbon\Carbon|null $quota_reset_at
  * @property string|null $stripe_customer_id
@@ -55,9 +53,7 @@ class User extends Authenticatable
         'email',
         'password',
         'plan',
-        'daily_quota',
         'monthly_quota',
-        'quota_used_today',
         'quota_used_month',
         'quota_reset_at',
         'stripe_customer_id',
@@ -97,9 +93,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'quota_reset_at' => 'datetime',
             'password' => 'hashed',
-            'daily_quota' => 'integer',
             'monthly_quota' => 'integer',
-            'quota_used_today' => 'integer',
             'quota_used_month' => 'integer',
         ];
     }

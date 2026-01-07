@@ -79,6 +79,19 @@
       "negative": "Negative",
       "neutral": "Neutral",
       "positive": "Positive"
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "Improve the search ranking of your responses",
+      "optional": "Optional",
+      "city": "City / Location",
+      "cityPlaceholder": "e.g., New York, Los Angeles, Chicago...",
+      "keywords": "SEO Keywords",
+      "keywordsPlaceholder": "e.g., fine dining, French cuisine, rooftop terrace...",
+      "keywordsHint": "Keywords to naturally integrate into your responses",
+      "services": "Main Services / Products",
+      "servicesPlaceholder": "e.g., Sunday brunch, tasting menu, wine cellar...",
+      "servicesHint": "Key services or products to mention when relevant"
     }
   },
   "language": {

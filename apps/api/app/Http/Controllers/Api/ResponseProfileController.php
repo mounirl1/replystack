@@ -82,6 +82,9 @@ class ResponseProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'business_sector' => ['sometimes', 'nullable', 'string', 'in:' . implode(',', BusinessSector::values())],
             'business_name' => ['required', 'string', 'max:255'],
+            'city' => ['sometimes', 'nullable', 'string', 'max:255'],
+            'seo_keywords' => ['sometimes', 'nullable', 'string', 'max:500'],
+            'main_services' => ['sometimes', 'nullable', 'string', 'max:500'],
             'signature' => ['sometimes', 'nullable', 'string', 'max:255'],
             'tone' => ['required', 'string', 'in:' . implode(',', ResponseTone::values())],
             'default_length' => ['required', 'string', 'in:' . implode(',', ResponseLength::values())],

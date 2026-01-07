@@ -695,13 +695,13 @@ export const GoogleBusinessAdapter: PlatformAdapter = {
 
 ## 💰 Plans & Pricing
 
-| Plan | Prix | Quotas | Features |
-|------|------|--------|----------|
-| **Free** | 0€ | 3/jour | Extension seule, watermark |
-| **Starter** | 9,90€/mois | 50/mois | + Dashboard lecture, 2 tons |
-| **Pro** | 29€/mois | Illimité | + Analytics, tous tons, alertes |
-| **Business** | 79€/mois | Illimité | + 10 locations, 5 users, Slack |
-| **Enterprise** | Sur devis | Illimité | + API, white-label, SSO |
+| Plan | Prix       | Quotas   | Features |
+|------|------------|----------|----------|
+| **Free** | 0€         | 15/mois  | Extension seule, watermark |
+| **Starter** | 9,90€/mois | 50/mois  | + Dashboard lecture, 2 tons |
+| **Pro** | 29€/mois   | 200/mois | + Analytics, tous tons, alertes |
+| **Business** | 79€/mois   | 500/mois | + 10 locations, 5 users, Slack |
+| **Enterprise** | Sur devis  | sur devis | + API, white-label, SSO |
 
 ### Stripe Products (à créer)
 

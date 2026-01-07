@@ -30,9 +30,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('name')->nullable();
             $table->enum('plan', ['free', 'starter', 'pro', 'business', 'enterprise'])->default('free');
-            $table->integer('daily_quota')->default(3);
-            $table->integer('monthly_quota')->default(0);
-            $table->integer('quota_used_today')->default(0);
+            $table->integer('monthly_quota')->default(10); // Free: 10, Starter: 50, Pro+: 0 (unlimited)
             $table->integer('quota_used_month')->default(0);
             $table->timestamp('quota_reset_at')->nullable();
             $table->string('stripe_customer_id')->nullable();

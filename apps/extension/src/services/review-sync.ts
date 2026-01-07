@@ -161,7 +161,18 @@ export async function cacheLocations(): Promise<void> {
 
     if (response.ok) {
       const data = await response.json();
-      const locations = data.data || data;
+      // Handle different API response formats and ensure we store an array
+      let locations: unknown[];
+      if (Array.isArray(data)) {
+        locations = data;
+      } else if (Array.isArray(data.data)) {
+        locations = data.data;
+      } else if (Array.isArray(data.locations)) {
+        locations = data.locations;
+      } else {
+        console.warn('[ReviewSync] Unexpected API response format:', data);
+        locations = [];
+      }
 
       chrome.storage.local.set({ locations }, () => {
         console.log(`[ReviewSync] Cached ${locations.length} locations`);

@@ -6,7 +6,16 @@ import type { CachedLocation, Platform } from '../types/review';
 async function getCachedLocations(): Promise<CachedLocation[]> {
   return new Promise((resolve) => {
     chrome.storage.local.get(['locations'], (result) => {
-      resolve(result.locations || []);
+      const locations = result.locations;
+      // Ensure we always return an array
+      if (Array.isArray(locations)) {
+        resolve(locations);
+      } else if (locations && typeof locations === 'object' && Array.isArray(locations.data)) {
+        // Handle case where API returned { data: [...] } format
+        resolve(locations.data);
+      } else {
+        resolve([]);
+      }
     });
   });
 }
@@ -24,7 +33,7 @@ function extractUrlIdentifiers(url: string): Record<string, string> {
   }
 
   // TripAdvisor location ID
-  const tripAdvisorMatch = url.match(/(?:g|d)(\d+)/i);
+  const tripAdvisorMatch = url.match(/[gd](\d+)/i);
   if (tripAdvisorMatch) {
     identifiers.tripadvisor_id = tripAdvisorMatch[1];
   }
@@ -36,7 +45,7 @@ function extractUrlIdentifiers(url: string): Record<string, string> {
   }
 
   // Yelp business ID
-  const yelpMatch = url.match(/biz\.yelp\.com\/biz\/([^\/\?]+)/i);
+  const yelpMatch = url.match(/biz\.yelp\.com\/biz\/([^/?]+)/i);
   if (yelpMatch) {
     identifiers.yelp_id = yelpMatch[1];
   }
@@ -70,15 +79,11 @@ function matchByIdentifiers(
   urlIdentifiers: Record<string, string>
 ): boolean {
   // Google Place ID match
-  if (
+  return Boolean(
     urlIdentifiers.google_place_id &&
-    location.google_place_id &&
-    urlIdentifiers.google_place_id === location.google_place_id
-  ) {
-    return true;
-  }
-
-  return false;
+      location.google_place_id &&
+      urlIdentifiers.google_place_id === location.google_place_id
+  );
 }
 
 /**

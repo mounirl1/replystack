@@ -67,6 +67,11 @@
   "reviews": {
     "title": "Avaliações",
     "subtitle": "Gerencie e responda às avaliações dos seus clientes",
+    "status": {
+      "pending": "Pendente",
+      "replied": "Respondida",
+      "ignored": "Ignorada"
+    },
     "stats": {
       "total": "Total de avaliações",
       "pending": "Pendentes",
@@ -76,14 +81,29 @@
     },
     "filters": {
       "search": "Buscar avaliações...",
+      "searchPlaceholder": "Buscar avaliações...",
       "location": "Todos os estabelecimentos",
+      "allLocations": "Todos os estabelecimentos",
       "platform": "Todas as plataformas",
       "status": "Todos os status",
+      "allStatuses": "Todos os status",
       "rating": "Todas as notas",
       "dateFrom": "A partir de",
       "clear": "Limpar filtros",
+      "reset": "Redefinir",
       "showFilters": "Mostrar filtros",
       "hideFilters": "Ocultar filtros",
+      "moreFilters": "Mais filtros",
+      "platforms": "Plataformas",
+      "minRating": "Nota mínima",
+      "andAbove": "{{rating}} estrelas ou mais",
+      "period": "Período",
+      "periods": {
+        "7days": "7 dias",
+        "30days": "30 dias",
+        "90days": "90 dias",
+        "Alltime": "Todo o tempo"
+      },
       "resultsCount": "{{count}} avaliações"
     },
     "platforms": {

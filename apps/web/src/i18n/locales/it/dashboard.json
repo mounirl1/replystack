@@ -67,6 +67,11 @@
   "reviews": {
     "title": "Recensioni",
     "subtitle": "Gestisci e rispondi alle recensioni dei tuoi clienti",
+    "status": {
+      "pending": "In attesa",
+      "replied": "Risposto",
+      "ignored": "Ignorato"
+    },
     "stats": {
       "total": "Totale recensioni",
       "pending": "In attesa",
@@ -76,14 +81,29 @@
     },
     "filters": {
       "search": "Cerca recensioni...",
+      "searchPlaceholder": "Cerca recensioni...",
       "location": "Tutte le sedi",
+      "allLocations": "Tutte le sedi",
       "platform": "Tutte le piattaforme",
       "status": "Tutti gli stati",
+      "allStatuses": "Tutti gli stati",
       "rating": "Tutte le valutazioni",
       "dateFrom": "Dal",
       "clear": "Cancella filtri",
+      "reset": "Reimposta",
       "showFilters": "Mostra filtri",
       "hideFilters": "Nascondi filtri",
+      "moreFilters": "Altri filtri",
+      "platforms": "Piattaforme",
+      "minRating": "Valutazione minima",
+      "andAbove": "{{rating}} stelle e oltre",
+      "period": "Periodo",
+      "periods": {
+        "7days": "7 giorni",
+        "30days": "30 giorni",
+        "90days": "90 giorni",
+        "Alltime": "Tutto il tempo"
+      },
       "resultsCount": "{{count}} recensioni"
     },
     "platforms": {
