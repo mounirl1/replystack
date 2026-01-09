@@ -1,4 +1,10 @@
 {
+  "welcome": {
+    "title": "Welcome to ReplyStack!",
+    "description": "Discover how to respond to your customer reviews 10x faster with AI. Let us guide you through the essential features.",
+    "startTour": "Discover ReplyStack",
+    "skip": "Explore on my own"
+  },
   "parts": {
     "essential": "Essential",
     "complementary": "Advanced"

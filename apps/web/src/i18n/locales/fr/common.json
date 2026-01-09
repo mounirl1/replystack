@@ -48,7 +48,11 @@
     "next": "Suivant",
     "previous": "Précédent",
     "loading": "Chargement...",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "startFree": "Essai gratuit",
+    "learnMore": "En savoir plus",
+    "copy": "Copier",
+    "regenerate": "Régénérer"
   },
   "validation": {
     "required": "Ce champ est requis",

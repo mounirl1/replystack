@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
-import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Card } from '@/components/ui/Card';
 import { translateApiError, translateValidationErrors } from '@/utils/apiErrors';
 import { AxiosError } from 'axios';
+import { Loader2 } from 'lucide-react';
 
 export function Register() {
   const { t } = useTranslation('auth');
@@ -56,84 +54,112 @@ export function Register() {
     }
   };
 
+  const inputClassName = "w-full px-4 py-3 rounded-xl text-sm bg-gray-50 dark:bg-dark-hover text-gray-900 dark:text-text-primary placeholder:text-gray-400 dark:placeholder:text-text-tertiary border border-gray-200 dark:border-dark-border focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all";
+  const inputErrorClassName = "w-full px-4 py-3 rounded-xl text-sm bg-gray-50 dark:bg-dark-hover text-gray-900 dark:text-text-primary placeholder:text-gray-400 dark:placeholder:text-text-tertiary border border-red-300 dark:border-red-500/50 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all";
+
   return (
-    <Card className="w-full max-w-md">
+    <div className="w-full max-w-md bg-white dark:bg-dark-surface rounded-2xl shadow-xl border border-gray-100 dark:border-dark-border p-8">
       <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-500/25">
           <span className="text-3xl">✨</span>
         </div>
-        <h1 className="text-2xl font-bold text-gray-900">{t('register.title')}</h1>
-        <p className="text-gray-600 mt-2">{t('register.subtitle')}</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-text-primary">{t('register.title')}</h1>
+        <p className="text-gray-600 dark:text-text-secondary mt-2">{t('register.subtitle')}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {errors.general && (
-          <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm">
+          <div className="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 px-4 py-3 rounded-xl text-sm border border-red-100 dark:border-red-900/30">
             {errors.general}
           </div>
         )}
 
-        <Input
-          label={t('register.name')}
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder={t('register.namePlaceholder')}
-          error={errors.name}
-          autoComplete="name"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1.5">
+            {t('register.name')}
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder={t('register.namePlaceholder')}
+            autoComplete="name"
+            className={errors.name ? inputErrorClassName : inputClassName}
+          />
+          {errors.name && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{errors.name}</p>}
+        </div>
 
-        <Input
-          label={t('register.email')}
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={t('register.emailPlaceholder')}
-          required
-          error={errors.email}
-          autoComplete="email"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1.5">
+            {t('register.email')}
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={t('register.emailPlaceholder')}
+            required
+            autoComplete="email"
+            className={errors.email ? inputErrorClassName : inputClassName}
+          />
+          {errors.email && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{errors.email}</p>}
+        </div>
 
-        <Input
-          label={t('register.password')}
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder={t('register.passwordPlaceholder')}
-          required
-          error={errors.password}
-          autoComplete="new-password"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1.5">
+            {t('register.password')}
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder={t('register.passwordPlaceholder')}
+            required
+            autoComplete="new-password"
+            className={errors.password ? inputErrorClassName : inputClassName}
+          />
+          {errors.password && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{errors.password}</p>}
+        </div>
 
-        <Input
-          label={t('register.confirmPassword')}
-          type="password"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          placeholder="••••••••"
-          required
-          error={errors.password_confirmation}
-          autoComplete="new-password"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-text-secondary mb-1.5">
+            {t('register.confirmPassword')}
+          </label>
+          <input
+            type="password"
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            placeholder="••••••••"
+            required
+            autoComplete="new-password"
+            className={errors.password_confirmation ? inputErrorClassName : inputClassName}
+          />
+          {errors.password_confirmation && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{errors.password_confirmation}</p>}
+        </div>
 
-        <Button type="submit" className="w-full" isLoading={isLoading}>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-full py-3 px-4 rounded-xl font-semibold text-white bg-gradient-to-r from-primary-500 to-teal-500 hover:from-primary-600 hover:to-teal-600 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          {isLoading && <Loader2 size={18} className="animate-spin" />}
           {t('register.submit')}
-        </Button>
+        </button>
 
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-gray-500 dark:text-text-tertiary text-center">
           {t('register.terms.text')}{' '}
-          <a href="#" className="text-primary-600 hover:underline">{t('register.terms.termsOfService')}</a>
+          <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">{t('register.terms.termsOfService')}</a>
           {' '}{t('register.terms.and')}{' '}
-          <a href="#" className="text-primary-600 hover:underline">{t('register.terms.privacyPolicy')}</a>.
+          <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">{t('register.terms.privacyPolicy')}</a>.
         </p>
       </form>
 
-      <p className="text-center text-sm text-gray-600 mt-6">
+      <p className="text-center text-sm text-gray-600 dark:text-text-secondary mt-6">
         {t('register.hasAccount')}{' '}
-        <Link to="/login" className="text-primary-600 hover:text-primary-700 font-medium">
+        <Link to="/login" className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
           {t('register.signIn')}
         </Link>
       </p>
-    </Card>
+    </div>
   );
 }

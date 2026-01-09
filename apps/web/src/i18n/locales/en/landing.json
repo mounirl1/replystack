@@ -1,16 +1,67 @@
 {
   "hero": {
-    "badge": "Personalized response profiles now available",
+    "badge": "Personalized response profiles",
     "title": "Reply to Reviews",
     "titleHighlight": "10x Faster",
     "titleEnd": "with AI",
     "subtitle": "Generate professional, personalized responses to customer reviews in seconds. Configure your brand voice once, and let AI handle the rest.",
     "cta": "Start Free Trial",
     "viewPricing": "View Pricing",
-    "noCreditCard": "No credit card required. 10 free replies per month."
+    "noCreditCard": "No credit card • 15 free replies",
+    "platforms": "Works on all platforms"
+  },
+  "stats": {
+    "badge": "Why ReplyStack",
+    "title": "Manage your reviews with",
+    "titleHighlight": "AI",
+    "titleEnd": "to boost your reputation",
+    "description": "Respond to all your customer reviews in seconds. Save time, improve your response rate, and strengthen your brand image.",
+    "replies": "Replies generated",
+    "timeSaved": "Time saved",
+    "businesses": "Active businesses",
+    "rating": "User rating",
+    "hours": "Hours saved"
+  },
+  "industries": {
+    "badge": "Industry solutions",
+    "title": "ReplyStack for your industry",
+    "subtitle": "Responses tailored to your business and customers",
+    "garage": {
+      "title": "Auto Shops",
+      "description": "Technical and reassuring responses"
+    },
+    "plumber": {
+      "title": "Plumbers",
+      "description": "Highlight your responsiveness"
+    },
+    "florist": {
+      "title": "Florists",
+      "description": "Creative and warm responses"
+    },
+    "restaurant": {
+      "title": "Restaurants",
+      "description": "Build customer loyalty"
+    },
+    "hotel": {
+      "title": "Hotels",
+      "description": "Premium service in every reply"
+    },
+    "medical": {
+      "title": "Healthcare",
+      "description": "Empathetic and professional responses"
+    },
+    "retail": {
+      "title": "Retail",
+      "description": "Boost your e-reputation"
+    },
+    "salon": {
+      "title": "Hair Salons",
+      "description": "Show your beauty expertise"
+    }
   },
   "demo": {
     "title": "See it in action",
+    "subtitle": "From review to perfect response in 2 seconds",
     "reviewAuthor": "Marie Dupont",
     "reviewContent": "Excellent restaurant! The service was impeccable and the food delicious. I highly recommend!",
     "tone": "Warm",

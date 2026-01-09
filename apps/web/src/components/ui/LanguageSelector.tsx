@@ -47,7 +47,7 @@ export function LanguageSelector({ variant = 'default', className = '' }: Langua
         </button>
 
         {isOpen && (
-          <div className="absolute bottom-full mb-2 left-0 bg-white dark:bg-dark-surface rounded-lg shadow-lg border border-gray-200 dark:border-dark-border py-1 min-w-[140px] z-50">
+          <div className="absolute top-full mt-2 left-0 bg-white dark:bg-dark-surface rounded-lg shadow-lg border border-gray-200 dark:border-dark-border py-1 min-w-[140px] z-50">
             {supportedLanguages.map((lang) => (
               <button
                 key={lang.code}

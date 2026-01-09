@@ -1,4 +1,10 @@
 {
+  "welcome": {
+    "title": "Bienvenue sur ReplyStack !",
+    "description": "Decouvrez comment repondre a vos avis clients 10x plus vite grace a l'IA. Laissez-nous vous guider a travers les fonctionnalites essentielles.",
+    "startTour": "Decouvrir ReplyStack",
+    "skip": "Explorer seul"
+  },
   "parts": {
     "essential": "Essentiel",
     "complementary": "Avance"

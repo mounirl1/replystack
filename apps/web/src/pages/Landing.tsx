@@ -1,410 +1,599 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import {
   Sparkles,
-  Globe2,
-  Palette,
-  Languages,
-  Chrome,
-  BarChart3,
-  Building2,
+  ArrowRight,
+  Star,
   MessageSquare,
   Zap,
-  Shield,
-  ArrowRight,
-  Check,
-  Star,
+  Globe2,
+  TrendingUp,
+  CheckCircle2,
+  ChevronRight,
+  ChevronDown,
+  Chrome,
+  Users,
+  BarChart3,
+  Layers,
+  Bot,
+  Languages,
+  X,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { LanguageSelector } from '@/components/ui/LanguageSelector';
+
+// Platform data
+const platforms = [
+  { name: 'Google', icon: '⭐' },
+  { name: 'TripAdvisor', icon: '🦉' },
+  { name: 'Booking', icon: '🏨' },
+  { name: 'Facebook', icon: '👍' },
+  { name: 'Yelp', icon: '📍' },
+  { name: 'Trustpilot', icon: '⭐' },
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "ReplyStack nous a fait gagner des heures chaque semaine. Nos clients sont impressionnés par la rapidité de nos réponses.",
+    author: "Marie Dubois",
+    role: "Propriétaire de restaurant",
+    avatar: "MD",
+    rating: 5,
+  },
+  {
+    quote: "Les profils personnalisés sont un game-changer. Chaque réponse reflète parfaitement notre ton de marque.",
+    author: "Pierre Laurent",
+    role: "Directeur d'hôtel",
+    avatar: "PL",
+    rating: 5,
+  },
+  {
+    quote: "Enfin une solution abordable pour gérer tous nos avis. L'extension Chrome est incroyablement pratique.",
+    author: "Sophie Martin",
+    role: "Gérante de boutique",
+    avatar: "SM",
+    rating: 5,
+  },
+];
+
+// Industries
+const industries = [
+  { name: 'Restaurants', icon: '🍽️', slug: 'restaurants' },
+  { name: 'Hôtels', icon: '🏨', slug: 'hotels' },
+  { name: 'Commerces', icon: '🛍️', slug: 'commerces' },
+  { name: 'Garagistes', icon: '🚗', slug: 'garagistes' },
+  { name: 'Salons de coiffure', icon: '💇', slug: 'salons-coiffure' },
+  { name: 'Professionnels de santé', icon: '⚕️', slug: 'professionnels-sante' },
+];
+
+// FAQ Data
+const faqItems = [
+  {
+    question: "Comment fonctionne ReplyStack ?",
+    answer: "ReplyStack utilise l'IA pour générer des réponses personnalisées à vos avis clients. Installez notre extension navigateur, configurez votre profil de réponse (ton, style, secteur), et cliquez sur le bouton 'Répondre avec l'IA' sur n'importe quelle plateforme d'avis."
+  },
+  {
+    question: "Sur quelles plateformes fonctionne ReplyStack ?",
+    answer: "ReplyStack fonctionne sur toutes les principales plateformes d'avis : Google Business, TripAdvisor, Booking.com, Yelp, Facebook, Trustpilot, et bien d'autres. Notre extension détecte automatiquement les pages d'avis."
+  },
+  {
+    question: "Puis-je personnaliser les réponses générées ?",
+    answer: "Absolument ! Vous pouvez configurer votre profil de réponse avec votre ton préféré (professionnel, chaleureux, décontracté), votre secteur d'activité, et des instructions personnalisées. Chaque réponse est également modifiable avant publication."
+  },
+  {
+    question: "L'offre gratuite a-t-elle des limitations ?",
+    answer: "L'offre gratuite vous donne accès à toutes les fonctionnalités avec 15 réponses par mois. Pas de watermark, pas de fonctionnalités bloquées. Vous pouvez upgrader à tout moment pour plus de réponses."
+  },
+  {
+    question: "Comment installer l'extension ?",
+    answer: "Rendez-vous sur le Chrome Web Store ou Firefox Add-ons, recherchez 'ReplyStack' et cliquez sur 'Ajouter'. L'extension s'installe en 30 secondes et vous guide dans la configuration de votre profil."
+  },
+];
+
+// Comparison data
+const comparisonData = [
+  { feature: "Réponses IA personnalisées", replystack: true, manual: false, others: "Limité" },
+  { feature: "Profils de réponse", replystack: true, manual: false, others: false },
+  { feature: "Toutes plateformes supportées", replystack: true, manual: true, others: "Partiel" },
+  { feature: "Extension navigateur", replystack: true, manual: false, others: "Rare" },
+  { feature: "Multi-langues automatique", replystack: true, manual: false, others: "Limité" },
+  { feature: "Prix abordable", replystack: true, manual: true, others: false },
+];
 
 export function Landing() {
-  const { t, i18n } = useTranslation('landing');
+  const { t } = useTranslation('landing');
   const { t: tc } = useTranslation('common');
-
-  // Get base API URL for legal pages (strip /api suffix)
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
-  const legalBaseUrl = apiUrl.replace(/\/api\/?$/, '');
-  const currentLang = i18n.language?.substring(0, 2) || 'en';
-
-  const features = [
-    {
-      icon: <Sparkles size={24} />,
-      titleKey: 'features.aiPowered.title',
-      descriptionKey: 'features.aiPowered.description',
-    },
-    {
-      icon: <Globe2 size={24} />,
-      titleKey: 'features.multiPlatform.title',
-      descriptionKey: 'features.multiPlatform.description',
-    },
-    {
-      icon: <Palette size={24} />,
-      titleKey: 'features.personalizedProfiles.title',
-      descriptionKey: 'features.personalizedProfiles.description',
-    },
-    {
-      icon: <Languages size={24} />,
-      titleKey: 'features.multiLanguage.title',
-      descriptionKey: 'features.multiLanguage.description',
-    },
-    {
-      icon: <Chrome size={24} />,
-      titleKey: 'features.browserExtension.title',
-      descriptionKey: 'features.browserExtension.description',
-    },
-    {
-      icon: <BarChart3 size={24} />,
-      titleKey: 'features.analytics.title',
-      descriptionKey: 'features.analytics.description',
-    },
-  ];
-
-  const profileFeatures = [
-    {
-      icon: <Building2 size={20} />,
-      titleKey: 'profile.sectorSpecific.title',
-      descriptionKey: 'profile.sectorSpecific.description',
-    },
-    {
-      icon: <MessageSquare size={20} />,
-      titleKey: 'profile.customTone.title',
-      descriptionKey: 'profile.customTone.description',
-    },
-    {
-      icon: <Zap size={20} />,
-      titleKey: 'profile.smartLength.title',
-      descriptionKey: 'profile.smartLength.description',
-    },
-    {
-      icon: <Shield size={20} />,
-      titleKey: 'profile.negativeStrategy.title',
-      descriptionKey: 'profile.negativeStrategy.description',
-    },
-  ];
-
-  const testimonials = [
-    {
-      quoteKey: 'testimonials.quote1',
-      authorKey: 'testimonials.author1',
-      roleKey: 'testimonials.role1',
-      rating: 5,
-    },
-    {
-      quoteKey: 'testimonials.quote2',
-      authorKey: 'testimonials.author2',
-      roleKey: 'testimonials.role2',
-      rating: 5,
-    },
-    {
-      quoteKey: 'testimonials.quote3',
-      authorKey: 'testimonials.author3',
-      roleKey: 'testimonials.role3',
-      rating: 5,
-    },
-  ];
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   return (
-    <div className="bg-light-bg dark:bg-dark-bg">
+    <div className="bg-white">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>ReplyStack - Répondez aux avis clients 10x plus vite avec l'IA</title>
+        <meta name="description" content="Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes. Extension Chrome/Firefox pour Google, TripAdvisor, Booking et plus." />
+        <meta name="keywords" content="réponse avis clients, IA, intelligence artificielle, Google Business, TripAdvisor, Booking, e-réputation, gestion avis" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="ReplyStack - Réponses aux avis clients propulsées par l'IA" />
+        <meta property="og:description" content="Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://replystack.io" />
+        <meta property="og:image" content="https://replystack.io/og-image.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ReplyStack - Réponses aux avis clients propulsées par l'IA" />
+        <meta name="twitter:description" content="Générez des réponses personnalisées aux avis clients en quelques secondes." />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://replystack.io" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "ReplyStack",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Chrome, Firefox",
+            "description": "AI-powered review response platform for businesses",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "2500"
+            }
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/50 via-white to-white -z-10" />
+
+        {/* Floating decorations */}
+        <div className="absolute top-12 left-[10%] w-16 h-16 bg-emerald-100 rounded-2xl float-slow opacity-60" />
+        <div className="absolute top-32 right-[15%] w-12 h-12 bg-teal-100 rounded-full float-medium opacity-60" />
+        <div className="absolute bottom-40 left-[20%] w-10 h-10 bg-emerald-200 rounded-xl float-fast opacity-40" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 text-primary-500 text-sm font-medium mb-6">
-              <Sparkles size={16} />
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 badge mb-6 animate-fade-in">
+              <Sparkles size={14} />
               <span>{t('hero.badge')}</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-dark-primary dark:text-text-primary tracking-tight">
-              {t('hero.title')}
-              <span className="text-primary-500"> {t('hero.titleHighlight')}</span>
+
+            {/* Main heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 animate-fade-in-up leading-tight">
+              {t('hero.title')}{' '}
+              <span className="text-gradient">{t('hero.titleHighlight')}</span>
               <br />
               {t('hero.titleEnd')}
             </h1>
-            <p className="mt-6 text-xl text-text-dark-secondary dark:text-text-secondary max-w-2xl mx-auto">
+
+            {/* Subtitle */}
+            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.1s' }}>
               {t('hero.subtitle')}
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/register">
-                <Button size="lg" className="w-full sm:w-auto" rightIcon={<ArrowRight size={18} />}>
-                  {t('hero.cta')}
-                </Button>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <Link to="/register" className="btn-primary text-lg px-8 py-4">
+                {t('hero.cta')}
+                <ArrowRight size={18} />
               </Link>
-              <Link to="/pricing">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                  {t('hero.viewPricing')}
-                </Button>
+              <Link to="/pricing" className="btn-secondary text-lg px-8 py-4">
+                {t('hero.viewPricing')}
               </Link>
             </div>
-            <p className="mt-4 text-sm text-text-tertiary">
-              {t('hero.noCreditCard')}
-            </p>
-          </div>
-        </div>
 
-        {/* Background decoration */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-primary-500/20 to-primary-500/5 rounded-full blur-3xl" />
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section className="py-20 bg-light-surface dark:bg-dark-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-light-bg dark:bg-dark-bg rounded-2xl shadow-xl overflow-hidden border border-light-border dark:border-dark-border">
-            <div className="grid lg:grid-cols-2">
-              <div className="p-8 lg:p-12">
-                <h2 className="text-2xl font-bold text-text-dark-primary dark:text-text-primary mb-4">
-                  {t('demo.title')}
-                </h2>
-                <div className="bg-light-hover dark:bg-dark-hover rounded-xl p-4 mb-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="font-medium text-text-dark-primary dark:text-text-primary">{t('demo.reviewAuthor')}</span>
-                    <div className="flex items-center text-yellow-500">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill="currentColor" />
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-text-dark-secondary dark:text-text-secondary text-sm">
-                    "{t('demo.reviewContent')}"
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 text-sm mb-4">
-                  <span className="px-2.5 py-1 bg-primary-500/10 text-primary-500 rounded-lg font-medium">{t('demo.tone')}</span>
-                  <span className="px-2.5 py-1 bg-light-hover dark:bg-dark-hover text-text-dark-secondary dark:text-text-secondary rounded-lg">{t('demo.language')}</span>
-                  <span className="px-2.5 py-1 bg-light-hover dark:bg-dark-hover text-text-dark-secondary dark:text-text-secondary rounded-lg">{t('demo.sector')}</span>
-                </div>
-              </div>
-              <div className="bg-primary-500/10 dark:bg-primary-500/5 p-8 lg:p-12 border-l border-light-border dark:border-dark-border">
-                <h3 className="text-sm font-medium text-primary-500 mb-2 flex items-center gap-2">
-                  <Sparkles size={16} />
-                  {t('demo.aiReplyLabel')}
-                </h3>
-                <p className="text-text-dark-primary dark:text-text-primary leading-relaxed whitespace-pre-line">
-                  "{t('demo.aiReply')}"
-                </p>
-                <div className="mt-4 flex items-center gap-4 text-sm text-primary-500">
-                  <span className="flex items-center gap-1">
-                    <Zap size={14} />
-                    {t('demo.generatedIn', { time: '1.2' })}
-                  </span>
-                  <span>{t('demo.words', { count: 89 })}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* All Features Included Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-primary-500/10 to-primary-600/10 dark:from-primary-500/20 dark:to-primary-600/20 border border-primary-500/20 rounded-2xl p-8 md:p-10">
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-2 bg-primary-500 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                <Sparkles size={14} />
-                {t('allFeatures.badge')}
+            {/* Trust indicators */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-500 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <span className="flex items-center gap-1">
+                <CheckCircle2 size={16} className="text-emerald-500" />
+                {t('hero.noCreditCard')}
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-text-dark-primary dark:text-text-primary">
-                {t('allFeatures.title')}
-              </h2>
-              <p className="mt-2 text-text-dark-secondary dark:text-text-secondary max-w-2xl mx-auto">
-                {t('allFeatures.subtitle')}
-              </p>
+              <span className="hidden sm:block">•</span>
+              <span className="flex items-center gap-1">
+                <Chrome size={16} className="text-emerald-500" />
+                Extension Chrome & Firefox
+              </span>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary-500">
-                  <Palette size={24} />
-                </div>
-                <h3 className="font-semibold text-text-dark-primary dark:text-text-primary">{t('allFeatures.tones.title')}</h3>
-                <p className="text-sm text-text-dark-secondary dark:text-text-secondary">{t('allFeatures.tones.description')}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary-500">
-                  <MessageSquare size={24} />
-                </div>
-                <h3 className="font-semibold text-text-dark-primary dark:text-text-primary">{t('allFeatures.customPrompts.title')}</h3>
-                <p className="text-sm text-text-dark-secondary dark:text-text-secondary">{t('allFeatures.customPrompts.description')}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary-500">
-                  <Building2 size={24} />
-                </div>
-                <h3 className="font-semibold text-text-dark-primary dark:text-text-primary">{t('allFeatures.responseProfiles.title')}</h3>
-                <p className="text-sm text-text-dark-secondary dark:text-text-secondary">{t('allFeatures.responseProfiles.description')}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary-500">
-                  <Globe2 size={24} />
-                </div>
-                <h3 className="font-semibold text-text-dark-primary dark:text-text-primary">{t('allFeatures.allPlatforms.title')}</h3>
-                <p className="text-sm text-text-dark-secondary dark:text-text-secondary">{t('allFeatures.allPlatforms.description')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Response Profile Section - NEW */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-500/10 text-primary-500 text-sm font-medium mb-4">
-                <Palette size={14} />
-                {t('profile.badge')}
-              </div>
-              <h2 className="text-3xl font-bold text-text-dark-primary dark:text-text-primary mb-4">
-                {t('profile.title')}
-              </h2>
-              <p className="text-lg text-text-dark-secondary dark:text-text-secondary mb-8">
-                {t('profile.subtitle')}
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                {profileFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center text-primary-500 flex-shrink-0">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-text-dark-primary dark:text-text-primary">
-                        {t(feature.titleKey)}
-                      </h4>
-                      <p className="text-sm text-text-dark-secondary dark:text-text-secondary">
-                        {t(feature.descriptionKey)}
+            {/* Demo Window */}
+            <div className="mt-16 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="demo-window max-w-4xl mx-auto">
+                <div className="demo-window-header">
+                  <div className="demo-window-dot bg-red-400" />
+                  <div className="demo-window-dot bg-yellow-400" />
+                  <div className="demo-window-dot bg-green-400" />
+                  <span className="ml-3 text-sm text-gray-500">ReplyStack Extension</span>
+                </div>
+                <div className="p-6 lg:p-8">
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    {/* Review */}
+                    <div className="bg-gray-50 rounded-2xl p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
+                          MD
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">{t('demo.reviewAuthor')}</p>
+                          <div className="flex gap-0.5 text-amber-400">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} size={12} fill="currentColor" />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        "{t('demo.reviewContent')}"
                       </p>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            <div className="relative">
-              <div className="bg-light-surface dark:bg-dark-surface rounded-2xl border border-light-border dark:border-dark-border p-6 shadow-lg">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center">
-                    <Sparkles size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-text-dark-primary dark:text-text-primary">{t('profile.configTitle')}</p>
-                    <p className="text-sm text-text-tertiary">{t('profile.step', { current: 2, total: 7 })}</p>
-                  </div>
-                </div>
-
-                <h3 className="text-lg font-semibold text-text-dark-primary dark:text-text-primary mb-4">
-                  {t('profile.toneQuestion')}
-                </h3>
-
-                <div className="space-y-3">
-                  {[t('profile.warm'), t('profile.professional'), t('profile.casual')].map((tone, i) => (
-                    <div
-                      key={tone}
-                      className={`
-                        p-4 rounded-xl border-2 transition-all
-                        ${i === 0
-                          ? 'border-primary-500 bg-primary-500/10'
-                          : 'border-light-border dark:border-dark-border'
-                        }
-                      `}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`
-                            w-5 h-5 rounded-full border-2 flex items-center justify-center
-                            ${i === 0
-                              ? 'border-primary-500 bg-primary-500'
-                              : 'border-light-border dark:border-dark-border'
-                            }
-                          `}
-                        >
-                          {i === 0 && <Check size={12} className="text-white" />}
+                    {/* AI Response */}
+                    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-5 border border-emerald-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                          <Sparkles size={14} className="text-white" />
                         </div>
-                        <span className={`font-medium ${i === 0 ? 'text-primary-500' : 'text-text-dark-primary dark:text-text-primary'}`}>
-                          {tone}
+                        <span className="text-sm font-semibold text-emerald-700">{t('demo.aiReplyLabel')}</span>
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        "{t('demo.aiReply')}"
+                      </p>
+                      <div className="flex items-center gap-3 mt-4 pt-3 border-t border-emerald-100">
+                        <span className="text-xs text-emerald-600 flex items-center gap-1">
+                          <Zap size={12} />
+                          {t('demo.generatedIn', { time: '1.2' })}
                         </span>
+                        <button className="text-xs text-emerald-600 font-medium flex items-center gap-1 hover:text-emerald-700">
+                          <CheckCircle2 size={12} />
+                          {tc('buttons.copy')}
+                        </button>
                       </div>
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-end mt-6">
-                  <Button rightIcon={<ArrowRight size={16} />}>
-                    {tc('buttons.next')}
-                  </Button>
+                  </div>
                 </div>
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary-500/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-light-surface dark:bg-dark-surface">
+      {/* Platforms Section */}
+      <section className="py-12 border-y border-gray-100 bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-text-dark-primary dark:text-text-primary">
-              {t('features.title')}
-            </h2>
-            <p className="mt-4 text-lg text-text-dark-secondary dark:text-text-secondary">
-              {t('features.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-light-bg dark:bg-dark-bg rounded-xl p-6 border border-light-border dark:border-dark-border hover:shadow-lg hover:border-primary-500/50 transition-all duration-150"
-              >
-                <div className="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 mb-4">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-text-dark-primary dark:text-text-primary mb-2">
-                  {t(feature.titleKey)}
-                </h3>
-                <p className="text-text-dark-secondary dark:text-text-secondary">
-                  {t(feature.descriptionKey)}
-                </p>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            {t('hero.platforms')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {platforms.map((platform) => (
+              <div key={platform.name} className="platform-logo">
+                <span>{platform.icon}</span>
+                <span>{platform.name}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20">
+      {/* Stats Section */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left - Text */}
+            <div>
+              <span className="section-badge">
+                <TrendingUp size={14} />
+                {t('stats.badge')}
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+                {t('stats.title')} <span className="text-gradient">{t('stats.titleHighlight')}</span>{' '}
+                {t('stats.titleEnd')}
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                {t('stats.description')}
+              </p>
+              <Link to="/register" className="btn-primary">
+                {tc('nav.getStarted')}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Right - Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="stat-card">
+                <div className="text-4xl lg:text-5xl font-extrabold text-gradient mb-2">50K+</div>
+                <p className="text-gray-600">{t('stats.replies')}</p>
+              </div>
+              <div className="stat-card">
+                <div className="text-4xl lg:text-5xl font-extrabold text-gradient mb-2">78%</div>
+                <p className="text-gray-600">{t('stats.timeSaved')}</p>
+              </div>
+              <div className="stat-card">
+                <div className="text-4xl lg:text-5xl font-extrabold text-gradient mb-2">2.5K+</div>
+                <p className="text-gray-600">{t('stats.businesses')}</p>
+              </div>
+              <div className="stat-card">
+                <div className="text-4xl lg:text-5xl font-extrabold text-gradient mb-2">4.9</div>
+                <div className="flex gap-0.5 text-amber-400 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-gray-600">{t('stats.rating')}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-text-dark-primary dark:text-text-primary">
+            <span className="section-badge">
+              <Sparkles size={14} />
+              {t('allFeatures.badge')}
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              {t('allFeatures.title')}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('allFeatures.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Bot, title: t('features.aiPowered.title'), description: t('features.aiPowered.description'), color: 'from-emerald-500 to-teal-500' },
+              { icon: Globe2, title: t('features.multiPlatform.title'), description: t('features.multiPlatform.description'), color: 'from-blue-500 to-cyan-500' },
+              { icon: Users, title: t('features.personalizedProfiles.title'), description: t('features.personalizedProfiles.description'), color: 'from-violet-500 to-purple-500' },
+              { icon: Languages, title: t('features.multiLanguage.title'), description: t('features.multiLanguage.description'), color: 'from-pink-500 to-rose-500' },
+              { icon: Chrome, title: t('features.browserExtension.title'), description: t('features.browserExtension.description'), color: 'from-amber-500 to-orange-500' },
+              { icon: BarChart3, title: t('features.analytics.title'), description: t('features.analytics.description'), color: 'from-indigo-500 to-blue-500' },
+            ].map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div key={index} className="feature-card">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4`}>
+                    <Icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 text-lg">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
+      <section id="how-it-works" className="py-20 lg:py-28 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="section-badge">
+              <Zap size={14} />
+              Comment ça marche
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              3 étapes pour répondre à tous vos avis
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Simple, rapide et efficace. Commencez à répondre en moins de 5 minutes.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: '01', title: 'Installez l\'extension', description: 'Téléchargez notre extension Chrome ou Firefox en 30 secondes. Gratuit et sans engagement.', icon: '🔌' },
+              { step: '02', title: 'Configurez votre profil', description: 'Définissez le ton, le style et les informations de votre entreprise. L\'IA s\'adapte à votre marque.', icon: '⚙️' },
+              { step: '03', title: 'Générez des réponses', description: 'Cliquez sur un avis et obtenez une réponse personnalisée instantanément. Modifiez et publiez !', icon: '✨' },
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                <div className="feature-card h-full text-center">
+                  <span className="text-6xl mb-4 block">{item.icon}</span>
+                  <div className="text-sm font-bold text-emerald-600 mb-2">Étape {item.step}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+                {index < 2 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <ChevronRight size={24} className="text-gray-300" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/register" className="btn-primary text-lg px-8 py-4">
+              Commencer maintenant
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="section-badge">
+              <Layers size={14} />
+              Comparatif
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              Pourquoi choisir ReplyStack ?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comparez les différentes approches pour gérer vos avis clients
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Fonctionnalité</th>
+                  <th className="text-center py-4 px-4">
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full font-semibold">
+                      <Sparkles size={16} />
+                      ReplyStack
+                    </div>
+                  </th>
+                  <th className="text-center py-4 px-4 font-semibold text-gray-600">Réponses manuelles</th>
+                  <th className="text-center py-4 px-4 font-semibold text-gray-600">Autres outils</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <tr key={index} className="border-b border-gray-100">
+                    <td className="py-4 px-4 text-gray-700">{row.feature}</td>
+                    <td className="text-center py-4 px-4">
+                      {row.replystack === true ? (
+                        <CheckCircle2 className="inline text-emerald-500" size={24} />
+                      ) : (
+                        <span className="text-gray-400">—</span>
+                      )}
+                    </td>
+                    <td className="text-center py-4 px-4">
+                      {row.manual === true ? (
+                        <CheckCircle2 className="inline text-gray-400" size={24} />
+                      ) : (
+                        <X className="inline text-gray-300" size={24} />
+                      )}
+                    </td>
+                    <td className="text-center py-4 px-4">
+                      {row.others === true ? (
+                        <CheckCircle2 className="inline text-gray-400" size={24} />
+                      ) : row.others === false ? (
+                        <X className="inline text-gray-300" size={24} />
+                      ) : (
+                        <span className="text-sm text-gray-500">{row.others}</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section id="industries" className="py-20 lg:py-28 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="section-badge">
+              <Globe2 size={14} />
+              {t('industries.badge')}
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              {t('industries.title')}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('industries.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {industries.map((industry) => (
+              <Link
+                key={industry.slug}
+                to={`/solutions/${industry.slug}`}
+                className="feature-card flex items-center gap-4 group"
+              >
+                <span className="text-4xl">{industry.icon}</span>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                    {industry.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">Réponses personnalisées</p>
+                </div>
+                <ArrowRight size={18} className="text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="section-badge">
+              <Star size={14} />
+              Témoignages
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
               {t('testimonials.title')}
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-light-surface dark:bg-dark-surface rounded-xl p-6 border border-light-border dark:border-dark-border"
-              >
-                <div className="text-yellow-500 mb-4 flex">
+              <div key={index} className="testimonial-card">
+                <div className="flex gap-1 mb-4 text-amber-400">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-text-dark-secondary dark:text-text-secondary mb-4">"{t(testimonial.quoteKey)}"</p>
-                <div>
-                  <p className="font-medium text-text-dark-primary dark:text-text-primary">{t(testimonial.authorKey)}</p>
-                  <p className="text-sm text-text-tertiary">{t(testimonial.roleKey)}</p>
+                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 lg:py-28 scroll-mt-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="section-badge">
+              <MessageSquare size={14} />
+              Questions fréquentes
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+              Tout ce que vous devez savoir
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqItems.map((item, index) => (
+              <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <span className="font-semibold text-gray-900 pr-4">{item.question}</span>
+                  <ChevronDown
+                    size={20}
+                    className={`text-gray-500 transition-transform flex-shrink-0 ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {openFaqIndex === index && (
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                    {item.answer}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -412,74 +601,31 @@ export function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              {t('cta.title')}
-            </h2>
-            <p className="text-lg text-primary-100 mb-8 max-w-xl mx-auto">
-              {t('cta.subtitle')}
-            </p>
-            <Link to="/register">
-              <Button
-                size="lg"
-                className="bg-white text-primary-600 hover:bg-primary-50"
-                rightIcon={<ArrowRight size={18} />}
-              >
+          <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-4xl p-10 md:p-16 text-center relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
+
+            <div className="relative">
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+                {t('cta.title')}
+              </h2>
+              <p className="text-xl text-emerald-100 mb-10 max-w-xl mx-auto">
+                {t('cta.subtitle')}
+              </p>
+              <Link to="/register" className="inline-flex items-center gap-2 bg-white text-emerald-600 font-bold text-lg px-8 py-4 rounded-full hover:bg-emerald-50 transition-all shadow-lg shadow-emerald-900/20 hover:shadow-xl">
                 {t('cta.button')}
-              </Button>
-            </Link>
+                <ArrowRight size={18} />
+              </Link>
+              <p className="mt-4 text-sm text-emerald-200">
+                {t('hero.noCreditCard')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-dark-bg dark:bg-dark-surface text-white py-12 border-t border-dark-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <img src="/icon.png" alt="ReplyStack" className="w-8 h-8" />
-                <span className="text-xl font-bold">ReplyStack</span>
-              </div>
-              <p className="text-text-secondary text-sm">
-                {tc('footer.tagline')}
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">{tc('footer.product')}</h4>
-              <ul className="space-y-2 text-text-secondary text-sm">
-                <li><Link to="/pricing" className="hover:text-white transition-colors">{tc('nav.pricing')}</Link></li>
-                <li><a href="#features" className="hover:text-white transition-colors">{tc('footer.features')}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{tc('footer.extension')}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">{tc('footer.company')}</h4>
-              <ul className="space-y-2 text-text-secondary text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">{tc('footer.about')}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{tc('footer.blog')}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{tc('footer.contact')}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">{tc('footer.legal')}</h4>
-              <ul className="space-y-2 text-text-secondary text-sm">
-                <li><a href={`${legalBaseUrl}/legal?lang=${currentLang}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tc('footer.legalNotice')}</a></li>
-                <li><a href={`${legalBaseUrl}/privacy?lang=${currentLang}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tc('footer.privacy')}</a></li>
-                <li><a href={`${legalBaseUrl}/terms?lang=${currentLang}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tc('footer.terms')}</a></li>
-                <li><a href={`${legalBaseUrl}/sales?lang=${currentLang}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tc('footer.sales')}</a></li>
-                <li><a href={`${legalBaseUrl}/cookies?lang=${currentLang}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tc('footer.cookies')}</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-dark-border mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-secondary text-sm">
-            <p>&copy; {new Date().getFullYear()} ReplyStack. {tc('footer.copyright')}</p>
-            <LanguageSelector variant="minimal" />
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

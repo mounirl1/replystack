@@ -10,6 +10,7 @@ import enAuth from './locales/en/auth.json';
 import enDashboard from './locales/en/dashboard.json';
 import enSettings from './locales/en/settings.json';
 import enOnboarding from './locales/en/onboarding.json';
+import enIndustries from './locales/en/industries.json';
 
 import frCommon from './locales/fr/common.json';
 import frLanding from './locales/fr/landing.json';
@@ -18,6 +19,7 @@ import frAuth from './locales/fr/auth.json';
 import frDashboard from './locales/fr/dashboard.json';
 import frSettings from './locales/fr/settings.json';
 import frOnboarding from './locales/fr/onboarding.json';
+import frIndustries from './locales/fr/industries.json';
 
 import esCommon from './locales/es/common.json';
 import esLanding from './locales/es/landing.json';
@@ -66,6 +68,7 @@ i18n
         dashboard: enDashboard,
         settings: enSettings,
         onboarding: enOnboarding,
+        industries: enIndustries,
       },
       fr: {
         common: frCommon,
@@ -75,6 +78,7 @@ i18n
         dashboard: frDashboard,
         settings: frSettings,
         onboarding: frOnboarding,
+        industries: frIndustries,
       },
       es: {
         common: esCommon,
@@ -106,7 +110,7 @@ i18n
     },
     fallbackLng: 'en',
     defaultNS: 'common',
-    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding'],
+    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding', 'industries'],
     interpolation: {
       escapeValue: false,
     },

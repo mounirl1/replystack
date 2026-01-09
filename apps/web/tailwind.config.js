@@ -4,74 +4,63 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-      },
       colors: {
-        // Perplexity-inspired palette
+        // Keep existing colors for dashboard compatibility
         primary: {
-          50: '#E6F9FB',
-          100: '#CCF3F7',
-          200: '#99E7EF',
-          300: '#66DBE7',
-          400: '#33CFDF',
-          500: '#20B8CD', // Main accent
-          600: '#1A93A4',
-          700: '#136E7B',
-          800: '#0D4A52',
-          900: '#062529',
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          200: '#A7F3D0',
+          300: '#6EE7B7',
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065F46',
+          900: '#064E3B',
+          950: '#022C22',
         },
         dark: {
-          bg: '#191A1A',        // Main dark background
-          surface: '#232525',   // Cards, sidebar
-          hover: '#2D2F2F',     // Hover states
-          border: '#343636',    // Subtle borders
-          'border-light': '#404242',
+          bg: '#09090B',
+          surface: '#18181B',
+          hover: '#27272A',
+          border: '#3F3F46',
+          'border-light': '#52525B',
+          muted: '#71717A',
         },
         light: {
           bg: '#FFFFFF',
-          surface: '#F9FAFB',
-          hover: '#F3F4F6',
-          border: '#E5E7EB',
+          surface: '#FAFAFA',
+          hover: '#F4F4F5',
+          border: '#E4E4E7',
         },
         text: {
-          primary: '#FFFFFF',
-          secondary: '#9BA1A6',
-          tertiary: '#6B7280',
-          'dark-primary': '#111827',
-          'dark-secondary': '#6B7280',
+          primary: '#FAFAFA',
+          secondary: '#A1A1AA',
+          tertiary: '#71717A',
+          'dark-primary': '#09090B',
+          'dark-secondary': '#52525B',
         },
       },
       borderRadius: {
-        'xl': '12px',
-        '2xl': '16px',
-        '3xl': '24px',
-      },
-      boxShadow: {
-        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
-        'card-dark': '0 0 0 1px rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.3)',
-        'card-light': '0 0 0 1px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.05)',
-      },
-      transitionDuration: {
-        '150': '150ms',
+        '4xl': '2rem',
       },
       animation: {
-        'fade-in': 'fadeIn 0.2s ease-out',
-        'slide-in': 'slideIn 0.2s ease-out',
-        'pulse-subtle': 'pulseSubtle 2s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'slide-up': 'slideUp 0.5s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideIn: {
-          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        pulseSubtle: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.8' },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

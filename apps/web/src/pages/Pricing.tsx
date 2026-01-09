@@ -156,38 +156,10 @@ export function Pricing() {
             {t('billing.yearly')}
           </span>
           {billingCycle === 'yearly' && (
-            <span className="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+            <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-full">
               {t('billing.saveUpTo')}
             </span>
           )}
-        </div>
-
-        {/* All Features Included Banner */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-to-r from-primary-50 to-primary-100 border border-primary-200 rounded-2xl p-6">
-            <div className="text-center mb-4">
-              <span className="inline-flex items-center gap-2 bg-primary-600 text-white text-sm font-medium px-4 py-1.5 rounded-full">
-                {t('allFeaturesBanner.badge')}
-              </span>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-2xl mb-2">🎨</div>
-                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.tones.title')}</h3>
-                <p className="text-sm text-gray-600">{t('allFeaturesBanner.tones.description')}</p>
-              </div>
-              <div>
-                <div className="text-2xl mb-2">✍️</div>
-                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.customPrompts.title')}</h3>
-                <p className="text-sm text-gray-600">{t('allFeaturesBanner.customPrompts.description')}</p>
-              </div>
-              <div>
-                <div className="text-2xl mb-2">🏢</div>
-                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.responseProfile.title')}</h3>
-                <p className="text-sm text-gray-600">{t('allFeaturesBanner.responseProfile.description')}</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Pricing Grid */}
@@ -229,7 +201,7 @@ export function Pricing() {
                       <span className="text-sm text-gray-500 line-through">
                         €{plan.monthlyPrice}/mo
                       </span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">
                         -{getYearlySavings(plan)}%
                       </span>
                     </div>
@@ -282,6 +254,34 @@ export function Pricing() {
               </Button>
             </div>
           ))}
+        </div>
+
+        {/* All Features Included Banner */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="bg-gradient-to-r from-primary-50 to-primary-100 border border-primary-200 rounded-2xl p-6">
+            <div className="text-center mb-4">
+              <span className="inline-flex items-center gap-2 bg-primary-600 text-white text-sm font-medium px-4 py-1.5 rounded-full">
+                {t('allFeaturesBanner.badge')}
+              </span>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-2xl mb-2">🎨</div>
+                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.tones.title')}</h3>
+                <p className="text-sm text-gray-600">{t('allFeaturesBanner.tones.description')}</p>
+              </div>
+              <div>
+                <div className="text-2xl mb-2">✍️</div>
+                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.customPrompts.title')}</h3>
+                <p className="text-sm text-gray-600">{t('allFeaturesBanner.customPrompts.description')}</p>
+              </div>
+              <div>
+                <div className="text-2xl mb-2">🏢</div>
+                <h3 className="font-semibold text-gray-900">{t('allFeaturesBanner.responseProfile.title')}</h3>
+                <p className="text-sm text-gray-600">{t('allFeaturesBanner.responseProfile.description')}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* FAQ Section */}

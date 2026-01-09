@@ -19,33 +19,12 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:3000,chrome-extension://*,moz-extension://*')),
+    'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:3000')),
 
-    'allowed_origins_patterns' => function () {
-        // In production, only allow specific extension IDs
-        if (app()->environment('production')) {
-            $chromeId = env('CHROME_EXTENSION_ID');
-            $firefoxId = env('FIREFOX_EXTENSION_ID');
-
-            $patterns = [];
-
-            if ($chromeId) {
-                $patterns[] = '#^chrome-extension://' . preg_quote($chromeId, '#') . '$#';
-            }
-
-            if ($firefoxId) {
-                $patterns[] = '#^moz-extension://' . preg_quote($firefoxId, '#') . '$#';
-            }
-
-            return $patterns;
-        }
-
-        // In local/development, allow all extensions
-        return [
-            '#^chrome-extension://.*$#',
-            '#^moz-extension://.*$#',
-        ];
-    },
+    'allowed_origins_patterns' => [
+        '#^chrome-extension://.*$#',
+        '#^moz-extension://.*$#',
+    ],
 
     'allowed_headers' => ['*'],
 

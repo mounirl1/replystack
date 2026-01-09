@@ -1,16 +1,67 @@
 {
   "hero": {
-    "badge": "Profils de réponse personnalisés maintenant disponibles",
+    "badge": "Profils de réponse personnalisés",
     "title": "Répondez aux avis",
     "titleHighlight": "10x plus vite",
     "titleEnd": "avec l'IA",
     "subtitle": "Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes. Configurez la voix de votre marque une fois, et laissez l'IA faire le reste.",
     "cta": "Essai gratuit",
     "viewPricing": "Voir les tarifs",
-    "noCreditCard": "Sans carte bancaire. 10 réponses gratuites par mois."
+    "noCreditCard": "Sans carte bancaire • 15 réponses gratuites",
+    "platforms": "Fonctionne sur toutes les plateformes"
+  },
+  "stats": {
+    "badge": "Pourquoi ReplyStack",
+    "title": "Gérez vos avis avec",
+    "titleHighlight": "l'IA",
+    "titleEnd": "pour booster votre réputation",
+    "description": "Répondez à tous vos avis clients en quelques secondes. Gagnez du temps, améliorez votre taux de réponse et renforcez votre image de marque.",
+    "replies": "Réponses générées",
+    "timeSaved": "Temps économisé",
+    "businesses": "Entreprises actives",
+    "rating": "Note utilisateurs",
+    "hours": "Heures économisées"
+  },
+  "industries": {
+    "badge": "Solutions par métier",
+    "title": "ReplyStack pour votre secteur",
+    "subtitle": "Des réponses adaptées à votre métier et vos clients",
+    "garage": {
+      "title": "Garagistes",
+      "description": "Réponses techniques et rassurantes"
+    },
+    "plumber": {
+      "title": "Plombiers",
+      "description": "Mettez en avant votre réactivité"
+    },
+    "florist": {
+      "title": "Fleuristes",
+      "description": "Réponses créatives et chaleureuses"
+    },
+    "restaurant": {
+      "title": "Restaurants",
+      "description": "Fidélisez vos clients gourmets"
+    },
+    "hotel": {
+      "title": "Hôtels",
+      "description": "Service premium à chaque réponse"
+    },
+    "medical": {
+      "title": "Professionnels de santé",
+      "description": "Réponses empathiques et professionnelles"
+    },
+    "retail": {
+      "title": "Commerces",
+      "description": "Boostez votre e-réputation"
+    },
+    "salon": {
+      "title": "Salons de coiffure",
+      "description": "Montrez votre expertise beauté"
+    }
   },
   "demo": {
     "title": "Voyez par vous-même",
+    "subtitle": "De l'avis à la réponse parfaite en 2 secondes",
     "reviewAuthor": "Marie Dupont",
     "reviewContent": "Excellent restaurant ! Le service était impeccable et la nourriture délicieuse. Je recommande vivement !",
     "tone": "Chaleureux",

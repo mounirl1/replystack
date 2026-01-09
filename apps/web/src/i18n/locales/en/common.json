@@ -48,7 +48,11 @@
     "next": "Next",
     "previous": "Previous",
     "loading": "Loading...",
-    "retry": "Retry"
+    "retry": "Retry",
+    "startFree": "Start Free",
+    "learnMore": "Learn more",
+    "copy": "Copy",
+    "regenerate": "Regenerate"
   },
   "validation": {
     "required": "This field is required",

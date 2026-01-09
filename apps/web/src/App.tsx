@@ -1,13 +1,16 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Layout, AuthLayout } from '@/components/layout/Layout';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { SettingsLayout } from '@/components/layout/SettingsLayout';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
+import { ScrollToTop } from '@/components/utils/ScrollToTop';
 
 // Lazy load pages for code splitting
 const Landing = lazy(() => import('@/pages/Landing').then(m => ({ default: m.Landing })));
 const Pricing = lazy(() => import('@/pages/Pricing').then(m => ({ default: m.Pricing })));
+const IndustryPage = lazy(() => import('@/pages/IndustryPage').then(m => ({ default: m.IndustryPage })));
 const Login = lazy(() => import('@/pages/auth/Login').then(m => ({ default: m.Login })));
 const Register = lazy(() => import('@/pages/auth/Register').then(m => ({ default: m.Register })));
 const MagicAuth = lazy(() => import('@/pages/auth/MagicAuth').then(m => ({ default: m.MagicAuth })));
@@ -34,7 +37,9 @@ function LoadingSpinner() {
 
 function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
+      <ScrollToTop />
       <OnboardingProvider>
       <Suspense fallback={<LoadingSpinner />}>
       <Routes>
@@ -42,6 +47,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/solutions/:slug" element={<IndustryPage />} />
         </Route>
 
         {/* Auth routes */}
@@ -75,6 +81,7 @@ function App() {
       </Suspense>
       </OnboardingProvider>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

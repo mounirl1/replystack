@@ -18,6 +18,7 @@ export interface OnboardingState {
   currentStepIndex: number;
   hasSeenOnboarding: boolean;
   showTransitionModal: boolean;
+  showWelcomeModal: boolean;
 }
 
 export interface OnboardingActions {
@@ -30,6 +31,8 @@ export interface OnboardingActions {
   resetOnboarding: () => void;
   continueToComplementary: () => void;
   dismissTransitionModal: () => void;
+  dismissWelcomeModal: () => void;
+  startTourFromWelcome: () => void;
 }
 
 interface OnboardingContextType extends OnboardingState, OnboardingActions {
@@ -145,6 +148,7 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
       currentStepIndex: 0,
       hasSeenOnboarding,
       showTransitionModal: false,
+      showWelcomeModal: !hasSeenOnboarding, // Show welcome modal for first-time users
     };
   });
 
@@ -266,6 +270,7 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
       currentStepIndex: 0,
       hasSeenOnboarding: false,
       showTransitionModal: false,
+      showWelcomeModal: true,
     });
   }, []);
 
@@ -292,6 +297,30 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
+  const dismissWelcomeModal = useCallback(() => {
+    localStorage.setItem(STORAGE_KEY, 'true');
+    setState(prev => ({
+      ...prev,
+      showWelcomeModal: false,
+      hasSeenOnboarding: true,
+    }));
+  }, []);
+
+  const startTourFromWelcome = useCallback(() => {
+    setState(prev => ({
+      ...prev,
+      showWelcomeModal: false,
+      isActive: true,
+      currentPart: 'essential',
+      currentStepIndex: 0,
+    }));
+
+    // Navigate to dashboard if not already there
+    if (location.pathname !== '/dashboard') {
+      navigate('/dashboard');
+    }
+  }, [navigate, location.pathname]);
+
   return (
     <OnboardingContext.Provider
       value={{
@@ -308,6 +337,8 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
         resetOnboarding,
         continueToComplementary,
         dismissTransitionModal,
+        dismissWelcomeModal,
+        startTourFromWelcome,
       }}
     >
       {children}

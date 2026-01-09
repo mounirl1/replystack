@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Sidebar } from './Sidebar';
-import { OnboardingOverlay } from '@/components/onboarding';
+import { OnboardingOverlay, WelcomeModal } from '@/components/onboarding';
 import { Menu, X } from 'lucide-react';
 
 export function DashboardLayout() {
@@ -76,6 +76,9 @@ export function DashboardLayout() {
           <Outlet />
         </div>
       </main>
+
+      {/* Welcome Modal (first-time users) */}
+      <WelcomeModal />
 
       {/* Onboarding Overlay */}
       <OnboardingOverlay />

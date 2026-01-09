@@ -4,3 +4,4 @@ export { SpotlightMask, useTargetRect } from './SpotlightMask';
 export { TooltipBubble } from './TooltipBubble';
 export { StepNavigation } from './StepNavigation';
 export { TransitionModal } from './TransitionModal';
+export { WelcomeModal } from './WelcomeModal';
