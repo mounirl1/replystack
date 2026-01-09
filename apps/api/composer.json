@@ -11,7 +11,8 @@
         "laravel/framework": "^12.0",
         "laravel/horizon": "^5.41",
         "laravel/sanctum": "^4.2",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "lemonsqueezy/laravel": "^1.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

@@ -24,8 +24,10 @@ use Laravel\Sanctum\HasApiTokens;
  * @property int $monthly_quota
  * @property int $quota_used_month
  * @property \Carbon\Carbon|null $quota_reset_at
- * @property string|null $stripe_customer_id
- * @property string|null $stripe_subscription_id
+ * @property string|null $lemon_customer_id
+ * @property string|null $lemon_subscription_id
+ * @property string|null $lemon_order_id
+ * @property string|null $lemon_variant_id
  * @property int|null $organization_id
  * @property \Carbon\Carbon|null $email_verified_at
  * @property \Carbon\Carbon $created_at
@@ -56,8 +58,10 @@ class User extends Authenticatable
         'monthly_quota',
         'quota_used_month',
         'quota_reset_at',
-        'stripe_customer_id',
-        'stripe_subscription_id',
+        'lemon_customer_id',
+        'lemon_subscription_id',
+        'lemon_order_id',
+        'lemon_variant_id',
         'organization_id',
     ];
 
@@ -69,8 +73,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'stripe_customer_id',
-        'stripe_subscription_id',
+        'lemon_customer_id',
+        'lemon_subscription_id',
+        'lemon_order_id',
+        'lemon_variant_id',
     ];
 
     /**
@@ -126,16 +132,6 @@ class User extends Authenticatable
     public function responses(): HasMany
     {
         return $this->hasMany(Response::class);
-    }
-
-    /**
-     * Get the templates created by the user.
-     *
-     * @return HasMany<Template>
-     */
-    public function templates(): HasMany
-    {
-        return $this->hasMany(Template::class);
     }
 
     /**
@@ -211,18 +207,33 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the user's Stripe customer ID, creating one if it doesn't exist.
+     * Get the user's LemonSqueezy customer ID.
      *
      * @return string|null
      */
-    public function getOrCreateStripeCustomerId(): ?string
+    public function getLemonCustomerId(): ?string
     {
-        if ($this->stripe_customer_id) {
-            return $this->stripe_customer_id;
-        }
+        return $this->lemon_customer_id;
+    }
 
-        // This would integrate with Stripe - placeholder for now
-        return null;
+    /**
+     * Check if the user has an active LemonSqueezy subscription.
+     *
+     * @return bool
+     */
+    public function hasActiveSubscription(): bool
+    {
+        return !empty($this->lemon_subscription_id) && $this->hasPaidPlan();
+    }
+
+    /**
+     * Get the user's LemonSqueezy subscription ID.
+     *
+     * @return string|null
+     */
+    public function getLemonSubscriptionId(): ?string
+    {
+        return $this->lemon_subscription_id;
     }
 
     /**

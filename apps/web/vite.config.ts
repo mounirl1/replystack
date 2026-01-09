@@ -41,37 +41,17 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Manual chunks for better caching
-        manualChunks: (id) => {
-          // Lucide React: Keep in separate chunk for tree-shaking
-          // Vite will automatically tree-shake unused icons
-          if (id.includes('lucide-react')) {
-            return 'vendor-icons';
-          }
-
-          // React core
-          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-            return 'vendor-react';
-          }
-
+        manualChunks: {
+          // React core - keep react and react-dom together for proper initialization
+          'vendor-react': ['react', 'react-dom', 'scheduler'],
+          // React Router in its own chunk
+          'vendor-router': ['react-router', 'react-router-dom'],
           // React Query
-          if (id.includes('@tanstack/react-query')) {
-            return 'vendor-ui';
-          }
-
+          'vendor-query': ['@tanstack/react-query'],
           // i18n libraries
-          if (id.includes('i18next')) {
-            return 'vendor-i18n';
-          }
-
+          'vendor-i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
           // HTTP client
-          if (id.includes('axios')) {
-            return 'vendor-http';
-          }
-
-          // All other node_modules
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
+          'vendor-http': ['axios'],
         },
       },
     },

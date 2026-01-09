@@ -1,8 +1,8 @@
 {
   "name": "@replystack/extension",
   "displayName": "ReplyStack - AI Review Replies",
-  "version": "0.0.1",
-  "description": "Generate AI-powered responses to customer reviews directly on any platform",
+  "version": "1.0.0",
+  "description": "AI review replies for Google, TripAdvisor, Booking & more. Save 10+ hours/week managing reputation. Free plan: 10 replies/month.",
   "author": "ReplyStack",
   "scripts": {
     "dev": "plasmo dev",
@@ -48,6 +48,7 @@
       "activeTab",
       "alarms",
       "tabs"
-    ]
+    ],
+    "privacy_policy_url": "https://reply-stack.app/legal/privacy-policy"
   }
 }

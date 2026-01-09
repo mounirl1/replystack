@@ -139,18 +139,24 @@ export const repliesApi = {
   },
 };
 
-// Stripe API
-export const stripeApi = {
-  createCheckout: async (plan: 'starter' | 'pro' | 'business') => {
-    const response = await api.post<{ url: string }>('/stripe/checkout', { plan });
+// LemonSqueezy API
+export const lemonSqueezyApi = {
+  createCheckout: async (plan: 'starter' | 'pro' | 'business', billingCycle: 'monthly' | 'yearly' = 'yearly') => {
+    const response = await api.post<{ url: string }>('/lemonsqueezy/checkout', {
+      plan,
+      billing_cycle: billingCycle
+    });
     return response.data;
   },
 
   createPortal: async () => {
-    const response = await api.post<{ url: string }>('/stripe/portal');
+    const response = await api.post<{ url: string }>('/lemonsqueezy/portal');
     return response.data;
   },
 };
+
+// Backward compatibility alias
+export const stripeApi = lemonSqueezyApi;
 
 // Locations API
 export interface Location {

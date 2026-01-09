@@ -30,11 +30,13 @@ return new class extends Migration
             $table->string('password');
             $table->string('name')->nullable();
             $table->enum('plan', ['free', 'starter', 'pro', 'business', 'enterprise'])->default('free');
-            $table->integer('monthly_quota')->default(10); // Free: 10, Starter: 50, Pro+: 0 (unlimited)
+            $table->integer('monthly_quota')->default(15); // Free: 15, Starter: 50, Pro: 200, Business: 500
             $table->integer('quota_used_month')->default(0);
             $table->timestamp('quota_reset_at')->nullable();
-            $table->string('stripe_customer_id')->nullable();
-            $table->string('stripe_subscription_id')->nullable();
+            $table->string('lemon_customer_id')->nullable();
+            $table->string('lemon_subscription_id')->nullable();
+            $table->string('lemon_order_id')->nullable();
+            $table->string('lemon_variant_id')->nullable();
             $table->foreignId('organization_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
@@ -42,7 +44,8 @@ return new class extends Migration
 
             // Indexes for frequently queried columns
             $table->index('plan');
-            $table->index('stripe_customer_id');
+            $table->index('lemon_customer_id');
+            $table->index('lemon_subscription_id');
             $table->index(['organization_id', 'plan']);
         });
 

@@ -1,6 +1,13 @@
 {
   "title": "Tarification simple et transparente",
   "subtitle": "Choisissez l'offre qui correspond à vos besoins. Toutes les offres incluent 7 jours d'essai gratuit.",
+  "billing": {
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "saveUpTo": "Économisez jusqu'à 57%",
+    "billedYearly": "Facturé {{price}}€/an",
+    "billedMonthly": "Facturé mensuellement"
+  },
   "allFeaturesBanner": {
     "badge": "Toutes les fonctionnalités incluses dans chaque offre",
     "tones": {
@@ -37,7 +44,7 @@
     "business": {
       "name": "Business",
       "description": "Pour les équipes et agences",
-      "cta": "Contacter les ventes"
+      "cta": "Essai gratuit"
     }
   },
   "features": {
@@ -72,7 +79,7 @@
     },
     "quota": {
       "question": "Que se passe-t-il quand j'épuise mes réponses ?",
-      "answer": "Sur les offres Gratuit et Starter, votre quota se réinitialise au début de chaque mois. Les offres Pro et Business ont des réponses illimitées."
+      "answer": "Votre quota se réinitialise au début de chaque mois. Si vous avez besoin de plus de réponses, vous pouvez passer à une offre supérieure à tout moment."
     },
     "refund": {
       "question": "Proposez-vous des remboursements ?",

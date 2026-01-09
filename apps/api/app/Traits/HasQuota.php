@@ -18,7 +18,7 @@ trait HasQuota
     /**
      * Plans that have unlimited quota.
      */
-    protected static array $unlimitedPlans = ['pro', 'business', 'enterprise'];
+    protected static array $unlimitedPlans = ['enterprise'];
 
     /**
      * Check if the user has remaining quota for generating replies.
@@ -194,11 +194,11 @@ trait HasQuota
     public function setQuotaForPlan(string $plan): void
     {
         $quotas = [
-            'free' => ['monthly_quota' => 10],
+            'free' => ['monthly_quota' => 15],
             'starter' => ['monthly_quota' => 50],
-            'pro' => ['monthly_quota' => 0],
-            'business' => ['monthly_quota' => 0],
-            'enterprise' => ['monthly_quota' => 0],
+            'pro' => ['monthly_quota' => 200],
+            'business' => ['monthly_quota' => 500],
+            'enterprise' => ['monthly_quota' => 0], // 0 = unlimited
         ];
 
         $this->update([

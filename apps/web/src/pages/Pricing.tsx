@@ -2,21 +2,25 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
-import { stripeApi } from '@/services/api';
+import { lemonSqueezyApi } from '@/services/api';
 import { Button } from '@/components/ui/Button';
+
+type BillingCycle = 'monthly' | 'yearly';
 
 export function Pricing() {
   const { t } = useTranslation('pricing');
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>('yearly');
 
   const plans = [
     {
       id: 'free',
-      price: 0,
+      monthlyPrice: 0,
+      yearlyPrice: 0,
       features: [
-        t('features.repliesPerMonth', { count: 10 }),
+        t('features.repliesPerMonth', { count: 15 }),
         t('features.browserExtension'),
         t('features.allPlatforms'),
         t('features.allTones'),
@@ -28,7 +32,9 @@ export function Pricing() {
     },
     {
       id: 'starter',
-      price: 9.90,
+      monthlyPrice: 19,
+      yearlyPrice: 99,
+      yearlyPerMonth: 8.25,
       features: [
         t('features.repliesPerMonth', { count: 50 }),
         t('features.allPlatforms'),
@@ -43,9 +49,11 @@ export function Pricing() {
     },
     {
       id: 'pro',
-      price: 29,
+      monthlyPrice: 49,
+      yearlyPrice: 290,
+      yearlyPerMonth: 24.17,
       features: [
-        t('features.unlimitedReplies'),
+        t('features.repliesPerMonth', { count: 200 }),
         t('features.allPlatforms'),
         t('features.allTones'),
         t('features.customPrompts'),
@@ -59,9 +67,11 @@ export function Pricing() {
     },
     {
       id: 'business',
-      price: 79,
+      monthlyPrice: 99,
+      yearlyPrice: 790,
+      yearlyPerMonth: 65.83,
       features: [
-        t('features.everythingInPro'),
+        t('features.repliesPerMonth', { count: 500 }),
         t('features.locations', { count: 10 }),
         t('features.teamMembers', { count: 5 }),
         t('features.slackIntegration'),
@@ -83,14 +93,12 @@ export function Pricing() {
       return;
     }
 
-    if (planId === 'business') {
-      window.location.href = 'mailto:contact@replystack.com?subject=Business Plan Inquiry';
-      return;
-    }
-
     setLoadingPlan(planId);
     try {
-      const { url } = await stripeApi.createCheckout(planId as 'starter' | 'pro');
+      const { url } = await lemonSqueezyApi.createCheckout(
+        planId as 'starter' | 'pro' | 'business',
+        billingCycle
+      );
       window.location.href = url;
     } catch (error) {
       console.error('Failed to create checkout session:', error);
@@ -108,17 +116,50 @@ export function Pricing() {
     return planOrder.indexOf(planId) > planOrder.indexOf(user?.plan || 'free');
   };
 
+  const getYearlySavings = (plan: typeof plans[0]) => {
+    if (plan.id === 'free' || !plan.monthlyPrice) return 0;
+    const yearlyTotal = plan.monthlyPrice * 12;
+    return Math.round(((yearlyTotal - plan.yearlyPrice) / yearlyTotal) * 100);
+  };
+
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl font-bold text-gray-900">
             {t('title')}
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             {t('subtitle')}
           </p>
+        </div>
+
+        {/* Billing Toggle */}
+        <div className="flex justify-center items-center gap-4 mb-12">
+          <span className={`text-sm font-medium ${billingCycle === 'monthly' ? 'text-gray-900' : 'text-gray-500'}`}>
+            {t('billing.monthly')}
+          </span>
+          <button
+            onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+              billingCycle === 'yearly' ? 'bg-primary-600' : 'bg-gray-300'
+            }`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                billingCycle === 'yearly' ? 'translate-x-6' : 'translate-x-1'
+              }`}
+            />
+          </button>
+          <span className={`text-sm font-medium ${billingCycle === 'yearly' ? 'text-gray-900' : 'text-gray-500'}`}>
+            {t('billing.yearly')}
+          </span>
+          {billingCycle === 'yearly' && (
+            <span className="bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+              {t('billing.saveUpTo')}
+            </span>
+          )}
         </div>
 
         {/* All Features Included Banner */}
@@ -174,11 +215,40 @@ export function Pricing() {
               </div>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">
-                  {plan.price === 0 ? t('plans.free.price') : `€${plan.price}`}
-                </span>
-                {plan.price > 0 && (
-                  <span className="text-gray-500">{t('perMonth')}</span>
+                {plan.id === 'free' ? (
+                  <span className="text-4xl font-bold text-gray-900">{t('plans.free.price')}</span>
+                ) : billingCycle === 'yearly' ? (
+                  <div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-gray-900">
+                        €{plan.yearlyPerMonth?.toFixed(0)}
+                      </span>
+                      <span className="text-gray-500">{t('perMonth')}</span>
+                    </div>
+                    <div className="mt-1 flex items-center gap-2">
+                      <span className="text-sm text-gray-500 line-through">
+                        €{plan.monthlyPrice}/mo
+                      </span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">
+                        -{getYearlySavings(plan)}%
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {t('billing.billedYearly', { price: plan.yearlyPrice })}
+                    </p>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-gray-900">
+                        €{plan.monthlyPrice}
+                      </span>
+                      <span className="text-gray-500">{t('perMonth')}</span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {t('billing.billedMonthly')}
+                    </p>
+                  </div>
                 )}
               </div>
 

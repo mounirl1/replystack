@@ -40,10 +40,18 @@ return [
         'model' => env('ANTHROPIC_MODEL', 'claude-3-haiku-20240307'),
     ],
 
-    'stripe' => [
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-        'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+    'lemonsqueezy' => [
+        'api_key' => env('LEMONSQUEEZY_API_KEY'),
+        'store_id' => env('LEMONSQUEEZY_STORE_ID'),
+        'webhook_secret' => env('LEMONSQUEEZY_WEBHOOK_SECRET'),
+        // Monthly variants
+        'variant_starter_monthly' => env('LEMONSQUEEZY_VARIANT_STARTER_MONTHLY'),
+        'variant_pro_monthly' => env('LEMONSQUEEZY_VARIANT_PRO_MONTHLY'),
+        'variant_business_monthly' => env('LEMONSQUEEZY_VARIANT_BUSINESS_MONTHLY'),
+        // Yearly variants
+        'variant_starter_yearly' => env('LEMONSQUEEZY_VARIANT_STARTER_YEARLY'),
+        'variant_pro_yearly' => env('LEMONSQUEEZY_VARIANT_PRO_YEARLY'),
+        'variant_business_yearly' => env('LEMONSQUEEZY_VARIANT_BUSINESS_YEARLY'),
     ],
 
     'google' => [

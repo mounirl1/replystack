@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ConnectionController;
+use App\Http\Controllers\Api\LemonSqueezyController;
 use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\ReviewSyncController;
@@ -104,9 +105,9 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
         Route::delete('/', [UserController::class, 'destroy']);
     });
 
-    // Stripe
-    Route::post('/stripe/checkout', [App\Http\Controllers\Api\StripeController::class, 'checkout']);
-    Route::post('/stripe/portal', [App\Http\Controllers\Api\StripeController::class, 'portal']);
+    // LemonSqueezy
+    Route::post('/lemonsqueezy/checkout', [LemonSqueezyController::class, 'checkout']);
+    Route::post('/lemonsqueezy/portal', [LemonSqueezyController::class, 'portal']);
 
     // OAuth - Protected routes (initiate and disconnect)
     Route::prefix('oauth')->group(function () {
@@ -120,8 +121,8 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
     });
 });
 
-// Stripe webhook (no auth, no rate limit)
-Route::post('/stripe/webhook', [App\Http\Controllers\Api\StripeController::class, 'webhook']);
+// LemonSqueezy webhook (no auth, no rate limit)
+Route::post('/lemonsqueezy/webhook', [LemonSqueezyController::class, 'webhook']);
 
 // OAuth callbacks (no auth - returning from Google/Facebook)
 Route::get('/oauth/google/callback', [OAuthController::class, 'googleCallback']);

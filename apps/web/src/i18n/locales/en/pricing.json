@@ -1,6 +1,13 @@
 {
   "title": "Simple, transparent pricing",
   "subtitle": "Choose the plan that fits your needs. All plans include a 7-day free trial.",
+  "billing": {
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "saveUpTo": "Save up to 57%",
+    "billedYearly": "Billed €{{price}}/year",
+    "billedMonthly": "Billed monthly"
+  },
   "allFeaturesBanner": {
     "badge": "All features included on every plan",
     "tones": {
@@ -37,7 +44,7 @@
     "business": {
       "name": "Business",
       "description": "For teams and agencies",
-      "cta": "Contact Sales"
+      "cta": "Start Free Trial"
     }
   },
   "features": {
@@ -72,7 +79,7 @@
     },
     "quota": {
       "question": "What happens when I run out of replies?",
-      "answer": "On Free and Starter plans, your quota resets at the beginning of each month. Pro and Business plans have unlimited replies."
+      "answer": "Your quota resets at the beginning of each month. If you need more replies, you can upgrade to a higher plan at any time."
     },
     "refund": {
       "question": "Do you offer refunds?",
