@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// Replace with your actual GA4 Measurement ID
+// GA4 Measurement ID - Set VITE_GA_MEASUREMENT_ID in environment variables
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
 declare global {

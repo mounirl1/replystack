@@ -16,6 +16,7 @@ const comparisons = [
   { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
   { name: 'ReplyStack vs Podium', slug: 'replystack-vs-podium' },
   { name: 'ReplyStack vs TalkbackAI', slug: 'replystack-vs-talkbackai' },
+  { name: 'ReplyStack vs NiceJob', slug: 'replystack-vs-nicejob' },
 ];
 
 export function Footer() {

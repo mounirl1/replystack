@@ -12,6 +12,7 @@ import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 import ReplyStackVsBirdeyeEN from '@/content/compare/replystack-vs-birdeye/index.mdx';
 import ReplyStackVsPodiumEN from '@/content/compare/replystack-vs-podium/index.mdx';
 import ReplyStackVsTalkbackAIEN from '@/content/compare/replystack-vs-talkbackai/index.mdx';
+import ReplyStackVsNiceJobEN from '@/content/compare/replystack-vs-nicejob/index.mdx';
 
 // Hardcoded article data (will be dynamic later)
 const articles: Record<string, {
@@ -62,6 +63,19 @@ const articles: Record<string, {
       competitor: 'TalkbackAI',
       date: '2026-01-10',
       readingTime: 14,
+      language: 'en',
+      availableLanguages: ['en'],
+    },
+  },
+  'en:replystack-vs-nicejob': {
+    component: ReplyStackVsNiceJobEN,
+    meta: {
+      title: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
+      metaTitle: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
+      metaDescription: 'NiceJob helps collect reviews. ReplyStack helps respond to them. Which do you need? Our comparison helps you decide. Free plans available.',
+      competitor: 'NiceJob',
+      date: '2026-01-10',
+      readingTime: 12,
       language: 'en',
       availableLanguages: ['en'],
     },

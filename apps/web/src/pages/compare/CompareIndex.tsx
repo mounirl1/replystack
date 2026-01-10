@@ -35,6 +35,16 @@ const comparisons = [
     readingTime: 14,
     highlight: 'Extension + Dashboard vs Extension only',
   },
+  {
+    slug: 'replystack-vs-nicejob',
+    competitor: 'NiceJob',
+    competitorLogo: '⭐',
+    title: 'ReplyStack vs NiceJob',
+    description: 'NiceJob helps collect reviews. ReplyStack helps respond to them. Which do you need?',
+    date: '2026-01-10',
+    readingTime: 12,
+    highlight: 'Response vs Generation focus',
+  },
 ];
 
 function getLanguageFromPath(path: string): string {
