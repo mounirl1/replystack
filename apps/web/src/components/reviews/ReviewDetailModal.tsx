@@ -12,6 +12,7 @@ import {
 import { PlatformIcon, getPlatformName } from '../ui/PlatformIcon';
 import { usePublishReply, useUpdateReviewStatus } from '../../hooks/useReviews';
 import type { Review } from '../../types/review';
+import { COPY_FEEDBACK_DURATION } from '@/constants';
 
 interface ReviewDetailModalProps {
   review: Review | null;
@@ -106,7 +107,7 @@ export function ReviewDetailModal({
   const handleCopy = async (text: string) => {
     await navigator.clipboard.writeText(text);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), COPY_FEEDBACK_DURATION);
   };
 
   const handlePublish = (content: string) => {

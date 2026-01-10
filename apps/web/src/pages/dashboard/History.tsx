@@ -14,6 +14,7 @@ import { repliesApi, type Response } from '@/services/api';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge, PlatformBadge } from '@/components/ui/Badge';
+import { COPY_FEEDBACK_DURATION } from '@/constants';
 
 export function History() {
   const { t } = useTranslation('dashboard');
@@ -61,7 +62,7 @@ export function History() {
     try {
       await navigator.clipboard.writeText(response.content);
       setCopiedId(response.id);
-      setTimeout(() => setCopiedId(null), 2000);
+      setTimeout(() => setCopiedId(null), COPY_FEEDBACK_DURATION);
     } catch (error) {
       console.error('Failed to copy:', error);
     }

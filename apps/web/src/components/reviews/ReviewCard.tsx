@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { PlatformIcon, getPlatformName } from '../ui/PlatformIcon';
 import type { Review, ReviewStatus } from '../../types/review';
+import { COPY_FEEDBACK_DURATION } from '@/constants';
 
 interface ReviewCardProps {
   review: Review;
@@ -63,7 +64,7 @@ export function ReviewCard({
     if (review.latest_response) {
       await navigator.clipboard.writeText(review.latest_response.content);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), COPY_FEEDBACK_DURATION);
     }
   };
 

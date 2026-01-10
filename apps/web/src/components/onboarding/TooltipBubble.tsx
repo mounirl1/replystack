@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import type { OnboardingStep } from '@/contexts/OnboardingContext';
+import { TOOLTIP_POSITION_DELAY } from '@/constants';
 
 interface TooltipBubbleProps {
   step: OnboardingStep;
@@ -16,9 +17,13 @@ interface Position {
   arrowOffset?: number; // Offset from center for the arrow (in pixels)
 }
 
+/** Fixed width of the tooltip in pixels */
 const TOOLTIP_WIDTH = 320;
-const TOOLTIP_HEIGHT_ESTIMATE = 250; // Estimated max height for vertical bounds
+/** Estimated max height for vertical bounds checking */
+const TOOLTIP_HEIGHT_ESTIMATE = 250;
+/** Gap between tooltip and target element */
 const TOOLTIP_GAP = 16;
+/** Size of the arrow pointer in pixels */
 const ARROW_SIZE = 8;
 
 export function TooltipBubble({
@@ -31,10 +36,22 @@ export function TooltipBubble({
   const [position, setPosition] = useState<Position | null>(null);
 
   useEffect(() => {
+    /**
+     * Calculates the optimal tooltip position based on the target element
+     * and viewport boundaries.
+     *
+     * Algorithm:
+     * 1. Get target element bounding rect with padding
+     * 2. Try the preferred position (default: bottom)
+     * 3. If tooltip would overflow, flip to opposite side
+     * 4. Ensure horizontal/vertical bounds are respected
+     * 5. Calculate arrow offset if position was adjusted
+     */
     const calculatePosition = () => {
       const element = document.querySelector(step.targetSelector);
       if (!element) return;
 
+      // Calculate target bounds including padding for visual spacing
       const rect = element.getBoundingClientRect();
       const targetRect = {
         top: rect.top - padding,
@@ -51,7 +68,7 @@ export function TooltipBubble({
       let pos: Position;
       const preferredPosition = step.position || 'bottom';
 
-      // Calculate position based on preferred direction
+      // Calculate position based on preferred direction with overflow handling
       switch (preferredPosition) {
         case 'right':
           pos = {
@@ -143,7 +160,7 @@ export function TooltipBubble({
     };
 
     // Initial calculation with delay
-    const timeoutId = setTimeout(calculatePosition, 150);
+    const timeoutId = setTimeout(calculatePosition, TOOLTIP_POSITION_DELAY);
 
     window.addEventListener('scroll', calculatePosition, true);
     window.addEventListener('resize', calculatePosition);

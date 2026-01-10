@@ -1,27 +1,26 @@
-import { useState, type ReactElement } from 'react';
+import { type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import {
-  Sparkles,
   ArrowRight,
   Star,
   MessageSquare,
   Zap,
   Globe2,
   TrendingUp,
-  CheckCircle2,
   ChevronRight,
-  ChevronDown,
   Chrome,
   Users,
   BarChart3,
   Layers,
   Bot,
   Languages,
-  X,
+  Sparkles,
+  CheckCircle2,
 } from 'lucide-react';
 import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
+import { ComparisonTable, FAQAccordion, TestimonialsGrid } from '@/components/landing';
 import {
   getSectorsForLocation,
   getSectorBasePath,
@@ -38,17 +37,6 @@ const platforms = [
   { name: 'Trustpilot', icon: '⭐' },
 ];
 
-
-// Comparison data
-const comparisonData = [
-  { feature: "Réponses IA personnalisées", replystack: true, manual: false, others: "Limité" },
-  { feature: "Profils de réponse", replystack: true, manual: false, others: false },
-  { feature: "Toutes plateformes supportées", replystack: true, manual: true, others: "Partiel" },
-  { feature: "Extension navigateur", replystack: true, manual: false, others: "Rare" },
-  { feature: "Multi-langues automatique", replystack: true, manual: false, others: "Limité" },
-  { feature: "Prix abordable", replystack: true, manual: true, others: false },
-];
-
 export function Landing(): ReactElement {
   const { t, i18n } = useTranslation('landing');
   const { t: tc } = useTranslation('common');
@@ -57,7 +45,6 @@ export function Landing(): ReactElement {
   const currentLang = extractLanguageCode(i18n.language);
   const sectorBasePath = getSectorBasePath(currentLang);
   const landingSectors = getSectorsForLocation('landing', currentLang);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   return (
     <div className="bg-white">
@@ -386,53 +373,7 @@ export function Landing(): ReactElement {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">{t('comparison.feature')}</th>
-                  <th className="text-center py-4 px-4">
-                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full font-semibold">
-                      <Sparkles size={16} />
-                      {t('comparison.replystack')}
-                    </div>
-                  </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-600">{t('comparison.manual')}</th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-600">{t('comparison.others')}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-4 px-4 text-gray-700">{row.feature}</td>
-                    <td className="text-center py-4 px-4">
-                      {row.replystack === true ? (
-                        <CheckCircle2 className="inline text-emerald-500" size={24} />
-                      ) : (
-                        <span className="text-gray-400">—</span>
-                      )}
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      {row.manual === true ? (
-                        <CheckCircle2 className="inline text-gray-400" size={24} />
-                      ) : (
-                        <X className="inline text-gray-300" size={24} />
-                      )}
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      {row.others === true ? (
-                        <CheckCircle2 className="inline text-gray-400" size={24} />
-                      ) : row.others === false ? (
-                        <X className="inline text-gray-300" size={24} />
-                      ) : (
-                        <span className="text-sm text-gray-500">{row.others}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ComparisonTable />
         </div>
       </section>
 
@@ -486,27 +427,7 @@ export function Landing(): ReactElement {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {(t('testimonialsSection.items', { returnObjects: true }) as Array<{ quote: string; author: string; role: string }>).map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="flex gap-1 mb-4 text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold">
-                    {testimonial.author.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsGrid />
         </div>
       </section>
 
@@ -523,27 +444,7 @@ export function Landing(): ReactElement {
             </h2>
           </div>
 
-          <div className="space-y-4">
-            {(t('faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>).map((item, index) => (
-              <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-semibold text-gray-900 pr-4">{item.question}</span>
-                  <ChevronDown
-                    size={20}
-                    className={`text-gray-500 transition-transform flex-shrink-0 ${openFaqIndex === index ? 'rotate-180' : ''}`}
-                  />
-                </button>
-                {openFaqIndex === index && (
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordion />
         </div>
       </section>
 

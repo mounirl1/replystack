@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { PlanBadge } from '@/components/ui/Badge';
 import { AxiosError } from 'axios';
+import { SUCCESS_TOAST_DURATION } from '@/constants';
 
 export function Settings() {
   const { t } = useTranslation('settings');
@@ -40,7 +41,7 @@ export function Settings() {
       await userApi.updateSettings({ name, email });
       await refreshUser();
       setProfileSuccess('Profile updated successfully');
-      setTimeout(() => setProfileSuccess(''), 3000);
+      setTimeout(() => setProfileSuccess(''), SUCCESS_TOAST_DURATION);
     } catch (err) {
       if (err instanceof AxiosError) {
         setProfileError(err.response?.data?.message || 'Failed to update profile');

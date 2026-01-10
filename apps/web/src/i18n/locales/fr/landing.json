@@ -198,14 +198,14 @@
     "replystack": "ReplyStack",
     "manual": "Réponses manuelles",
     "others": "Autres outils",
-    "features": {
-      "aiResponses": "Réponses IA personnalisées",
-      "responseProfiles": "Profils de réponse",
-      "allPlatforms": "Toutes plateformes supportées",
-      "browserExtension": "Extension navigateur",
-      "multiLanguage": "Multi-langues automatique",
-      "affordablePrice": "Prix abordable"
-    },
+    "rows": [
+      { "feature": "Réponses IA personnalisées", "replystack": true, "manual": false, "others": "Limité" },
+      { "feature": "Profils de réponse", "replystack": true, "manual": false, "others": false },
+      { "feature": "Toutes plateformes supportées", "replystack": true, "manual": true, "others": "Partiel" },
+      { "feature": "Extension navigateur", "replystack": true, "manual": false, "others": "Rare" },
+      { "feature": "Multi-langues automatique", "replystack": true, "manual": false, "others": "Limité" },
+      { "feature": "Prix abordable", "replystack": true, "manual": true, "others": false }
+    ],
     "limited": "Limité",
     "partial": "Partiel",
     "rare": "Rare"

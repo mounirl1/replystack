@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { POSITION_CALC_DELAY } from '@/constants';
 
 interface TargetRect {
   top: number;
@@ -102,6 +103,14 @@ export function SpotlightMask({
   );
 }
 
+/**
+ * Custom hook to track the bounding rectangle of a DOM element
+ * Automatically updates on scroll, resize, and DOM mutations
+ *
+ * @param targetSelector - CSS selector for the target element
+ * @param padding - Extra padding to add around the element bounds
+ * @returns The target's bounding rectangle or null if element not found
+ */
 export function useTargetRect(targetSelector: string, padding = 8) {
   const [targetRect, setTargetRect] = useState<TargetRect | null>(null);
 
@@ -122,7 +131,7 @@ export function useTargetRect(targetSelector: string, padding = 8) {
     };
 
     // Initial update with small delay for render
-    const timeoutId = setTimeout(updateRect, 100);
+    const timeoutId = setTimeout(updateRect, POSITION_CALC_DELAY);
 
     // Update on scroll/resize
     window.addEventListener('scroll', updateRect, true);

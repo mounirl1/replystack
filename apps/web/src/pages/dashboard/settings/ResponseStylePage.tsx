@@ -13,6 +13,7 @@ import type {
   ResponseProfileFormData,
   ResponseProfileOptions,
 } from '@/types/responseProfile';
+import { SUCCESS_TOAST_DURATION } from '@/constants';
 
 interface Location {
   id: number;
@@ -103,7 +104,7 @@ export function ResponseStylePage() {
       setProfileExists(true);
       setShowOnboarding(false);
       setSuccessMessage(t('responseStyle.success'));
-      setTimeout(() => setSuccessMessage(null), 3000);
+      setTimeout(() => setSuccessMessage(null), SUCCESS_TOAST_DURATION);
     } catch (err) {
       setError(t('responseStyle.errors.save'));
       console.error('Failed to save profile:', err);
@@ -125,7 +126,7 @@ export function ResponseStylePage() {
       setIsSaving(true);
       await responseProfileApi.saveProfile(selectedLocationId, profileData);
       setSuccessMessage(t('responseStyle.saved'));
-      setTimeout(() => setSuccessMessage(null), 3000);
+      setTimeout(() => setSuccessMessage(null), SUCCESS_TOAST_DURATION);
     } catch (err) {
       setError(t('responseStyle.errors.save'));
       console.error('Failed to save profile:', err);
@@ -143,7 +144,7 @@ export function ResponseStylePage() {
       setProfileData(profile);
       setProfileExists(false);
       setSuccessMessage(t('responseStyle.reset'));
-      setTimeout(() => setSuccessMessage(null), 3000);
+      setTimeout(() => setSuccessMessage(null), SUCCESS_TOAST_DURATION);
     } catch (err) {
       setError(t('responseStyle.errors.reset'));
       console.error('Failed to reset profile:', err);

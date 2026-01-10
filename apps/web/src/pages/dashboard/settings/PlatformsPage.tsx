@@ -5,6 +5,7 @@ import { Check, AlertCircle, Link2 } from 'lucide-react';
 import { PlatformConnections } from '../../../components/settings/PlatformConnections';
 import { useAuth } from '../../../contexts/AuthContext';
 import { locationsApi, type Location } from '../../../services/api';
+import { INFO_TOAST_DURATION } from '@/constants';
 
 export function PlatformsPage() {
   const { t } = useTranslation('settings');
@@ -40,7 +41,7 @@ export function PlatformsPage() {
       setSearchParams(searchParams, { replace: true });
 
       // Auto-dismiss toast
-      setTimeout(() => setToast(null), 5000);
+      setTimeout(() => setToast(null), INFO_TOAST_DURATION);
     }
   }, [searchParams, setSearchParams, t]);
 

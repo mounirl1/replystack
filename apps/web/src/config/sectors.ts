@@ -131,22 +131,52 @@ export const SECTOR_NAMES: Record<SupportedLanguage, Record<SectorSlug, string>>
 // Helper Functions
 // ============================================================================
 
+/**
+ * Finds a sector by its slug identifier
+ * @param slug - The sector slug to search for
+ * @returns The sector object or undefined if not found
+ */
 export function getSectorBySlug(slug: SectorSlug): Sector | undefined {
   return SECTORS.find((sector) => sector.slug === slug);
 }
 
+/**
+ * Gets the localized name for a sector
+ * Falls back to English name, then to the slug if no translation exists
+ * @param slug - The sector slug
+ * @param language - The target language code
+ * @returns The localized sector name
+ */
 export function getSectorName(slug: SectorSlug, language: SupportedLanguage): string {
   return SECTOR_NAMES[language]?.[slug] ?? SECTOR_NAMES.en[slug] ?? slug;
 }
 
+/**
+ * Gets the localized base path for sector pages
+ * @param language - The target language code
+ * @returns The localized path prefix (e.g., '/fr/secteurs')
+ */
 export function getSectorBasePath(language: SupportedLanguage): string {
   return SECTOR_PATHS[language] ?? SECTOR_PATHS.en;
 }
 
+/**
+ * Builds the full path to a sector page
+ * @param slug - The sector slug
+ * @param language - The target language code
+ * @returns The full localized path (e.g., '/fr/secteurs/restaurants')
+ */
 export function getSectorPath(slug: SectorSlug, language: SupportedLanguage): string {
   return `${getSectorBasePath(language)}/${slug}`;
 }
 
+/**
+ * Gets sectors for a specific UI location with their localized names
+ * Each location (header, footer, landing) has a different subset of sectors
+ * @param location - Where the sectors will be displayed
+ * @param language - The target language code
+ * @returns Array of sectors with their localized names
+ */
 export function getSectorsForLocation(
   location: 'header' | 'footer' | 'landing',
   language: SupportedLanguage
@@ -164,10 +194,22 @@ export function getSectorsForLocation(
     .filter((s): s is SectorWithName => s !== null);
 }
 
+/**
+ * Type guard to check if a string is a valid sector slug
+ * @param slug - The string to validate
+ * @returns True if the slug is a valid SectorSlug
+ */
 export function isValidSector(slug: string): slug is SectorSlug {
   return SECTORS.some((sector) => sector.slug === slug);
 }
 
+/**
+ * Extracts a supported language code from an i18n language string
+ * Handles formats like 'fr-FR' by extracting the first 2 characters
+ * Falls back to 'en' if the language is not supported
+ * @param i18nLanguage - The i18n language string (e.g., 'fr-FR', 'en')
+ * @returns A supported language code
+ */
 export function extractLanguageCode(i18nLanguage: string | undefined): SupportedLanguage {
   const code = i18nLanguage?.substring(0, 2) || 'en';
   return (SECTOR_PATHS[code as SupportedLanguage] ? code : 'en') as SupportedLanguage;

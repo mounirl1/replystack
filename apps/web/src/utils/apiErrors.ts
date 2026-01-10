@@ -84,3 +84,80 @@ export function translateValidationErrors(
   }
   return translated;
 }
+
+/**
+ * API Error type for consistent error handling
+ */
+export interface ApiError {
+  message: string;
+  errors?: Record<string, string[]>;
+  status?: number;
+}
+
+/**
+ * Extract error message from various error types
+ * Handles Axios errors, API responses, and generic Error objects
+ */
+export function extractErrorMessage(error: unknown): string {
+  // Axios error with response
+  if (
+    error &&
+    typeof error === 'object' &&
+    'response' in error &&
+    error.response &&
+    typeof error.response === 'object'
+  ) {
+    const response = error.response as { data?: { message?: string }; status?: number };
+    if (response.data?.message) {
+      return response.data.message;
+    }
+    if (response.status === 401) {
+      return 'Unauthenticated.';
+    }
+    if (response.status === 403) {
+      return 'Access denied.';
+    }
+    if (response.status === 404) {
+      return 'Resource not found.';
+    }
+    if (response.status && response.status >= 500) {
+      return 'Server Error';
+    }
+  }
+
+  // Standard Error object
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  // String error
+  if (typeof error === 'string') {
+    return error;
+  }
+
+  // Unknown error
+  return 'An unexpected error occurred';
+}
+
+/**
+ * Handle API errors with consistent logging and message extraction
+ */
+export function handleApiError(
+  error: unknown,
+  t: TFunction,
+  options?: {
+    fallbackKey?: string;
+    logError?: boolean;
+    context?: string;
+  }
+): string {
+  const { fallbackKey = 'apiErrors.generic', logError = true, context } = options ?? {};
+
+  const message = extractErrorMessage(error);
+
+  if (logError) {
+    console.error(context ? `[${context}]` : '[API Error]', error);
+  }
+
+  return translateApiError(message, t, fallbackKey);
+}
