@@ -6,6 +6,9 @@ import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { SettingsLayout } from '@/components/layout/SettingsLayout';
 import { OnboardingProvider } from '@/contexts/OnboardingContext';
 import { ScrollToTop } from '@/components/utils/ScrollToTop';
+import { useDocumentLanguage } from '@/hooks/useDocumentLanguage';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { CookieConsent } from '@/components/ui/CookieConsent';
 
 // Lazy load pages for code splitting
 const Landing = lazy(() => import('@/pages/Landing').then(m => ({ default: m.Landing })));
@@ -22,6 +25,10 @@ const ResponseStylePage = lazy(() => import('@/pages/dashboard/settings/Response
 const PlatformsPage = lazy(() => import('@/pages/dashboard/settings/PlatformsPage').then(m => ({ default: m.PlatformsPage })));
 const LanguagePage = lazy(() => import('@/pages/dashboard/settings/LanguagePage').then(m => ({ default: m.LanguagePage })));
 const SupportedPlatforms = lazy(() => import('@/pages/dashboard/SupportedPlatforms').then(m => ({ default: m.SupportedPlatforms })));
+const BlogIndex = lazy(() => import('@/pages/blog/BlogIndex').then(m => ({ default: m.BlogIndex })));
+const BlogPost = lazy(() => import('@/pages/blog/BlogPost').then(m => ({ default: m.BlogPost })));
+const CompareIndex = lazy(() => import('@/pages/compare/CompareIndex').then(m => ({ default: m.CompareIndex })));
+const ComparePage = lazy(() => import('@/pages/compare/ComparePage').then(m => ({ default: m.ComparePage })));
 
 // Loading component for Suspense fallback
 function LoadingSpinner() {
@@ -35,10 +42,18 @@ function LoadingSpinner() {
   );
 }
 
+// Component that applies document-level effects
+function AppEffects() {
+  useDocumentLanguage();
+  return null;
+}
+
 function App() {
   return (
     <HelmetProvider>
     <BrowserRouter>
+      <AppEffects />
+      <GoogleAnalytics />
       <ScrollToTop />
       <OnboardingProvider>
       <Suspense fallback={<LoadingSpinner />}>
@@ -48,6 +63,32 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/solutions/:slug" element={<IndustryPage />} />
+          {/* Blog routes - EN (default) */}
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          {/* Blog routes - FR */}
+          <Route path="/fr/blog" element={<BlogIndex />} />
+          <Route path="/fr/blog/:slug" element={<BlogPost />} />
+          {/* Blog routes - ES */}
+          <Route path="/es/blog" element={<BlogIndex />} />
+          <Route path="/es/blog/:slug" element={<BlogPost />} />
+          {/* Blog routes - PT */}
+          <Route path="/pt/blog" element={<BlogIndex />} />
+          <Route path="/pt/blog/:slug" element={<BlogPost />} />
+          {/* Comparison pages - EN (default) */}
+          <Route path="/compare" element={<CompareIndex />} />
+          <Route path="/compare/:slug" element={<ComparePage />} />
+          <Route path="/en/compare" element={<CompareIndex />} />
+          <Route path="/en/compare/:slug" element={<ComparePage />} />
+          {/* Comparison pages - FR */}
+          <Route path="/fr/compare" element={<CompareIndex />} />
+          <Route path="/fr/compare/:slug" element={<ComparePage />} />
+          {/* Comparison pages - ES */}
+          <Route path="/es/compare" element={<CompareIndex />} />
+          <Route path="/es/compare/:slug" element={<ComparePage />} />
+          {/* Comparison pages - PT */}
+          <Route path="/pt/compare" element={<CompareIndex />} />
+          <Route path="/pt/compare/:slug" element={<ComparePage />} />
         </Route>
 
         {/* Auth routes */}
@@ -80,6 +121,7 @@ function App() {
       </Routes>
       </Suspense>
       </OnboardingProvider>
+      <CookieConsent />
     </BrowserRouter>
     </HelmetProvider>
   );

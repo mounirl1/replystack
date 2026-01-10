@@ -1,0 +1,42 @@
+{
+  "title": "Blog",
+  "subtitle": "Tips, guides, and insights on AI-powered review management",
+  "seo": {
+    "title": "Blog | ReplyStack",
+    "description": "Tips, guides, and insights on AI-powered review management. Learn how to respond to customer reviews effectively."
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "noResults": "No articles found",
+    "resultsCount": "{{count}} article(s) found"
+  },
+  "categories": {
+    "title": "Categories",
+    "all": "All",
+    "guides": "Guides",
+    "tips": "Tips & Tricks",
+    "case-studies": "Case Studies",
+    "news": "News",
+    "product-updates": "Product Updates"
+  },
+  "article": {
+    "readingTime": "{{minutes}} min read",
+    "publishedOn": "Published on {{date}}",
+    "updatedOn": "Updated on {{date}}",
+    "by": "By",
+    "shareOn": "Share",
+    "tableOfContents": "Table of Contents",
+    "relatedArticles": "Related Articles",
+    "availableIn": "Also available in:",
+    "backToBlog": "Back to Blog"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {{current}} of {{total}}"
+  },
+  "empty": {
+    "title": "Coming Soon",
+    "description": "We're working on great content. Check back soon!"
+  }
+}

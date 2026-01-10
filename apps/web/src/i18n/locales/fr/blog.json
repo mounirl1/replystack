@@ -1,0 +1,42 @@
+{
+  "title": "Blog",
+  "subtitle": "Conseils, guides et astuces sur la gestion des avis avec l'IA",
+  "seo": {
+    "title": "Blog | ReplyStack",
+    "description": "Conseils, guides et astuces sur la gestion des avis avec l'IA. Apprenez à répondre efficacement aux avis clients."
+  },
+  "search": {
+    "placeholder": "Rechercher des articles...",
+    "noResults": "Aucun article trouvé",
+    "resultsCount": "{{count}} article(s) trouvé(s)"
+  },
+  "categories": {
+    "title": "Catégories",
+    "all": "Tous",
+    "guides": "Guides",
+    "tips": "Trucs & Astuces",
+    "case-studies": "Études de cas",
+    "news": "Actualités",
+    "product-updates": "Mises à jour produit"
+  },
+  "article": {
+    "readingTime": "{{minutes}} min de lecture",
+    "publishedOn": "Publié le {{date}}",
+    "updatedOn": "Mis à jour le {{date}}",
+    "by": "Par",
+    "shareOn": "Partager",
+    "tableOfContents": "Sommaire",
+    "relatedArticles": "Articles connexes",
+    "availableIn": "Aussi disponible en :",
+    "backToBlog": "Retour au Blog"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{current}} sur {{total}}"
+  },
+  "empty": {
+    "title": "Bientôt disponible",
+    "description": "Nous préparons du contenu de qualité. Revenez bientôt !"
+  }
+}

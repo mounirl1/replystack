@@ -73,6 +73,38 @@
     "business": "Business",
     "enterprise": "Enterprise"
   },
+  "extension": {
+    "install": "Install Extension",
+    "addToChrome": "Add to Chrome",
+    "addToFirefox": "Add to Firefox",
+    "alsoOnChrome": "Also on Chrome",
+    "alsoOnFirefox": "Also on Firefox",
+    "recommended": "Recommended",
+    "freeForever": "Free forever"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to analyze our traffic and improve your experience. By clicking \"Accept\", you consent to our use of cookies for analytics purposes.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn more"
+  },
+  "trust": {
+    "gdprCompliant": "GDPR Compliant",
+    "secureData": "Secure Data",
+    "noCardRequired": "No Card Required",
+    "cancelAnytime": "Cancel Anytime",
+    "euHosted": "EU Hosted",
+    "encrypted": "256-bit Encrypted",
+    "noDataSharing": "No Data Sharing",
+    "sectionBadge": "Your data is safe",
+    "sectionTitle": "Security & Privacy First",
+    "sectionSubtitle": "We take your data security seriously. Your business information is encrypted and never shared with third parties.",
+    "euHostedDescription": "All data stored in EU data centers",
+    "encryptedDescription": "Bank-level encryption for all data",
+    "gdprCompliantDescription": "Full GDPR and privacy compliance",
+    "noDataSharingDescription": "Your data is never sold or shared"
+  },
   "auth": {
     "magic": {
       "validating": "Authenticating...",

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
 import { lemonSqueezyApi } from '@/services/api';
 import { Button } from '@/components/ui/Button';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 type BillingCycle = 'monthly' | 'yearly';
 
@@ -122,7 +123,36 @@ export function Pricing() {
     return Math.round(((yearlyTotal - plan.yearlyPrice) / yearlyTotal) * 100);
   };
 
+  // Structured data for pricing
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "ReplyStack",
+    "description": t('seo.description'),
+    "brand": {
+      "@type": "Brand",
+      "name": "ReplyStack"
+    },
+    "offers": plans.map(plan => ({
+      "@type": "Offer",
+      "name": t(`plans.${plan.id}.name`),
+      "price": billingCycle === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice,
+      "priceCurrency": "EUR",
+      "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    })),
+  };
+
   return (
+    <>
+      <PageSEO
+        title={t('seo.title')}
+        description={t('seo.description')}
+        namespace="pricing"
+        canonicalPath="/pricing"
+        structuredData={structuredData}
+        keywords="pricing, plans, AI review response, subscription, ReplyStack pricing"
+      />
+
     <div className="bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Header */}
@@ -343,5 +373,6 @@ export function Pricing() {
         </div>
       </div>
     </div>
+    </>
   );
 }

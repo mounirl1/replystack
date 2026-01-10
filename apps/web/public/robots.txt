@@ -1,0 +1,20 @@
+# ReplyStack - Robots.txt
+# https://replystack.io
+
+User-agent: *
+Allow: /
+
+# Protected/authenticated areas
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /reviews
+Disallow: /history
+Disallow: /auth/
+
+# Allow crawling of public assets
+Allow: /icon.png
+Allow: /logo.png
+Allow: /favicon.png
+
+# Sitemap location
+Sitemap: https://replystack.io/sitemap.xml

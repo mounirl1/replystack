@@ -1,0 +1,42 @@
+{
+  "title": "Blog",
+  "subtitle": "Dicas, guias e insights sobre gestão de avaliações com IA",
+  "seo": {
+    "title": "Blog | ReplyStack",
+    "description": "Dicas, guias e insights sobre gestão de avaliações com IA. Aprenda a responder eficazmente às avaliações de clientes."
+  },
+  "search": {
+    "placeholder": "Pesquisar artigos...",
+    "noResults": "Nenhum artigo encontrado",
+    "resultsCount": "{{count}} artigo(s) encontrado(s)"
+  },
+  "categories": {
+    "title": "Categorias",
+    "all": "Todos",
+    "guides": "Guias",
+    "tips": "Dicas e Truques",
+    "case-studies": "Estudos de Caso",
+    "news": "Notícias",
+    "product-updates": "Atualizações do Produto"
+  },
+  "article": {
+    "readingTime": "{{minutes}} min de leitura",
+    "publishedOn": "Publicado em {{date}}",
+    "updatedOn": "Atualizado em {{date}}",
+    "by": "Por",
+    "shareOn": "Compartilhar",
+    "tableOfContents": "Índice",
+    "relatedArticles": "Artigos Relacionados",
+    "availableIn": "Também disponível em:",
+    "backToBlog": "Voltar ao Blog"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Próximo",
+    "page": "Página {{current}} de {{total}}"
+  },
+  "empty": {
+    "title": "Em Breve",
+    "description": "Estamos preparando conteúdo de qualidade. Volte em breve!"
+  }
+}

@@ -73,6 +73,38 @@
     "business": "Business",
     "enterprise": "Enterprise"
   },
+  "extension": {
+    "install": "Installer l'extension",
+    "addToChrome": "Ajouter à Chrome",
+    "addToFirefox": "Ajouter à Firefox",
+    "alsoOnChrome": "Aussi sur Chrome",
+    "alsoOnFirefox": "Aussi sur Firefox",
+    "recommended": "Recommandé",
+    "freeForever": "Gratuit pour toujours"
+  },
+  "cookies": {
+    "title": "Nous utilisons des cookies",
+    "description": "Nous utilisons des cookies pour analyser notre trafic et améliorer votre expérience. En cliquant sur \"Accepter\", vous consentez à notre utilisation des cookies à des fins d'analyse.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learnMore": "En savoir plus"
+  },
+  "trust": {
+    "gdprCompliant": "Conforme RGPD",
+    "secureData": "Données sécurisées",
+    "noCardRequired": "Sans carte bancaire",
+    "cancelAnytime": "Annuler à tout moment",
+    "euHosted": "Hébergé en UE",
+    "encrypted": "Chiffrement 256-bit",
+    "noDataSharing": "Aucun partage de données",
+    "sectionBadge": "Vos données sont en sécurité",
+    "sectionTitle": "Sécurité & Confidentialité",
+    "sectionSubtitle": "Nous prenons la sécurité de vos données au sérieux. Vos informations sont chiffrées et jamais partagées avec des tiers.",
+    "euHostedDescription": "Toutes les données hébergées dans l'UE",
+    "encryptedDescription": "Chiffrement de niveau bancaire",
+    "gdprCompliantDescription": "Conformité totale RGPD",
+    "noDataSharingDescription": "Vos données ne sont jamais vendues"
+  },
   "auth": {
     "magic": {
       "validating": "Authentification...",

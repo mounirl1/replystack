@@ -1,0 +1,42 @@
+{
+  "title": "Blog",
+  "subtitle": "Consejos, guías e ideas sobre la gestión de reseñas con IA",
+  "seo": {
+    "title": "Blog | ReplyStack",
+    "description": "Consejos, guías e ideas sobre la gestión de reseñas con IA. Aprende a responder eficazmente a las reseñas de clientes."
+  },
+  "search": {
+    "placeholder": "Buscar artículos...",
+    "noResults": "No se encontraron artículos",
+    "resultsCount": "{{count}} artículo(s) encontrado(s)"
+  },
+  "categories": {
+    "title": "Categorías",
+    "all": "Todos",
+    "guides": "Guías",
+    "tips": "Trucos y Consejos",
+    "case-studies": "Casos de Estudio",
+    "news": "Noticias",
+    "product-updates": "Actualizaciones del Producto"
+  },
+  "article": {
+    "readingTime": "{{minutes}} min de lectura",
+    "publishedOn": "Publicado el {{date}}",
+    "updatedOn": "Actualizado el {{date}}",
+    "by": "Por",
+    "shareOn": "Compartir",
+    "tableOfContents": "Índice",
+    "relatedArticles": "Artículos Relacionados",
+    "availableIn": "También disponible en:",
+    "backToBlog": "Volver al Blog"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página {{current}} de {{total}}"
+  },
+  "empty": {
+    "title": "Próximamente",
+    "description": "Estamos preparando contenido de calidad. ¡Vuelve pronto!"
+  }
+}

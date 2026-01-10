@@ -5,6 +5,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { translateApiError, translateValidationErrors } from '@/utils/apiErrors';
 import { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 export function Register() {
   const { t } = useTranslation('auth');
@@ -58,6 +59,13 @@ export function Register() {
   const inputErrorClassName = "w-full px-4 py-3 rounded-xl text-sm bg-gray-50 dark:bg-dark-hover text-gray-900 dark:text-text-primary placeholder:text-gray-400 dark:placeholder:text-text-tertiary border border-red-300 dark:border-red-500/50 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all";
 
   return (
+    <>
+      <PageSEO
+        title="Create Account - ReplyStack"
+        description="Create your free ReplyStack account and start responding to reviews with AI"
+        noindex={true}
+        includeHreflang={false}
+      />
     <div className="w-full max-w-md bg-white dark:bg-dark-surface rounded-2xl shadow-xl border border-gray-100 dark:border-dark-border p-8">
       <div className="text-center mb-8">
         <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-500/25">
@@ -161,5 +169,6 @@ export function Register() {
         </Link>
       </p>
     </div>
+    </>
   );
 }

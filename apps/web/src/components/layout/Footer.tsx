@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
+import { ExtensionLink } from '@/components/ui/ExtensionCTA';
 
 // Industries for footer
 const industries = [
@@ -8,6 +9,13 @@ const industries = [
   { name: 'Hôtels', slug: 'hotels' },
   { name: 'Commerces', slug: 'commerces' },
   { name: 'Garagistes', slug: 'garagistes' },
+];
+
+// Comparisons for footer
+const comparisons = [
+  { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
+  { name: 'ReplyStack vs Podium', slug: 'replystack-vs-podium' },
+  { name: 'ReplyStack vs TalkbackAI', slug: 'replystack-vs-talkbackai' },
 ];
 
 export function Footer() {
@@ -20,7 +28,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -48,9 +56,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-emerald-600 transition-colors">
-                  {t('footer.extension')}
-                </a>
+                <ExtensionLink />
               </li>
             </ul>
           </div>
@@ -66,6 +72,31 @@ export function Footer() {
                     className="hover:text-emerald-600 transition-colors"
                   >
                     {industry.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Compare */}
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4">Compare</h4>
+            <ul className="space-y-3 text-gray-600">
+              <li>
+                <Link
+                  to="/compare"
+                  className="hover:text-emerald-600 transition-colors font-medium"
+                >
+                  All Comparisons
+                </Link>
+              </li>
+              {comparisons.map((comparison) => (
+                <li key={comparison.slug}>
+                  <Link
+                    to={`/compare/${comparison.slug}`}
+                    className="hover:text-emerald-600 transition-colors"
+                  >
+                    {comparison.name}
                   </Link>
                 </li>
               ))}

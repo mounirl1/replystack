@@ -21,6 +21,7 @@ import {
   Languages,
   X,
 } from 'lucide-react';
+import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 
 // Platform data
 const platforms = [
@@ -184,13 +185,11 @@ export function Landing() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <Link to="/register" className="btn-primary text-lg px-8 py-4">
-                {t('hero.cta')}
-                <ArrowRight size={18} />
-              </Link>
-              <Link to="/pricing" className="btn-secondary text-lg px-8 py-4">
+            <div className="flex flex-col items-center gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <ExtensionCTA variant="hero" />
+              <Link to="/pricing" className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center gap-1">
                 {t('hero.viewPricing')}
+                <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -615,12 +614,9 @@ export function Landing() {
               <p className="text-xl text-emerald-100 mb-10 max-w-xl mx-auto">
                 {t('cta.subtitle')}
               </p>
-              <Link to="/register" className="inline-flex items-center gap-2 bg-white text-emerald-600 font-bold text-lg px-8 py-4 rounded-full hover:bg-emerald-50 transition-all shadow-lg shadow-emerald-900/20 hover:shadow-xl">
-                {t('cta.button')}
-                <ArrowRight size={18} />
-              </Link>
-              <p className="mt-4 text-sm text-emerald-200">
-                {t('hero.noCreditCard')}
+              <ExtensionCTA variant="default" className="justify-center" />
+              <p className="mt-6 text-sm text-emerald-200">
+                {t('hero.noCreditCard')} • {tc('extension.freeForever')}
               </p>
             </div>
           </div>

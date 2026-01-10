@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
 import {
-  ArrowRight,
   Menu,
   X,
   ChevronDown,
@@ -15,8 +14,10 @@ import {
   Stethoscope,
   Flower2,
   Wrench,
+  Chrome,
 } from 'lucide-react';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
+import { EXTENSION_URLS } from '@/config/extensions';
 
 // Industries for mega menu
 const industries = [
@@ -128,6 +129,12 @@ export function Header() {
             >
               {t('nav.pricing')}
             </Link>
+            <Link
+              to="/blog"
+              className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors rounded-lg hover:bg-gray-50"
+            >
+              Blog
+            </Link>
           </div>
 
           {/* Desktop CTAs */}
@@ -157,13 +164,15 @@ export function Header() {
                 >
                   {t('nav.signIn')}
                 </Link>
-                <Link
-                  to="/register"
+                <a
+                  href={EXTENSION_URLS.chrome}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02]"
                 >
-                  {t('nav.getStarted')}
-                  <ArrowRight size={16} />
-                </Link>
+                  <Chrome size={16} />
+                  {t('extension.install')}
+                </a>
               </>
             )}
           </div>
@@ -221,6 +230,12 @@ export function Header() {
               >
                 {t('nav.pricing')}
               </Link>
+              <Link
+                to="/blog"
+                className="px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium rounded-lg"
+              >
+                Blog
+              </Link>
 
               <div className="border-t border-gray-100 pt-4 mt-2 space-y-2">
                 {isAuthenticated ? (
@@ -246,13 +261,15 @@ export function Header() {
                     >
                       {t('nav.signIn')}
                     </Link>
-                    <Link
-                      to="/register"
+                    <a
+                      href={EXTENSION_URLS.chrome}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-3 rounded-full"
                     >
-                      {t('nav.getStarted')}
-                      <ArrowRight size={16} />
-                    </Link>
+                      <Chrome size={16} />
+                      {t('extension.install')}
+                    </a>
                   </>
                 )}
               </div>

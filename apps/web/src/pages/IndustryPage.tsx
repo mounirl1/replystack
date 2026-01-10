@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { LucideIcon } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 import {
   ArrowRight,
   Star,
@@ -245,7 +246,30 @@ export function IndustryPage() {
     { icon: Shield, key: 'brandConsistency' },
   ];
 
+  // SEO structured data
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `ReplyStack for ${t(`${industry.id}.hero.title`)}`,
+    "description": t(`${industry.id}.hero.subtitle`),
+    "provider": {
+      "@type": "Organization",
+      "name": "ReplyStack"
+    },
+    "serviceType": "AI Review Response Management"
+  };
+
   return (
+    <>
+      <PageSEO
+        title={`${t(`${industry.id}.hero.title`)} - ReplyStack`}
+        description={t(`${industry.id}.hero.subtitle`)}
+        namespace="industries"
+        canonicalPath={`/solutions/${slug}`}
+        structuredData={structuredData}
+        keywords={`${slug}, review management, AI responses, ${industry.platforms.join(', ')}`}
+      />
+
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-24 lg:pt-28 lg:pb-32">
@@ -546,5 +570,6 @@ export function IndustryPage() {
       </section>
 
     </div>
+    </>
   );
 }
