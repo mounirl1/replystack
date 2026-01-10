@@ -5,6 +5,10 @@ import { useAuth } from '@/contexts/AuthContext';
 import { lemonSqueezyApi } from '@/services/api';
 import { Button } from '@/components/ui/Button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { useCurrency } from '@/hooks/useCurrency';
+import { convertAndRound, getCurrencySymbol } from '@/lib/currency/utils';
+import type { SupportedCurrency } from '@/lib/currency/types';
+import { CURRENCY_CONFIG } from '@/lib/currency/config';
 
 type BillingCycle = 'monthly' | 'yearly';
 
@@ -14,6 +18,18 @@ export function Pricing() {
   const navigate = useNavigate();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<BillingCycle>('yearly');
+  const { currency, setManualCurrency } = useCurrency();
+
+  // Get currency symbol for display
+  const currencySymbol = getCurrencySymbol(currency);
+
+  // Helper to get converted price
+  const getPrice = (eurPrice: number): number => {
+    return convertAndRound(eurPrice, currency);
+  };
+
+  // Available currencies for selector
+  const availableCurrencies: SupportedCurrency[] = ['EUR', 'USD', 'GBP', 'CAD', 'BRL'];
 
   const plans = [
     {
@@ -123,7 +139,7 @@ export function Pricing() {
     return Math.round(((yearlyTotal - plan.yearlyPrice) / yearlyTotal) * 100);
   };
 
-  // Structured data for pricing
+  // Structured data for pricing (always use EUR as base for SEO consistency)
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -136,8 +152,8 @@ export function Pricing() {
     "offers": plans.map(plan => ({
       "@type": "Offer",
       "name": t(`plans.${plan.id}.name`),
-      "price": billingCycle === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice,
-      "priceCurrency": "EUR",
+      "price": billingCycle === 'yearly' ? getPrice(plan.yearlyPrice) : getPrice(plan.monthlyPrice),
+      "priceCurrency": currency,
       "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     })),
   };
@@ -163,6 +179,24 @@ export function Pricing() {
           <p className="mt-4 text-lg text-gray-600">
             {t('subtitle')}
           </p>
+        </div>
+
+        {/* Currency Selector */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1.5">
+            <span className="text-xs text-gray-500">{t('billing.currency') || 'Currency'}:</span>
+            <select
+              value={currency}
+              onChange={(e) => setManualCurrency(e.target.value as SupportedCurrency)}
+              className="text-sm font-medium bg-transparent border-none focus:ring-0 cursor-pointer pr-6"
+            >
+              {availableCurrencies.map((curr) => (
+                <option key={curr} value={curr}>
+                  {CURRENCY_CONFIG[curr].symbol} {curr}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Billing Toggle */}
@@ -223,27 +257,27 @@ export function Pricing() {
                   <div>
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold text-gray-900">
-                        €{plan.yearlyPerMonth?.toFixed(0)}
+                        {currencySymbol}{Math.round(getPrice(plan.yearlyPrice) / 12)}
                       </span>
                       <span className="text-gray-500">{t('perMonth')}</span>
                     </div>
                     <div className="mt-1 flex items-center gap-2">
                       <span className="text-sm text-gray-500 line-through">
-                        €{plan.monthlyPrice}/mo
+                        {currencySymbol}{getPrice(plan.monthlyPrice)}/mo
                       </span>
                       <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">
                         -{getYearlySavings(plan)}%
                       </span>
                     </div>
                     <p className="text-xs text-gray-500 mt-1">
-                      {t('billing.billedYearly', { price: plan.yearlyPrice })}
+                      {t('billing.billedYearly', { price: `${currencySymbol}${getPrice(plan.yearlyPrice)}` })}
                     </p>
                   </div>
                 ) : (
                   <div>
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold text-gray-900">
-                        €{plan.monthlyPrice}
+                        {currencySymbol}{getPrice(plan.monthlyPrice)}
                       </span>
                       <span className="text-gray-500">{t('perMonth')}</span>
                     </div>

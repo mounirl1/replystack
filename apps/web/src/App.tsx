@@ -29,6 +29,7 @@ const BlogIndex = lazy(() => import('@/pages/blog/BlogIndex').then(m => ({ defau
 const BlogPost = lazy(() => import('@/pages/blog/BlogPost').then(m => ({ default: m.BlogPost })));
 const CompareIndex = lazy(() => import('@/pages/compare/CompareIndex').then(m => ({ default: m.CompareIndex })));
 const ComparePage = lazy(() => import('@/pages/compare/ComparePage').then(m => ({ default: m.ComparePage })));
+const AlternativesPage = lazy(() => import('@/pages/alternatives/AlternativesPage').then(m => ({ default: m.AlternativesPage })));
 
 // Loading component for Suspense fallback
 function LoadingSpinner() {
@@ -89,6 +90,14 @@ function App() {
           {/* Comparison pages - PT */}
           <Route path="/pt/compare" element={<CompareIndex />} />
           <Route path="/pt/compare/:slug" element={<ComparePage />} />
+          {/* Alternatives/Hub pages - EN */}
+          <Route path="/alternatives/:slug" element={<AlternativesPage />} />
+          {/* Alternatives/Hub pages - FR */}
+          <Route path="/fr/alternatives/:slug" element={<AlternativesPage />} />
+          {/* Alternatives/Hub pages - ES */}
+          <Route path="/es/alternatives/:slug" element={<AlternativesPage />} />
+          {/* Alternatives/Hub pages - PT */}
+          <Route path="/pt/alternatives/:slug" element={<AlternativesPage />} />
         </Route>
 
         {/* Auth routes */}

@@ -8,11 +8,23 @@ import { TableOfContents, useTableOfContents } from '@/components/blog/TableOfCo
 import { ShareButtons } from '@/components/blog/ShareButtons';
 import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 
-// Import comparison articles
+// Import comparison articles - English
 import ReplyStackVsBirdeyeEN from '@/content/compare/replystack-vs-birdeye/index.mdx';
 import ReplyStackVsPodiumEN from '@/content/compare/replystack-vs-podium/index.mdx';
 import ReplyStackVsTalkbackAIEN from '@/content/compare/replystack-vs-talkbackai/index.mdx';
 import ReplyStackVsNiceJobEN from '@/content/compare/replystack-vs-nicejob/index.mdx';
+// Import comparison articles - French
+import ReplyStackVsGuestSuiteFR from '@/content/compare/replystack-vs-guest-suite/index.mdx';
+import ReplyStackVsSoLikeFR from '@/content/compare/replystack-vs-solike/index.mdx';
+import ReplyStackVsCustplaceFR from '@/content/compare/replystack-vs-custplace/index.mdx';
+import ReplyStackVsBirdeyeFR from '@/content/compare/replystack-vs-birdeye/index.fr.mdx';
+// Import comparison articles - Spanish
+import ReplyStackVsBirdeyeES from '@/content/compare/replystack-vs-birdeye/index.es.mdx';
+import ReplyStackVsPodiumES from '@/content/compare/replystack-vs-podium/index.es.mdx';
+import ReplyStackVsReviES from '@/content/compare/replystack-vs-revi/index.es.mdx';
+// Import comparison articles - Portuguese
+import ReplyStackVsBirdeyePT from '@/content/compare/replystack-vs-birdeye/index.pt.mdx';
+import ReplyStackVsPodiumPT from '@/content/compare/replystack-vs-podium/index.pt.mdx';
 
 // Hardcoded article data (will be dynamic later)
 const articles: Record<string, {
@@ -38,7 +50,7 @@ const articles: Record<string, {
       date: '2026-01-10',
       readingTime: 10,
       language: 'en',
-      availableLanguages: ['en'],
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
     },
   },
   'en:replystack-vs-podium': {
@@ -51,7 +63,7 @@ const articles: Record<string, {
       date: '2026-01-10',
       readingTime: 12,
       language: 'en',
-      availableLanguages: ['en'],
+      availableLanguages: ['en', 'es', 'pt'],
     },
   },
   'en:replystack-vs-talkbackai': {
@@ -78,6 +90,123 @@ const articles: Record<string, {
       readingTime: 12,
       language: 'en',
       availableLanguages: ['en'],
+    },
+  },
+  'fr:replystack-vs-guest-suite': {
+    component: ReplyStackVsGuestSuiteFR,
+    meta: {
+      title: 'ReplyStack vs Guest Suite : Quelle Solution pour Gérer vos Avis Clients ?',
+      metaTitle: 'ReplyStack vs Guest Suite : Comparatif pour les PME Françaises',
+      metaDescription: 'Guest Suite est sur devis. ReplyStack démarre gratuitement. Nous avons testé les deux. Voici notre analyse pour les entreprises françaises.',
+      competitor: 'Guest Suite',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['fr'],
+    },
+  },
+  'fr:replystack-vs-solike': {
+    component: ReplyStackVsSoLikeFR,
+    meta: {
+      title: 'ReplyStack vs SoLike : Quel Outil pour Répondre à vos Avis ?',
+      metaTitle: 'ReplyStack vs SoLike : Comparatif des Solutions de Réponse aux Avis',
+      metaDescription: 'SoLike à 29€/mois, spécialisé hôtellerie. ReplyStack dès 0€, multi-secteurs. Comparatif détaillé pour choisir le bon outil de réponse aux avis.',
+      competitor: 'SoLike',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'fr',
+      availableLanguages: ['fr'],
+    },
+  },
+  'fr:replystack-vs-custplace': {
+    component: ReplyStackVsCustplaceFR,
+    meta: {
+      title: 'ReplyStack vs Custplace : Quelle Solution de Gestion d\'Avis Choisir ?',
+      metaTitle: 'ReplyStack vs Custplace : Comparatif pour la Gestion d\'Avis',
+      metaDescription: 'Custplace cible les grandes marques. ReplyStack s\'adresse aux PME. Comparatif détaillé pour choisir la solution adaptée à votre entreprise.',
+      competitor: 'Custplace',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['fr'],
+    },
+  },
+  'fr:replystack-vs-birdeye': {
+    component: ReplyStackVsBirdeyeFR,
+    meta: {
+      title: 'ReplyStack vs Birdeye : Analyse Comparative pour le Marché Français',
+      metaTitle: 'ReplyStack vs Birdeye : Comparatif Complet pour les Entreprises',
+      metaDescription: 'Birdeye démarre à 299€/mois. ReplyStack propose un plan gratuit. Nous avons testé les deux. Voici notre analyse objective.',
+      competitor: 'Birdeye',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-birdeye': {
+    component: ReplyStackVsBirdeyeES,
+    meta: {
+      title: 'ReplyStack vs Birdeye: ¿Cuál es la Mejor Opción para su Negocio?',
+      metaTitle: 'ReplyStack vs Birdeye: Comparativa Completa para Empresas',
+      metaDescription: 'Birdeye cuesta desde $299/mes. ReplyStack ofrece plan gratuito. Analizamos ambas plataformas. Descubre cuál se adapta a tu negocio.',
+      competitor: 'Birdeye',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-podium': {
+    component: ReplyStackVsPodiumES,
+    meta: {
+      title: 'ReplyStack vs Podium: ¿Cuál Herramienta de Reseñas Elegir?',
+      metaTitle: 'ReplyStack vs Podium: Comparativa para Elegir la Herramienta Adecuada',
+      metaDescription: 'Podium cuesta $249/mes. ReplyStack ofrece plan gratuito. Comparamos ambas plataformas para ayudarle a decidir. Prueba gratis disponible.',
+      competitor: 'Podium',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-revi': {
+    component: ReplyStackVsReviES,
+    meta: {
+      title: 'ReplyStack vs Revi: ¿Cuál Herramienta de Reseñas Elegir?',
+      metaTitle: 'ReplyStack vs Revi: Comparativa de Herramientas de Reseñas',
+      metaDescription: 'Revi es una solución española de gestión de reseñas. ReplyStack ofrece extensión Chrome universal. Comparamos ambas para ayudarle a elegir.',
+      competitor: 'Revi',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'es',
+      availableLanguages: ['es'],
+    },
+  },
+  'pt:replystack-vs-birdeye': {
+    component: ReplyStackVsBirdeyePT,
+    meta: {
+      title: 'ReplyStack vs Birdeye: Qual Ferramenta de Avaliações Escolher?',
+      metaTitle: 'ReplyStack vs Birdeye: Comparativo Completo para Empresas',
+      metaDescription: 'Birdeye custa a partir de $299/mês. ReplyStack oferece plano gratuito. Testamos ambas plataformas. Descubra qual é a melhor para o seu negócio.',
+      competitor: 'Birdeye',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-podium': {
+    component: ReplyStackVsPodiumPT,
+    meta: {
+      title: 'ReplyStack vs Podium: Qual Ferramenta de Avaliações Escolher?',
+      metaTitle: 'ReplyStack vs Podium: Comparativo para Escolher a Ferramenta Certa',
+      metaDescription: 'Podium custa $249/mês. ReplyStack oferece plano gratuito. Comparamos ambas plataformas para ajudá-lo a decidir. Teste grátis disponível.',
+      competitor: 'Podium',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'es', 'pt'],
     },
   },
 };

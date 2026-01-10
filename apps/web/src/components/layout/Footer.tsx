@@ -11,13 +11,58 @@ const industries = [
   { name: 'Garagistes', slug: 'garagistes' },
 ];
 
-// Comparisons for footer
-const comparisons = [
+// Comparisons for footer - English
+const comparisonsEN = [
   { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
   { name: 'ReplyStack vs Podium', slug: 'replystack-vs-podium' },
   { name: 'ReplyStack vs TalkbackAI', slug: 'replystack-vs-talkbackai' },
   { name: 'ReplyStack vs NiceJob', slug: 'replystack-vs-nicejob' },
 ];
+
+// Comparisons for footer - French
+const comparisonsFR = [
+  { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
+  { name: 'ReplyStack vs Guest Suite', slug: 'replystack-vs-guest-suite' },
+  { name: 'ReplyStack vs SoLike', slug: 'replystack-vs-solike' },
+  { name: 'ReplyStack vs Custplace', slug: 'replystack-vs-custplace' },
+];
+
+// Comparisons for footer - Spanish
+const comparisonsES = [
+  { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
+  { name: 'ReplyStack vs Podium', slug: 'replystack-vs-podium' },
+  { name: 'ReplyStack vs Revi', slug: 'replystack-vs-revi' },
+];
+
+// Comparisons for footer - Portuguese
+const comparisonsPT = [
+  { name: 'ReplyStack vs Birdeye', slug: 'replystack-vs-birdeye' },
+  { name: 'ReplyStack vs Podium', slug: 'replystack-vs-podium' },
+];
+
+// Footer translations
+const footerTranslations = {
+  en: {
+    compareTitle: 'Compare',
+    compareAll: 'All Comparisons',
+    solutions: 'Solutions',
+  },
+  fr: {
+    compareTitle: 'Comparer',
+    compareAll: 'Tous les comparatifs',
+    solutions: 'Solutions',
+  },
+  es: {
+    compareTitle: 'Comparar',
+    compareAll: 'Todas las comparaciones',
+    solutions: 'Soluciones',
+  },
+  pt: {
+    compareTitle: 'Comparar',
+    compareAll: 'Todas as comparações',
+    solutions: 'Soluções',
+  },
+};
 
 export function Footer() {
   const { t, i18n } = useTranslation('common');
@@ -25,6 +70,25 @@ export function Footer() {
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
   const legalBaseUrl = apiUrl.replace(/\/api\/?$/, '');
   const currentLang = i18n.language?.substring(0, 2) || 'en';
+  const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
+
+  // Get translations based on language
+  const footerT = footerTranslations[currentLang as keyof typeof footerTranslations] || footerTranslations.en;
+
+  // Get comparisons based on language
+  const getComparisons = () => {
+    switch (currentLang) {
+      case 'fr':
+        return comparisonsFR;
+      case 'es':
+        return comparisonsES;
+      case 'pt':
+        return comparisonsPT;
+      default:
+        return comparisonsEN;
+    }
+  };
+  const comparisons = getComparisons();
 
   return (
     <footer className="bg-gray-50 border-t border-gray-100 py-16">
@@ -64,7 +128,7 @@ export function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Solutions</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">{footerT.solutions}</h4>
             <ul className="space-y-3 text-gray-600">
               {industries.map((industry) => (
                 <li key={industry.slug}>
@@ -81,20 +145,20 @@ export function Footer() {
 
           {/* Compare */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Compare</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">{footerT.compareTitle}</h4>
             <ul className="space-y-3 text-gray-600">
               <li>
                 <Link
-                  to="/compare"
+                  to={`${langPrefix}/compare`}
                   className="hover:text-emerald-600 transition-colors font-medium"
                 >
-                  All Comparisons
+                  {footerT.compareAll}
                 </Link>
               </li>
               {comparisons.map((comparison) => (
                 <li key={comparison.slug}>
                   <Link
-                    to={`/compare/${comparison.slug}`}
+                    to={`${langPrefix}/compare/${comparison.slug}`}
                     className="hover:text-emerald-600 transition-colors"
                   >
                     {comparison.name}

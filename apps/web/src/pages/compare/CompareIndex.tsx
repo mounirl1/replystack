@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
-// Comparison articles metadata
-const comparisons = [
+// Comparison articles metadata - English
+const comparisonsEN = [
   {
     slug: 'replystack-vs-birdeye',
     competitor: 'Birdeye',
@@ -47,6 +47,170 @@ const comparisons = [
   },
 ];
 
+// Comparison articles metadata - French
+const comparisonsFR = [
+  {
+    slug: 'replystack-vs-birdeye',
+    competitor: 'Birdeye',
+    competitorLogo: '🦅',
+    title: 'ReplyStack vs Birdeye',
+    description: 'Birdeye démarre à 299€/mois. ReplyStack propose un plan gratuit. Analyse comparative objective.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Économisez jusqu\'à 90%',
+  },
+  {
+    slug: 'replystack-vs-guest-suite',
+    competitor: 'Guest Suite',
+    competitorLogo: '🏨',
+    title: 'ReplyStack vs Guest Suite',
+    description: 'Guest Suite est sur devis. ReplyStack démarre gratuitement. Nous avons testé les deux. Voici notre analyse.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Prix transparent vs Sur devis',
+  },
+  {
+    slug: 'replystack-vs-solike',
+    competitor: 'SoLike',
+    competitorLogo: '💬',
+    title: 'ReplyStack vs SoLike',
+    description: 'SoLike à 29€/mois, spécialisé hôtellerie. ReplyStack dès 0€, multi-secteurs. Quel outil choisir ?',
+    date: '2026-01-10',
+    readingTime: 12,
+    highlight: 'Multi-secteurs vs Hospitality',
+  },
+  {
+    slug: 'replystack-vs-custplace',
+    competitor: 'Custplace',
+    competitorLogo: '🏢',
+    title: 'ReplyStack vs Custplace',
+    description: 'Custplace cible les grandes marques. ReplyStack s\'adresse aux PME. Quelle solution pour vous ?',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'PME vs Grandes enseignes',
+  },
+];
+
+// Comparison articles metadata - Spanish
+const comparisonsES = [
+  {
+    slug: 'replystack-vs-birdeye',
+    competitor: 'Birdeye',
+    competitorLogo: '🦅',
+    title: 'ReplyStack vs Birdeye',
+    description: 'Birdeye cuesta desde $299/mes. ReplyStack ofrece plan gratuito. Análisis comparativo objetivo.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Ahorre hasta 90%',
+  },
+  {
+    slug: 'replystack-vs-podium',
+    competitor: 'Podium',
+    competitorLogo: '🏆',
+    title: 'ReplyStack vs Podium',
+    description: 'Podium cuesta $249/mes. ReplyStack ofrece plan gratuito. Comparamos ambas plataformas para ayudarle a decidir.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Extensión Chrome vs Dashboard',
+  },
+  {
+    slug: 'replystack-vs-revi',
+    competitor: 'Revi',
+    competitorLogo: '🛒',
+    title: 'ReplyStack vs Revi',
+    description: 'Revi es una solución española para e-commerce. ReplyStack ofrece extensión Chrome universal. ¿Cuál elegir?',
+    date: '2026-01-10',
+    readingTime: 12,
+    highlight: 'Reseñas externas vs E-commerce',
+  },
+];
+
+// Comparison articles metadata - Portuguese
+const comparisonsPT = [
+  {
+    slug: 'replystack-vs-birdeye',
+    competitor: 'Birdeye',
+    competitorLogo: '🦅',
+    title: 'ReplyStack vs Birdeye',
+    description: 'Birdeye custa a partir de $299/mês. ReplyStack oferece plano gratuito. Comparativo objetivo.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Poupe até 90%',
+  },
+  {
+    slug: 'replystack-vs-podium',
+    competitor: 'Podium',
+    competitorLogo: '🏆',
+    title: 'ReplyStack vs Podium',
+    description: 'Podium custa $249/mês. ReplyStack oferece plano gratuito. Comparamos ambas plataformas para ajudá-lo a decidir.',
+    date: '2026-01-10',
+    readingTime: 14,
+    highlight: 'Extensão Chrome vs Dashboard',
+  },
+];
+
+// Get comparisons by language
+function getComparisonsByLanguage(language: string) {
+  switch (language) {
+    case 'fr':
+      return comparisonsFR;
+    case 'es':
+      return comparisonsES;
+    case 'pt':
+      return comparisonsPT;
+    default:
+      return comparisonsEN;
+  }
+}
+
+// Page content translations
+const pageContent = {
+  en: {
+    badge: 'Comparison Guides',
+    title: 'How Does ReplyStack Compare?',
+    subtitle: 'Honest, detailed comparisons to help you choose the right review management tool for your business.',
+    metaTitle: 'ReplyStack Comparisons - Find the Best Review Management Tool',
+    metaDescription: 'Compare ReplyStack with Birdeye, Podium, and other review management platforms. Honest, detailed comparisons to help you choose the right tool.',
+    ctaTitle: 'Ready to try ReplyStack?',
+    ctaText: 'Start responding to reviews smarter and faster. Free plan includes 15 AI responses per month. No credit card required.',
+    ctaButton: 'Get Started Free',
+    minRead: 'min read',
+  },
+  fr: {
+    badge: 'Guides Comparatifs',
+    title: 'Comment ReplyStack se Compare ?',
+    subtitle: 'Des comparatifs honnêtes et détaillés pour vous aider à choisir le bon outil de gestion des avis.',
+    metaTitle: 'Comparatifs ReplyStack - Trouvez le Meilleur Outil de Gestion d\'Avis',
+    metaDescription: 'Comparez ReplyStack avec Guest Suite et d\'autres plateformes de gestion d\'avis. Des comparatifs honnêtes pour vous aider à choisir.',
+    ctaTitle: 'Prêt à essayer ReplyStack ?',
+    ctaText: 'Répondez à vos avis plus vite et plus intelligemment. Le plan gratuit inclut 15 réponses IA par mois. Sans carte bancaire.',
+    ctaButton: 'Commencer Gratuitement',
+    minRead: 'min de lecture',
+  },
+  es: {
+    badge: 'Guías Comparativas',
+    title: '¿Cómo se Compara ReplyStack?',
+    subtitle: 'Comparativas honestas y detalladas para ayudarte a elegir la herramienta de gestión de reseñas adecuada.',
+    metaTitle: 'Comparativas ReplyStack - Encuentra la Mejor Herramienta de Gestión de Reseñas',
+    metaDescription: 'Compara ReplyStack con Birdeye y otras plataformas de gestión de reseñas. Comparativas honestas para ayudarte a elegir.',
+    ctaTitle: '¿Listo para probar ReplyStack?',
+    ctaText: 'Responde a tus reseñas más rápido e inteligente. El plan gratuito incluye 15 respuestas IA por mes. Sin tarjeta de crédito.',
+    ctaButton: 'Comenzar Gratis',
+    minRead: 'min de lectura',
+  },
+  pt: {
+    badge: 'Guias Comparativos',
+    title: 'Como ReplyStack se Compara?',
+    subtitle: 'Comparativos honestos e detalhados para ajudá-lo a escolher a ferramenta de gestão de avaliações certa.',
+    metaTitle: 'Comparativos ReplyStack - Encontre a Melhor Ferramenta de Gestão de Avaliações',
+    metaDescription: 'Compare ReplyStack com Birdeye e outras plataformas de gestão de avaliações. Comparativos honestos para ajudá-lo a escolher.',
+    ctaTitle: 'Pronto para experimentar ReplyStack?',
+    ctaText: 'Responda às suas avaliações mais rápido e de forma mais inteligente. O plano gratuito inclui 15 respostas IA por mês. Sem cartão de crédito.',
+    ctaButton: 'Começar Grátis',
+    minRead: 'min de leitura',
+  },
+};
+
 function getLanguageFromPath(path: string): string {
   if (path.startsWith('/fr/')) return 'fr';
   if (path.startsWith('/es/')) return 'es';
@@ -69,13 +233,16 @@ export function CompareIndex() {
   const language = getLanguageFromPath(location.pathname);
   const langPrefix = language === 'en' ? '' : `/${language}`;
 
+  const comparisons = getComparisonsByLanguage(language);
+  const content = pageContent[language as keyof typeof pageContent] || pageContent.en;
+
   const fullUrl = `https://replystack.io${langPrefix}/compare`;
 
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'ReplyStack Comparisons - Find the Best Review Management Tool',
-    description: 'Compare ReplyStack with other review management platforms. Honest, detailed comparisons to help you choose the right tool for your business.',
+    name: content.metaTitle,
+    description: content.metaDescription,
     url: fullUrl,
     mainEntity: {
       '@type': 'ItemList',
@@ -91,13 +258,13 @@ export function CompareIndex() {
   return (
     <>
       <Helmet>
-        <title>ReplyStack Comparisons - Find the Best Review Management Tool</title>
+        <title>{content.metaTitle}</title>
         <meta
           name="description"
-          content="Compare ReplyStack with Birdeye, Podium, and other review management platforms. Honest, detailed comparisons to help you choose the right tool."
+          content={content.metaDescription}
         />
-        <meta property="og:title" content="ReplyStack Comparisons - Find the Best Review Management Tool" />
-        <meta property="og:description" content="Compare ReplyStack with other review management platforms. Find the best fit for your business." />
+        <meta property="og:title" content={content.metaTitle} />
+        <meta property="og:description" content={content.metaDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={fullUrl} />
         <link rel="canonical" href={fullUrl} />
@@ -111,13 +278,13 @@ export function CompareIndex() {
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
             <span className="inline-block px-4 py-1.5 text-sm font-medium rounded-full bg-blue-100 text-blue-800 mb-6">
-              Comparison Guides
+              {content.badge}
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-              How Does ReplyStack Compare?
+              {content.title}
             </h1>
             <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
-              Honest, detailed comparisons to help you choose the right review management tool for your business.
+              {content.subtitle}
             </p>
           </div>
         </div>
@@ -160,7 +327,7 @@ export function CompareIndex() {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <Clock size={14} />
-                      <span>{comparison.readingTime} min read</span>
+                      <span>{comparison.readingTime} {content.minRead}</span>
                     </div>
                   </div>
                   <ArrowRight
@@ -175,16 +342,16 @@ export function CompareIndex() {
           {/* CTA */}
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Ready to try ReplyStack?
+              {content.ctaTitle}
             </h2>
             <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-              Start responding to reviews smarter and faster. Free plan includes 15 AI responses per month. No credit card required.
+              {content.ctaText}
             </p>
             <Link
-              to="/pricing"
+              to={`${langPrefix}/pricing`}
               className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-full hover:bg-emerald-700 transition-colors"
             >
-              Get Started Free
+              {content.ctaButton}
               <ArrowRight size={18} />
             </Link>
           </div>
