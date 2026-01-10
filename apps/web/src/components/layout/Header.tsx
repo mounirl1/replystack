@@ -1,43 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactElement } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
-import {
-  Menu,
-  X,
-  ChevronDown,
-  UtensilsCrossed,
-  Hotel,
-  ShoppingBag,
-  Car,
-  Scissors,
-  Stethoscope,
-  Flower2,
-  Wrench,
-  Chrome,
-} from 'lucide-react';
+import { Menu, X, ChevronDown, Chrome } from 'lucide-react';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
 import { EXTENSION_URLS } from '@/config/extensions';
+import {
+  getSectorsForLocation,
+  getSectorBasePath,
+  extractLanguageCode,
+} from '@/config/sectors';
 
-// Industries for mega menu
-const industries = [
-  { name: 'Restaurants', icon: UtensilsCrossed, slug: 'restaurants', color: 'text-amber-500' },
-  { name: 'Hôtels', icon: Hotel, slug: 'hotels', color: 'text-violet-500' },
-  { name: 'Commerces', icon: ShoppingBag, slug: 'commerces', color: 'text-fuchsia-500' },
-  { name: 'Garagistes', icon: Car, slug: 'garagistes', color: 'text-orange-500' },
-  { name: 'Salons de coiffure', icon: Scissors, slug: 'salons-coiffure', color: 'text-rose-500' },
-  { name: 'Professionnels de santé', icon: Stethoscope, slug: 'professionnels-sante', color: 'text-emerald-500' },
-  { name: 'Fleuristes', icon: Flower2, slug: 'fleuristes', color: 'text-pink-500' },
-  { name: 'Plombiers', icon: Wrench, slug: 'plombiers', color: 'text-blue-500' },
-];
-
-export function Header() {
-  const { t } = useTranslation('common');
+export function Header(): ReactElement {
+  const { t, i18n } = useTranslation('common');
   const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+
+  // Get current language and sectors
+  const currentLang = extractLanguageCode(i18n.language);
+  const sectorBasePath = getSectorBasePath(currentLang);
+  const headerSectors = getSectorsForLocation('header', currentLang);
 
   // Handle scroll for sticky header effect
   useEffect(() => {
@@ -97,22 +82,22 @@ export function Header() {
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
                   <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[500px]">
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
-                      Solutions par métier
+                      {currentLang === 'fr' ? 'Solutions par métier' : currentLang === 'es' ? 'Soluciones por sector' : currentLang === 'pt' ? 'Soluções por setor' : 'Solutions by industry'}
                     </p>
                     <div className="grid grid-cols-2 gap-2">
-                      {industries.map((industry) => {
-                        const Icon = industry.icon;
+                      {headerSectors.map((sector) => {
+                        const Icon = sector.icon;
                         return (
                           <Link
-                            key={industry.slug}
-                            to={`/solutions/${industry.slug}`}
+                            key={sector.slug}
+                            to={`${sectorBasePath}/${sector.slug}`}
                             className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
                           >
-                            <div className={`w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center ${industry.color} group-hover:scale-110 transition-transform`}>
+                            <div className={`w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center ${sector.color} group-hover:scale-110 transition-transform`}>
                               <Icon size={20} />
                             </div>
                             <span className="font-medium text-gray-700 group-hover:text-gray-900">
-                              {industry.name}
+                              {sector.name}
                             </span>
                           </Link>
                         );
@@ -208,16 +193,16 @@ export function Header() {
 
               {isSolutionsOpen && (
                 <div className="pl-4 space-y-1">
-                  {industries.map((industry) => {
-                    const Icon = industry.icon;
+                  {headerSectors.map((sector) => {
+                    const Icon = sector.icon;
                     return (
                       <Link
-                        key={industry.slug}
-                        to={`/solutions/${industry.slug}`}
+                        key={sector.slug}
+                        to={`${sectorBasePath}/${sector.slug}`}
                         className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg"
                       >
-                        <Icon size={18} className={industry.color} />
-                        <span>{industry.name}</span>
+                        <Icon size={18} className={sector.color} />
+                        <span>{sector.name}</span>
                       </Link>
                     );
                   })}

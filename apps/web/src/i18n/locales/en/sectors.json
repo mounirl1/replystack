@@ -1,0 +1,1720 @@
+{
+  "restaurants": {
+    "badge": "Solution for Restaurants",
+    "meta": {
+      "title": "Review Management for Restaurants | ReplyStack",
+      "description": "Respond to Google, TripAdvisor, TheFork reviews in 1 click. AI solution for restaurant owners. Save 10h/month. Free trial.",
+      "keywords": "restaurant review management, respond tripadvisor restaurant reviews, restaurant review software, google reviews restaurant, restaurant reputation management"
+    },
+    "hero": {
+      "title": "Respond to All Your Restaurant Reviews in 1 Click",
+      "subtitle": "Your customers leave reviews on Google, TripAdvisor, TheFork, Yelp, Facebook... You don't have time to respond to all of them. Yet, every unanswered review is a missed opportunity. ReplyStack generates personalized responses in one click, directly on each platform.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "The Garden Bistro",
+      "platform": "TripAdvisor",
+      "reviewer": "Marie L.",
+      "review": "Excellent family meal! The mushroom risotto was perfect and the service was very attentive. We'll be back!",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Hi Marie, thank you so much for this warm feedback! We're delighted that the mushroom risotto pleased you. Your next visit will be a pleasure. See you soon!"
+    },
+    "stats": [
+      { "value": "93%", "label": "of customers read reviews" },
+      { "value": "53%", "label": "expect a response" },
+      { "value": "+35%", "label": "conversion with responses" },
+      { "value": "30s", "label": "per response on average" }
+    ],
+    "platformsTitle": "Works on all your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "TripAdvisor",
+      "TheFork / OpenTable",
+      "Yelp",
+      "Facebook",
+      "Instagram",
+      "UberEats",
+      "DoorDash",
+      "Local directories"
+    ],
+    "challenge": {
+      "title": "The Challenge for Restaurant Owners",
+      "subtitle": "Between service, management and suppliers, responding to reviews often comes last. Yet, every review counts."
+    },
+    "challenges": [
+      {
+        "title": "Reviews are everywhere",
+        "description": "An average restaurant receives reviews on 5 to 8 different platforms. Each platform has its own interface, login system, and response format."
+      },
+      {
+        "title": "Time is limited",
+        "description": "Between lunch service, prep, dinner service, team management - responding to reviews becomes a time-consuming task often abandoned."
+      },
+      {
+        "title": "Every review counts",
+        "description": "A restaurant that responds to reviews sees its conversion rate increase by 35%. Not responding sends a negative message to future customers."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Solves the Problem",
+      "description": "The Chrome extension activates directly on review sites. You're on TripAdvisor? A 'Generate response' button appears next to each review. One click, and the AI proposes a personalized response.",
+      "point1": "Chrome extension that works on all review sites",
+      "point2": "AI that understands restaurant vocabulary",
+      "point3": "Response profile customized to your establishment",
+      "visualTitle": "Setup in 2 minutes",
+      "visualSubtitle": "Simple as can be",
+      "step1": "Install the Chrome extension",
+      "step2": "Sign in to your account",
+      "step3": "Configure your Response Profile",
+      "step4": "Respond to reviews in 1 click"
+    },
+    "featuresTitle": "Key Features for Restaurants",
+    "featuresSubtitle": "Everything you need to effectively manage your reviews",
+    "features": [
+      {
+        "title": "1-click response",
+        "description": "See a review, click, response is ready. Validate, adjust if needed, publish. Average time: under 30 seconds per review."
+      },
+      {
+        "title": "All platforms covered",
+        "description": "Google, TripAdvisor, TheFork, plus local directories, regional guides, delivery sites. If the site shows reviews, ReplyStack works."
+      },
+      {
+        "title": "Sentiment analysis",
+        "description": "The dashboard gives you a global view: review trends, overall sentiment, evolution. Quickly identify if a problem is emerging."
+      },
+      {
+        "title": "Multi-location",
+        "description": "Managing multiple restaurants? Each location has its own Response Profile. Responses are tailored to each address."
+      },
+      {
+        "title": "Team access",
+        "description": "Give access to your floor manager or community manager. Everyone can respond to reviews with the same consistency of tone."
+      },
+      {
+        "title": "Your voice preserved",
+        "description": "The Response Profile captures your establishment's identity: tone, key messages, criticism handling, signature. Customers recognize your voice."
+      }
+    ],
+    "examplesTitle": "Examples of Generated Responses",
+    "examplesSubtitle": "See how AI generates personalized and professional responses",
+    "examplesReviewLabel": "Customer review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive review (5 stars)",
+        "review": "Excellent family meal! The mushroom risotto was perfect and the service was very attentive. We'll be back!",
+        "response": "Hi Marie, thank you so much for this warm feedback! We're delighted that the mushroom risotto pleased you - it's one of our chef's specialties this season. Your next visit will be a pleasure. See you soon!",
+        "author": "The Garden Bistro Team"
+      },
+      {
+        "type": "Negative review (2 stars)",
+        "review": "Very long wait to be served, over 30 minutes before starters. The food was okay but the experience was ruined.",
+        "response": "Hi Thomas, thank you for taking the time to share your feedback. I'm sincerely sorry for this wait - 30 minutes before starters is unacceptable. We've revised our kitchen organization for busy evenings. I hope you'll give us the opportunity to show you a smoother experience.",
+        "author": "Marc, Floor Manager"
+      }
+    ],
+    "testimonialsTitle": "What Restaurant Owners Say",
+    "testimonials": [
+      {
+        "quote": "Before ReplyStack, I'd respond to reviews on Sunday nights when I had time - which was rarely. Now I respond during the week, directly from TripAdvisor. My customers notice.",
+        "author": "Sophie M.",
+        "role": "The Corner Cafe, Chicago"
+      },
+      {
+        "quote": "We have 3 locations, each with its own concept. The AI really adapts to each restaurant's tone. The bistro has different responses than the brasserie. It's impressive.",
+        "author": "Antoine D.",
+        "role": "Saveurs & Co Group, San Francisco"
+      },
+      {
+        "quote": "The free plan let me test without risk. After 2 weeks, I upgraded. The time saved is well worth the price.",
+        "author": "Karim B.",
+        "role": "Napoli Pizzeria, Miami"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing Tailored for Restaurant Owners",
+      "subtitle": "Plans adapted to your review volume, no commitment",
+      "roiTitle": "The math is simple",
+      "without": "Without ReplyStack",
+      "withoutTime": "100 min/month",
+      "with": "With ReplyStack",
+      "withTime": "10 min/month",
+      "savings": "Savings: 90 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Independent restaurant"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Very active restaurant"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-location group"
+        }
+      },
+      "noCommitment": "No commitment. Change or cancel anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Restaurants",
+    "faq": [
+      {
+        "question": "Does the AI understand restaurant vocabulary?",
+        "answer": "Yes. Claude AI is trained on millions of texts and perfectly understands the restaurant context: service, dishes, ambiance, welcome, value for money. Responses use natural and appropriate vocabulary."
+      },
+      {
+        "question": "Can I customize the tone for my restaurant type?",
+        "answer": "Absolutely. The Response Profile lets you define whether your tone is refined and upscale, casual bistro, warm and family-friendly, or trendy and relaxed. The AI adapts its style."
+      },
+      {
+        "question": "Does the extension work on OpenTable/TheFork?",
+        "answer": "Yes. The extension works on TheFork, OpenTable, and all reservation platforms that display reviews."
+      },
+      {
+        "question": "How do I manage multiple restaurants?",
+        "answer": "The Business plan allows creating a distinct Response Profile for each location. Responses are generated according to each restaurant's profile."
+      },
+      {
+        "question": "What if I don't like the generated response?",
+        "answer": "You can edit the response before publishing, or click 'Regenerate' for a new suggestion. You always keep final control."
+      },
+      {
+        "question": "Are the responses detectable as AI-generated?",
+        "answer": "No. Responses are personalized, varied, and incorporate specific details from each review. They're indistinguishable from manually written responses."
+      }
+    ],
+    "cta": {
+      "title": "Ready to take control of your reviews?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Setup in 2 minutes - No credit card required"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "e-commerce": {
+    "badge": "Solution for E-commerce",
+    "meta": {
+      "title": "Review Management for E-commerce | ReplyStack",
+      "description": "Respond to Amazon, Google Shopping, Trustpilot reviews in 1 click. AI solution for e-commerce. Handle hundreds of reviews efficiently.",
+      "keywords": "e-commerce review management, respond amazon seller reviews, online store review software, e-commerce customer reviews, marketplace review management"
+    },
+    "hero": {
+      "title": "Manage Your Online Store Reviews at Scale",
+      "subtitle": "Reviews pile up on Amazon, your site, Google Shopping, Trustpilot, marketplaces... The volume makes it impossible to respond manually. ReplyStack lets you process dozens of reviews in minutes.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "TechStore Pro",
+      "platform": "Amazon",
+      "reviewer": "John P.",
+      "review": "Very satisfied with this vacuum. Powerful, quiet, and the battery really lasts long. Fast shipping too.",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Hi John, thank you so much for this detailed feedback! We're delighted that the power and battery life meet your expectations. Don't hesitate to contact us if you have any questions."
+    },
+    "stats": [
+      { "value": "88%", "label": "check reviews before buying" },
+      { "value": "+12%", "label": "conversion with responses" },
+      { "value": "-30%", "label": "negative review impact" },
+      { "value": "30s", "label": "per response on average" }
+    ],
+    "platformsTitle": "Works on all your platforms",
+    "platforms": [
+      "Amazon Seller Central",
+      "Trustpilot",
+      "Google Shopping",
+      "Verified Reviews",
+      "eBay",
+      "Etsy",
+      "Walmart",
+      "Target",
+      "Shopify",
+      "WooCommerce"
+    ],
+    "challenge": {
+      "title": "The E-commerce Challenge",
+      "subtitle": "An explosive volume of reviews that requires efficient management to maintain your reputation and sales."
+    },
+    "challenges": [
+      {
+        "title": "Explosive volume",
+        "description": "An active e-commerce store can receive 50 to 500 reviews per month, spread across Amazon, your site, Trustpilot, and marketplaces."
+      },
+      {
+        "title": "Direct impact on sales",
+        "description": "Products with review responses have a 12% higher conversion rate. An unaddressed negative review can reduce product sales by 30%."
+      },
+      {
+        "title": "Time is limited",
+        "description": "Between inventory management, shipping, customer service, marketing - responding to reviews becomes a time-consuming task often abandoned."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Solves the Problem",
+      "description": "The Chrome extension lets you respond to a review in under 30 seconds. Where you spent 3 hours processing 50 reviews, you're done in 25 minutes.",
+      "point1": "Handle high volumes without losing quality",
+      "point2": "Unique responses that don't repeat",
+      "point3": "Vocabulary adapted to e-commerce",
+      "visualTitle": "Simplified workflow",
+      "visualSubtitle": "Efficient bulk processing",
+      "step1": "Open the reviews page",
+      "step2": "Click 'Generate response'",
+      "step3": "Validate or adjust",
+      "step4": "Move to the next review"
+    },
+    "featuresTitle": "Key Features for E-commerce",
+    "featuresSubtitle": "Handle hundreds of reviews efficiently with adapted tools",
+    "features": [
+      {
+        "title": "Bulk processing",
+        "description": "Respond to 10, 20, 50 reviews in a row without losing quality. The extension stays active, you move from one review to the next in seconds."
+      },
+      {
+        "title": "All platforms covered",
+        "description": "Amazon Seller Central, Trustpilot, Google Merchant, your PrestaShop or Shopify module... The extension works everywhere."
+      },
+      {
+        "title": "Sentiment analysis",
+        "description": "Identify trends: a product generating recurring complaints, a period of dissatisfaction, a systematic delivery problem."
+      },
+      {
+        "title": "Multi-product, multi-brand",
+        "description": "Create a Response Profile per brand universe. Responses for your premium brand differ from your budget line."
+      },
+      {
+        "title": "Customer service consistency",
+        "description": "Responses align with your return policy. Propose the same solutions (return, exchange, refund) consistently."
+      },
+      {
+        "title": "Native multilingual",
+        "description": "A review in English gets an English response, a Spanish review gets a Spanish response. Ideal for international stores."
+      }
+    ],
+    "examplesTitle": "Examples of Generated Responses",
+    "examplesSubtitle": "Professional responses adapted to e-commerce context",
+    "examplesReviewLabel": "Customer review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive review - Product",
+        "review": "Very satisfied with this vacuum. Powerful, quiet, and the battery really lasts long. Fast shipping too.",
+        "response": "Hi John, thank you so much for this detailed feedback! We're delighted that the power and battery life meet your expectations - these are indeed this model's strengths. Thanks also for highlighting the fast shipping. Enjoy!",
+        "author": "TechStore Team"
+      },
+      {
+        "type": "Negative review - Shipping",
+        "review": "Product is fine but shipping was terrible. Package arrived 5 days late and damaged. Disappointed.",
+        "response": "Hi Sarah, thank you for this feedback and I'm sincerely sorry for this shipping issue. A 5-day delay and damaged package are unacceptable. We've reported this to our carrier. If the product was damaged, please contact us at support@store.com for an exchange or refund.",
+        "author": "TechStore Customer Service"
+      }
+    ],
+    "testimonialsTitle": "What E-commerce Owners Say",
+    "testimonials": [
+      {
+        "quote": "We sell on 4 marketplaces plus our site. Reviews used to pile up unanswered. Now I block 30 minutes Monday morning and everything's done for the week.",
+        "author": "Emily R.",
+        "role": "Home accessories store, 200 reviews/month"
+      },
+      {
+        "quote": "On Amazon, sellers who respond to reviews are favored by the algorithm. Since we respond to everything, our Buy Box has improved. The ROI is there.",
+        "author": "Julian T.",
+        "role": "Amazon FBA Seller, electronics"
+      },
+      {
+        "quote": "I run my Etsy shop alone. ReplyStack saves me 4-5 hours monthly. That's time I reinvest in creating new products.",
+        "author": "Claire M.",
+        "role": "Handmade jewelry creator"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for E-commerce",
+      "subtitle": "Calculate your ROI: 100 reviews/month x 5 min = 8h20. With ReplyStack: 50 min. Savings: 7h30/month.",
+      "roiTitle": "Calculate your ROI",
+      "without": "Without ReplyStack (100 reviews)",
+      "withoutTime": "8h20/month",
+      "with": "With ReplyStack",
+      "withTime": "50 min/month",
+      "savings": "Savings: 7h30 per month ($187 saved)",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Small store"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Active store"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-marketplace, high volume"
+        }
+      },
+      "noCommitment": "No commitment. Upgrade or cancel whenever you want.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - E-commerce",
+    "faq": [
+      {
+        "question": "Does the extension work on Amazon Seller Central?",
+        "answer": "Yes. The extension works on Amazon Seller Central, for both product reviews and seller ratings. It also works on all other marketplaces (eBay, Etsy, Walmart...)."
+      },
+      {
+        "question": "Can I adapt responses to specific products?",
+        "answer": "The Response Profile defines your general tone and key messages. The AI then adapts each response to the specific product mentioned in the review, incorporating relevant details."
+      },
+      {
+        "question": "How do I handle reviews in multiple languages?",
+        "answer": "ReplyStack generates responses in the review's language. An English review gets an English response, a Spanish review gets a Spanish response. Ideal for international stores."
+      },
+      {
+        "question": "Do responses comply with Amazon guidelines?",
+        "answer": "Yes. Generated responses are factual, professional, and don't contain elements prohibited by Amazon (external links, review modification requests, etc.)."
+      },
+      {
+        "question": "Can I use ReplyStack with my PrestaShop/Shopify module?",
+        "answer": "Yes. The extension works on any page displaying reviews, including review modules integrated into your e-commerce CMS."
+      },
+      {
+        "question": "Are 500 responses/month enough for high volume?",
+        "answer": "For most e-commerce sellers, yes. If you need more, contact us for a custom Enterprise plan."
+      }
+    ],
+    "cta": {
+      "title": "Ready to scale your review management?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Setup in 2 minutes - No credit card required"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "sante": {
+    "badge": "Solution for Healthcare Professionals",
+    "meta": {
+      "title": "Review Management for Healthcare Professionals | ReplyStack",
+      "description": "Respond to Google reviews for your medical practice professionally. AI solution respecting patient confidentiality. Free trial.",
+      "keywords": "medical practice review management, respond google reviews doctor, google reviews dentist, healthcare professional reputation, clinic reviews"
+    },
+    "hero": {
+      "title": "Manage Your Medical Practice Reviews Professionally",
+      "subtitle": "Patients leave reviews on Google. These reviews influence new patients' choices. But responding to medical reviews requires a particular tone - professional, empathetic, and respectful of confidentiality.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "Dr. Smith's Office",
+      "platform": "Google Business",
+      "reviewer": "Verified patient",
+      "review": "Very good doctor, attentive and takes time to explain. Modern office and efficient reception. I recommend.",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Thank you so much for this warm feedback. Listening and education are at the heart of our approach. I'll pass your compliments to our team. Looking forward to seeing you again."
+    },
+    "stats": [
+      { "value": "76%", "label": "of patients read reviews" },
+      { "value": "+21%", "label": "appointments with responses" },
+      { "value": "100%", "label": "confidentiality respected" },
+      { "value": "30s", "label": "per response on average" }
+    ],
+    "platformsTitle": "Works on your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "Healthgrades",
+      "Zocdoc",
+      "Facebook",
+      "Local medical directories"
+    ],
+    "challenge": {
+      "title": "The Stakes of Reviews for Healthcare Professionals",
+      "subtitle": "Google has become essential for choosing a practitioner. Responding to reviews requires a delicate balance."
+    },
+    "challenges": [
+      {
+        "title": "Google is essential",
+        "description": "76% of patients say Google reviews influence their choice of practitioner. A practice with positive reviews and thoughtful responses inspires trust."
+      },
+      {
+        "title": "A delicate balance",
+        "description": "Confidentiality, ethics, empathy... Responding to medical reviews presents unique challenges. A poor response can be worse than no response."
+      },
+      {
+        "title": "Time is precious",
+        "description": "Between consultations, administrative work, emergencies - responding to reviews isn't a priority. Yet unanswered reviews accumulate."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Adapts to Healthcare",
+      "description": "The AI generates responses that respect medical sector codes: professional vocabulary, empathetic tone, formulations that never disclose patient information.",
+      "point1": "Appropriate and professional medical tone",
+      "point2": "Complete respect for patient confidentiality",
+      "point3": "Response profile adapted to your specialty",
+      "visualTitle": "Medical configuration",
+      "visualSubtitle": "Adapted to your practice",
+      "step1": "Define your specialty",
+      "step2": "Configure your tone (warm, professional)",
+      "step3": "Add your values (listening, quality care)",
+      "step4": "Customize your signature"
+    },
+    "featuresTitle": "Key Features for Healthcare Professionals",
+    "featuresSubtitle": "Tools adapted to your profession's ethical constraints",
+    "features": [
+      {
+        "title": "Medical-adapted responses",
+        "description": "The AI understands healthcare context: reception desk, wait times, listening quality, explanation clarity, post-visit follow-up."
+      },
+      {
+        "title": "Built-in confidentiality",
+        "description": "Responses never disclose medical information. For sensitive reviews, AI suggests a response redirecting to private contact."
+      },
+      {
+        "title": "1-click response",
+        "description": "Directly on Google Business Profile. No third-party platform to open. You stay on your Google listing."
+      },
+      {
+        "title": "Multi-practitioner",
+        "description": "For group practices or clinics: each practitioner can have their own response style, or the practice can have a unified voice."
+      },
+      {
+        "title": "Sentiment analysis",
+        "description": "Visualize trends: do patients often mention wait times? Reception? Follow-up? Data helps improve patient experience."
+      },
+      {
+        "title": "Ethical compliance",
+        "description": "Responses are factual, professional, and contain no advertising elements or result promises."
+      }
+    ],
+    "examplesTitle": "Examples of Generated Responses",
+    "examplesSubtitle": "Professional and empathetic responses adapted to medical sector",
+    "examplesReviewLabel": "Patient review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive review - Consultation",
+        "review": "Very good doctor, attentive and takes time to explain. Modern office and efficient reception. I recommend.",
+        "response": "Thank you so much for this warm feedback. Listening and education are at the heart of our approach, and I'm glad you felt it. I'll pass your compliments to our reception team. Looking forward to seeing you again.",
+        "author": "Dr. Smith"
+      },
+      {
+        "type": "Negative review - Wait time",
+        "review": "1h30 wait in the waiting room even though I had an appointment. No explanation, no apology. Unacceptable.",
+        "response": "I sincerely apologize for this wait. You're right, 1h30 is unacceptable and you deserved at least an explanation. We've revised our organization to better handle delays and inform patients. I hope you'll give us the chance to show you more respectful service.",
+        "author": "Dr. Smith"
+      }
+    ],
+    "testimonialsTitle": "What Practitioners Say",
+    "testimonials": [
+      {
+        "quote": "I used to dread Google reviews. Now I respond to all of them, and several patients told me they chose my practice because of my responses. Game changer.",
+        "author": "Dr. Sophie L.",
+        "role": "General Practitioner, Boston"
+      },
+      {
+        "quote": "As a dentist, reviews often mention pain. The AI suggests empathetic responses that reassure without ever getting into medical details.",
+        "author": "Dr. Marc B.",
+        "role": "Dental Surgeon, Austin"
+      },
+      {
+        "quote": "Our clinic has 8 practitioners. Each keeps their personality in responses, but with consistent tone. Patients appreciate it.",
+        "author": "Marie D.",
+        "role": "Office Manager, Park Clinic, Denver"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Healthcare Professionals",
+      "subtitle": "A medical practice typically receives 5 to 20 reviews per month. The Starter plan is more than enough.",
+      "roiTitle": "Minimal investment",
+      "without": "Without ReplyStack",
+      "withoutTime": "45 min/month",
+      "with": "With ReplyStack",
+      "withTime": "5 min/month",
+      "savings": "Savings: 40 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Solo practice"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Group practice"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-practitioner clinic"
+        }
+      },
+      "noCommitment": "No commitment. Cancel anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Healthcare",
+    "faq": [
+      {
+        "question": "Do responses respect patient confidentiality?",
+        "answer": "Absolutely. The AI never references health status, treatments, or any patient medical information. For reviews mentioning clinical details, the response suggests a private conversation."
+      },
+      {
+        "question": "Can I adapt the tone to my specialty?",
+        "answer": "Yes. The Response Profile lets you define your specialty (GP, dentist, PT, specialist...) and communication style. A pediatrician doesn't have the same tone as a surgeon."
+      },
+      {
+        "question": "Are responses compliant with medical ethics?",
+        "answer": "Generated responses are factual, professional, and contain no advertising elements or result promises. They respect ethical communication principles."
+      },
+      {
+        "question": "How do I handle an unfair or defamatory review?",
+        "answer": "The AI generates a professional, measured response. You can also report the review to Google if it violates guidelines (fake review, defamation)."
+      },
+      {
+        "question": "Can I use ReplyStack for a group practice?",
+        "answer": "Yes. The Pro or Business plan manages multiple practitioners. You can have a Response Profile per practitioner or a unified voice for the practice."
+      },
+      {
+        "question": "Does the extension work on Zocdoc?",
+        "answer": "Currently, the extension works on Google Business Profile, which remains the primary review source for healthcare professionals. Zocdoc support is planned."
+      }
+    ],
+    "cta": {
+      "title": "Ready to improve your online presence?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Setup in 5 minutes - No credit card required"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "hotels": {
+    "badge": "Solution for Hotels",
+    "meta": {
+      "title": "Review Management for Hotels | ReplyStack",
+      "description": "Respond to Booking, TripAdvisor, Google, Expedia reviews in 1 click. AI solution for hoteliers. Manage all platforms from one tool.",
+      "keywords": "hotel review management, respond booking reviews, hotel review software, tripadvisor hotel reviews, hotel reputation management"
+    },
+    "hero": {
+      "title": "Respond to Your Hotel Reviews on All Platforms",
+      "subtitle": "Booking, TripAdvisor, Google, Expedia, Hotels.com, Agoda... Your hotel reviews are scattered across dozens of platforms. ReplyStack lets you respond to all reviews in one click, directly on each platform.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "The Grand Hotel",
+      "platform": "Booking.com",
+      "reviewer": "Marc D.",
+      "review": "Amazing stay! Spacious room with beautiful view, generous and varied breakfast, lovely staff. We'll be back!",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Dear Marc, thank you so much for this enthusiastic feedback! We're delighted that the view from your room and our breakfast exceeded your expectations. It will be a true pleasure to welcome you again."
+    },
+    "stats": [
+      { "value": "95%", "label": "read reviews before booking" },
+      { "value": "+21%", "label": "bookings with responses" },
+      { "value": "-70%", "label": "negative impact with response" },
+      { "value": "30s", "label": "per response on average" }
+    ],
+    "platformsTitle": "Works on all your platforms",
+    "platforms": [
+      "Booking.com",
+      "TripAdvisor",
+      "Google Business",
+      "Expedia",
+      "Hotels.com",
+      "Agoda",
+      "Facebook",
+      "Trivago",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "The Hotelier's Challenge",
+      "subtitle": "Reviews on every channel, constant volume, and direct impact on bookings."
+    },
+    "challenges": [
+      {
+        "title": "Reviews on every channel",
+        "description": "An average hotel receives reviews on 10 to 15 different platforms: OTAs, review sites, social media. Each platform has its own extranet."
+      },
+      {
+        "title": "Impact on bookings",
+        "description": "95% of travelers read reviews before booking. A hotel that responds sees booking rates increase by 21%. Responses to negative reviews reduce negative impact by 70%."
+      },
+      {
+        "title": "Constant volume",
+        "description": "Hospitality generates continuous reviews: each stay can result in reviews on multiple platforms. A 50-room hotel can easily receive 100+ reviews monthly."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Simplifies Everything",
+      "description": "The Chrome extension activates on all review platforms. You're on your Booking extranet? A 'Generate response' button appears. You switch to TripAdvisor? The button is there too.",
+      "point1": "One extension that works everywhere",
+      "point2": "AI that understands hospitality",
+      "point3": "Your hotel identity preserved",
+      "visualTitle": "Hotelier workflow",
+      "visualSubtitle": "All platforms in one click",
+      "step1": "Open your extranet (Booking, TripAdvisor...)",
+      "step2": "Click 'Generate response'",
+      "step3": "Validate or customize",
+      "step4": "Publish instantly"
+    },
+    "featuresTitle": "Key Features for Hospitality",
+    "featuresSubtitle": "Everything you need to manage reviews across all platforms",
+    "features": [
+      {
+        "title": "All platforms covered",
+        "description": "Booking, Expedia, TripAdvisor, Google, Agoda, Hotels.com, Facebook... The extension works on any site displaying reviews."
+      },
+      {
+        "title": "Instant response",
+        "description": "One click generates a personalized response. Validate, publish. Average time: 30 seconds per review instead of 5-7 minutes."
+      },
+      {
+        "title": "Native multilingual",
+        "description": "Travelers leave reviews in their language. AI responds in the same language: English, French, Spanish, German, Italian, Dutch, Portuguese..."
+      },
+      {
+        "title": "Multi-property",
+        "description": "Managing multiple hotels? Each has its own Response Profile. Responses are adapted to each property's identity."
+      },
+      {
+        "title": "Sentiment analysis",
+        "description": "Visualize trends: which aspects are most often mentioned positively? What complaints recur? Data helps you drive quality."
+      },
+      {
+        "title": "Team access",
+        "description": "Give access to your front desk manager, guest relations manager, or community manager. Everyone responds with consistent tone."
+      }
+    ],
+    "examplesTitle": "Examples of Generated Responses",
+    "examplesSubtitle": "Professional responses adapted to hospitality context",
+    "examplesReviewLabel": "Guest review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive review - Stay (Booking)",
+        "review": "Amazing stay! Spacious room with beautiful view, generous and varied breakfast, lovely staff. We'll be back!",
+        "response": "Dear Marc, thank you so much for this enthusiastic feedback! We're delighted that the view from your room and our breakfast exceeded your expectations. I'll happily pass your compliments to the entire team. It will be a true pleasure to welcome you again. Warmly,",
+        "author": "Sophie - Guest Relations Manager"
+      },
+      {
+        "type": "Negative review - Cleanliness (TripAdvisor)",
+        "review": "Disappointed by bathroom cleanliness. Stains in the shower and hair. For a 4-star hotel, this is unacceptable.",
+        "response": "Dear John, thank you for bringing this to our attention and please accept my sincere apologies. You're absolutely right: what you describe doesn't meet our 4-star standards. I immediately reviewed cleaning procedures with our housekeeping team. We'd be honored to welcome you again to show you the service level you rightly expect.",
+        "author": "Isabelle, Director"
+      }
+    ],
+    "testimonialsTitle": "What Hoteliers Say",
+    "testimonials": [
+      {
+        "quote": "We were getting 150 reviews monthly across 8 platforms. It was unmanageable. Now my front desk manager handles everything in one hour weekly.",
+        "author": "Francois M.",
+        "role": "Director, 3* Boutique Hotel, Provence"
+      },
+      {
+        "quote": "The extension works even on Agoda and Asian OTAs. My Chinese and Japanese guests receive responses in their language. Impressive.",
+        "author": "Marie-Claire D.",
+        "role": "Revenue Manager, 4* Resort, French Riviera"
+      },
+      {
+        "quote": "The free plan convinced me in a week. My TripAdvisor scores improved because guests see we care. $29/month for these results pays for itself day one.",
+        "author": "Thomas B.",
+        "role": "Owner, Boutique Hotel, San Diego"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Hospitality",
+      "subtitle": "Plans adapted to your review volume, from B&B to hotel chain",
+      "roiTitle": "Adapted to your volume",
+      "without": "Without ReplyStack (100 reviews)",
+      "withoutTime": "8h/month",
+      "with": "With ReplyStack",
+      "withTime": "50 min/month",
+      "savings": "Savings: 7 hours per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Small hotel, B&B"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "30-80 room hotel"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Large hotel, group"
+        }
+      },
+      "noCommitment": "No annual commitment. Total flexibility.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Hospitality",
+    "faq": [
+      {
+        "question": "Does the extension work on Booking extranet?",
+        "answer": "Yes. The extension works on Booking.com extranet, TripAdvisor owner interface, Expedia Partner Central, and all other OTA extranets."
+      },
+      {
+        "question": "How do I handle responses in multiple languages?",
+        "answer": "AI automatically detects the review language and generates the response in the same language. English, French, Spanish, German, Italian, Dutch, Portuguese, and more are supported."
+      },
+      {
+        "question": "Can I have a different tone for each hotel in the group?",
+        "answer": "Absolutely. The Business plan allows creating a distinct Response Profile for each property. A Parisian boutique hotel won't have the same tone as a beach resort."
+      },
+      {
+        "question": "Are responses personalized or generic?",
+        "answer": "Each response is generated by analyzing the specific review content: what the guest liked, their complaints, mentioned details. Responses don't repeat."
+      },
+      {
+        "question": "How does ReplyStack compare to specialized hotel solutions?",
+        "answer": "Solutions like TrustYou or ReviewPro are complete suites (aggregation, analysis, benchmarking) at enterprise prices ($300+/month). ReplyStack focuses on efficient review response at an accessible price. Both approaches can be complementary."
+      },
+      {
+        "question": "Can I delegate responses to my team?",
+        "answer": "Yes. You can give access to multiple team members. Everyone uses the same Response Profile for consistency."
+      }
+    ],
+    "cta": {
+      "title": "Ready to take control of your reviews?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Up and running in under 10 minutes"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "garages": {
+    "badge": "Solution for Auto Repair Shops",
+    "meta": {
+      "title": "Review Management for Auto Repair Shops & Car Dealerships | ReplyStack",
+      "description": "Reply to Google reviews for your auto repair shop or car dealership in 1 click. AI solution for automotive professionals. Free trial.",
+      "keywords": "auto shop review management, reply google reviews garage, car dealership reviews, mechanic reputation, auto repair shop reviews"
+    },
+    "hero": {
+      "title": "Reply to Your Auto Shop Reviews in 1 Click",
+      "subtitle": "Customers check Google reviews before trusting you with their vehicle. A shop with unanswered reviews inspires less confidence than a competitor who engages with customers. ReplyStack generates professional responses tailored to the automotive industry.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "Martin Auto Service",
+      "platform": "Google Business",
+      "reviewer": "Pascal L.",
+      "review": "Very satisfied with the work on my car. Starting issue fixed quickly, honest price, and the mechanic took time to explain everything.",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Hello Pascal, thank you for this feedback! We're delighted we could fix your starting issue quickly. Transparency and explaining our work are core values for us."
+    },
+    "stats": [
+      { "value": "87%", "label": "check reviews before choosing" },
+      { "value": "+35%", "label": "more inquiries with 4.2+ rating" },
+      { "value": "-70%", "label": "negative impact with response" },
+      { "value": "30s", "label": "average per response" }
+    ],
+    "platformsTitle": "Works on your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "Yelp",
+      "Facebook",
+      "Cars.com",
+      "CarGurus"
+    ],
+    "challenge": {
+      "title": "Why Reviews Are Crucial for Auto Shops",
+      "subtitle": "Natural distrust from car owners makes Google reviews even more important for building trust."
+    },
+    "challenges": [
+      {
+        "title": "Overcoming distrust",
+        "description": "Stories of overcharging and unnecessary repairs fuel distrust. Google reviews have become the first trust filter."
+      },
+      {
+        "title": "No time at the shop",
+        "description": "Between appointments, diagnostics, parts orders and team management - replying to reviews comes last."
+      },
+      {
+        "title": "Every review matters",
+        "description": "A shop that calmly responds to negative reviews reassures. A shop that ignores or responds aggressively scares customers away."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Adapts to the Auto Industry",
+      "description": "AI understands automotive context: types of repairs, common issues, technical vocabulary without excessive jargon. Responses are credible and relevant.",
+      "point1": "Technical vocabulary mastered (service, brakes, transmission...)",
+      "point2": "Professional and reassuring tone",
+      "point3": "Response profile adapted to your shop type",
+      "visualTitle": "Auto shop configuration",
+      "visualSubtitle": "Tailored to your business",
+      "step1": "Type: Independent garage, dealership, auto center",
+      "step2": "Specialties: All makes, specialist, commercial vehicles",
+      "step3": "Tone: Professional, accessible, family-oriented",
+      "step4": "Personalized signature"
+    },
+    "featuresTitle": "Key Features for Automotive",
+    "featuresSubtitle": "Everything you need to efficiently manage your reviews",
+    "features": [
+      {
+        "title": "Instant response",
+        "description": "30 seconds per review instead of 5-7 minutes. Handle a week's reviews in 10 minutes."
+      },
+      {
+        "title": "Technical vocabulary",
+        "description": "AI uses the right vocabulary: service, diagnostics, quote, OEM parts, warranty..."
+      },
+      {
+        "title": "Sentiment analysis",
+        "description": "Identify trends: do customers often mention wait times? Prices? Service quality?"
+      },
+      {
+        "title": "Multi-location",
+        "description": "Managing multiple shops? Each location has its Response Profile. Responses are tailored to each address."
+      },
+      {
+        "title": "Team access",
+        "description": "Give access to your service advisor or assistant. Everyone responds with the same consistency."
+      },
+      {
+        "title": "Price criticism handling",
+        "description": "Price complaints are frequent. AI generates responses that explain without being defensive."
+      }
+    ],
+    "examplesTitle": "Generated Response Examples",
+    "examplesSubtitle": "Professional responses tailored to the automotive sector",
+    "examplesReviewLabel": "Customer review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive Review - Repair",
+        "review": "Very satisfied with the work on my car. Starting issue fixed quickly, honest price, and the mechanic took time to explain. Highly recommend.",
+        "response": "Hello Pascal, thank you for this feedback! We're delighted we could fix your starting issue quickly. Transparency and explaining our work are core values for us. Feel free to come back for your car's next service. See you soon!",
+        "author": "Martin Auto Service Team"
+      },
+      {
+        "type": "Negative Review - Delay",
+        "review": "Dropped off the car Monday for a service, only got it back Thursday. No explanation for the delay. Very disappointed.",
+        "response": "Hello James, I apologize for this delay. You're right, a service shouldn't take 4 days, and you deserved an explanation. We had a delay getting a specific filter for your vehicle, but we should have kept you informed. I've reviewed our communication procedures with the team.",
+        "author": "Mark, Service Manager"
+      }
+    ],
+    "testimonialsTitle": "What Auto Shop Owners Say",
+    "testimonials": [
+      {
+        "quote": "Negative reviews used to stress me out. I never knew how to respond without sounding defensive. Now the AI suggests calm, professional responses.",
+        "author": "John M.",
+        "role": "Independent garage, Texas"
+      },
+      {
+        "quote": "We have 3 dealerships. Before, no one replied to reviews because no one had time. Now my assistant handles it in 20 minutes a week.",
+        "author": "Sarah L.",
+        "role": "Automotive group director"
+      },
+      {
+        "quote": "The free plan convinced me. 15 responses a month is plenty for my small shop.",
+        "author": "Mike B.",
+        "role": "Neighborhood garage, Chicago"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Auto Shops",
+      "subtitle": "Adapted to your review volume, no commitment",
+      "roiTitle": "The math is simple",
+      "without": "Without ReplyStack",
+      "withoutTime": "60 min/month",
+      "with": "With ReplyStack",
+      "withTime": "10 min/month",
+      "savings": "Saved: 50 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Small shop, testing"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Independent garage"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Auto center, dealership"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-location group"
+        }
+      },
+      "noCommitment": "No commitment. Cancel or change plans anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Auto Shops",
+    "faq": [
+      {
+        "question": "Does the AI understand automotive technical vocabulary?",
+        "answer": "Yes. The AI masters common vocabulary: service, oil change, brakes, transmission, timing belt, diagnostics, OEM parts, warranty... Responses are credible and professional."
+      },
+      {
+        "question": "How to handle scam accusations?",
+        "answer": "AI generates calm, factual responses without counter-attacking. It systematically offers direct contact to clarify the situation."
+      },
+      {
+        "question": "Can I use ReplyStack for multiple shops?",
+        "answer": "Yes. The Business plan allows creating a Response Profile per location. Each shop keeps its identity in responses."
+      },
+      {
+        "question": "Are responses personalized or generic?",
+        "answer": "Each response is generated by analyzing the specific review content: the type of work, positive points, criticisms. Responses don't look alike."
+      },
+      {
+        "question": "Does the extension work on Yelp?",
+        "answer": "Yes. The extension works on Google Business Profile, Yelp, Facebook, and any site displaying reviews."
+      },
+      {
+        "question": "How to convince my team to reply to reviews?",
+        "answer": "With ReplyStack, replying takes 30 seconds instead of 5 minutes. The time barrier disappears. Your receptionist or assistant can easily handle it."
+      }
+    ],
+    "cta": {
+      "title": "Ready to improve your online reputation?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Setup in 5 minutes - No credit card required"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "beaute": {
+    "badge": "Solution for Beauty Salons",
+    "meta": {
+      "title": "Review Management for Hair Salons & Beauty Institutes | ReplyStack",
+      "description": "Reply to Google reviews for your hair salon or beauty institute in 1 click. AI solution for beauty professionals. Free trial.",
+      "keywords": "salon review management, reply google reviews hairdresser, beauty spa reviews, salon reputation, stylist reviews"
+    },
+    "hero": {
+      "title": "Reply to Your Salon Reviews in 1 Click",
+      "subtitle": "Your clients share their experience on Google, Facebook, Yelp, Booksy... Each review influences future bookings. But between back-to-back appointments, who has time to reply? ReplyStack generates warm, personalized responses in seconds.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "Glow Salon",
+      "platform": "Google Business",
+      "reviewer": "Emma R.",
+      "review": "Great experience! Julie perfectly understood what I wanted for my highlights. Natural and luminous result. I'll be back!",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Hello Emma, what a pleasure to read your review! Julie will be thrilled. Natural, luminous highlights are exactly what we love to create. Can't wait to see you again!"
+    },
+    "stats": [
+      { "value": "92%", "label": "check reviews before booking" },
+      { "value": "+40%", "label": "more bookings with responses" },
+      { "value": "-67%", "label": "client loss reduced with responses" },
+      { "value": "30s", "label": "average per response" }
+    ],
+    "platformsTitle": "Works on your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Instagram",
+      "Booksy",
+      "Fresha",
+      "StyleSeat",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "The Importance of Reviews in Beauty",
+      "subtitle": "Word of mouth has gone digital. Google is the new trusted friend for choosing a salon."
+    },
+    "challenges": [
+      {
+        "title": "Digital word of mouth",
+        "description": "Before, you chose your stylist based on a friend's recommendation. Today, Google is the new trusted friend."
+      },
+      {
+        "title": "The daily challenge",
+        "description": "Days are packed with appointments: color, cuts, treatments... Replying to reviews is extra time you don't have."
+      },
+      {
+        "title": "A silent salon is scary",
+        "description": "A salon with positive reviews and attentive responses inspires confidence. A silent salon seems not to care about clients."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Adapts to Beauty",
+      "description": "AI generates responses that match the beauty world: warm and caring tone, industry vocabulary, attention to emotional details.",
+      "point1": "Warm, personal tone adapted to your ambiance",
+      "point2": "Industry vocabulary (highlights, treatment, service, result)",
+      "point3": "Personalized responses based on the service mentioned",
+      "visualTitle": "Beauty configuration",
+      "visualSubtitle": "Tailored to your salon",
+      "step1": "Type: Hair salon, spa, barbershop, nail salon",
+      "step2": "Ambiance: Cozy, modern, family, luxury",
+      "step3": "Strengths: Listening, expertise, organic products",
+      "step4": "Personalized signature"
+    },
+    "featuresTitle": "Key Features for Beauty",
+    "featuresSubtitle": "Everything you need to efficiently manage your reviews",
+    "features": [
+      {
+        "title": "30-second response",
+        "description": "No more thinking about phrasing. AI suggests, you approve. Time saved means one more client in the day."
+      },
+      {
+        "title": "Personalized tone",
+        "description": "Your salon has its style: casual, chic, family... AI adapts to your tone so every response sounds like you."
+      },
+      {
+        "title": "Trends and insights",
+        "description": "Identify what clients mention most: the reception? Ambiance? A specific stylist? Wait times?"
+      },
+      {
+        "title": "Multi-salon",
+        "description": "Multiple locations? Each salon can have its own Response Profile with its tone and signature."
+      },
+      {
+        "title": "Team access",
+        "description": "Delegate to your manager or receptionist. Everyone responds with the same consistency."
+      },
+      {
+        "title": "Emoji support",
+        "description": "If your Response Profile indicates a warm tone, AI can naturally include emojis."
+      }
+    ],
+    "examplesTitle": "Generated Response Examples",
+    "examplesSubtitle": "Warm responses tailored to the beauty world",
+    "examplesReviewLabel": "Client review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive Review - Hair",
+        "review": "Great experience! Julie perfectly understood what I wanted for my highlights. Natural and luminous result. The salon is lovely, I'll be back!",
+        "response": "Hello Emma, what a pleasure to read your review! Julie will be thrilled. Natural, luminous highlights are exactly what we love to create. Thank you for your trust, can't wait to see you for your next appointment!",
+        "author": "Glow Salon Team"
+      },
+      {
+        "type": "Negative Review - Wait",
+        "review": "30 minutes wait despite having an appointment. No apology, no explanation. The cut was fine but the experience ruined.",
+        "response": "Hello Maria, I'm truly sorry for this wait. You're absolutely right: 30 minutes without explanation is not acceptable. We had an unexpected situation that day, but we should have informed you and apologized. I'm noting this to ensure it doesn't happen again. I sincerely hope you'll give us another chance.",
+        "author": "Sophie, Salon Manager"
+      }
+    ],
+    "testimonialsTitle": "What Beauty Professionals Say",
+    "testimonials": [
+      {
+        "quote": "I used to reply to reviews Sunday evening, exhausted after the week. Now I do it between clients, in seconds. Clients often tell me they chose my salon because of my responses.",
+        "author": "Emily R.",
+        "role": "Hair salon, Los Angeles"
+      },
+      {
+        "quote": "We have a spa with 4 estheticians. Before, Google reviews went unanswered for weeks. Now my receptionist handles it every 2-3 days.",
+        "author": "Sandra M.",
+        "role": "Beauty institute, Miami"
+      },
+      {
+        "quote": "The tone of responses really fits our world. Warm, personal, not corporate. Exactly what our clientele needs.",
+        "author": "Claire D.",
+        "role": "Urban spa, New York"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Salons",
+      "subtitle": "Simple and accessible, adapted to your business",
+      "roiTitle": "The math is simple",
+      "without": "Without ReplyStack",
+      "withoutTime": "45 min/month",
+      "with": "With ReplyStack",
+      "withTime": "5 min/month",
+      "savings": "Saved: 40 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Small salon, independent"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Active salon, multi-staff"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Salon chain"
+        }
+      },
+      "noCommitment": "No commitment. Cancel anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Beauty",
+    "faq": [
+      {
+        "question": "Does the AI understand hair and beauty specifics?",
+        "answer": "Yes. AI masters industry vocabulary: highlights, color, cut, blowout, treatment, manicure, waxing, massage... Responses are natural and relevant."
+      },
+      {
+        "question": "Can I adapt the tone to my salon's ambiance?",
+        "answer": "Absolutely. Response Profile lets you define your style: cozy, modern, luxury, family... Generated responses respect this ambiance."
+      },
+      {
+        "question": "Does the extension work on Booksy and Fresha?",
+        "answer": "Yes. The extension works on all platforms displaying reviews, including Booksy, Fresha, StyleSeat, and social networks."
+      },
+      {
+        "question": "How to handle unfair reviews about results?",
+        "answer": "AI generates empathetic responses that acknowledge the client's feelings while proposing a solution (touch-up, exchange)."
+      },
+      {
+        "question": "Can I add emojis to responses?",
+        "answer": "Yes. If your Response Profile indicates a warm, casual tone, AI can naturally include emojis. You can always adjust before publishing."
+      },
+      {
+        "question": "Can my team use ReplyStack?",
+        "answer": "Yes. You can give access to your receptionist or manager. Everyone uses the same Response Profile for consistency."
+      }
+    ],
+    "cta": {
+      "title": "Ready to pamper your clients online too?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Up and running in under 5 minutes"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "artisans": {
+    "badge": "Solution for Contractors",
+    "meta": {
+      "title": "Review Management for Contractors: Plumbers, Electricians, HVAC | ReplyStack",
+      "description": "Reply to Google reviews for your contractor business in 1 click. AI solution for plumbers, electricians, HVAC technicians. Free trial.",
+      "keywords": "contractor review management, reply google reviews plumber, electrician reviews, tradesman reputation, HVAC reviews"
+    },
+    "hero": {
+      "title": "Reply to Your Contractor Business Reviews in 1 Click",
+      "subtitle": "For a plumber, electrician, or HVAC technician, Google reviews are the first criteria customers use. A good rating reassures. Professional responses to reviews convince. ReplyStack generates responses tailored to trades and services.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "Express Plumbing Services",
+      "platform": "Google Business",
+      "reviewer": "Mr. Johnson",
+      "review": "Fast response for a leak under the sink. Very professional plumber who took time to explain the issue. Price matched the quote.",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Hello Mr. Johnson, thank you for this feedback! We're delighted we could respond quickly. Transparent pricing is part of our commitment."
+    },
+    "stats": [
+      { "value": "91%", "label": "check reviews before calling" },
+      { "value": "+50%", "label": "more calls with 4.3+ rating" },
+      { "value": "-70%", "label": "negative impact with response" },
+      { "value": "30s", "label": "average per response" }
+    ],
+    "platformsTitle": "Works on your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "Yelp",
+      "Facebook",
+      "Angi",
+      "HomeAdvisor"
+    ],
+    "challenge": {
+      "title": "Why Reviews Are Vital for Contractors",
+      "subtitle": "Trust is won on Google. Reviews are your best tool to prove your reliability."
+    },
+    "challenges": [
+      {
+        "title": "Overcoming distrust",
+        "description": "Contractors sometimes suffer from negative image. Media stories of scams, inflated quotes, poor work... Customers are on guard."
+      },
+      {
+        "title": "The first choice criterion",
+        "description": "When a water leak happens or a breaker trips, customers search Google. Rating and responses make the difference."
+      },
+      {
+        "title": "No time in the field",
+        "description": "Between jobs, replying to reviews becomes a time-consuming task often abandoned."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Adapts to Contractors",
+      "description": "AI generates responses with a professional, reassuring tone, accessible technical vocabulary, and tactful handling of price criticisms.",
+      "point1": "Trade vocabulary adapted (emergency, diagnostics, quote, warranty)",
+      "point2": "Professional without being cold",
+      "point3": "Tactful handling of price criticisms",
+      "visualTitle": "Contractor configuration",
+      "visualSubtitle": "Tailored to your trade",
+      "step1": "Trade: Plumber, electrician, HVAC, locksmith...",
+      "step2": "Type: Independent, family business, company",
+      "step3": "Strengths: Responsiveness, transparency, warranty",
+      "step4": "Service area and signature"
+    },
+    "featuresTitle": "Key Features for Contractors",
+    "featuresSubtitle": "Everything you need to efficiently manage your reviews",
+    "features": [
+      {
+        "title": "Maximum time savings",
+        "description": "30 seconds per response instead of 10 minutes thinking. Between jobs, you handle the week's reviews."
+      },
+      {
+        "title": "Trade vocabulary",
+        "description": "AI understands your industry: emergency, free quote, service call, diagnostics, warranty, codes..."
+      },
+      {
+        "title": "Price criticism handling",
+        "description": "Price complaints are frequent. AI generates responses that explain without being defensive, professionally."
+      },
+      {
+        "title": "Trend tracking",
+        "description": "Identify recurring feedback: punctuality, cleanliness, communication... Data helps you improve."
+      },
+      {
+        "title": "Mobile-friendly",
+        "description": "Reply from your smartphone between jobs. The extension works on Chrome mobile."
+      },
+      {
+        "title": "Multi-technician",
+        "description": "Multiple technicians on your team? Responses maintain consistent tone across the company."
+      }
+    ],
+    "examplesTitle": "Generated Response Examples",
+    "examplesSubtitle": "Professional responses tailored to contractor trades",
+    "examplesReviewLabel": "Customer review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive Review - Emergency Service",
+        "review": "Fast response for a leak under the sink. Very professional plumber who took time to explain the issue. Price matched the quote. Highly recommend.",
+        "response": "Hello Mr. Johnson, thank you for this feedback! We're delighted we could respond quickly and fix your leak. Transparent pricing and explaining the issue are part of our commitment. Don't hesitate to contact us for any plumbing needs.",
+        "author": "Steve, Express Plumbing Services"
+      },
+      {
+        "type": "Negative Review - Price",
+        "review": "$150 to replace a faucet washer, that's robbery. 15 minutes of work. Contractors really take advantage.",
+        "response": "Hello Mrs. Smith, I understand the rate may seem high for a quick fix. This price includes the service call, diagnostics, professional-grade parts, and warranty on the work. The speed of completion actually reflects our expertise. I'm available for any additional explanation.",
+        "author": "Steve, Express Plumbing Services"
+      }
+    ],
+    "testimonialsTitle": "What Contractors Say",
+    "testimonials": [
+      {
+        "quote": "I don't have time to reply to reviews after jobs. With ReplyStack, I do it Saturday morning in 10 minutes for the whole week. My Google rating went from 4.2 to 4.6.",
+        "author": "Kevin L.",
+        "role": "Independent plumber, Brooklyn"
+      },
+      {
+        "quote": "Price reviews used to make me angry. I'd respond poorly, making things worse. Now AI suggests calm, professional responses.",
+        "author": "Patrick M.",
+        "role": "Electrician, Houston"
+      },
+      {
+        "quote": "We have 4 technicians on the road. Online reputation is key. ReplyStack lets us maintain our image without hiring someone for it.",
+        "author": "Nancy D.",
+        "role": "HVAC company owner, Denver"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Contractors",
+      "subtitle": "Pays for itself with the first new customer gained from good reputation",
+      "roiTitle": "Minimal investment",
+      "without": "Without ReplyStack",
+      "withoutTime": "60 min/month",
+      "with": "With ReplyStack",
+      "withTime": "10 min/month",
+      "savings": "Saved: 50 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Independent contractor"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Company with team"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-location"
+        }
+      },
+      "noCommitment": "No commitment. Cancel anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Contractors",
+    "faq": [
+      {
+        "question": "Does the AI understand my trade specifics?",
+        "answer": "Yes. AI masters plumbing, electrical, HVAC, locksmith, roofing vocabulary... Responses are adapted to your industry."
+      },
+      {
+        "question": "How to respond to overcharging accusations?",
+        "answer": "AI generates calm responses explaining price breakdown (service call, diagnostics, parts, warranty) without being defensive."
+      },
+      {
+        "question": "I'm solo, I don't have time for this.",
+        "answer": "That's exactly the point of ReplyStack. 30 seconds per response instead of 10 minutes. You can handle a week's reviews during your coffee break."
+      },
+      {
+        "question": "Are responses personalized?",
+        "answer": "Yes. AI analyzes each review's content: type of work, positive points, criticisms. Each response is unique."
+      },
+      {
+        "question": "Does the extension work on Yelp?",
+        "answer": "Yes. The extension works on Google Business Profile, Yelp, Facebook, and any site displaying reviews."
+      },
+      {
+        "question": "Can I reply from my phone?",
+        "answer": "Yes. Chrome extension works on mobile browser. You can reply between jobs."
+      }
+    ],
+    "cta": {
+      "title": "Ready to strengthen your online reputation?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Up and running in 5 minutes, no technical skills needed"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  },
+  "auto-ecoles": {
+    "badge": "Solution for Driving Schools",
+    "meta": {
+      "title": "Review Management for Driving Schools | ReplyStack",
+      "description": "Reply to Google reviews for your driving school in 1 click. AI solution for driving school owners. Attract more students. Free trial.",
+      "keywords": "driving school review management, reply google reviews driving school, driving test reviews, driving instructor reputation"
+    },
+    "hero": {
+      "title": "Reply to Your Driving School Reviews in 1 Click",
+      "subtitle": "Future students compare driving schools on Google before enrolling. Your rating, reviews, and especially your responses make the difference. ReplyStack generates professional, reassuring responses to convince prospective students.",
+      "cta": "Try for Free",
+      "secondary": "Discover Features"
+    },
+    "demo": {
+      "businessName": "City Driving School",
+      "platform": "Google Business",
+      "reviewer": "Lisa M.",
+      "review": "Great driving school! Passed my test first try thanks to Kevin who's really patient and great at teaching. The online course is great too. 100% recommend!",
+      "generateButton": "Generate AI Response",
+      "responseLabel": "Generated response",
+      "response": "Congratulations on your license Lisa, and well done passing first try! Kevin will be thrilled to read your message. Thanks for the recommendation, and safe driving!"
+    },
+    "stats": [
+      { "value": "94%", "label": "check reviews before choosing" },
+      { "value": "+60%", "label": "more enrollments with 4.5+ rating" },
+      { "value": "+35%", "label": "conversion with responses" },
+      { "value": "30s", "label": "average per response" }
+    ],
+    "platformsTitle": "Works on your platforms",
+    "platforms": [
+      "Google Business Profile",
+      "Yelp",
+      "Facebook",
+      "Driving-Tests.org"
+    ],
+    "challenge": {
+      "title": "Why Reviews Matter for Driving Schools",
+      "subtitle": "A generation that compares everything online. Your future students won't choose without checking reviews."
+    },
+    "challenges": [
+      {
+        "title": "A connected generation",
+        "description": "Your future students are 17-25 years old. This generation won't choose anything without checking reviews. Driving school is a significant investment ($1,500-3,000)."
+      },
+      {
+        "title": "Highly competitive market",
+        "description": "In every city, multiple schools compete for the same students. The difference often comes down to online reputation."
+      },
+      {
+        "title": "One negative review tips the scale",
+        "description": "An unanswered negative review can send a student to the competition. Responding shows you care about your students."
+      }
+    ],
+    "solution": {
+      "title": "How ReplyStack Adapts to Driving Schools",
+      "description": "AI generates responses that speak to both young students and their parents (often the budget decision-makers). Reassuring, educational tone with driving vocabulary.",
+      "point1": "Tone adapted to students and parents",
+      "point2": "Driving vocabulary (written test, behind-the-wheel, instructor, exam)",
+      "point3": "Handling criticism about scheduling or instructors",
+      "visualTitle": "Driving school configuration",
+      "visualSubtitle": "Tailored to your school",
+      "step1": "Type: Traditional, franchise, online hybrid",
+      "step2": "Strengths: Pass rate, flexibility, teaching approach",
+      "step3": "Tone: Professional, dynamic, family-oriented",
+      "step4": "Personalized signature"
+    },
+    "featuresTitle": "Key Features for Driving Schools",
+    "featuresSubtitle": "Everything you need to efficiently manage your reviews",
+    "features": [
+      {
+        "title": "Quick responses",
+        "description": "30 seconds per review. Between classes, you handle the week's reviews."
+      },
+      {
+        "title": "Driving vocabulary",
+        "description": "AI masters the vocabulary: written test, behind-the-wheel, instructor, exam, scheduling, extra hours, pass rate..."
+      },
+      {
+        "title": "Trends and alerts",
+        "description": "Identify recurring feedback: scheduling too busy? An instructor everyone loves? Complaints about wait times?"
+      },
+      {
+        "title": "Multi-location",
+        "description": "Managing multiple schools? Each location has its Response Profile with its team and tone."
+      },
+      {
+        "title": "Front desk access",
+        "description": "Delegate to your receptionist or assistant. Response consistency is guaranteed by the Response Profile."
+      },
+      {
+        "title": "Emoji support",
+        "description": "For a young audience, moderate emojis can make responses warmer."
+      }
+    ],
+    "examplesTitle": "Generated Response Examples",
+    "examplesSubtitle": "Professional responses tailored to driving schools",
+    "examplesReviewLabel": "Student review",
+    "examplesResponseLabel": "Response generated by ReplyStack",
+    "examples": [
+      {
+        "type": "Positive Review - Pass",
+        "review": "Great driving school! Passed my test first try thanks to Kevin who's really patient and great at teaching. The online course is great too. 100% recommend!",
+        "response": "Congratulations on your license Lisa, and well done passing first try! Kevin will be thrilled to read your message - his patience and teaching really make the difference. Thanks for the recommendation, and safe driving!",
+        "author": "City Driving School Team"
+      },
+      {
+        "type": "Negative Review - Exam Wait",
+        "review": "Way too long to get an exam date. 3 months after finishing my hours, still no date. Feeling abandoned.",
+        "response": "Hello Max, I understand your frustration and I apologize. The wait before the exam is unfortunately tied to DMV delays in assigning slots. That said, we should have kept you better informed during this period. Please stop by the front desk so we can review your situation.",
+        "author": "Sophie, Owner"
+      }
+    ],
+    "testimonialsTitle": "What Driving School Owners Say",
+    "testimonials": [
+      {
+        "quote": "Google reviews have become the battleground. Young people compare everything before enrolling. Since we started replying to all reviews, our enrollment rate has increased.",
+        "author": "Phil D.",
+        "role": "Independent driving school, Austin"
+      },
+      {
+        "quote": "I don't have time to write responses between classes and managing. ReplyStack saves me 2 hours a week.",
+        "author": "Nadia K.",
+        "role": "Owner, Boston area"
+      },
+      {
+        "quote": "We have 3 locations. Before, each receptionist responded differently - or not at all. Now we have consistency in our responses.",
+        "author": "Mark L.",
+        "role": "Driving school network, California"
+      }
+    ],
+    "pricing": {
+      "title": "Pricing for Driving Schools",
+      "subtitle": "One extra enrollment pays for months of subscription",
+      "roiTitle": "Minimal investment, maximum impact",
+      "without": "Without ReplyStack",
+      "withoutTime": "60 min/month",
+      "with": "With ReplyStack",
+      "withTime": "10 min/month",
+      "savings": "Saved: 50 minutes per month",
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "idealFor": "Ideal for",
+      "plans": {
+        "free": {
+          "name": "Free",
+          "price": "$0",
+          "responses": "15/month",
+          "ideal": "Test the tool"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "$9.90/month",
+          "responses": "50/month",
+          "ideal": "Small driving school"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29/month",
+          "responses": "200/month",
+          "ideal": "Active driving school"
+        },
+        "business": {
+          "name": "Business",
+          "price": "$79/month",
+          "responses": "500/month",
+          "ideal": "Multi-location network"
+        }
+      },
+      "noCommitment": "No commitment. Change or cancel anytime.",
+      "cta": "Start for Free"
+    },
+    "faqTitle": "Frequently Asked Questions - Driving Schools",
+    "faq": [
+      {
+        "question": "Does the AI understand driving vocabulary?",
+        "answer": "Yes. AI masters specific vocabulary: written test, behind-the-wheel, instructor, exam, scheduling, extra hours, pass rate, DMV, package... Responses are natural and credible."
+      },
+      {
+        "question": "How to handle criticism about an instructor?",
+        "answer": "AI generates empathetic responses that take the student's feelings seriously without throwing the instructor under the bus publicly. The response always suggests direct contact."
+      },
+      {
+        "question": "Can I personalize the tone to speak to young people?",
+        "answer": "Yes. Response Profile lets you define a dynamic tone close to young people (informal address, moderate emojis) or more traditional depending on your positioning."
+      },
+      {
+        "question": "Does the extension work on Yelp?",
+        "answer": "Yes. The extension works on Yelp, Google Business Profile, Facebook, and any site displaying reviews."
+      },
+      {
+        "question": "Can my front desk use ReplyStack?",
+        "answer": "Yes. You can give access to your team. Everyone uses the same Response Profile for consistency."
+      },
+      {
+        "question": "Can responses include emojis?",
+        "answer": "Yes, if your Response Profile allows it. For a young audience, moderate emojis can make responses warmer."
+      }
+    ],
+    "cta": {
+      "title": "Ready to attract more students with your online reputation?",
+      "subtitle": "15 free responses per month. No credit card. No commitment.",
+      "button": "Try ReplyStack for Free",
+      "noCard": "Up and running in under 5 minutes"
+    },
+    "relatedContent": {
+      "label": "See also:",
+      "link1": "How to Respond to Negative Reviews",
+      "link2": "20 Response Templates",
+      "link3": "Best Review Management Software"
+    }
+  }
+}

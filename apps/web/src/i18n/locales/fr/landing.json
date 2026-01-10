@@ -26,6 +26,7 @@
     "badge": "Solutions par métier",
     "title": "ReplyStack pour votre secteur",
     "subtitle": "Des réponses adaptées à votre métier et vos clients",
+    "personalizedResponses": "Réponses personnalisées",
     "garage": {
       "title": "Garagistes",
       "description": "Réponses techniques et rassurantes"
@@ -164,5 +165,95 @@
     "title": "Prêt à gagner des heures chaque semaine ?",
     "subtitle": "Rejoignez des milliers d'entreprises qui utilisent ReplyStack pour gérer leurs avis avec des réponses IA personnalisées.",
     "button": "Commencer gratuitement"
+  },
+  "howItWorks": {
+    "badge": "Comment ça marche",
+    "title": "3 étapes pour répondre à tous vos avis",
+    "subtitle": "Simple, rapide et efficace. Commencez à répondre en moins de 5 minutes.",
+    "step": "Étape",
+    "steps": [
+      {
+        "title": "Installez l'extension",
+        "description": "Téléchargez notre extension Chrome ou Firefox en 30 secondes. Gratuit et sans engagement.",
+        "icon": "🔌"
+      },
+      {
+        "title": "Configurez votre profil",
+        "description": "Définissez le ton, le style et les informations de votre entreprise. L'IA s'adapte à votre marque.",
+        "icon": "⚙️"
+      },
+      {
+        "title": "Générez des réponses",
+        "description": "Cliquez sur un avis et obtenez une réponse personnalisée instantanément. Modifiez et publiez !",
+        "icon": "✨"
+      }
+    ],
+    "cta": "Commencer maintenant"
+  },
+  "comparison": {
+    "badge": "Comparatif",
+    "title": "Pourquoi choisir ReplyStack ?",
+    "subtitle": "Comparez les différentes approches pour gérer vos avis clients",
+    "feature": "Fonctionnalité",
+    "replystack": "ReplyStack",
+    "manual": "Réponses manuelles",
+    "others": "Autres outils",
+    "features": {
+      "aiResponses": "Réponses IA personnalisées",
+      "responseProfiles": "Profils de réponse",
+      "allPlatforms": "Toutes plateformes supportées",
+      "browserExtension": "Extension navigateur",
+      "multiLanguage": "Multi-langues automatique",
+      "affordablePrice": "Prix abordable"
+    },
+    "limited": "Limité",
+    "partial": "Partiel",
+    "rare": "Rare"
+  },
+  "faq": {
+    "badge": "Questions fréquentes",
+    "title": "Tout ce que vous devez savoir",
+    "items": [
+      {
+        "question": "Comment fonctionne ReplyStack ?",
+        "answer": "ReplyStack utilise l'IA pour générer des réponses personnalisées à vos avis clients. Installez notre extension navigateur, configurez votre profil de réponse (ton, style, secteur), et cliquez sur le bouton 'Répondre avec l'IA' sur n'importe quelle plateforme d'avis."
+      },
+      {
+        "question": "Sur quelles plateformes fonctionne ReplyStack ?",
+        "answer": "ReplyStack fonctionne sur toutes les principales plateformes d'avis : Google Business, TripAdvisor, Booking.com, Yelp, Facebook, Trustpilot, et bien d'autres. Notre extension détecte automatiquement les pages d'avis."
+      },
+      {
+        "question": "Puis-je personnaliser les réponses générées ?",
+        "answer": "Absolument ! Vous pouvez configurer votre profil de réponse avec votre ton préféré (professionnel, chaleureux, décontracté), votre secteur d'activité, et des instructions personnalisées. Chaque réponse est également modifiable avant publication."
+      },
+      {
+        "question": "L'offre gratuite a-t-elle des limitations ?",
+        "answer": "L'offre gratuite vous donne accès à toutes les fonctionnalités avec 15 réponses par mois. Pas de watermark, pas de fonctionnalités bloquées. Vous pouvez upgrader à tout moment pour plus de réponses."
+      },
+      {
+        "question": "Comment installer l'extension ?",
+        "answer": "Rendez-vous sur le Chrome Web Store ou Firefox Add-ons, recherchez 'ReplyStack' et cliquez sur 'Ajouter'. L'extension s'installe en 30 secondes et vous guide dans la configuration de votre profil."
+      }
+    ]
+  },
+  "testimonialsSection": {
+    "badge": "Témoignages",
+    "items": [
+      {
+        "quote": "ReplyStack nous a fait gagner des heures chaque semaine. Nos clients sont impressionnés par la rapidité de nos réponses.",
+        "author": "Marie Dubois",
+        "role": "Propriétaire de restaurant"
+      },
+      {
+        "quote": "Les profils personnalisés sont un game-changer. Chaque réponse reflète parfaitement notre ton de marque.",
+        "author": "Pierre Laurent",
+        "role": "Directeur d'hôtel"
+      },
+      {
+        "quote": "Enfin une solution abordable pour gérer tous nos avis. L'extension Chrome est incroyablement pratique.",
+        "author": "Sophie Martin",
+        "role": "Gérante de boutique"
+      }
+    ]
   }
 }

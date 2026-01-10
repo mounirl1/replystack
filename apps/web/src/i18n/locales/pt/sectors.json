@@ -1,0 +1,1721 @@
+{
+  "restaurants": {
+    "badge": "Solucao para Restaurantes",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Restaurantes | ReplyStack",
+      "description": "Responda a avaliacoes do Google, TripAdvisor, TheFork em 1 clique. Solucao IA para restauradores. Poupe 10h/mes. Teste gratuito.",
+      "keywords": "gestao avaliacoes restaurante, responder avaliacoes tripadvisor restaurante, software avaliacoes restaurante, avaliacoes google restaurante, reputacao restaurante"
+    },
+    "hero": {
+      "title": "Responda a Todas as Avaliacoes do Seu Restaurante em 1 Clique",
+      "subtitle": "Os seus clientes deixam avaliacoes no Google, TripAdvisor, TheFork, Yelp, Facebook... Nao tem tempo para responder a todas. No entanto, cada avaliacao sem resposta e uma oportunidade perdida. ReplyStack gera respostas personalizadas em um clique.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "O Bistro do Centro",
+      "platform": "TripAdvisor",
+      "reviewer": "Maria L.",
+      "review": "Excelente refeicao em familia! O risotto de cogumelos estava perfeito e o servico muito atencioso. Voltaremos!",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Maria, muito obrigado por este comentario caloroso! Ficamos felizes que o risotto de cogumelos tenha agradado. A sua proxima visita sera um prazer. Ate breve!"
+    },
+    "stats": [
+      { "value": "93%", "label": "dos clientes leem avaliacoes" },
+      { "value": "53%", "label": "esperam uma resposta" },
+      { "value": "+35%", "label": "conversao com respostas" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona em todas as suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "TripAdvisor",
+      "TheFork",
+      "Yelp",
+      "Facebook",
+      "Instagram",
+      "UberEats",
+      "iFood",
+      "Diretorios locais"
+    ],
+    "challenge": {
+      "title": "O Desafio dos Restauradores",
+      "subtitle": "Entre o servico, a gestao e os fornecedores, responder as avaliacoes costuma ficar em ultimo lugar. No entanto, cada avaliacao conta."
+    },
+    "challenges": [
+      {
+        "title": "As avaliacoes estao em todo lado",
+        "description": "Um restaurante medio recebe avaliacoes em 5 a 8 plataformas diferentes. Cada plataforma tem a sua propria interface, sistema de acesso e formato de resposta."
+      },
+      {
+        "title": "Falta tempo",
+        "description": "Entre o servico do almoco, a preparacao, o servico do jantar, a gestao da equipa - responder as avaliacoes torna-se uma tarefa abandonada."
+      },
+      {
+        "title": "Cada avaliacao conta",
+        "description": "Um restaurante que responde as suas avaliacoes ve a sua taxa de conversao aumentar 35%. Nao responder envia uma mensagem negativa aos futuros clientes."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack Resolve o Problema",
+      "description": "A extensao Chrome ativa-se diretamente nos sites de avaliacoes. Esta no TripAdvisor? Aparece um botao 'Gerar resposta' junto a cada avaliacao. Um clique, e a IA propoe uma resposta personalizada.",
+      "point1": "Extensao Chrome que funciona em todos os sites de avaliacoes",
+      "point2": "IA que entende o vocabulario da restauracao",
+      "point3": "Perfil de resposta personalizado para o seu estabelecimento",
+      "visualTitle": "Configuracao em 2 minutos",
+      "visualSubtitle": "Simples como nunca",
+      "step1": "Instale a extensao Chrome",
+      "step2": "Inicie sessao na sua conta",
+      "step3": "Configure o seu Perfil de Resposta",
+      "step4": "Responda as suas avaliacoes em 1 clique"
+    },
+    "featuresTitle": "Funcionalidades Chave para Restaurantes",
+    "featuresSubtitle": "Tudo o que precisa para gerir eficazmente as suas avaliacoes",
+    "features": [
+      {
+        "title": "Resposta em 1 clique",
+        "description": "Ve uma avaliacao, clica, a resposta esta pronta. Valide, ajuste se necessario, publique. Tempo medio: menos de 30 segundos por avaliacao."
+      },
+      {
+        "title": "Todas as plataformas",
+        "description": "Google, TripAdvisor, TheFork, mais diretorios locais, guias regionais, sites de delivery. Se o site mostra avaliacoes, o ReplyStack funciona."
+      },
+      {
+        "title": "Analise de sentimento",
+        "description": "O dashboard da-lhe uma visao global: tendencia das avaliacoes, sentimento geral, evolucao. Identifique rapidamente se surge um problema."
+      },
+      {
+        "title": "Multi-estabelecimento",
+        "description": "Gere varios restaurantes? Cada estabelecimento tem o seu proprio Perfil de Resposta. As respostas adaptam-se a cada endereco."
+      },
+      {
+        "title": "Acesso de equipa",
+        "description": "De acesso ao seu responsavel de sala ou community manager. Todos podem responder as avaliacoes com a mesma coerencia de tom."
+      },
+      {
+        "title": "A sua voz preservada",
+        "description": "O Perfil de Resposta captura a identidade do seu estabelecimento: tom, mensagens-chave, gestao de criticas, assinatura. Os clientes reconhecem a sua voz."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Veja como a IA gera respostas personalizadas e profissionais",
+    "examplesReviewLabel": "Avaliacao do cliente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva (5 estrelas)",
+        "review": "Excelente refeicao em familia! O risotto de cogumelos estava perfeito e o servico muito atencioso. Voltaremos!",
+        "response": "Ola Maria, muito obrigado por este comentario caloroso! Ficamos felizes que o risotto de cogumelos tenha agradado - e um dos orgulhos do nosso chef nesta epoca. A sua proxima visita sera um prazer. Ate breve!",
+        "author": "A equipa de O Bistro do Centro"
+      },
+      {
+        "type": "Avaliacao negativa (2 estrelas)",
+        "review": "Espera muito longa para ser atendido, mais de 30 minutos antes das entradas. A comida estava boa mas a experiencia arruinada.",
+        "response": "Ola Tomas, obrigado por dedicar tempo a partilhar a sua opiniao. Lamento sinceramente esta espera - 30 minutos antes das entradas nao e aceitavel. Revimos a nossa organizacao na cozinha para as noites de maior afluencia. Espero que nos de a oportunidade de mostrar uma experiencia mais fluida.",
+        "author": "Marc, Responsavel de sala"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Restauradores",
+    "testimonials": [
+      {
+        "quote": "Antes do ReplyStack, respondia as avaliacoes ao domingo a noite quando tinha tempo - ou seja, raramente. Agora respondo durante a semana, diretamente no TripAdvisor. Os meus clientes notam.",
+        "author": "Sofia M.",
+        "role": "O Cantinho do Sabor, Lisboa"
+      },
+      {
+        "quote": "Temos 3 estabelecimentos, cada um com o seu conceito. A IA adapta-se realmente ao tom de cada restaurante. O bistro tem respostas diferentes da brasserie. Impressionante.",
+        "author": "Antonio D.",
+        "role": "Grupo Sabores & Co, Porto"
+      },
+      {
+        "quote": "O plano gratuito permitiu-me testar sem risco. Ao fim de 2 semanas, mudei para o premium. O tempo poupado vale muito mais que o preco.",
+        "author": "Karim B.",
+        "role": "Pizzeria Napoli, Faro"
+      }
+    ],
+    "pricing": {
+      "title": "Precos Adaptados para Restauradores",
+      "subtitle": "Planos adaptados ao seu volume de avaliacoes, sem compromisso",
+      "roiTitle": "O calculo e simples",
+      "without": "Sem ReplyStack",
+      "withoutTime": "100 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "10 min/mes",
+      "savings": "Poupanca: 90 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Restaurante independente"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Restaurante muito ativo"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Grupo multi-estabelecimento"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude ou cancele a qualquer momento.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Restaurantes",
+    "faq": [
+      {
+        "question": "A IA entende o vocabulario da restauracao?",
+        "answer": "Sim. A IA Claude foi treinada em milhoes de textos e entende perfeitamente o contexto da restauracao: servico, pratos, ambiente, atendimento, relacao qualidade-preco. As respostas usam um vocabulario natural e apropriado."
+      },
+      {
+        "question": "Posso personalizar o tom segundo o meu tipo de restaurante?",
+        "answer": "Absolutamente. O Perfil de Resposta permite-lhe definir se o seu tom e gastronomico e refinado, bistro acolhedor, familiar e caloroso, ou moderno e descontraido. A IA adapta o seu estilo."
+      },
+      {
+        "question": "A extensao funciona no TheFork?",
+        "answer": "Sim. A extensao funciona no TheFork e em todas as plataformas de reservas que mostram avaliacoes."
+      },
+      {
+        "question": "Como giro varios restaurantes?",
+        "answer": "O plano Business permite criar um Perfil de Resposta distinto para cada estabelecimento. As respostas sao geradas segundo o perfil do restaurante correspondente."
+      },
+      {
+        "question": "O que faco se a resposta gerada nao me agradar?",
+        "answer": "Pode modificar a resposta antes de publicar, ou clicar em 'Regenerar' para obter uma nova proposta. Mantem sempre o controlo final."
+      },
+      {
+        "question": "As respostas sao detetaveis como geradas por IA?",
+        "answer": "Nao. As respostas sao personalizadas, variadas e integram os detalhes especificos de cada avaliacao. Sao indistinguiveis de uma resposta escrita manualmente."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para assumir o controlo das suas avaliacoes?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "e-commerce": {
+    "badge": "Solucao para E-commerce",
+    "meta": {
+      "title": "Gestao de Avaliacoes para E-commerce | ReplyStack",
+      "description": "Responda a avaliacoes da Amazon, Google Shopping, Trustpilot em 1 clique. Solucao IA para e-commerce. Gira centenas de avaliacoes eficientemente.",
+      "keywords": "gestao avaliacoes e-commerce, responder avaliacoes amazon vendedor, software avaliacoes loja online, avaliacoes clientes e-commerce, gestao avaliacoes marketplace"
+    },
+    "hero": {
+      "title": "Gira as Avaliacoes da Sua Loja Online em Grande Escala",
+      "subtitle": "As avaliacoes acumulam-se na Amazon, no seu site, Google Shopping, Trustpilot, marketplaces... O volume torna impossivel responder manualmente. O ReplyStack permite-lhe processar dezenas de avaliacoes em minutos.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "TechStore Pro",
+      "platform": "Amazon",
+      "reviewer": "Joao P.",
+      "review": "Muito satisfeito com este aspirador. Potente, silencioso, e a bateria dura muito. Envio rapido tambem.",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Joao, muito obrigado por este comentario detalhado! Ficamos felizes que a potencia e autonomia correspondam as suas expectativas. Nao hesite em contactar-nos se tiver alguma questao."
+    },
+    "stats": [
+      { "value": "88%", "label": "consultam avaliacoes antes de comprar" },
+      { "value": "+12%", "label": "conversao com respostas" },
+      { "value": "-30%", "label": "impacto de avaliacoes negativas" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona em todas as suas plataformas",
+    "platforms": [
+      "Amazon Seller Central",
+      "Trustpilot",
+      "Google Shopping",
+      "KuantoKusta",
+      "eBay",
+      "Etsy",
+      "AliExpress",
+      "Mercado Livre",
+      "PrestaShop",
+      "Shopify"
+    ],
+    "challenge": {
+      "title": "O Desafio do E-commerce",
+      "subtitle": "Um volume explosivo de avaliacoes que requer uma gestao eficiente para manter a sua reputacao e vendas."
+    },
+    "challenges": [
+      {
+        "title": "Volume explosivo",
+        "description": "Uma loja e-commerce ativa pode receber de 50 a 500 avaliacoes por mes, distribuidas pela Amazon, o seu site, Trustpilot e marketplaces."
+      },
+      {
+        "title": "Impacto direto nas vendas",
+        "description": "Os produtos com respostas as avaliacoes tem uma taxa de conversao 12% superior. Uma avaliacao negativa nao tratada pode reduzir as vendas em 30%."
+      },
+      {
+        "title": "O tempo urge",
+        "description": "Entre gestao de stock, envios, atendimento ao cliente, marketing - responder as avaliacoes torna-se uma tarefa abandonada."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack Resolve o Problema",
+      "description": "A extensao Chrome permite-lhe responder a uma avaliacao em menos de 30 segundos. Onde passava 3 horas a processar 50 avaliacoes, termina em 25 minutos.",
+      "point1": "Processe grandes volumes sem perder qualidade",
+      "point2": "Respostas unicas que nao se repetem",
+      "point3": "Vocabulario adaptado ao e-commerce",
+      "visualTitle": "Fluxo simplificado",
+      "visualSubtitle": "Processamento em massa eficiente",
+      "step1": "Abra a pagina de avaliacoes",
+      "step2": "Clique em 'Gerar resposta'",
+      "step3": "Valide ou ajuste",
+      "step4": "Passe a proxima avaliacao"
+    },
+    "featuresTitle": "Funcionalidades Chave para E-commerce",
+    "featuresSubtitle": "Gira centenas de avaliacoes eficientemente com ferramentas adaptadas",
+    "features": [
+      {
+        "title": "Processamento em massa",
+        "description": "Responda a 10, 20, 50 avaliacoes seguidas sem perder qualidade. A extensao permanece ativa, passa de uma avaliacao para outra em segundos."
+      },
+      {
+        "title": "Todas as plataformas",
+        "description": "Amazon Seller Central, Trustpilot, Google Merchant, o seu modulo PrestaShop ou Shopify... A extensao funciona em todo o lado."
+      },
+      {
+        "title": "Analise de sentimento",
+        "description": "Identifique tendencias: um produto que gera queixas recorrentes, um periodo de insatisfacao, um problema de envio sistematico."
+      },
+      {
+        "title": "Multi-produto, multi-marca",
+        "description": "Crie um Perfil de Resposta por universo de marca. As respostas para a sua marca premium diferem da sua linha economica."
+      },
+      {
+        "title": "Coerencia SAV",
+        "description": "As respostas alinham-se com a sua politica de devolucoes. Proponha as mesmas solucoes (devolucao, troca, reembolso) de forma coerente."
+      },
+      {
+        "title": "Multilingue nativo",
+        "description": "Uma avaliacao em ingles recebe resposta em ingles, uma em portugues recebe resposta em portugues. Ideal para lojas internacionais."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais adaptadas ao contexto e-commerce",
+    "examplesReviewLabel": "Avaliacao do cliente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva - Produto",
+        "review": "Muito satisfeito com este aspirador. Potente, silencioso, e a bateria dura muito. Envio rapido tambem.",
+        "response": "Ola Joao, muito obrigado por este comentario detalhado! Ficamos felizes que a potencia e autonomia do aspirador correspondam as suas expectativas - sao efetivamente os pontos fortes deste modelo. Obrigado tambem por destacar a rapidez do envio. Bom uso!",
+        "author": "Equipa TechStore"
+      },
+      {
+        "type": "Avaliacao negativa - Envio",
+        "review": "Produto bom mas envio catastrofico. Encomenda chegou com 5 dias de atraso e danificada. Desiludido.",
+        "response": "Ola Sara, obrigado por este comentario e lamento sinceramente este problema de envio. Um atraso de 5 dias e uma encomenda danificada sao inaceitaveis. Reportamos este caso a nossa transportadora. Se o produto esta danificado, contacte-nos em sav@loja.com para uma troca ou reembolso.",
+        "author": "Servico ao Cliente TechStore"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os E-comerciantes",
+    "testimonials": [
+      {
+        "quote": "Vendemos em 4 marketplaces mais o nosso site. As avaliacoes acumulavam-se sem resposta. Agora bloqueio 30 minutos na segunda de manha e tudo esta pronto para a semana.",
+        "author": "Emilia R.",
+        "role": "Loja acessorios casa, 200 avaliacoes/mes"
+      },
+      {
+        "quote": "Na Amazon, os vendedores que respondem as avaliacoes sao favorecidos pelo algoritmo. Desde que respondemos a tudo, o nosso Buy Box melhorou. O ROI esta la.",
+        "author": "Juliano T.",
+        "role": "Vendedor Amazon FBA, eletronica"
+      },
+      {
+        "quote": "Giro sozinha a minha loja Etsy. O ReplyStack poupa-me 4-5 horas por mes. E tempo que reinvisto em criar novos produtos.",
+        "author": "Clara M.",
+        "role": "Criadora joias artesanais"
+      }
+    ],
+    "pricing": {
+      "title": "Precos para E-commerce",
+      "subtitle": "Calcule o seu ROI: 100 avaliacoes/mes x 5 min = 8h20. Com ReplyStack: 50 min. Poupanca: 7h30/mes.",
+      "roiTitle": "Calcule o seu ROI",
+      "without": "Sem ReplyStack (100 avaliacoes)",
+      "withoutTime": "8h20/mes",
+      "with": "Com ReplyStack",
+      "withTime": "50 min/mes",
+      "savings": "Poupanca: 7h30 por mes (187 EUR poupados)",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Loja pequena"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Loja ativa"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Multi-marketplace, alto volume"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude de plano ou cancele quando quiser.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - E-commerce",
+    "faq": [
+      {
+        "question": "A extensao funciona no Amazon Seller Central?",
+        "answer": "Sim. A extensao funciona no Amazon Seller Central, tanto para avaliacoes de produtos como para classificacoes de vendedor. Tambem funciona em todos os outros marketplaces (eBay, Etsy, Mercado Livre...)."
+      },
+      {
+        "question": "Posso adaptar as respostas segundo os produtos?",
+        "answer": "O Perfil de Resposta define o seu tom geral e mensagens-chave. A IA adapta cada resposta ao produto especifico mencionado na avaliacao, incorporando detalhes relevantes."
+      },
+      {
+        "question": "Como giro avaliacoes em varios idiomas?",
+        "answer": "O ReplyStack gera respostas no idioma da avaliacao. Uma avaliacao em ingles recebe resposta em ingles, uma em portugues recebe resposta em portugues. Ideal para lojas internacionais."
+      },
+      {
+        "question": "As respostas cumprem as diretrizes da Amazon?",
+        "answer": "Sim. As respostas geradas sao factuais, profissionais e nao contem elementos proibidos pela Amazon (links externos, pedido de modificacao de avaliacao, etc.)."
+      },
+      {
+        "question": "Posso usar o ReplyStack com o meu modulo PrestaShop/Shopify?",
+        "answer": "Sim. A extensao funciona em qualquer pagina que mostre avaliacoes, incluindo modulos de avaliacoes integrados no seu CMS e-commerce."
+      },
+      {
+        "question": "500 respostas/mes sao suficientes para alto volume?",
+        "answer": "Para a maioria dos e-comerciantes, sim. Se precisar de mais, contacte-nos para um plano Enterprise personalizado."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para escalar a sua gestao de avaliacoes?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "sante": {
+    "badge": "Solucao para Profissionais de Saude",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Profissionais de Saude | ReplyStack",
+      "description": "Responda as avaliacoes Google do seu consultorio medico com profissionalismo. Solucao IA respeitosa da confidencialidade do paciente. Teste gratuito.",
+      "keywords": "gestao avaliacoes consultorio medico, responder avaliacoes google medico, avaliacoes google dentista, reputacao profissional saude, avaliacoes clinica"
+    },
+    "hero": {
+      "title": "Gira as Avaliacoes do Seu Consultorio Medico com Profissionalismo",
+      "subtitle": "Os pacientes deixam avaliacoes no Google. Estas avaliacoes influenciam a escolha de novos pacientes. Mas responder a avaliacoes medicas requer um tom particular - profissional, empatico e respeitoso da confidencialidade.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Consultorio Dr. Santos",
+      "platform": "Google Business",
+      "reviewer": "Paciente verificado",
+      "review": "Muito bom medico, atencioso e que dedica tempo a explicar. Consultorio moderno e secretaria eficiente. Recomendo.",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Muito obrigado por este comentario caloroso. A escuta e a pedagogia estao no centro da nossa abordagem. Transmito os seus elogios a nossa equipa. Esperamos ve-lo em breve."
+    },
+    "stats": [
+      { "value": "76%", "label": "dos pacientes leem avaliacoes" },
+      { "value": "+21%", "label": "de consultas com respostas" },
+      { "value": "100%", "label": "confidencialidade respeitada" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona nas suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Doctoralia",
+      "Facebook",
+      "Diretorios medicos locais"
+    ],
+    "challenge": {
+      "title": "A Importancia das Avaliacoes para Profissionais de Saude",
+      "subtitle": "O Google tornou-se imprescindivel para escolher um profissional. Responder as avaliacoes requer um equilibrio delicado."
+    },
+    "challenges": [
+      {
+        "title": "O Google e imprescindivel",
+        "description": "76% dos pacientes dizem que as avaliacoes do Google influenciam a sua escolha de profissional. Um consultorio com avaliacoes positivas e respostas atenciosas inspira confianca."
+      },
+      {
+        "title": "Um equilibrio delicado",
+        "description": "Confidencialidade, deontologia, empatia... Responder a avaliacoes medicas apresenta desafios unicos. Uma ma resposta pode ser pior que nenhuma."
+      },
+      {
+        "title": "O tempo e precioso",
+        "description": "Entre consultas, trabalho administrativo, urgencias - responder as avaliacoes nao e uma prioridade. No entanto, as avaliacoes sem resposta acumulam-se."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack se Adapta ao Setor Saude",
+      "description": "A IA gera respostas que respeitam os codigos do setor medico: vocabulario profissional, tom empatico, formulacoes que nunca revelam informacao do paciente.",
+      "point1": "Tom medico apropriado e profissional",
+      "point2": "Respeito total da confidencialidade do paciente",
+      "point3": "Perfil de resposta adaptado a sua especialidade",
+      "visualTitle": "Configuracao medica",
+      "visualSubtitle": "Adaptada a sua pratica",
+      "step1": "Defina a sua especialidade",
+      "step2": "Configure o seu tom (caloroso, profissional)",
+      "step3": "Adicione os seus valores (escuta, qualidade assistencial)",
+      "step4": "Personalize a sua assinatura"
+    },
+    "featuresTitle": "Funcionalidades Chave para Profissionais de Saude",
+    "featuresSubtitle": "Ferramentas adaptadas as restricoes deontologicas da sua profissao",
+    "features": [
+      {
+        "title": "Respostas adaptadas a saude",
+        "description": "A IA entende o contexto de saude: rececao, tempos de espera, qualidade de escuta, clareza de explicacoes, seguimento pos-consulta."
+      },
+      {
+        "title": "Confidencialidade integrada",
+        "description": "As respostas nunca revelam informacao medica. Para avaliacoes sensiveis, a IA propoe uma resposta que redireciona para contacto privado."
+      },
+      {
+        "title": "Resposta em 1 clique",
+        "description": "Diretamente no Google Business Profile. Sem plataforma externa a abrir. Fica na sua ficha do Google."
+      },
+      {
+        "title": "Multi-profissional",
+        "description": "Para consultorios de grupo ou clinicas: cada profissional pode ter o seu proprio estilo de resposta, ou o consultorio pode ter uma voz unificada."
+      },
+      {
+        "title": "Analise de sentimento",
+        "description": "Visualize tendencias: os pacientes mencionam frequentemente a espera? A rececao? O seguimento? Os dados ajudam a melhorar a experiencia do paciente."
+      },
+      {
+        "title": "Conformidade deontologica",
+        "description": "As respostas sao factuais, profissionais e nao contem elementos publicitarios nem promessas de resultados."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais e empaticas adaptadas ao setor de saude",
+    "examplesReviewLabel": "Avaliacao do paciente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva - Consulta",
+        "review": "Muito bom medico, atencioso e que dedica tempo a explicar. Consultorio moderno e secretaria eficiente. Recomendo.",
+        "response": "Muito obrigado por este comentario caloroso. A escuta e a pedagogia estao no centro da nossa abordagem, e fico feliz que o tenha sentido. Transmito os seus elogios a nossa equipa de rececao. Esperamos ve-lo em breve.",
+        "author": "Dr. Santos"
+      },
+      {
+        "type": "Avaliacao negativa - Espera",
+        "review": "1h30 de espera na sala de espera quando tinha consulta marcada. Nenhuma explicacao, nenhum pedido de desculpas. Inadmissivel.",
+        "response": "Apresento as minhas sinceras desculpas por esta espera. Tem razao, 1h30 e inaceitavel e merecia pelo menos uma explicacao. Revimos a nossa organizacao para gerir melhor imprevistos e informar os pacientes em caso de atraso. Espero que nos de a oportunidade de mostrar um atendimento mais respeitoso do seu tempo.",
+        "author": "Dr. Santos"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Profissionais",
+    "testimonials": [
+      {
+        "quote": "Temia as avaliacoes do Google. Agora respondo a todas, e varios pacientes disseram-me que escolheram o meu consultorio gracas as minhas respostas. Muda tudo.",
+        "author": "Dra. Sofia L.",
+        "role": "Medica generalista, Lisboa"
+      },
+      {
+        "quote": "Como dentista, as avaliacoes mencionam frequentemente a dor. A IA propoe respostas empaticas que tranquilizam sem nunca entrar em detalhes medicos.",
+        "author": "Dr. Marc B.",
+        "role": "Cirurgiao dentista, Porto"
+      },
+      {
+        "quote": "A nossa clinica tem 8 profissionais. Cada um mantem a sua personalidade nas respostas, mas com coerencia de tom. Os pacientes apreciam.",
+        "author": "Maria D.",
+        "role": "Responsavel administrativa, Clinica do Parque, Coimbra"
+      }
+    ],
+    "pricing": {
+      "title": "Precos para Profissionais de Saude",
+      "subtitle": "Um consultorio medico recebe tipicamente de 5 a 20 avaliacoes por mes. O plano Starter e mais que suficiente.",
+      "roiTitle": "Investimento minimo",
+      "without": "Sem ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Poupanca: 40 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Consultorio individual"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Consultorio de grupo"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Clinica multi-profissional"
+        }
+      },
+      "noCommitment": "Sem compromisso. Cancele quando quiser.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Profissionais de Saude",
+    "faq": [
+      {
+        "question": "As respostas respeitam a confidencialidade do paciente?",
+        "answer": "Absolutamente. A IA nunca faz referencia ao estado de saude, tratamentos nem qualquer informacao medica do paciente. Para avaliacoes que mencionam detalhes clinicos, a resposta propoe uma conversa privada."
+      },
+      {
+        "question": "Posso adaptar o tom a minha especialidade?",
+        "answer": "Sim. O Perfil de Resposta permite-lhe definir a sua especialidade (generalista, dentista, fisio, especialista...) e estilo de comunicacao. Um pediatra nao tem o mesmo tom que um cirurgiao."
+      },
+      {
+        "question": "As respostas cumprem a deontologia medica?",
+        "answer": "As respostas geradas sao factuais, profissionais e nao contem elementos publicitarios nem promessas de resultados. Respeitam os principios deontologicos."
+      },
+      {
+        "question": "Como giro uma avaliacao injusta ou difamatoria?",
+        "answer": "A IA gera uma resposta profissional e medida. Tambem pode reportar a avaliacao ao Google se infringir as normas (avaliacao falsa, difamacao)."
+      },
+      {
+        "question": "Posso usar o ReplyStack para um consultorio de grupo?",
+        "answer": "Sim. O plano Pro ou Business gere multiplos profissionais. Pode ter um Perfil de Resposta por profissional ou uma voz unificada para o consultorio."
+      },
+      {
+        "question": "A extensao funciona na Doctoralia?",
+        "answer": "A extensao funciona no Google Business Profile, que continua a ser a principal fonte de avaliacoes para profissionais de saude. O suporte para Doctoralia esta planeado."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para melhorar a sua presenca online?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 5 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "hotels": {
+    "badge": "Solucao para Hoteis",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Hoteis | ReplyStack",
+      "description": "Responda a avaliacoes do Booking, TripAdvisor, Google, Expedia em 1 clique. Solucao IA para hoteleiros. Gira todas as plataformas a partir de uma ferramenta.",
+      "keywords": "gestao avaliacoes hotel, responder avaliacoes booking, software avaliacoes hotelaria, avaliacoes tripadvisor hotel, reputacao hotel"
+    },
+    "hero": {
+      "title": "Responda as Avaliacoes do Seu Hotel em Todas as Plataformas",
+      "subtitle": "Booking, TripAdvisor, Google, Expedia, Hotels.com, Agoda... As avaliacoes do seu hotel estao dispersas por dezenas de plataformas. O ReplyStack permite-lhe responder a todas em um clique, diretamente em cada plataforma.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Hotel O Parisiense",
+      "platform": "Booking.com",
+      "reviewer": "Marc D.",
+      "review": "Estadia incrivel! Quarto amplo com vistas magnificas, pequeno-almoco abundante e variado, pessoal adoravel. Voltaremos!",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Caro Marc, muito obrigado por este comentario entusiasmado! Ficamos felizes que as vistas do seu quarto e o nosso pequeno-almoco o tenham encantado. Sera um verdadeiro prazer recebe-lo novamente."
+    },
+    "stats": [
+      { "value": "95%", "label": "leem avaliacoes antes de reservar" },
+      { "value": "+21%", "label": "de reservas com respostas" },
+      { "value": "-70%", "label": "impacto negativo com resposta" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona em todas as suas plataformas",
+    "platforms": [
+      "Booking.com",
+      "TripAdvisor",
+      "Google Business",
+      "Expedia",
+      "Hotels.com",
+      "Agoda",
+      "Facebook",
+      "Trivago",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "O Desafio dos Hoteleiros",
+      "subtitle": "Avaliacoes em cada canal, volume constante e impacto direto nas reservas."
+    },
+    "challenges": [
+      {
+        "title": "Avaliacoes em cada canal",
+        "description": "Um hotel medio recebe avaliacoes em 10 a 15 plataformas diferentes: OTAs, sites de avaliacoes, redes sociais. Cada plataforma tem o seu proprio extranet."
+      },
+      {
+        "title": "Impacto nas reservas",
+        "description": "95% dos viajantes leem avaliacoes antes de reservar. Um hotel que responde ve a sua taxa de reserva aumentar 21%. As respostas a avaliacoes negativas reduzem o impacto negativo em 70%."
+      },
+      {
+        "title": "Volume constante",
+        "description": "A hotelaria gera avaliacoes continuamente: cada estadia pode originar avaliacoes em multiplas plataformas. Um hotel de 50 quartos pode receber mais de 100 avaliacoes por mes."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack Simplifica Tudo",
+      "description": "A extensao Chrome ativa-se em todas as plataformas de avaliacoes. Esta no seu extranet do Booking? Aparece um botao 'Gerar resposta'. Passa para o TripAdvisor? O botao esta la tambem.",
+      "point1": "Uma extensao que funciona em todo o lado",
+      "point2": "IA que entende a hotelaria",
+      "point3": "A sua identidade hoteleira preservada",
+      "visualTitle": "Fluxo hoteleiro",
+      "visualSubtitle": "Todas as plataformas em um clique",
+      "step1": "Abra o seu extranet (Booking, TripAdvisor...)",
+      "step2": "Clique em 'Gerar resposta'",
+      "step3": "Valide ou personalize",
+      "step4": "Publique instantaneamente"
+    },
+    "featuresTitle": "Funcionalidades Chave para Hotelaria",
+    "featuresSubtitle": "Tudo o que precisa para gerir avaliacoes em todas as plataformas",
+    "features": [
+      {
+        "title": "Todas as plataformas",
+        "description": "Booking, Expedia, TripAdvisor, Google, Agoda, Hotels.com, Facebook... A extensao funciona em qualquer site que mostre avaliacoes."
+      },
+      {
+        "title": "Resposta instantanea",
+        "description": "Um clique gera uma resposta personalizada. Valide, publique. Tempo medio: 30 segundos por avaliacao em vez de 5-7 minutos."
+      },
+      {
+        "title": "Multilingue nativo",
+        "description": "Os viajantes deixam avaliacoes no seu idioma. A IA responde no mesmo idioma: portugues, ingles, frances, alemao, italiano, holandes, espanhol..."
+      },
+      {
+        "title": "Multi-estabelecimento",
+        "description": "Gere varios hoteis? Cada um tem o seu proprio Perfil de Resposta. As respostas adaptam-se a identidade de cada estabelecimento."
+      },
+      {
+        "title": "Analise de sentimento",
+        "description": "Visualize tendencias: que aspetos sao mencionados positivamente com mais frequencia? Que queixas se repetem? Os dados ajudam-no a gerir a qualidade."
+      },
+      {
+        "title": "Acesso de equipa",
+        "description": "De acesso ao seu responsavel de rececao, guest relations manager ou community manager. Todos respondem com o mesmo tom coerente."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais adaptadas ao contexto hoteleiro",
+    "examplesReviewLabel": "Avaliacao do hospede",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva - Estadia (Booking)",
+        "review": "Estadia incrivel! Quarto amplo com vistas magnificas, pequeno-almoco abundante e variado, pessoal adoravel. Voltaremos!",
+        "response": "Caro Marc, muito obrigado por este comentario entusiasmado! Ficamos felizes que as vistas do seu quarto e o nosso pequeno-almoco o tenham encantado. Transmitirei com prazer os seus elogios a toda a equipa. Sera um verdadeiro prazer recebe-lo novamente. Calorosos cumprimentos,",
+        "author": "Sofia - Guest Relations Manager"
+      },
+      {
+        "type": "Avaliacao negativa - Limpeza (TripAdvisor)",
+        "review": "Desiludido com a limpeza da casa de banho. Manchas no duche e cabelos. Para um hotel 4 estrelas, e inaceitavel.",
+        "response": "Caro Joao, obrigado por nos alertar para este problema e por favor aceite as minhas sinceras desculpas. Tem toda a razao: o que descreve nao corresponde aos nossos padroes 4 estrelas. Revi imediatamente os procedimentos de limpeza com a nossa equipa de andares. Seria uma honra recebe-lo novamente para lhe mostrar o nivel de servico que tem direito a esperar.",
+        "author": "Isabel, Diretora"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Hoteleiros",
+    "testimonials": [
+      {
+        "quote": "Recebiamos 150 avaliacoes por mes em 8 plataformas diferentes. Era incontrolavel. Agora a minha responsavel de rececao trata de tudo em uma hora semanal.",
+        "author": "Francisco M.",
+        "role": "Diretor, Hotel de charme 3*, Algarve"
+      },
+      {
+        "quote": "A extensao funciona ate no Agoda e OTAs asiaticas. Os meus clientes chineses e japoneses recebem respostas no seu idioma. Impressiona.",
+        "author": "Maria Clara D.",
+        "role": "Revenue Manager, Resort 4*, Madeira"
+      },
+      {
+        "quote": "O plano gratuito convenceu-me em uma semana. As minhas pontuacoes no TripAdvisor subiram porque os clientes veem que nos empenhamos. 29 EUR/mes por estes resultados amortiza-se no primeiro dia.",
+        "author": "Tomas B.",
+        "role": "Proprietario, Hotel boutique, Cascais"
+      }
+    ],
+    "pricing": {
+      "title": "Precos para Hotelaria",
+      "subtitle": "Planos adaptados ao seu volume de avaliacoes, desde B&B ate cadeia hoteleira",
+      "roiTitle": "Adaptado ao seu volume",
+      "without": "Sem ReplyStack (100 avaliacoes)",
+      "withoutTime": "8h/mes",
+      "with": "Com ReplyStack",
+      "withTime": "50 min/mes",
+      "savings": "Poupanca: 7 horas por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Hotel pequeno, B&B"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Hotel 30-80 quartos"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Grande hotel, grupo"
+        }
+      },
+      "noCommitment": "Sem compromisso anual. Flexibilidade total.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Hotelaria",
+    "faq": [
+      {
+        "question": "A extensao funciona no extranet do Booking?",
+        "answer": "Sim. A extensao funciona no extranet do Booking.com, na interface proprietaria do TripAdvisor, Expedia Partner Central e todos os outros extranets de OTAs."
+      },
+      {
+        "question": "Como giro respostas em varios idiomas?",
+        "answer": "A IA deteta automaticamente o idioma da avaliacao e gera a resposta no mesmo idioma. Portugues, ingles, frances, alemao, italiano, holandes, espanhol e outros idiomas sao suportados."
+      },
+      {
+        "question": "Posso ter um tom diferente para cada hotel do grupo?",
+        "answer": "Absolutamente. O plano Business permite criar um Perfil de Resposta distinto para cada estabelecimento. Um hotel boutique parisiense nao tera o mesmo tom que um resort de praia."
+      },
+      {
+        "question": "As respostas sao personalizadas ou genericas?",
+        "answer": "Cada resposta e gerada analisando o conteudo especifico da avaliacao: o que o hospede gostou, as suas queixas, os detalhes mencionados. As respostas nao se repetem."
+      },
+      {
+        "question": "Como se compara o ReplyStack com solucoes hoteleiras especializadas?",
+        "answer": "Solucoes como TrustYou ou ReviewPro sao suites completas (agregacao, analise, benchmarking) a precos enterprise (300 EUR+/mes). O ReplyStack foca-se na resposta eficiente a avaliacoes, a um preco acessivel. Ambas as abordagens podem ser complementares."
+      },
+      {
+        "question": "Posso delegar as respostas a minha equipa?",
+        "answer": "Sim. Pode dar acesso a varios membros da sua equipa. Todos usam o mesmo Perfil de Resposta para garantir coerencia."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para assumir o controlo das suas avaliacoes?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Operacional em menos de 10 minutos"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "garages": {
+    "badge": "Solucao para Garagens",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Garagens e Concessionarios | ReplyStack",
+      "description": "Responda as avaliacoes Google da sua garagem ou concessionario em 1 clique. Solucao IA para profissionais automoveis. Poupe tempo. Teste gratuito.",
+      "keywords": "gestao avaliacoes garagem, responder avaliacoes google concessionario, software avaliacoes auto, avaliacoes mecanico, reputacao garagem"
+    },
+    "hero": {
+      "title": "Responda as Avaliacoes da Sua Garagem ou Concessionario em 1 Clique",
+      "subtitle": "Os seus clientes deixam avaliacoes no Google apos uma reparacao, uma revisao ou uma compra de veiculo. Cada avaliacao influencia a decisao dos proximos clientes. O ReplyStack gera respostas personalizadas e profissionais adaptadas ao setor automovel.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Garagem Central Auto",
+      "platform": "Google Business",
+      "reviewer": "Carlos M.",
+      "review": "Excelente servico! Diagnostico rapido, precos transparentes, e o carro ficou pronto no prazo prometido. Recomendo vivamente.",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Carlos, muito obrigado por esta avaliacao! A transparencia e o cumprimento de prazos sao pilares do nosso compromisso. Ficamos felizes que tenha ficado satisfeito. Ate a proxima revisao!"
+    },
+    "stats": [
+      { "value": "87%", "label": "consultam avaliacoes antes de escolher uma garagem" },
+      { "value": "+40%", "label": "de contactos com boa reputacao" },
+      { "value": "78%", "label": "confiam nas avaliacoes online" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona nas suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Paginas Amarelas",
+      "AutoScout24",
+      "Standvirtual",
+      "Diretorios automoveis"
+    ],
+    "challenge": {
+      "title": "O Desafio dos Profissionais Automoveis",
+      "subtitle": "Garagens, concessionarios e centros auto enfrentam desafios especificos na gestao das avaliacoes."
+    },
+    "challenges": [
+      {
+        "title": "A confianca e fundamental",
+        "description": "Os clientes confiam-lhe o seu veiculo - muitas vezes o segundo maior investimento depois da casa. As avaliacoes sao cruciais para estabelecer essa confianca antes da primeira visita."
+      },
+      {
+        "title": "Avaliacoes tecnicas complexas",
+        "description": "As avaliacoes mencionam frequentemente termos tecnicos (embraiagem, distribuicao, injecao). E preciso responder de forma profissional mostrando experiencia."
+      },
+      {
+        "title": "As maos na massa",
+        "description": "Entre reparacoes, rececao de clientes e gestao de pecas - o tempo para responder as avaliacoes e escasso. No entanto, cada avaliacao sem resposta e uma oportunidade perdida."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack se Adapta ao Setor Automovel",
+      "description": "A IA entende o vocabulario tecnico automovel e gera respostas profissionais adaptadas ao seu contexto: garagem independente, concessionario de marca, centro auto.",
+      "point1": "Vocabulario tecnico automovel dominado",
+      "point2": "Tom adaptado (garagem de bairro vs concessionario premium)",
+      "point3": "Gestao de queixas sensiveis (precos, prazos, diagnosticos)",
+      "visualTitle": "Configuracao em 2 minutos",
+      "visualSubtitle": "Simples como trocar uma vela",
+      "step1": "Instale a extensao Chrome",
+      "step2": "Configure o perfil da sua garagem",
+      "step3": "Defina o seu tom (amigavel, tecnico, premium)",
+      "step4": "Responda em 1 clique"
+    },
+    "featuresTitle": "Funcionalidades Chave para Automovel",
+    "featuresSubtitle": "Ferramentas adaptadas as necessidades das garagens e concessionarios",
+    "features": [
+      {
+        "title": "Resposta em 1 clique",
+        "description": "Ve uma avaliacao no Google, clica, a resposta esta pronta. Valide, ajuste se quiser, publique. Menos de 30 segundos por avaliacao."
+      },
+      {
+        "title": "Vocabulario automovel",
+        "description": "A IA entende termos tecnicos: embraiagem, distribuicao, injecao, travoes, suspensao. As respostas sao credíveis e profissionais."
+      },
+      {
+        "title": "Multi-estabelecimento",
+        "description": "Gere varias garagens ou varias marcas? Cada estabelecimento tem o seu proprio Perfil de Resposta com tom e mensagens adaptadas."
+      },
+      {
+        "title": "Gestao de queixas",
+        "description": "Para avaliacoes sobre precos ou prazos, a IA propoe respostas empaticas que explicam sem se justificar excessivamente."
+      },
+      {
+        "title": "Analise de tendencias",
+        "description": "Visualize os temas recorrentes: espera, precos, qualidade do atendimento, explicacoes. Identifique pontos de melhoria."
+      },
+      {
+        "title": "Acesso de equipa",
+        "description": "De acesso ao seu rececao ou responsavel comercial. Todos podem responder com o mesmo tom profissional."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais adaptadas ao contexto automovel",
+    "examplesReviewLabel": "Avaliacao do cliente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva (5 estrelas)",
+        "review": "Excelente servico! Diagnostico rapido, precos transparentes, e o carro ficou pronto no prazo prometido. Recomendo vivamente.",
+        "response": "Ola Carlos, muito obrigado por esta avaliacao! A transparencia nos precos e o cumprimento de prazos sao pilares da nossa garagem. Ficamos felizes que tenha tido uma experiencia positiva. Nao hesite em voltar para a proxima revisao, sera um prazer recebe-lo novamente!",
+        "author": "Equipa Garagem Central Auto"
+      },
+      {
+        "type": "Avaliacao negativa (2 estrelas)",
+        "review": "2 horas de espera para uma simples mudanca de oleo apesar de marcacao. Alem disso, tentaram-me vender servicos adicionais desnecessarios.",
+        "response": "Ola Rui, obrigado por partilhar a sua experiencia e lamento sinceramente esta espera. 2 horas para uma mudanca de oleo com marcacao nao e aceitavel. Quanto as sugestoes de servicos, a nossa politica e informar sem nunca forcar. Tomarei medidas para melhorar tanto a gestao de marcacoes como a comunicacao. Espero que nos de a oportunidade de lhe mostrar um servico mais eficiente.",
+        "author": "Antonio, Responsavel da Oficina"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Profissionais Automoveis",
+    "testimonials": [
+      {
+        "quote": "Antes do ReplyStack, as avaliacoes acumulavam-se sem resposta. Agora respondo em 5 minutos pela manha com o cafe. Os clientes dizem-me que apreciaram a minha resposta quando voltam.",
+        "author": "Manuel R.",
+        "role": "Garagem Mecanica Rapida, Lisboa"
+      },
+      {
+        "quote": "Temos 4 concessionarios. A IA adapta o tom a cada marca: mais premium para uma, mais familiar para outra. O nivel de personalizacao e impressionante.",
+        "author": "Francisco D.",
+        "role": "Diretor Grupo AutoPremium, Porto"
+      },
+      {
+        "quote": "As avaliacoes negativas sobre precos eram-me dificeis de responder. A IA propoe respostas diplomaticas que explicam o valor sem ser defensivo. Ganho tempo e serenidade.",
+        "author": "Sofia M.",
+        "role": "Centro Auto Expresso, Faro"
+      }
+    ],
+    "pricing": {
+      "title": "Precos Adaptados a Garagens",
+      "subtitle": "Planos acessiveis, sem compromisso. Escolha segundo o seu volume de avaliacoes.",
+      "roiTitle": "O calculo e simples",
+      "without": "Sem ReplyStack",
+      "withoutTime": "60 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "6 min/mes",
+      "savings": "Poupanca: 54 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Garagem independente"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Garagem muito ativa"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Concessionario, multi-unidades"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude ou cancele a qualquer momento.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Garagens",
+    "faq": [
+      {
+        "question": "A IA entende o vocabulario tecnico automovel?",
+        "answer": "Sim. A IA foi treinada em milhoes de textos e domina o vocabulario mecanico: embraiagem, distribuicao, injecao, ABS, direcionamento, suspensao, etc. As respostas sao credíveis tecnicamente."
+      },
+      {
+        "question": "Posso adaptar o tom ao meu tipo de garagem?",
+        "answer": "Absolutamente. O Perfil de Resposta permite-lhe definir se e uma garagem de bairro familiar, um centro auto moderno ou um concessionario premium. A IA adapta o seu vocabulario e tom."
+      },
+      {
+        "question": "Como giro avaliacoes sobre precos?",
+        "answer": "A IA propoe respostas empaticas que reconhecem a preocupacao e explicam o valor (qualidade das pecas, garantia, expertise). Nunca defensivas, sempre profissionais."
+      },
+      {
+        "question": "A extensao funciona em sites de venda de veiculos?",
+        "answer": "A extensao funciona em qualquer site que mostre avaliacoes: Google Business Profile, Facebook, Standvirtual, diretorios automoveis, etc."
+      },
+      {
+        "question": "Posso usar o ReplyStack para varios estabelecimentos?",
+        "answer": "Sim. O plano Business permite criar um Perfil de Resposta por estabelecimento. Cada garagem ou concessionario tera as suas proprias respostas personalizadas."
+      },
+      {
+        "question": "O que faco se a resposta nao me agradar?",
+        "answer": "Pode modificar a resposta antes de publicar, ou clicar em 'Regenerar' para obter uma nova proposta. Mantem sempre o controlo final."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para assumir o controlo das avaliacoes da sua garagem?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas para Garagens",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "beaute": {
+    "badge": "Solucao para Beleza",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Cabeleireiros e Saloes de Beleza | ReplyStack",
+      "description": "Responda as avaliacoes Google do seu salao de cabeleireiro ou instituto de beleza em 1 clique. Solucao IA para profissionais de beleza. Teste gratuito.",
+      "keywords": "gestao avaliacoes salao cabeleireiro, responder avaliacoes google instituto beleza, software avaliacoes spa, avaliacoes google estetica, reputacao cabeleireiro"
+    },
+    "hero": {
+      "title": "Responda as Avaliacoes do Seu Salao de Beleza em 1 Clique",
+      "subtitle": "Os seus clientes deixam avaliacoes no Google, Facebook, Treatwell apos uma coloracao, um corte ou um tratamento. Cada avaliacao influencia novos clientes. O ReplyStack gera respostas personalizadas com o tom caloroso que caracteriza o seu salao.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Salao Elegance",
+      "platform": "Google Business",
+      "reviewer": "Sofia L.",
+      "review": "Coloracao incrivel! A Carla ouviu exatamente o que eu queria e o resultado e perfeito. Ambiente acolhedor, vou definitivamente voltar.",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Sofia, muito obrigada por este adoravel comentario! Vou transmitir a Carla, ficara muito feliz. A escuta e fundamental para um resultado a sua imagem. Esperamos por si para a proxima coloracao!"
+    },
+    "stats": [
+      { "value": "91%", "label": "procuram avaliacoes online" },
+      { "value": "+35%", "label": "de reservas com boa reputacao" },
+      { "value": "85%", "label": "confiam nas recomendacoes" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona nas suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Instagram",
+      "Treatwell",
+      "Fresha",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "O Desafio dos Profissionais de Beleza",
+      "subtitle": "Os cabeleireiros e institutos de beleza vivem da recomendacao. As avaliacoes online sao a nova boca-a-boca."
+    },
+    "challenges": [
+      {
+        "title": "A recomendacao e tudo",
+        "description": "Um salao de cabeleireiro vive da recomendacao. 91% dos clientes consultam avaliacoes online antes de escolher um novo salao. Uma ma avaliacao pode custar dezenas de clientes."
+      },
+      {
+        "title": "Uma relacao emocional",
+        "description": "O cabelo, o rosto, a aparencia - e emocional. As avaliacoes negativas podem ser virulentas, e e preciso responder com empatia e profissionalismo."
+      },
+      {
+        "title": "Atras das tesouras",
+        "description": "Entre cortes, coloracoes, tratamentos e gestao - o tempo para responder as avaliacoes e escasso. No entanto, cada avaliacao merece uma resposta."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack se Adapta ao Setor de Beleza",
+      "description": "A IA gera respostas calorosas e personalizadas que refletem o ambiente do seu salao. Mencao a um colaborador? A IA integra-o. Queixa sobre um corte? Resposta empatica e construtiva.",
+      "point1": "Tom caloroso e personalizado da beleza",
+      "point2": "Gestao delicada de queixas esteticas",
+      "point3": "Valorizacao dos seus colaboradores",
+      "visualTitle": "Configuracao em 2 minutos",
+      "visualSubtitle": "Tao rapido como uma franja",
+      "step1": "Instale a extensao Chrome",
+      "step2": "Configure o perfil do seu salao",
+      "step3": "Defina o seu tom (glamour, natural, descontraido)",
+      "step4": "Responda em 1 clique"
+    },
+    "featuresTitle": "Funcionalidades Chave para Beleza",
+    "featuresSubtitle": "Ferramentas adaptadas a saloes e institutos de beleza",
+    "features": [
+      {
+        "title": "Tom caloroso",
+        "description": "A IA gera respostas com a calidez que caracteriza os saloes de beleza. Nada de respostas frias e corporativas."
+      },
+      {
+        "title": "Valorizacao da equipa",
+        "description": "Um cliente menciona uma colaboradora pelo nome? A IA integra-o na resposta: 'Vou transmitir a Sofia, ficara muito feliz'."
+      },
+      {
+        "title": "Gestao emocional",
+        "description": "Um corte mal recebido? Uma coloracao que nao agradou? A IA propoe respostas empaticas que acolhem a decepcao e propoem uma solucao."
+      },
+      {
+        "title": "Multi-salao",
+        "description": "Gere varios saloes? Cada um tem o seu proprio Perfil de Resposta com tom e mensagens adaptadas a sua identidade."
+      },
+      {
+        "title": "Todas as plataformas",
+        "description": "Google, Facebook, Instagram, Treatwell, Fresha, Yelp... A extensao funciona em qualquer site que mostre avaliacoes."
+      },
+      {
+        "title": "Analise de tendencias",
+        "description": "Visualize os temas recorrentes: atendimento, espera, resultados, atmosfera. Identifique os seus pontos fortes e os de melhoria."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas calorosas adaptadas ao universo da beleza",
+    "examplesReviewLabel": "Avaliacao da cliente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva (5 estrelas)",
+        "review": "Coloracao incrivel! A Carla ouviu exatamente o que eu queria e o resultado e perfeito. Ambiente acolhedor, vou definitivamente voltar.",
+        "response": "Ola Sofia, muito obrigada por este adoravel comentario! Fico feliz que a Carla tenha conseguido o resultado que procurava - vou transmitir-lhe a sua mensagem, sei que ficara muito feliz. A escuta e fundamental para um resultado a sua imagem. Esperamos por si com prazer para a sua proxima visita!",
+        "author": "Equipa Salao Elegance"
+      },
+      {
+        "type": "Avaliacao negativa (2 estrelas)",
+        "review": "Muito desiludida com o meu balayage. O resultado nao tem nada a ver com a foto que mostrei. Alem disso, 3 horas de espera e 180 euros...",
+        "response": "Ola Mariana, lamento sinceramente que o resultado nao tenha correspondido as suas expectativas. Um balayage deve fazer-lhe sentir bem, e claramente nao foi o caso. Convido-a a contactar-nos para que possamos encontrar uma solucao juntas - e impensavel deixa-la com uma decepcao. Obrigada por nos dar a oportunidade de remediar esta situacao.",
+        "author": "Ana, Diretora do Salao"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Profissionais de Beleza",
+    "testimonials": [
+      {
+        "quote": "Recebia avaliacoes mas nunca tinha tempo para responder entre dois clientes. Agora, 5 minutos pela manha com um cafe e esta feito. Os meus clientes dizem-me que apreciaram a minha resposta!",
+        "author": "Carla M.",
+        "role": "Cabeleireira independente, Lisboa"
+      },
+      {
+        "quote": "Temos 3 saloes com ambientes diferentes. A IA adapta-se: um mais glamour, outro mais natural, o terceiro mais descontraido. E impressionante.",
+        "author": "Sofia D.",
+        "role": "Fundadora Studio Hair, Porto"
+      },
+      {
+        "quote": "Uma cliente deixou uma avaliacao muito dura sobre uma coloracao. A IA propos-me uma resposta empatica que transformou a situacao. A cliente voltou, e agora e das minhas melhores embaixadoras.",
+        "author": "Rita B.",
+        "role": "Instituto de Beleza Serenidade, Faro"
+      }
+    ],
+    "pricing": {
+      "title": "Precos Adaptados a Saloes de Beleza",
+      "subtitle": "Planos acessiveis para independentes e cadeias. Sem compromisso.",
+      "roiTitle": "O calculo e simples",
+      "without": "Sem ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Poupanca: 40 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Salao independente"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Salao muito ativo"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Cadeia de saloes"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude ou cancele a qualquer momento.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Saloes de Beleza",
+    "faq": [
+      {
+        "question": "A IA entende o vocabulario de beleza?",
+        "answer": "Sim. A IA domina o vocabulario do setor: balayage, mechas, coloracao, cuidados, tratamentos, tecnicas de corte, etc. As respostas sao credíveis e profissionais."
+      },
+      {
+        "question": "Posso personalizar o tom do meu salao?",
+        "answer": "Absolutamente. O Perfil de Resposta permite-lhe definir se o seu tom e glamour e sofisticado, natural e eco-responsavel, descontraido e moderno, ou classico e elegante."
+      },
+      {
+        "question": "Como giro avaliacoes sobre cortes mal recebidos?",
+        "answer": "A IA propoe respostas empaticas que reconhecem a decepcao e propoem uma solucao (retoque, nova marcacao). Nunca defensivas, sempre orientadas para a resolucao."
+      },
+      {
+        "question": "A extensao funciona no Treatwell?",
+        "answer": "Sim. A extensao funciona no Treatwell, Fresha, e em todos os sites de reservas que mostrem avaliacoes."
+      },
+      {
+        "question": "Posso valorizar os meus colaboradores nas respostas?",
+        "answer": "Sim! Quando um cliente menciona um colaborador pelo nome, a IA integra-o na resposta: 'Vou transmitir a Sofia, ficara muito feliz'. Excelente para a motivacao da equipa."
+      },
+      {
+        "question": "O que faco se a resposta nao me agradar?",
+        "answer": "Pode modificar a resposta antes de publicar, ou clicar em 'Regenerar' para obter uma nova proposta. Mantem sempre o controlo final."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para brilhar nas suas avaliacoes?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas para Beleza",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "artisans": {
+    "badge": "Solucao para Profissionais de Servicos",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Canalizadores, Eletricistas e Profissionais de Servicos | ReplyStack",
+      "description": "Responda as avaliacoes Google da sua empresa de servicos em 1 clique. Solucao IA para canalizadores, eletricistas, climatizacao. Teste gratuito.",
+      "keywords": "gestao avaliacoes canalizador, responder avaliacoes google eletricista, software avaliacoes profissional, avaliacoes google climatizacao, reputacao profissional servicos"
+    },
+    "hero": {
+      "title": "Responda as Avaliacoes da Sua Empresa de Servicos em 1 Clique",
+      "subtitle": "Os seus clientes deixam avaliacoes no Google apos uma intervencao. Como canalizador, eletricista, tecnico de climatizacao ou outro profissional de servicos, cada avaliacao conta. O ReplyStack gera respostas profissionais que reforcam a sua credibilidade.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Canalizacao Rapida",
+      "platform": "Google Business",
+      "reviewer": "Manuel P.",
+      "review": "Intervencao rapida para uma fuga de agua as 22h. Profissional serio, explicou o problema e reparou eficazmente. Precos razoaveis. Recomendo!",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Manuel, muito obrigado por esta avaliacao! Sabemos que uma fuga de agua a noite e stressante. Fico feliz por ter podido intervir rapidamente e resolver o problema. Nao hesite em contactar-nos para qualquer necessidade futura!"
+    },
+    "stats": [
+      { "value": "92%", "label": "procuram avaliacoes online" },
+      { "value": "+45%", "label": "de chamadas com boa reputacao" },
+      { "value": "83%", "label": "confiam nas avaliacoes" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona nas suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Paginas Amarelas",
+      "Zaask",
+      "Fixando",
+      "Diretorios profissionais"
+    ],
+    "challenge": {
+      "title": "O Desafio dos Profissionais de Servicos",
+      "subtitle": "Canalizadores, eletricistas e outros profissionais enfrentam desafios unicos na gestao das avaliacoes."
+    },
+    "challenges": [
+      {
+        "title": "A confianca e fundamental",
+        "description": "Deixar um desconhecido entrar em casa requer confianca. 92% dos clientes consultam avaliacoes antes de chamar um profissional de servicos. As avaliacoes sao o seu melhor cartao de visita."
+      },
+      {
+        "title": "No terreno, nao no escritorio",
+        "description": "Entre intervencoes, deslocacoes e urgencias - o tempo para responder as avaliacoes e inexistente. No entanto, cada avaliacao sem resposta e uma oportunidade perdida."
+      },
+      {
+        "title": "Precos frequentemente contestados",
+        "description": "Os precos das intervencoes sao frequentemente mal compreendidos. As avaliacoes sobre precos requerem respostas que expliquem o valor sem ser defensivo."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack se Adapta aos Profissionais de Servicos",
+      "description": "A IA gera respostas profissionais que reforcam a sua credibilidade: pontualidade, competencia tecnica, transparencia nos precos, atendimento ao cliente.",
+      "point1": "Vocabulario tecnico dominado (canalizacao, eletricidade, climatizacao)",
+      "point2": "Gestao das queixas sobre precos e prazos",
+      "point3": "Valorizacao da sua reatividade e competencia",
+      "visualTitle": "Configuracao em 2 minutos",
+      "visualSubtitle": "Mais rapido que trocar uma tomada",
+      "step1": "Instale a extensao Chrome",
+      "step2": "Configure o perfil da sua empresa",
+      "step3": "Defina a sua especialidade (canalizacao, eletricidade...)",
+      "step4": "Responda em 1 clique"
+    },
+    "featuresTitle": "Funcionalidades Chave para Profissionais de Servicos",
+    "featuresSubtitle": "Ferramentas adaptadas as necessidades dos profissionais de servicos",
+    "features": [
+      {
+        "title": "Resposta em 1 clique",
+        "description": "Entre duas intervencoes, no seu telemovel ou computador, responda as avaliacoes em menos de 30 segundos."
+      },
+      {
+        "title": "Vocabulario tecnico",
+        "description": "A IA entende o vocabulario de cada profissao: canalizacao (torneiras, tubos, caldeiras), eletricidade (quadros, cablagem), climatizacao (ar condicionado, bombas de calor)."
+      },
+      {
+        "title": "Gestao de precos",
+        "description": "Para avaliacoes sobre precos, a IA propoe respostas que explicam o valor (deslocacao, competencia, garantia) sem ser defensivo."
+      },
+      {
+        "title": "Multi-atividade",
+        "description": "E canalizador-climatizador? Eletricista-canalizador? O Perfil de Resposta adapta-se as suas multiplas competencias."
+      },
+      {
+        "title": "Valorizacao da urgencia",
+        "description": "Uma intervencao noturna ou de fim de semana? A IA valoriza a sua disponibilidade e reatividade nas respostas."
+      },
+      {
+        "title": "Todas as plataformas",
+        "description": "Google, Facebook, Zaask, Fixando, diretorios profissionais... A extensao funciona em qualquer site que mostre avaliacoes."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais adaptadas aos profissionais de servicos",
+    "examplesReviewLabel": "Avaliacao do cliente",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva (5 estrelas)",
+        "review": "Intervencao rapida para uma fuga de agua as 22h. Profissional serio, explicou o problema e reparou eficazmente. Precos razoaveis. Recomendo!",
+        "response": "Ola Manuel, muito obrigado por esta avaliacao! Sabemos que uma fuga de agua a noite pode ser muito stressante. Fico feliz por ter podido intervir rapidamente e resolver o seu problema. E esse o nosso compromisso: disponibilidade e eficacia. Nao hesite em contactar-nos para qualquer necessidade futura!",
+        "author": "Carlos, Canalizacao Rapida"
+      },
+      {
+        "type": "Avaliacao negativa (2 estrelas)",
+        "review": "90 euros por deslocacao + 50 euros por mudar uma torneira. 140 euros por 20 minutos de trabalho, exagerado.",
+        "response": "Ola Joao, obrigado por partilhar a sua experiencia. Compreendo que o montante possa parecer elevado. A nossa tarifa inclui a deslocacao (combustivel, tempo), as ferramentas profissionais e a garantia sobre a intervencao. E uma qualidade de servico que assumimos. Espero que apesar disso tenha apreciado a qualidade do trabalho realizado.",
+        "author": "Carlos, Gerente"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Profissionais de Servicos",
+    "testimonials": [
+      {
+        "quote": "As avaliacoes eram a minha pesadelo. Nao tinha tempo, e quando respondiam por mim era sem alma. Agora respondo eu mesmo em 30 segundos entre duas intervencoes.",
+        "author": "Miguel R.",
+        "role": "Canalizador, Lisboa"
+      },
+      {
+        "quote": "Temos uma equipa de 12 tecnicos. O ReplyStack mantem a coerencia das nossas respostas, mantendo um toque pessoal. Os clientes notam.",
+        "author": "Antonio D.",
+        "role": "Diretor ServiRapido, Porto"
+      },
+      {
+        "quote": "As avaliacoes sobre precos eram dificeis de gerir. A IA propoe-me respostas que explicam o valor sem me justificar. Isso muda tudo.",
+        "author": "Fernando B.",
+        "role": "Eletricista autonomo, Coimbra"
+      }
+    ],
+    "pricing": {
+      "title": "Precos Adaptados a Profissionais de Servicos",
+      "subtitle": "Planos acessiveis para autonomos e empresas. Sem compromisso.",
+      "roiTitle": "O calculo e simples",
+      "without": "Sem ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Poupanca: 40 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Profissional autonomo"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Empresa muito ativa"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Empresa multi-tecnicos"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude ou cancele a qualquer momento.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Profissionais de Servicos",
+    "faq": [
+      {
+        "question": "A IA entende o vocabulario tecnico?",
+        "answer": "Sim. A IA domina o vocabulario de cada profissao: canalizacao (torneiras, sifoes, caldeiras), eletricidade (quadros, disjuntores), climatizacao (ar condicionado, bombas de calor), etc."
+      },
+      {
+        "question": "Posso adaptar o tom segundo a minha profissao?",
+        "answer": "Absolutamente. O Perfil de Resposta permite-lhe definir a sua especialidade e o seu tom: profissional serio, proxima e amigavel, ou tecnico especialista."
+      },
+      {
+        "question": "Como giro avaliacoes sobre precos?",
+        "answer": "A IA propoe respostas que explicam o valor (deslocacao, competencia, garantia, material profissional) sem ser defensivo. Transparencia sem justificacao excessiva."
+      },
+      {
+        "question": "A extensao funciona em diretorios profissionais?",
+        "answer": "Sim. A extensao funciona no Google, Facebook, Zaask, Fixando e em todos os sites de diretorios que mostrem avaliacoes."
+      },
+      {
+        "question": "Posso usar o ReplyStack se sou multi-servicos?",
+        "answer": "Sim. O Perfil de Resposta adapta-se as suas multiplas competencias. A IA reconhece se a avaliacao fala de canalizacao, eletricidade ou outra especialidade."
+      },
+      {
+        "question": "O que faco se a resposta nao me agradar?",
+        "answer": "Pode modificar a resposta antes de publicar, ou clicar em 'Regenerar' para obter uma nova proposta. Mantem sempre o controlo final."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para construir a sua reputacao online?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas para Profissionais",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  },
+  "auto-ecoles": {
+    "badge": "Solucao para Escolas de Conducao",
+    "meta": {
+      "title": "Gestao de Avaliacoes para Escolas de Conducao | ReplyStack",
+      "description": "Responda as avaliacoes Google da sua escola de conducao em 1 clique. Solucao IA para instrutores e diretores. Poupe tempo. Teste gratuito.",
+      "keywords": "gestao avaliacoes escola conducao, responder avaliacoes google escola conducao, software avaliacoes carta conducao, avaliacoes instrutores, reputacao escola conducao"
+    },
+    "hero": {
+      "title": "Responda as Avaliacoes da Sua Escola de Conducao em 1 Clique",
+      "subtitle": "Os seus alunos deixam avaliacoes no Google apos terem obtido a carta ou durante a formacao. Cada avaliacao influencia futuros alunos. O ReplyStack gera respostas profissionais que reforcam a imagem da sua escola.",
+      "cta": "Experimentar Gratis",
+      "secondary": "Descobrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Escola de Conducao Sucesso",
+      "platform": "Google Business",
+      "reviewer": "Joana M.",
+      "review": "Carta obtida a primeira! Obrigada ao Rui por ter sido tao paciente e pedagogico. Formacao de qualidade, recomendo vivamente.",
+      "generateButton": "Gerar resposta IA",
+      "responseLabel": "Resposta gerada",
+      "response": "Ola Joana, parabens pela carta a primeira! E o resultado do seu trabalho e empenho. O Rui ficara muito feliz ao ler a sua mensagem. Obrigado pela sua confianca e boa estrada!"
+    },
+    "stats": [
+      { "value": "89%", "label": "consultam avaliacoes online" },
+      { "value": "+40%", "label": "de inscricoes com boa reputacao" },
+      { "value": "76%", "label": "escolhem pela reputacao" },
+      { "value": "30s", "label": "por resposta em media" }
+    ],
+    "platformsTitle": "Funciona nas suas plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Paginas Amarelas",
+      "Diretorios locais",
+      "Sites de avaliacoes"
+    ],
+    "challenge": {
+      "title": "O Desafio das Escolas de Conducao",
+      "subtitle": "As escolas de conducao evoluem num mercado competitivo onde a reputacao faz a diferenca."
+    },
+    "challenges": [
+      {
+        "title": "Um mercado ultra-competitivo",
+        "description": "Cada cidade tem dezenas de escolas de conducao. 76% dos alunos escolhem a sua escola pela reputacao online. As avaliacoes sao o fator decisivo."
+      },
+      {
+        "title": "Relacao de longa duracao",
+        "description": "Uma formacao de conducao dura varios meses. As avaliacoes mencionam frequentemente instrutores pelo nome. E preciso responder valorizando a equipa."
+      },
+      {
+        "title": "Gerir as reprovacoes",
+        "description": "Um aluno reprovado pode deixar uma avaliacao negativa. E preciso responder com empatia e profissionalismo, sem culpar."
+      }
+    ],
+    "solution": {
+      "title": "Como o ReplyStack se Adapta as Escolas de Conducao",
+      "description": "A IA gera respostas que valorizam os seus instrutores, gerem as avaliacoes de reprovacao com tato, e reforcam a imagem profissional da sua escola.",
+      "point1": "Valorizacao dos instrutores nomeados",
+      "point2": "Gestao delicada de reprovacoes",
+      "point3": "Tom profissional e caloroso",
+      "visualTitle": "Configuracao em 2 minutos",
+      "visualSubtitle": "Mais rapido que uma aula de codigo",
+      "step1": "Instale a extensao Chrome",
+      "step2": "Configure o perfil da sua escola",
+      "step3": "Adicione os nomes dos seus instrutores",
+      "step4": "Responda em 1 clique"
+    },
+    "featuresTitle": "Funcionalidades Chave para Escolas de Conducao",
+    "featuresSubtitle": "Ferramentas adaptadas ao setor do ensino de conducao",
+    "features": [
+      {
+        "title": "Valorizacao dos instrutores",
+        "description": "Um aluno menciona um instrutor pelo nome? A IA integra-o na resposta: 'Vou transmitir ao Miguel, ficara muito feliz'. Excelente para a motivacao da equipa."
+      },
+      {
+        "title": "Gestao de reprovacoes",
+        "description": "Um aluno reprovado deixa uma avaliacao? A IA propoe uma resposta empatica que acolhe a decepcao e encoraja a continuar."
+      },
+      {
+        "title": "Multi-filial",
+        "description": "Gere varias filiais? Cada uma tem o seu proprio Perfil de Resposta com tom e mensagens adaptadas."
+      },
+      {
+        "title": "Tom pedagogico",
+        "description": "A IA gera respostas com o tom pedagogico e encorajador que caracteriza as boas escolas de conducao."
+      },
+      {
+        "title": "Todas as plataformas",
+        "description": "Google, Facebook, diretorios locais... A extensao funciona em qualquer site que mostre avaliacoes."
+      },
+      {
+        "title": "Analise de tendencias",
+        "description": "Visualize os temas recorrentes: qualidade dos instrutores, veiculos, atendimento, precos. Identifique os seus pontos fortes."
+      }
+    ],
+    "examplesTitle": "Exemplos de Respostas Geradas",
+    "examplesSubtitle": "Respostas profissionais adaptadas as escolas de conducao",
+    "examplesReviewLabel": "Avaliacao do aluno",
+    "examplesResponseLabel": "Resposta gerada pelo ReplyStack",
+    "examples": [
+      {
+        "type": "Avaliacao positiva (5 estrelas)",
+        "review": "Carta obtida a primeira! Obrigada ao Rui por ter sido tao paciente e pedagogico. Formacao de qualidade, recomendo vivamente.",
+        "response": "Ola Joana, parabens pela carta a primeira! E o resultado do seu trabalho, seriedade e empenho ao longo da formacao. O Rui ficara muito feliz ao ler a sua mensagem - vou transmitir-lha com prazer. Obrigado pela sua confianca e boa estrada!",
+        "author": "Equipa Escola de Conducao Sucesso"
+      },
+      {
+        "type": "Avaliacao negativa (2 estrelas)",
+        "review": "Reprovado 2 vezes apesar de ter feito todas as aulas. Os instrutores estao mais preocupados em vender pacotes do que em formar bem.",
+        "response": "Ola Pedro, lamento muito a sua decepcao e compreendo a sua frustracao apos duas reprovacoes. Reprovar e sempre dificil, e estamos aqui para ajuda-lo a conseguir. Convido-o a contactar-me diretamente para podermos analisar juntos o que bloqueia e encontrar as melhores solucoes para a sua proxima tentativa.",
+        "author": "Carlos, Diretor"
+      }
+    ],
+    "testimonialsTitle": "O Que Dizem os Profissionais da Conducao",
+    "testimonials": [
+      {
+        "quote": "Os meus instrutores adoram ver o seu nome nas respostas que publico. Isso valoriza-os e motiva-os. E indiretamente uma ferramenta de gestao de equipa!",
+        "author": "Manuel R.",
+        "role": "Diretor Escola de Conducao Vitoria, Lisboa"
+      },
+      {
+        "quote": "As avaliacoes de alunos reprovados eram um pesadelo. A IA propoe-me respostas empaticas que transformam uma situacao negativa em oportunidade de mostrar o nosso profissionalismo.",
+        "author": "Sofia D.",
+        "role": "Escola de Conducao Moderna, Porto"
+      },
+      {
+        "quote": "Temos 4 filiais. Cada uma tem a sua propria identidade. O ReplyStack adapta-se perfeitamente a cada estabelecimento.",
+        "author": "Antonio B.",
+        "role": "Grupo Escolas de Conducao Norte"
+      }
+    ],
+    "pricing": {
+      "title": "Precos Adaptados a Escolas de Conducao",
+      "subtitle": "Planos acessiveis para escolas independentes e cadeias. Sem compromisso.",
+      "roiTitle": "O calculo e simples",
+      "without": "Sem ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Com ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Poupanca: 40 minutos por mes",
+      "plan": "Plano",
+      "price": "Preco",
+      "responses": "Respostas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Testar a ferramenta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Escola independente"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Escola muito ativa"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Cadeia de escolas"
+        }
+      },
+      "noCommitment": "Sem compromisso. Mude ou cancele a qualquer momento.",
+      "cta": "Comecar Gratis"
+    },
+    "faqTitle": "Perguntas Frequentes - Escolas de Conducao",
+    "faq": [
+      {
+        "question": "A IA entende o vocabulario das escolas de conducao?",
+        "answer": "Sim. A IA domina o vocabulario do setor: codigo, conducao, exame, instrutor, licoes, manobras, etc. As respostas sao credíveis e profissionais."
+      },
+      {
+        "question": "Posso personalizar o tom da minha escola?",
+        "answer": "Absolutamente. O Perfil de Resposta permite-lhe definir se o seu tom e profissional e serio, caloroso e pedagogico, ou moderno e descontraido."
+      },
+      {
+        "question": "Como giro avaliacoes de alunos reprovados?",
+        "answer": "A IA propoe respostas empaticas que reconhecem a decepcao sem culpar. Propoem uma ajuda para a proxima tentativa. Nunca defensivas."
+      },
+      {
+        "question": "Posso valorizar os meus instrutores nas respostas?",
+        "answer": "Sim! Quando um aluno menciona um instrutor pelo nome, a IA integra-o na resposta: 'Vou transmitir ao Miguel, ficara muito feliz'. Excelente para a motivacao."
+      },
+      {
+        "question": "Posso usar o ReplyStack para varias filiais?",
+        "answer": "Sim. O plano Business permite criar um Perfil de Resposta por filial. Cada estabelecimento tera as suas proprias respostas personalizadas."
+      },
+      {
+        "question": "O que faco se a resposta nao me agradar?",
+        "answer": "Pode modificar a resposta antes de publicar, ou clicar em 'Regenerar' para obter uma nova proposta. Mantem sempre o controlo final."
+      }
+    ],
+    "cta": {
+      "title": "Pronto para acelerar a sua reputacao online?",
+      "subtitle": "15 respostas gratuitas por mes. Sem cartao de credito. Sem compromisso.",
+      "button": "Experimentar ReplyStack Gratis",
+      "noCard": "Configuracao em 2 minutos - Sem cartao de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambem:",
+      "link1": "Como Responder a Avaliacoes Negativas",
+      "link2": "20 Templates de Respostas para Escolas de Conducao",
+      "link3": "Melhores Software de Gestao de Avaliacoes"
+    }
+  }
+}

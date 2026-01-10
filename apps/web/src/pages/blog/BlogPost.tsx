@@ -7,7 +7,7 @@ import { mdxComponents } from '@/components/blog/MDXComponents';
 import { TableOfContents, useTableOfContents } from '@/components/blog/TableOfContents';
 import { ShareButtons } from '@/components/blog/ShareButtons';
 import { RelatedArticles } from '@/components/blog/RelatedArticles';
-import { getPostBySlug, getAllPosts } from '@/lib/blog/posts';
+import { getFullPost, getAllPosts } from '@/lib/blog/posts';
 import {
   getLanguageFromPath,
   getBlogUrl,
@@ -26,16 +26,18 @@ export function BlogPost() {
   // Get language from URL path
   const language = getLanguageFromPath(location.pathname) as SupportedBlogLanguage;
 
-  // Get the post
-  const post = slug ? getPostBySlug(slug, language) : undefined;
+  // Get the post with content
+  const fullPost = slug ? getFullPost(slug, language) : undefined;
 
   // Get headings for TOC
   const headings = useTableOfContents();
 
   // 404 if not found
-  if (!slug || !post) {
+  if (!slug || !fullPost) {
     return <Navigate to={getBlogUrl(undefined, language)} replace />;
   }
+
+  const { meta: post, component: PostContent } = fullPost;
 
   // Get related posts
   const allPosts = getAllPosts(language);
@@ -166,11 +168,7 @@ export function BlogPost() {
             <div className="flex-1 max-w-3xl">
               <MDXProvider components={mdxComponents}>
                 <div className="prose prose-lg max-w-none">
-                  {/* Content would be rendered here from MDX */}
-                  <p className="text-gray-500 italic">
-                    {/* Placeholder - actual MDX content goes here */}
-                    Article content will be rendered from MDX file.
-                  </p>
+                  <PostContent />
                 </div>
               </MDXProvider>
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SupportedCurrency } from '@/lib/currency/types';
+import type { SupportedCurrency } from '@/lib/currency/types';
 import { COUNTRY_TO_CURRENCY, DEFAULT_CURRENCY } from '@/lib/currency/config';
 import { isValidCurrency } from '@/lib/currency/utils';
 

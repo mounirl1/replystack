@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
@@ -22,6 +22,11 @@ import {
   X,
 } from 'lucide-react';
 import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
+import {
+  getSectorsForLocation,
+  getSectorBasePath,
+  extractLanguageCode,
+} from '@/config/sectors';
 
 // Platform data
 const platforms = [
@@ -33,64 +38,6 @@ const platforms = [
   { name: 'Trustpilot', icon: '⭐' },
 ];
 
-// Testimonials
-const testimonials = [
-  {
-    quote: "ReplyStack nous a fait gagner des heures chaque semaine. Nos clients sont impressionnés par la rapidité de nos réponses.",
-    author: "Marie Dubois",
-    role: "Propriétaire de restaurant",
-    avatar: "MD",
-    rating: 5,
-  },
-  {
-    quote: "Les profils personnalisés sont un game-changer. Chaque réponse reflète parfaitement notre ton de marque.",
-    author: "Pierre Laurent",
-    role: "Directeur d'hôtel",
-    avatar: "PL",
-    rating: 5,
-  },
-  {
-    quote: "Enfin une solution abordable pour gérer tous nos avis. L'extension Chrome est incroyablement pratique.",
-    author: "Sophie Martin",
-    role: "Gérante de boutique",
-    avatar: "SM",
-    rating: 5,
-  },
-];
-
-// Industries
-const industries = [
-  { name: 'Restaurants', icon: '🍽️', slug: 'restaurants' },
-  { name: 'Hôtels', icon: '🏨', slug: 'hotels' },
-  { name: 'Commerces', icon: '🛍️', slug: 'commerces' },
-  { name: 'Garagistes', icon: '🚗', slug: 'garagistes' },
-  { name: 'Salons de coiffure', icon: '💇', slug: 'salons-coiffure' },
-  { name: 'Professionnels de santé', icon: '⚕️', slug: 'professionnels-sante' },
-];
-
-// FAQ Data
-const faqItems = [
-  {
-    question: "Comment fonctionne ReplyStack ?",
-    answer: "ReplyStack utilise l'IA pour générer des réponses personnalisées à vos avis clients. Installez notre extension navigateur, configurez votre profil de réponse (ton, style, secteur), et cliquez sur le bouton 'Répondre avec l'IA' sur n'importe quelle plateforme d'avis."
-  },
-  {
-    question: "Sur quelles plateformes fonctionne ReplyStack ?",
-    answer: "ReplyStack fonctionne sur toutes les principales plateformes d'avis : Google Business, TripAdvisor, Booking.com, Yelp, Facebook, Trustpilot, et bien d'autres. Notre extension détecte automatiquement les pages d'avis."
-  },
-  {
-    question: "Puis-je personnaliser les réponses générées ?",
-    answer: "Absolument ! Vous pouvez configurer votre profil de réponse avec votre ton préféré (professionnel, chaleureux, décontracté), votre secteur d'activité, et des instructions personnalisées. Chaque réponse est également modifiable avant publication."
-  },
-  {
-    question: "L'offre gratuite a-t-elle des limitations ?",
-    answer: "L'offre gratuite vous donne accès à toutes les fonctionnalités avec 15 réponses par mois. Pas de watermark, pas de fonctionnalités bloquées. Vous pouvez upgrader à tout moment pour plus de réponses."
-  },
-  {
-    question: "Comment installer l'extension ?",
-    answer: "Rendez-vous sur le Chrome Web Store ou Firefox Add-ons, recherchez 'ReplyStack' et cliquez sur 'Ajouter'. L'extension s'installe en 30 secondes et vous guide dans la configuration de votre profil."
-  },
-];
 
 // Comparison data
 const comparisonData = [
@@ -102,9 +49,14 @@ const comparisonData = [
   { feature: "Prix abordable", replystack: true, manual: true, others: false },
 ];
 
-export function Landing() {
-  const { t } = useTranslation('landing');
+export function Landing(): ReactElement {
+  const { t, i18n } = useTranslation('landing');
   const { t: tc } = useTranslation('common');
+
+  // Get current language for sector links
+  const currentLang = extractLanguageCode(i18n.language);
+  const sectorBasePath = getSectorBasePath(currentLang);
+  const landingSectors = getSectorsForLocation('landing', currentLang);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   return (
@@ -381,28 +333,24 @@ export function Landing() {
           <div className="text-center mb-16">
             <span className="section-badge">
               <Zap size={14} />
-              Comment ça marche
+              {t('howItWorks.badge')}
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              3 étapes pour répondre à tous vos avis
+              {t('howItWorks.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Simple, rapide et efficace. Commencez à répondre en moins de 5 minutes.
+              {t('howItWorks.subtitle')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '01', title: 'Installez l\'extension', description: 'Téléchargez notre extension Chrome ou Firefox en 30 secondes. Gratuit et sans engagement.', icon: '🔌' },
-              { step: '02', title: 'Configurez votre profil', description: 'Définissez le ton, le style et les informations de votre entreprise. L\'IA s\'adapte à votre marque.', icon: '⚙️' },
-              { step: '03', title: 'Générez des réponses', description: 'Cliquez sur un avis et obtenez une réponse personnalisée instantanément. Modifiez et publiez !', icon: '✨' },
-            ].map((item, index) => (
+            {(t('howItWorks.steps', { returnObjects: true }) as Array<{ title: string; description: string; icon: string }>).map((step, index) => (
               <div key={index} className="relative">
                 <div className="feature-card h-full text-center">
-                  <span className="text-6xl mb-4 block">{item.icon}</span>
-                  <div className="text-sm font-bold text-emerald-600 mb-2">Étape {item.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <span className="text-6xl mb-4 block">{step.icon}</span>
+                  <div className="text-sm font-bold text-emerald-600 mb-2">{t('howItWorks.step')} {String(index + 1).padStart(2, '0')}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
                 </div>
                 {index < 2 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
@@ -415,7 +363,7 @@ export function Landing() {
 
           <div className="text-center mt-12">
             <Link to="/register" className="btn-primary text-lg px-8 py-4">
-              Commencer maintenant
+              {t('howItWorks.cta')}
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -428,13 +376,13 @@ export function Landing() {
           <div className="text-center mb-16">
             <span className="section-badge">
               <Layers size={14} />
-              Comparatif
+              {t('comparison.badge')}
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Pourquoi choisir ReplyStack ?
+              {t('comparison.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comparez les différentes approches pour gérer vos avis clients
+              {t('comparison.subtitle')}
             </p>
           </div>
 
@@ -442,15 +390,15 @@ export function Landing() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Fonctionnalité</th>
+                  <th className="text-left py-4 px-4 font-semibold text-gray-900">{t('comparison.feature')}</th>
                   <th className="text-center py-4 px-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full font-semibold">
                       <Sparkles size={16} />
-                      ReplyStack
+                      {t('comparison.replystack')}
                     </div>
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-600">Réponses manuelles</th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-600">Autres outils</th>
+                  <th className="text-center py-4 px-4 font-semibold text-gray-600">{t('comparison.manual')}</th>
+                  <th className="text-center py-4 px-4 font-semibold text-gray-600">{t('comparison.others')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -505,18 +453,18 @@ export function Landing() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry) => (
+            {landingSectors.map((sector) => (
               <Link
-                key={industry.slug}
-                to={`/solutions/${industry.slug}`}
+                key={sector.slug}
+                to={`${sectorBasePath}/${sector.slug}`}
                 className="feature-card flex items-center gap-4 group"
               >
-                <span className="text-4xl">{industry.icon}</span>
+                <span className="text-4xl">{sector.emoji}</span>
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
-                    {industry.name}
+                    {sector.name}
                   </h3>
-                  <p className="text-sm text-gray-500">Réponses personnalisées</p>
+                  <p className="text-sm text-gray-500">{t('industries.personalizedResponses')}</p>
                 </div>
                 <ArrowRight size={18} className="text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
               </Link>
@@ -531,7 +479,7 @@ export function Landing() {
           <div className="text-center mb-16">
             <span className="section-badge">
               <Star size={14} />
-              Témoignages
+              {t('testimonialsSection.badge')}
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
               {t('testimonials.title')}
@@ -539,17 +487,17 @@ export function Landing() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {(t('testimonialsSection.items', { returnObjects: true }) as Array<{ quote: string; author: string; role: string }>).map((testimonial, index) => (
               <div key={index} className="testimonial-card">
                 <div className="flex gap-1 mb-4 text-amber-400">
-                  {[...Array(testimonial.rating)].map((_, i) => (
+                  {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
+                    {testimonial.author.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">{testimonial.author}</p>
@@ -568,15 +516,15 @@ export function Landing() {
           <div className="text-center mb-16">
             <span className="section-badge">
               <MessageSquare size={14} />
-              Questions fréquentes
+              {t('faq.badge')}
             </span>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-              Tout ce que vous devez savoir
+              {t('faq.title')}
             </h2>
           </div>
 
           <div className="space-y-4">
-            {faqItems.map((item, index) => (
+            {(t('faq.items', { returnObjects: true }) as Array<{ question: string; answer: string }>).map((item, index) => (
               <div key={index} className="border border-gray-200 rounded-2xl overflow-hidden">
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}

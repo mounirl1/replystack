@@ -1,15 +1,13 @@
+import { type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
 import { ExtensionLink } from '@/components/ui/ExtensionCTA';
-
-// Industries for footer
-const industries = [
-  { name: 'Restaurants', slug: 'restaurants' },
-  { name: 'Hôtels', slug: 'hotels' },
-  { name: 'Commerces', slug: 'commerces' },
-  { name: 'Garagistes', slug: 'garagistes' },
-];
+import {
+  getSectorsForLocation,
+  getSectorBasePath,
+  extractLanguageCode,
+} from '@/config/sectors';
 
 // Comparisons for footer - English
 const comparisonsEN = [
@@ -64,13 +62,17 @@ const footerTranslations = {
   },
 };
 
-export function Footer() {
+export function Footer(): ReactElement {
   const { t, i18n } = useTranslation('common');
 
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
   const legalBaseUrl = apiUrl.replace(/\/api\/?$/, '');
-  const currentLang = i18n.language?.substring(0, 2) || 'en';
+  const currentLang = extractLanguageCode(i18n.language);
   const langPrefix = currentLang === 'en' ? '' : `/${currentLang}`;
+
+  // Get sectors for footer
+  const footerSectors = getSectorsForLocation('footer', currentLang);
+  const sectorBasePath = getSectorBasePath(currentLang);
 
   // Get translations based on language
   const footerT = footerTranslations[currentLang as keyof typeof footerTranslations] || footerTranslations.en;
@@ -130,13 +132,13 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">{footerT.solutions}</h4>
             <ul className="space-y-3 text-gray-600">
-              {industries.map((industry) => (
-                <li key={industry.slug}>
+              {footerSectors.map((sector) => (
+                <li key={sector.slug}>
                   <Link
-                    to={`/solutions/${industry.slug}`}
+                    to={`${sectorBasePath}/${sector.slug}`}
                     className="hover:text-emerald-600 transition-colors"
                   >
-                    {industry.name}
+                    {sector.name}
                   </Link>
                 </li>
               ))}

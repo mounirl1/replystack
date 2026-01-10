@@ -26,6 +26,7 @@
     "badge": "Industry solutions",
     "title": "ReplyStack for your industry",
     "subtitle": "Responses tailored to your business and customers",
+    "personalizedResponses": "Personalized responses",
     "garage": {
       "title": "Auto Shops",
       "description": "Technical and reassuring responses"
@@ -164,5 +165,95 @@
     "title": "Ready to save hours every week?",
     "subtitle": "Join thousands of businesses using ReplyStack to manage their reviews with personalized AI responses.",
     "button": "Get Started Free"
+  },
+  "howItWorks": {
+    "badge": "How it works",
+    "title": "3 steps to respond to all your reviews",
+    "subtitle": "Simple, fast, and effective. Start responding in less than 5 minutes.",
+    "step": "Step",
+    "steps": [
+      {
+        "title": "Install the extension",
+        "description": "Download our Chrome or Firefox extension in 30 seconds. Free and no commitment.",
+        "icon": "🔌"
+      },
+      {
+        "title": "Configure your profile",
+        "description": "Set your tone, style, and business information. The AI adapts to your brand.",
+        "icon": "⚙️"
+      },
+      {
+        "title": "Generate responses",
+        "description": "Click on a review and get a personalized response instantly. Edit and publish!",
+        "icon": "✨"
+      }
+    ],
+    "cta": "Start now"
+  },
+  "comparison": {
+    "badge": "Comparison",
+    "title": "Why choose ReplyStack?",
+    "subtitle": "Compare different approaches to managing your customer reviews",
+    "feature": "Feature",
+    "replystack": "ReplyStack",
+    "manual": "Manual responses",
+    "others": "Other tools",
+    "features": {
+      "aiResponses": "Personalized AI responses",
+      "responseProfiles": "Response profiles",
+      "allPlatforms": "All platforms supported",
+      "browserExtension": "Browser extension",
+      "multiLanguage": "Auto multi-language",
+      "affordablePrice": "Affordable pricing"
+    },
+    "limited": "Limited",
+    "partial": "Partial",
+    "rare": "Rare"
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "title": "Everything you need to know",
+    "items": [
+      {
+        "question": "How does ReplyStack work?",
+        "answer": "ReplyStack uses AI to generate personalized responses to your customer reviews. Install our browser extension, configure your response profile (tone, style, industry), and click the 'Reply with AI' button on any review platform."
+      },
+      {
+        "question": "Which platforms does ReplyStack work on?",
+        "answer": "ReplyStack works on all major review platforms: Google Business, TripAdvisor, Booking.com, Yelp, Facebook, Trustpilot, and many more. Our extension automatically detects review pages."
+      },
+      {
+        "question": "Can I customize the generated responses?",
+        "answer": "Absolutely! You can configure your response profile with your preferred tone (professional, warm, casual), your industry, and custom instructions. Each response is also editable before publishing."
+      },
+      {
+        "question": "Does the free plan have limitations?",
+        "answer": "The free plan gives you access to all features with 15 responses per month. No watermark, no blocked features. You can upgrade anytime for more responses."
+      },
+      {
+        "question": "How do I install the extension?",
+        "answer": "Go to the Chrome Web Store or Firefox Add-ons, search for 'ReplyStack' and click 'Add'. The extension installs in 30 seconds and guides you through profile setup."
+      }
+    ]
+  },
+  "testimonialsSection": {
+    "badge": "Testimonials",
+    "items": [
+      {
+        "quote": "ReplyStack saved us hours every week. Our customers are impressed by how quickly we respond.",
+        "author": "Marie Dubois",
+        "role": "Restaurant owner"
+      },
+      {
+        "quote": "Custom profiles are a game-changer. Each response perfectly reflects our brand voice.",
+        "author": "Pierre Laurent",
+        "role": "Hotel director"
+      },
+      {
+        "quote": "Finally an affordable solution to manage all our reviews. The Chrome extension is incredibly convenient.",
+        "author": "Sophie Martin",
+        "role": "Shop manager"
+      }
+    ]
   }
 }

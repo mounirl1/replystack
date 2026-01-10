@@ -1,0 +1,1719 @@
+{
+  "restaurants": {
+    "badge": "Solution pour Restaurateurs",
+    "meta": {
+      "title": "Gestion des Avis pour Restaurants | ReplyStack",
+      "description": "Repondez aux avis Google, TripAdvisor, TheFork en 1 clic. Solution IA pour restaurateurs. Gagnez 10h/mois. Essai gratuit.",
+      "keywords": "gestion avis restaurant, repondre avis tripadvisor restaurant, logiciel avis restaurant, avis google restaurant, gestion e-reputation restaurant"
+    },
+    "hero": {
+      "title": "Repondez a Tous les Avis de Votre Restaurant en 1 Clic",
+      "subtitle": "Vos clients laissent des avis sur Google, TripAdvisor, TheFork, Yelp, Facebook... Vous n'avez pas le temps de repondre a tous. Pourtant, chaque avis sans reponse est une opportunite manquee. ReplyStack genere des reponses personnalisees en un clic, directement sur chaque plateforme.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Le Bistrot des Halles",
+      "platform": "TripAdvisor",
+      "reviewer": "Marie L.",
+      "review": "Excellent repas en famille ! Le risotto aux cepes etait parfait et le service tres attentionne. On reviendra !",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Bonjour Marie, un grand merci pour ce retour chaleureux ! Nous sommes ravis que le risotto aux cepes vous ait plu. Votre prochaine visite sera un plaisir. A tres bientot !"
+    },
+    "stats": [
+      { "value": "93%", "label": "des clients lisent les avis" },
+      { "value": "53%", "label": "attendent une reponse" },
+      { "value": "+35%", "label": "de conversion avec reponses" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur toutes vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "TripAdvisor",
+      "TheFork / LaFourchette",
+      "Yelp",
+      "Facebook",
+      "Instagram",
+      "UberEats",
+      "Deliveroo",
+      "Pages Jaunes"
+    ],
+    "challenge": {
+      "title": "Le Defi des Restaurateurs",
+      "subtitle": "Entre le service, la gestion et les fournisseurs, repondre aux avis passe souvent en dernier. Pourtant, chaque avis compte."
+    },
+    "challenges": [
+      {
+        "title": "Les avis sont partout",
+        "description": "Un restaurant moyen recoit des avis sur 5 a 8 plateformes differentes. Chaque plateforme a son interface, son systeme de connexion, son format de reponse."
+      },
+      {
+        "title": "Le temps manque",
+        "description": "Entre le service du midi, la preparation, le service du soir, la gestion des equipes - repondre aux avis devient une tache chronophage souvent abandonnee."
+      },
+      {
+        "title": "Chaque avis compte",
+        "description": "Un restaurant qui repond a ses avis voit son taux de conversion augmenter de 35%. Ne pas repondre envoie un message negatif a vos futurs clients."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack Resout le Probleme",
+      "description": "L'extension Chrome s'active directement sur les sites d'avis. Vous etes sur TripAdvisor ? Un bouton 'Generer reponse' apparait a cote de chaque avis. Un clic, et l'IA propose une reponse personnalisee.",
+      "point1": "Extension Chrome qui fonctionne sur tous les sites d'avis",
+      "point2": "IA qui comprend le vocabulaire de la restauration",
+      "point3": "Profil de reponse personnalise a votre etablissement",
+      "visualTitle": "Installation en 2 minutes",
+      "visualSubtitle": "Simple comme bonjour",
+      "step1": "Installez l'extension Chrome",
+      "step2": "Connectez-vous a votre compte",
+      "step3": "Configurez votre Profil de Reponse",
+      "step4": "Repondez a vos avis en 1 clic"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour les Restaurants",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer efficacement vos avis",
+    "features": [
+      {
+        "title": "Reponse en 1 clic",
+        "description": "Vous voyez un avis, vous cliquez, la reponse est prete. Validez, ajustez si besoin, publiez. Temps moyen : moins de 30 secondes par avis."
+      },
+      {
+        "title": "Toutes les plateformes",
+        "description": "Google, TripAdvisor, TheFork, mais aussi les annuaires locaux, les guides regionaux, les sites de livraison. Si le site affiche des avis, ReplyStack fonctionne."
+      },
+      {
+        "title": "Analyse de sentiment",
+        "description": "Le dashboard vous donne une vue globale : tendance des avis, sentiment general, evolution. Identifiez rapidement si un probleme emerge."
+      },
+      {
+        "title": "Multi-etablissements",
+        "description": "Vous gerez plusieurs restaurants ? Chaque etablissement a son propre Profil de Reponse. Les reponses sont adaptees a chaque adresse."
+      },
+      {
+        "title": "Acces equipe",
+        "description": "Donnez acces a votre responsable de salle ou votre community manager. Chacun peut repondre aux avis avec la meme coherence de ton."
+      },
+      {
+        "title": "Votre voix preservee",
+        "description": "Le Profil de Reponse capture l'identite de votre etablissement : ton, messages cles, gestion des critiques, signature. Vos clients reconnaissent votre voix."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Voyez comment l'IA genere des reponses personnalisees et professionnelles",
+    "examplesReviewLabel": "L'avis client",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif (5 etoiles)",
+        "review": "Excellent repas en famille ! Le risotto aux cepes etait parfait et le service tres attentionne. On reviendra !",
+        "response": "Bonjour Marie, un grand merci pour ce retour chaleureux ! Nous sommes ravis que le risotto aux cepes vous ait plu - c'est l'une des fiertes de notre chef en cette saison. Votre prochaine visite sera un plaisir. A tres bientot !",
+        "author": "L'equipe du Bistrot des Halles"
+      },
+      {
+        "type": "Avis negatif (2 etoiles)",
+        "review": "Attente tres longue pour etre servi, plus de 30 minutes avant les entrees. Le plat etait correct mais l'experience gachee.",
+        "response": "Bonjour Thomas, merci d'avoir pris le temps de nous faire ce retour. Je suis sincerement desole pour cette attente - 30 minutes avant les entrees n'est pas acceptable. Nous avons revu notre organisation en cuisine pour les soirees de forte affluence. J'espere que vous nous donnerez l'occasion de vous montrer une experience plus fluide.",
+        "author": "Marc, Responsable de salle"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Restaurateurs",
+    "testimonials": [
+      {
+        "quote": "Avant ReplyStack, je repondais aux avis le dimanche soir quand j'avais le temps - c'est-a-dire rarement. Maintenant je reponds dans la semaine, directement depuis TripAdvisor. Mes clients le remarquent.",
+        "author": "Sophie M.",
+        "role": "Le Petit Comptoir, Lyon"
+      },
+      {
+        "quote": "On a 3 etablissements, chacun avec son concept. L'IA s'adapte vraiment au ton de chaque resto. Le bistrot a des reponses differentes de la brasserie. C'est bluffant.",
+        "author": "Antoine D.",
+        "role": "Groupe Saveurs & Co, Bordeaux"
+      },
+      {
+        "quote": "Le plan gratuit m'a permis de tester sans risque. Au bout de 2 semaines, j'ai upgrade. Le temps gagne vaut largement le prix.",
+        "author": "Karim B.",
+        "role": "Pizzeria Napoli, Marseille"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification Adaptee aux Restaurateurs",
+      "subtitle": "Des plans adaptes a votre volume d'avis, sans engagement",
+      "roiTitle": "Le calcul est simple",
+      "without": "Sans ReplyStack",
+      "withoutTime": "100 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "10 min/mois",
+      "savings": "Gain : 90 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Restaurant independant"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Restaurant tres actif"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Groupe multi-etablissements"
+        }
+      },
+      "noCommitment": "Sans engagement. Changez ou annulez a tout moment.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Restaurants",
+    "faq": [
+      {
+        "question": "L'IA comprend-elle le vocabulaire de la restauration ?",
+        "answer": "Oui. L'IA Claude est entrainee sur des millions de textes et comprend parfaitement le contexte de la restauration : service, plats, accueil, ambiance, rapport qualite-prix. Les reponses utilisent un vocabulaire naturel et approprie."
+      },
+      {
+        "question": "Puis-je personnaliser le ton selon mon type de restaurant ?",
+        "answer": "Absolument. Le Profil de Reponse vous permet de definir si votre ton est gastronomique et raffine, bistrot convivial, familial et chaleureux, ou branche et decontracte. L'IA adapte son style."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur TheFork/LaFourchette ?",
+        "answer": "Oui. L'extension fonctionne sur TheFork, LaFourchette, et toutes les plateformes de reservation qui affichent des avis."
+      },
+      {
+        "question": "Comment gerer plusieurs restaurants ?",
+        "answer": "Le plan Business permet de creer un Profil de Reponse distinct pour chaque etablissement. Les reponses sont generees selon le profil du restaurant concerne."
+      },
+      {
+        "question": "Que faire si la reponse generee ne me convient pas ?",
+        "answer": "Vous pouvez modifier la reponse avant publication, ou cliquer sur 'Regenerer' pour obtenir une nouvelle proposition. Vous gardez toujours le controle final."
+      },
+      {
+        "question": "Les reponses sont-elles detectables comme generees par IA ?",
+        "answer": "Non. Les reponses sont personnalisees, variees, et integrent les details specifiques de chaque avis. Elles sont indiscernables d'une reponse redigee manuellement."
+      }
+    ],
+    "cta": {
+      "title": "Pret a reprendre le controle de vos avis ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Installation en 2 minutes - Aucune carte bancaire requise"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "e-commerce": {
+    "badge": "Solution pour E-commerce",
+    "meta": {
+      "title": "Gestion des Avis pour E-commerce | ReplyStack",
+      "description": "Repondez aux avis Amazon, Google Shopping, Trustpilot en 1 clic. Solution IA pour e-commercants. Gerez des centaines d'avis efficacement.",
+      "keywords": "gestion avis e-commerce, repondre avis amazon vendeur, logiciel avis boutique en ligne, avis clients e-commerce, gestion avis marketplace"
+    },
+    "hero": {
+      "title": "Gerez les Avis de Votre Boutique en Ligne a Grande Echelle",
+      "subtitle": "Les avis s'accumulent sur Amazon, votre site, Google Shopping, Trustpilot, les marketplaces... Le volume est tel qu'il devient impossible de repondre a chacun manuellement. ReplyStack vous permet de traiter des dizaines d'avis en quelques minutes.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "TechStore Pro",
+      "platform": "Amazon",
+      "reviewer": "Jean-Pierre M.",
+      "review": "Tres satisfait de cet aspirateur. Puissant, silencieux, et la batterie tient vraiment longtemps. Livraison rapide en plus.",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Bonjour Jean-Pierre, merci beaucoup pour ce retour detaille ! Nous sommes ravis que la puissance et l'autonomie repondent a vos attentes. N'hesitez pas a nous contacter si vous avez la moindre question."
+    },
+    "stats": [
+      { "value": "88%", "label": "consultent les avis avant achat" },
+      { "value": "+12%", "label": "de conversion avec reponses" },
+      { "value": "-30%", "label": "d'impact des avis negatifs" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur toutes vos plateformes",
+    "platforms": [
+      "Amazon Seller Central",
+      "Trustpilot",
+      "Google Shopping",
+      "Avis Verifies",
+      "Cdiscount",
+      "Fnac Marketplace",
+      "eBay",
+      "Etsy",
+      "PrestaShop",
+      "Shopify"
+    ],
+    "challenge": {
+      "title": "Le Defi du E-commerce",
+      "subtitle": "Un volume d'avis explosif qui necessite une gestion efficace pour maintenir votre reputation et vos ventes."
+    },
+    "challenges": [
+      {
+        "title": "Un volume explosif",
+        "description": "Une boutique e-commerce active peut recevoir 50 a 500 avis par mois, repartis sur Amazon, votre site, Trustpilot, et les marketplaces."
+      },
+      {
+        "title": "Impact direct sur les ventes",
+        "description": "Les produits avec reponses aux avis ont un taux de conversion 12% superieur. Un avis negatif non traite peut reduire les ventes de 30%."
+      },
+      {
+        "title": "Le temps est compte",
+        "description": "Entre la gestion des stocks, les expeditions, le SAV, le marketing - repondre aux avis devient une tache chronophage souvent abandonnee."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack Resout le Probleme",
+      "description": "L'extension Chrome vous permet de repondre a un avis en moins de 30 secondes. La ou vous passiez 3 heures a traiter 50 avis, vous en avez pour 25 minutes.",
+      "point1": "Traitez des volumes importants sans perdre en qualite",
+      "point2": "Des reponses uniques qui ne se ressemblent pas",
+      "point3": "Vocabulaire adapte au e-commerce",
+      "visualTitle": "Workflow simplifie",
+      "visualSubtitle": "Traitement en masse efficace",
+      "step1": "Ouvrez la page d'avis",
+      "step2": "Cliquez sur 'Generer reponse'",
+      "step3": "Validez ou ajustez",
+      "step4": "Passez a l'avis suivant"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour le E-commerce",
+    "featuresSubtitle": "Gerez des centaines d'avis efficacement avec des outils adaptes",
+    "features": [
+      {
+        "title": "Traitement en masse",
+        "description": "Repondez a 10, 20, 50 avis d'affilee sans perdre en qualite. L'extension reste active, vous passez d'un avis a l'autre en quelques secondes."
+      },
+      {
+        "title": "Toutes les plateformes",
+        "description": "Amazon Seller Central, Trustpilot, Google Merchant, Avis Verifies, votre module PrestaShop ou Shopify... L'extension fonctionne partout."
+      },
+      {
+        "title": "Analyse de sentiment",
+        "description": "Identifiez les tendances : un produit qui genere des critiques recurrentes, une periode d'insatisfaction, un probleme de livraison systematique."
+      },
+      {
+        "title": "Multi-produits, multi-marques",
+        "description": "Creez un Profil de Reponse par univers. Les reponses pour votre marque premium different de celles pour votre gamme accessible."
+      },
+      {
+        "title": "Coherence SAV",
+        "description": "Les reponses s'alignent avec votre politique SAV. Proposez les memes solutions (retour, echange, remboursement) de maniere coherente."
+      },
+      {
+        "title": "Multilingue natif",
+        "description": "Un avis en anglais recoit une reponse en anglais, un avis en espagnol une reponse en espagnol. Ideal pour les boutiques internationales."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles adaptees au contexte e-commerce",
+    "examplesReviewLabel": "L'avis client",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Produit",
+        "review": "Tres satisfait de cet aspirateur. Puissant, silencieux, et la batterie tient vraiment longtemps. Livraison rapide en plus.",
+        "response": "Bonjour Jean-Pierre, merci beaucoup pour ce retour detaille ! Nous sommes ravis que la puissance et l'autonomie de l'aspirateur repondent a vos attentes - ce sont effectivement les points forts de ce modele. Merci egalement d'avoir souligne la rapidite de livraison. Bonne utilisation !",
+        "author": "L'equipe TechStore"
+      },
+      {
+        "type": "Avis negatif - Livraison",
+        "review": "Produit conforme mais livraison catastrophique. Colis arrive avec 5 jours de retard et emballage abime. Decu.",
+        "response": "Bonjour Marie, je vous remercie pour ce retour et je suis sincerement desole pour ce probleme de livraison. Un retard de 5 jours et un colis abime ne sont pas acceptables. Nous avons signale ce cas a notre transporteur. Si le produit a ete endommage, contactez-nous a sav@boutique.fr pour un echange ou remboursement.",
+        "author": "Service Client TechStore"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les E-commercants",
+    "testimonials": [
+      {
+        "quote": "On vend sur 4 marketplaces + notre site. Avant, les avis s'accumulaient sans reponse. Maintenant je bloque 30 minutes le lundi matin et tout est traite pour la semaine.",
+        "author": "Emilie R.",
+        "role": "Boutique accessoires maison, 200 avis/mois"
+      },
+      {
+        "quote": "Sur Amazon, les vendeurs qui repondent aux avis sont favorises par l'algorithme. Depuis qu'on repond a tout, notre Buy Box a augmente. Le ROI est la.",
+        "author": "Julien T.",
+        "role": "Vendeur Amazon FBA, electronique"
+      },
+      {
+        "quote": "Je gere seul ma boutique Etsy. ReplyStack me fait gagner 4-5 heures par mois. C'est du temps que je reinvestis dans la creation de nouveaux produits.",
+        "author": "Claire M.",
+        "role": "Creatrice bijoux artisanaux"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour le E-commerce",
+      "subtitle": "Calculez votre ROI : 100 avis/mois x 5 min = 8h20. Avec ReplyStack : 50 min. Gain : 7h30/mois.",
+      "roiTitle": "Calculez votre ROI",
+      "without": "Sans ReplyStack (100 avis)",
+      "withoutTime": "8h20/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "50 min/mois",
+      "savings": "Gain : 7h30 par mois (187 EUR economies)",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Petite boutique"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Boutique active"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Multi-marketplace, gros volume"
+        }
+      },
+      "noCommitment": "Sans engagement. Passez au plan superieur ou annulez quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - E-commerce",
+    "faq": [
+      {
+        "question": "L'extension fonctionne-t-elle sur Amazon Seller Central ?",
+        "answer": "Oui. L'extension fonctionne sur Amazon Seller Central, que ce soit pour les avis produits ou les evaluations vendeur. Elle fonctionne egalement sur toutes les autres marketplaces (Cdiscount, Fnac, eBay, Etsy...)."
+      },
+      {
+        "question": "Puis-je adapter les reponses selon les produits ?",
+        "answer": "Le Profil de Reponse definit votre ton general et vos messages cles. L'IA adapte ensuite chaque reponse au produit specifique mentionne dans l'avis, en reprenant les details pertinents."
+      },
+      {
+        "question": "Comment gerer les avis en plusieurs langues ?",
+        "answer": "ReplyStack genere des reponses dans la langue de l'avis. Un avis en anglais recoit une reponse en anglais, un avis en espagnol une reponse en espagnol. Ideal pour les boutiques internationales."
+      },
+      {
+        "question": "Les reponses respectent-elles les guidelines Amazon ?",
+        "answer": "Oui. Les reponses generees sont factuelles, professionnelles, et ne contiennent pas d'elements interdits par Amazon (liens externes, sollicitation de modification d'avis, etc.)."
+      },
+      {
+        "question": "Puis-je utiliser ReplyStack avec mon module PrestaShop/Shopify ?",
+        "answer": "Oui. L'extension fonctionne sur n'importe quelle page affichant des avis, y compris les modules d'avis integres a votre CMS e-commerce."
+      },
+      {
+        "question": "500 reponses/mois suffisent-elles pour un gros volume ?",
+        "answer": "Pour la plupart des e-commercants, oui. Si vous avez des besoins superieurs, contactez-nous pour un plan Enterprise personnalise."
+      }
+    ],
+    "cta": {
+      "title": "Pret a scaler votre gestion des avis ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Installation en 2 minutes - Aucune carte bancaire requise"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "sante": {
+    "badge": "Solution pour Professionnels de Sante",
+    "meta": {
+      "title": "Gestion des Avis pour Professionnels de Sante | ReplyStack",
+      "description": "Repondez aux avis Google de votre cabinet medical avec professionnalisme. Solution IA respectueuse du secret medical. Essai gratuit.",
+      "keywords": "gestion avis cabinet medical, repondre avis google medecin, avis google dentiste, e-reputation professionnel sante, avis clinique"
+    },
+    "hero": {
+      "title": "Gerez les Avis de Votre Cabinet Medical avec Professionnalisme",
+      "subtitle": "Les patients laissent des avis sur Google. Ces avis influencent le choix de nouveaux patients. Mais repondre aux avis medicaux demande un ton particulier - professionnel, empathique, et respectueux de la confidentialite.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Cabinet Dr. Dupont",
+      "platform": "Google Business",
+      "reviewer": "Patient verifie",
+      "review": "Tres bon medecin, a l'ecoute et qui prend le temps d'expliquer. Le cabinet est moderne et le secretariat efficace.",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Merci beaucoup pour ce retour chaleureux. L'ecoute et la pedagogie sont au coeur de notre approche. Je transmets vos compliments a notre equipe. Au plaisir de vous revoir."
+    },
+    "stats": [
+      { "value": "76%", "label": "des patients lisent les avis" },
+      { "value": "+21%", "label": "de prises de RDV avec reponses" },
+      { "value": "100%", "label": "respectueux de la confidentialite" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "Pages Jaunes Sante",
+      "Facebook",
+      "Annuaires medicaux locaux"
+    ],
+    "challenge": {
+      "title": "L'Enjeu des Avis pour les Professionnels de Sante",
+      "subtitle": "Google est devenu incontournable pour le choix d'un praticien. Repondre aux avis demande un equilibre delicat."
+    },
+    "challenges": [
+      {
+        "title": "Google est incontournable",
+        "description": "76% des patients declarent que les avis Google influencent leur choix de praticien. Un cabinet avec des avis positifs et des reponses attentionnees inspire confiance."
+      },
+      {
+        "title": "Un equilibre delicat",
+        "description": "Confidentialite, deontologie, empathie... Repondre aux avis medicaux presente des defis uniques. Une mauvaise reponse peut etre pire que pas de reponse."
+      },
+      {
+        "title": "Le temps est precieux",
+        "description": "Entre les consultations, la paperasse administrative, les urgences - repondre aux avis n'est pas une priorite. Pourtant, les avis sans reponse s'accumulent."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack S'adapte au Secteur Sante",
+      "description": "L'IA genere des reponses qui respectent les codes du secteur medical : vocabulaire professionnel, ton empathique, formulations qui ne divulguent aucune information patient.",
+      "point1": "Ton medical approprie et professionnel",
+      "point2": "Respect total de la confidentialite patient",
+      "point3": "Profil de reponse adapte a votre specialite",
+      "visualTitle": "Configuration medicale",
+      "visualSubtitle": "Adaptee a votre pratique",
+      "step1": "Definissez votre specialite",
+      "step2": "Configurez votre ton (chaleureux, professionnel)",
+      "step3": "Ajoutez vos valeurs (ecoute, qualite des soins)",
+      "step4": "Personnalisez votre signature"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour les Professionnels de Sante",
+    "featuresSubtitle": "Des outils adaptes aux contraintes deontologiques de votre profession",
+    "features": [
+      {
+        "title": "Reponses adaptees au medical",
+        "description": "L'IA comprend le contexte de sante : accueil du secretariat, temps d'attente, qualite de l'ecoute, clarte des explications, suivi post-consultation."
+      },
+      {
+        "title": "Confidentialite integree",
+        "description": "Les reponses ne divulguent jamais d'information medicale. En cas d'avis sensible, l'IA propose une reponse qui redirige vers un contact prive."
+      },
+      {
+        "title": "Reponse en 1 clic",
+        "description": "Directement sur Google Business Profile. Pas de plateforme tierce a ouvrir. Vous restez sur votre fiche Google."
+      },
+      {
+        "title": "Multi-praticiens",
+        "description": "Pour les cabinets de groupe ou cliniques : chaque praticien peut avoir son propre style de reponse, ou le cabinet peut avoir une voix unifiee."
+      },
+      {
+        "title": "Analyse de sentiment",
+        "description": "Visualisez les tendances : les patients mentionnent-ils souvent l'attente ? L'accueil ? Le suivi ? Les donnees vous aident a ameliorer l'experience patient."
+      },
+      {
+        "title": "Conformite deontologique",
+        "description": "Les reponses sont factuelles, professionnelles, et ne contiennent aucun element publicitaire ou promesse de resultat."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles et empathiques adaptees au secteur medical",
+    "examplesReviewLabel": "L'avis patient",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Consultation",
+        "review": "Tres bon medecin, a l'ecoute et qui prend le temps d'expliquer. Le cabinet est moderne et le secretariat efficace. Je recommande.",
+        "response": "Merci beaucoup pour ce retour chaleureux. L'ecoute et la pedagogie sont au coeur de notre approche, et je suis ravi que vous l'ayez ressenti. Je transmets vos compliments a notre equipe de secretariat. Au plaisir de vous revoir.",
+        "author": "Dr Dupont"
+      },
+      {
+        "type": "Avis negatif - Attente",
+        "review": "1h30 d'attente en salle d'attente alors que j'avais rendez-vous. Aucune explication, aucune excuse. Inadmissible.",
+        "response": "Je vous presente mes sinceres excuses pour cette attente. Vous avez raison, 1h30 n'est pas acceptable et vous meritiez au minimum une explication. Nous avons revu notre organisation pour mieux gerer les imprevus et informer les patients en cas de retard. J'espere que vous nous donnerez l'occasion de vous montrer un accueil plus respectueux de votre temps.",
+        "author": "Dr Dupont"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Praticiens",
+    "testimonials": [
+      {
+        "quote": "Je redoutais les avis Google. Maintenant je reponds a tous, et plusieurs patients m'ont dit avoir choisi mon cabinet grace a mes reponses. Ca change tout.",
+        "author": "Dr Sophie L.",
+        "role": "Medecin generaliste, Paris"
+      },
+      {
+        "quote": "En tant que dentiste, les avis mentionnent souvent la douleur. L'IA propose des reponses empathiques qui rassurent sans jamais rentrer dans les details medicaux.",
+        "author": "Dr Marc B.",
+        "role": "Chirurgien-dentiste, Toulouse"
+      },
+      {
+        "quote": "Notre clinique a 8 praticiens. Chacun garde sa personnalite dans les reponses, mais avec une coherence de ton. Les patients apprecient.",
+        "author": "Marie D.",
+        "role": "Responsable administrative, Clinique du Parc, Nantes"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour les Professionnels de Sante",
+      "subtitle": "Un cabinet medical recoit typiquement 5 a 20 avis par mois. Le plan Starter suffit largement.",
+      "roiTitle": "Un investissement minime",
+      "without": "Sans ReplyStack",
+      "withoutTime": "45 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "5 min/mois",
+      "savings": "Gain : 40 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Cabinet individuel"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Cabinet de groupe"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Clinique multi-praticiens"
+        }
+      },
+      "noCommitment": "Sans engagement. Arretez quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Professionnels de Sante",
+    "faq": [
+      {
+        "question": "Les reponses respectent-elles le secret medical ?",
+        "answer": "Absolument. L'IA ne fait jamais reference a l'etat de sante, aux traitements, ou a toute information medicale du patient. En cas d'avis mentionnant des details cliniques, la reponse propose un echange en prive."
+      },
+      {
+        "question": "Puis-je adapter le ton a ma specialite ?",
+        "answer": "Oui. Le Profil de Reponse permet de definir votre specialite (generaliste, dentiste, kine, specialiste...) et votre style de communication. Un pediatre n'a pas le meme ton qu'un chirurgien."
+      },
+      {
+        "question": "Les reponses sont-elles conformes a la deontologie medicale ?",
+        "answer": "Les reponses generees sont factuelles, professionnelles, et ne contiennent aucun element publicitaire ou promesse de resultat. Elles respectent les principes deontologiques."
+      },
+      {
+        "question": "Comment gerer un avis injuste ou diffamatoire ?",
+        "answer": "L'IA genere une reponse professionnelle et mesuree. En parallele, vous pouvez signaler l'avis a Google s'il enfreint les regles (faux avis, diffamation)."
+      },
+      {
+        "question": "Puis-je utiliser ReplyStack pour un cabinet de groupe ?",
+        "answer": "Oui. Le plan Pro ou Business permet de gerer plusieurs praticiens. Vous pouvez avoir un Profil de Reponse par praticien ou une voix unifiee pour le cabinet."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur Doctolib ?",
+        "answer": "Doctolib ne permet pas actuellement de repondre aux avis. L'extension fonctionne sur Google Business Profile, qui reste la principale source d'avis pour les professionnels de sante."
+      }
+    ],
+    "cta": {
+      "title": "Pret a ameliorer votre presence en ligne ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Installation en 5 minutes - Aucune carte bancaire requise"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "hotels": {
+    "badge": "Solution pour Hoteliers",
+    "meta": {
+      "title": "Gestion des Avis pour Hotels | ReplyStack",
+      "description": "Repondez aux avis Booking, TripAdvisor, Google, Expedia en 1 clic. Solution IA pour hoteliers. Gerez toutes les plateformes depuis un seul outil.",
+      "keywords": "gestion avis hotel, repondre avis booking, logiciel avis hotellerie, avis tripadvisor hotel, gestion e-reputation hotel"
+    },
+    "hero": {
+      "title": "Repondez aux Avis de Votre Hotel sur Toutes les Plateformes",
+      "subtitle": "Booking, TripAdvisor, Google, Expedia, Hotels.com, Agoda... Les avis de votre hotel sont disperses sur des dizaines de plateformes. ReplyStack vous permet de repondre a tous vos avis en un clic, directement sur chaque plateforme.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Hotel Le Parisien",
+      "platform": "Booking.com",
+      "reviewer": "Marc D.",
+      "review": "Superbe sejour ! Chambre spacieuse avec vue magnifique, petit-dejeuner copieux et varie, personnel adorable. Nous reviendrons !",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Cher Marc, merci infiniment pour ce retour enthousiaste ! Nous sommes ravis que la vue depuis votre chambre et notre petit-dejeuner vous aient seduit. Ce sera un veritable plaisir de vous accueillir a nouveau."
+    },
+    "stats": [
+      { "value": "95%", "label": "lisent les avis avant de reserver" },
+      { "value": "+21%", "label": "de reservations avec reponses" },
+      { "value": "-70%", "label": "d'impact negatif avec reponse" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur toutes vos plateformes",
+    "platforms": [
+      "Booking.com",
+      "TripAdvisor",
+      "Google Business",
+      "Expedia",
+      "Hotels.com",
+      "Agoda",
+      "Facebook",
+      "Trivago",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "Le Defi des Hoteliers",
+      "subtitle": "Des avis sur chaque canal, un volume constant, et un impact direct sur les reservations."
+    },
+    "challenges": [
+      {
+        "title": "Des avis sur chaque canal",
+        "description": "Un hotel moyen recoit des avis sur 10 a 15 plateformes differentes : OTAs, plateformes d'avis, reseaux sociaux. Chaque plateforme a son extranet."
+      },
+      {
+        "title": "Impact sur les reservations",
+        "description": "95% des voyageurs lisent les avis avant de reserver. Un hotel qui repond voit son taux de reservation augmenter de 21%. Les reponses aux avis negatifs reduisent de 70% l'impact negatif."
+      },
+      {
+        "title": "Volume constant",
+        "description": "L'hotellerie genere des avis en continu : chaque sejour peut donner lieu a un avis sur plusieurs plateformes. Un hotel de 50 chambres peut recevoir 100+ avis par mois."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack Simplifie Tout",
+      "description": "L'extension Chrome s'active sur toutes les plateformes d'avis. Vous etes sur votre extranet Booking ? Un bouton 'Generer reponse' apparait. Vous passez sur TripAdvisor ? Le bouton est la aussi.",
+      "point1": "Une extension qui fonctionne partout",
+      "point2": "IA qui comprend l'hotellerie",
+      "point3": "Votre identite hoteliere preservee",
+      "visualTitle": "Workflow hotelier",
+      "visualSubtitle": "Toutes les plateformes en un clic",
+      "step1": "Ouvrez votre extranet (Booking, TripAdvisor...)",
+      "step2": "Cliquez sur 'Generer reponse'",
+      "step3": "Validez ou personnalisez",
+      "step4": "Publiez instantanement"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour l'Hotellerie",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer vos avis sur toutes les plateformes",
+    "features": [
+      {
+        "title": "Toutes les plateformes",
+        "description": "Booking, Expedia, TripAdvisor, Google, Agoda, Hotels.com, Facebook... L'extension fonctionne sur n'importe quel site affichant des avis."
+      },
+      {
+        "title": "Reponse instantanee",
+        "description": "Un clic genere une reponse personnalisee. Vous validez, vous publiez. Temps moyen : 30 secondes par avis au lieu de 5-7 minutes."
+      },
+      {
+        "title": "Multilingue natif",
+        "description": "Les voyageurs laissent des avis dans leur langue. L'IA repond dans la meme langue : francais, anglais, espagnol, allemand, italien, neerlandais, portugais..."
+      },
+      {
+        "title": "Multi-etablissements",
+        "description": "Vous gerez plusieurs hotels ? Chacun a son Profil de Reponse distinct. Les reponses sont adaptees a l'identite de chaque etablissement."
+      },
+      {
+        "title": "Analyse de sentiment",
+        "description": "Visualisez les tendances : quels aspects sont le plus souvent mentionnes positivement ? Quelles critiques reviennent ? Les donnees vous aident a piloter la qualite."
+      },
+      {
+        "title": "Acces equipe",
+        "description": "Donnez acces a votre responsable reception, votre guest relations manager, ou votre community manager. Chacun peut repondre avec la meme coherence de ton."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles adaptees au contexte hotelier",
+    "examplesReviewLabel": "L'avis client",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Sejour (Booking)",
+        "review": "Superbe sejour ! Chambre spacieuse avec vue magnifique, petit-dejeuner copieux et varie, personnel adorable. Nous reviendrons !",
+        "response": "Cher Marc, merci infiniment pour ce retour enthousiaste ! Nous sommes ravis que la vue depuis votre chambre et notre petit-dejeuner vous aient seduit. Je transmets avec plaisir vos compliments a toute l'equipe. Ce sera un veritable plaisir de vous accueillir a nouveau. Chaleureusement,",
+        "author": "Sophie - Guest Relations Manager"
+      },
+      {
+        "type": "Avis negatif - Proprete (TripAdvisor)",
+        "review": "Decu par la proprete de la salle de bain. Des traces dans la douche et des cheveux. Pour un 4 etoiles, ce n'est pas acceptable.",
+        "response": "Cher Jean-Pierre, je vous remercie de nous avoir signale ce probleme et vous presente mes sinceres excuses. Vous avez parfaitement raison : ce que vous decrivez n'est pas conforme a nos standards 4 etoiles. J'ai immediatement revu les procedures de controle avec notre equipe d'etage. Nous serions honores de vous accueillir a nouveau pour vous montrer le niveau de service que vous etes en droit d'attendre.",
+        "author": "Isabelle, Directrice"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Hoteliers",
+    "testimonials": [
+      {
+        "quote": "On recevait 150 avis par mois sur 8 plateformes differentes. C'etait ingerable. Maintenant, ma responsable reception traite tout en une heure par semaine.",
+        "author": "Francois M.",
+        "role": "Directeur, Hotel de charme 3*, Provence"
+      },
+      {
+        "quote": "L'extension fonctionne meme sur Agoda et les OTAs asiatiques. Mes clients chinois et japonais recoivent des reponses dans leur langue. Ca impressionne.",
+        "author": "Marie-Claire D.",
+        "role": "Revenue Manager, Resort 4*, Cote d'Azur"
+      },
+      {
+        "quote": "Le plan gratuit m'a convaincu en une semaine. Mes notes TripAdvisor sont remontees parce que les clients voient qu'on s'investit. 29 EUR/mois pour ce resultat, c'est rentabilise le premier jour.",
+        "author": "Thomas B.",
+        "role": "Proprietaire, Boutique-hotel, Bordeaux"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour l'Hotellerie",
+      "subtitle": "Des plans adaptes a votre volume d'avis, de la maison d'hotes a la chaine hoteliere",
+      "roiTitle": "Adapte a votre volume",
+      "without": "Sans ReplyStack (100 avis)",
+      "withoutTime": "8h/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "50 min/mois",
+      "savings": "Gain : 7h par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Petit hotel, B&B"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Hotel 30-80 chambres"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Grand hotel, groupe"
+        }
+      },
+      "noCommitment": "Sans engagement annuel. Flexibilite totale.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Hotellerie",
+    "faq": [
+      {
+        "question": "L'extension fonctionne-t-elle sur l'extranet Booking ?",
+        "answer": "Oui. L'extension fonctionne sur l'extranet Booking.com, l'interface proprietaire TripAdvisor, Expedia Partner Central, et tous les autres extranets OTAs."
+      },
+      {
+        "question": "Comment gerer les reponses en plusieurs langues ?",
+        "answer": "L'IA detecte automatiquement la langue de l'avis et genere la reponse dans la meme langue. Francais, anglais, espagnol, allemand, italien, neerlandais, portugais, et d'autres langues sont supportes."
+      },
+      {
+        "question": "Puis-je avoir un ton different pour chaque hotel du groupe ?",
+        "answer": "Absolument. Le plan Business permet de creer un Profil de Reponse distinct pour chaque etablissement. Un boutique-hotel parisien n'aura pas le meme ton qu'un resort balneaire."
+      },
+      {
+        "question": "Les reponses sont-elles personnalisees ou generiques ?",
+        "answer": "Chaque reponse est generee en analysant le contenu specifique de l'avis : ce que le client a aime, ses critiques, les details mentionnes. Les reponses ne se ressemblent pas."
+      },
+      {
+        "question": "Comment ReplyStack se compare-t-il aux solutions hotelieres specialisees ?",
+        "answer": "Des solutions comme TrustYou ou ReviewPro sont des suites completes (agregation, analyse, benchmarking) a des prix enterprise (300 EUR+/mois). ReplyStack se concentre sur la reponse efficace aux avis, a un prix accessible. Les deux approches peuvent etre complementaires."
+      },
+      {
+        "question": "Puis-je deleguer les reponses a mon equipe ?",
+        "answer": "Oui. Vous pouvez donner acces a plusieurs membres de votre equipe. Chacun utilise le meme Profil de Reponse pour garantir la coherence."
+      }
+    ],
+    "cta": {
+      "title": "Pret a reprendre le controle de vos avis ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Operationnel en moins de 10 minutes"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "garages": {
+    "badge": "Solution pour Garages Automobiles",
+    "meta": {
+      "title": "Gestion des Avis pour Garages et Concessions Auto | ReplyStack",
+      "description": "Repondez aux avis Google de votre garage ou concession automobile en 1 clic. Solution IA pour professionnels de l'auto. Essai gratuit.",
+      "keywords": "gestion avis garage automobile, repondre avis google garage, avis concession auto, e-reputation garage, avis google mecanicien"
+    },
+    "hero": {
+      "title": "Repondez aux Avis de Votre Garage en 1 Clic",
+      "subtitle": "Les clients consultent les avis Google avant de confier leur vehicule. Un garage avec des avis sans reponse inspire moins confiance qu'un concurrent qui dialogue avec ses clients. ReplyStack genere des reponses professionnelles adaptees au secteur automobile.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Garage Martin",
+      "platform": "Google Business",
+      "reviewer": "Pascal L.",
+      "review": "Tres satisfait de l'intervention sur ma Clio. Probleme de demarrage resolu rapidement, prix honnete, et le mecanicien a pris le temps de m'expliquer.",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Bonjour Pascal, merci beaucoup pour ce retour ! Nous sommes ravis d'avoir pu resoudre votre probleme de demarrage rapidement. La transparence et la pedagogie font partie de nos valeurs."
+    },
+    "stats": [
+      { "value": "87%", "label": "consultent les avis avant de choisir" },
+      { "value": "+35%", "label": "de demandes avec note > 4,2" },
+      { "value": "-70%", "label": "d'impact negatif avec reponse" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "Pages Jaunes",
+      "Facebook",
+      "Allopneus",
+      "Oscaro Garage"
+    ],
+    "challenge": {
+      "title": "Pourquoi les Avis Sont Cruciaux pour les Garages",
+      "subtitle": "La mefiance naturelle des automobilistes envers les garages rend les avis Google encore plus importants pour etablir la confiance."
+    },
+    "challenges": [
+      {
+        "title": "La mefiance a surmonter",
+        "description": "Les histoires de surfacturation et de reparations inutiles alimentent la defiance. Les avis Google sont devenus le premier filtre de confiance."
+      },
+      {
+        "title": "Le temps manque a l'atelier",
+        "description": "Entre les rendez-vous, les diagnostics, les commandes de pieces et la gestion de l'equipe - repondre aux avis passe en dernier."
+      },
+      {
+        "title": "Chaque avis compte",
+        "description": "Un garage qui repond calmement a un avis negatif rassure. Un garage qui ignore les critiques ou repond agressivement fait fuir."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack S'adapte au Secteur Auto",
+      "description": "L'IA comprend le contexte automobile : types d'interventions, problematiques courantes, vocabulaire technique sans jargon excessif. Les reponses sont credibles et pertinentes.",
+      "point1": "Vocabulaire technique maitrise (revision, freins, embrayage...)",
+      "point2": "Ton professionnel et rassurant",
+      "point3": "Profil de reponse adapte a votre type d'etablissement",
+      "visualTitle": "Configuration garage",
+      "visualSubtitle": "Adaptee a votre activite",
+      "step1": "Type : Garage independant, concession, centre auto",
+      "step2": "Specialites : Toutes marques, specialiste, utilitaires",
+      "step3": "Ton : Professionnel, accessible, familial",
+      "step4": "Signature personnalisee"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour l'Automobile",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer efficacement vos avis",
+    "features": [
+      {
+        "title": "Reponse instantanee",
+        "description": "30 secondes par avis au lieu de 5-7 minutes. Traitez une semaine d'avis en 10 minutes."
+      },
+      {
+        "title": "Vocabulaire technique adapte",
+        "description": "L'IA utilise le bon vocabulaire : intervention, diagnostic, devis, pieces d'origine, garantie constructeur..."
+      },
+      {
+        "title": "Analyse de sentiment",
+        "description": "Identifiez les tendances : vos clients mentionnent-ils souvent l'attente ? Les prix ? L'accueil ?"
+      },
+      {
+        "title": "Multi-sites",
+        "description": "Vous gerez plusieurs garages ? Chaque site a son Profil de Reponse. Les reponses sont adaptees a chaque adresse."
+      },
+      {
+        "title": "Acces equipe",
+        "description": "Donnez acces a votre responsable accueil ou votre assistant. Chacun peut repondre avec la meme coherence."
+      },
+      {
+        "title": "Gestion des critiques prix",
+        "description": "Les remarques sur les tarifs sont frequentes. L'IA genere des reponses qui expliquent sans se justifier."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles adaptees au secteur automobile",
+    "examplesReviewLabel": "L'avis client",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Reparation",
+        "review": "Tres satisfait de l'intervention sur ma Clio. Probleme de demarrage resolu rapidement, prix honnete, et le mecanicien a pris le temps de m'expliquer. Je recommande.",
+        "response": "Bonjour Pascal, merci beaucoup pour ce retour ! Nous sommes ravis d'avoir pu resoudre votre probleme de demarrage rapidement. La transparence et la pedagogie font partie de nos valeurs — expliquer ce qu'on fait, c'est aussi notre metier. N'hesitez pas a revenir pour l'entretien de votre Clio. A bientot !",
+        "author": "L'equipe du Garage Martin"
+      },
+      {
+        "type": "Avis negatif - Delai",
+        "review": "Vehicule depose le lundi pour une revision, recupere le jeudi seulement. Aucune explication sur ce delai. Tres decu.",
+        "response": "Bonjour Julien, je vous presente nos excuses pour ce delai. Vous avez raison, une revision ne devrait pas prendre 4 jours, et vous meritiez une explication. Nous avons rencontre un retard de livraison sur le filtre a huile specifique a votre vehicule, mais nous aurions du vous tenir informe. J'ai revu notre procedure de communication avec l'equipe.",
+        "author": "Marc, Responsable atelier"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Garagistes",
+    "testimonials": [
+      {
+        "quote": "Les avis negatifs me stressaient. Je ne savais jamais comment repondre sans avoir l'air de me justifier. Maintenant, l'IA me propose des reponses calmes et professionnelles.",
+        "author": "Jean-Marc D.",
+        "role": "Garage independant, Essonne"
+      },
+      {
+        "quote": "On a 3 concessions. Avant, personne ne repondait aux avis parce que personne n'avait le temps. Maintenant, c'est mon assistante qui s'en charge en 20 minutes par semaine.",
+        "author": "Stephanie L.",
+        "role": "Directrice groupe automobile, Rhone-Alpes"
+      },
+      {
+        "quote": "Le plan gratuit m'a convaincu. 15 reponses par mois, c'est largement suffisant pour mon petit garage.",
+        "author": "Ahmed B.",
+        "role": "Garage de quartier, Marseille"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour les Garages",
+      "subtitle": "Adapte a votre volume d'avis, sans engagement",
+      "roiTitle": "Le calcul est simple",
+      "without": "Sans ReplyStack",
+      "withoutTime": "60 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "10 min/mois",
+      "savings": "Gain : 50 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Petit garage, test"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Garage independant"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Centre auto, concession"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Groupe multi-sites"
+        }
+      },
+      "noCommitment": "Sans engagement. Arretez ou changez de plan quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Garages",
+    "faq": [
+      {
+        "question": "L'IA comprend-elle le vocabulaire technique automobile ?",
+        "answer": "Oui. L'IA maitrise le vocabulaire courant : revision, vidange, freins, embrayage, courroie de distribution, diagnostic, pieces d'origine, garantie... Les reponses sont credibles et professionnelles."
+      },
+      {
+        "question": "Comment gerer les accusations d'arnaque ?",
+        "answer": "L'IA genere des reponses calmes et factuelles, sans contre-attaque. Elle propose systematiquement un echange en direct pour clarifier la situation."
+      },
+      {
+        "question": "Puis-je utiliser ReplyStack pour plusieurs garages ?",
+        "answer": "Oui. Le plan Business permet de creer un Profil de Reponse par etablissement. Chaque garage garde son identite dans les reponses."
+      },
+      {
+        "question": "Les reponses sont-elles personnalisees ou generiques ?",
+        "answer": "Chaque reponse est generee en analysant le contenu specifique de l'avis : le type d'intervention, les points positifs, les critiques. Les reponses ne se ressemblent pas."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur Pages Jaunes ?",
+        "answer": "Oui. L'extension fonctionne sur Google Business Profile, Pages Jaunes, Facebook, et tout site affichant des avis."
+      },
+      {
+        "question": "Comment convaincre mon equipe de repondre aux avis ?",
+        "answer": "Avec ReplyStack, repondre prend 30 secondes au lieu de 5 minutes. L'obstacle du temps disparait. Votre secretaire ou assistant peut s'en charger facilement."
+      }
+    ],
+    "cta": {
+      "title": "Pret a ameliorer votre reputation en ligne ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Installation en 5 minutes - Aucune carte bancaire requise"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "beaute": {
+    "badge": "Solution pour Salons de Beaute",
+    "meta": {
+      "title": "Gestion des Avis pour Salons de Coiffure et Instituts de Beaute | ReplyStack",
+      "description": "Repondez aux avis Google de votre salon de coiffure ou institut de beaute en 1 clic. Solution IA pour professionnels de la beaute. Essai gratuit.",
+      "keywords": "gestion avis salon coiffure, repondre avis google coiffeur, avis institut beaute, e-reputation salon beaute, avis google estheticienne"
+    },
+    "hero": {
+      "title": "Repondez aux Avis de Votre Salon en 1 Clic",
+      "subtitle": "Vos clientes partagent leur experience sur Google, Facebook, Planity, Treatwell... Chaque avis influence les futures reservations. Mais entre les rendez-vous qui s'enchainent, qui a le temps de repondre ? ReplyStack genere des reponses chaleureuses et personnalisees en quelques secondes.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Salon Eclat",
+      "platform": "Google Business",
+      "reviewer": "Camille R.",
+      "review": "Super experience ! Julie a parfaitement compris ce que je voulais pour mon balayage. Resultat naturel et lumineux. Je reviendrai !",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Bonjour Camille, quel plaisir de lire votre avis ! Julie va etre ravie. Le balayage naturel et lumineux, c'est exactement ce qu'on aime realiser. On a hate de vous retrouver !"
+    },
+    "stats": [
+      { "value": "92%", "label": "consultent les avis avant de reserver" },
+      { "value": "+40%", "label": "de reservations avec reponses" },
+      { "value": "-67%", "label": "de perte de clientes avec reponse" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "Facebook",
+      "Instagram",
+      "Planity",
+      "Treatwell",
+      "Balinea",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "L'Importance des Avis dans la Beaute",
+      "subtitle": "Le bouche-a-oreille est devenu digital. Google est la nouvelle amie de confiance pour choisir son salon."
+    },
+    "challenges": [
+      {
+        "title": "Le bouche-a-oreille digital",
+        "description": "Avant, on choisissait son coiffeur sur recommandation d'une amie. Aujourd'hui, Google est la nouvelle amie de confiance."
+      },
+      {
+        "title": "Le defi du quotidien",
+        "description": "Les journees sont rythmees par les rendez-vous : colorations, coupes, soins... Repondre aux avis, c'est du temps en plus qu'on n'a pas."
+      },
+      {
+        "title": "Un salon silencieux fait peur",
+        "description": "Un salon avec des avis positifs et des reponses attentionnees inspire confiance. Un salon silencieux donne l'impression de ne pas se soucier de ses clientes."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack S'adapte a la Beaute",
+      "description": "L'IA genere des reponses qui correspondent a l'univers de la beaute : ton chaleureux et bienveillant, vocabulaire du secteur, attention aux details emotionnels.",
+      "point1": "Ton chaleureux et personnel adapte a votre ambiance",
+      "point2": "Vocabulaire du secteur (balayage, soin, prestation, resultat)",
+      "point3": "Reponses personnalisees selon le service mentionne",
+      "visualTitle": "Configuration beaute",
+      "visualSubtitle": "Adaptee a votre salon",
+      "step1": "Type : Coiffure, institut, spa, barbier, onglerie",
+      "step2": "Ambiance : Cosy, moderne, familial, luxe",
+      "step3": "Points forts : Ecoute, expertise, produits bio",
+      "step4": "Signature personnalisee"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour la Beaute",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer efficacement vos avis",
+    "features": [
+      {
+        "title": "Reponse en 30 secondes",
+        "description": "Plus besoin de reflechir a la formulation. L'IA propose, vous validez. Le temps gagne, c'est un client de plus dans la journee."
+      },
+      {
+        "title": "Ton personnalise",
+        "description": "Votre salon a son style : decontracte, chic, familial... L'IA s'adapte a votre ton pour que chaque reponse vous ressemble."
+      },
+      {
+        "title": "Tendances et insights",
+        "description": "Identifiez ce que vos clientes mentionnent le plus : l'accueil ? L'ambiance ? Un coiffeur en particulier ? L'attente ?"
+      },
+      {
+        "title": "Multi-salons",
+        "description": "Vous avez plusieurs adresses ? Chaque salon peut avoir son propre Profil de Reponse avec son ton et sa signature."
+      },
+      {
+        "title": "Acces equipe",
+        "description": "Deleguez a votre manager ou votre receptionniste. Chacun repond avec la meme coherence."
+      },
+      {
+        "title": "Support emojis",
+        "description": "Si votre Profil de Reponse indique un ton chaleureux, l'IA peut integrer des emojis de maniere naturelle."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses chaleureuses adaptees a l'univers de la beaute",
+    "examplesReviewLabel": "L'avis cliente",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Coiffure",
+        "review": "Super experience ! Julie a parfaitement compris ce que je voulais pour mon balayage. Resultat naturel et lumineux. Le salon est tres agreable, je reviendrai !",
+        "response": "Bonjour Camille, quel plaisir de lire votre avis ! Julie va etre ravie. Le balayage naturel et lumineux, c'est exactement ce qu'on aime realiser. Merci pour votre confiance, on a hate de vous retrouver pour votre prochain rendez-vous !",
+        "author": "L'equipe du Salon Eclat"
+      },
+      {
+        "type": "Avis negatif - Attente",
+        "review": "30 minutes d'attente malgre un rendez-vous. Pas d'excuses, pas d'explication. La coupe etait bien mais l'experience gachee.",
+        "response": "Bonjour Marie, je suis vraiment desolee pour cette attente. Vous avez tout a fait raison : 30 minutes sans explication, ce n'est pas acceptable. Nous avons eu un imprevu ce jour-la, mais nous aurions du vous en informer et nous excuser. Je prends note pour que cela ne se reproduise plus. J'espere sincerement que vous nous donnerez une autre chance.",
+        "author": "Sophie, Responsable du salon"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Professionnels de la Beaute",
+    "testimonials": [
+      {
+        "quote": "Je repondais aux avis le dimanche soir, fatiguee apres la semaine. Maintenant je le fais entre deux clientes, en quelques secondes. Mes clientes me disent souvent qu'elles ont choisi mon salon grace a mes reponses.",
+        "author": "Emilie R.",
+        "role": "Salon de coiffure, Lyon"
+      },
+      {
+        "quote": "On a un institut avec 4 estheticiennes. Avant, les avis Google restaient sans reponse pendant des semaines. Maintenant, ma receptionniste s'en occupe tous les 2-3 jours.",
+        "author": "Sandrine M.",
+        "role": "Institut de beaute, Bordeaux"
+      },
+      {
+        "quote": "Le ton des reponses est vraiment adapte a notre univers. Chaleureux, personnel, pas corporate. C'est exactement ce qu'il faut pour notre clientele.",
+        "author": "Claire D.",
+        "role": "Spa urbain, Paris"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour les Salons",
+      "subtitle": "Simple et accessible, adapte a votre activite",
+      "roiTitle": "Le calcul est simple",
+      "without": "Sans ReplyStack",
+      "withoutTime": "45 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "5 min/mois",
+      "savings": "Gain : 40 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Petit salon, independant"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Salon actif, multi-employes"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Chaine de salons"
+        }
+      },
+      "noCommitment": "Sans engagement. Resiliez quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Beaute",
+    "faq": [
+      {
+        "question": "L'IA comprend-elle les specificites de la coiffure et de l'esthetique ?",
+        "answer": "Oui. L'IA maitrise le vocabulaire du secteur : balayage, meches, couleur, coupe, brushing, soin, manucure, epilation, massage... Les reponses sont naturelles et pertinentes."
+      },
+      {
+        "question": "Puis-je adapter le ton a l'ambiance de mon salon ?",
+        "answer": "Absolument. Le Profil de Reponse vous permet de definir votre style : cosy, moderne, luxe, familial... Les reponses generees respectent cette ambiance."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur Planity et Treatwell ?",
+        "answer": "Oui. L'extension fonctionne sur toutes les plateformes qui affichent des avis, y compris Planity, Treatwell, Balinea, et les reseaux sociaux."
+      },
+      {
+        "question": "Comment gerer un avis injuste sur un resultat ?",
+        "answer": "L'IA genere des reponses empathiques qui reconnaissent le ressenti de la cliente tout en proposant une solution (retouche, echange)."
+      },
+      {
+        "question": "Puis-je ajouter des emojis dans les reponses ?",
+        "answer": "Oui. Si votre Profil de Reponse indique un ton chaleureux et decontracte, l'IA peut integrer des emojis de maniere naturelle. Vous pouvez toujours ajuster avant de publier."
+      },
+      {
+        "question": "Mon equipe peut-elle utiliser ReplyStack ?",
+        "answer": "Oui. Vous pouvez donner acces a votre receptionniste ou manager. Tout le monde utilise le meme Profil de Reponse pour garantir la coherence."
+      }
+    ],
+    "cta": {
+      "title": "Pret a chouchouter vos clientes en ligne aussi ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Operationnel en moins de 5 minutes"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "artisans": {
+    "badge": "Solution pour Artisans",
+    "meta": {
+      "title": "Gestion des Avis pour Artisans : Plombiers, Electriciens, Chauffagistes | ReplyStack",
+      "description": "Repondez aux avis Google de votre entreprise artisanale en 1 clic. Solution IA pour plombiers, electriciens, chauffagistes. Essai gratuit.",
+      "keywords": "gestion avis artisan, repondre avis google plombier, avis electricien, e-reputation artisan, avis google chauffagiste serrurier"
+    },
+    "hero": {
+      "title": "Repondez aux Avis de Votre Entreprise Artisanale en 1 Clic",
+      "subtitle": "Pour un plombier, un electricien ou un chauffagiste, les avis Google sont le premier critere de choix des clients. Une bonne note rassure. Des reponses professionnelles aux avis convainquent. ReplyStack genere des reponses adaptees aux metiers du batiment et des services.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Plomberie Express Services",
+      "platform": "Google Business",
+      "reviewer": "M. Durand",
+      "review": "Intervention rapide pour une fuite sous l'evier. Plombier tres pro, a pris le temps d'expliquer le probleme. Prix conforme au devis.",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Bonjour Monsieur Durand, merci beaucoup pour ce retour ! Nous sommes ravis d'avoir pu intervenir rapidement. La transparence sur les prix fait partie de notre engagement."
+    },
+    "stats": [
+      { "value": "91%", "label": "consultent les avis avant d'appeler" },
+      { "value": "+50%", "label": "d'appels avec note > 4,3" },
+      { "value": "-70%", "label": "d'impact negatif avec reponse" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "Pages Jaunes",
+      "Facebook",
+      "Houzz",
+      "Travaux.com"
+    ],
+    "challenge": {
+      "title": "Pourquoi les Avis Sont Vitaux pour les Artisans",
+      "subtitle": "La confiance se joue sur Google. Les avis sont votre meilleur outil pour prouver votre serieux."
+    },
+    "challenges": [
+      {
+        "title": "La mefiance a surmonter",
+        "description": "Les artisans souffrent d'une image parfois negative. Arnaques mediatisees, devis gonfles, travaux mal finis... Les clients sont sur leurs gardes."
+      },
+      {
+        "title": "Le premier critere de choix",
+        "description": "Quand une fuite d'eau survient ou qu'un tableau electrique disjoncte, le client cherche sur Google. La note et les reponses font la difference."
+      },
+      {
+        "title": "Le temps manque sur le terrain",
+        "description": "Entre deux chantiers, repondre aux avis devient une tache chronophage souvent abandonnee."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack S'adapte aux Artisans",
+      "description": "L'IA genere des reponses avec un ton professionnel et rassurant, un vocabulaire technique accessible, et une gestion des critiques sur les prix avec tact.",
+      "point1": "Vocabulaire metier adapte (depannage, diagnostic, devis, garantie)",
+      "point2": "Ton professionnel sans etre froid",
+      "point3": "Gestion des critiques tarifaires avec tact",
+      "visualTitle": "Configuration artisan",
+      "visualSubtitle": "Adaptee a votre metier",
+      "step1": "Metier : Plombier, electricien, chauffagiste, serrurier...",
+      "step2": "Type : Independant, entreprise familiale, societe",
+      "step3": "Points forts : Reactivite, transparence, garantie",
+      "step4": "Zone d'intervention et signature"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour les Artisans",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer efficacement vos avis",
+    "features": [
+      {
+        "title": "Gain de temps maximal",
+        "description": "30 secondes par reponse au lieu de 10 minutes de reflexion. Entre deux chantiers, vous traitez vos avis de la semaine."
+      },
+      {
+        "title": "Vocabulaire metier adapte",
+        "description": "L'IA comprend votre secteur : depannage, urgence, devis gratuit, intervention, diagnostic, garantie, normes..."
+      },
+      {
+        "title": "Gestion des critiques prix",
+        "description": "Les remarques sur les tarifs sont frequentes. L'IA genere des reponses qui expliquent sans se justifier, avec professionnalisme."
+      },
+      {
+        "title": "Suivi des tendances",
+        "description": "Identifiez les retours recurrents : ponctualite, proprete, communication... Les donnees vous aident a ameliorer."
+      },
+      {
+        "title": "Mobile-friendly",
+        "description": "Repondez depuis votre smartphone entre deux interventions. L'extension fonctionne sur Chrome mobile."
+      },
+      {
+        "title": "Multi-techniciens",
+        "description": "Plusieurs techniciens dans votre equipe ? Les reponses gardent une coherence de ton pour toute l'entreprise."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles adaptees aux metiers de l'artisanat",
+    "examplesReviewLabel": "L'avis client",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Depannage",
+        "review": "Intervention rapide pour une fuite sous l'evier. Plombier tres pro, a pris le temps d'expliquer le probleme. Prix conforme au devis. Je recommande.",
+        "response": "Bonjour Monsieur Durand, merci beaucoup pour ce retour ! Nous sommes ravis d'avoir pu intervenir rapidement et resoudre votre fuite. La transparence sur les prix et l'explication du probleme font partie de notre engagement. N'hesitez pas a nous recontacter pour tout besoin en plomberie.",
+        "author": "Stephane, Plomberie Express Services"
+      },
+      {
+        "type": "Avis negatif - Prix",
+        "review": "150 EUR pour changer un joint de robinet, c'est du vol. 15 minutes de travail. Les artisans abusent vraiment.",
+        "response": "Bonjour Madame Martin, je comprends que le tarif puisse paraitre eleve pour une intervention rapide. Ce prix inclut le deplacement, le diagnostic, la piece de qualite professionnelle, et la garantie sur l'intervention. La rapidite de l'execution reflete justement notre expertise. Je reste disponible pour toute explication complementaire.",
+        "author": "Stephane, Plomberie Express Services"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Artisans",
+    "testimonials": [
+      {
+        "quote": "Je n'ai pas le temps de repondre aux avis apres les chantiers. Avec ReplyStack, je le fais le samedi matin en 10 minutes pour toute la semaine. Ma note Google est passee de 4,2 a 4,6.",
+        "author": "Karim L.",
+        "role": "Plombier independant, Seine-Saint-Denis"
+      },
+      {
+        "quote": "Les avis sur les prix me faisaient enrager. Je repondais mal, ca empirait les choses. Maintenant l'IA me propose des reponses calmes et pro.",
+        "author": "Patrick M.",
+        "role": "Electricien, Toulouse"
+      },
+      {
+        "quote": "On a 4 techniciens sur la route. La reputation en ligne, c'est le nerf de la guerre. ReplyStack nous permet de soigner notre image sans embaucher quelqu'un pour ca.",
+        "author": "Nathalie D.",
+        "role": "Gerante entreprise chauffage, Nantes"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour les Artisans",
+      "subtitle": "Rentabilise des le premier client gagne grace a une bonne reputation",
+      "roiTitle": "Un investissement minime",
+      "without": "Sans ReplyStack",
+      "withoutTime": "60 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "10 min/mois",
+      "savings": "Gain : 50 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Artisan independant"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Entreprise avec equipe"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Multi-agences"
+        }
+      },
+      "noCommitment": "Sans engagement. Arretez quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Artisans",
+    "faq": [
+      {
+        "question": "L'IA comprend-elle les specificites de mon metier ?",
+        "answer": "Oui. L'IA maitrise le vocabulaire de la plomberie, de l'electricite, du chauffage, de la serrurerie, de la couverture... Les reponses sont adaptees a votre secteur."
+      },
+      {
+        "question": "Comment repondre aux accusations de surfacturation ?",
+        "answer": "L'IA genere des reponses calmes qui expliquent la composition du prix (deplacement, diagnostic, pieces, garantie) sans paraitre sur la defensive."
+      },
+      {
+        "question": "Je suis seul, je n'ai pas le temps pour ca.",
+        "answer": "C'est justement le but de ReplyStack. 30 secondes par reponse au lieu de 10 minutes. Vous pouvez traiter une semaine d'avis pendant votre pause cafe."
+      },
+      {
+        "question": "Les reponses sont-elles personnalisees ?",
+        "answer": "Oui. L'IA analyse le contenu de chaque avis : le type d'intervention, les points positifs, les critiques. Chaque reponse est unique."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur Pages Jaunes ?",
+        "answer": "Oui. L'extension fonctionne sur Google Business Profile, Pages Jaunes, Facebook, et tout site affichant des avis."
+      },
+      {
+        "question": "Puis-je repondre depuis mon telephone ?",
+        "answer": "Oui. L'extension Chrome fonctionne sur navigateur mobile. Vous pouvez repondre entre deux interventions."
+      }
+    ],
+    "cta": {
+      "title": "Pret a renforcer votre reputation en ligne ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Operationnel en 5 minutes, sans competence technique"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  },
+  "auto-ecoles": {
+    "badge": "Solution pour Auto-Ecoles",
+    "meta": {
+      "title": "Gestion des Avis pour Auto-Ecoles | ReplyStack",
+      "description": "Repondez aux avis Google de votre auto-ecole en 1 clic. Solution IA pour gerants d'auto-ecoles. Attirez plus d'eleves. Essai gratuit.",
+      "keywords": "gestion avis auto-ecole, repondre avis google auto-ecole, avis permis conduire, e-reputation auto-ecole, avis google moniteur"
+    },
+    "hero": {
+      "title": "Repondez aux Avis de Votre Auto-Ecole en 1 Clic",
+      "subtitle": "Les futurs eleves comparent les auto-ecoles sur Google avant de s'inscrire. Votre note, vos avis, et surtout vos reponses font la difference. ReplyStack genere des reponses professionnelles et rassurantes pour convaincre les futurs eleves.",
+      "cta": "Essayer Gratuitement",
+      "secondary": "Decouvrir les fonctionnalites"
+    },
+    "demo": {
+      "businessName": "Auto-Ecole du Centre",
+      "platform": "Google Business",
+      "reviewer": "Lea M.",
+      "review": "Super auto-ecole ! J'ai eu mon permis du premier coup grace a Kevin qui est vraiment patient et pedagogue. Le code en ligne est top aussi. Je recommande a 100% !",
+      "generateButton": "Generer une reponse IA",
+      "responseLabel": "Reponse generee",
+      "response": "Felicitations pour ton permis Lea, et bravo pour cette reussite du premier coup ! Kevin sera ravi de lire ton message. Merci pour cette recommandation, et bonne route !"
+    },
+    "stats": [
+      { "value": "94%", "label": "consultent les avis avant de choisir" },
+      { "value": "+60%", "label": "d'inscriptions avec note > 4,5" },
+      { "value": "+35%", "label": "de conversion avec reponses" },
+      { "value": "30s", "label": "par reponse en moyenne" }
+    ],
+    "platformsTitle": "Fonctionne sur vos plateformes",
+    "platforms": [
+      "Google Business Profile",
+      "Vroomvroom.fr",
+      "Facebook",
+      "Pages Jaunes"
+    ],
+    "challenge": {
+      "title": "Pourquoi les Avis Comptent pour les Auto-Ecoles",
+      "subtitle": "Une generation qui compare tout en ligne. Vos futurs eleves ne choisissent rien sans consulter les avis."
+    },
+    "challenges": [
+      {
+        "title": "Une generation connectee",
+        "description": "Vos futurs eleves ont entre 17 et 25 ans. Cette generation ne choisit rien sans consulter les avis. L'auto-ecole, c'est un investissement important (1500-2500 EUR)."
+      },
+      {
+        "title": "Un secteur tres concurrentiel",
+        "description": "Dans chaque ville, plusieurs auto-ecoles se disputent les memes eleves. La difference se joue souvent sur la reputation en ligne."
+      },
+      {
+        "title": "Un avis negatif fait basculer",
+        "description": "Un avis negatif sans reponse peut faire basculer un eleve vers la concurrence. Repondre montre que vous vous souciez de vos eleves."
+      }
+    ],
+    "solution": {
+      "title": "Comment ReplyStack S'adapte aux Auto-Ecoles",
+      "description": "L'IA genere des reponses qui parlent a la fois aux jeunes eleves et a leurs parents (souvent decisionnaires du budget). Ton rassurant et pedagogue, vocabulaire du permis.",
+      "point1": "Ton adapte aux eleves et aux parents",
+      "point2": "Vocabulaire du permis (code, conduite, moniteur, examen)",
+      "point3": "Gestion des critiques sur le planning ou les moniteurs",
+      "visualTitle": "Configuration auto-ecole",
+      "visualSubtitle": "Adaptee a votre etablissement",
+      "step1": "Type : Traditionnelle, reseau/franchise, en ligne hybride",
+      "step2": "Points forts : Taux de reussite, flexibilite, pedagogie",
+      "step3": "Ton : Professionnel, dynamique, familial",
+      "step4": "Signature personnalisee"
+    },
+    "featuresTitle": "Fonctionnalites Cles pour les Auto-Ecoles",
+    "featuresSubtitle": "Tout ce dont vous avez besoin pour gerer efficacement vos avis",
+    "features": [
+      {
+        "title": "Reponses rapides",
+        "description": "30 secondes par avis. Entre deux lecons de code, vous traitez vos avis de la semaine."
+      },
+      {
+        "title": "Vocabulaire permis adapte",
+        "description": "L'IA maitrise le vocabulaire : code, conduite, moniteur, examen, creneaux, heure supplementaire, taux de reussite..."
+      },
+      {
+        "title": "Tendances et alertes",
+        "description": "Identifiez les retours recurrents : planning trop charge ? Un moniteur qui fait l'unanimite ? Des critiques sur l'attente ?"
+      },
+      {
+        "title": "Multi-agences",
+        "description": "Vous gerez plusieurs auto-ecoles ? Chaque agence a son Profil de Reponse avec son equipe et son ton."
+      },
+      {
+        "title": "Acces secretariat",
+        "description": "Deleguez a votre secretaire ou assistant(e). La coherence des reponses est garantie par le Profil de Reponse."
+      },
+      {
+        "title": "Support emojis",
+        "description": "Pour une cible jeune, des emojis moderes peuvent rendre les reponses plus chaleureuses."
+      }
+    ],
+    "examplesTitle": "Exemples de Reponses Generees",
+    "examplesSubtitle": "Des reponses professionnelles adaptees au secteur des auto-ecoles",
+    "examplesReviewLabel": "L'avis eleve",
+    "examplesResponseLabel": "Reponse generee par ReplyStack",
+    "examples": [
+      {
+        "type": "Avis positif - Reussite",
+        "review": "Super auto-ecole ! J'ai eu mon permis du premier coup grace a Kevin qui est vraiment patient et pedagogue. Le code en ligne est top aussi. Je recommande a 100% !",
+        "response": "Felicitations pour ton permis Lea, et bravo pour cette reussite du premier coup ! Kevin sera ravi de lire ton message — sa patience et sa pedagogie font vraiment la difference. Merci pour cette recommandation, et bonne route !",
+        "author": "L'equipe de l'Auto-Ecole du Centre"
+      },
+      {
+        "type": "Avis negatif - Delais d'examen",
+        "review": "Trop d'attente pour passer l'examen. 3 mois apres avoir fini mes heures, toujours pas de date. On se sent abandonne.",
+        "response": "Bonjour Maxime, je comprends ta frustration et je m'en excuse. L'attente avant l'examen est malheureusement liee aux delais de la prefecture qui attribue les places. Cela dit, nous aurions du mieux te tenir informe pendant cette periode. Je t'invite a passer a l'accueil pour qu'on fasse le point sur ta situation.",
+        "author": "Sophie, Gerante"
+      }
+    ],
+    "testimonialsTitle": "Ce Que Disent les Gerants d'Auto-Ecoles",
+    "testimonials": [
+      {
+        "quote": "Les avis Google, c'est devenu le nerf de la guerre. Les jeunes comparent tout avant de s'inscrire. Depuis qu'on repond a tous les avis, notre taux d'inscription a augmente.",
+        "author": "Philippe D.",
+        "role": "Auto-ecole independante, Montpellier"
+      },
+      {
+        "quote": "Je n'ai pas le temps de rediger des reponses entre les lecons de code et la gestion. ReplyStack me fait gagner 2 heures par semaine.",
+        "author": "Nadia K.",
+        "role": "Gerante, region parisienne"
+      },
+      {
+        "quote": "On a 3 agences. Avant, chaque secretaire repondait differemment — ou pas du tout. Maintenant, on a une coherence dans nos reponses.",
+        "author": "Marc L.",
+        "role": "Reseau d'auto-ecoles, Bretagne"
+      }
+    ],
+    "pricing": {
+      "title": "Tarification pour les Auto-Ecoles",
+      "subtitle": "Une seule inscription supplementaire rentabilise l'abonnement pour des mois",
+      "roiTitle": "Investissement minimal, impact maximal",
+      "without": "Sans ReplyStack",
+      "withoutTime": "60 min/mois",
+      "with": "Avec ReplyStack",
+      "withTime": "10 min/mois",
+      "savings": "Gain : 50 minutes par mois",
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Reponses IA",
+      "idealFor": "Ideal pour",
+      "plans": {
+        "free": {
+          "name": "Gratuit",
+          "price": "0 EUR",
+          "responses": "15/mois",
+          "ideal": "Tester l'outil"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mois",
+          "responses": "50/mois",
+          "ideal": "Petite auto-ecole"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mois",
+          "responses": "200/mois",
+          "ideal": "Auto-ecole active"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mois",
+          "responses": "500/mois",
+          "ideal": "Reseau multi-agences"
+        }
+      },
+      "noCommitment": "Sans engagement. Changez ou arretez quand vous voulez.",
+      "cta": "Commencer Gratuitement"
+    },
+    "faqTitle": "Questions Frequentes - Auto-Ecoles",
+    "faq": [
+      {
+        "question": "L'IA comprend-elle le vocabulaire du permis ?",
+        "answer": "Oui. L'IA maitrise le vocabulaire specifique : code, conduite, moniteur, examen, creneaux, heures supplementaires, taux de reussite, prefecture, forfait... Les reponses sont naturelles et credibles."
+      },
+      {
+        "question": "Comment gerer les critiques sur un moniteur ?",
+        "answer": "L'IA genere des reponses empathiques qui prennent le ressenti de l'eleve au serieux, sans jeter le moniteur sous le bus publiquement. La reponse propose toujours un echange en direct."
+      },
+      {
+        "question": "Puis-je personnaliser le ton pour parler aux jeunes ?",
+        "answer": "Oui. Le Profil de Reponse permet de definir un ton dynamique et proche des jeunes (tutoiement, emojis moderes) ou plus traditionnel selon votre positionnement."
+      },
+      {
+        "question": "L'extension fonctionne-t-elle sur Vroomvroom.fr ?",
+        "answer": "Oui. L'extension fonctionne sur Vroomvroom, Google Business Profile, Facebook, et tout site affichant des avis."
+      },
+      {
+        "question": "Mon secretariat peut-il utiliser ReplyStack ?",
+        "answer": "Oui. Vous pouvez donner acces a votre equipe. Tout le monde utilise le meme Profil de Reponse pour garantir la coherence."
+      },
+      {
+        "question": "Les reponses peuvent-elles inclure des emojis ?",
+        "answer": "Oui, si votre Profil de Reponse le permet. Pour une cible jeune, des emojis moderes peuvent rendre les reponses plus chaleureuses."
+      }
+    ],
+    "cta": {
+      "title": "Pret a attirer plus d'eleves grace a votre reputation en ligne ?",
+      "subtitle": "15 reponses gratuites par mois. Sans carte bancaire. Sans engagement.",
+      "button": "Essayer ReplyStack Gratuitement",
+      "noCard": "Operationnel en moins de 5 minutes"
+    },
+    "relatedContent": {
+      "label": "Voir aussi :",
+      "link1": "Comment Repondre aux Avis Negatifs",
+      "link2": "20 Templates de Reponses",
+      "link3": "Meilleurs Logiciels Gestion Avis"
+    }
+  }
+}

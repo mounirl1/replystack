@@ -13,7 +13,7 @@ import { CookieConsent } from '@/components/ui/CookieConsent';
 // Lazy load pages for code splitting
 const Landing = lazy(() => import('@/pages/Landing').then(m => ({ default: m.Landing })));
 const Pricing = lazy(() => import('@/pages/Pricing').then(m => ({ default: m.Pricing })));
-const IndustryPage = lazy(() => import('@/pages/IndustryPage').then(m => ({ default: m.IndustryPage })));
+const SectorPage = lazy(() => import('@/pages/SectorPage').then(m => ({ default: m.SectorPage })));
 const Login = lazy(() => import('@/pages/auth/Login').then(m => ({ default: m.Login })));
 const Register = lazy(() => import('@/pages/auth/Register').then(m => ({ default: m.Register })));
 const MagicAuth = lazy(() => import('@/pages/auth/MagicAuth').then(m => ({ default: m.MagicAuth })));
@@ -63,7 +63,6 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/solutions/:slug" element={<IndustryPage />} />
           {/* Blog routes - EN (default) */}
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -98,6 +97,15 @@ function App() {
           <Route path="/es/alternatives/:slug" element={<AlternativesPage />} />
           {/* Alternatives/Hub pages - PT */}
           <Route path="/pt/alternatives/:slug" element={<AlternativesPage />} />
+          {/* Sector pages - FR */}
+          <Route path="/fr/secteurs/:sector" element={<SectorPage />} />
+          {/* Sector pages - EN */}
+          <Route path="/sectors/:sector" element={<SectorPage />} />
+          <Route path="/en/sectors/:sector" element={<SectorPage />} />
+          {/* Sector pages - ES */}
+          <Route path="/es/sectores/:sector" element={<SectorPage />} />
+          {/* Sector pages - PT */}
+          <Route path="/pt/setores/:sector" element={<SectorPage />} />
         </Route>
 
         {/* Auth routes */}

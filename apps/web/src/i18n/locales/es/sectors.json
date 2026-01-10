@@ -1,0 +1,1307 @@
+{
+  "restaurants": {
+    "badge": "Solucion para Restaurantes",
+    "meta": {
+      "title": "Gestion de Resenas para Restaurantes | ReplyStack",
+      "description": "Responde a resenas de Google, TripAdvisor, TheFork en 1 clic. Solucion IA para restauradores. Ahorra 10h/mes. Prueba gratuita.",
+      "keywords": "gestion resenas restaurante, responder resenas tripadvisor restaurante, software resenas restaurante, resenas google restaurante, reputacion restaurante"
+    },
+    "hero": {
+      "title": "Responde a Todas las Resenas de Tu Restaurante en 1 Clic",
+      "subtitle": "Tus clientes dejan resenas en Google, TripAdvisor, TheFork, Yelp, Facebook... No tienes tiempo para responder a todas. Sin embargo, cada resena sin respuesta es una oportunidad perdida. ReplyStack genera respuestas personalizadas en un clic.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "El Bistro del Centro",
+      "platform": "TripAdvisor",
+      "reviewer": "Maria L.",
+      "review": "Excelente comida en familia! El risotto de setas estaba perfecto y el servicio muy atento. Volveremos!",
+      "generateButton": "Generar respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Hola Maria, muchas gracias por este calido comentario! Nos alegra que el risotto de setas le haya gustado. Su proxima visita sera un placer. Hasta pronto!"
+    },
+    "stats": [
+      { "value": "93%", "label": "de clientes leen resenas" },
+      { "value": "53%", "label": "esperan una respuesta" },
+      { "value": "+35%", "label": "conversion con respuestas" },
+      { "value": "30s", "label": "por respuesta en promedio" }
+    ],
+    "platformsTitle": "Funciona en todas sus plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "TripAdvisor",
+      "TheFork / ElTenedor",
+      "Yelp",
+      "Facebook",
+      "Instagram",
+      "UberEats",
+      "Glovo",
+      "Directorios locales"
+    ],
+    "challenge": {
+      "title": "El Desafio de los Restauradores",
+      "subtitle": "Entre el servicio, la gestion y los proveedores, responder a las resenas suele quedar en ultimo lugar. Sin embargo, cada resena cuenta."
+    },
+    "challenges": [
+      {
+        "title": "Las resenas estan en todas partes",
+        "description": "Un restaurante promedio recibe resenas en 5 a 8 plataformas diferentes. Cada plataforma tiene su propia interfaz, sistema de acceso y formato de respuesta."
+      },
+      {
+        "title": "Falta el tiempo",
+        "description": "Entre el servicio del mediodia, la preparacion, el servicio de la noche, la gestion del equipo - responder a las resenas se convierte en una tarea abandonada."
+      },
+      {
+        "title": "Cada resena cuenta",
+        "description": "Un restaurante que responde a sus resenas ve aumentar su tasa de conversion en un 35%. No responder envia un mensaje negativo a futuros clientes."
+      }
+    ],
+    "solution": {
+      "title": "Como ReplyStack Resuelve el Problema",
+      "description": "La extension de Chrome se activa directamente en los sitios de resenas. Estas en TripAdvisor? Aparece un boton 'Generar respuesta' junto a cada resena. Un clic, y la IA propone una respuesta personalizada.",
+      "point1": "Extension Chrome que funciona en todos los sitios de resenas",
+      "point2": "IA que entiende el vocabulario de la restauracion",
+      "point3": "Perfil de respuesta personalizado para tu establecimiento",
+      "visualTitle": "Configuracion en 2 minutos",
+      "visualSubtitle": "Simple como nunca",
+      "step1": "Instala la extension de Chrome",
+      "step2": "Inicia sesion en tu cuenta",
+      "step3": "Configura tu Perfil de Respuesta",
+      "step4": "Responde a tus resenas en 1 clic"
+    },
+    "featuresTitle": "Funcionalidades Clave para Restaurantes",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar eficazmente tus resenas",
+    "features": [
+      {
+        "title": "Respuesta en 1 clic",
+        "description": "Ves una resena, haces clic, la respuesta esta lista. Valida, ajusta si es necesario, publica. Tiempo promedio: menos de 30 segundos por resena."
+      },
+      {
+        "title": "Todas las plataformas",
+        "description": "Google, TripAdvisor, TheFork, ademas de directorios locales, guias regionales, sitios de delivery. Si el sitio muestra resenas, ReplyStack funciona."
+      },
+      {
+        "title": "Analisis de sentimiento",
+        "description": "El dashboard te da una vision global: tendencia de resenas, sentimiento general, evolucion. Identifica rapidamente si surge un problema."
+      },
+      {
+        "title": "Multi-establecimiento",
+        "description": "Gestionas varios restaurantes? Cada establecimiento tiene su propio Perfil de Respuesta. Las respuestas se adaptan a cada direccion."
+      },
+      {
+        "title": "Acceso de equipo",
+        "description": "Da acceso a tu encargado de sala o community manager. Todos pueden responder a las resenas con la misma coherencia de tono."
+      },
+      {
+        "title": "Tu voz preservada",
+        "description": "El Perfil de Respuesta captura la identidad de tu establecimiento: tono, mensajes clave, gestion de criticas, firma. Tus clientes reconocen tu voz."
+      }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Mira como la IA genera respuestas personalizadas y profesionales",
+    "examplesReviewLabel": "Resena del cliente",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      {
+        "type": "Resena positiva (5 estrellas)",
+        "review": "Excelente comida en familia! El risotto de setas estaba perfecto y el servicio muy atento. Volveremos!",
+        "response": "Hola Maria, muchas gracias por este calido comentario! Nos alegra que el risotto de setas le haya gustado - es uno de los orgullos de nuestro chef esta temporada. Su proxima visita sera un placer. Hasta pronto!",
+        "author": "El equipo de El Bistro del Centro"
+      },
+      {
+        "type": "Resena negativa (2 estrellas)",
+        "review": "Espera muy larga para ser atendidos, mas de 30 minutos antes de los entrantes. La comida estaba bien pero la experiencia arruinada.",
+        "response": "Hola Tomas, gracias por tomarse el tiempo de compartir su opinion. Lamento sinceramente esta espera - 30 minutos antes de los entrantes no es aceptable. Hemos revisado nuestra organizacion en cocina para las noches de mucha afluencia. Espero que nos de la oportunidad de mostrarle una experiencia mas fluida.",
+        "author": "Marc, Encargado de sala"
+      }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Restauradores",
+    "testimonials": [
+      {
+        "quote": "Antes de ReplyStack, respondia a las resenas los domingos por la noche cuando tenia tiempo - es decir, raramente. Ahora respondo durante la semana, directamente desde TripAdvisor. Mis clientes lo notan.",
+        "author": "Sofia M.",
+        "role": "El Rincon del Sabor, Madrid"
+      },
+      {
+        "quote": "Tenemos 3 establecimientos, cada uno con su concepto. La IA realmente se adapta al tono de cada restaurante. El bistro tiene respuestas diferentes a la brasserie. Impresionante.",
+        "author": "Antonio D.",
+        "role": "Grupo Sabores & Co, Barcelona"
+      },
+      {
+        "quote": "El plan gratuito me permitio probar sin riesgo. Despues de 2 semanas, me pase al premium. El tiempo ahorrado vale mucho mas que el precio.",
+        "author": "Karim B.",
+        "role": "Pizzeria Napoli, Valencia"
+      }
+    ],
+    "pricing": {
+      "title": "Precios Adaptados para Restauradores",
+      "subtitle": "Planes adaptados a tu volumen de resenas, sin compromiso",
+      "roiTitle": "El calculo es simple",
+      "without": "Sin ReplyStack",
+      "withoutTime": "100 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "10 min/mes",
+      "savings": "Ahorro: 90 minutos al mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Probar la herramienta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Restaurante independiente"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Restaurante muy activo"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Grupo multi-establecimiento"
+        }
+      },
+      "noCommitment": "Sin compromiso. Cambia o cancela en cualquier momento.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Restaurantes",
+    "faq": [
+      {
+        "question": "La IA entiende el vocabulario de la restauracion?",
+        "answer": "Si. La IA Claude esta entrenada en millones de textos y entiende perfectamente el contexto de la restauracion: servicio, platos, ambiente, atencion, relacion calidad-precio. Las respuestas usan un vocabulario natural y apropiado."
+      },
+      {
+        "question": "Puedo personalizar el tono segun mi tipo de restaurante?",
+        "answer": "Absolutamente. El Perfil de Respuesta te permite definir si tu tono es gastronomico y refinado, bistro acogedor, familiar y calido, o moderno y relajado. La IA adapta su estilo."
+      },
+      {
+        "question": "La extension funciona en TheFork/ElTenedor?",
+        "answer": "Si. La extension funciona en TheFork, ElTenedor y todas las plataformas de reservas que muestran resenas."
+      },
+      {
+        "question": "Como gestiono varios restaurantes?",
+        "answer": "El plan Business permite crear un Perfil de Respuesta distinto para cada establecimiento. Las respuestas se generan segun el perfil del restaurante correspondiente."
+      },
+      {
+        "question": "Que hago si la respuesta generada no me gusta?",
+        "answer": "Puedes modificar la respuesta antes de publicar, o hacer clic en 'Regenerar' para obtener una nueva propuesta. Siempre mantienes el control final."
+      },
+      {
+        "question": "Las respuestas son detectables como generadas por IA?",
+        "answer": "No. Las respuestas son personalizadas, variadas e integran los detalles especificos de cada resena. Son indistinguibles de una respuesta escrita manualmente."
+      }
+    ],
+    "cta": {
+      "title": "Listo para tomar el control de tus resenas?",
+      "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta de credito. Sin compromiso.",
+      "button": "Probar ReplyStack Gratis",
+      "noCard": "Configuracion en 2 minutos - Sin tarjeta de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambien:",
+      "link1": "Como Responder a Resenas Negativas",
+      "link2": "20 Plantillas de Respuestas",
+      "link3": "Mejores Software de Gestion de Resenas"
+    }
+  },
+  "e-commerce": {
+    "badge": "Solucion para E-commerce",
+    "meta": {
+      "title": "Gestion de Resenas para E-commerce | ReplyStack",
+      "description": "Responde a resenas de Amazon, Google Shopping, Trustpilot en 1 clic. Solucion IA para e-commerce. Gestiona cientos de resenas eficientemente.",
+      "keywords": "gestion resenas e-commerce, responder resenas amazon vendedor, software resenas tienda online, resenas clientes e-commerce, gestion resenas marketplace"
+    },
+    "hero": {
+      "title": "Gestiona las Resenas de Tu Tienda Online a Gran Escala",
+      "subtitle": "Las resenas se acumulan en Amazon, tu sitio, Google Shopping, Trustpilot, marketplaces... El volumen hace imposible responder manualmente. ReplyStack te permite procesar decenas de resenas en minutos.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "TechStore Pro",
+      "platform": "Amazon",
+      "reviewer": "Juan P.",
+      "review": "Muy satisfecho con esta aspiradora. Potente, silenciosa, y la bateria dura mucho. Envio rapido ademas.",
+      "generateButton": "Generar respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Hola Juan, muchas gracias por este comentario detallado! Nos alegra que la potencia y autonomia cumplan sus expectativas. No dude en contactarnos si tiene alguna pregunta."
+    },
+    "stats": [
+      { "value": "88%", "label": "consultan resenas antes de comprar" },
+      { "value": "+12%", "label": "conversion con respuestas" },
+      { "value": "-30%", "label": "impacto de resenas negativas" },
+      { "value": "30s", "label": "por respuesta en promedio" }
+    ],
+    "platformsTitle": "Funciona en todas sus plataformas",
+    "platforms": [
+      "Amazon Seller Central",
+      "Trustpilot",
+      "Google Shopping",
+      "Opiniones Verificadas",
+      "eBay",
+      "Etsy",
+      "AliExpress",
+      "Mercado Libre",
+      "PrestaShop",
+      "Shopify"
+    ],
+    "challenge": {
+      "title": "El Desafio del E-commerce",
+      "subtitle": "Un volumen explosivo de resenas que requiere una gestion eficiente para mantener tu reputacion y ventas."
+    },
+    "challenges": [
+      {
+        "title": "Volumen explosivo",
+        "description": "Una tienda e-commerce activa puede recibir de 50 a 500 resenas al mes, repartidas en Amazon, tu sitio, Trustpilot y marketplaces."
+      },
+      {
+        "title": "Impacto directo en ventas",
+        "description": "Los productos con respuestas a resenas tienen una tasa de conversion 12% superior. Una resena negativa sin tratar puede reducir las ventas un 30%."
+      },
+      {
+        "title": "El tiempo apremia",
+        "description": "Entre gestion de stock, envios, atencion al cliente, marketing - responder a resenas se convierte en una tarea abandonada."
+      }
+    ],
+    "solution": {
+      "title": "Como ReplyStack Resuelve el Problema",
+      "description": "La extension de Chrome te permite responder a una resena en menos de 30 segundos. Donde pasabas 3 horas procesando 50 resenas, terminas en 25 minutos.",
+      "point1": "Procesa grandes volumenes sin perder calidad",
+      "point2": "Respuestas unicas que no se repiten",
+      "point3": "Vocabulario adaptado al e-commerce",
+      "visualTitle": "Flujo simplificado",
+      "visualSubtitle": "Procesamiento masivo eficiente",
+      "step1": "Abre la pagina de resenas",
+      "step2": "Haz clic en 'Generar respuesta'",
+      "step3": "Valida o ajusta",
+      "step4": "Pasa a la siguiente resena"
+    },
+    "featuresTitle": "Funcionalidades Clave para E-commerce",
+    "featuresSubtitle": "Gestiona cientos de resenas eficientemente con herramientas adaptadas",
+    "features": [
+      {
+        "title": "Procesamiento masivo",
+        "description": "Responde a 10, 20, 50 resenas seguidas sin perder calidad. La extension permanece activa, pasas de una resena a otra en segundos."
+      },
+      {
+        "title": "Todas las plataformas",
+        "description": "Amazon Seller Central, Trustpilot, Google Merchant, tu modulo PrestaShop o Shopify... La extension funciona en todas partes."
+      },
+      {
+        "title": "Analisis de sentimiento",
+        "description": "Identifica tendencias: un producto que genera quejas recurrentes, un periodo de insatisfaccion, un problema de envio sistematico."
+      },
+      {
+        "title": "Multi-producto, multi-marca",
+        "description": "Crea un Perfil de Respuesta por universo de marca. Las respuestas para tu marca premium difieren de tu linea economica."
+      },
+      {
+        "title": "Coherencia SAV",
+        "description": "Las respuestas se alinean con tu politica de devoluciones. Propone las mismas soluciones (devolucion, cambio, reembolso) de manera coherente."
+      },
+      {
+        "title": "Multilingue nativo",
+        "description": "Una resena en ingles recibe respuesta en ingles, una en espanol recibe respuesta en espanol. Ideal para tiendas internacionales."
+      }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales adaptadas al contexto e-commerce",
+    "examplesReviewLabel": "Resena del cliente",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      {
+        "type": "Resena positiva - Producto",
+        "review": "Muy satisfecho con esta aspiradora. Potente, silenciosa, y la bateria dura mucho. Envio rapido ademas.",
+        "response": "Hola Juan, muchas gracias por este comentario detallado! Nos alegra que la potencia y autonomia de la aspiradora cumplan sus expectativas - son efectivamente los puntos fuertes de este modelo. Gracias tambien por destacar la rapidez del envio. Que lo disfrute!",
+        "author": "Equipo TechStore"
+      },
+      {
+        "type": "Resena negativa - Envio",
+        "review": "Producto bien pero envio catastrofico. Paquete llego con 5 dias de retraso y danado. Decepcionado.",
+        "response": "Hola Sara, gracias por este comentario y lamento sinceramente este problema de envio. Un retraso de 5 dias y un paquete danado son inaceptables. Hemos reportado este caso a nuestro transportista. Si el producto esta danado, contactenos en sav@tienda.com para un cambio o reembolso.",
+        "author": "Servicio al Cliente TechStore"
+      }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los E-commerciantes",
+    "testimonials": [
+      {
+        "quote": "Vendemos en 4 marketplaces mas nuestro sitio. Las resenas se acumulaban sin respuesta. Ahora bloqueo 30 minutos el lunes por la manana y todo esta listo para la semana.",
+        "author": "Emilia R.",
+        "role": "Tienda accesorios hogar, 200 resenas/mes"
+      },
+      {
+        "quote": "En Amazon, los vendedores que responden a las resenas son favorecidos por el algoritmo. Desde que respondemos a todo, nuestro Buy Box ha mejorado. El ROI esta ahi.",
+        "author": "Julian T.",
+        "role": "Vendedor Amazon FBA, electronica"
+      },
+      {
+        "quote": "Gestiono sola mi tienda Etsy. ReplyStack me ahorra 4-5 horas al mes. Es tiempo que reinvierto en crear nuevos productos.",
+        "author": "Clara M.",
+        "role": "Creadora joyeria artesanal"
+      }
+    ],
+    "pricing": {
+      "title": "Precios para E-commerce",
+      "subtitle": "Calcula tu ROI: 100 resenas/mes x 5 min = 8h20. Con ReplyStack: 50 min. Ahorro: 7h30/mes.",
+      "roiTitle": "Calcula tu ROI",
+      "without": "Sin ReplyStack (100 resenas)",
+      "withoutTime": "8h20/mes",
+      "with": "Con ReplyStack",
+      "withTime": "50 min/mes",
+      "savings": "Ahorro: 7h30 al mes (187 EUR ahorrados)",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Probar la herramienta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Tienda pequena"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Tienda activa"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Multi-marketplace, alto volumen"
+        }
+      },
+      "noCommitment": "Sin compromiso. Sube de plan o cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - E-commerce",
+    "faq": [
+      {
+        "question": "La extension funciona en Amazon Seller Central?",
+        "answer": "Si. La extension funciona en Amazon Seller Central, tanto para resenas de productos como para valoraciones de vendedor. Tambien funciona en todos los demas marketplaces (eBay, Etsy, Mercado Libre...)."
+      },
+      {
+        "question": "Puedo adaptar las respuestas segun los productos?",
+        "answer": "El Perfil de Respuesta define tu tono general y mensajes clave. La IA adapta cada respuesta al producto especifico mencionado en la resena, incorporando detalles relevantes."
+      },
+      {
+        "question": "Como gestiono resenas en varios idiomas?",
+        "answer": "ReplyStack genera respuestas en el idioma de la resena. Una resena en ingles recibe respuesta en ingles, una en espanol recibe respuesta en espanol. Ideal para tiendas internacionales."
+      },
+      {
+        "question": "Las respuestas cumplen con las directrices de Amazon?",
+        "answer": "Si. Las respuestas generadas son factuales, profesionales y no contienen elementos prohibidos por Amazon (enlaces externos, solicitud de modificacion de resena, etc.)."
+      },
+      {
+        "question": "Puedo usar ReplyStack con mi modulo PrestaShop/Shopify?",
+        "answer": "Si. La extension funciona en cualquier pagina que muestre resenas, incluyendo modulos de resenas integrados en tu CMS e-commerce."
+      },
+      {
+        "question": "500 respuestas/mes son suficientes para alto volumen?",
+        "answer": "Para la mayoria de e-commerciantes, si. Si necesitas mas, contactanos para un plan Enterprise personalizado."
+      }
+    ],
+    "cta": {
+      "title": "Listo para escalar tu gestion de resenas?",
+      "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta de credito. Sin compromiso.",
+      "button": "Probar ReplyStack Gratis",
+      "noCard": "Configuracion en 2 minutos - Sin tarjeta de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambien:",
+      "link1": "Como Responder a Resenas Negativas",
+      "link2": "20 Plantillas de Respuestas",
+      "link3": "Mejores Software de Gestion de Resenas"
+    }
+  },
+  "sante": {
+    "badge": "Solucion para Profesionales de la Salud",
+    "meta": {
+      "title": "Gestion de Resenas para Profesionales de la Salud | ReplyStack",
+      "description": "Responde a las resenas de Google de tu consulta medica con profesionalismo. Solucion IA respetuosa con la confidencialidad del paciente. Prueba gratuita.",
+      "keywords": "gestion resenas consulta medica, responder resenas google medico, resenas google dentista, reputacion profesional salud, resenas clinica"
+    },
+    "hero": {
+      "title": "Gestiona las Resenas de Tu Consulta Medica con Profesionalismo",
+      "subtitle": "Los pacientes dejan resenas en Google. Estas resenas influyen en la eleccion de nuevos pacientes. Pero responder a resenas medicas requiere un tono particular - profesional, empatico y respetuoso con la confidencialidad.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Consulta Dr. Garcia",
+      "platform": "Google Business",
+      "reviewer": "Paciente verificado",
+      "review": "Muy buen medico, atento y que se toma el tiempo de explicar. Consulta moderna y secretaria eficiente. Lo recomiendo.",
+      "generateButton": "Generar respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Muchas gracias por este calido comentario. La escucha y la pedagogia estan en el centro de nuestro enfoque. Transmito sus felicitaciones a nuestro equipo. Esperamos verle pronto."
+    },
+    "stats": [
+      { "value": "76%", "label": "de pacientes leen resenas" },
+      { "value": "+21%", "label": "de citas con respuestas" },
+      { "value": "100%", "label": "confidencialidad respetada" },
+      { "value": "30s", "label": "por respuesta en promedio" }
+    ],
+    "platformsTitle": "Funciona en sus plataformas",
+    "platforms": [
+      "Google Business Profile",
+      "Doctoralia",
+      "Top Doctors",
+      "Facebook",
+      "Directorios medicos locales"
+    ],
+    "challenge": {
+      "title": "La Importancia de las Resenas para Profesionales de la Salud",
+      "subtitle": "Google se ha vuelto imprescindible para elegir un profesional. Responder a las resenas requiere un equilibrio delicado."
+    },
+    "challenges": [
+      {
+        "title": "Google es imprescindible",
+        "description": "El 76% de los pacientes dice que las resenas de Google influyen en su eleccion de profesional. Una consulta con resenas positivas y respuestas atentas inspira confianza."
+      },
+      {
+        "title": "Un equilibrio delicado",
+        "description": "Confidencialidad, deontologia, empatia... Responder a resenas medicas presenta desafios unicos. Una mala respuesta puede ser peor que ninguna."
+      },
+      {
+        "title": "El tiempo es precioso",
+        "description": "Entre consultas, trabajo administrativo, urgencias - responder a resenas no es una prioridad. Sin embargo, las resenas sin respuesta se acumulan."
+      }
+    ],
+    "solution": {
+      "title": "Como ReplyStack se Adapta al Sector Salud",
+      "description": "La IA genera respuestas que respetan los codigos del sector medico: vocabulario profesional, tono empatico, formulaciones que nunca revelan informacion del paciente.",
+      "point1": "Tono medico apropiado y profesional",
+      "point2": "Respeto total de la confidencialidad del paciente",
+      "point3": "Perfil de respuesta adaptado a tu especialidad",
+      "visualTitle": "Configuracion medica",
+      "visualSubtitle": "Adaptada a tu practica",
+      "step1": "Define tu especialidad",
+      "step2": "Configura tu tono (calido, profesional)",
+      "step3": "Anade tus valores (escucha, calidad asistencial)",
+      "step4": "Personaliza tu firma"
+    },
+    "featuresTitle": "Funcionalidades Clave para Profesionales de la Salud",
+    "featuresSubtitle": "Herramientas adaptadas a las restricciones deontologicas de tu profesion",
+    "features": [
+      {
+        "title": "Respuestas adaptadas a sanidad",
+        "description": "La IA entiende el contexto sanitario: recepcion, tiempos de espera, calidad de escucha, claridad de explicaciones, seguimiento post-consulta."
+      },
+      {
+        "title": "Confidencialidad integrada",
+        "description": "Las respuestas nunca revelan informacion medica. Para resenas sensibles, la IA propone una respuesta que redirige a contacto privado."
+      },
+      {
+        "title": "Respuesta en 1 clic",
+        "description": "Directamente en Google Business Profile. Sin plataforma externa que abrir. Te quedas en tu ficha de Google."
+      },
+      {
+        "title": "Multi-profesional",
+        "description": "Para consultas de grupo o clinicas: cada profesional puede tener su propio estilo de respuesta, o la consulta puede tener una voz unificada."
+      },
+      {
+        "title": "Analisis de sentimiento",
+        "description": "Visualiza tendencias: los pacientes mencionan a menudo la espera? La recepcion? El seguimiento? Los datos ayudan a mejorar la experiencia del paciente."
+      },
+      {
+        "title": "Cumplimiento deontologico",
+        "description": "Las respuestas son factuales, profesionales y no contienen elementos publicitarios ni promesas de resultados."
+      }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales y empaticas adaptadas al sector sanitario",
+    "examplesReviewLabel": "Resena del paciente",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      {
+        "type": "Resena positiva - Consulta",
+        "review": "Muy buen medico, atento y que se toma el tiempo de explicar. Consulta moderna y secretaria eficiente. Lo recomiendo.",
+        "response": "Muchas gracias por este calido comentario. La escucha y la pedagogia estan en el centro de nuestro enfoque, y me alegra que lo haya percibido. Transmito sus felicitaciones a nuestro equipo de recepcion. Esperamos verle pronto.",
+        "author": "Dr. Garcia"
+      },
+      {
+        "type": "Resena negativa - Espera",
+        "review": "1h30 de espera en la sala de espera cuando tenia cita. Ninguna explicacion, ninguna disculpa. Inadmisible.",
+        "response": "Le presento mis sinceras disculpas por esta espera. Tiene razon, 1h30 es inaceptable y merecia al menos una explicacion. Hemos revisado nuestra organizacion para gestionar mejor los imprevistos e informar a los pacientes en caso de retraso. Espero que nos de la oportunidad de mostrarle una atencion mas respetuosa de su tiempo.",
+        "author": "Dr. Garcia"
+      }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Profesionales",
+    "testimonials": [
+      {
+        "quote": "Temia las resenas de Google. Ahora respondo a todas, y varios pacientes me han dicho que eligieron mi consulta gracias a mis respuestas. Cambia todo.",
+        "author": "Dra. Sofia L.",
+        "role": "Medico generalista, Madrid"
+      },
+      {
+        "quote": "Como dentista, las resenas a menudo mencionan el dolor. La IA propone respuestas empaticas que tranquilizan sin entrar nunca en detalles medicos.",
+        "author": "Dr. Marc B.",
+        "role": "Cirujano dentista, Barcelona"
+      },
+      {
+        "quote": "Nuestra clinica tiene 8 profesionales. Cada uno mantiene su personalidad en las respuestas, pero con coherencia de tono. Los pacientes lo aprecian.",
+        "author": "Maria D.",
+        "role": "Responsable administrativa, Clinica del Parque, Valencia"
+      }
+    ],
+    "pricing": {
+      "title": "Precios para Profesionales de la Salud",
+      "subtitle": "Una consulta medica recibe tipicamente de 5 a 20 resenas al mes. El plan Starter es mas que suficiente.",
+      "roiTitle": "Inversion minima",
+      "without": "Sin ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Ahorro: 40 minutos al mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Probar la herramienta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Consulta individual"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Consulta de grupo"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Clinica multi-profesional"
+        }
+      },
+      "noCommitment": "Sin compromiso. Cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Profesionales de la Salud",
+    "faq": [
+      {
+        "question": "Las respuestas respetan la confidencialidad del paciente?",
+        "answer": "Absolutamente. La IA nunca hace referencia al estado de salud, tratamientos ni ninguna informacion medica del paciente. Para resenas que mencionan detalles clinicos, la respuesta propone una conversacion privada."
+      },
+      {
+        "question": "Puedo adaptar el tono a mi especialidad?",
+        "answer": "Si. El Perfil de Respuesta permite definir tu especialidad (generalista, dentista, fisio, especialista...) y estilo de comunicacion. Un pediatra no tiene el mismo tono que un cirujano."
+      },
+      {
+        "question": "Las respuestas cumplen con la deontologia medica?",
+        "answer": "Las respuestas generadas son factuales, profesionales y no contienen elementos publicitarios ni promesas de resultados. Respetan los principios deontologicos."
+      },
+      {
+        "question": "Como gestiono una resena injusta o difamatoria?",
+        "answer": "La IA genera una respuesta profesional y medida. Tambien puedes reportar la resena a Google si infringe las normas (resena falsa, difamacion)."
+      },
+      {
+        "question": "Puedo usar ReplyStack para una consulta de grupo?",
+        "answer": "Si. El plan Pro o Business gestiona multiples profesionales. Puedes tener un Perfil de Respuesta por profesional o una voz unificada para la consulta."
+      },
+      {
+        "question": "La extension funciona en Doctoralia?",
+        "answer": "La extension funciona en Google Business Profile, que sigue siendo la principal fuente de resenas para profesionales de la salud. El soporte para Doctoralia esta planificado."
+      }
+    ],
+    "cta": {
+      "title": "Listo para mejorar tu presencia online?",
+      "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta de credito. Sin compromiso.",
+      "button": "Probar ReplyStack Gratis",
+      "noCard": "Configuracion en 5 minutos - Sin tarjeta de credito"
+    },
+    "relatedContent": {
+      "label": "Ver tambien:",
+      "link1": "Como Responder a Resenas Negativas",
+      "link2": "20 Plantillas de Respuestas",
+      "link3": "Mejores Software de Gestion de Resenas"
+    }
+  },
+  "hotels": {
+    "badge": "Solucion para Hoteles",
+    "meta": {
+      "title": "Gestion de Resenas para Hoteles | ReplyStack",
+      "description": "Responde a resenas de Booking, TripAdvisor, Google, Expedia en 1 clic. Solucion IA para hoteleros. Gestiona todas las plataformas desde una herramienta.",
+      "keywords": "gestion resenas hotel, responder resenas booking, software resenas hoteleria, resenas tripadvisor hotel, reputacion hotel"
+    },
+    "hero": {
+      "title": "Responde a las Resenas de Tu Hotel en Todas las Plataformas",
+      "subtitle": "Booking, TripAdvisor, Google, Expedia, Hotels.com, Agoda... Las resenas de tu hotel estan dispersas en decenas de plataformas. ReplyStack te permite responder a todas en un clic, directamente en cada plataforma.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Hotel El Parisino",
+      "platform": "Booking.com",
+      "reviewer": "Marc D.",
+      "review": "Estancia increible! Habitacion amplia con vistas preciosas, desayuno abundante y variado, personal encantador. Volveremos!",
+      "generateButton": "Generar respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Estimado Marc, muchas gracias por este entusiasta comentario! Nos alegra que las vistas desde su habitacion y nuestro desayuno le hayan encantado. Sera un verdadero placer recibirle de nuevo."
+    },
+    "stats": [
+      { "value": "95%", "label": "leen resenas antes de reservar" },
+      { "value": "+21%", "label": "de reservas con respuestas" },
+      { "value": "-70%", "label": "impacto negativo con respuesta" },
+      { "value": "30s", "label": "por respuesta en promedio" }
+    ],
+    "platformsTitle": "Funciona en todas sus plataformas",
+    "platforms": [
+      "Booking.com",
+      "TripAdvisor",
+      "Google Business",
+      "Expedia",
+      "Hotels.com",
+      "Agoda",
+      "Facebook",
+      "Trivago",
+      "Yelp"
+    ],
+    "challenge": {
+      "title": "El Desafio de los Hoteleros",
+      "subtitle": "Resenas en cada canal, volumen constante e impacto directo en las reservas."
+    },
+    "challenges": [
+      {
+        "title": "Resenas en cada canal",
+        "description": "Un hotel promedio recibe resenas en 10 a 15 plataformas diferentes: OTAs, sitios de resenas, redes sociales. Cada plataforma tiene su propio extranet."
+      },
+      {
+        "title": "Impacto en reservas",
+        "description": "El 95% de los viajeros lee resenas antes de reservar. Un hotel que responde ve aumentar su tasa de reserva un 21%. Las respuestas a resenas negativas reducen el impacto negativo en un 70%."
+      },
+      {
+        "title": "Volumen constante",
+        "description": "La hoteleria genera resenas continuamente: cada estancia puede dar lugar a resenas en multiples plataformas. Un hotel de 50 habitaciones puede recibir mas de 100 resenas al mes."
+      }
+    ],
+    "solution": {
+      "title": "Como ReplyStack lo Simplifica Todo",
+      "description": "La extension de Chrome se activa en todas las plataformas de resenas. Estas en tu extranet de Booking? Aparece un boton 'Generar respuesta'. Pasas a TripAdvisor? El boton esta ahi tambien.",
+      "point1": "Una extension que funciona en todas partes",
+      "point2": "IA que entiende la hoteleria",
+      "point3": "Tu identidad hotelera preservada",
+      "visualTitle": "Flujo hotelero",
+      "visualSubtitle": "Todas las plataformas en un clic",
+      "step1": "Abre tu extranet (Booking, TripAdvisor...)",
+      "step2": "Haz clic en 'Generar respuesta'",
+      "step3": "Valida o personaliza",
+      "step4": "Publica al instante"
+    },
+    "featuresTitle": "Funcionalidades Clave para Hoteleria",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar resenas en todas las plataformas",
+    "features": [
+      {
+        "title": "Todas las plataformas",
+        "description": "Booking, Expedia, TripAdvisor, Google, Agoda, Hotels.com, Facebook... La extension funciona en cualquier sitio que muestre resenas."
+      },
+      {
+        "title": "Respuesta instantanea",
+        "description": "Un clic genera una respuesta personalizada. Valida, publica. Tiempo promedio: 30 segundos por resena en lugar de 5-7 minutos."
+      },
+      {
+        "title": "Multilingue nativo",
+        "description": "Los viajeros dejan resenas en su idioma. La IA responde en el mismo idioma: espanol, ingles, frances, aleman, italiano, holandes, portugues..."
+      },
+      {
+        "title": "Multi-establecimiento",
+        "description": "Gestionas varios hoteles? Cada uno tiene su propio Perfil de Respuesta. Las respuestas se adaptan a la identidad de cada establecimiento."
+      },
+      {
+        "title": "Analisis de sentimiento",
+        "description": "Visualiza tendencias: que aspectos se mencionan positivamente con mas frecuencia? Que quejas se repiten? Los datos te ayudan a gestionar la calidad."
+      },
+      {
+        "title": "Acceso de equipo",
+        "description": "Da acceso a tu responsable de recepcion, guest relations manager o community manager. Todos responden con el mismo tono coherente."
+      }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales adaptadas al contexto hotelero",
+    "examplesReviewLabel": "Resena del huesped",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      {
+        "type": "Resena positiva - Estancia (Booking)",
+        "review": "Estancia increible! Habitacion amplia con vistas preciosas, desayuno abundante y variado, personal encantador. Volveremos!",
+        "response": "Estimado Marc, muchas gracias por este entusiasta comentario! Nos alegra que las vistas desde su habitacion y nuestro desayuno le hayan encantado. Transmitire con gusto sus felicitaciones a todo el equipo. Sera un verdadero placer recibirle de nuevo. Cordialmente,",
+        "author": "Sofia - Guest Relations Manager"
+      },
+      {
+        "type": "Resena negativa - Limpieza (TripAdvisor)",
+        "review": "Decepcionado por la limpieza del bano. Manchas en la ducha y pelos. Para un hotel 4 estrellas, es inaceptable.",
+        "response": "Estimado Juan, gracias por informarnos de este problema y por favor acepte mis sinceras disculpas. Tiene toda la razon: lo que describe no cumple con nuestros estandares 4 estrellas. Inmediatamente he revisado los procedimientos de limpieza con nuestro equipo de pisos. Seria un honor recibirle de nuevo para mostrarle el nivel de servicio que tiene derecho a esperar.",
+        "author": "Isabel, Directora"
+      }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Hoteleros",
+    "testimonials": [
+      {
+        "quote": "Recibiamos 150 resenas al mes en 8 plataformas diferentes. Era inmanejable. Ahora mi responsable de recepcion lo gestiona todo en una hora semanal.",
+        "author": "Francisco M.",
+        "role": "Director, Hotel con encanto 3*, Sevilla"
+      },
+      {
+        "quote": "La extension funciona incluso en Agoda y OTAs asiaticas. Mis clientes chinos y japoneses reciben respuestas en su idioma. Impresiona.",
+        "author": "Maria Clara D.",
+        "role": "Revenue Manager, Resort 4*, Costa Brava"
+      },
+      {
+        "quote": "El plan gratuito me convencio en una semana. Mis puntuaciones en TripAdvisor han subido porque los clientes ven que nos implicamos. 29 EUR/mes por estos resultados se amortiza el primer dia.",
+        "author": "Tomas B.",
+        "role": "Propietario, Hotel boutique, Malaga"
+      }
+    ],
+    "pricing": {
+      "title": "Precios para Hoteleria",
+      "subtitle": "Planes adaptados a tu volumen de resenas, desde B&B hasta cadena hotelera",
+      "roiTitle": "Adaptado a tu volumen",
+      "without": "Sin ReplyStack (100 resenas)",
+      "withoutTime": "8h/mes",
+      "with": "Con ReplyStack",
+      "withTime": "50 min/mes",
+      "savings": "Ahorro: 7 horas al mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": {
+          "name": "Gratis",
+          "price": "0 EUR",
+          "responses": "15/mes",
+          "ideal": "Probar la herramienta"
+        },
+        "starter": {
+          "name": "Starter",
+          "price": "9,90 EUR/mes",
+          "responses": "50/mes",
+          "ideal": "Hotel pequeno, B&B"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "29 EUR/mes",
+          "responses": "200/mes",
+          "ideal": "Hotel 30-80 habitaciones"
+        },
+        "business": {
+          "name": "Business",
+          "price": "79 EUR/mes",
+          "responses": "500/mes",
+          "ideal": "Gran hotel, grupo"
+        }
+      },
+      "noCommitment": "Sin compromiso anual. Flexibilidad total.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Hoteleria",
+    "faq": [
+      {
+        "question": "La extension funciona en el extranet de Booking?",
+        "answer": "Si. La extension funciona en el extranet de Booking.com, la interfaz propietaria de TripAdvisor, Expedia Partner Central y todos los demas extranets de OTAs."
+      },
+      {
+        "question": "Como gestiono respuestas en varios idiomas?",
+        "answer": "La IA detecta automaticamente el idioma de la resena y genera la respuesta en el mismo idioma. Espanol, ingles, frances, aleman, italiano, holandes, portugues y otros idiomas estan soportados."
+      },
+      {
+        "question": "Puedo tener un tono diferente para cada hotel del grupo?",
+        "answer": "Absolutamente. El plan Business permite crear un Perfil de Respuesta distinto para cada establecimiento. Un hotel boutique parisino no tendra el mismo tono que un resort de playa."
+      },
+      {
+        "question": "Las respuestas son personalizadas o genericas?",
+        "answer": "Cada respuesta se genera analizando el contenido especifico de la resena: lo que le gusto al huesped, sus quejas, los detalles mencionados. Las respuestas no se repiten."
+      },
+      {
+        "question": "Como se compara ReplyStack con soluciones hoteleras especializadas?",
+        "answer": "Soluciones como TrustYou o ReviewPro son suites completas (agregacion, analisis, benchmarking) a precios enterprise (300 EUR+/mes). ReplyStack se centra en la respuesta eficiente a resenas, a un precio accesible. Ambos enfoques pueden ser complementarios."
+      },
+      {
+        "question": "Puedo delegar las respuestas a mi equipo?",
+        "answer": "Si. Puedes dar acceso a varios miembros de tu equipo. Todos usan el mismo Perfil de Respuesta para garantizar coherencia."
+      }
+    ],
+    "cta": {
+      "title": "Listo para tomar el control de tus resenas?",
+      "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta de credito. Sin compromiso.",
+      "button": "Probar ReplyStack Gratis",
+      "noCard": "Operativo en menos de 10 minutos"
+    },
+    "relatedContent": {
+      "label": "Ver tambien:",
+      "link1": "Como Responder a Resenas Negativas",
+      "link2": "20 Plantillas de Respuestas",
+      "link3": "Mejores Software de Gestion de Resenas"
+    }
+  },
+  "garages": {
+    "badge": "Solucion para Talleres de Autos",
+    "meta": {
+      "title": "Gestion de Resenas para Talleres Mecanicos | ReplyStack",
+      "description": "Responde a las resenas de Google de tu taller mecanico en 1 clic. Solucion IA para profesionales del automovil. Prueba gratis.",
+      "keywords": "gestion resenas taller, responder resenas google mecanico, resenas concesionario, reputacion taller, resenas google mecanico"
+    },
+    "hero": {
+      "title": "Responde a las Resenas de Tu Taller en 1 Clic",
+      "subtitle": "Los clientes consultan las resenas de Google antes de confiar su vehiculo. Un taller con resenas sin responder inspira menos confianza. ReplyStack genera respuestas profesionales adaptadas al sector automotriz.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Taller Martin",
+      "platform": "Google Business",
+      "reviewer": "Pablo L.",
+      "review": "Muy satisfecho con la intervencion en mi coche. Problema de arranque resuelto rapidamente, precio honesto, y el mecanico se tomo el tiempo de explicar.",
+      "generateButton": "Generar Respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Hola Pablo, muchas gracias por tu comentario! Nos alegra haber podido resolver tu problema de arranque rapidamente. La transparencia y la pedagogia forman parte de nuestros valores."
+    },
+    "stats": [
+      { "value": "87%", "label": "consultan resenas antes de elegir" },
+      { "value": "+35%", "label": "mas solicitudes con nota > 4,2" },
+      { "value": "-70%", "label": "impacto negativo con respuesta" },
+      { "value": "30s", "label": "promedio por respuesta" }
+    ],
+    "platformsTitle": "Funciona en tus plataformas",
+    "platforms": ["Google Business Profile", "Yelp", "Facebook", "Paginas Amarillas", "Coches.net"],
+    "challenge": {
+      "title": "Por Que las Resenas Son Cruciales para los Talleres",
+      "subtitle": "La desconfianza natural de los conductores hace que las resenas de Google sean aun mas importantes para generar confianza."
+    },
+    "challenges": [
+      { "title": "Superar la desconfianza", "description": "Las historias de sobrefacturacion y reparaciones innecesarias alimentan la desconfianza. Las resenas de Google son el primer filtro de confianza." },
+      { "title": "No hay tiempo en el taller", "description": "Entre citas, diagnosticos, pedidos de piezas y gestion del equipo, responder a resenas pasa a ultimo lugar." },
+      { "title": "Cada resena cuenta", "description": "Un taller que responde con calma a una resena negativa tranquiliza. Uno que ignora o responde agresivamente ahuyenta clientes." }
+    ],
+    "solution": {
+      "title": "Como ReplyStack se Adapta al Sector Automotriz",
+      "description": "La IA comprende el contexto automotriz: tipos de intervenciones, problematicas comunes, vocabulario tecnico sin jerga excesiva.",
+      "point1": "Vocabulario tecnico dominado (revision, frenos, embrague...)",
+      "point2": "Tono profesional y tranquilizador",
+      "point3": "Perfil de respuesta adaptado a tu tipo de establecimiento",
+      "visualTitle": "Configuracion taller",
+      "visualSubtitle": "Adaptada a tu actividad",
+      "step1": "Tipo: Taller independiente, concesionario, centro de autos",
+      "step2": "Especialidades: Todas las marcas, especialista, vehiculos comerciales",
+      "step3": "Tono: Profesional, accesible, familiar",
+      "step4": "Firma personalizada"
+    },
+    "featuresTitle": "Funcionalidades Clave para el Automovil",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar eficazmente tus resenas",
+    "features": [
+      { "title": "Respuesta instantanea", "description": "30 segundos por resena en lugar de 5-7 minutos. Trata las resenas de una semana en 10 minutos." },
+      { "title": "Vocabulario tecnico adaptado", "description": "La IA utiliza el vocabulario correcto: intervencion, diagnostico, presupuesto, piezas originales, garantia..." },
+      { "title": "Analisis de sentimiento", "description": "Identifica tendencias: tus clientes mencionan a menudo la espera? Los precios? La atencion?" },
+      { "title": "Multi-sedes", "description": "Gestionas varios talleres? Cada sede tiene su Perfil de Respuesta." },
+      { "title": "Acceso equipo", "description": "Da acceso a tu responsable de recepcion o asistente. Todos responden con la misma coherencia." },
+      { "title": "Gestion de criticas de precio", "description": "Las observaciones sobre tarifas son frecuentes. La IA genera respuestas que explican sin justificarse." }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales adaptadas al sector automotriz",
+    "examplesReviewLabel": "La resena del cliente",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      { "type": "Resena positiva - Reparacion", "review": "Muy satisfecho con la intervencion en mi coche. Problema de arranque resuelto rapidamente, precio honesto. Recomiendo.", "response": "Hola Pablo, muchas gracias por este comentario! Nos alegra haber podido resolver tu problema de arranque rapidamente. La transparencia y explicar nuestro trabajo son valores fundamentales. No dudes en volver para el mantenimiento de tu coche.", "author": "Equipo del Taller Martin" },
+      { "type": "Resena negativa - Retraso", "review": "Vehiculo dejado el lunes para una revision, recuperado el jueves. Sin explicacion del retraso. Muy decepcionado.", "response": "Hola Julian, te presento mis disculpas por este retraso. Tienes razon, una revision no deberia tardar 4 dias y merecias una explicacion. Tuvimos un retraso en la entrega del filtro especifico de tu vehiculo, pero deberiamos haberte informado.", "author": "Marco, Jefe de taller" }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Talleristas",
+    "testimonials": [
+      { "quote": "Las resenas negativas me estresaban. No sabia como responder sin parecer justificandome. Ahora la IA me propone respuestas tranquilas y profesionales.", "author": "Juan M.", "role": "Taller independiente, Madrid" },
+      { "quote": "Tenemos 3 concesionarios. Antes, nadie respondia porque no habia tiempo. Ahora mi asistente lo hace en 20 minutos a la semana.", "author": "Sofia L.", "role": "Directora grupo automotriz" },
+      { "quote": "El plan gratuito me convencio. 15 respuestas al mes es suficiente para mi pequeno taller.", "author": "Ahmed B.", "role": "Taller de barrio, Barcelona" }
+    ],
+    "pricing": {
+      "title": "Tarifas para Talleres",
+      "subtitle": "Adaptado a tu volumen de resenas, sin compromiso",
+      "roiTitle": "El calculo es simple",
+      "without": "Sin ReplyStack",
+      "withoutTime": "60 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "10 min/mes",
+      "savings": "Ahorro: 50 minutos por mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": { "name": "Gratis", "price": "0 EUR", "responses": "15/mes", "ideal": "Pequeno taller, probar" },
+        "starter": { "name": "Starter", "price": "9,90 EUR/mes", "responses": "50/mes", "ideal": "Taller independiente" },
+        "pro": { "name": "Pro", "price": "29 EUR/mes", "responses": "200/mes", "ideal": "Centro de autos, concesionario" },
+        "business": { "name": "Business", "price": "79 EUR/mes", "responses": "500/mes", "ideal": "Grupo multi-sedes" }
+      },
+      "noCommitment": "Sin compromiso. Cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Talleres",
+    "faq": [
+      { "question": "La IA comprende el vocabulario tecnico automotriz?", "answer": "Si. La IA domina el vocabulario comun: revision, cambio de aceite, frenos, embrague, correa de distribucion, diagnostico, piezas originales, garantia..." },
+      { "question": "Como gestionar acusaciones de estafa?", "answer": "La IA genera respuestas calmadas y factuales, sin contraatacar. Propone sistematicamente un intercambio directo para aclarar la situacion." },
+      { "question": "Puedo usar ReplyStack para varios talleres?", "answer": "Si. El plan Business permite crear un Perfil de Respuesta por establecimiento." },
+      { "question": "Las respuestas son personalizadas o genericas?", "answer": "Cada respuesta se genera analizando el contenido especifico: tipo de intervencion, puntos positivos, criticas. Las respuestas no se parecen." },
+      { "question": "La extension funciona en Yelp?", "answer": "Si. La extension funciona en Google Business Profile, Yelp, Facebook y cualquier sitio que muestre resenas." },
+      { "question": "Como convencer a mi equipo de responder a resenas?", "answer": "Con ReplyStack, responder toma 30 segundos en lugar de 5 minutos. La barrera del tiempo desaparece." }
+    ],
+    "cta": { "title": "Listo para mejorar tu reputacion online?", "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta. Sin compromiso.", "button": "Probar ReplyStack Gratis", "noCard": "Instalacion en 5 minutos" },
+    "relatedContent": { "label": "Ver tambien:", "link1": "Como Responder a Resenas Negativas", "link2": "20 Plantillas de Respuestas", "link3": "Mejores Software de Gestion" }
+  },
+  "beaute": {
+    "badge": "Solucion para Salones de Belleza",
+    "meta": {
+      "title": "Gestion de Resenas para Salones de Peluqueria e Institutos de Belleza | ReplyStack",
+      "description": "Responde a las resenas de Google de tu salon de peluqueria o instituto de belleza en 1 clic. Solucion IA para profesionales de la belleza. Prueba gratis.",
+      "keywords": "gestion resenas salon peluqueria, responder resenas google peluquero, resenas instituto belleza, reputacion salon, resenas google esteticista"
+    },
+    "hero": {
+      "title": "Responde a las Resenas de Tu Salon en 1 Clic",
+      "subtitle": "Tus clientas comparten su experiencia en Google, Facebook, Yelp, Treatwell... Cada resena influye en las futuras reservas. Pero entre citas, quien tiene tiempo para responder? ReplyStack genera respuestas calidas y personalizadas en segundos.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Salon Brillo",
+      "platform": "Google Business",
+      "reviewer": "Camila R.",
+      "review": "Super experiencia! Julia entendio perfectamente lo que queria para mis mechas. Resultado natural y luminoso. Volvere!",
+      "generateButton": "Generar Respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Hola Camila, que placer leer tu resena! Julia estara encantada. Las mechas naturales y luminosas son exactamente lo que nos encanta crear. Te esperamos!"
+    },
+    "stats": [
+      { "value": "92%", "label": "consultan resenas antes de reservar" },
+      { "value": "+40%", "label": "mas reservas con respuestas" },
+      { "value": "-67%", "label": "perdida de clientas reducida" },
+      { "value": "30s", "label": "promedio por respuesta" }
+    ],
+    "platformsTitle": "Funciona en tus plataformas",
+    "platforms": ["Google Business Profile", "Facebook", "Instagram", "Treatwell", "Fresha", "Yelp"],
+    "challenge": {
+      "title": "La Importancia de las Resenas en la Belleza",
+      "subtitle": "El boca a boca se ha vuelto digital. Google es la nueva amiga de confianza para elegir salon."
+    },
+    "challenges": [
+      { "title": "El boca a boca digital", "description": "Antes, elegias tu peluquero por recomendacion de una amiga. Hoy, Google es la nueva amiga de confianza." },
+      { "title": "El desafio del dia a dia", "description": "Los dias estan llenos de citas: coloraciones, cortes, tratamientos... Responder resenas es tiempo extra que no tienes." },
+      { "title": "Un salon silencioso asusta", "description": "Un salon con resenas positivas y respuestas atentas inspira confianza. Un salon silencioso parece no importarle sus clientas." }
+    ],
+    "solution": {
+      "title": "Como ReplyStack se Adapta a la Belleza",
+      "description": "La IA genera respuestas que corresponden al universo de la belleza: tono calido y benevolo, vocabulario del sector, atencion a los detalles emocionales.",
+      "point1": "Tono calido y personal adaptado a tu ambiente",
+      "point2": "Vocabulario del sector (mechas, tratamiento, servicio, resultado)",
+      "point3": "Respuestas personalizadas segun el servicio mencionado",
+      "visualTitle": "Configuracion belleza",
+      "visualSubtitle": "Adaptada a tu salon",
+      "step1": "Tipo: Peluqueria, instituto, spa, barberia, salon de unas",
+      "step2": "Ambiente: Acogedor, moderno, familiar, lujoso",
+      "step3": "Puntos fuertes: Escucha, experiencia, productos organicos",
+      "step4": "Firma personalizada"
+    },
+    "featuresTitle": "Funcionalidades Clave para la Belleza",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar eficazmente tus resenas",
+    "features": [
+      { "title": "Respuesta en 30 segundos", "description": "No mas pensar en la formulacion. La IA propone, tu validas. El tiempo ganado es una clienta mas en el dia." },
+      { "title": "Tono personalizado", "description": "Tu salon tiene su estilo: casual, chic, familiar... La IA se adapta a tu tono para que cada respuesta te represente." },
+      { "title": "Tendencias e insights", "description": "Identifica lo que tus clientas mencionan mas: la recepcion? El ambiente? Un peluquero en particular?" },
+      { "title": "Multi-salones", "description": "Tienes varias direcciones? Cada salon puede tener su propio Perfil de Respuesta." },
+      { "title": "Acceso equipo", "description": "Delega a tu gerente o recepcionista. Todos responden con la misma coherencia." },
+      { "title": "Soporte emojis", "description": "Si tu Perfil indica un tono calido, la IA puede incluir emojis de forma natural." }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas calidas adaptadas al universo de la belleza",
+    "examplesReviewLabel": "La resena de la clienta",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      { "type": "Resena positiva - Peluqueria", "review": "Super experiencia! Julia entendio perfectamente lo que queria para mis mechas. Resultado natural y luminoso. Volvere!", "response": "Hola Camila, que placer leer tu resena! Julia estara encantada. Las mechas naturales y luminosas son exactamente lo que nos encanta crear. Gracias por tu confianza, te esperamos!", "author": "Equipo del Salon Brillo" },
+      { "type": "Resena negativa - Espera", "review": "30 minutos de espera a pesar de tener cita. Sin disculpas. El corte estuvo bien pero la experiencia arruinada.", "response": "Hola Maria, lamento mucho esta espera. Tienes toda la razon: 30 minutos sin explicacion no es aceptable. Tuvimos un imprevisto ese dia, pero deberiamos haberte informado. Espero sinceramente que nos des otra oportunidad.", "author": "Sofia, Gerente del salon" }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Profesionales de la Belleza",
+    "testimonials": [
+      { "quote": "Respondia a las resenas el domingo por la noche, cansada. Ahora lo hago entre clientas, en segundos. Mis clientas me dicen que eligieron mi salon por mis respuestas.", "author": "Emilia R.", "role": "Salon de peluqueria, Madrid" },
+      { "quote": "Tenemos un instituto con 4 esteticistas. Antes, las resenas quedaban sin respuesta semanas. Ahora mi recepcionista se encarga cada 2-3 dias.", "author": "Sandra M.", "role": "Instituto de belleza, Barcelona" },
+      { "quote": "El tono de las respuestas se adapta a nuestro universo. Calido, personal, no corporativo. Exactamente lo que necesita nuestra clientela.", "author": "Clara D.", "role": "Spa urbano, Valencia" }
+    ],
+    "pricing": {
+      "title": "Tarifas para Salones",
+      "subtitle": "Simple y accesible, adaptado a tu actividad",
+      "roiTitle": "El calculo es simple",
+      "without": "Sin ReplyStack",
+      "withoutTime": "45 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "5 min/mes",
+      "savings": "Ahorro: 40 minutos por mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": { "name": "Gratis", "price": "0 EUR", "responses": "15/mes", "ideal": "Probar la herramienta" },
+        "starter": { "name": "Starter", "price": "9,90 EUR/mes", "responses": "50/mes", "ideal": "Pequeno salon, independiente" },
+        "pro": { "name": "Pro", "price": "29 EUR/mes", "responses": "200/mes", "ideal": "Salon activo, multi-empleados" },
+        "business": { "name": "Business", "price": "79 EUR/mes", "responses": "500/mes", "ideal": "Cadena de salones" }
+      },
+      "noCommitment": "Sin compromiso. Cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Belleza",
+    "faq": [
+      { "question": "La IA comprende las especificidades de la peluqueria y estetica?", "answer": "Si. La IA domina el vocabulario del sector: mechas, color, corte, brushing, tratamiento, manicura, depilacion, masaje..." },
+      { "question": "Puedo adaptar el tono al ambiente de mi salon?", "answer": "Absolutamente. El Perfil de Respuesta te permite definir tu estilo: acogedor, moderno, lujoso, familiar..." },
+      { "question": "La extension funciona en Treatwell y Fresha?", "answer": "Si. La extension funciona en todas las plataformas que muestran resenas, incluyendo Treatwell, Fresha y redes sociales." },
+      { "question": "Como gestionar una resena injusta sobre un resultado?", "answer": "La IA genera respuestas empaticas que reconocen el sentimiento de la clienta proponiendo una solucion." },
+      { "question": "Puedo anadir emojis a las respuestas?", "answer": "Si. Si tu Perfil indica un tono calido, la IA puede incluir emojis de forma natural." },
+      { "question": "Mi equipo puede usar ReplyStack?", "answer": "Si. Puedes dar acceso a tu recepcionista o gerente. Todos usan el mismo Perfil para garantizar coherencia." }
+    ],
+    "cta": { "title": "Lista para mimar a tus clientas online tambien?", "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta. Sin compromiso.", "button": "Probar ReplyStack Gratis", "noCard": "Operativo en menos de 5 minutos" },
+    "relatedContent": { "label": "Ver tambien:", "link1": "Como Responder a Resenas Negativas", "link2": "20 Plantillas de Respuestas", "link3": "Mejores Software de Gestion" }
+  },
+  "artisans": {
+    "badge": "Solucion para Profesionales",
+    "meta": {
+      "title": "Gestion de Resenas para Profesionales: Fontaneros, Electricistas, Climatizacion | ReplyStack",
+      "description": "Responde a las resenas de Google de tu negocio de oficios en 1 clic. Solucion IA para fontaneros, electricistas, tecnicos. Prueba gratis.",
+      "keywords": "gestion resenas profesional, responder resenas google fontanero, resenas electricista, reputacion artesano, resenas google cerrajero"
+    },
+    "hero": {
+      "title": "Responde a las Resenas de Tu Negocio en 1 Clic",
+      "subtitle": "Para un fontanero, electricista o tecnico de climatizacion, las resenas de Google son el primer criterio de eleccion. Una buena nota tranquiliza. Respuestas profesionales convencen. ReplyStack genera respuestas adaptadas a los oficios.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Fontaneria Express",
+      "platform": "Google Business",
+      "reviewer": "Sr. Garcia",
+      "review": "Intervencion rapida para una fuga bajo el fregadero. Fontanero muy profesional que explico el problema. Precio conforme al presupuesto.",
+      "generateButton": "Generar Respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Hola Sr. Garcia, muchas gracias por este comentario! Nos alegra haber podido intervenir rapidamente. La transparencia en los precios forma parte de nuestro compromiso."
+    },
+    "stats": [
+      { "value": "91%", "label": "consultan resenas antes de llamar" },
+      { "value": "+50%", "label": "mas llamadas con nota > 4,3" },
+      { "value": "-70%", "label": "impacto negativo con respuesta" },
+      { "value": "30s", "label": "promedio por respuesta" }
+    ],
+    "platformsTitle": "Funciona en tus plataformas",
+    "platforms": ["Google Business Profile", "Paginas Amarillas", "Facebook", "Habitissimo", "Houzz"],
+    "challenge": {
+      "title": "Por Que las Resenas Son Vitales para los Profesionales",
+      "subtitle": "La confianza se juega en Google. Las resenas son tu mejor herramienta para demostrar tu seriedad."
+    },
+    "challenges": [
+      { "title": "Superar la desconfianza", "description": "Los profesionales sufren a veces de una imagen negativa. Historias de estafas, presupuestos inflados, trabajos mal hechos... Los clientes estan en guardia." },
+      { "title": "El primer criterio de eleccion", "description": "Cuando hay una fuga o un corte electrico, el cliente busca en Google. La nota y las respuestas marcan la diferencia." },
+      { "title": "No hay tiempo en el campo", "description": "Entre trabajos, responder a resenas se convierte en una tarea abandonada a menudo." }
+    ],
+    "solution": {
+      "title": "Como ReplyStack se Adapta a los Profesionales",
+      "description": "La IA genera respuestas con un tono profesional y tranquilizador, vocabulario tecnico accesible, y gestion tacta de las criticas de precio.",
+      "point1": "Vocabulario del oficio adaptado (urgencia, diagnostico, presupuesto, garantia)",
+      "point2": "Profesional sin ser frio",
+      "point3": "Gestion tacta de las criticas de precio",
+      "visualTitle": "Configuracion profesional",
+      "visualSubtitle": "Adaptada a tu oficio",
+      "step1": "Oficio: Fontanero, electricista, climatizacion, cerrajero...",
+      "step2": "Tipo: Independiente, empresa familiar, sociedad",
+      "step3": "Puntos fuertes: Reactividad, transparencia, garantia",
+      "step4": "Zona de intervencion y firma"
+    },
+    "featuresTitle": "Funcionalidades Clave para Profesionales",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar eficazmente tus resenas",
+    "features": [
+      { "title": "Ahorro de tiempo maximo", "description": "30 segundos por respuesta en lugar de 10 minutos. Entre trabajos, tratas las resenas de la semana." },
+      { "title": "Vocabulario del oficio", "description": "La IA comprende tu sector: urgencia, presupuesto gratis, intervencion, diagnostico, garantia, normas..." },
+      { "title": "Gestion de criticas de precio", "description": "Las observaciones sobre tarifas son frecuentes. La IA genera respuestas que explican sin justificarse, profesionalmente." },
+      { "title": "Seguimiento de tendencias", "description": "Identifica los comentarios recurrentes: puntualidad, limpieza, comunicacion... Los datos te ayudan a mejorar." },
+      { "title": "Mobile-friendly", "description": "Responde desde tu smartphone entre trabajos. La extension funciona en Chrome movil." },
+      { "title": "Multi-tecnicos", "description": "Varios tecnicos en tu equipo? Las respuestas mantienen una coherencia de tono para toda la empresa." }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales adaptadas a los oficios",
+    "examplesReviewLabel": "La resena del cliente",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      { "type": "Resena positiva - Urgencia", "review": "Intervencion rapida para una fuga bajo el fregadero. Fontanero muy profesional. Precio conforme al presupuesto. Recomiendo.", "response": "Hola Sr. Garcia, muchas gracias por este comentario! Nos alegra haber podido intervenir rapidamente y resolver tu fuga. La transparencia en los precios forma parte de nuestro compromiso. No dudes en contactarnos para cualquier necesidad.", "author": "Esteban, Fontaneria Express" },
+      { "type": "Resena negativa - Precio", "review": "150 EUR por cambiar una junta de grifo, es un robo. 15 minutos de trabajo. Los profesionales abusan.", "response": "Hola Sra. Martinez, entiendo que la tarifa pueda parecer elevada para una intervencion rapida. Este precio incluye el desplazamiento, diagnostico, pieza de calidad profesional y garantia. La rapidez de ejecucion refleja nuestra experiencia. Quedo disponible para cualquier explicacion adicional.", "author": "Esteban, Fontaneria Express" }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Profesionales",
+    "testimonials": [
+      { "quote": "No tengo tiempo de responder a resenas despues de los trabajos. Con ReplyStack, lo hago el sabado en 10 minutos para toda la semana. Mi nota de Google paso de 4,2 a 4,6.", "author": "Karim L.", "role": "Fontanero independiente, Madrid" },
+      { "quote": "Las resenas sobre precios me enfadaban. Respondia mal, empeoraba las cosas. Ahora la IA me propone respuestas calmadas y profesionales.", "author": "Pablo M.", "role": "Electricista, Sevilla" },
+      { "quote": "Tenemos 4 tecnicos en la carretera. La reputacion online es clave. ReplyStack nos permite cuidar nuestra imagen sin contratar a alguien.", "author": "Nuria D.", "role": "Gerente empresa climatizacion, Valencia" }
+    ],
+    "pricing": {
+      "title": "Tarifas para Profesionales",
+      "subtitle": "Rentabilizado desde el primer cliente ganado gracias a una buena reputacion",
+      "roiTitle": "Inversion minima",
+      "without": "Sin ReplyStack",
+      "withoutTime": "60 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "10 min/mes",
+      "savings": "Ahorro: 50 minutos por mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": { "name": "Gratis", "price": "0 EUR", "responses": "15/mes", "ideal": "Probar la herramienta" },
+        "starter": { "name": "Starter", "price": "9,90 EUR/mes", "responses": "50/mes", "ideal": "Profesional independiente" },
+        "pro": { "name": "Pro", "price": "29 EUR/mes", "responses": "200/mes", "ideal": "Empresa con equipo" },
+        "business": { "name": "Business", "price": "79 EUR/mes", "responses": "500/mes", "ideal": "Multi-agencias" }
+      },
+      "noCommitment": "Sin compromiso. Cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Profesionales",
+    "faq": [
+      { "question": "La IA comprende las especificidades de mi oficio?", "answer": "Si. La IA domina el vocabulario de fontaneria, electricidad, climatizacion, cerrajeria, techos... Las respuestas se adaptan a tu sector." },
+      { "question": "Como responder a acusaciones de sobrefacturacion?", "answer": "La IA genera respuestas calmadas que explican la composicion del precio (desplazamiento, diagnostico, piezas, garantia) sin parecer defensivo." },
+      { "question": "Soy solo, no tengo tiempo para esto.", "answer": "Ese es el objetivo de ReplyStack. 30 segundos por respuesta en lugar de 10 minutos. Puedes tratar las resenas de una semana durante tu cafe." },
+      { "question": "Las respuestas son personalizadas?", "answer": "Si. La IA analiza el contenido de cada resena: tipo de intervencion, puntos positivos, criticas. Cada respuesta es unica." },
+      { "question": "La extension funciona en Yelp?", "answer": "Si. La extension funciona en Google Business Profile, Yelp, Facebook y cualquier sitio que muestre resenas." },
+      { "question": "Puedo responder desde mi telefono?", "answer": "Si. La extension Chrome funciona en navegador movil. Puedes responder entre trabajos." }
+    ],
+    "cta": { "title": "Listo para reforzar tu reputacion online?", "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta. Sin compromiso.", "button": "Probar ReplyStack Gratis", "noCard": "Operativo en 5 minutos, sin competencia tecnica" },
+    "relatedContent": { "label": "Ver tambien:", "link1": "Como Responder a Resenas Negativas", "link2": "20 Plantillas de Respuestas", "link3": "Mejores Software de Gestion" }
+  },
+  "auto-ecoles": {
+    "badge": "Solucion para Autoescuelas",
+    "meta": {
+      "title": "Gestion de Resenas para Autoescuelas | ReplyStack",
+      "description": "Responde a las resenas de Google de tu autoescuela en 1 clic. Solucion IA para gerentes de autoescuelas. Atrae mas alumnos. Prueba gratis.",
+      "keywords": "gestion resenas autoescuela, responder resenas google autoescuela, resenas carnet conducir, reputacion autoescuela"
+    },
+    "hero": {
+      "title": "Responde a las Resenas de Tu Autoescuela en 1 Clic",
+      "subtitle": "Los futuros alumnos comparan autoescuelas en Google antes de inscribirse. Tu nota, tus resenas y sobre todo tus respuestas marcan la diferencia. ReplyStack genera respuestas profesionales y tranquilizadoras.",
+      "cta": "Probar Gratis",
+      "secondary": "Descubrir Funcionalidades"
+    },
+    "demo": {
+      "businessName": "Autoescuela Centro",
+      "platform": "Google Business",
+      "reviewer": "Laura M.",
+      "review": "Super autoescuela! Aprobe a la primera gracias a Kevin que es muy paciente y pedagogo. El curso online es genial. Recomiendo 100%!",
+      "generateButton": "Generar Respuesta IA",
+      "responseLabel": "Respuesta generada",
+      "response": "Felicidades por tu carnet Laura, y bravo por aprobar a la primera! Kevin estara encantado de leer tu mensaje. Gracias por la recomendacion y buen camino!"
+    },
+    "stats": [
+      { "value": "94%", "label": "consultan resenas antes de elegir" },
+      { "value": "+60%", "label": "mas inscripciones con nota > 4,5" },
+      { "value": "+35%", "label": "conversion con respuestas" },
+      { "value": "30s", "label": "promedio por respuesta" }
+    ],
+    "platformsTitle": "Funciona en tus plataformas",
+    "platforms": ["Google Business Profile", "Facebook", "Paginas Amarillas", "Yelp"],
+    "challenge": {
+      "title": "Por Que las Resenas Cuentan para las Autoescuelas",
+      "subtitle": "Una generacion que compara todo online. Tus futuros alumnos no eligen nada sin consultar las resenas."
+    },
+    "challenges": [
+      { "title": "Una generacion conectada", "description": "Tus futuros alumnos tienen entre 17 y 25 anos. Esta generacion no elige nada sin consultar resenas. La autoescuela es una inversion importante (1000-2000 EUR)." },
+      { "title": "Un sector muy competitivo", "description": "En cada ciudad, varias autoescuelas compiten por los mismos alumnos. La diferencia se juega a menudo en la reputacion online." },
+      { "title": "Una resena negativa hace bascular", "description": "Una resena negativa sin respuesta puede hacer ir un alumno a la competencia. Responder muestra que te importan tus alumnos." }
+    ],
+    "solution": {
+      "title": "Como ReplyStack se Adapta a las Autoescuelas",
+      "description": "La IA genera respuestas que hablan tanto a los jovenes alumnos como a sus padres. Tono tranquilizador y pedagogico, vocabulario del carnet.",
+      "point1": "Tono adaptado a alumnos y padres",
+      "point2": "Vocabulario del carnet (teorico, practicas, profesor, examen)",
+      "point3": "Gestion de criticas sobre planning o profesores",
+      "visualTitle": "Configuracion autoescuela",
+      "visualSubtitle": "Adaptada a tu establecimiento",
+      "step1": "Tipo: Tradicional, franquicia, hibrida online",
+      "step2": "Puntos fuertes: Tasa de aprobados, flexibilidad, pedagogia",
+      "step3": "Tono: Profesional, dinamico, familiar",
+      "step4": "Firma personalizada"
+    },
+    "featuresTitle": "Funcionalidades Clave para Autoescuelas",
+    "featuresSubtitle": "Todo lo que necesitas para gestionar eficazmente tus resenas",
+    "features": [
+      { "title": "Respuestas rapidas", "description": "30 segundos por resena. Entre clases de teorico, tratas las resenas de la semana." },
+      { "title": "Vocabulario del carnet", "description": "La IA domina el vocabulario: teorico, practicas, profesor, examen, horas extras, tasa de aprobados..." },
+      { "title": "Tendencias y alertas", "description": "Identifica los comentarios recurrentes: planning muy cargado? Un profesor que gusta? Criticas sobre la espera?" },
+      { "title": "Multi-sedes", "description": "Gestionas varias autoescuelas? Cada sede tiene su Perfil de Respuesta con su equipo y su tono." },
+      { "title": "Acceso secretaria", "description": "Delega a tu secretario/a. La coherencia esta garantizada por el Perfil de Respuesta." },
+      { "title": "Soporte emojis", "description": "Para un publico joven, emojis moderados pueden hacer las respuestas mas calidas." }
+    ],
+    "examplesTitle": "Ejemplos de Respuestas Generadas",
+    "examplesSubtitle": "Respuestas profesionales adaptadas a las autoescuelas",
+    "examplesReviewLabel": "La resena del alumno",
+    "examplesResponseLabel": "Respuesta generada por ReplyStack",
+    "examples": [
+      { "type": "Resena positiva - Aprobado", "review": "Super autoescuela! Aprobe a la primera gracias a Kevin que es muy paciente y pedagogo. El curso online es genial. Recomiendo 100%!", "response": "Felicidades por tu carnet Laura, y bravo por aprobar a la primera! Kevin estara encantado de leer tu mensaje - su paciencia y pedagogia hacen la diferencia. Gracias por la recomendacion y buen camino!", "author": "Equipo de Autoescuela Centro" },
+      { "type": "Resena negativa - Espera examen", "review": "Demasiada espera para hacer el examen. 3 meses despues de terminar mis horas, todavia sin fecha. Me siento abandonado.", "response": "Hola Maximo, entiendo tu frustracion y te pido disculpas. La espera antes del examen esta ligada a los plazos de trafico para asignar plazas. Dicho esto, deberiamos haberte informado mejor durante este periodo. Te invito a pasar por recepcion para revisar tu situacion.", "author": "Sofia, Gerente" }
+    ],
+    "testimonialsTitle": "Lo Que Dicen los Gerentes de Autoescuelas",
+    "testimonials": [
+      { "quote": "Las resenas de Google se han convertido en el campo de batalla. Los jovenes comparan todo antes de inscribirse. Desde que respondemos a todas las resenas, nuestra tasa de inscripcion ha aumentado.", "author": "Felipe D.", "role": "Autoescuela independiente, Madrid" },
+      { "quote": "No tengo tiempo de redactar respuestas entre las clases de teorico y la gestion. ReplyStack me ahorra 2 horas por semana.", "author": "Nadia K.", "role": "Gerente, Barcelona" },
+      { "quote": "Tenemos 3 sedes. Antes, cada secretaria respondia diferente - o no respondia. Ahora tenemos coherencia en nuestras respuestas.", "author": "Marco L.", "role": "Red de autoescuelas, Andalucia" }
+    ],
+    "pricing": {
+      "title": "Tarifas para Autoescuelas",
+      "subtitle": "Una sola inscripcion adicional rentabiliza el abono por meses",
+      "roiTitle": "Inversion minima, impacto maximo",
+      "without": "Sin ReplyStack",
+      "withoutTime": "60 min/mes",
+      "with": "Con ReplyStack",
+      "withTime": "10 min/mes",
+      "savings": "Ahorro: 50 minutos por mes",
+      "plan": "Plan",
+      "price": "Precio",
+      "responses": "Respuestas IA",
+      "idealFor": "Ideal para",
+      "plans": {
+        "free": { "name": "Gratis", "price": "0 EUR", "responses": "15/mes", "ideal": "Probar la herramienta" },
+        "starter": { "name": "Starter", "price": "9,90 EUR/mes", "responses": "50/mes", "ideal": "Pequena autoescuela" },
+        "pro": { "name": "Pro", "price": "29 EUR/mes", "responses": "200/mes", "ideal": "Autoescuela activa" },
+        "business": { "name": "Business", "price": "79 EUR/mes", "responses": "500/mes", "ideal": "Red multi-sedes" }
+      },
+      "noCommitment": "Sin compromiso. Cambia o cancela cuando quieras.",
+      "cta": "Empezar Gratis"
+    },
+    "faqTitle": "Preguntas Frecuentes - Autoescuelas",
+    "faq": [
+      { "question": "La IA comprende el vocabulario del carnet?", "answer": "Si. La IA domina el vocabulario especifico: teorico, practicas, profesor, examen, horas extras, tasa de aprobados, trafico, paquete..." },
+      { "question": "Como gestionar criticas sobre un profesor?", "answer": "La IA genera respuestas empaticas que toman en serio el sentimiento del alumno sin atacar al profesor. Siempre propone un contacto directo." },
+      { "question": "Puedo personalizar el tono para hablar a los jovenes?", "answer": "Si. El Perfil de Respuesta permite definir un tono dinamico y cercano a los jovenes (tuteo, emojis moderados) o mas tradicional." },
+      { "question": "La extension funciona en Yelp?", "answer": "Si. La extension funciona en Yelp, Google Business Profile, Facebook y cualquier sitio que muestre resenas." },
+      { "question": "Mi secretaria puede usar ReplyStack?", "answer": "Si. Puedes dar acceso a tu equipo. Todos usan el mismo Perfil de Respuesta para garantizar coherencia." },
+      { "question": "Las respuestas pueden incluir emojis?", "answer": "Si, si tu Perfil lo permite. Para un publico joven, emojis moderados pueden hacer las respuestas mas calidas." }
+    ],
+    "cta": { "title": "Listo para atraer mas alumnos con tu reputacion online?", "subtitle": "15 respuestas gratuitas al mes. Sin tarjeta. Sin compromiso.", "button": "Probar ReplyStack Gratis", "noCard": "Operativo en menos de 5 minutos" },
+    "relatedContent": { "label": "Ver tambien:", "link1": "Como Responder a Resenas Negativas", "link2": "20 Plantillas de Respuestas", "link3": "Mejores Software de Gestion" }
+  }
+}
