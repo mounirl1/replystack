@@ -11,21 +11,25 @@ import {
 import RespondNegativeReviewsEN from '@/content/blog/guides/respond-negative-reviews/index.en.mdx';
 import ReviewResponseTemplatesEN from '@/content/blog/guides/review-response-templates/index.en.mdx';
 import GetMoreGoogleReviewsEN from '@/content/blog/guides/get-more-google-reviews/index.en.mdx';
+import OnlineReputationStrategyEN from '@/content/blog/guides/online-reputation-strategy/index.en.mdx';
 
 // Import blog articles - Guides FR
 import RespondNegativeReviewsFR from '@/content/blog/guides/respond-negative-reviews/index.fr.mdx';
 import ReviewResponseTemplatesFR from '@/content/blog/guides/review-response-templates/index.fr.mdx';
 import GetMoreGoogleReviewsFR from '@/content/blog/guides/get-more-google-reviews/index.fr.mdx';
+import OnlineReputationStrategyFR from '@/content/blog/guides/online-reputation-strategy/index.fr.mdx';
 
 // Import blog articles - Guides ES
 import RespondNegativeReviewsES from '@/content/blog/guides/respond-negative-reviews/index.es.mdx';
 import ReviewResponseTemplatesES from '@/content/blog/guides/review-response-templates/index.es.mdx';
 import GetMoreGoogleReviewsES from '@/content/blog/guides/get-more-google-reviews/index.es.mdx';
+import OnlineReputationStrategyES from '@/content/blog/guides/online-reputation-strategy/index.es.mdx';
 
 // Import blog articles - Guides PT
 import RespondNegativeReviewsPT from '@/content/blog/guides/respond-negative-reviews/index.pt.mdx';
 import ReviewResponseTemplatesPT from '@/content/blog/guides/review-response-templates/index.pt.mdx';
 import GetMoreGoogleReviewsPT from '@/content/blog/guides/get-more-google-reviews/index.pt.mdx';
+import OnlineReputationStrategyPT from '@/content/blog/guides/online-reputation-strategy/index.pt.mdx';
 
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
@@ -323,6 +327,106 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Como Conseguir Mais Avaliações no Google: O Guia Completo 2026',
         description: '15 estratégias comprovadas para conseguir mais avaliações no Google. QR codes, emails, SMS, timing ideal. Guia prático com modelos grátis.',
         keywords: ['conseguir mais avaliações google', 'pedir avaliações clientes', 'aumentar avaliações google', 'coletar avaliações google', 'estratégia avaliações google'],
+      },
+    },
+  },
+  // Online Reputation Strategy - EN
+  'en:complete-online-reputation-strategy': {
+    component: OnlineReputationStrategyEN,
+    meta: {
+      title: 'Complete Online Reputation Strategy 2026: The Ultimate Guide',
+      slug: 'complete-online-reputation-strategy',
+      description: 'Build an effective online reputation strategy in 2026. Audit, monitoring, responses, KPIs. Complete guide with action plan and tools.',
+      date: '2026-01-11',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Review Management Experts',
+      },
+      category: 'guides',
+      tags: ['online-reputation', 'reputation-management', 'review-strategy', 'brand-monitoring', 'crisis-management'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 25,
+      wordCount: 5500,
+      seo: {
+        title: 'Complete Online Reputation Strategy 2026: The Ultimate Guide',
+        description: 'Build an effective online reputation strategy in 2026. Audit, monitoring, responses, KPIs. Complete guide with action plan and tools.',
+        keywords: ['online reputation strategy', 'reputation management', 'business reputation online', 'reputation plan', 'improve online reputation'],
+      },
+    },
+  },
+  // Online Reputation Strategy - FR
+  'fr:strategie-e-reputation-complete': {
+    component: OnlineReputationStrategyFR,
+    meta: {
+      title: 'Stratégie E-réputation Complète 2026 : Le Guide Ultime',
+      slug: 'strategie-e-reputation-complete',
+      description: 'Construisez une stratégie e-réputation efficace en 2026. Audit, monitoring, réponses, KPIs. Guide complet avec plan d\'action et outils.',
+      date: '2026-01-11',
+      author: {
+        name: 'Équipe ReplyStack',
+        role: 'Experts en gestion d\'avis',
+      },
+      category: 'guides',
+      tags: ['e-reputation', 'gestion-reputation', 'strategie-avis', 'veille-marque', 'gestion-crise'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 25,
+      wordCount: 5500,
+      seo: {
+        title: 'Stratégie E-réputation Complète 2026 : Le Guide Ultime',
+        description: 'Construisez une stratégie e-réputation efficace en 2026. Audit, monitoring, réponses, KPIs. Guide complet avec plan d\'action et outils.',
+        keywords: ['stratégie e-réputation', 'gestion réputation en ligne', 'e-réputation entreprise', 'plan e-réputation', 'améliorer réputation internet'],
+      },
+    },
+  },
+  // Online Reputation Strategy - ES
+  'es:estrategia-reputacion-online-completa': {
+    component: OnlineReputationStrategyES,
+    meta: {
+      title: 'Estrategia de Reputación Online Completa 2026: La Guía Definitiva',
+      slug: 'estrategia-reputacion-online-completa',
+      description: 'Construye una estrategia de reputación online efectiva en 2026. Auditoría, monitoreo, respuestas, KPIs. Guía completa con plan de acción y herramientas.',
+      date: '2026-01-11',
+      author: {
+        name: 'Equipo ReplyStack',
+        role: 'Expertos en gestión de reseñas',
+      },
+      category: 'guides',
+      tags: ['reputacion-online', 'gestion-reputacion', 'estrategia-resenas', 'vigilancia-marca', 'gestion-crisis'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 25,
+      wordCount: 5500,
+      seo: {
+        title: 'Estrategia de Reputación Online Completa 2026: La Guía Definitiva',
+        description: 'Construye una estrategia de reputación online efectiva en 2026. Auditoría, monitoreo, respuestas, KPIs. Guía completa con plan de acción y herramientas.',
+        keywords: ['estrategia reputación online', 'gestión reputación internet', 'reputación digital empresa', 'plan reputación online', 'mejorar reputación internet'],
+      },
+    },
+  },
+  // Online Reputation Strategy - PT
+  'pt:estrategia-reputacao-online-completa': {
+    component: OnlineReputationStrategyPT,
+    meta: {
+      title: 'Estratégia de Reputação Online Completa 2026: O Guia Definitivo',
+      slug: 'estrategia-reputacao-online-completa',
+      description: 'Construa uma estratégia de reputação online eficaz em 2026. Auditoria, monitoramento, respostas, KPIs. Guia completo com plano de ação e ferramentas.',
+      date: '2026-01-11',
+      author: {
+        name: 'Equipa ReplyStack',
+        role: 'Especialistas em gestão de avaliações',
+      },
+      category: 'guides',
+      tags: ['reputacao-online', 'gestao-reputacao', 'estrategia-avaliacoes', 'vigilancia-marca', 'gestao-crise'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 25,
+      wordCount: 5500,
+      seo: {
+        title: 'Estratégia de Reputação Online Completa 2026: O Guia Definitivo',
+        description: 'Construa uma estratégia de reputação online eficaz em 2026. Auditoria, monitoramento, respostas, KPIs. Guia completo com plano de ação e ferramentas.',
+        keywords: ['estratégia reputação online', 'gestão reputação internet', 'reputação digital empresa', 'plano reputação online', 'melhorar reputação internet'],
       },
     },
   },
