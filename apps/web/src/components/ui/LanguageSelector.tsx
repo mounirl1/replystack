@@ -39,7 +39,7 @@ export function LanguageSelector({ variant = 'default', className = '' }: Langua
       <div className={`relative ${className}`} ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
+          className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
         >
           <Globe size={16} />
           <span>{currentLanguage.code.toUpperCase()}</span>

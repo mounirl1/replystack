@@ -10,7 +10,11 @@
     "plans": "Offres",
     "signIn": "Connexion",
     "getStarted": "Commencer",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "features": "Fonctionnalités",
+    "solutions": "Solutions",
+    "solutionsByIndustry": "Solutions par métier",
+    "blog": "Blog"
   },
   "sidebar": {
     "monthlyQuota": "Quota mensuel",

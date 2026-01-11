@@ -61,7 +61,7 @@ export function Header(): ReactElement {
               href="/#features"
               className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors rounded-lg hover:bg-gray-50"
             >
-              Fonctionnalités
+              {t('nav.features')}
             </a>
 
             {/* Solutions Mega Menu */}
@@ -73,7 +73,7 @@ export function Header(): ReactElement {
               <button
                 className="flex items-center gap-1 px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors rounded-lg hover:bg-gray-50"
               >
-                Solutions
+                {t('nav.solutions')}
                 <ChevronDown size={16} className={`transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -82,7 +82,7 @@ export function Header(): ReactElement {
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
                   <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[500px]">
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
-                      {currentLang === 'fr' ? 'Solutions par métier' : currentLang === 'es' ? 'Soluciones por sector' : currentLang === 'pt' ? 'Soluções por setor' : 'Solutions by industry'}
+                      {t('nav.solutionsByIndustry')}
                     </p>
                     <div className="grid grid-cols-2 gap-2">
                       {headerSectors.map((sector) => {
@@ -118,7 +118,7 @@ export function Header(): ReactElement {
               to="/blog"
               className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors rounded-lg hover:bg-gray-50"
             >
-              Blog
+              {t('nav.blog')}
             </Link>
           </div>
 
@@ -179,7 +179,7 @@ export function Header(): ReactElement {
                 href="/#features"
                 className="px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium rounded-lg"
               >
-                Fonctionnalités
+                {t('nav.features')}
               </a>
 
               {/* Mobile Solutions */}
@@ -187,7 +187,7 @@ export function Header(): ReactElement {
                 onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
                 className="flex items-center justify-between px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium rounded-lg w-full text-left"
               >
-                Solutions
+                {t('nav.solutions')}
                 <ChevronDown size={16} className={`transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -219,7 +219,7 @@ export function Header(): ReactElement {
                 to="/blog"
                 className="px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium rounded-lg"
               >
-                Blog
+                {t('nav.blog')}
               </Link>
 
               <div className="border-t border-gray-100 pt-4 mt-2 space-y-2">

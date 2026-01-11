@@ -10,7 +10,11 @@
     "plans": "Planos",
     "signIn": "Entrar",
     "getStarted": "Começar",
-    "logout": "Sair"
+    "logout": "Sair",
+    "features": "Funcionalidades",
+    "solutions": "Soluções",
+    "solutionsByIndustry": "Soluções por setor",
+    "blog": "Blog"
   },
   "sidebar": {
     "monthlyQuota": "Cota mensal",

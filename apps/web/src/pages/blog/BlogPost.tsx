@@ -1,4 +1,4 @@
-import { useParams, useLocation, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MDXProvider } from '@mdx-js/react';
 import { Calendar, Clock, ArrowLeft, Globe } from 'lucide-react';
@@ -9,7 +9,6 @@ import { ShareButtons } from '@/components/blog/ShareButtons';
 import { RelatedArticles } from '@/components/blog/RelatedArticles';
 import { getFullPost, getAllPosts } from '@/lib/blog/posts';
 import {
-  getLanguageFromPath,
   getBlogUrl,
   formatBlogDate,
   getBlogPostingSchema,
@@ -21,10 +20,9 @@ import type { SupportedBlogLanguage } from '@/lib/blog/types';
 export function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const { t, i18n } = useTranslation('blog');
-  const location = useLocation();
 
-  // Get language from URL path
-  const language = getLanguageFromPath(location.pathname) as SupportedBlogLanguage;
+  // Get language from i18n (responds to language selector changes)
+  const language = (i18n.language?.split('-')[0] || 'en') as SupportedBlogLanguage;
 
   // Get the post with content
   const fullPost = slug ? getFullPost(slug, language) : undefined;

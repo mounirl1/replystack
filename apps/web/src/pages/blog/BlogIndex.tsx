@@ -1,22 +1,21 @@
 import { useState, useMemo } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Search } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BlogList } from '@/components/blog/BlogList';
 import { getPosts, getCategoriesWithCounts, hasPosts } from '@/lib/blog/posts';
-import { getLanguageFromPath, getBlogListingSchema } from '@/lib/blog/utils';
+import { getBlogListingSchema } from '@/lib/blog/utils';
 import type { BlogCategory, SupportedBlogLanguage, BlogPagination } from '@/lib/blog/types';
 
 const POSTS_PER_PAGE = 12;
 
 export function BlogIndex() {
-  const { t } = useTranslation('blog');
-  const location = useLocation();
+  const { t, i18n } = useTranslation('blog');
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Get language from URL path
-  const language = getLanguageFromPath(location.pathname) as SupportedBlogLanguage;
+  // Get language from i18n (responds to language selector changes)
+  const language = (i18n.language?.split('-')[0] || 'en') as SupportedBlogLanguage;
 
   // Get current filters from URL
   const currentPage = parseInt(searchParams.get('page') || '1', 10);

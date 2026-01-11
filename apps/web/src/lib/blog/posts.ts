@@ -10,18 +10,22 @@ import {
 // Import blog articles - Guides EN
 import RespondNegativeReviewsEN from '@/content/blog/guides/respond-negative-reviews/index.en.mdx';
 import ReviewResponseTemplatesEN from '@/content/blog/guides/review-response-templates/index.en.mdx';
+import GetMoreGoogleReviewsEN from '@/content/blog/guides/get-more-google-reviews/index.en.mdx';
 
 // Import blog articles - Guides FR
 import RespondNegativeReviewsFR from '@/content/blog/guides/respond-negative-reviews/index.fr.mdx';
 import ReviewResponseTemplatesFR from '@/content/blog/guides/review-response-templates/index.fr.mdx';
+import GetMoreGoogleReviewsFR from '@/content/blog/guides/get-more-google-reviews/index.fr.mdx';
 
 // Import blog articles - Guides ES
 import RespondNegativeReviewsES from '@/content/blog/guides/respond-negative-reviews/index.es.mdx';
 import ReviewResponseTemplatesES from '@/content/blog/guides/review-response-templates/index.es.mdx';
+import GetMoreGoogleReviewsES from '@/content/blog/guides/get-more-google-reviews/index.es.mdx';
 
 // Import blog articles - Guides PT
 import RespondNegativeReviewsPT from '@/content/blog/guides/respond-negative-reviews/index.pt.mdx';
 import ReviewResponseTemplatesPT from '@/content/blog/guides/review-response-templates/index.pt.mdx';
+import GetMoreGoogleReviewsPT from '@/content/blog/guides/get-more-google-reviews/index.pt.mdx';
 
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
@@ -79,6 +83,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
       },
     },
   },
+  'en:get-more-google-reviews': {
+    component: GetMoreGoogleReviewsEN,
+    meta: {
+      title: 'How to Get More Google Reviews: The Complete Guide 2026',
+      slug: 'get-more-google-reviews',
+      description: '15 proven strategies to get more Google reviews. QR codes, emails, SMS, optimal timing. Practical guide with free templates.',
+      date: '2026-01-11',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Review Management Experts',
+      },
+      category: 'guides',
+      tags: ['google-reviews', 'review-collection', 'local-seo', 'customer-feedback', 'review-strategy'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'How to Get More Google Reviews: The Complete Guide 2026',
+        description: '15 proven strategies to get more Google reviews. QR codes, emails, SMS, optimal timing. Practical guide with free templates.',
+        keywords: ['get more google reviews', 'ask customers for reviews', 'increase google reviews', 'collect google reviews', 'google review strategy'],
+      },
+    },
+  },
   // French articles
   'fr:repondre-avis-google-negatifs': {
     component: RespondNegativeReviewsFR,
@@ -125,6 +153,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Templates de Réponses aux Avis Clients (Copier-Coller) 2026',
         description: '20 modèles prêts à l\'emploi pour répondre aux avis clients. Avis positifs, négatifs et cas particuliers. Copiez, personnalisez et publiez.',
         keywords: ['templates avis', 'modèles réponse', 'avis clients', 'gestion avis'],
+      },
+    },
+  },
+  'fr:obtenir-plus-avis-google': {
+    component: GetMoreGoogleReviewsFR,
+    meta: {
+      title: 'Comment Obtenir Plus d\'Avis Google : Le Guide Complet 2026',
+      slug: 'obtenir-plus-avis-google',
+      description: '15 stratégies éprouvées pour obtenir plus d\'avis Google. QR codes, emails, SMS, timing optimal. Guide pratique avec templates gratuits.',
+      date: '2026-01-11',
+      author: {
+        name: 'Équipe ReplyStack',
+        role: 'Experts en gestion d\'avis',
+      },
+      category: 'guides',
+      tags: ['avis-google', 'collecter-avis', 'seo-local', 'feedback-client', 'strategie-avis'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Comment Obtenir Plus d\'Avis Google : Le Guide Complet 2026',
+        description: '15 stratégies éprouvées pour obtenir plus d\'avis Google. QR codes, emails, SMS, timing optimal. Guide pratique avec templates gratuits.',
+        keywords: ['obtenir plus avis google', 'demander avis clients', 'augmenter avis google', 'collecter avis google', 'stratégie avis google'],
       },
     },
   },
@@ -177,6 +229,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
       },
     },
   },
+  'es:conseguir-mas-resenas-google': {
+    component: GetMoreGoogleReviewsES,
+    meta: {
+      title: 'Cómo Conseguir Más Reseñas en Google: La Guía Completa 2026',
+      slug: 'conseguir-mas-resenas-google',
+      description: '15 estrategias probadas para conseguir más reseñas en Google. Códigos QR, emails, SMS, timing óptimo. Guía práctica con plantillas gratis.',
+      date: '2026-01-11',
+      author: {
+        name: 'Equipo ReplyStack',
+        role: 'Expertos en gestión de reseñas',
+      },
+      category: 'guides',
+      tags: ['resenas-google', 'recopilar-resenas', 'seo-local', 'feedback-cliente', 'estrategia-resenas'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Cómo Conseguir Más Reseñas en Google: La Guía Completa 2026',
+        description: '15 estrategias probadas para conseguir más reseñas en Google. Códigos QR, emails, SMS, timing óptimo. Guía práctica con plantillas gratis.',
+        keywords: ['conseguir más reseñas google', 'pedir reseñas clientes', 'aumentar reseñas google', 'recopilar opiniones google', 'estrategia reseñas google'],
+      },
+    },
+  },
   // Portuguese articles
   'pt:responder-avaliacoes-negativas': {
     component: RespondNegativeReviewsPT,
@@ -223,6 +299,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Templates de Respostas a Avaliações de Clientes (Copiar e Colar) 2026',
         description: '20 modelos profissionais para responder a avaliações no Google, TripAdvisor, Facebook. Avaliações positivas e negativas. Copie, personalize, publique.',
         keywords: ['templates avaliações', 'modelos resposta', 'avaliações clientes', 'gestão avaliações'],
+      },
+    },
+  },
+  'pt:conseguir-mais-avaliacoes-google': {
+    component: GetMoreGoogleReviewsPT,
+    meta: {
+      title: 'Como Conseguir Mais Avaliações no Google: O Guia Completo 2026',
+      slug: 'conseguir-mais-avaliacoes-google',
+      description: '15 estratégias comprovadas para conseguir mais avaliações no Google. QR codes, emails, SMS, timing ideal. Guia prático com modelos grátis.',
+      date: '2026-01-11',
+      author: {
+        name: 'Equipa ReplyStack',
+        role: 'Especialistas em gestão de avaliações',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-google', 'coletar-avaliacoes', 'seo-local', 'feedback-cliente', 'estrategia-avaliacoes'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Como Conseguir Mais Avaliações no Google: O Guia Completo 2026',
+        description: '15 estratégias comprovadas para conseguir mais avaliações no Google. QR codes, emails, SMS, timing ideal. Guia prático com modelos grátis.',
+        keywords: ['conseguir mais avaliações google', 'pedir avaliações clientes', 'aumentar avaliações google', 'coletar avaliações google', 'estratégia avaliações google'],
       },
     },
   },
@@ -369,13 +469,43 @@ export function getPostContent(
 
 /**
  * Get full post with content component
+ * Handles cross-language slug lookup (e.g., finding French article when URL has English slug)
  */
 export function getFullPost(
   slug: string,
   language: SupportedBlogLanguage
 ): { meta: BlogPostMeta; component: ComponentType } | undefined {
+  // First, try exact match with language:slug
   const key = `${language}:${slug}`;
   const post = blogPosts[key];
-  if (!post) return undefined;
-  return { meta: post.meta, component: post.component };
+  if (post) return { meta: post.meta, component: post.component };
+
+  // If not found, search for any post with this slug in any language
+  // then find the equivalent post in the requested language
+  const matchingEntry = Object.entries(blogPosts).find(
+    ([, entry]) => entry.meta.slug === slug
+  );
+
+  if (matchingEntry) {
+    const [, foundPost] = matchingEntry;
+    // If the found post is in the same language family (has same availableLanguages)
+    // try to find the equivalent in the requested language
+    if (foundPost.meta.availableLanguages.includes(language)) {
+      // Search for a post in the requested language that shares the same availableLanguages
+      // (indicating they are translations of each other)
+      const translatedPost = Object.values(blogPosts).find(
+        (entry) =>
+          entry.meta.language === language &&
+          entry.meta.availableLanguages.join(',') ===
+            foundPost.meta.availableLanguages.join(',') &&
+          entry.meta.category === foundPost.meta.category &&
+          entry.meta.date === foundPost.meta.date
+      );
+      if (translatedPost) {
+        return { meta: translatedPost.meta, component: translatedPost.component };
+      }
+    }
+  }
+
+  return undefined;
 }

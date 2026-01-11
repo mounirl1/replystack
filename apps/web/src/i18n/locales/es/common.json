@@ -10,7 +10,11 @@
     "plans": "Planes",
     "signIn": "Iniciar sesión",
     "getStarted": "Comenzar",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "features": "Características",
+    "solutions": "Soluciones",
+    "solutionsByIndustry": "Soluciones por sector",
+    "blog": "Blog"
   },
   "sidebar": {
     "monthlyQuota": "Cuota mensual",

@@ -117,11 +117,11 @@ function Blockquote({ children, ...props }: ComponentPropsWithoutRef<'blockquote
   );
 }
 
-// Code blocks
+// Code blocks / Templates - styled as elegant cards rather than dark code blocks
 function Pre({ children, ...props }: ComponentPropsWithoutRef<'pre'>) {
   return (
     <pre
-      className="bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto my-6 text-sm"
+      className="bg-gradient-to-br from-gray-50 to-slate-100 border border-gray-200 text-gray-700 p-5 rounded-xl overflow-x-auto my-6 text-sm shadow-sm"
       {...props}
     >
       {children}

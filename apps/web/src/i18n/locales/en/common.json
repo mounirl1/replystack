@@ -10,7 +10,11 @@
     "plans": "Plans",
     "signIn": "Sign in",
     "getStarted": "Get Started",
-    "logout": "Logout"
+    "logout": "Logout",
+    "features": "Features",
+    "solutions": "Solutions",
+    "solutionsByIndustry": "Solutions by industry",
+    "blog": "Blog"
   },
   "sidebar": {
     "monthlyQuota": "Monthly Quota",
