@@ -64,7 +64,6 @@ export class YelpExtractor extends BaseExtractor {
 
   extractAll(): ExtractedReview[] {
     const elements = this.getReviewElements();
-    console.log(`[YelpExtractor] Found ${elements.length} review elements`);
 
     return elements
       .map((el) => this.extractOne(el))
@@ -109,8 +108,7 @@ export class YelpExtractor extends BaseExtractor {
         publishedAt,
         hasResponse,
       };
-    } catch (e) {
-      console.error('[YelpExtractor] Failed to extract review:', e);
+    } catch {
       return null;
     }
   }

@@ -61,7 +61,99 @@
       "load": "Error loading data",
       "loadProfile": "Error loading profile",
       "save": "Error saving",
-      "reset": "Error resetting"
+      "reset": "Error resetting",
+      "toneRequired": "Please select a tone",
+      "lengthRequired": "Please select a length",
+      "strategyRequired": "Please select a strategy",
+      "businessNameRequired": "Business name is required"
+    },
+    "modal": {
+      "stepIndicator": "Step {{current}} of {{total}}",
+      "buttons": {
+        "back": "Back",
+        "skip": "Skip",
+        "next": "Next",
+        "finish": "Finish"
+      },
+      "businessSector": {
+        "title": "What is your business sector?",
+        "subtitle": "This helps us personalize the style of your responses."
+      },
+      "tone": {
+        "title": "What tone would you like to adopt?",
+        "subtitle": "The tone defines the personality of your responses.",
+        "example": "Example:"
+      },
+      "length": {
+        "title": "What response length do you prefer?",
+        "subtitle": "You can always adjust on a case-by-case basis.",
+        "wordRange": "{{min}}-{{max}} words"
+      },
+      "negativeStrategy": {
+        "title": "How to handle negative reviews?",
+        "subtitle": "Choose the approach that best matches your philosophy."
+      },
+      "businessInfo": {
+        "title": "Your establishment information",
+        "subtitle": "This information will be used in your responses.",
+        "businessName": "Business name",
+        "businessNameHint": "This name will be mentioned in your responses",
+        "signature": "Signature (optional)",
+        "signatureHint": "This signature will appear at the end of your responses",
+        "previewLabel": "Response ending preview:",
+        "previewText": "We hope to see you again soon{{businessName}} !",
+        "previewAt": " at {{name}}"
+      },
+      "advanced": {
+        "title": "Advanced customization",
+        "subtitle": "Fine-tune your responses even more (optional).",
+        "highlights": "Key points to mention",
+        "highlightsHint": "These elements will be mentioned when relevant",
+        "highlightsPlaceholder": "e.g., panoramic view, organic products, valet parking...",
+        "avoidTopics": "Topics to avoid",
+        "avoidTopicsHint": "These topics will never be mentioned",
+        "avoidTopicsPlaceholder": "e.g., competitors, specific prices, controversies...",
+        "additionalContext": "Additional context",
+        "additionalContextHint": "Additional information to contextualize your responses",
+        "additionalContextPlaceholder": "e.g., Family establishment since 1985, member of Relais & Châteaux...",
+        "optionalNote": "This step is optional. You can complete it later in settings."
+      }
+    },
+    "form": {
+      "sections": {
+        "basic": "Basic settings",
+        "basicDescription": "Main configuration of your responses",
+        "elements": "Elements to include",
+        "advanced": "Advanced settings",
+        "advancedDescription": "Fine-tune your responses even more"
+      },
+      "badges": {
+        "configured": "Configured",
+        "optional": "Optional"
+      },
+      "labels": {
+        "sector": "Business sector",
+        "businessName": "Business name",
+        "city": "City / Location",
+        "defaultTone": "Default tone",
+        "defaultLength": "Default length",
+        "negativeStrategy": "Negative review strategy",
+        "highlights": "Key points to mention",
+        "avoidTopics": "Topics to avoid",
+        "additionalContext": "Additional context",
+        "seoKeywords": "SEO Keywords",
+        "mainServices": "Main Services / Products"
+      },
+      "placeholders": {
+        "select": "Select...",
+        "businessName": "e.g., The Little Bistro Restaurant",
+        "signature": "e.g., The Little Bistro Team"
+      },
+      "buttons": {
+        "redoOnboarding": "Redo onboarding",
+        "reset": "Reset",
+        "save": "Save changes"
+      }
     },
     "includeElements": {
       "title": "Elements to include by review type",
@@ -92,6 +184,91 @@
       "services": "Main Services / Products",
       "servicesPlaceholder": "e.g., Sunday brunch, tasting menu, wine cellar...",
       "servicesHint": "Key services or products to mention when relevant"
+    },
+    "options": {
+      "sectors": {
+        "hotel": "Hotel / Accommodation",
+        "restaurant": "Restaurant / Café / Bar",
+        "retail": "Retail Store",
+        "spa": "Spa / Wellness / Beauty Salon",
+        "fitness": "Gym / Fitness Center",
+        "real_estate": "Real Estate Agency",
+        "medical": "Medical Practice / Dentist / Clinic",
+        "automotive": "Auto Shop / Car Dealership",
+        "artisan": "Craftsman / Home Services",
+        "events": "Events / Catering",
+        "tourism": "Tourism / Leisure Activities",
+        "education": "Education / Training",
+        "ecommerce": "E-commerce",
+        "b2b": "B2B Services",
+        "veterinary": "Veterinary / Pet Store",
+        "creative": "Photographer / Creative",
+        "travel": "Travel Agency",
+        "other": "Other"
+      },
+      "tones": {
+        "professional": {
+          "label": "Professional",
+          "description": "Courteous and formal tone, ideal for B2B or medical services.",
+          "example": "We thank you for your feedback and remain at your disposal."
+        },
+        "warm": {
+          "label": "Warm",
+          "description": "Warm and personal tone, perfect for restaurants and hotels.",
+          "example": "Thank you so much for these kind words that touch us! Your visit was a pleasure."
+        },
+        "casual": {
+          "label": "Casual",
+          "description": "Relaxed and friendly tone, suitable for local businesses.",
+          "example": "So glad you enjoyed it! See you soon!"
+        },
+        "luxury": {
+          "label": "Luxury / Premium",
+          "description": "Refined and elegant tone, for high-end establishments.",
+          "example": "We are honored by your testimonial and hope to have the privilege of welcoming you again."
+        },
+        "dynamic": {
+          "label": "Dynamic",
+          "description": "Energetic and enthusiastic tone, ideal for sports and leisure.",
+          "example": "Awesome! Your positive energy motivates us! Can't wait to see you again for new adventures!"
+        }
+      },
+      "lengths": {
+        "short": {
+          "label": "Short",
+          "description": "2-3 sentences, straight to the point."
+        },
+        "medium": {
+          "label": "Medium",
+          "description": "4-5 sentences, balance between conciseness and personalization."
+        },
+        "detailed": {
+          "label": "Detailed",
+          "description": "6-8 sentences, complete and personalized response."
+        }
+      },
+      "negativeStrategies": {
+        "empathetic": {
+          "label": "Empathetic",
+          "description": "Show empathy, apologize sincerely and acknowledge the problem."
+        },
+        "solution": {
+          "label": "Solution-oriented",
+          "description": "Propose a concrete solution or explain corrective measures taken."
+        },
+        "contact": {
+          "label": "Contact invitation",
+          "description": "Invite the customer to contact us directly to resolve the issue."
+        },
+        "factual": {
+          "label": "Factual",
+          "description": "Respond factually, clarify if necessary, remain neutral."
+        },
+        "reconquest": {
+          "label": "Win-back",
+          "description": "Offer compensation or an invitation to return for a better experience."
+        }
+      }
     }
   },
   "language": {

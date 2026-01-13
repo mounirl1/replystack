@@ -18,6 +18,7 @@ import {
   Plane,
   MoreHorizontal,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { BusinessSector, SectorOption } from '@/types/responseProfile';
 
 interface BusinessSectorStepProps {
@@ -52,14 +53,16 @@ export function BusinessSectorStep({
   onChange,
   sectors,
 }: BusinessSectorStepProps) {
+  const { t } = useTranslation('settings');
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-dark-primary dark:text-text-primary">
-          Quel est votre secteur d'activité ?
+          {t('responseStyle.modal.businessSector.title')}
         </h2>
         <p className="text-text-dark-secondary dark:text-text-secondary mt-2">
-          Cela nous aide à personnaliser le style de vos réponses.
+          {t('responseStyle.modal.businessSector.subtitle')}
         </p>
       </div>
 

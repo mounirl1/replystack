@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { ResponseTone, ToneOption } from '@/types/responseProfile';
 
 interface ToneStepProps {
@@ -8,14 +9,16 @@ interface ToneStepProps {
 }
 
 export function ToneStep({ value, onChange, tones }: ToneStepProps) {
+  const { t } = useTranslation('settings');
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-dark-primary dark:text-text-primary">
-          Quel ton souhaitez-vous adopter ?
+          {t('responseStyle.modal.tone.title')}
         </h2>
         <p className="text-text-dark-secondary dark:text-text-secondary mt-2">
-          Le ton définit la personnalité de vos réponses.
+          {t('responseStyle.modal.tone.subtitle')}
         </p>
       </div>
 
@@ -62,7 +65,7 @@ export function ToneStep({ value, onChange, tones }: ToneStepProps) {
                   {tone.description}
                 </p>
                 <div className="mt-2 p-3 bg-light-hover dark:bg-dark-hover rounded-lg">
-                  <p className="text-xs text-text-tertiary mb-1">Exemple :</p>
+                  <p className="text-xs text-text-tertiary mb-1">{t('responseStyle.modal.tone.example')}</p>
                   <p className="text-sm text-text-dark-secondary dark:text-text-secondary italic">
                     "{tone.example}"
                   </p>

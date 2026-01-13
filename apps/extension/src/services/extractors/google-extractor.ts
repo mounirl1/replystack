@@ -96,12 +96,10 @@ export class GoogleExtractor extends BaseExtractor {
     const allButtons = [...Array.from(expandButtons), ...expandLinks];
 
     if (allButtons.length > 0) {
-      console.log(`[GoogleExtractor] Found ${allButtons.length} expand buttons, clicking...`);
-
       for (const btn of allButtons) {
         try {
           (btn as HTMLElement).click();
-        } catch (e) {
+        } catch {
           // Ignore click errors
         }
       }
@@ -113,13 +111,11 @@ export class GoogleExtractor extends BaseExtractor {
 
   extractAll(): ExtractedReview[] {
     const elements = this.getReviewElements();
-    console.log(`[GoogleExtractor] Found ${elements.length} review elements`);
 
     const reviews = elements
       .map((el) => this.extractOne(el))
       .filter((review): review is ExtractedReview => review !== null);
 
-    console.log(`[GoogleExtractor] Successfully extracted ${reviews.length} reviews`);
     return reviews;
   }
 
@@ -155,7 +151,6 @@ export class GoogleExtractor extends BaseExtractor {
 
       // Skip if no meaningful content and not a "stars only" review
       if (!content && !authorName && !isNoTextReview) {
-        console.log('[GoogleExtractor] Skipping review: no content or author');
         return null;
       }
 
@@ -180,15 +175,6 @@ export class GoogleExtractor extends BaseExtractor {
 
       const language = content ? this.detectLanguage(content) : undefined;
 
-      console.log(`[GoogleExtractor] Extracted review:`, {
-        externalId: externalId.substring(0, 20) + '...',
-        author: authorName,
-        rating,
-        contentLength: content.length,
-        hasResponse,
-        responseLength: responseContent?.length || 0,
-      });
-
       return {
         externalId,
         authorName,
@@ -200,8 +186,7 @@ export class GoogleExtractor extends BaseExtractor {
         hasResponse,
         responseContent,
       };
-    } catch (e) {
-      console.error('[GoogleExtractor] Failed to extract review:', e);
+    } catch {
       return null;
     }
   }

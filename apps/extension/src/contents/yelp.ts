@@ -792,16 +792,8 @@ async function showReplyPopup(reviewData: ReviewData) {
         copyBtn.textContent = t('modal.copy');
       }, 2000);
     } catch {
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-      copyBtn.textContent = t('modal.copied');
-      setTimeout(() => {
-        copyBtn.textContent = t('modal.copy');
-      }, 2000);
+      // Clipboard API failed - show error to user
+      copyBtn.textContent = t('modal.copy');
     }
   });
 

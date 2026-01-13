@@ -30,8 +30,6 @@ export async function syncReviews(
     return { created: 0, updated: 0, unchanged: 0 };
   }
 
-  console.log(`[ReviewSync] Syncing ${reviews.length} ${platform} reviews for location ${locationId}`);
-
   const response = await fetch(`${API_URL}/api/reviews/sync`, {
     method: 'POST',
     headers: {
@@ -57,13 +55,10 @@ export async function syncReviews(
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    console.error(`[ReviewSync] Sync failed: ${response.status}`, errorText);
     throw new Error(`Sync failed: ${response.status}`);
   }
 
   const result: SyncResult = await response.json();
-  console.log(`[ReviewSync] Sync complete:`, result);
   return result;
 }
 
@@ -74,7 +69,6 @@ export async function syncReviews(
 export async function getExtractionTasks(): Promise<ExtractionTask[]> {
   const token = await getAuthToken();
   if (!token) {
-    console.log('[ReviewSync] No auth token, skipping extraction tasks');
     return [];
   }
 
@@ -87,7 +81,6 @@ export async function getExtractionTasks(): Promise<ExtractionTask[]> {
     });
 
     if (!response.ok) {
-      console.error(`[ReviewSync] Failed to get extraction tasks: ${response.status}`);
       return [];
     }
 
@@ -109,10 +102,8 @@ export async function getExtractionTasks(): Promise<ExtractionTask[]> {
       }
     }
 
-    console.log(`[ReviewSync] Found ${tasks.length} extraction tasks`);
     return tasks;
-  } catch (error) {
-    console.error('[ReviewSync] Error getting extraction tasks:', error);
+  } catch {
     return [];
   }
 }
@@ -140,8 +131,8 @@ export async function updateLastFetched(
         source: 'extension',
       }),
     });
-  } catch (error) {
-    console.error('[ReviewSync] Error updating last fetched:', error);
+  } catch {
+    // Silently fail - will retry on next sync
   }
 }
 
@@ -171,15 +162,12 @@ export async function cacheLocations(): Promise<void> {
       } else if (Array.isArray(data.locations)) {
         locations = data.locations;
       } else {
-        console.warn('[ReviewSync] Unexpected API response format:', data);
         locations = [];
       }
 
-      chrome.storage.local.set({ locations }, () => {
-        console.log(`[ReviewSync] Cached ${locations.length} locations`);
-      });
+      chrome.storage.local.set({ locations });
     }
-  } catch (error) {
-    console.error('[ReviewSync] Error caching locations:', error);
+  } catch {
+    // Silently fail - locations will be cached on next attempt
   }
 }

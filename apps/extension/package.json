@@ -31,6 +31,10 @@
     "typescript": "^5.3.0"
   },
   "manifest": {
+    "minimum_chrome_version": "100",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    },
     "host_permissions": [
       "https://api.reply-stack.app/*",
       "https://business.google.com/*",
@@ -48,6 +52,6 @@
       "alarms",
       "tabs"
     ],
-    "privacy_policy_url": "https://api.reply-stack.app/privacy"
+    "privacy_policy_url": "https://www.reply-stack.app/privacy"
   }
 }

@@ -625,7 +625,6 @@ async function showReplyPopup(reviewData: ReviewData, reviewEl: HTMLElement) {
       replySection.classList.remove('replystack-hidden');
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to generate reply';
-      console.error('[ReplyStack] Generate error:', errorMessage, err);
 
       // Handle sign-in required error - show login form
       if (errorMessage === 'SIGN_IN_REQUIRED') {
@@ -806,16 +805,8 @@ async function showReplyPopup(reviewData: ReviewData, reviewEl: HTMLElement) {
         copyBtn.textContent = t('modal.copy');
       }, 2000);
     } catch {
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-      copyBtn.textContent = t('modal.copied');
-      setTimeout(() => {
-        copyBtn.textContent = t('modal.copy');
-      }, 2000);
+      // Clipboard API failed - show error to user
+      copyBtn.textContent = t('modal.copy');
     }
   });
 

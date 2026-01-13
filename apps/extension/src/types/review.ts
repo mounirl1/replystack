@@ -16,7 +16,7 @@ export interface ExtractedReview {
 /**
  * Supported review platforms
  */
-export type Platform = 'google' | 'tripadvisor' | 'booking' | 'yelp' | 'facebook';
+export type Platform = 'google' | 'tripadvisor' | 'booking' | 'yelp';
 
 /**
  * Represents a task for extracting reviews from a platform

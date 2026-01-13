@@ -1,4 +1,5 @@
 import { Check, AlignLeft, AlignCenter, AlignJustify } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { ResponseLength, LengthOption } from '@/types/responseProfile';
 
 interface LengthStepProps {
@@ -14,14 +15,16 @@ const lengthIcons: Record<ResponseLength, React.ReactNode> = {
 };
 
 export function LengthStep({ value, onChange, lengths }: LengthStepProps) {
+  const { t } = useTranslation('settings');
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-dark-primary dark:text-text-primary">
-          Quelle longueur de réponse préférez-vous ?
+          {t('responseStyle.modal.length.title')}
         </h2>
         <p className="text-text-dark-secondary dark:text-text-secondary mt-2">
-          Vous pourrez toujours ajuster au cas par cas.
+          {t('responseStyle.modal.length.subtitle')}
         </p>
       </div>
 
@@ -71,7 +74,7 @@ export function LengthStep({ value, onChange, lengths }: LengthStepProps) {
               {length.description}
             </p>
             <p className="text-xs text-text-tertiary mt-2">
-              {length.wordRange.min}-{length.wordRange.max} mots
+              {t('responseStyle.modal.length.wordRange', { min: length.wordRange.min, max: length.wordRange.max })}
             </p>
           </button>
         ))}

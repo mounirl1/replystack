@@ -13,7 +13,6 @@ const extractors: Record<Platform, new () => BaseExtractor> = {
   tripadvisor: TripAdvisorExtractor,
   booking: BookingExtractor,
   yelp: YelpExtractor,
-  facebook: GoogleExtractor, // TODO: Create FacebookExtractor when API is available
 };
 
 /**
@@ -22,7 +21,6 @@ const extractors: Record<Platform, new () => BaseExtractor> = {
 export function getExtractor(platform: Platform): BaseExtractor | null {
   const ExtractorClass = extractors[platform];
   if (!ExtractorClass) {
-    console.warn(`[Extractors] No extractor found for platform: ${platform}`);
     return null;
   }
   return new ExtractorClass();
@@ -58,13 +56,6 @@ const platformPatterns: Array<{ platform: Platform; patterns: RegExp[] }> = [
     patterns: [
       /biz\.yelp\.com/i,
       /yelp\.com\/biz/i,
-    ],
-  },
-  {
-    platform: 'facebook',
-    patterns: [
-      /business\.facebook\.com/i,
-      /facebook\.com\/business/i,
     ],
   },
 ];

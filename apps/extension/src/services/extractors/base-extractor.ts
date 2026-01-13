@@ -39,9 +39,8 @@ export abstract class BaseExtractor {
       try {
         const el = container.querySelector(selector);
         if (el) return el;
-      } catch (e) {
+      } catch {
         // Invalid selector, continue to next
-        console.warn(`Invalid selector: ${selector}`);
       }
     }
     return null;
@@ -58,8 +57,8 @@ export abstract class BaseExtractor {
       try {
         const elements = container.querySelectorAll(selector);
         if (elements.length > 0) return Array.from(elements);
-      } catch (e) {
-        console.warn(`Invalid selector: ${selector}`);
+      } catch {
+        // Invalid selector, continue to next
       }
     }
     return [];

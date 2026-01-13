@@ -9,6 +9,7 @@ import { OnboardingModal } from '@/components/response-profile/OnboardingModal';
 import { ResponseProfileForm } from '@/components/response-profile/ResponseProfileForm';
 import { responseProfileApi } from '@/services/responseProfile';
 import { locationsApi } from '@/services/api';
+import { useTranslatedOptions } from '@/hooks/useTranslatedOptions';
 import type {
   ResponseProfileFormData,
   ResponseProfileOptions,
@@ -25,7 +26,8 @@ export function ResponseStylePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [locations, setLocations] = useState<Location[]>([]);
   const [selectedLocationId, setSelectedLocationId] = useState<number | null>(null);
-  const [options, setOptions] = useState<ResponseProfileOptions | null>(null);
+  const [rawOptions, setRawOptions] = useState<ResponseProfileOptions | null>(null);
+  const options = useTranslatedOptions(rawOptions);
   const [profileData, setProfileData] = useState<ResponseProfileFormData | null>(null);
   const [profileExists, setProfileExists] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
@@ -56,7 +58,7 @@ export function ResponseStylePage() {
       ]);
 
       setLocations(locationsData.locations || []);
-      setOptions(optionsData);
+      setRawOptions(optionsData);
 
       // Auto-select first location or from URL param
       const locationParam = searchParams.get('location');

@@ -94,7 +94,6 @@ export async function getLocationIdForCurrentPage(): Promise<number | null> {
   const locations = await getCachedLocations();
 
   if (!locations || locations.length === 0) {
-    console.log('[LocationMatcher] No cached locations');
     return null;
   }
 
@@ -105,24 +104,20 @@ export async function getLocationIdForCurrentPage(): Promise<number | null> {
   for (const location of locations) {
     // Check management URLs first
     if (matchByManagementUrl(location, url)) {
-      console.log(`[LocationMatcher] Matched by management URL: ${location.name}`);
       return location.id;
     }
 
     // Check identifiers
     if (matchByIdentifiers(location, urlIdentifiers)) {
-      console.log(`[LocationMatcher] Matched by identifier: ${location.name}`);
       return location.id;
     }
   }
 
   // Fallback: if user has only one location, use it
   if (locations.length === 1) {
-    console.log(`[LocationMatcher] Using single location fallback: ${locations[0].name}`);
     return locations[0].id;
   }
 
-  console.log('[LocationMatcher] No matching location found');
   return null;
 }
 
@@ -136,8 +131,6 @@ export async function getLocationsForPlatform(platform: Platform): Promise<Cache
     switch (platform) {
       case 'google':
         return !!loc.google_place_id;
-      case 'facebook':
-        return !!loc.facebook_page_id;
       case 'tripadvisor':
         return !!loc.tripadvisor_management_url;
       case 'booking':
@@ -166,10 +159,6 @@ export async function promptLocationSelection(): Promise<number | null> {
     return locations[0].id;
   }
 
-  // For multiple locations, we could:
-  // 1. Show a popup/modal in the page
-  // 2. Send a message to the popup to handle selection
-  // For now, return the first one
-  console.log('[LocationMatcher] Multiple locations, using first:', locations[0].name);
+  // For multiple locations, return the first one
   return locations[0].id;
 }

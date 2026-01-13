@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { X, ArrowLeft, ArrowRight, Check, SkipForward } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { BusinessSectorStep } from './steps/BusinessSectorStep';
@@ -33,6 +34,7 @@ export function OnboardingModal({
   options,
   locationName,
 }: OnboardingModalProps) {
+  const { t } = useTranslation('settings');
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<ResponseProfileFormData>({
     ...initialData,
@@ -60,22 +62,22 @@ export function OnboardingModal({
         break;
       case 2: // Tone
         if (!formData.tone) {
-          newErrors.tone = 'Veuillez sélectionner un ton';
+          newErrors.tone = t('responseStyle.errors.toneRequired');
         }
         break;
       case 3: // Length
         if (!formData.default_length) {
-          newErrors.default_length = 'Veuillez sélectionner une longueur';
+          newErrors.default_length = t('responseStyle.errors.lengthRequired');
         }
         break;
       case 5: // Negative strategy
         if (!formData.negative_strategy) {
-          newErrors.negative_strategy = 'Veuillez sélectionner une stratégie';
+          newErrors.negative_strategy = t('responseStyle.errors.strategyRequired');
         }
         break;
       case 6: // Business info
         if (!formData.business_name.trim()) {
-          newErrors.business_name = 'Le nom de l\'établissement est requis';
+          newErrors.business_name = t('responseStyle.errors.businessNameRequired');
         }
         break;
     }
@@ -211,7 +213,7 @@ export function OnboardingModal({
         {/* Step indicator */}
         <div className="px-6 pt-4">
           <p className="text-sm text-text-tertiary">
-            Étape {currentStep} sur {TOTAL_STEPS}
+            {t('responseStyle.modal.stepIndicator', { current: currentStep, total: TOTAL_STEPS })}
           </p>
         </div>
 
@@ -229,7 +231,7 @@ export function OnboardingModal({
                 onClick={handleBack}
                 leftIcon={<ArrowLeft size={16} />}
               >
-                Retour
+                {t('responseStyle.modal.buttons.back')}
               </Button>
             )}
           </div>
@@ -241,14 +243,14 @@ export function OnboardingModal({
                 onClick={handleSkip}
                 rightIcon={<SkipForward size={16} />}
               >
-                Passer
+                {t('responseStyle.modal.buttons.skip')}
               </Button>
             )}
             <Button
               onClick={handleNext}
               rightIcon={isLastStep ? <Check size={16} /> : <ArrowRight size={16} />}
             >
-              {isLastStep ? 'Terminer' : 'Suivant'}
+              {isLastStep ? t('responseStyle.modal.buttons.finish') : t('responseStyle.modal.buttons.next')}
             </Button>
           </div>
         </div>

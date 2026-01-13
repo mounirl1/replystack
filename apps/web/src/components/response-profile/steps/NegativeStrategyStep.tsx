@@ -1,4 +1,5 @@
 import { Check, Heart, Lightbulb, Phone, FileText, Gift } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import type { NegativeStrategy, NegativeStrategyOption } from '@/types/responseProfile';
 
 interface NegativeStrategyStepProps {
@@ -20,14 +21,16 @@ export function NegativeStrategyStep({
   onChange,
   strategies,
 }: NegativeStrategyStepProps) {
+  const { t } = useTranslation('settings');
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-dark-primary dark:text-text-primary">
-          Comment gérer les avis négatifs ?
+          {t('responseStyle.modal.negativeStrategy.title')}
         </h2>
         <p className="text-text-dark-secondary dark:text-text-secondary mt-2">
-          Choisissez l'approche qui correspond le mieux à votre philosophie.
+          {t('responseStyle.modal.negativeStrategy.subtitle')}
         </p>
       </div>
 

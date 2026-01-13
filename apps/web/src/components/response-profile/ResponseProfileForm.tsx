@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Sparkles, RotateCcw, Save, Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Card, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input, Textarea, Select } from '@/components/ui/Input';
@@ -31,6 +32,7 @@ export function ResponseProfileForm({
   isSaving,
   isResetting,
 }: ResponseProfileFormProps) {
+  const { t } = useTranslation('settings');
   const [_expandedSections, _setExpandedSections] = useState<Record<string, boolean>>({
     basic: true,
     elements: true,
@@ -48,14 +50,14 @@ export function ResponseProfileForm({
     label: s.label,
   }));
 
-  const toneOptions = options.tones.map((t) => ({
-    value: t.value,
-    label: t.label,
+  const toneOptions = options.tones.map((tone) => ({
+    value: tone.value,
+    label: tone.label,
   }));
 
   const lengthOptions = options.lengths.map((l) => ({
     value: l.value,
-    label: `${l.label} (${l.wordRange.min}-${l.wordRange.max} mots)`,
+    label: `${l.label} (${t('responseStyle.modal.length.wordRange', { min: l.wordRange.min, max: l.wordRange.max })})`,
   }));
 
   const strategyOptions = options.negativeStrategies.map((s) => ({
@@ -68,11 +70,11 @@ export function ResponseProfileForm({
       {/* Basic Settings */}
       <Card>
         <CardHeader
-          title="Paramètres de base"
-          description="Configuration principale de vos réponses"
+          title={t('responseStyle.form.sections.basic')}
+          description={t('responseStyle.form.sections.basicDescription')}
           action={
             <Badge variant="success" size="md">
-              Configuré
+              {t('responseStyle.form.badges.configured')}
             </Badge>
           }
         />
@@ -80,8 +82,8 @@ export function ResponseProfileForm({
         <div className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5">
             <Select
-              label="Secteur d'activité"
-              options={[{ value: '', label: 'Sélectionner...' }, ...sectorOptions]}
+              label={t('responseStyle.form.labels.sector')}
+              options={[{ value: '', label: t('responseStyle.form.placeholders.select') }, ...sectorOptions]}
               value={data.business_sector || ''}
               onChange={(e) =>
                 onChange({
@@ -91,25 +93,25 @@ export function ResponseProfileForm({
             />
 
             <Input
-              label="Nom de l'établissement"
+              label={t('responseStyle.form.labels.businessName')}
               value={data.business_name}
               onChange={(e) => onChange({ business_name: e.target.value })}
-              placeholder="Ex: Restaurant Le Petit Bistrot"
+              placeholder={t('responseStyle.form.placeholders.businessName')}
             />
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
             <Input
-              label="Ville / Localisation"
+              label={t('responseStyle.form.labels.city')}
               value={data.city}
               onChange={(e) => onChange({ city: e.target.value })}
-              placeholder="Ex: Paris, Lyon, Marseille..."
+              placeholder={t('responseStyle.seo.cityPlaceholder')}
             />
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
             <Select
-              label="Ton par défaut"
+              label={t('responseStyle.form.labels.defaultTone')}
               options={toneOptions}
               value={data.tone}
               onChange={(e) =>
@@ -118,7 +120,7 @@ export function ResponseProfileForm({
             />
 
             <Select
-              label="Longueur par défaut"
+              label={t('responseStyle.form.labels.defaultLength')}
               options={lengthOptions}
               value={data.default_length}
               onChange={(e) =>
@@ -131,7 +133,7 @@ export function ResponseProfileForm({
 
           <div className="grid sm:grid-cols-2 gap-5">
             <Select
-              label="Stratégie avis négatifs"
+              label={t('responseStyle.form.labels.negativeStrategy')}
               options={strategyOptions}
               value={data.negative_strategy}
               onChange={(e) =>
@@ -142,10 +144,10 @@ export function ResponseProfileForm({
             />
 
             <Input
-              label="Signature"
+              label={t('responseStyle.modal.businessInfo.signature')}
               value={data.signature}
               onChange={(e) => onChange({ signature: e.target.value })}
-              placeholder="Ex: L'équipe du Petit Bistrot"
+              placeholder={t('responseStyle.form.placeholders.signature')}
             />
           </div>
         </div>
@@ -154,8 +156,8 @@ export function ResponseProfileForm({
       {/* Include Elements */}
       <Card>
         <CardHeader
-          title="Éléments à inclure"
-          description="Personnalisez le contenu de vos réponses selon le type d'avis"
+          title={t('responseStyle.form.sections.elements')}
+          description={t('responseStyle.includeElements.description')}
         />
 
         <IncludeElementsTable
@@ -167,35 +169,35 @@ export function ResponseProfileForm({
       {/* Advanced Settings */}
       <Card>
         <CardHeader
-          title="Personnalisation avancée"
-          description="Affinez encore plus vos réponses"
+          title={t('responseStyle.form.sections.advanced')}
+          description={t('responseStyle.form.sections.advancedDescription')}
         />
 
         <div className="space-y-5">
           <Textarea
-            label="Points forts à mentionner"
+            label={t('responseStyle.form.labels.highlights')}
             value={data.highlights}
             onChange={(e) => onChange({ highlights: e.target.value })}
-            placeholder="Ex: Notre chef étoilé, Notre terrasse avec vue..."
-            hint="Ces éléments seront mentionnés quand c'est pertinent"
+            placeholder={t('responseStyle.modal.advanced.highlightsPlaceholder')}
+            hint={t('responseStyle.modal.advanced.highlightsHint')}
             rows={3}
           />
 
           <Textarea
-            label="Sujets à éviter"
+            label={t('responseStyle.form.labels.avoidTopics')}
             value={data.avoid_topics}
             onChange={(e) => onChange({ avoid_topics: e.target.value })}
-            placeholder="Ex: Ne jamais mentionner les prix..."
-            hint="Ces sujets ne seront jamais mentionnés"
+            placeholder={t('responseStyle.modal.advanced.avoidTopicsPlaceholder')}
+            hint={t('responseStyle.modal.advanced.avoidTopicsHint')}
             rows={3}
           />
 
           <Textarea
-            label="Contexte additionnel"
+            label={t('responseStyle.form.labels.additionalContext')}
             value={data.additional_context}
             onChange={(e) => onChange({ additional_context: e.target.value })}
-            placeholder="Ex: Nous venons de rénover notre espace..."
-            hint="Informations supplémentaires pour contextualiser vos réponses"
+            placeholder={t('responseStyle.modal.advanced.additionalContextPlaceholder')}
+            hint={t('responseStyle.modal.advanced.additionalContextHint')}
             rows={3}
           />
         </div>
@@ -204,32 +206,32 @@ export function ResponseProfileForm({
       {/* SEO Optimization */}
       <Card>
         <CardHeader
-          title="Optimisation SEO"
-          description="Améliorez le référencement de vos réponses"
+          title={t('responseStyle.seo.title')}
+          description={t('responseStyle.seo.description')}
           action={
             <div className="flex items-center gap-2 text-text-tertiary">
               <Search size={16} />
-              <span className="text-xs">Optionnel</span>
+              <span className="text-xs">{t('responseStyle.seo.optional')}</span>
             </div>
           }
         />
 
         <div className="space-y-5">
           <Textarea
-            label="Mots-clés SEO"
+            label={t('responseStyle.seo.keywords')}
             value={data.seo_keywords}
             onChange={(e) => onChange({ seo_keywords: e.target.value })}
-            placeholder="Ex: restaurant gastronomique, cuisine française, terrasse..."
-            hint="Mots-clés à intégrer naturellement dans vos réponses"
+            placeholder={t('responseStyle.seo.keywordsPlaceholder')}
+            hint={t('responseStyle.seo.keywordsHint')}
             rows={2}
           />
 
           <Textarea
-            label="Services / Produits principaux"
+            label={t('responseStyle.seo.services')}
             value={data.main_services}
             onChange={(e) => onChange({ main_services: e.target.value })}
-            placeholder="Ex: brunch du dimanche, menu dégustation, cave à vin..."
-            hint="Services ou produits phares à mentionner si pertinent"
+            placeholder={t('responseStyle.seo.servicesPlaceholder')}
+            hint={t('responseStyle.seo.servicesHint')}
             rows={2}
           />
         </div>
@@ -243,7 +245,7 @@ export function ResponseProfileForm({
             onClick={onRedoOnboarding}
             leftIcon={<Sparkles size={16} />}
           >
-            Refaire l'onboarding
+            {t('responseStyle.form.buttons.redoOnboarding')}
           </Button>
           <Button
             variant="outline"
@@ -251,7 +253,7 @@ export function ResponseProfileForm({
             isLoading={isResetting}
             leftIcon={<RotateCcw size={16} />}
           >
-            Réinitialiser
+            {t('responseStyle.form.buttons.reset')}
           </Button>
         </div>
 
@@ -260,7 +262,7 @@ export function ResponseProfileForm({
           isLoading={isSaving}
           leftIcon={<Save size={16} />}
         >
-          Enregistrer les modifications
+          {t('responseStyle.form.buttons.save')}
         </Button>
       </div>
     </div>

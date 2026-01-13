@@ -73,7 +73,6 @@ export class BookingExtractor extends BaseExtractor {
 
   extractAll(): ExtractedReview[] {
     const elements = this.getReviewElements();
-    console.log(`[BookingExtractor] Found ${elements.length} review elements`);
 
     return elements
       .map((el) => this.extractOne(el))
@@ -130,8 +129,7 @@ export class BookingExtractor extends BaseExtractor {
         publishedAt,
         hasResponse,
       };
-    } catch (e) {
-      console.error('[BookingExtractor] Failed to extract review:', e);
+    } catch {
       return null;
     }
   }

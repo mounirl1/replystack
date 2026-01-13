@@ -1,4 +1,5 @@
 import { Input } from '@/components/ui/Input';
+import { useTranslation } from 'react-i18next';
 
 interface BusinessInfoStepProps {
   businessName: string;
@@ -18,40 +19,42 @@ export function BusinessInfoStep({
   onSignatureChange,
   errors,
 }: BusinessInfoStepProps) {
+  const { t } = useTranslation('settings');
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h2 className="text-xl font-semibold text-text-dark-primary dark:text-text-primary">
-          Informations de votre établissement
+          {t('responseStyle.modal.businessInfo.title')}
         </h2>
         <p className="text-text-dark-secondary dark:text-text-secondary mt-2">
-          Ces informations seront utilisées dans vos réponses.
+          {t('responseStyle.modal.businessInfo.subtitle')}
         </p>
       </div>
 
       <div className="space-y-5">
         <Input
-          label="Nom de l'établissement"
+          label={t('responseStyle.modal.businessInfo.businessName')}
           value={businessName}
           onChange={(e) => onBusinessNameChange(e.target.value)}
-          placeholder="Ex: Restaurant Le Petit Bistrot"
+          placeholder={t('responseStyle.form.placeholders.businessName')}
           error={errors?.business_name}
-          hint="Ce nom sera mentionné dans vos réponses"
+          hint={t('responseStyle.modal.businessInfo.businessNameHint')}
         />
 
         <Input
-          label="Signature (optionnel)"
+          label={t('responseStyle.modal.businessInfo.signature')}
           value={signature}
           onChange={(e) => onSignatureChange(e.target.value)}
-          placeholder="Ex: L'équipe du Petit Bistrot"
+          placeholder={t('responseStyle.form.placeholders.signature')}
           error={errors?.signature}
-          hint="Cette signature apparaîtra à la fin de vos réponses"
+          hint={t('responseStyle.modal.businessInfo.signatureHint')}
         />
 
         <div className="p-4 bg-light-hover dark:bg-dark-hover rounded-xl">
-          <p className="text-xs text-text-tertiary mb-2">Aperçu de la fin de réponse :</p>
+          <p className="text-xs text-text-tertiary mb-2">{t('responseStyle.modal.businessInfo.previewLabel')}</p>
           <p className="text-sm text-text-dark-secondary dark:text-text-secondary italic">
-            "Nous espérons vous revoir très bientôt{businessName ? ` chez ${businessName}` : ''} !
+            "{t('responseStyle.modal.businessInfo.previewText', { businessName: businessName ? t('responseStyle.modal.businessInfo.previewAt', { name: businessName }) : '' })}
             {signature && (
               <>
                 <br />

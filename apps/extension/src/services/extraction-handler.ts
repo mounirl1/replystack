@@ -62,6 +62,25 @@ async function cacheLocationsViaBackground(): Promise<void> {
   });
 }
 
+// Inject toast animation styles once
+function ensureToastStyles(): void {
+  if (document.getElementById('replystack-toast-styles')) return;
+
+  const style = document.createElement('style');
+  style.id = 'replystack-toast-styles';
+  style.textContent = `
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 /**
  * Show a toast notification for sync results
  */
@@ -70,6 +89,8 @@ export function showSyncNotification(result: SyncResult): void {
 
   const existingToast = document.getElementById('replystack-sync-toast');
   if (existingToast) existingToast.remove();
+
+  ensureToastStyles();
 
   const toast = document.createElement('div');
   toast.id = 'replystack-sync-toast';
@@ -93,20 +114,6 @@ export function showSyncNotification(result: SyncResult): void {
     align-items: center;
     animation: slideIn 0.3s ease-out;
   `;
-
-  // Add animation
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideIn {
-      from { transform: translateX(100%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideOut {
-      from { transform: translateX(0); opacity: 1; }
-      to { transform: translateX(100%); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
 
   document.body.appendChild(toast);
 
@@ -173,20 +180,17 @@ export async function extractAndSync(
   // Check authentication
   const authenticated = await isAuthenticated();
   if (!authenticated) {
-    console.log('[ExtractionHandler] Not authenticated, skipping sync');
     return null;
   }
 
   // Get location ID
   const locationId = await getLocationIdForCurrentPage();
   if (!locationId) {
-    console.log('[ExtractionHandler] No matching location found, skipping sync');
     return null;
   }
 
   // Extract reviews (use async version for expandable content)
   const reviews = await extractor.extractAllAsync();
-  console.log(`[ExtractionHandler] Extracted ${reviews.length} reviews for platform ${extractor.platform}`);
 
   if (reviews.length === 0) {
     return { created: 0, updated: 0, unchanged: 0 };
@@ -200,8 +204,7 @@ export async function extractAndSync(
     }
 
     return result;
-  } catch (error) {
-    console.error('[ExtractionHandler] Sync failed:', error);
+  } catch {
     if (showNotification) {
       showErrorNotification('Failed to sync reviews');
     }
@@ -232,7 +235,6 @@ export function setupExtractionObserver(
 
   const container = document.querySelector(containerSelector);
   if (!container) {
-    console.log('[ExtractionHandler] Container not found:', containerSelector);
     return null;
   }
 
@@ -266,8 +268,6 @@ export function handleExtractionMessages(extractor: BaseExtractor): void {
       sendResponse: (response: any) => void
     ) => {
       if (message.type === 'REQUEST_EXTRACTION') {
-        console.log('[ExtractionHandler] Received extraction request:', message);
-
         (async () => {
           try {
             const reviews = await extractor.extractAllAsync();
@@ -291,7 +291,6 @@ export function handleExtractionMessages(extractor: BaseExtractor): void {
               sendResponse({ success: true, result: { created: 0, updated: 0, unchanged: 0 } });
             }
           } catch (error) {
-            console.error('[ExtractionHandler] Extraction failed:', error);
             sendResponse({
               success: false,
               error: error instanceof Error ? error.message : 'Unknown error'
@@ -305,6 +304,17 @@ export function handleExtractionMessages(extractor: BaseExtractor): void {
   );
 }
 
+// Store active observers for cleanup
+const activeObservers: MutationObserver[] = [];
+
+/**
+ * Cleanup all active observers (call on page unload)
+ */
+export function cleanupObservers(): void {
+  activeObservers.forEach((observer) => observer.disconnect());
+  activeObservers.length = 0;
+}
+
 /**
  * Initialize extraction for a content script
  * Call this at the end of each content script
@@ -313,8 +323,6 @@ export async function initializeExtraction(
   extractor: BaseExtractor,
   containerSelectors: string[] = ['body']
 ): Promise<void> {
-  console.log(`[ExtractionHandler] Initializing extraction for ${extractor.platform}`);
-
   // Cache locations on first load
   await cacheLocationsViaBackground();
 
@@ -325,9 +333,15 @@ export async function initializeExtraction(
 
   // Setup observer for dynamic content
   for (const selector of containerSelectors) {
-    setupExtractionObserver(extractor, selector);
+    const observer = setupExtractionObserver(extractor, selector);
+    if (observer) {
+      activeObservers.push(observer);
+    }
   }
 
   // Handle extraction request messages
   handleExtractionMessages(extractor);
+
+  // Cleanup observers on page unload
+  window.addEventListener('beforeunload', cleanupObservers);
 }

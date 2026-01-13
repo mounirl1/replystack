@@ -6,8 +6,30 @@ export {};
 
 const API_URL = process.env.PLASMO_PUBLIC_API_URL || 'http://localhost:8000';
 
+// Allowed message types for security
+const ALLOWED_MESSAGE_TYPES = [
+  'GENERATE_REPLY',
+  'GET_AUTH_STATUS',
+  'CHECK_AUTH',
+  'REFRESH_QUOTA',
+  'LOGIN',
+  'REGISTER',
+  'SYNC_REVIEWS',
+  'CACHE_LOCATIONS',
+] as const;
+
 // Listen for messages from content scripts and popup
-chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // Security: Only accept messages from our own extension
+  if (sender.id !== chrome.runtime.id) {
+    return false;
+  }
+
+  // Security: Validate message type
+  if (!request?.type || !ALLOWED_MESSAGE_TYPES.includes(request.type)) {
+    return false;
+  }
+
   switch (request.type) {
     case 'GENERATE_REPLY':
       handleGenerateReply(request.payload)
@@ -84,8 +106,6 @@ async function handleGenerateReply(payload: {
     throw new Error('SIGN_IN_REQUIRED');
   }
 
-  console.log('[Background] Generating reply for:', payload.platform, 'location:', payload.location_id);
-
   const response = await fetch(`${API_URL}/api/replies/generate`, {
     method: 'POST',
     headers: {
@@ -103,7 +123,6 @@ async function handleGenerateReply(payload: {
     } catch {
       error = { message: `HTTP ${response.status}` };
     }
-    console.error('[Background] Generate failed:', response.status, error);
 
     if (response.status === 401) {
       throw new Error('Session expired. Please sign in again.');
@@ -122,7 +141,6 @@ async function handleGenerateReply(payload: {
   }
 
   const data = await response.json();
-  console.log('[Background] Generate success, reply length:', data.reply?.length || 0);
 
   // Update user quota in storage
   if (data.quota_remaining !== undefined) {
@@ -309,8 +327,6 @@ async function handleSyncReviews(payload: {
     return { created: 0, updated: 0, unchanged: 0 };
   }
 
-  console.log(`[Background] Syncing ${payload.reviews.length} ${payload.platform} reviews for location ${payload.locationId}`);
-
   const response = await fetch(`${API_URL}/api/reviews/sync`, {
     method: 'POST',
     headers: {
@@ -326,13 +342,10 @@ async function handleSyncReviews(payload: {
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    console.error(`[Background] Sync failed: ${response.status}`, errorText);
     throw new Error(`Sync failed: ${response.status}`);
   }
 
   const result = await response.json();
-  console.log(`[Background] Sync complete:`, result);
   return result;
 }
 
@@ -342,7 +355,6 @@ async function handleSyncReviews(payload: {
 async function handleCacheLocations() {
   const { token } = await getAuthState();
   if (!token) {
-    console.log('[Background] No auth token, skipping cache locations');
     return;
   }
 
@@ -365,26 +377,18 @@ async function handleCacheLocations() {
       } else if (Array.isArray(data.locations)) {
         locations = data.locations;
       } else {
-        console.warn('[Background] Unexpected API response format:', data);
         locations = [];
       }
 
       await chrome.storage.local.set({ locations });
-      console.log(`[Background] Cached ${locations.length} locations`);
     }
-  } catch (error) {
-    console.error('[Background] Error caching locations:', error);
+  } catch {
+    // Silently fail - locations will be cached on next attempt
   }
 }
 
 // Listen for installation/update
-chrome.runtime.onInstalled.addListener((details) => {
-  if (details.reason === 'install') {
-    console.log('ReplyStack extension installed');
-  } else if (details.reason === 'update') {
-    console.log('ReplyStack extension updated');
-  }
-
+chrome.runtime.onInstalled.addListener(() => {
   // Schedule auto-extraction for paid plans
   scheduleAutoExtraction();
 
@@ -394,8 +398,6 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 // Listen for browser startup
 chrome.runtime.onStartup.addListener(() => {
-  console.log('Browser started, checking auto-extraction...');
-
   // Cache locations
   cacheLocations();
 

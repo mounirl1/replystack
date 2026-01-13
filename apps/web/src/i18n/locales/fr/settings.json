@@ -61,7 +61,99 @@
       "load": "Erreur lors du chargement des données",
       "loadProfile": "Erreur lors du chargement du profil",
       "save": "Erreur lors de la sauvegarde",
-      "reset": "Erreur lors de la réinitialisation"
+      "reset": "Erreur lors de la réinitialisation",
+      "toneRequired": "Veuillez sélectionner un ton",
+      "lengthRequired": "Veuillez sélectionner une longueur",
+      "strategyRequired": "Veuillez sélectionner une stratégie",
+      "businessNameRequired": "Le nom de l'établissement est requis"
+    },
+    "modal": {
+      "stepIndicator": "Étape {{current}} sur {{total}}",
+      "buttons": {
+        "back": "Retour",
+        "skip": "Passer",
+        "next": "Suivant",
+        "finish": "Terminer"
+      },
+      "businessSector": {
+        "title": "Quel est votre secteur d'activité ?",
+        "subtitle": "Cela nous aide à personnaliser le style de vos réponses."
+      },
+      "tone": {
+        "title": "Quel ton souhaitez-vous adopter ?",
+        "subtitle": "Le ton définit la personnalité de vos réponses.",
+        "example": "Exemple :"
+      },
+      "length": {
+        "title": "Quelle longueur de réponse préférez-vous ?",
+        "subtitle": "Vous pourrez toujours ajuster au cas par cas.",
+        "wordRange": "{{min}}-{{max}} mots"
+      },
+      "negativeStrategy": {
+        "title": "Comment gérer les avis négatifs ?",
+        "subtitle": "Choisissez l'approche qui correspond le mieux à votre philosophie."
+      },
+      "businessInfo": {
+        "title": "Informations de votre établissement",
+        "subtitle": "Ces informations seront utilisées dans vos réponses.",
+        "businessName": "Nom de l'établissement",
+        "businessNameHint": "Ce nom sera mentionné dans vos réponses",
+        "signature": "Signature (optionnel)",
+        "signatureHint": "Cette signature apparaîtra à la fin de vos réponses",
+        "previewLabel": "Aperçu de la fin de réponse :",
+        "previewText": "Nous espérons vous revoir très bientôt{{businessName}} !",
+        "previewAt": " chez {{name}}"
+      },
+      "advanced": {
+        "title": "Personnalisation avancée",
+        "subtitle": "Affinez encore plus vos réponses (optionnel).",
+        "highlights": "Points forts à mentionner",
+        "highlightsHint": "Ces éléments seront mentionnés quand c'est pertinent",
+        "highlightsPlaceholder": "Ex: vue panoramique, produits bio, voiturier...",
+        "avoidTopics": "Sujets à éviter",
+        "avoidTopicsHint": "Ces sujets ne seront jamais mentionnés",
+        "avoidTopicsPlaceholder": "Ex: concurrents, prix spécifiques, controverses...",
+        "additionalContext": "Contexte additionnel",
+        "additionalContextHint": "Informations supplémentaires pour contextualiser vos réponses",
+        "additionalContextPlaceholder": "Ex: Établissement familial depuis 1985, membre des Relais & Châteaux...",
+        "optionalNote": "Cette étape est optionnelle. Vous pouvez la compléter plus tard dans les paramètres."
+      }
+    },
+    "form": {
+      "sections": {
+        "basic": "Paramètres de base",
+        "basicDescription": "Configuration principale de vos réponses",
+        "elements": "Éléments à inclure",
+        "advanced": "Paramètres avancés",
+        "advancedDescription": "Affinez encore plus vos réponses"
+      },
+      "badges": {
+        "configured": "Configuré",
+        "optional": "Optionnel"
+      },
+      "labels": {
+        "sector": "Secteur d'activité",
+        "businessName": "Nom de l'établissement",
+        "city": "Ville / Localisation",
+        "defaultTone": "Ton par défaut",
+        "defaultLength": "Longueur par défaut",
+        "negativeStrategy": "Stratégie avis négatifs",
+        "highlights": "Points forts à mentionner",
+        "avoidTopics": "Sujets à éviter",
+        "additionalContext": "Contexte additionnel",
+        "seoKeywords": "Mots-clés SEO",
+        "mainServices": "Services / Produits principaux"
+      },
+      "placeholders": {
+        "select": "Sélectionner...",
+        "businessName": "Ex: Restaurant Le Petit Bistrot",
+        "signature": "Ex: L'équipe du Petit Bistrot"
+      },
+      "buttons": {
+        "redoOnboarding": "Refaire l'onboarding",
+        "reset": "Réinitialiser",
+        "save": "Enregistrer les modifications"
+      }
     },
     "includeElements": {
       "title": "Éléments à inclure selon le type d'avis",
@@ -92,6 +184,91 @@
       "services": "Services / Produits principaux",
       "servicesPlaceholder": "Ex: brunch du dimanche, menu dégustation, cave à vin...",
       "servicesHint": "Services ou produits phares à mentionner si pertinent"
+    },
+    "options": {
+      "sectors": {
+        "hotel": "Hôtel / Hébergement",
+        "restaurant": "Restaurant / Café / Bar",
+        "retail": "Commerce de détail",
+        "spa": "Spa / Bien-être / Salon de beauté",
+        "fitness": "Salle de sport / Fitness",
+        "real_estate": "Agence immobilière",
+        "medical": "Cabinet médical / Dentiste / Clinique",
+        "automotive": "Garage / Concession auto",
+        "artisan": "Artisan / Services à domicile",
+        "events": "Événementiel / Traiteur",
+        "tourism": "Tourisme / Activités de loisirs",
+        "education": "Éducation / Formation",
+        "ecommerce": "E-commerce",
+        "b2b": "Services B2B",
+        "veterinary": "Vétérinaire / Animalerie",
+        "creative": "Photographe / Créatif",
+        "travel": "Agence de voyage",
+        "other": "Autre"
+      },
+      "tones": {
+        "professional": {
+          "label": "Professionnel",
+          "description": "Ton courtois et formel, idéal pour les services B2B ou médicaux.",
+          "example": "Nous vous remercions pour votre retour et restons à votre disposition."
+        },
+        "warm": {
+          "label": "Chaleureux",
+          "description": "Ton chaleureux et personnel, parfait pour les restaurants et hôtels.",
+          "example": "Merci beaucoup pour ces mots qui nous touchent ! Votre visite nous a fait plaisir."
+        },
+        "casual": {
+          "label": "Décontracté",
+          "description": "Ton décontracté et amical, adapté aux commerces de proximité.",
+          "example": "Super content que ça vous ait plu ! À très vite chez nous !"
+        },
+        "luxury": {
+          "label": "Luxe / Premium",
+          "description": "Ton raffiné et élégant, pour les établissements haut de gamme.",
+          "example": "Nous sommes honorés de votre témoignage et espérons avoir le privilège de vous accueillir à nouveau."
+        },
+        "dynamic": {
+          "label": "Dynamique",
+          "description": "Ton énergique et enthousiaste, idéal pour le sport et les loisirs.",
+          "example": "Génial ! Votre énergie positive nous motive ! Hâte de vous revoir pour de nouvelles aventures !"
+        }
+      },
+      "lengths": {
+        "short": {
+          "label": "Courte",
+          "description": "2-3 phrases, va droit au but."
+        },
+        "medium": {
+          "label": "Moyenne",
+          "description": "4-5 phrases, équilibre entre concision et personnalisation."
+        },
+        "detailed": {
+          "label": "Détaillée",
+          "description": "6-8 phrases, réponse complète et personnalisée."
+        }
+      },
+      "negativeStrategies": {
+        "empathetic": {
+          "label": "Empathique",
+          "description": "Montrer de l'empathie, s'excuser sincèrement et reconnaître le problème."
+        },
+        "solution": {
+          "label": "Orienté solution",
+          "description": "Proposer une solution concrète ou expliquer les mesures prises."
+        },
+        "contact": {
+          "label": "Invitation au contact",
+          "description": "Inviter le client à nous contacter directement pour résoudre le problème."
+        },
+        "factual": {
+          "label": "Factuel",
+          "description": "Répondre factuellement, clarifier si nécessaire, rester neutre."
+        },
+        "reconquest": {
+          "label": "Reconquête",
+          "description": "Offrir une compensation ou invitation à revenir pour une meilleure expérience."
+        }
+      }
     }
   },
   "language": {

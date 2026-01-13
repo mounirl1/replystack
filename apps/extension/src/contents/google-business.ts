@@ -837,17 +837,8 @@ async function showReplyPopup(reviewData: ReviewData, reviewEl: HTMLElement) {
         copyBtn.textContent = t('modal.copy');
       }, 2000);
     } catch {
-      // Fallback
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-      copyBtn.textContent = t('modal.copied');
-      setTimeout(() => {
-        copyBtn.textContent = t('modal.copy');
-      }, 2000);
+      // Clipboard API failed - show error to user
+      copyBtn.textContent = t('modal.copy');
     }
   });
 
@@ -1013,7 +1004,6 @@ function injectSyncButton() {
   }
 
   if (!header) {
-    console.log('[GoogleBusiness] Header not found for sync button');
     return;
   }
 
@@ -1060,8 +1050,7 @@ function injectSyncButton() {
       } else {
         syncBtn.innerHTML = '⚠ No reviews';
       }
-    } catch (error) {
-      console.error('[GoogleBusiness] Manual sync failed:', error);
+    } catch {
       showErrorNotification('Failed to sync reviews');
       syncBtn.innerHTML = '⚠ Failed';
       syncBtn.style.background = 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)';
@@ -1079,7 +1068,6 @@ function injectSyncButton() {
   });
 
   header.appendChild(syncBtn);
-  console.log('[GoogleBusiness] Sync button injected');
 }
 
 // Initialize

@@ -78,7 +78,6 @@ export class TripAdvisorExtractor extends BaseExtractor {
 
   extractAll(): ExtractedReview[] {
     const elements = this.getReviewElements();
-    console.log(`[TripAdvisorExtractor] Found ${elements.length} review elements`);
 
     return elements
       .map((el) => this.extractOne(el))
@@ -154,8 +153,7 @@ export class TripAdvisorExtractor extends BaseExtractor {
         publishedAt,
         hasResponse,
       };
-    } catch (e) {
-      console.error('[TripAdvisorExtractor] Failed to extract review:', e);
+    } catch {
       return null;
     }
   }
