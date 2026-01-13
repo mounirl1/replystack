@@ -31,10 +31,15 @@ export interface Review {
   time_ago: string;
   status: ReviewStatus;
   replied_at?: string;
+  // Existing response (scraped from platform)
+  has_response: boolean;
+  response_content?: string;
+  response_published_at?: string;
   location: ReviewLocation;
   responses_count: number;
   latest_response?: ReviewResponse;
   can_publish_via_api: boolean;
+  platform_url?: string | null;
 }
 
 export interface ReviewStats {
@@ -49,27 +54,50 @@ export interface ReviewStats {
   trend: Array<{ date: string; count: number }>;
 }
 
+export type ContentFilter = 'all' | 'with_text' | 'without_text';
+
 export interface ReviewFilters {
   location_id?: number;
   platform?: Platform[];
   status?: ReviewStatus[];
-  rating_min?: number;
-  rating_max?: number;
+  ratings?: number[];
   date_from?: string;
   date_to?: string;
   search?: string;
+  has_content?: ContentFilter;
 }
 
 export interface ReviewsResponse {
   data: Review[];
   meta: {
-    total: number;
+    current_page: number;
+    last_page: number;
     per_page: number;
-    next_cursor: string | null;
-    prev_cursor: string | null;
+    total: number;
+    from: number | null;
+    to: number | null;
+    path: string;
+  };
+  links: {
+    first: string | null;
+    last: string | null;
+    prev: string | null;
+    next: string | null;
   };
 }
 
 export interface ReviewStatsResponse {
   stats: ReviewStats;
+}
+
+export interface ReviewSummary {
+  id: number;
+  summary: string;
+  strengths: string[];
+  improvements: string[];
+  keywords: string[];
+  review_count: number;
+  tokens_used: number;
+  created_at: string;
+  updated_at: string;
 }

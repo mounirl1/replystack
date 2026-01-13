@@ -10,8 +10,8 @@ interface Location {
   name: string;
   google_place_id?: string | null;
   facebook_page_id?: string | null;
-  google_access_token?: string | null;
-  facebook_access_token?: string | null;
+  has_google_connection?: boolean;
+  has_facebook_connection?: boolean;
 }
 
 interface FetchButtonProps {
@@ -38,7 +38,7 @@ export function FetchButton({ locations }: FetchButtonProps) {
 
     for (const loc of locations) {
       // Google
-      if (loc.google_place_id && loc.google_access_token) {
+      if (loc.has_google_connection) {
         const existing = platforms.find((p) => p.platform === 'google');
         if (!existing) {
           platforms.push({
@@ -50,7 +50,7 @@ export function FetchButton({ locations }: FetchButtonProps) {
       }
 
       // Facebook
-      if (loc.facebook_page_id && loc.facebook_access_token) {
+      if (loc.has_facebook_connection) {
         const existing = platforms.find((p) => p.platform === 'facebook');
         if (!existing) {
           platforms.push({

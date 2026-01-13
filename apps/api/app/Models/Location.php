@@ -49,6 +49,27 @@ class Location extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'google_access_token',
+        'google_refresh_token',
+        'facebook_access_token',
+    ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var list<string>
+     */
+    protected $appends = [
+        'has_google_connection',
+        'has_facebook_connection',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
@@ -143,6 +164,22 @@ class Location extends Model
     public function getPendingReviewsCountAttribute(): int
     {
         return $this->reviews()->where('status', 'pending')->count();
+    }
+
+    /**
+     * Get has_google_connection attribute for serialization.
+     */
+    public function getHasGoogleConnectionAttribute(): bool
+    {
+        return $this->hasGoogleConnection();
+    }
+
+    /**
+     * Get has_facebook_connection attribute for serialization.
+     */
+    public function getHasFacebookConnectionAttribute(): bool
+    {
+        return $this->hasFacebookConnection();
     }
 
     /**

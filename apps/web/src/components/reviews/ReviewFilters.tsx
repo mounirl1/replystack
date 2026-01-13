@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search, X, ChevronDown, Filter } from 'lucide-react';
 import { PlatformIcon, getPlatformName } from '../ui/PlatformIcon';
-import type { ReviewFilters as Filters, Platform, ReviewStatus } from '../../types/review';
+import type { ReviewFilters as Filters, Platform, ReviewStatus, ContentFilter } from '../../types/review';
 
 interface Location {
   id: number;
@@ -18,6 +18,7 @@ interface ReviewFiltersProps {
 
 const PLATFORMS: Platform[] = ['google', 'tripadvisor', 'booking', 'yelp', 'facebook'];
 const STATUSES: ReviewStatus[] = ['pending', 'replied', 'ignored'];
+const CONTENT_FILTERS: ContentFilter[] = ['all', 'with_text', 'without_text'];
 const PERIODS = [
   { value: '7', label: '7 days' },
   { value: '30', label: '30 days' },
@@ -69,11 +70,25 @@ export function ReviewFilters({
     [filters, onFiltersChange]
   );
 
-  const setRatingMin = useCallback(
-    (rating: number | null) => {
+  const toggleRating = useCallback(
+    (rating: number) => {
+      const current = filters.ratings || [];
+      const newRatings = current.includes(rating)
+        ? current.filter((r) => r !== rating)
+        : [...current, rating].sort((a, b) => a - b);
       onFiltersChange({
         ...filters,
-        rating_min: rating || undefined,
+        ratings: newRatings.length > 0 ? newRatings : undefined,
+      });
+    },
+    [filters, onFiltersChange]
+  );
+
+  const setContentFilter = useCallback(
+    (contentFilter: ContentFilter) => {
+      onFiltersChange({
+        ...filters,
+        has_content: contentFilter === 'all' ? undefined : contentFilter,
       });
     },
     [filters, onFiltersChange]
@@ -87,12 +102,13 @@ export function ReviewFilters({
   const hasActiveFilters =
     filters.platform?.length ||
     filters.status?.length ||
-    filters.rating_min ||
+    filters.ratings?.length ||
     filters.search ||
-    filters.location_id;
+    filters.location_id ||
+    filters.has_content;
 
   return (
-    <div className="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl p-4 mb-6">
+    <div className="bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-xl p-4">
       {/* Main row */}
       <div className="flex flex-wrap items-center gap-3">
         {/* Search */}
@@ -233,31 +249,55 @@ export function ReviewFilters({
           {/* Rating */}
           <div>
             <label className="block text-sm font-medium text-secondary dark:text-dark-secondary mb-2">
-              {t('reviews.filters.minRating')}
+              {t('reviews.filters.rating')}
             </label>
-            <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map((rating) => (
-                <button
-                  key={rating}
-                  onClick={() =>
-                    setRatingMin(filters.rating_min === rating ? null : rating)
-                  }
-                  className={`p-2 rounded-lg border transition-all ${
-                    filters.rating_min && filters.rating_min <= rating
-                      ? 'bg-yellow-50 dark:bg-yellow-900/30 border-yellow-400 text-yellow-500'
-                      : 'border-light-border dark:border-dark-border hover:border-yellow-300 text-gray-300 dark:text-gray-600'
-                  }`}
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </button>
-              ))}
-              {filters.rating_min && (
-                <span className="flex items-center ml-2 text-sm text-tertiary">
-                  {t('reviews.filters.andAbove', { rating: filters.rating_min })}
-                </span>
-              )}
+            <div className="flex gap-2">
+              {[5, 4, 3, 2, 1].map((rating) => {
+                const isActive = filters.ratings?.includes(rating);
+                return (
+                  <button
+                    key={rating}
+                    onClick={() => toggleRating(rating)}
+                    className={`flex items-center gap-1 px-3 py-1.5 text-sm rounded-full border transition-all ${
+                      isActive
+                        ? 'bg-yellow-50 dark:bg-yellow-900/30 border-yellow-400 text-yellow-600 dark:text-yellow-400'
+                        : 'border-light-border dark:border-dark-border hover:border-yellow-300 text-secondary dark:text-dark-secondary'
+                    }`}
+                  >
+                    <svg className={`w-4 h-4 ${isActive ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`} viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <span>{rating}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Content filter */}
+          <div>
+            <label className="block text-sm font-medium text-secondary dark:text-dark-secondary mb-2">
+              {t('reviews.filters.content')}
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {CONTENT_FILTERS.map((contentFilter) => {
+                const isActive = contentFilter === 'all'
+                  ? !filters.has_content
+                  : filters.has_content === contentFilter;
+                return (
+                  <button
+                    key={contentFilter}
+                    onClick={() => setContentFilter(contentFilter)}
+                    className={`px-3 py-1.5 text-sm rounded-full border transition-all ${
+                      isActive
+                        ? 'bg-primary-50 dark:bg-primary-900/30 border-primary-500 text-primary-700 dark:text-primary-300'
+                        : 'border-light-border dark:border-dark-border hover:border-primary-300'
+                    }`}
+                  >
+                    {t(`reviews.filters.contentOptions.${contentFilter}`)}
+                  </button>
+                );
+              })}
             </div>
           </div>
 

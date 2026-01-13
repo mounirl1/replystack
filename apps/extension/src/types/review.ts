@@ -10,6 +10,7 @@ export interface ExtractedReview {
   language?: string;
   publishedAt: string; // ISO format
   hasResponse: boolean;
+  responseContent?: string; // Owner's reply content if exists
 }
 
 /**

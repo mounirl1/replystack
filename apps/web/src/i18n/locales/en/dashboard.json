@@ -67,6 +67,34 @@
   "reviews": {
     "title": "Reviews",
     "subtitle": "Manage and respond to your customer reviews",
+    "sidebar": {
+      "overview": "Overview",
+      "averageRating": "Average rating",
+      "recent30days": "Last 30 days",
+      "ratingDistribution": "Rating Distribution",
+      "aiSummary": "AI Reviews Summary",
+      "strengths": "Strengths",
+      "improvements": "Areas for improvement",
+      "keywords": "Keywords",
+      "generateButton": "Generate AI Summary",
+      "generateDescription": "Analyze your reviews with AI to identify trends and insights.",
+      "minReviewsRequired": "At least {{count}} reviews required to generate a summary.",
+      "confirmTitle": "Generate AI Summary?",
+      "confirmMessage": "This will use 1 response credit. Do you want to continue?",
+      "confirmCancel": "Cancel",
+      "confirmGenerate": "Generate",
+      "regenerateButton": "Regenerate Summary",
+      "generatedAt": "Generated on {{date}}",
+      "analyzedReviews": "{{count}} reviews analyzed",
+      "generating": "Generating...",
+      "errorLoading": "Failed to load summary",
+      "errorGenerating": "Failed to generate summary",
+      "noQuotaWarning": "You have no credits remaining",
+      "upgradeTitle": "No Credits Left",
+      "upgradeMessage": "You have no credits remaining. Upgrade your plan to continue generating summaries.",
+      "upgradeLater": "Later",
+      "upgradeNow": "View Plans"
+    },
     "status": {
       "pending": "Pending",
       "replied": "Replied",
@@ -76,6 +104,7 @@
       "total": "Total Reviews",
       "pending": "Pending",
       "avgRating": "Avg. Rating",
+      "averageRating": "Average Rating",
       "responseRate": "Response Rate",
       "loading": "Loading..."
     },
@@ -103,6 +132,12 @@
         "30days": "30 days",
         "90days": "90 days",
         "Alltime": "All time"
+      },
+      "content": "Content",
+      "contentOptions": {
+        "all": "All reviews",
+        "with_text": "With text",
+        "without_text": "Rating only"
       },
       "resultsCount": "{{count}} reviews"
     },
@@ -137,7 +172,8 @@
       "generateReply": "Generate reply",
       "copy": "Copy",
       "publish": "Publish",
-      "viewMore": "View details"
+      "viewMore": "View details",
+      "noContent": "Rating only, no written review"
     },
     "modal": {
       "title": "Review by {{author}}",
@@ -163,7 +199,19 @@
     "actions": {
       "publish": "Publish",
       "copy": "Copy",
-      "copied": "Copied!"
+      "copied": "Copied!",
+      "reply": "Reply",
+      "viewResponse": "View Response",
+      "markReplied": "Mark as replied",
+      "ignore": "Ignore",
+      "viewOnPlatform": "View on {{platform}}",
+      "publishTo": "Publish to {{platform}}",
+      "confirmPublish": "Confirm & Publish",
+      "copyInstead": "Copy to clipboard"
+    },
+    "existingResponse": {
+      "title": "Existing Response",
+      "alreadyReplied": "This review already has a response on the platform."
     },
     "fetch": {
       "button": "Fetch Reviews",
@@ -184,6 +232,7 @@
     },
     "noMore": "No more reviews to load",
     "published": "Published",
-    "notPublished": "Not published"
+    "notPublished": "Not published",
+    "latestResponse": "Latest response"
   }
 }

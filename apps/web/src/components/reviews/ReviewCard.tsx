@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   MoreHorizontal,
@@ -8,6 +8,7 @@ import {
   Check,
   X,
   Copy,
+  Eye,
 } from 'lucide-react';
 import { PlatformIcon, getPlatformName } from '../ui/PlatformIcon';
 import type { Review, ReviewStatus } from '../../types/review';
@@ -59,6 +60,27 @@ export function ReviewCard({
   const [showMenu, setShowMenu] = useState(false);
   const [showPublishMenu, setShowPublishMenu] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [showExistingResponse, setShowExistingResponse] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+  const publishMenuRef = useRef<HTMLDivElement>(null);
+
+  // Close menus on click outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false);
+      }
+      if (publishMenuRef.current && !publishMenuRef.current.contains(event.target as Node)) {
+        setShowPublishMenu(false);
+      }
+    }
+
+    if (showMenu || showPublishMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [showMenu, showPublishMenu]);
 
   const handleCopy = async () => {
     if (review.latest_response) {
@@ -124,22 +146,36 @@ export function ReviewCard({
       </div>
 
       {/* Content */}
-      <p className="text-sm text-secondary dark:text-dark-secondary mb-4 line-clamp-3">
-        {review.content_excerpt || review.content}
+      <p className={`text-sm mb-4 line-clamp-3 ${
+        review.content_excerpt || review.content
+          ? 'text-secondary dark:text-dark-secondary'
+          : 'text-tertiary dark:text-dark-tertiary italic'
+      }`}>
+        {review.content_excerpt || review.content || t('reviews.card.noContent')}
       </p>
 
       {/* Actions */}
       <div className="flex items-center gap-2">
-        <button
-          onClick={onSelect}
-          className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-primary-50 hover:bg-primary-100 dark:bg-primary-900/30 dark:hover:bg-primary-900/50 rounded-lg transition-colors"
-        >
-          <MessageSquare className="w-4 h-4" />
-          {t('reviews.actions.reply')}
-        </button>
+        {review.has_response ? (
+          <button
+            onClick={() => setShowExistingResponse(!showExistingResponse)}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 rounded-lg transition-colors"
+          >
+            <Eye className="w-4 h-4" />
+            {t('reviews.actions.viewResponse')}
+          </button>
+        ) : (
+          <button
+            onClick={onSelect}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-primary-50 hover:bg-primary-100 dark:bg-primary-900/30 dark:hover:bg-primary-900/50 rounded-lg transition-colors"
+          >
+            <MessageSquare className="w-4 h-4" />
+            {t('reviews.actions.reply')}
+          </button>
+        )}
 
         {canPublish && (
-          <div className="relative">
+          <div className="relative" ref={publishMenuRef}>
             <button
               onClick={() => setShowPublishMenu(!showPublishMenu)}
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-green-600 hover:text-green-700 dark:text-green-400 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 rounded-lg transition-colors"
@@ -176,7 +212,7 @@ export function ReviewCard({
         )}
 
         {/* More menu */}
-        <div className="relative ml-auto">
+        <div className="relative ml-auto" ref={menuRef}>
           <button
             onClick={() => setShowMenu(!showMenu)}
             className="p-1.5 text-tertiary hover:text-secondary rounded-lg hover:bg-light-hover dark:hover:bg-dark-hover transition-colors opacity-0 group-hover:opacity-100"
@@ -209,23 +245,43 @@ export function ReviewCard({
                   {t('reviews.actions.ignore')}
                 </button>
               )}
-              <a
-                href={`#`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full px-3 py-2 text-sm text-left hover:bg-light-hover dark:hover:bg-dark-hover flex items-center gap-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                {t('reviews.actions.viewOnPlatform', {
-                  platform: getPlatformName(review.platform),
-                })}
-              </a>
+              {review.platform_url && (
+                <a
+                  href={review.platform_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setShowMenu(false)}
+                  className="w-full px-3 py-2 text-sm text-left hover:bg-light-hover dark:hover:bg-dark-hover flex items-center gap-2"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  {t('reviews.actions.viewOnPlatform', {
+                    platform: getPlatformName(review.platform),
+                  })}
+                </a>
+              )}
             </div>
           )}
         </div>
       </div>
 
-      {/* Response preview */}
+      {/* Existing response from platform (scraped) */}
+      {showExistingResponse && review.has_response && review.response_content && (
+        <div className="mt-3 pt-3 border-t border-light-border dark:border-dark-border">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs font-medium text-green-600 dark:text-green-400">
+              {t('reviews.existingResponse.title')}
+            </span>
+            <Check className="w-3 h-3 text-green-500" />
+          </div>
+          <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800">
+            <p className="text-sm text-secondary dark:text-dark-secondary whitespace-pre-wrap">
+              {review.response_content}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Response preview (AI generated) */}
       {review.latest_response && (
         <div className="mt-3 pt-3 border-t border-light-border dark:border-dark-border">
           <div className="flex items-center gap-2 mb-1">

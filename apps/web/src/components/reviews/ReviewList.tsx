@@ -1,7 +1,8 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MessageSquare, RefreshCw, AlertCircle } from 'lucide-react';
 import { ReviewCard } from './ReviewCard';
+import { Pagination } from '../ui/Pagination';
 import { useReviews, useUpdateReviewStatus, usePublishReply } from '../../hooks/useReviews';
 import type { Review, ReviewFilters, ReviewStatus } from '../../types/review';
 
@@ -85,46 +86,18 @@ function ErrorState({ onRetry }: { onRetry: () => void }) {
 }
 
 export function ReviewList({ filters, onSelectReview }: ReviewListProps) {
-  const { t } = useTranslation('dashboard');
-  const loadMoreRef = useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const {
     data,
     isLoading,
     isError,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
     refetch,
-  } = useReviews(filters);
+  } = useReviews(filters, currentPage);
 
   const updateStatus = useUpdateReviewStatus();
   const publishReply = usePublishReply();
-
-  // Infinite scroll
-  const handleObserver = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
-      if (entry.isIntersecting && hasNextPage && !isFetchingNextPage) {
-        fetchNextPage();
-      }
-    },
-    [fetchNextPage, hasNextPage, isFetchingNextPage]
-  );
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, {
-      root: null,
-      rootMargin: '100px',
-      threshold: 0,
-    });
-
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [handleObserver]);
 
   const handleStatusChange = (reviewId: number, status: ReviewStatus) => {
     updateStatus.mutate({ reviewId, status });
@@ -133,6 +106,17 @@ export function ReviewList({ filters, onSelectReview }: ReviewListProps) {
   const handlePublish = (reviewId: number, content: string) => {
     publishReply.mutate({ reviewId, content });
   };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of list container
+    listRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [JSON.stringify(filters)]);
 
   // Loading state
   if (isLoading) {
@@ -150,8 +134,8 @@ export function ReviewList({ filters, onSelectReview }: ReviewListProps) {
     return <ErrorState onRetry={() => refetch()} />;
   }
 
-  // Flatten pages
-  const reviews = data?.pages.flatMap((page) => page.data) || [];
+  const reviews = data?.data || [];
+  const meta = data?.meta;
 
   // Empty state
   if (reviews.length === 0) {
@@ -159,34 +143,37 @@ export function ReviewList({ filters, onSelectReview }: ReviewListProps) {
   }
 
   return (
-    <div className="space-y-4">
-      {reviews.map((review) => (
-        <ReviewCard
-          key={review.id}
-          review={review}
-          onSelect={() => onSelectReview(review)}
-          onStatusChange={(status) => handleStatusChange(review.id, status)}
-          onPublish={
-            review.can_publish_via_api
-              ? (content) => handlePublish(review.id, content)
-              : undefined
-          }
-        />
-      ))}
-
-      {/* Load more trigger */}
-      <div ref={loadMoreRef} className="h-10">
-        {isFetchingNextPage && (
-          <div className="flex justify-center py-4">
-            <RefreshCw className="w-5 h-5 text-primary-500 animate-spin" />
-          </div>
-        )}
-        {!hasNextPage && reviews.length > 0 && (
-          <p className="text-center text-sm text-tertiary dark:text-dark-tertiary py-4">
-            {t('reviews.noMore')}
-          </p>
-        )}
+    <div className="flex flex-col h-full">
+      {/* Scrollable reviews list */}
+      <div ref={listRef} className="flex-1 overflow-y-auto space-y-4 pr-2 -mr-2">
+        {reviews.map((review) => (
+          <ReviewCard
+            key={review.id}
+            review={review}
+            onSelect={() => onSelectReview(review)}
+            onStatusChange={(status) => handleStatusChange(review.id, status)}
+            onPublish={
+              review.can_publish_via_api
+                ? (content) => handlePublish(review.id, content)
+                : undefined
+            }
+          />
+        ))}
       </div>
+
+      {/* Fixed pagination at bottom */}
+      {meta && meta.last_page > 1 && (
+        <div className="flex-shrink-0 border-t border-light-border dark:border-dark-border bg-light-surface dark:bg-dark-surface mt-4 -mx-4 px-4">
+          <Pagination
+            currentPage={meta.current_page}
+            totalPages={meta.last_page}
+            total={meta.total}
+            from={meta.from}
+            to={meta.to}
+            onPageChange={handlePageChange}
+          />
+        </div>
+      )}
     </div>
   );
 }

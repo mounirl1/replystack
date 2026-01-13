@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\ConnectionController;
 use App\Http\Controllers\Api\LemonSqueezyController;
 use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
+use App\Http\Controllers\Api\ReviewSummaryController;
 use App\Http\Controllers\Api\ReviewSyncController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +71,8 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
     Route::prefix('reviews')->group(function () {
         Route::get('/', [ReviewController::class, 'index']);
         Route::get('/stats', [ReviewController::class, 'stats']);
+        Route::get('/summary', [ReviewSummaryController::class, 'show']);
+        Route::post('/summarize', [ReviewSummaryController::class, 'generate'])->middleware('quota');
         Route::post('/fetch', [ReviewController::class, 'triggerFetch']);
         Route::post('/sync', [ReviewSyncController::class, 'sync']);
         Route::get('/{review}', [ReviewController::class, 'show']);

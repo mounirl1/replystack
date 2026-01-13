@@ -31,11 +31,14 @@ class ReviewController extends Controller
             'platform.*' => ['string', Rule::in(['google', 'tripadvisor', 'booking', 'yelp', 'facebook', 'g2', 'capterra', 'trustpilot'])],
             'status' => ['nullable', 'array'],
             'status.*' => ['string', Rule::in(['pending', 'replied', 'ignored'])],
-            'rating_min' => ['nullable', 'integer', 'between:1,5'],
-            'rating_max' => ['nullable', 'integer', 'between:1,5'],
+            'rating' => ['nullable', 'array'],
+            'rating.*' => ['integer', 'between:1,5'],
             'date_from' => ['nullable', 'date'],
             'date_to' => ['nullable', 'date'],
             'search' => ['nullable', 'string', 'max:255'],
+            'has_content' => ['nullable', 'string', Rule::in(['with_text', 'without_text'])],
+            'page' => ['nullable', 'integer', 'min:1'],
+            'per_page' => ['nullable', 'integer', 'min:5', 'max:50'],
         ]);
 
         $user = $request->user();
@@ -68,12 +71,8 @@ class ReviewController extends Controller
             $query->whereIn('status', $request->status);
         }
 
-        if ($request->filled('rating_min')) {
-            $query->where('rating', '>=', $request->rating_min);
-        }
-
-        if ($request->filled('rating_max')) {
-            $query->where('rating', '<=', $request->rating_max);
+        if ($request->filled('rating')) {
+            $query->whereIn('rating', $request->rating);
         }
 
         if ($request->filled('date_from')) {
@@ -88,7 +87,18 @@ class ReviewController extends Controller
             $query->where('content', 'like', '%' . $request->search . '%');
         }
 
-        $reviews = $query->cursorPaginate(15);
+        if ($request->filled('has_content')) {
+            if ($request->has_content === 'with_text') {
+                $query->whereNotNull('content')->where('content', '!=', '');
+            } elseif ($request->has_content === 'without_text') {
+                $query->where(function ($q) {
+                    $q->whereNull('content')->orWhere('content', '=', '');
+                });
+            }
+        }
+
+        $perPage = $request->input('per_page', 15);
+        $reviews = $query->paginate($perPage);
 
         return new ReviewCollection($reviews);
     }

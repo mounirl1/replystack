@@ -5,11 +5,13 @@ import type {
   ReviewsResponse,
   ReviewStats,
   ReviewStatus,
+  ReviewSummary,
 } from '../types/review';
 
 export async function getReviews(
   filters: ReviewFilters,
-  cursor?: string
+  page: number = 1,
+  perPage: number = 15
 ): Promise<ReviewsResponse> {
   const params = new URLSearchParams();
 
@@ -22,11 +24,8 @@ export async function getReviews(
   if (filters.status?.length) {
     filters.status.forEach((s) => params.append('status[]', s));
   }
-  if (filters.rating_min) {
-    params.set('rating_min', String(filters.rating_min));
-  }
-  if (filters.rating_max) {
-    params.set('rating_max', String(filters.rating_max));
+  if (filters.ratings?.length) {
+    filters.ratings.forEach((r) => params.append('rating[]', String(r)));
   }
   if (filters.date_from) {
     params.set('date_from', filters.date_from);
@@ -37,9 +36,11 @@ export async function getReviews(
   if (filters.search) {
     params.set('search', filters.search);
   }
-  if (cursor) {
-    params.set('cursor', cursor);
+  if (filters.has_content) {
+    params.set('has_content', filters.has_content);
   }
+  params.set('page', String(page));
+  params.set('per_page', String(perPage));
 
   const response = await api.get<ReviewsResponse>(`/reviews?${params}`);
   return response.data;
@@ -102,6 +103,51 @@ export async function triggerFetch(
   return response.data;
 }
 
+export async function getReviewSummary(
+  filters: ReviewFilters
+): Promise<ReviewSummary | null> {
+  const params = new URLSearchParams();
+
+  if (filters.location_id) {
+    params.set('location_id', String(filters.location_id));
+  }
+  if (filters.platform?.length) {
+    filters.platform.forEach((p) => params.append('platform[]', p));
+  }
+  if (filters.status?.length) {
+    filters.status.forEach((s) => params.append('status[]', s));
+  }
+  if (filters.ratings?.length) {
+    filters.ratings.forEach((r) => params.append('rating[]', String(r)));
+  }
+  if (filters.date_from) {
+    params.set('date_from', filters.date_from);
+  }
+
+  const response = await api.get<{ summary: ReviewSummary | null }>(
+    `/reviews/summary?${params}`
+  );
+  return response.data.summary;
+}
+
+export async function generateReviewSummary(
+  filters: ReviewFilters,
+  language?: string
+): Promise<{ summary: ReviewSummary; quota_remaining: number | 'unlimited' }> {
+  const response = await api.post<{
+    summary: ReviewSummary;
+    quota_remaining: number | 'unlimited';
+  }>('/reviews/summarize', {
+    location_id: filters.location_id,
+    platform: filters.platform,
+    status: filters.status,
+    rating: filters.ratings,
+    date_from: filters.date_from,
+    language,
+  });
+  return response.data;
+}
+
 export const reviewsApi = {
   getReviews,
   getReviewStats,
@@ -109,4 +155,6 @@ export const reviewsApi = {
   updateReviewStatus,
   publishReply,
   triggerFetch,
+  getReviewSummary,
+  generateReviewSummary,
 };

@@ -24,24 +24,27 @@ class ReviewCollection extends ResourceCollection
         return [
             'data' => $this->collection,
             'meta' => [
-                'path' => $request->url(),
+                'current_page' => $this->resource->currentPage(),
+                'last_page' => $this->resource->lastPage(),
                 'per_page' => $this->resource->perPage(),
+                'total' => $this->resource->total(),
+                'from' => $this->resource->firstItem(),
+                'to' => $this->resource->lastItem(),
+            ],
+            'links' => [
+                'first' => $this->resource->url(1),
+                'last' => $this->resource->url($this->resource->lastPage()),
+                'prev' => $this->resource->previousPageUrl(),
+                'next' => $this->resource->nextPageUrl(),
             ],
         ];
     }
 
     /**
-     * Get additional data that should be returned with the resource array.
-     *
-     * @return array<string, mixed>
+     * Disable the default pagination information.
      */
     public function paginationInformation(Request $request, array $paginated, array $default): array
     {
-        return [
-            'links' => [
-                'next' => $this->resource->nextCursor()?->encode(),
-                'prev' => $this->resource->previousCursor()?->encode(),
-            ],
-        ];
+        return [];
     }
 }

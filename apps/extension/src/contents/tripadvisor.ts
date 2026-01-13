@@ -138,9 +138,9 @@ function injectStyles() {
       border-color: #d1d5db;
     }
     .replystack-length-btn.active {
-      border-color: #0ea5e9;
-      background: #f0f9ff;
-      color: #0369a1;
+      border-color: #10B981;
+      background: #ECFDF5;
+      color: #047857;
     }
     .replystack-custom-prompt {
       width: 100%;
@@ -156,15 +156,15 @@ function injectStyles() {
     }
     .replystack-custom-prompt:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-custom-prompt::placeholder {
       color: #9ca3af;
     }
     .replystack-btn-primary {
       width: 100%;
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: white;
       padding: 12px;
       border-radius: 8px;
@@ -205,8 +205,8 @@ function injectStyles() {
     }
     .replystack-textarea:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-btn-group {
       display: flex;
@@ -241,7 +241,7 @@ function injectStyles() {
     }
     .replystack-btn-insert {
       flex: 1;
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: white;
       padding: 10px;
       border-radius: 8px;
@@ -278,8 +278,8 @@ function injectStyles() {
       color: #111827;
     }
     .replystack-auth-tab.active {
-      color: #0ea5e9;
-      border-bottom-color: #0ea5e9;
+      color: #10B981;
+      border-bottom-color: #10B981;
     }
     .replystack-auth-form {
       display: none;
@@ -311,8 +311,8 @@ function injectStyles() {
     }
     .replystack-input:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-login-error {
       background: #fef2f2;
@@ -329,7 +329,7 @@ function injectStyles() {
       color: #6b7280;
     }
     .replystack-signup-link a {
-      color: #0ea5e9;
+      color: #10B981;
       text-decoration: none;
     }
     .replystack-signup-link a:hover {
@@ -1089,7 +1089,7 @@ function createAndInsertButton(
   const marginStyle = insertBefore ? 'margin-right: 8px;' : 'margin-left: 8px;';
 
   btn.style.cssText = `
-    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
     color: white;
     border: none;
     padding: 6px 12px;

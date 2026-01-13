@@ -43,6 +43,8 @@ class ReviewSyncService
      *                       - language: string|null
      *                       - published_at: string|Carbon|null
      *                       - platform_review_id: string|null (native API ID)
+     *                       - has_response: bool (existing owner reply)
+     *                       - response_content: string|null (content of existing reply)
      * @param string $source The sync source: 'api' or 'extension'
      * @return array{created: int, updated: int, unchanged: int, errors: int}
      */
@@ -210,6 +212,8 @@ class ReviewSyncService
             'language' => $data['language'] ?? null,
             'published_at' => $publishedAt,
             'status' => $data['status'] ?? 'pending',
+            'has_response' => $data['has_response'] ?? false,
+            'response_content' => $data['response_content'] ?? null,
             'created_at' => $now,
             'updated_at' => $now,
         ];
@@ -231,6 +235,8 @@ class ReviewSyncService
             'content',
             'language',
             'platform_review_id',
+            'has_response',
+            'response_content',
         ];
 
         foreach ($fieldsToCompare as $field) {
@@ -241,6 +247,12 @@ class ReviewSyncService
             if ($field === 'rating') {
                 $existingValue = $existingValue !== null ? (int) $existingValue : null;
                 $newValue = $newValue !== null ? (int) $newValue : null;
+            }
+
+            // Handle boolean comparison
+            if ($field === 'has_response') {
+                $existingValue = (bool) $existingValue;
+                $newValue = (bool) $newValue;
             }
 
             if ($existingValue !== $newValue) {

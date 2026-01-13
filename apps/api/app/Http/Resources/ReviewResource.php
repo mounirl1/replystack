@@ -39,6 +39,11 @@ class ReviewResource extends JsonResource
             // Status
             'status' => $this->status,
 
+            // Existing response (scraped from platform)
+            'has_response' => $this->has_response,
+            'response_content' => $this->response_content,
+            'response_published_at' => $this->response_published_at?->toIso8601String(),
+
             // Location
             'location' => $this->whenLoaded('location', fn() => [
                 'id' => $this->location->id,
@@ -79,6 +84,7 @@ class ReviewResource extends JsonResource
 
             // Capabilities
             'can_publish_via_api' => $this->can_publish_via_api, // Via accessor
+            'platform_url' => $this->platform_url, // Via accessor
         ];
     }
 }

@@ -67,6 +67,34 @@
   "reviews": {
     "title": "Avis",
     "subtitle": "Gérez et répondez aux avis de vos clients",
+    "sidebar": {
+      "overview": "Vue d'ensemble",
+      "averageRating": "Note moyenne",
+      "recent30days": "30 derniers jours",
+      "ratingDistribution": "Distribution des notes",
+      "aiSummary": "Résumé IA des avis",
+      "strengths": "Points forts",
+      "improvements": "Axes d'amélioration",
+      "keywords": "Mots-clés",
+      "generateButton": "Générer le résumé IA",
+      "generateDescription": "Analysez vos avis avec l'IA pour identifier les tendances et insights.",
+      "minReviewsRequired": "Au moins {{count}} avis requis pour générer un résumé.",
+      "confirmTitle": "Générer le résumé IA ?",
+      "confirmMessage": "Cette action utilisera 1 crédit réponse. Voulez-vous continuer ?",
+      "confirmCancel": "Annuler",
+      "confirmGenerate": "Générer",
+      "regenerateButton": "Régénérer le résumé",
+      "generatedAt": "Généré le {{date}}",
+      "analyzedReviews": "{{count}} avis analysés",
+      "generating": "Génération en cours...",
+      "errorLoading": "Erreur lors du chargement du résumé",
+      "errorGenerating": "Erreur lors de la génération du résumé",
+      "noQuotaWarning": "Vous n'avez plus de crédits disponibles",
+      "upgradeTitle": "Crédits épuisés",
+      "upgradeMessage": "Vous n'avez plus de crédits disponibles. Passez à un plan supérieur pour continuer à générer des résumés.",
+      "upgradeLater": "Plus tard",
+      "upgradeNow": "Voir les plans"
+    },
     "status": {
       "pending": "En attente",
       "replied": "Répondu",
@@ -76,6 +104,7 @@
       "total": "Total des avis",
       "pending": "En attente",
       "avgRating": "Note moyenne",
+      "averageRating": "Note moyenne",
       "responseRate": "Taux de réponse",
       "loading": "Chargement..."
     },
@@ -103,6 +132,12 @@
         "30days": "30 jours",
         "90days": "90 jours",
         "Alltime": "Tout le temps"
+      },
+      "content": "Contenu",
+      "contentOptions": {
+        "all": "Tous les avis",
+        "with_text": "Avec texte",
+        "without_text": "Note uniquement"
       },
       "resultsCount": "{{count}} avis"
     },
@@ -137,7 +172,8 @@
       "generateReply": "Générer une réponse",
       "copy": "Copier",
       "publish": "Publier",
-      "viewMore": "Voir les détails"
+      "viewMore": "Voir les détails",
+      "noContent": "Note uniquement, sans commentaire"
     },
     "modal": {
       "title": "Avis de {{author}}",
@@ -163,7 +199,19 @@
     "actions": {
       "publish": "Publier",
       "copy": "Copier",
-      "copied": "Copié !"
+      "copied": "Copié !",
+      "reply": "Répondre",
+      "viewResponse": "Voir la réponse",
+      "markReplied": "Marquer comme répondu",
+      "ignore": "Ignorer",
+      "viewOnPlatform": "Voir sur {{platform}}",
+      "publishTo": "Publier sur {{platform}}",
+      "confirmPublish": "Confirmer et publier",
+      "copyInstead": "Copier dans le presse-papiers"
+    },
+    "existingResponse": {
+      "title": "Réponse existante",
+      "alreadyReplied": "Cet avis a déjà reçu une réponse sur la plateforme."
     },
     "fetch": {
       "button": "Récupérer les avis",
@@ -184,6 +232,7 @@
     },
     "noMore": "Plus d'avis à charger",
     "published": "Publié",
-    "notPublished": "Non publié"
+    "notPublished": "Non publié",
+    "latestResponse": "Dernière réponse"
   }
 }

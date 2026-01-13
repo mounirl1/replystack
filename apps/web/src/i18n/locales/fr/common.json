@@ -118,6 +118,15 @@
       "goToLogin": "Aller à la connexion"
     }
   },
+  "pagination": {
+    "showing": "Affichage de {{from}} à {{to}} sur {{total}} résultats",
+    "total": "{{total}} résultats",
+    "first": "Première page",
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "last": "Dernière page",
+    "page": "Page {{page}} sur {{total}}"
+  },
   "supportedPlatforms": {
     "title": "Plateformes supportées",
     "description": "ReplyStack fonctionne sur toutes les plateformes d'avis. Notre extension navigateur détecte les pages d'avis et vous permet de générer des réponses IA instantanément.",

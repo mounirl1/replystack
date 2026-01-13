@@ -16,6 +16,14 @@ export abstract class BaseExtractor {
   abstract extractAll(): ExtractedReview[];
 
   /**
+   * Extract all reviews with async preprocessing (e.g., expanding truncated text)
+   * Override in subclass if needed. Default just calls extractAll().
+   */
+  async extractAllAsync(): Promise<ExtractedReview[]> {
+    return this.extractAll();
+  }
+
+  /**
    * Get all review container elements on the page
    */
   abstract getReviewElements(): Element[];

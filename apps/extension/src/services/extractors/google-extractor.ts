@@ -4,90 +4,158 @@ import { BaseExtractor } from './base-extractor';
 /**
  * Extractor for Google Business Profile reviews
  * Handles: business.google.com reviews pages
+ * Updated selectors based on current Google Business DOM structure (2024)
  */
 export class GoogleExtractor extends BaseExtractor {
   get platform(): Platform {
     return 'google';
   }
 
-  // Multiple selectors for resilience to DOM changes
+  // Updated selectors matching current Google Business Profile DOM structure
   private selectors = {
     reviewContainer: [
-      '[data-review-id]',
-      '.DsOcnf',
-      '[jscontroller="H8pyme"]',
-      '.review-card',
-      '[class*="review-container"]',
+      '.DsOcnf',                    // Main review container with key attribute
+      '[jscontroller="H8pyme"]',   // Review controller element
+      '.OUCuxb',                   // Inner wrapper
     ],
     authorName: [
-      '.YTvtJd',
-      '.GYpYWe',
-      '[class*="author"]',
-      '[class*="reviewer-name"]',
-      '.name',
+      'a.bFubHb',                  // Author link (primary)
+      '.bFubHb',                   // Author without link
+      '.z2S9Hc a',                 // Alternative structure
     ],
     authorAvatar: [
-      '.SLqwTc img',
-      '[class*="avatar"] img',
-      '[class*="profile-photo"] img',
-    ],
-    rating: [
-      '[aria-label*="star"]',
-      '[aria-label*="étoile"]',
-      '.kvMYJc',
-      '[class*="rating"]',
-      '[class*="stars"]',
+      'img.ntwMne',                // Google avatar image
+      '.HuyArc img',               // Avatar container fallback
+      '.DeOCrd img',               // Alternative avatar container
     ],
     content: [
-      '.Jtu6Td',
-      '.review-text',
-      '[class*="review-content"]',
-      '[class*="review-body"]',
-      '.text',
+      '.oiQd1c[jsname="QUIPvd"]',  // Full text (may be hidden for long reviews)
+      '.oiQd1c',                   // Visible text span
+      '.arx7af[jsname="an9Zef"]',  // Truncated text with "Plus" link
+      '.arx7af',                   // Truncated text
+      '.DYAZaf span',              // Fallback content container
     ],
     date: [
-      '.dehysf',
-      '[class*="review-date"]',
-      '[class*="date"]',
-      'time',
+      '.Wxf3Bf.wUfJz',             // Review date (e.g., "Il y a 22 semaines")
+      '.TkmEd .Wxf3Bf',            // Date in rating section
+      '.wUfJz',                    // Generic date class
     ],
-    hasResponse: [
-      '.CDe7pd',
-      '.owner-response',
-      '[class*="response"]',
-      '[class*="reply"]',
+    rating: [
+      '.YMWsEc .DPvwYc.z3FsAc',    // Filled stars in rating container
+      '.DPvwYc.z3FsAc',            // Filled star (has z3FsAc class)
+    ],
+    ownerResponse: [
+      'div.Rhj72c',                // Owner response container
+      '.Rhj72c',                   // Fallback
+    ],
+    responseContent: [
+      'div.DT6Wnd',                // Response text content
+      '.Q9ktHb .DT6Wnd',           // Response in blockquote
+      '.BNyFuc .DT6Wnd',           // Alternative path
+    ],
+    noTextIndicator: [
+      '.amKOJf.kIqwof',            // "L'utilisateur n'a pas rédigé d'avis"
     ],
   };
 
   getReviewElements(): Element[] {
+    // Get containers - prefer .DsOcnf as it has the key attribute
+    const containers = document.querySelectorAll('.DsOcnf');
+    if (containers.length > 0) {
+      return Array.from(containers);
+    }
+    // Fallback to other selectors
     return this.querySelectorAllFallback(document, this.selectors.reviewContainer);
+  }
+
+  /**
+   * Expand all truncated reviews by clicking "Plus" buttons
+   */
+  async expandAllReviews(): Promise<void> {
+    const expandButtons = document.querySelectorAll(
+      'button.review-more-link, ' +
+      '.arx7af button, ' +
+      'button[jsaction*="expand"], ' +
+      '.DYAZaf button'
+    );
+
+    // Also try links with "Plus" or "More" text
+    const allClickables = document.querySelectorAll('.arx7af *, .DYAZaf *');
+    const expandLinks: Element[] = [];
+
+    allClickables.forEach((el) => {
+      const text = el.textContent?.trim().toLowerCase() || '';
+      if (
+        (text === 'plus' || text === 'more' || text === 'voir plus' || text === 'lire la suite') &&
+        (el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'SPAN')
+      ) {
+        expandLinks.push(el);
+      }
+    });
+
+    const allButtons = [...Array.from(expandButtons), ...expandLinks];
+
+    if (allButtons.length > 0) {
+      console.log(`[GoogleExtractor] Found ${allButtons.length} expand buttons, clicking...`);
+
+      for (const btn of allButtons) {
+        try {
+          (btn as HTMLElement).click();
+        } catch (e) {
+          // Ignore click errors
+        }
+      }
+
+      // Wait for DOM to update
+      await new Promise((resolve) => setTimeout(resolve, 300));
+    }
   }
 
   extractAll(): ExtractedReview[] {
     const elements = this.getReviewElements();
     console.log(`[GoogleExtractor] Found ${elements.length} review elements`);
 
-    return elements
+    const reviews = elements
       .map((el) => this.extractOne(el))
       .filter((review): review is ExtractedReview => review !== null);
+
+    console.log(`[GoogleExtractor] Successfully extracted ${reviews.length} reviews`);
+    return reviews;
+  }
+
+  /**
+   * Extract all reviews after expanding truncated content
+   * Overrides base class to handle "Plus..." expansion
+   */
+  override async extractAllAsync(): Promise<ExtractedReview[]> {
+    // First expand all truncated reviews
+    await this.expandAllReviews();
+
+    // Then extract
+    return this.extractAll();
   }
 
   private extractOne(el: Element): ExtractedReview | null {
     try {
+      // External ID from key attribute on container
       const externalId =
+        el.getAttribute('key') ||
         el.getAttribute('data-review-id') ||
-        el.getAttribute('data-reviewid') ||
-        el.id ||
         this.generateFallbackId({
-          authorName: this.extractText(el, this.selectors.authorName),
-          content: this.extractText(el, this.selectors.content),
+          authorName: this.extractAuthorName(el),
+          content: this.extractContent(el),
         });
 
-      const authorName = this.extractText(el, this.selectors.authorName) || 'Anonymous';
-      const content = this.cleanText(this.extractText(el, this.selectors.content));
+      const authorName = this.extractAuthorName(el) || 'Anonymous';
+      const content = this.extractContent(el);
 
-      // Skip if no meaningful content
-      if (!content && !authorName) {
+      // Check if this is a "no text" review
+      const noTextEl = this.querySelectorFallback(el, this.selectors.noTextIndicator);
+      const isNoTextReview = !!noTextEl;
+
+      // Skip if no meaningful content and not a "stars only" review
+      if (!content && !authorName && !isNoTextReview) {
+        console.log('[GoogleExtractor] Skipping review: no content or author');
         return null;
       }
 
@@ -97,9 +165,29 @@ export class GoogleExtractor extends BaseExtractor {
       const rating = this.parseRatingFromElement(el);
       const dateStr = this.extractText(el, this.selectors.date);
       const publishedAt = this.parseDate(dateStr);
-      const hasResponse = !!this.querySelectorFallback(el, this.selectors.hasResponse);
 
-      const language = this.detectLanguage(content);
+      // Extract owner response
+      const responseContainer = this.querySelectorFallback(el, this.selectors.ownerResponse);
+      const hasResponse = !!responseContainer;
+      let responseContent: string | undefined;
+
+      if (responseContainer) {
+        const responseTextEl = this.querySelectorFallback(responseContainer, this.selectors.responseContent);
+        if (responseTextEl) {
+          responseContent = this.cleanText(responseTextEl.textContent || '');
+        }
+      }
+
+      const language = content ? this.detectLanguage(content) : undefined;
+
+      console.log(`[GoogleExtractor] Extracted review:`, {
+        externalId: externalId.substring(0, 20) + '...',
+        author: authorName,
+        rating,
+        contentLength: content.length,
+        hasResponse,
+        responseLength: responseContent?.length || 0,
+      });
 
       return {
         externalId,
@@ -110,6 +198,7 @@ export class GoogleExtractor extends BaseExtractor {
         language,
         publishedAt,
         hasResponse,
+        responseContent,
       };
     } catch (e) {
       console.error('[GoogleExtractor] Failed to extract review:', e);
@@ -117,47 +206,84 @@ export class GoogleExtractor extends BaseExtractor {
     }
   }
 
+  /**
+   * Extract author name from review element
+   */
+  private extractAuthorName(el: Element): string {
+    const authorEl = this.querySelectorFallback(el, this.selectors.authorName);
+    return authorEl?.textContent?.trim() || '';
+  }
+
+  /**
+   * Extract review content, handling both full and truncated text
+   */
+  private extractContent(el: Element): string {
+    // First try to get the full text (may be hidden)
+    const fullTextEl = el.querySelector('.oiQd1c[jsname="QUIPvd"]');
+    if (fullTextEl) {
+      const text = fullTextEl.textContent?.trim() || '';
+      if (text) {
+        return this.cleanText(text);
+      }
+    }
+
+    // Try visible text
+    const visibleTextEl = el.querySelector('.oiQd1c');
+    if (visibleTextEl) {
+      const text = visibleTextEl.textContent?.trim() || '';
+      if (text) {
+        return this.cleanText(text);
+      }
+    }
+
+    // Try truncated text (remove "Plus" link text)
+    const truncatedEl = el.querySelector('.arx7af');
+    if (truncatedEl) {
+      let text = truncatedEl.textContent?.trim() || '';
+      // Remove "Plus" or "More" link text at the end
+      text = text.replace(/\s*(Plus|More|Voir plus|Lire la suite)\s*$/i, '');
+      return this.cleanText(text);
+    }
+
+    // Fallback to DYAZaf container
+    const fallbackEl = el.querySelector('.DYAZaf span');
+    if (fallbackEl) {
+      return this.cleanText(fallbackEl.textContent || '');
+    }
+
+    return '';
+  }
+
+  /**
+   * Parse rating by counting filled stars
+   */
   private parseRatingFromElement(el: Element): number {
-    const ratingEl = this.querySelectorFallback(el, this.selectors.rating);
-    if (!ratingEl) return 5;
-
-    // Try aria-label first (e.g., "4 stars", "4 étoiles")
-    const ariaLabel = ratingEl.getAttribute('aria-label') || '';
-    const match = ariaLabel.match(/(\d)/);
-    if (match) {
-      return parseInt(match[1], 10);
-    }
-
-    // Try class-based rating (e.g., "rating-4", "stars-4")
-    const className = ratingEl.className;
-    const classMatch = className.match(/(?:rating|stars?)[-_]?(\d)/i);
-    if (classMatch) {
-      return parseInt(classMatch[1], 10);
-    }
-
-    // Count filled stars
-    const filledStars = ratingEl.querySelectorAll(
-      '[class*="filled"], [class*="full"], [class*="active"]'
-    );
+    // Count filled stars (they have the z3FsAc class indicating they're filled)
+    const filledStars = el.querySelectorAll('.DPvwYc.z3FsAc');
     if (filledStars.length > 0 && filledStars.length <= 5) {
       return filledStars.length;
     }
 
-    // Google sometimes uses color to indicate rating
-    const allStars = ratingEl.querySelectorAll('svg, span');
-    let coloredStars = 0;
-    allStars.forEach((star) => {
-      const style = window.getComputedStyle(star);
-      const color = style.color || style.fill;
-      // Yellow/gold colors indicate filled stars
-      if (color.includes('rgb(251') || color.includes('rgb(255') || color.includes('#fb') || color.includes('#ff')) {
-        coloredStars++;
+    // Alternative: try to find rating container and count stars there
+    const ratingContainer = el.querySelector('.YMWsEc');
+    if (ratingContainer) {
+      const stars = ratingContainer.querySelectorAll('.DPvwYc.z3FsAc');
+      if (stars.length > 0 && stars.length <= 5) {
+        return stars.length;
       }
-    });
-    if (coloredStars > 0 && coloredStars <= 5) {
-      return coloredStars;
     }
 
-    return 5; // Default to 5 stars if parsing fails
+    // Fallback: check aria-label on rating elements
+    const ratingEl = el.querySelector('[aria-label*="star"], [aria-label*="étoile"]');
+    if (ratingEl) {
+      const ariaLabel = ratingEl.getAttribute('aria-label') || '';
+      const match = ariaLabel.match(/(\d)/);
+      if (match) {
+        return parseInt(match[1], 10);
+      }
+    }
+
+    // Default to 5 stars if parsing fails
+    return 5;
   }
 }

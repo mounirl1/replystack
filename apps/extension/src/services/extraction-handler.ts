@@ -32,6 +32,7 @@ async function syncReviewsViaBackground(
             language: r.language,
             published_at: r.publishedAt,
             has_response: r.hasResponse,
+            response_content: r.responseContent,
           })),
         },
       },
@@ -183,8 +184,8 @@ export async function extractAndSync(
     return null;
   }
 
-  // Extract reviews
-  const reviews = extractor.extractAll();
+  // Extract reviews (use async version for expandable content)
+  const reviews = await extractor.extractAllAsync();
   console.log(`[ExtractionHandler] Extracted ${reviews.length} reviews for platform ${extractor.platform}`);
 
   if (reviews.length === 0) {
@@ -269,7 +270,7 @@ export function handleExtractionMessages(extractor: BaseExtractor): void {
 
         (async () => {
           try {
-            const reviews = extractor.extractAll();
+            const reviews = await extractor.extractAllAsync();
 
             if (reviews.length > 0) {
               const result = await syncReviewsViaBackground(

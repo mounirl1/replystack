@@ -1,5 +1,4 @@
 import {
-  useInfiniteQuery,
   useQuery,
   useMutation,
   useQueryClient,
@@ -8,15 +7,12 @@ import * as reviewsService from '../services/reviews';
 import type { ReviewFilters, ReviewStatus } from '../types/review';
 
 /**
- * Hook for fetching paginated reviews with infinite scroll
+ * Hook for fetching paginated reviews
  */
-export function useReviews(filters: ReviewFilters) {
-  return useInfiniteQuery({
-    queryKey: ['reviews', filters],
-    queryFn: ({ pageParam }) =>
-      reviewsService.getReviews(filters, pageParam as string | undefined),
-    getNextPageParam: (lastPage) => lastPage.meta?.next_cursor ?? undefined,
-    initialPageParam: undefined as string | undefined,
+export function useReviews(filters: ReviewFilters, page: number = 1, perPage: number = 15) {
+  return useQuery({
+    queryKey: ['reviews', filters, page, perPage],
+    queryFn: () => reviewsService.getReviews(filters, page, perPage),
   });
 }
 

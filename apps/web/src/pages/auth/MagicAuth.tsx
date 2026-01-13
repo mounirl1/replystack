@@ -33,7 +33,7 @@ export function MagicAuth() {
 
   const validateToken = async (magicToken: string) => {
     try {
-      const response = await fetch(`${API_URL}/auth/magic-token/${magicToken}`, {
+      const response = await fetch(`${API_URL}/api/auth/magic-token/${magicToken}`, {
         headers: {
           Accept: 'application/json',
         },

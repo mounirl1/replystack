@@ -67,12 +67,12 @@ export function DashboardLayout() {
       {/* Main Content */}
       <main
         className={`
-          min-h-screen transition-all duration-200
+          h-screen transition-all duration-200
           pt-16 lg:pt-0
           ${sidebarCollapsed ? 'lg:pl-[72px]' : 'lg:pl-[260px]'}
         `}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+        <div className="h-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 lg:pt-8 overflow-auto">
           <Outlet />
         </div>
       </main>

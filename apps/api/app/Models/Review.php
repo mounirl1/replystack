@@ -27,6 +27,9 @@ use Illuminate\Support\Str;
  * @property \Carbon\Carbon|null $published_at
  * @property string $status
  * @property \Carbon\Carbon|null $replied_at
+ * @property bool $has_response
+ * @property string|null $response_content
+ * @property \Carbon\Carbon|null $response_published_at
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
@@ -59,6 +62,9 @@ class Review extends Model
         'published_at',
         'status',
         'replied_at',
+        'has_response',
+        'response_content',
+        'response_published_at',
     ];
 
     /**
@@ -71,7 +77,9 @@ class Review extends Model
         return [
             'published_at' => 'datetime',
             'replied_at' => 'datetime',
+            'response_published_at' => 'datetime',
             'rating' => 'integer',
+            'has_response' => 'boolean',
         ];
     }
 
@@ -276,5 +284,32 @@ class Review extends Model
     public function getCanPublishViaApiAttribute(): bool
     {
         return in_array($this->platform, ['google', 'facebook'], true);
+    }
+
+    /**
+     * Get the URL to view/reply to this review on its platform.
+     */
+    public function getPlatformUrlAttribute(): ?string
+    {
+        $location = $this->relationLoaded('location')
+            ? $this->location
+            : $this->load('location')->location;
+
+        if (!$location) {
+            return null;
+        }
+
+        return match ($this->platform) {
+            'google' => $location->google_place_id
+                ? "https://business.google.com/n/{$location->google_place_id}/reviews"
+                : null,
+            'facebook' => $location->facebook_page_id
+                ? "https://www.facebook.com/{$location->facebook_page_id}/reviews"
+                : null,
+            'tripadvisor' => $location->tripadvisor_management_url,
+            'booking' => $location->booking_management_url,
+            'yelp' => $location->yelp_management_url,
+            default => null,
+        };
     }
 }

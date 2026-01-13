@@ -118,6 +118,15 @@
       "goToLogin": "Go to login"
     }
   },
+  "pagination": {
+    "showing": "Showing {{from}} to {{to}} of {{total}} results",
+    "total": "{{total}} results",
+    "first": "First page",
+    "previous": "Previous page",
+    "next": "Next page",
+    "last": "Last page",
+    "page": "Page {{page}} of {{total}}"
+  },
   "supportedPlatforms": {
     "title": "Supported Platforms",
     "description": "ReplyStack works on any review platform. Our browser extension detects review pages and lets you generate AI replies instantly.",

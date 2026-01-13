@@ -51,6 +51,7 @@ export async function syncReviews(
         language: r.language,
         published_at: r.publishedAt,
         has_response: r.hasResponse,
+        response_content: r.responseContent,
       })),
     }),
   });

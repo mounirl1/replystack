@@ -1,7 +1,7 @@
 import type { PlasmoCSConfig } from 'plasmo';
 import { t, translateError } from '../i18n';
 import { GoogleExtractor } from '../services/extractors/google-extractor';
-import { initializeExtraction } from '../services/extraction-handler';
+import { initializeExtraction, extractAndSync, showSyncNotification, showErrorNotification } from '../services/extraction-handler';
 import { getLocationIdForCurrentPage } from '../utils/location-matcher';
 import { getAuthUser, hasQuotaRemaining } from '../services/auth';
 
@@ -132,9 +132,9 @@ function injectStyles() {
       border-color: #d1d5db;
     }
     .replystack-length-btn.active {
-      border-color: #0ea5e9;
-      background: #f0f9ff;
-      color: #0369a1;
+      border-color: #10B981;
+      background: #ECFDF5;
+      color: #047857;
     }
     .replystack-custom-prompt {
       width: 100%;
@@ -150,15 +150,15 @@ function injectStyles() {
     }
     .replystack-custom-prompt:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-custom-prompt::placeholder {
       color: #9ca3af;
     }
     .replystack-btn-primary {
       width: 100%;
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: white;
       padding: 12px;
       border-radius: 8px;
@@ -199,8 +199,8 @@ function injectStyles() {
     }
     .replystack-textarea:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-btn-group {
       display: flex;
@@ -235,7 +235,7 @@ function injectStyles() {
     }
     .replystack-btn-insert {
       flex: 1;
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: white;
       padding: 10px;
       border-radius: 8px;
@@ -251,7 +251,7 @@ function injectStyles() {
     .replystack-login-icon {
       width: 64px;
       height: 64px;
-      background: #f0f9ff;
+      background: #ECFDF5;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -305,8 +305,8 @@ function injectStyles() {
       color: #111827;
     }
     .replystack-auth-tab.active {
-      color: #0ea5e9;
-      border-bottom-color: #0ea5e9;
+      color: #10B981;
+      border-bottom-color: #10B981;
     }
     .replystack-auth-form {
       display: none;
@@ -338,8 +338,8 @@ function injectStyles() {
     }
     .replystack-input:focus {
       outline: none;
-      border-color: #0ea5e9;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
     .replystack-login-error {
       background: #fef2f2;
@@ -356,7 +356,7 @@ function injectStyles() {
       color: #6b7280;
     }
     .replystack-signup-link a {
-      color: #0ea5e9;
+      color: #10B981;
       text-decoration: none;
     }
     .replystack-signup-link a:hover {
@@ -913,7 +913,7 @@ function injectReplyButtons(container: HTMLElement) {
     btn.className = 'replystack-btn';
     btn.innerHTML = t('modal.aiReplyButton');
     btn.style.cssText = `
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: white;
       border: none;
       padding: 8px 16px;
@@ -931,7 +931,7 @@ function injectReplyButtons(container: HTMLElement) {
 
     btn.addEventListener('mouseenter', () => {
       btn.style.transform = 'translateY(-1px)';
-      btn.style.boxShadow = '0 4px 12px rgba(14, 165, 233, 0.3)';
+      btn.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.3)';
     });
 
     btn.addEventListener('mouseleave', () => {
@@ -994,11 +994,103 @@ function extractRating(reviewEl: HTMLElement): number {
   return 5;
 }
 
+// Manual sync button injection
+function injectSyncButton() {
+  if (document.getElementById('replystack-sync-btn')) return;
+
+  // Try multiple possible header locations
+  const headerSelectors = [
+    '.uT1ck',
+    '.eMDepb',
+    '.rIbmid',
+    '[jsname="AeyuXb"]',
+  ];
+
+  let header: Element | null = null;
+  for (const selector of headerSelectors) {
+    header = document.querySelector(selector);
+    if (header) break;
+  }
+
+  if (!header) {
+    console.log('[GoogleBusiness] Header not found for sync button');
+    return;
+  }
+
+  const syncBtn = document.createElement('button');
+  syncBtn.id = 'replystack-sync-btn';
+  syncBtn.innerHTML = '🔄 Sync Reviews';
+  syncBtn.style.cssText = `
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  `;
+
+  syncBtn.addEventListener('mouseenter', () => {
+    syncBtn.style.background = 'linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%)';
+  });
+
+  syncBtn.addEventListener('mouseleave', () => {
+    syncBtn.style.background = 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)';
+  });
+
+  syncBtn.addEventListener('click', async () => {
+    syncBtn.disabled = true;
+    syncBtn.innerHTML = '⏳ Syncing...';
+    syncBtn.style.opacity = '0.7';
+
+    try {
+      const result = await extractAndSync(googleExtractor, false);
+      if (result) {
+        showSyncNotification(result);
+        syncBtn.innerHTML = '✓ Synced!';
+        syncBtn.style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+        syncBtn.style.color = 'white';
+        syncBtn.style.border = 'none';
+      } else {
+        syncBtn.innerHTML = '⚠ No reviews';
+      }
+    } catch (error) {
+      console.error('[GoogleBusiness] Manual sync failed:', error);
+      showErrorNotification('Failed to sync reviews');
+      syncBtn.innerHTML = '⚠ Failed';
+      syncBtn.style.background = 'linear-gradient(135deg, #EF4444 0%, #DC2626 100%)';
+      syncBtn.style.color = 'white';
+    }
+
+    setTimeout(() => {
+      syncBtn.disabled = false;
+      syncBtn.innerHTML = '🔄 Sync Reviews';
+      syncBtn.style.opacity = '1';
+      syncBtn.style.background = 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)';
+      syncBtn.style.color = 'inherit';
+      syncBtn.style.border = '1px solid #d1d5db';
+    }, 2000);
+  });
+
+  header.appendChild(syncBtn);
+  console.log('[GoogleBusiness] Sync button injected');
+}
+
 // Initialize
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initReviewObserver);
+  document.addEventListener('DOMContentLoaded', () => {
+    initReviewObserver();
+    injectSyncButton();
+  });
 } else {
   initReviewObserver();
+  injectSyncButton();
 }
 
 // Initialize extraction and sync
@@ -1006,5 +1098,6 @@ const googleExtractor = new GoogleExtractor();
 initializeExtraction(googleExtractor, [
   '[class*="reviews"]',
   '[class*="review-list"]',
+  '.w9BB5b',
   'body',
 ]);
