@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\AI\AIProviderFactory;
 use App\Services\Quota\QuotaService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     public function __construct(
-        private readonly QuotaService $quotaService
+        private readonly QuotaService $quotaService,
+        private readonly AIProviderFactory $providerFactory
     ) {}
 
     /**
@@ -141,6 +143,77 @@ class UserController extends Controller
                 'responses_today' => $responsesToday,
                 'quota' => $this->quotaService->getQuotaStatus($user),
             ],
+        ]);
+    }
+
+    /**
+     * Update user's AI provider preference.
+     *
+     * PATCH /api/user/ai-provider
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function updateAiProvider(Request $request): JsonResponse
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        // Only paid users can change their AI provider
+        if (!$user->hasPaidPlan()) {
+            return response()->json([
+                'error' => 'PaidPlanRequired',
+                'message' => __('api.user.paid_plan_required'),
+            ], 403);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'ai_provider' => ['required', 'string', 'in:' . implode(',', AIProviderFactory::ALL_PROVIDERS)],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => __('api.validation.failed'),
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $validated = $validator->validated();
+
+        // Check if the provider is available for this user
+        if (!$this->providerFactory->isProviderAvailable($validated['ai_provider'], $user)) {
+            return response()->json([
+                'error' => 'ProviderNotAvailable',
+                'message' => __('api.user.provider_not_available'),
+            ], 403);
+        }
+
+        $user->update(['ai_provider' => $validated['ai_provider']]);
+
+        return response()->json([
+            'message' => __('api.user.ai_provider_updated'),
+            'ai_provider' => $user->ai_provider,
+            'available_providers' => $this->providerFactory->getAvailableProvidersForUser($user),
+        ]);
+    }
+
+    /**
+     * Get available AI providers for the user.
+     *
+     * GET /api/user/ai-providers
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getAiProviders(Request $request): JsonResponse
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        return response()->json([
+            'current_provider' => $user->ai_provider ?? AIProviderFactory::DEFAULT_PROVIDER,
+            'available_providers' => $this->providerFactory->getAvailableProvidersForUser($user),
+            'can_change' => $user->hasPaidPlan(),
         ]);
     }
 

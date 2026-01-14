@@ -8,6 +8,7 @@ import { Card, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { PlanBadge } from '@/components/ui/Badge';
+import { AIProviderSettings } from '@/components/settings/AIProviderSettings';
 import { AxiosError } from 'axios';
 import { SUCCESS_TOAST_DURATION } from '@/constants';
 
@@ -172,6 +173,9 @@ export function Settings() {
           )}
         </div>
       </Card>
+
+      {/* AI Provider */}
+      <AIProviderSettings hasPaidPlan={user?.plan !== 'free'} />
 
       {/* Browser Extension */}
       <Card>

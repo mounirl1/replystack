@@ -271,6 +271,26 @@
       }
     }
   },
+  "aiProvider": {
+    "title": "AI Provider",
+    "description": "Choose the AI model for generating responses",
+    "current": "Active",
+    "paidOnly": "Paid plan",
+    "saved": "AI provider updated!",
+    "error": "Failed to update AI provider",
+    "upgradeMessage": "Upgrade to a paid plan to choose your AI provider.",
+    "viewPlans": "View plans",
+    "providers": {
+      "gemini": {
+        "name": "Gemini 2.0 Flash",
+        "description": "Fast and efficient - Recommended"
+      },
+      "mistral": {
+        "name": "Mistral",
+        "description": "European AI, excellent for French responses"
+      }
+    }
+  },
   "language": {
     "title": "Language",
     "description": "Select your preferred language for the interface"

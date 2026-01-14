@@ -104,8 +104,8 @@ class ReplyController extends Controller
                 'specific_context' => $validated['specific_context'] ?? null,
             ];
 
-            // Generate the reply
-            $result = $this->replyGenerator->generate($reviewData, $options);
+            // Generate the reply (pass user for AI provider selection)
+            $result = $this->replyGenerator->generate($reviewData, $options, $user);
 
             // Decrement user quota (with Redis lock to prevent race conditions)
             if (!$user->decrementQuota()) {
@@ -135,6 +135,7 @@ class ReplyController extends Controller
                 'language' => $result['language'],
                 'tokens_used' => $result['tokens_used'],
                 'generation_time_ms' => $result['generation_time_ms'],
+                'provider' => $result['provider'] ?? 'gemini',
                 'response_id' => $response->id,
                 'quota_remaining' => $user->quota_remaining,
             ]);

@@ -21,6 +21,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * @property string|null $name
  * @property string $plan
+ * @property string $ai_provider
  * @property int $monthly_quota
  * @property int $quota_used_month
  * @property \Carbon\Carbon|null $quota_reset_at
@@ -55,6 +56,7 @@ class User extends Authenticatable
         'email',
         'password',
         'plan',
+        'ai_provider',
         'monthly_quota',
         'quota_used_month',
         'quota_reset_at',

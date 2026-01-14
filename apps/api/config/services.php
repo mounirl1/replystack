@@ -40,6 +40,16 @@ return [
         'model' => env('ANTHROPIC_MODEL', 'claude-3-haiku-20240307'),
     ],
 
+    'gemini' => [
+        'api_key' => env('GEMINI_API_KEY'),
+        'model' => env('GEMINI_MODEL', 'gemini-2.0-flash'),
+    ],
+
+    'mistral' => [
+        'api_key' => env('MISTRAL_API_KEY'),
+        'model' => env('MISTRAL_MODEL', 'mistral-small-latest'),
+    ],
+
     'lemonsqueezy' => [
         'api_key' => env('LEMONSQUEEZY_API_KEY'),
         'store_id' => env('LEMONSQUEEZY_STORE_ID'),

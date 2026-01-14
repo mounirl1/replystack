@@ -84,7 +84,7 @@ trait HasQuota
     /**
      * Decrement the user's quota after generating a reply.
      *
-     * Uses Redis lock to prevent race conditions when multiple
+     * Uses cache-based lock to prevent race conditions when multiple
      * requests arrive simultaneously.
      *
      * @return bool True if quota was decremented, false if no quota remaining or lock failed
@@ -96,8 +96,8 @@ trait HasQuota
             return true;
         }
 
-        // Use Redis lock to prevent race conditions
-        $lock = \Illuminate\Support\Facades\Redis::lock("quota:user:{$this->id}", 5);
+        // Use cache lock to prevent race conditions (works with any cache driver)
+        $lock = \Illuminate\Support\Facades\Cache::lock("quota:user:{$this->id}", 5);
 
         try {
             if ($lock->get()) {

@@ -59,6 +59,18 @@ export interface UsageStats {
   quota: QuotaStatus;
 }
 
+export interface AIProviderInfo {
+  name: string;
+  description: string;
+  available: boolean;
+}
+
+export interface AIProvidersResponse {
+  current_provider: string;
+  available_providers: Record<string, AIProviderInfo>;
+  can_change: boolean;
+}
+
 export interface Response {
   id: number;
   content: string;
@@ -118,6 +130,19 @@ export const userApi = {
 
   deleteAccount: async (password: string) => {
     await api.delete('/user', { data: { password } });
+  },
+
+  getAiProviders: async () => {
+    const response = await api.get<AIProvidersResponse>('/user/ai-providers');
+    return response.data;
+  },
+
+  updateAiProvider: async (provider: 'gemini' | 'mistral') => {
+    const response = await api.patch<{ message: string; ai_provider: string; available_providers: Record<string, AIProviderInfo> }>(
+      '/user/ai-provider',
+      { ai_provider: provider }
+    );
+    return response.data;
   },
 };
 

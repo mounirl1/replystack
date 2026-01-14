@@ -2,6 +2,7 @@
 
 namespace App\Services\AI;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Log;
 
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 class ReviewSummaryService
 {
     public function __construct(
-        private readonly ClaudeService $claude
+        private readonly AIProviderFactory $providerFactory
     ) {}
 
     /**
@@ -19,16 +20,18 @@ class ReviewSummaryService
      *
      * @param Collection $reviews The reviews to summarize
      * @param string $language Target language (default: auto-detect)
+     * @param User|null $user The user making the request (for provider selection)
      * @return array{
      *     summary: string,
      *     strengths: array,
      *     improvements: array,
      *     keywords: array,
      *     tokens_used: int,
-     *     generation_time_ms: int
+     *     generation_time_ms: int,
+     *     provider: string
      * }
      */
-    public function generate(Collection $reviews, string $language = 'auto'): array
+    public function generate(Collection $reviews, string $language = 'auto', ?User $user = null): array
     {
         $reviewsText = $reviews->map(function ($review) {
             $rating = $review->rating;
@@ -70,8 +73,12 @@ JSON:
 PROMPT;
 
         try {
-            $result = $this->claude->generateCompletion($prompt, [
-                'model' => 'claude-3-haiku-20240307',
+            // Get the appropriate AI provider for the user
+            $provider = $user
+                ? $this->providerFactory->forUser($user)
+                : $this->providerFactory->make();
+
+            $result = $provider->generateCompletion($prompt, [
                 'max_tokens' => 800,
                 'temperature' => 0.3, // Lower temperature for more consistent JSON output
             ]);
@@ -85,6 +92,7 @@ PROMPT;
                 'keywords' => $parsed['keywords'],
                 'tokens_used' => $result['tokens_used'],
                 'generation_time_ms' => $result['generation_time_ms'],
+                'provider' => $provider->getProviderName(),
             ];
         } catch (\Exception $e) {
             Log::error('Review summary generation failed', [

@@ -105,6 +105,8 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
         Route::get('/usage', [UserController::class, 'usage']);
         Route::get('/response-style-status', [UserController::class, 'responseStyleStatus']);
         Route::patch('/settings', [UserController::class, 'updateSettings']);
+        Route::get('/ai-providers', [UserController::class, 'getAiProviders']);
+        Route::patch('/ai-provider', [UserController::class, 'updateAiProvider']);
         Route::delete('/', [UserController::class, 'destroy']);
     });
 

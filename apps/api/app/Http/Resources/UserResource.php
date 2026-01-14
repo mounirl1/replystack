@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Services\AI\AIProviderFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,11 +20,15 @@ class UserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $providerFactory = app(AIProviderFactory::class);
+
         return [
             'id' => $this->id,
             'email' => $this->email,
             'name' => $this->name,
             'plan' => $this->plan,
+            'ai_provider' => $this->ai_provider ?? AIProviderFactory::DEFAULT_PROVIDER,
+            'available_providers' => $providerFactory->getAvailableProvidersForUser($this->resource),
             'quota' => [
                 'remaining' => $this->quota_remaining,
                 'used' => $this->quota_used,

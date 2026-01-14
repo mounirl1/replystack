@@ -6,6 +6,7 @@ use App\Enums\ResponseLength;
 use App\Enums\ResponseTone;
 use App\Models\Location;
 use App\Models\LocationResponseProfile;
+use App\Models\User;
 
 /**
  * Service for generating AI-powered review replies.
@@ -32,7 +33,7 @@ class ReplyGeneratorService
     ];
 
     public function __construct(
-        private readonly ClaudeService $claude
+        private readonly AIProviderFactory $providerFactory
     ) {}
 
     /**
@@ -51,16 +52,18 @@ class ReplyGeneratorService
      *     location?: Location|null,
      *     specific_context?: string|null
      * } $options Generation options
+     * @param User|null $user The user making the request (for provider selection)
      * @return array{
      *     reply: string,
      *     tone: string,
      *     language: string,
      *     length: string,
      *     tokens_used: int,
-     *     generation_time_ms: int
+     *     generation_time_ms: int,
+     *     provider: string
      * }
      */
-    public function generate(array $review, array $options = []): array
+    public function generate(array $review, array $options = [], ?User $user = null): array
     {
         $location = $options['location'] ?? null;
         $profile = $location?->responseProfile;
@@ -82,8 +85,12 @@ class ReplyGeneratorService
         $lengthEnum = ResponseLength::tryFrom($length) ?? ResponseLength::MEDIUM;
         $maxTokens = $lengthEnum->maxTokens();
 
-        $result = $this->claude->generateCompletion($prompt, [
-            'model' => 'claude-3-haiku-20240307',
+        // Get the appropriate AI provider for the user
+        $provider = $user
+            ? $this->providerFactory->forUser($user)
+            : $this->providerFactory->make();
+
+        $result = $provider->generateCompletion($prompt, [
             'max_tokens' => $maxTokens,
             'temperature' => 0.7,
         ]);
@@ -100,6 +107,7 @@ class ReplyGeneratorService
             'length' => $length,
             'tokens_used' => $result['tokens_used'],
             'generation_time_ms' => $result['generation_time_ms'],
+            'provider' => $provider->getProviderName(),
         ];
     }
 

@@ -31,6 +31,9 @@ return [
         'password_incorrect' => 'Mot de passe incorrect.',
         'must_transfer_organization' => 'Vous devez transférer ou supprimer votre organisation avant de supprimer votre compte.',
         'account_deleted' => 'Compte supprimé avec succès.',
+        'paid_plan_required' => 'Un plan payant est requis pour changer de fournisseur IA.',
+        'provider_not_available' => 'Ce fournisseur IA n\'est pas disponible pour votre plan.',
+        'ai_provider_updated' => 'Fournisseur IA mis à jour avec succès.',
     ],
 
     // Locations

@@ -31,6 +31,9 @@ return [
         'password_incorrect' => 'Incorrect password.',
         'must_transfer_organization' => 'You must transfer or delete your organization before deleting your account.',
         'account_deleted' => 'Account deleted successfully.',
+        'paid_plan_required' => 'A paid plan is required to change AI provider.',
+        'provider_not_available' => 'This AI provider is not available for your plan.',
+        'ai_provider_updated' => 'AI provider updated successfully.',
     ],
 
     // Locations

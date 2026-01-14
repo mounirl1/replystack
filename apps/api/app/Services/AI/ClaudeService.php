@@ -5,12 +5,14 @@ namespace App\Services\AI;
 use Anthropic\Client;
 use Anthropic\Messages\Message;
 use Anthropic\Messages\TextBlock;
+use App\Services\AI\Contracts\AIProviderContract;
 use Illuminate\Support\Facades\Log;
 
 /**
  * Service for interacting with Claude API.
+ * @deprecated Use GeminiService or MistralService instead. Kept for reference.
  */
-class ClaudeService
+class ClaudeService implements AIProviderContract
 {
     private ?Client $client = null;
     private string $model;
@@ -111,6 +113,14 @@ class ClaudeService
         }
 
         return implode("\n", $textParts);
+    }
+
+    /**
+     * Get the provider name.
+     */
+    public function getProviderName(): string
+    {
+        return 'claude';
     }
 
     /**

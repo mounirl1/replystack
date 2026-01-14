@@ -81,9 +81,9 @@ class ReviewSummaryController extends Controller
             ], 422);
         }
 
-        // Generate the summary
+        // Generate the summary (pass user for AI provider selection)
         $language = $request->input('language', 'auto');
-        $result = $this->summaryService->generate($reviews, $language);
+        $result = $this->summaryService->generate($reviews, $language, $user);
 
         // Save to database
         $hash = ReviewSummary::generateFiltersHash($filters);
