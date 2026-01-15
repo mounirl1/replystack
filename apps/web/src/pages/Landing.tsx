@@ -58,8 +58,8 @@ export function Landing(): ReactElement {
         <meta property="og:title" content="ReplyStack - Réponses aux avis clients propulsées par l'IA" />
         <meta property="og:description" content="Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://replystack.io" />
-        <meta property="og:image" content="https://replystack.io/og-image.png" />
+        <meta property="og:url" content="https://www.reply-stack.app" />
+        <meta property="og:image" content="https://www.reply-stack.app/og-image.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -67,7 +67,7 @@ export function Landing(): ReactElement {
         <meta name="twitter:description" content="Générez des réponses personnalisées aux avis clients en quelques secondes." />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://replystack.io" />
+        <link rel="canonical" href="https://www.reply-stack.app" />
 
         {/* Structured Data */}
         <script type="application/ld+json">

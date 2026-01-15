@@ -316,7 +316,7 @@ export function ComparePage() {
   }
 
   const { component: ArticleContent, meta } = article;
-  const fullUrl = `https://replystack.io${getCompareUrl(slug, language)}`;
+  const fullUrl = `https://www.reply-stack.app${getCompareUrl(slug, language)}`;
   const formattedDate = formatDate(meta.date, i18n.language);
 
   // Structured data for comparison article
@@ -335,7 +335,7 @@ export function ComparePage() {
       name: 'ReplyStack',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://replystack.io/logo.png',
+        url: 'https://www.reply-stack.app/logo.png',
       },
     },
     mainEntityOfPage: {

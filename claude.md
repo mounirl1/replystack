@@ -1,6 +1,13 @@
 # ReplyStack - AI Review Reply Platform
 
 > Fichier de contexte pour Claude Code. Ce fichier est lu automatiquement au lancement.
+> Dernière mise à jour : Janvier 2026
+
+## 🌐 URLs Importantes
+
+- **Site Web** : https://www.reply-stack.app
+- **API** : https://api.reply-stack.app
+- **Dashboard** : https://www.reply-stack.app/dashboard
 
 ## 🎯 Vision Produit
 
@@ -15,20 +22,20 @@ ReplyStack permet aux entreprises de centraliser, monitorer et répondre efficac
 
 ## 🏗️ Architecture Technique
 
-### Stack principale (basée sur TriggerFlow)
+### Stack principale
 
 | Composant | Technologie | Justification |
 |-----------|-------------|---------------|
 | Backend API | Laravel 12 | Expertise existante, écosystème mature |
 | Auth API | Laravel Sanctum | Tokens API pour extension + dashboard |
-| Base de données | MySQL 8 | Expertise existante, Laravel Forge optimisé |
+| Base de données | MySQL 8 | Expertise existante |
 | Cache | Redis | Sessions, cache, queues |
 | Queues/Jobs | Laravel Horizon + Redis | Dashboard monitoring, workers dédiés |
-| IA | Claude API (Anthropic) | Qualité des réponses, pricing avantageux |
-| Frontend Dashboard | React + TypeScript + Vite | Réutilisation pour extension |
+| IA | Gemini 2.0 Flash (défaut) + Mistral (fallback) | Rapide, économique |
+| Frontend Dashboard | React 19 + TypeScript + Vite | Réutilisation pour extension |
 | Extension | Plasmo (React) | Build multi-navigateur, DX moderne |
-| Paiement | Stripe | Standard industrie |
-| Hébergement | Laravel Forge + DigitalOcean | Simplicité, coût maîtrisé |
+| Paiement | Lemon Squeezy | Simplicité, gestion TVA automatique |
+| Hébergement | Railway (API + Frontend) | Simplicité, coût maîtrisé |
 
 ### Structure Monorepo
 
@@ -395,13 +402,13 @@ DELETE /api/locations/{id}         # Supprimer
 POST   /api/locations/{id}/sync    # Forcer sync des avis
 ```
 
-### Stripe
+### Lemon Squeezy (Paiements)
 
 ```
-POST   /api/stripe/checkout        # Créer session Checkout
-       Body: { plan: 'starter'|'pro'|'business' }
-POST   /api/stripe/portal          # Accès portail client Stripe
-POST   /api/stripe/webhook         # Webhook Stripe (events)
+POST   /api/lemonsqueezy/checkout  # Créer session Checkout
+       Body: { plan: 'starter'|'pro'|'business', billing: 'monthly'|'yearly' }
+POST   /api/lemonsqueezy/portal    # Accès portail client
+POST   /api/lemonsqueezy/webhook   # Webhook Lemon Squeezy (events)
 ```
 
 ### User
@@ -413,52 +420,71 @@ PATCH  /api/user/settings          # Préférences (ton, langue par défaut)
 
 ---
 
-## 🤖 Service IA (Claude)
+## 🤖 Service IA (Gemini - Défaut)
 
-### ClaudeService.php
+### Architecture Multi-Provider
+
+Le système utilise un pattern Factory pour supporter plusieurs fournisseurs IA :
+- **Gemini 2.0 Flash** : Provider par défaut (gratuit, rapide)
+- **Mistral** : Provider payant (qualité supérieure)
+- **Claude** : Supporté mais pas actif
+
+### AIProviderFactory.php
 
 ```php
 namespace App\Services\AI;
 
-use Anthropic\Anthropic;
-use Illuminate\Support\Facades\Log;
-
-class ClaudeService
+class AIProviderFactory
 {
-    private Anthropic $client;
-    
+    public static function create(?string $provider = null): AIProviderInterface
+    {
+        $provider = $provider ?? config('services.ai.default_provider', 'gemini');
+
+        return match($provider) {
+            'gemini' => app(GeminiService::class),
+            'mistral' => app(MistralService::class),
+            'claude' => app(ClaudeService::class),
+            default => throw new \InvalidArgumentException("Unknown AI provider: {$provider}"),
+        };
+    }
+}
+```
+
+### GeminiService.php (Provider par défaut)
+
+```php
+namespace App\Services\AI;
+
+use Illuminate\Support\Facades\Http;
+
+class GeminiService implements AIProviderInterface
+{
+    private string $apiKey;
+    private string $model;
+
     public function __construct()
     {
-        $this->client = Anthropic::client(config('services.anthropic.api_key'));
+        $this->apiKey = config('services.gemini.api_key');
+        $this->model = config('services.gemini.model', 'gemini-2.0-flash');
     }
-    
+
     public function generateCompletion(string $prompt, array $options = []): array
     {
-        $startTime = microtime(true);
-        
-        try {
-            $response = $this->client->messages()->create([
-                'model' => $options['model'] ?? 'claude-3-haiku-20240307',
-                'max_tokens' => $options['max_tokens'] ?? 500,
-                'messages' => [
-                    ['role' => 'user', 'content' => $prompt]
+        $response = Http::post(
+            "https://generativelanguage.googleapis.com/v1beta/models/{$this->model}:generateContent?key={$this->apiKey}",
+            [
+                'contents' => [['parts' => [['text' => $prompt]]]],
+                'generationConfig' => [
+                    'temperature' => $options['temperature'] ?? 0.7,
+                    'maxOutputTokens' => $options['max_tokens'] ?? 500,
                 ],
-            ]);
-            
-            $endTime = microtime(true);
-            
-            return [
-                'content' => $response->content[0]->text,
-                'tokens_used' => $response->usage->inputTokens + $response->usage->outputTokens,
-                'generation_time_ms' => (int)(($endTime - $startTime) * 1000),
-            ];
-        } catch (\Exception $e) {
-            Log::error('Claude API error', [
-                'error' => $e->getMessage(),
-                'prompt_length' => strlen($prompt),
-            ]);
-            throw $e;
-        }
+            ]
+        );
+
+        return [
+            'content' => $response->json('candidates.0.content.parts.0.text'),
+            'tokens_used' => $response->json('usageMetadata.totalTokenCount', 0),
+        ];
     }
 }
 ```
@@ -703,13 +729,14 @@ export const GoogleBusinessAdapter: PlatformAdapter = {
 | **Business** | 79€/mois   | 500/mois | + 10 locations, 5 users, Slack |
 | **Enterprise** | Sur devis  | sur devis | + API, white-label, SSO |
 
-### Stripe Products (à créer)
+### Lemon Squeezy Products
 
-```
-prod_replystack_starter  → price_starter_monthly  (9.90 EUR)
-prod_replystack_pro      → price_pro_monthly      (29.00 EUR)
-prod_replystack_business → price_business_monthly (79.00 EUR)
-```
+Les produits sont configurés dans Lemon Squeezy avec des variant IDs :
+- Starter : Monthly + Yearly variants
+- Pro : Monthly + Yearly variants
+- Business : Monthly + Yearly variants
+
+Configuration via variables d'environnement `LEMONSQUEEZY_*`.
 
 ---
 
@@ -722,6 +749,7 @@ APP_NAME=ReplyStack
 APP_ENV=local
 APP_DEBUG=true
 APP_URL=http://localhost:8000
+FRONTEND_URL=http://localhost:5173
 
 # Database
 DB_CONNECTION=mysql
@@ -736,16 +764,23 @@ REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 
-# Claude API
-ANTHROPIC_API_KEY=sk-ant-...
+# AI Providers
+AI_DEFAULT_PROVIDER=gemini
+GEMINI_API_KEY=...
+GEMINI_MODEL=gemini-2.0-flash
+MISTRAL_API_KEY=...
+ANTHROPIC_API_KEY=sk-ant-...  # optionnel
 
-# Stripe
-STRIPE_KEY=pk_test_...
-STRIPE_SECRET=sk_test_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-
-# Scraping (optionnel pour dashboard)
-OUTSCRAPER_API_KEY=...
+# Lemon Squeezy
+LEMONSQUEEZY_API_KEY=...
+LEMONSQUEEZY_STORE_ID=...
+LEMONSQUEEZY_WEBHOOK_SECRET=...
+LEMONSQUEEZY_STARTER_MONTHLY_VARIANT_ID=...
+LEMONSQUEEZY_STARTER_YEARLY_VARIANT_ID=...
+LEMONSQUEEZY_PRO_MONTHLY_VARIANT_ID=...
+LEMONSQUEEZY_PRO_YEARLY_VARIANT_ID=...
+LEMONSQUEEZY_BUSINESS_MONTHLY_VARIANT_ID=...
+LEMONSQUEEZY_BUSINESS_YEARLY_VARIANT_ID=...
 
 # Horizon
 HORIZON_PREFIX=replystack_horizon:

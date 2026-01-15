@@ -234,7 +234,7 @@ export function AlternativesPage() {
   }
 
   const { component: ArticleContent, meta } = article;
-  const fullUrl = `https://replystack.io${getAlternativesUrl(slug, language)}`;
+  const fullUrl = `https://www.reply-stack.app${getAlternativesUrl(slug, language)}`;
   const formattedDate = formatDate(meta.date, i18n.language);
 
   // Structured data for hub article
@@ -253,7 +253,7 @@ export function AlternativesPage() {
       name: 'ReplyStack',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://replystack.io/logo.png',
+        url: 'https://www.reply-stack.app/logo.png',
       },
     },
     mainEntityOfPage: {

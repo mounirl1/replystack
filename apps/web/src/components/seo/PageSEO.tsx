@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { HreflangTags } from './HreflangTags';
 
-const BASE_URL = 'https://replystack.io';
+const BASE_URL = 'https://www.reply-stack.app';
 
 interface PageSEOProps {
   /**

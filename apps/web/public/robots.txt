@@ -1,5 +1,5 @@
 # ReplyStack - Robots.txt
-# https://replystack.io
+# https://www.reply-stack.app
 
 User-agent: *
 Allow: /
@@ -17,4 +17,4 @@ Allow: /logo.png
 Allow: /favicon.png
 
 # Sitemap location
-Sitemap: https://replystack.io/sitemap.xml
+Sitemap: https://www.reply-stack.app/sitemap.xml

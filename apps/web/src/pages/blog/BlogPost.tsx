@@ -42,7 +42,7 @@ export function BlogPost() {
   const relatedPosts = getRelatedPosts(post, allPosts, 3);
 
   // Full URL for sharing
-  const fullUrl = `https://replystack.io${getBlogUrl(post.slug, language)}`;
+  const fullUrl = `https://www.reply-stack.app${getBlogUrl(post.slug, language)}`;
 
   // Format date
   const formattedDate = formatBlogDate(post.date, i18n.language);

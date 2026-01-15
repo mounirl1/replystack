@@ -5,7 +5,7 @@ import type {
   BlogCategory,
 } from './types';
 
-const BASE_URL = 'https://replystack.io';
+const BASE_URL = 'https://www.reply-stack.app';
 
 /**
  * Generate BlogPosting structured data for an article

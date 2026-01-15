@@ -12,24 +12,28 @@ import RespondNegativeReviewsEN from '@/content/blog/guides/respond-negative-rev
 import ReviewResponseTemplatesEN from '@/content/blog/guides/review-response-templates/index.en.mdx';
 import GetMoreGoogleReviewsEN from '@/content/blog/guides/get-more-google-reviews/index.en.mdx';
 import OnlineReputationStrategyEN from '@/content/blog/guides/online-reputation-strategy/index.en.mdx';
+import RespondReviews2MinutesEN from '@/content/blog/guides/respond-reviews-2-minutes-day/index.en.mdx';
 
 // Import blog articles - Guides FR
 import RespondNegativeReviewsFR from '@/content/blog/guides/respond-negative-reviews/index.fr.mdx';
 import ReviewResponseTemplatesFR from '@/content/blog/guides/review-response-templates/index.fr.mdx';
 import GetMoreGoogleReviewsFR from '@/content/blog/guides/get-more-google-reviews/index.fr.mdx';
 import OnlineReputationStrategyFR from '@/content/blog/guides/online-reputation-strategy/index.fr.mdx';
+import RespondReviews2MinutesFR from '@/content/blog/guides/respond-reviews-2-minutes-day/index.fr.mdx';
 
 // Import blog articles - Guides ES
 import RespondNegativeReviewsES from '@/content/blog/guides/respond-negative-reviews/index.es.mdx';
 import ReviewResponseTemplatesES from '@/content/blog/guides/review-response-templates/index.es.mdx';
 import GetMoreGoogleReviewsES from '@/content/blog/guides/get-more-google-reviews/index.es.mdx';
 import OnlineReputationStrategyES from '@/content/blog/guides/online-reputation-strategy/index.es.mdx';
+import RespondReviews2MinutesES from '@/content/blog/guides/respond-reviews-2-minutes-day/index.es.mdx';
 
 // Import blog articles - Guides PT
 import RespondNegativeReviewsPT from '@/content/blog/guides/respond-negative-reviews/index.pt.mdx';
 import ReviewResponseTemplatesPT from '@/content/blog/guides/review-response-templates/index.pt.mdx';
 import GetMoreGoogleReviewsPT from '@/content/blog/guides/get-more-google-reviews/index.pt.mdx';
 import OnlineReputationStrategyPT from '@/content/blog/guides/online-reputation-strategy/index.pt.mdx';
+import RespondReviews2MinutesPT from '@/content/blog/guides/respond-reviews-2-minutes-day/index.pt.mdx';
 
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
@@ -111,6 +115,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
       },
     },
   },
+  'en:respond-reviews-2-minutes-day': {
+    component: RespondReviews2MinutesEN,
+    meta: {
+      title: 'Respond to Reviews in 2 Minutes a Day: The Efficient Method',
+      slug: 'respond-reviews-2-minutes-day',
+      description: 'Learn how to manage all your customer reviews in just 2 minutes a day. Optimized workflow, templates, AI tools. Practical guide.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Review Management Experts',
+      },
+      category: 'guides',
+      tags: ['review-response', 'time-management', 'workflow', 'ai-tools', 'productivity'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 12,
+      wordCount: 2800,
+      seo: {
+        title: 'Respond to Reviews in 2 Minutes a Day: The Efficient Method 2026',
+        description: 'Learn how to manage all your customer reviews in just 2 minutes a day. Optimized workflow, templates, AI tools. Practical guide.',
+        keywords: ['respond reviews quickly', 'efficient review management', 'review workflow', 'save time google reviews', 'automate review responses'],
+      },
+    },
+  },
   // French articles
   'fr:repondre-avis-google-negatifs': {
     component: RespondNegativeReviewsFR,
@@ -181,6 +209,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Comment Obtenir Plus d\'Avis Google : Le Guide Complet 2026',
         description: '15 stratégies éprouvées pour obtenir plus d\'avis Google. QR codes, emails, SMS, timing optimal. Guide pratique avec templates gratuits.',
         keywords: ['obtenir plus avis google', 'demander avis clients', 'augmenter avis google', 'collecter avis google', 'stratégie avis google'],
+      },
+    },
+  },
+  'fr:repondre-avis-2-minutes-jour': {
+    component: RespondReviews2MinutesFR,
+    meta: {
+      title: 'Répondre aux Avis en 2 Minutes par Jour : La Méthode Efficace',
+      slug: 'repondre-avis-2-minutes-jour',
+      description: 'Apprenez à gérer tous vos avis clients en seulement 2 minutes par jour. Workflow optimisé, templates, outils IA. Guide pratique.',
+      date: '2026-01-15',
+      author: {
+        name: 'Équipe ReplyStack',
+        role: 'Experts en gestion d\'avis',
+      },
+      category: 'guides',
+      tags: ['reponse-avis', 'gestion-temps', 'workflow', 'outils-ia', 'productivite'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 12,
+      wordCount: 2800,
+      seo: {
+        title: 'Répondre aux Avis en 2 Minutes par Jour : La Méthode Efficace 2026',
+        description: 'Apprenez à gérer tous vos avis clients en seulement 2 minutes par jour. Workflow optimisé, templates, outils IA. Guide pratique.',
+        keywords: ['répondre avis rapidement', 'gestion avis efficace', 'workflow avis clients', 'gagner temps avis google', 'automatiser réponses avis'],
       },
     },
   },
@@ -257,6 +309,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
       },
     },
   },
+  'es:responder-resenas-2-minutos-dia': {
+    component: RespondReviews2MinutesES,
+    meta: {
+      title: 'Responder a Reseñas en 2 Minutos al Día: El Método Eficiente',
+      slug: 'responder-resenas-2-minutos-dia',
+      description: 'Aprende a gestionar todas tus reseñas de clientes en solo 2 minutos al día. Workflow optimizado, plantillas, herramientas IA. Guía práctica.',
+      date: '2026-01-15',
+      author: {
+        name: 'Equipo ReplyStack',
+        role: 'Expertos en gestión de reseñas',
+      },
+      category: 'guides',
+      tags: ['respuesta-resenas', 'gestion-tiempo', 'workflow', 'herramientas-ia', 'productividad'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 12,
+      wordCount: 2800,
+      seo: {
+        title: 'Responder a Reseñas en 2 Minutos al Día: El Método Eficiente 2026',
+        description: 'Aprende a gestionar todas tus reseñas de clientes en solo 2 minutos al día. Workflow optimizado, plantillas, herramientas IA. Guía práctica.',
+        keywords: ['responder reseñas rápido', 'gestión reseñas eficiente', 'workflow reseñas clientes', 'ahorrar tiempo reseñas google', 'automatizar respuestas reseñas'],
+      },
+    },
+  },
   // Portuguese articles
   'pt:responder-avaliacoes-negativas': {
     component: RespondNegativeReviewsPT,
@@ -327,6 +403,30 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Como Conseguir Mais Avaliações no Google: O Guia Completo 2026',
         description: '15 estratégias comprovadas para conseguir mais avaliações no Google. QR codes, emails, SMS, timing ideal. Guia prático com modelos grátis.',
         keywords: ['conseguir mais avaliações google', 'pedir avaliações clientes', 'aumentar avaliações google', 'coletar avaliações google', 'estratégia avaliações google'],
+      },
+    },
+  },
+  'pt:responder-avaliacoes-2-minutos-dia': {
+    component: RespondReviews2MinutesPT,
+    meta: {
+      title: 'Responder a Avaliações em 2 Minutos por Dia: O Método Eficiente',
+      slug: 'responder-avaliacoes-2-minutos-dia',
+      description: 'Aprenda a gerenciar todas as suas avaliações de clientes em apenas 2 minutos por dia. Workflow otimizado, modelos, ferramentas IA. Guia prático.',
+      date: '2026-01-15',
+      author: {
+        name: 'Equipa ReplyStack',
+        role: 'Especialistas em gestão de avaliações',
+      },
+      category: 'guides',
+      tags: ['resposta-avaliacoes', 'gestao-tempo', 'workflow', 'ferramentas-ia', 'produtividade'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 12,
+      wordCount: 2800,
+      seo: {
+        title: 'Responder a Avaliações em 2 Minutos por Dia: O Método Eficiente 2026',
+        description: 'Aprenda a gerenciar todas as suas avaliações de clientes em apenas 2 minutos por dia. Workflow otimizado, modelos, ferramentas IA. Guia prático.',
+        keywords: ['responder avaliações rápido', 'gestão avaliações eficiente', 'workflow avaliações clientes', 'economizar tempo avaliações google', 'automatizar respostas avaliações'],
       },
     },
   },

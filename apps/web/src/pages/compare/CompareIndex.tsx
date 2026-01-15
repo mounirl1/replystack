@@ -236,7 +236,7 @@ export function CompareIndex() {
   const comparisons = getComparisonsByLanguage(language);
   const content = pageContent[language as keyof typeof pageContent] || pageContent.en;
 
-  const fullUrl = `https://replystack.io${langPrefix}/compare`;
+  const fullUrl = `https://www.reply-stack.app${langPrefix}/compare`;
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -249,7 +249,7 @@ export function CompareIndex() {
       itemListElement: comparisons.map((comp, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://replystack.io${langPrefix}/compare/${comp.slug}`,
+        url: `https://www.reply-stack.app${langPrefix}/compare/${comp.slug}`,
         name: comp.title,
       })),
     },
