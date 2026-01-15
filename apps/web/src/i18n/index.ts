@@ -12,6 +12,7 @@ import enSettings from './locales/en/settings.json';
 import enOnboarding from './locales/en/onboarding.json';
 import enBlog from './locales/en/blog.json';
 import enSectors from './locales/en/sectors.json';
+import enContact from './locales/en/contact.json';
 
 import frCommon from './locales/fr/common.json';
 import frLanding from './locales/fr/landing.json';
@@ -22,6 +23,7 @@ import frSettings from './locales/fr/settings.json';
 import frOnboarding from './locales/fr/onboarding.json';
 import frBlog from './locales/fr/blog.json';
 import frSectors from './locales/fr/sectors.json';
+import frContact from './locales/fr/contact.json';
 
 import esCommon from './locales/es/common.json';
 import esLanding from './locales/es/landing.json';
@@ -76,6 +78,7 @@ i18n
         onboarding: enOnboarding,
         blog: enBlog,
         sectors: enSectors,
+        contact: enContact,
       },
       fr: {
         common: frCommon,
@@ -87,6 +90,7 @@ i18n
         onboarding: frOnboarding,
         blog: frBlog,
         sectors: frSectors,
+        contact: frContact,
       },
       es: {
         common: esCommon,
@@ -122,7 +126,7 @@ i18n
     },
     fallbackLng: 'en',
     defaultNS: 'common',
-    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding', 'blog', 'sectors'],
+    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding', 'blog', 'sectors', 'contact'],
     interpolation: {
       escapeValue: false,
     },

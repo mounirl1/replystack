@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ConnectionController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\LemonSqueezyController;
 use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
@@ -37,6 +38,10 @@ Route::get('/health', function () {
         'timestamp' => now()->toIso8601String(),
     ]);
 });
+
+// Contact form (public, rate limited to prevent spam)
+Route::post('/contact', [ContactController::class, 'send'])
+    ->middleware('throttle:5,1');
 
 // Authentication routes
 Route::prefix('auth')->group(function () {

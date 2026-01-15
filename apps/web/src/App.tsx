@@ -30,6 +30,8 @@ const BlogPost = lazy(() => import('@/pages/blog/BlogPost').then(m => ({ default
 const CompareIndex = lazy(() => import('@/pages/compare/CompareIndex').then(m => ({ default: m.CompareIndex })));
 const ComparePage = lazy(() => import('@/pages/compare/ComparePage').then(m => ({ default: m.ComparePage })));
 const AlternativesPage = lazy(() => import('@/pages/alternatives/AlternativesPage').then(m => ({ default: m.AlternativesPage })));
+const Contact = lazy(() => import('@/pages/Contact').then(m => ({ default: m.Contact })));
+const Privacy = lazy(() => import('@/pages/Privacy').then(m => ({ default: m.Privacy })));
 
 // Loading component for Suspense fallback
 function LoadingSpinner() {
@@ -63,6 +65,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/contact" element={<Contact />} />
           {/* Blog routes - EN (default) */}
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -116,6 +119,9 @@ function App() {
 
         {/* Magic auth (no layout needed) */}
         <Route path="/auth/magic" element={<MagicAuth />} />
+
+        {/* Legal pages (standalone, no layout) */}
+        <Route path="/privacy" element={<Privacy />} />
 
         {/* Protected dashboard routes with new layout */}
         <Route element={<DashboardLayout />}>

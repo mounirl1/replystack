@@ -233,4 +233,20 @@ export const locationsApi = {
   },
 };
 
+// Contact API (public, no auth required)
+export interface ContactRequest {
+  name: string;
+  email: string;
+  reason: 'support' | 'sales' | 'partnership' | 'other';
+  subject: string;
+  message: string;
+}
+
+export const contactApi = {
+  send: async (data: ContactRequest) => {
+    const response = await api.post<{ message: string }>('/contact', data);
+    return response.data;
+  },
+};
+
 export default api;

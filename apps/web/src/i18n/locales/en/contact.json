@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "Contact Us - ReplyStack Support",
+    "description": "Get in touch with the ReplyStack team. We're here to help with support, sales inquiries, partnerships, and any questions about our AI review reply platform."
+  },
+  "hero": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question or need help? We're here to assist you with anything related to ReplyStack."
+  },
+  "info": {
+    "email": {
+      "title": "Email Us",
+      "description": "Send us an email and we'll respond as soon as possible."
+    },
+    "chat": {
+      "title": "Live Chat",
+      "status": "Coming Soon",
+      "description": "We're working on adding live chat support for instant assistance."
+    },
+    "response": {
+      "title": "Response Time",
+      "time": "< 24 hours",
+      "description": "We aim to respond to all inquiries within one business day."
+    }
+  },
+  "faq": {
+    "title": "Looking for quick answers?",
+    "description": "Check out our FAQ section for answers to common questions.",
+    "link": "View FAQ"
+  },
+  "reasons": {
+    "support": "Support",
+    "sales": "Sales",
+    "partnership": "Partnership",
+    "other": "Other"
+  },
+  "form": {
+    "title": "Send us a Message",
+    "reason": "What can we help you with?",
+    "name": "Your Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "How can we help you?",
+    "message": "Your Message",
+    "messagePlaceholder": "Tell us more about your question or issue...",
+    "submit": "Send Message",
+    "error": "Failed to send message. Please try again or email us directly at support@reply-stack.app"
+  },
+  "success": {
+    "title": "Message Sent!",
+    "message": "Thank you for reaching out. We've received your message and will get back to you within 24 hours.",
+    "sendAnother": "Send Another Message"
+  }
+}

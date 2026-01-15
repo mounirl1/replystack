@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "Contactez-nous - Support ReplyStack",
+    "description": "Contactez l'equipe ReplyStack. Nous sommes la pour vous aider avec le support, les questions commerciales, les partenariats et toutes vos questions sur notre plateforme de reponses aux avis."
+  },
+  "hero": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question ou besoin d'aide ? Nous sommes la pour vous accompagner dans l'utilisation de ReplyStack."
+  },
+  "info": {
+    "email": {
+      "title": "Email",
+      "description": "Envoyez-nous un email et nous vous repondrons dans les plus brefs delais."
+    },
+    "chat": {
+      "title": "Chat en direct",
+      "status": "Bientot disponible",
+      "description": "Nous travaillons a ajouter un support par chat pour une assistance instantanee."
+    },
+    "response": {
+      "title": "Temps de reponse",
+      "time": "< 24 heures",
+      "description": "Nous nous efforcons de repondre a toutes les demandes sous un jour ouvre."
+    }
+  },
+  "faq": {
+    "title": "Besoin de reponses rapides ?",
+    "description": "Consultez notre FAQ pour les reponses aux questions frequentes.",
+    "link": "Voir la FAQ"
+  },
+  "reasons": {
+    "support": "Support",
+    "sales": "Commercial",
+    "partnership": "Partenariat",
+    "other": "Autre"
+  },
+  "form": {
+    "title": "Envoyez-nous un message",
+    "reason": "Comment pouvons-nous vous aider ?",
+    "name": "Votre nom",
+    "namePlaceholder": "Jean Dupont",
+    "email": "Adresse email",
+    "emailPlaceholder": "jean@exemple.com",
+    "subject": "Sujet",
+    "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
+    "message": "Votre message",
+    "messagePlaceholder": "Decrivez votre question ou probleme...",
+    "submit": "Envoyer le message",
+    "error": "Echec de l'envoi du message. Veuillez reessayer ou nous contacter directement a support@reply-stack.app"
+  },
+  "success": {
+    "title": "Message envoye !",
+    "message": "Merci de nous avoir contacte. Nous avons bien recu votre message et vous repondrons sous 24 heures.",
+    "sendAnother": "Envoyer un autre message"
+  }
+}

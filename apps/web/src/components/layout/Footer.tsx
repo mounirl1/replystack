@@ -170,10 +170,15 @@ export function Footer(): ReactElement {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legal & Contact */}
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">{t('footer.legal')}</h4>
             <ul className="space-y-3 text-gray-600">
+              <li>
+                <Link to="/contact" className="hover:text-emerald-600 transition-colors">
+                  {t('footer.contact')}
+                </Link>
+              </li>
               <li>
                 <a
                   href={`${legalBaseUrl}/privacy?lang=${currentLang}`}
@@ -210,14 +215,9 @@ export function Footer(): ReactElement {
 
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
           <p>&copy; {new Date().getFullYear()} ReplyStack. {t('footer.copyright')}</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-emerald-600 transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="hover:text-emerald-600 transition-colors">
-              LinkedIn
-            </a>
-          </div>
+          <Link to="/contact" className="hover:text-emerald-600 transition-colors">
+            {t('footer.contact')}
+          </Link>
         </div>
       </div>
     </footer>
