@@ -33,9 +33,9 @@ class ReplyController extends Controller
     public function generate(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
-            'review_content' => ['required', 'string', 'min:1', 'max:5000'],
+            'review_content' => ['nullable', 'string', 'max:5000'],
             'review_rating' => ['required', 'integer', 'min:1', 'max:5'],
-            'review_author' => ['required', 'string', 'max:255'],
+            'review_author' => ['nullable', 'string', 'max:255'],
             'platform' => ['required', 'string', 'in:' . implode(',', ReplyGeneratorService::PLATFORMS)],
             'tone' => ['sometimes', 'string', 'in:' . implode(',', ReplyGeneratorService::TONES)],
             'length' => ['sometimes', 'string', 'in:short,medium,detailed'],
@@ -89,9 +89,9 @@ class ReplyController extends Controller
         try {
             // Prepare review data
             $reviewData = [
-                'content' => $validated['review_content'],
+                'content' => $validated['review_content'] ?? '',
                 'rating' => $validated['review_rating'],
-                'author' => $validated['review_author'],
+                'author' => $validated['review_author'] ?? 'Anonymous',
                 'platform' => $validated['platform'],
             ];
 

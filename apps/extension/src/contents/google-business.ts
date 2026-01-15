@@ -843,13 +843,49 @@ async function showReplyPopup(reviewData: ReviewData, reviewEl: HTMLElement) {
   });
 
   // Insert
-  insertBtn.addEventListener('click', () => {
+  insertBtn.addEventListener('click', async () => {
     const text = replyTextarea.value;
-    const textarea = reviewEl.querySelector('textarea.reply-input, textarea[placeholder*="Reply"]') as HTMLTextAreaElement;
+
+    // Search context: the review element and its parent containers
+    const reviewContainer = reviewEl.closest('.DsOcnf') || reviewEl.closest('[jscontroller="H8pyme"]') || reviewEl;
+
+    // First, check if the Reply button needs to be clicked to open the textarea
+    // Try to find in review container first, then in reviewEl
+    let replyButton = reviewContainer.querySelector('button[jsname="rhPddf"]') as HTMLButtonElement;
+    if (!replyButton) {
+      replyButton = reviewEl.querySelector('button[jsname="rhPddf"]') as HTMLButtonElement;
+    }
+
+    // Check if textarea is already visible
+    let textarea = reviewContainer.querySelector('textarea[jsname="YPqjbf"]') as HTMLTextAreaElement;
+    if (!textarea) {
+      textarea = reviewEl.querySelector('textarea[jsname="YPqjbf"]') as HTMLTextAreaElement;
+    }
+
+    // If textarea is not visible, click the Reply button first
+    if (!textarea && replyButton) {
+      replyButton.click();
+
+      // Wait for the textarea to appear (with timeout of 2 seconds)
+      for (let i = 0; i < 20; i++) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        textarea = reviewContainer.querySelector('textarea[jsname="YPqjbf"]') as HTMLTextAreaElement;
+        if (!textarea) {
+          textarea = reviewEl.querySelector('textarea[jsname="YPqjbf"]') as HTMLTextAreaElement;
+        }
+        if (textarea) break;
+      }
+    }
+
     if (textarea) {
+      // Set value and dispatch events to trigger Google's handlers
       textarea.value = text;
       textarea.dispatchEvent(new Event('input', { bubbles: true }));
       textarea.dispatchEvent(new Event('change', { bubbles: true }));
+      // Also dispatch keyup for frameworks that listen to keyboard events
+      textarea.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+      // Focus the textarea so the user can see it's filled
+      textarea.focus();
     }
     closePopup();
   });
@@ -1035,6 +1071,22 @@ function injectSyncButton() {
   });
 
   syncBtn.addEventListener('click', async () => {
+    // Check authentication first
+    const storage = await chrome.storage.local.get(['token']);
+    if (!storage.token) {
+      syncBtn.innerHTML = '🔒 Login required';
+      syncBtn.style.background = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
+      syncBtn.style.color = 'white';
+      syncBtn.style.border = 'none';
+      setTimeout(() => {
+        syncBtn.innerHTML = '🔄 Sync Reviews';
+        syncBtn.style.background = 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)';
+        syncBtn.style.color = 'inherit';
+        syncBtn.style.border = '1px solid #d1d5db';
+      }, 2000);
+      return;
+    }
+
     syncBtn.disabled = true;
     syncBtn.innerHTML = '⏳ Syncing...';
     syncBtn.style.opacity = '0.7';
@@ -1048,7 +1100,8 @@ function injectSyncButton() {
         syncBtn.style.color = 'white';
         syncBtn.style.border = 'none';
       } else {
-        syncBtn.innerHTML = '⚠ No reviews';
+        // No locationId configured for this page
+        syncBtn.innerHTML = '⚠ No location';
       }
     } catch {
       showErrorNotification('Failed to sync reviews');

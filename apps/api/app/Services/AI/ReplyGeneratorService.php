@@ -97,7 +97,7 @@ class ReplyGeneratorService
 
         // Detect language if set to auto
         $detectedLanguage = $language === 'auto'
-            ? $this->detectLanguage($review['content'])
+            ? $this->detectLanguage($review['content'] ?? '')
             : $language;
 
         return [
@@ -132,21 +132,27 @@ class ReplyGeneratorService
         $languageInstruction = $this->getLanguageInstruction($language);
 
         // Sanitize user inputs to prevent prompt injection
-        $sanitizedContent = $this->sanitizeInput($review['content']);
-        $sanitizedAuthor = $this->sanitizeInput($review['author']);
+        $sanitizedContent = $this->sanitizeInput($review['content'] ?? '');
+        $sanitizedAuthor = $this->sanitizeInput($review['author'] ?? 'Anonymous');
         $sanitizedPlatform = $this->sanitizeInput($review['platform']);
+
+        // Handle rating-only reviews (no content)
+        $reviewSection = empty(trim($sanitizedContent))
+            ? "Note : {$review['rating']}/5 (avis sans commentaire, note seule)\nAuteur : {$sanitizedAuthor}"
+            : "Plateforme : {$sanitizedPlatform}\nNote : {$review['rating']}/5\nAuteur : {$sanitizedAuthor}\nAvis : {$sanitizedContent}";
+
+        $ratingOnlyInstruction = empty(trim($sanitizedContent))
+            ? "\n\n## Note importante\nCet avis ne contient qu'une note sans commentaire. Génère une réponse courte et appropriée basée uniquement sur la note."
+            : '';
 
         return <<<PROMPT
 {$systemPrompt}
 
 ## Langue
-{$languageInstruction}
+{$languageInstruction}{$ratingOnlyInstruction}
 
 ## Avis à traiter
-Plateforme : {$sanitizedPlatform}
-Note : {$review['rating']}/5
-Auteur : {$sanitizedAuthor}
-Avis : {$sanitizedContent}
+{$reviewSection}
 
 Génère maintenant la réponse :
 PROMPT;
@@ -167,17 +173,25 @@ PROMPT;
         $ratingContext = $this->getRatingContext($review['rating']);
 
         // Sanitize user inputs to prevent prompt injection
-        $sanitizedContent = $this->sanitizeInput($review['content']);
-        $sanitizedAuthor = $this->sanitizeInput($review['author']);
+        $sanitizedContent = $this->sanitizeInput($review['content'] ?? '');
+        $sanitizedAuthor = $this->sanitizeInput($review['author'] ?? 'Anonymous');
         $sanitizedPlatform = $this->sanitizeInput($review['platform']);
+
+        // Handle rating-only reviews (no content)
+        $isRatingOnly = empty(trim($sanitizedContent));
+
+        if ($isRatingOnly) {
+            $reviewInfo = "Note : {$review['rating']}/5 (avis sans commentaire)\nAuteur : {$sanitizedAuthor}";
+            $personalizationInstruction = "- Genere une reponse courte et appropriee basee uniquement sur la note.";
+        } else {
+            $reviewInfo = "Plateforme : {$sanitizedPlatform}\nNote : {$review['rating']}/5\nAuteur : {$sanitizedAuthor}\nAvis : {$sanitizedContent}";
+            $personalizationInstruction = "- Personnalise la reponse en mentionnant des elements specifiques de l'avis.";
+        }
 
         return <<<PROMPT
 Tu es un assistant specialise dans la redaction de reponses aux avis clients.
 
-{$locationContext}Plateforme : {$sanitizedPlatform}
-Note : {$review['rating']}/5
-Auteur : {$sanitizedAuthor}
-Avis : {$sanitizedContent}
+{$locationContext}{$reviewInfo}
 
 Instructions :
 - {$toneInstructions}
@@ -186,7 +200,7 @@ Instructions :
 - La reponse doit faire entre 50 et 150 mots.
 - Ne fais pas de promesses impossibles a tenir.
 - N'utilise pas de formules generiques type "Cher client".
-- Personnalise la reponse en mentionnant des elements specifiques de l'avis.
+{$personalizationInstruction}
 - Termine par une invitation a revenir ou a contacter l'etablissement si besoin.
 
 Genere uniquement la reponse, sans introduction ni explication.
@@ -282,17 +296,13 @@ PROMPT;
     {
         $errors = [];
 
-        if (empty($review['content'])) {
-            $errors[] = 'Review content is required.';
-        }
+        // Content is now optional (rating-only reviews are allowed)
 
         if (!isset($review['rating']) || $review['rating'] < 1 || $review['rating'] > 5) {
             $errors[] = 'Rating must be between 1 and 5.';
         }
 
-        if (empty($review['author'])) {
-            $errors[] = 'Author name is required.';
-        }
+        // Author is optional, will default to 'Anonymous'
 
         if (empty($review['platform']) || !in_array($review['platform'], self::PLATFORMS)) {
             $errors[] = 'Valid platform is required.';
