@@ -59,6 +59,12 @@ import EcommerceNegativeReviewsFR from '@/content/blog/guides/ecommerce-negative
 import EcommerceNegativeReviewsES from '@/content/blog/guides/ecommerce-negative-reviews/index.es.mdx';
 import EcommerceNegativeReviewsPT from '@/content/blog/guides/ecommerce-negative-reviews/index.pt.mdx';
 
+// Import blog articles - Auto Repair Reputation
+import AutoRepairReputationEN from '@/content/blog/guides/auto-repair-reputation/index.en.mdx';
+import AutoRepairReputationFR from '@/content/blog/guides/auto-repair-reputation/index.fr.mdx';
+import AutoRepairReputationES from '@/content/blog/guides/auto-repair-reputation/index.es.mdx';
+import AutoRepairReputationPT from '@/content/blog/guides/auto-repair-reputation/index.pt.mdx';
+
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
   component: ComponentType;
@@ -1051,6 +1057,106 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'E-commerce: Transforme Avaliações Negativas em Oportunidades de Venda | ReplyStack',
         description: 'Guia completo para e-commerce: como responder a avaliações negativas para aumentar conversões. Amazon, Google, avaliações de produtos.',
         keywords: ['avaliações negativas ecommerce', 'responder avaliações amazon', 'avaliações produtos negativas', 'gestão avaliações ecommerce', 'reputação ecommerce'],
+      },
+    },
+  },
+  // Auto Repair Reputation - EN
+  'en:auto-repair-reputation': {
+    component: AutoRepairReputationEN,
+    meta: {
+      title: 'Auto Repair Shop Reputation: The Complete Guide to Getting More Reviews',
+      slug: 'auto-repair-reputation',
+      description: 'Reputation guide for auto repair shops, mechanics, body shops. How to get Google reviews, respond to customers, grow your customer base.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['auto-repair-reviews', 'mechanic-reputation', 'google-reviews-garage', 'auto-shop-reputation', 'car-repair-reviews'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Auto Repair Shop Reputation: The Complete Guide to Getting More Reviews | ReplyStack',
+        description: 'Reputation guide for auto repair shops, mechanics, body shops. How to get Google reviews, respond to customers, grow your customer base.',
+        keywords: ['auto repair reviews', 'mechanic reputation', 'google reviews garage', 'auto shop e-reputation', 'car repair reviews'],
+      },
+    },
+  },
+  // Auto Repair Reputation - FR
+  'fr:auto-repair-reputation': {
+    component: AutoRepairReputationFR,
+    meta: {
+      title: 'E-Réputation Garage Auto : Le Guide Complet pour Obtenir Plus d\'Avis',
+      slug: 'auto-repair-reputation',
+      description: 'Guide e-réputation pour garages automobiles, mécaniciens, carrossiers. Comment obtenir des avis Google, répondre aux clients, développer votre clientèle.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-garage', 'reputation-garagiste', 'avis-google-garage', 'e-reputation-garage-automobile', 'avis-mecanicien'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'E-Réputation Garage Auto : Le Guide Complet pour Obtenir Plus d\'Avis | ReplyStack',
+        description: 'Guide e-réputation pour garages automobiles, mécaniciens, carrossiers. Comment obtenir des avis Google, répondre aux clients, développer votre clientèle.',
+        keywords: ['avis garage', 'reputation garagiste', 'avis google garage', 'e-réputation garage automobile', 'avis mécanicien'],
+      },
+    },
+  },
+  // Auto Repair Reputation - ES
+  'es:auto-repair-reputation': {
+    component: AutoRepairReputationES,
+    meta: {
+      title: 'Reputación Online para Talleres Mecánicos: Guía Completa para Obtener Más Reseñas',
+      slug: 'auto-repair-reputation',
+      description: 'Guía de reputación para talleres mecánicos, mecánicos, carrocerías. Cómo conseguir reseñas Google, responder a clientes, hacer crecer tu negocio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-taller', 'reputacion-mecanico', 'resenas-google-taller', 'e-reputacion-taller-mecanico', 'opiniones-mecanico'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputación Online para Talleres Mecánicos: Guía Completa para Obtener Más Reseñas | ReplyStack',
+        description: 'Guía de reputación para talleres mecánicos, mecánicos, carrocerías. Cómo conseguir reseñas Google, responder a clientes, hacer crecer tu negocio.',
+        keywords: ['reseñas taller', 'reputación mecánico', 'reseñas google taller', 'e-reputación taller mecánico', 'opiniones mecánico'],
+      },
+    },
+  },
+  // Auto Repair Reputation - PT
+  'pt:auto-repair-reputation': {
+    component: AutoRepairReputationPT,
+    meta: {
+      title: 'Reputação Online para Oficinas Mecânicas: Guia Completo para Obter Mais Avaliações',
+      slug: 'auto-repair-reputation',
+      description: 'Guia de reputação para oficinas mecânicas, mecânicos, funilarias. Como conseguir avaliações Google, responder a clientes, fazer crescer seu negócio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-oficina', 'reputacao-mecanico', 'avaliacoes-google-oficina', 'e-reputacao-oficina-mecanica', 'opinioes-mecanico'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputação Online para Oficinas Mecânicas: Guia Completo para Obter Mais Avaliações | ReplyStack',
+        description: 'Guia de reputação para oficinas mecânicas, mecânicos, funilarias. Como conseguir avaliações Google, responder a clientes, fazer crescer seu negócio.',
+        keywords: ['avaliações oficina', 'reputação mecânico', 'avaliações google oficina', 'e-reputação oficina mecânica', 'opiniões mecânico'],
       },
     },
   },

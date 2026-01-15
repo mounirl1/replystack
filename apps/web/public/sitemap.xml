@@ -201,6 +201,19 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Auto Repair Shop Reputation -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/auto-repair-reputation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/auto-repair-reputation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/auto-repair-reputation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/auto-repair-reputation"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/auto-repair-reputation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/auto-repair-reputation"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- ==================== COMPARE INDEX ==================== -->
 
   <!-- Compare Index - EN -->
