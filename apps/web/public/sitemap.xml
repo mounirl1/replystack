@@ -136,6 +136,71 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Respond to Google Reviews -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/respond-google-reviews</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/respond-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/respond-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/respond-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-google-reviews"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Reviews Boost Local SEO -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/reviews-boost-local-seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/reviews-boost-local-seo"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/reviews-boost-local-seo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/reviews-boost-local-seo"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/reviews-boost-local-seo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/reviews-boost-local-seo"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Get More 5-Star Reviews -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/get-more-5-star-reviews</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/get-more-5-star-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/get-more-5-star-reviews"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/get-more-5-star-reviews"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/get-more-5-star-reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/get-more-5-star-reviews"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Reputation for Artisans/Contractors -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/reputation-artisans</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/reputation-artisans"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/reputation-artisans"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/reputation-artisans"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/reputation-artisans"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/reputation-artisans"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: E-commerce Negative Reviews -->
+  <url>
+    <loc>https://www.reply-stack.app/blog/ecommerce-negative-reviews</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/ecommerce-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/ecommerce-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/ecommerce-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/ecommerce-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/ecommerce-negative-reviews"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- ==================== COMPARE INDEX ==================== -->
 
   <!-- Compare Index - EN -->

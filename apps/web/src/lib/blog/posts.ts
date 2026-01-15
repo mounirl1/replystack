@@ -13,6 +13,9 @@ import ReviewResponseTemplatesEN from '@/content/blog/guides/review-response-tem
 import GetMoreGoogleReviewsEN from '@/content/blog/guides/get-more-google-reviews/index.en.mdx';
 import OnlineReputationStrategyEN from '@/content/blog/guides/online-reputation-strategy/index.en.mdx';
 import RespondReviews2MinutesEN from '@/content/blog/guides/respond-reviews-2-minutes-day/index.en.mdx';
+import RespondGoogleReviewsEN from '@/content/blog/guides/respond-google-reviews/index.en.mdx';
+import ReviewsBoostLocalSeoEN from '@/content/blog/guides/reviews-boost-local-seo/index.en.mdx';
+import GetMore5StarReviewsEN from '@/content/blog/guides/get-more-5-star-reviews/index.en.mdx';
 
 // Import blog articles - Guides FR
 import RespondNegativeReviewsFR from '@/content/blog/guides/respond-negative-reviews/index.fr.mdx';
@@ -20,6 +23,9 @@ import ReviewResponseTemplatesFR from '@/content/blog/guides/review-response-tem
 import GetMoreGoogleReviewsFR from '@/content/blog/guides/get-more-google-reviews/index.fr.mdx';
 import OnlineReputationStrategyFR from '@/content/blog/guides/online-reputation-strategy/index.fr.mdx';
 import RespondReviews2MinutesFR from '@/content/blog/guides/respond-reviews-2-minutes-day/index.fr.mdx';
+import RespondGoogleReviewsFR from '@/content/blog/guides/respond-google-reviews/index.fr.mdx';
+import ReviewsBoostLocalSeoFR from '@/content/blog/guides/reviews-boost-local-seo/index.fr.mdx';
+import GetMore5StarReviewsFR from '@/content/blog/guides/get-more-5-star-reviews/index.fr.mdx';
 
 // Import blog articles - Guides ES
 import RespondNegativeReviewsES from '@/content/blog/guides/respond-negative-reviews/index.es.mdx';
@@ -27,6 +33,9 @@ import ReviewResponseTemplatesES from '@/content/blog/guides/review-response-tem
 import GetMoreGoogleReviewsES from '@/content/blog/guides/get-more-google-reviews/index.es.mdx';
 import OnlineReputationStrategyES from '@/content/blog/guides/online-reputation-strategy/index.es.mdx';
 import RespondReviews2MinutesES from '@/content/blog/guides/respond-reviews-2-minutes-day/index.es.mdx';
+import RespondGoogleReviewsES from '@/content/blog/guides/respond-google-reviews/index.es.mdx';
+import ReviewsBoostLocalSeoES from '@/content/blog/guides/reviews-boost-local-seo/index.es.mdx';
+import GetMore5StarReviewsES from '@/content/blog/guides/get-more-5-star-reviews/index.es.mdx';
 
 // Import blog articles - Guides PT
 import RespondNegativeReviewsPT from '@/content/blog/guides/respond-negative-reviews/index.pt.mdx';
@@ -34,6 +43,21 @@ import ReviewResponseTemplatesPT from '@/content/blog/guides/review-response-tem
 import GetMoreGoogleReviewsPT from '@/content/blog/guides/get-more-google-reviews/index.pt.mdx';
 import OnlineReputationStrategyPT from '@/content/blog/guides/online-reputation-strategy/index.pt.mdx';
 import RespondReviews2MinutesPT from '@/content/blog/guides/respond-reviews-2-minutes-day/index.pt.mdx';
+import RespondGoogleReviewsPT from '@/content/blog/guides/respond-google-reviews/index.pt.mdx';
+import ReviewsBoostLocalSeoPT from '@/content/blog/guides/reviews-boost-local-seo/index.pt.mdx';
+import GetMore5StarReviewsPT from '@/content/blog/guides/get-more-5-star-reviews/index.pt.mdx';
+
+// Import blog articles - Reputation Artisans
+import ReputationArtisansEN from '@/content/blog/guides/reputation-artisans/index.en.mdx';
+import ReputationArtisansFR from '@/content/blog/guides/reputation-artisans/index.fr.mdx';
+import ReputationArtisansES from '@/content/blog/guides/reputation-artisans/index.es.mdx';
+import ReputationArtisansPT from '@/content/blog/guides/reputation-artisans/index.pt.mdx';
+
+// Import blog articles - E-commerce Negative Reviews
+import EcommerceNegativeReviewsEN from '@/content/blog/guides/ecommerce-negative-reviews/index.en.mdx';
+import EcommerceNegativeReviewsFR from '@/content/blog/guides/ecommerce-negative-reviews/index.fr.mdx';
+import EcommerceNegativeReviewsES from '@/content/blog/guides/ecommerce-negative-reviews/index.es.mdx';
+import EcommerceNegativeReviewsPT from '@/content/blog/guides/ecommerce-negative-reviews/index.pt.mdx';
 
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
@@ -527,6 +551,506 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Estratégia de Reputação Online Completa 2026: O Guia Definitivo',
         description: 'Construa uma estratégia de reputação online eficaz em 2026. Auditoria, monitoramento, respostas, KPIs. Guia completo com plano de ação e ferramentas.',
         keywords: ['estratégia reputação online', 'gestão reputação internet', 'reputação digital empresa', 'plano reputação online', 'melhorar reputação internet'],
+      },
+    },
+  },
+  // Respond to Google Reviews - EN
+  'en:respond-google-reviews': {
+    component: RespondGoogleReviewsEN,
+    meta: {
+      title: 'How to Respond to Google Reviews: Complete Guide for Businesses',
+      slug: 'respond-google-reviews',
+      description: 'Learn how to effectively respond to Google reviews to improve your online reputation, build customer loyalty, and boost your local SEO.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['google-reviews', 'review-response', 'online-reputation', 'local-seo', 'review-management'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 15,
+      wordCount: 3500,
+      seo: {
+        title: 'How to Respond to Google Reviews: Complete Guide 2026 | ReplyStack',
+        description: 'Complete guide to responding to Google reviews: templates, best practices, mistakes to avoid. Improve your online reputation and local SEO.',
+        keywords: ['respond google reviews', 'google review response', 'reply to reviews', 'review management', 'local SEO'],
+      },
+    },
+  },
+  // Respond to Google Reviews - FR
+  'fr:respond-google-reviews': {
+    component: RespondGoogleReviewsFR,
+    meta: {
+      title: 'Répondre aux Avis Google : Guide Complet pour les Entreprises',
+      slug: 'respond-google-reviews',
+      description: 'Apprenez à répondre efficacement aux avis Google pour améliorer votre e-réputation, fidéliser vos clients et booster votre SEO local.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-google', 'reponse-avis', 'e-reputation', 'seo-local', 'gestion-avis'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 15,
+      wordCount: 3500,
+      seo: {
+        title: 'Répondre aux Avis Google : Guide Complet 2026 | ReplyStack',
+        description: 'Guide complet pour répondre aux avis Google : templates, bonnes pratiques, erreurs à éviter. Améliorez votre e-réputation et votre SEO local.',
+        keywords: ['répondre avis google', 'réponse avis google', 'gestion avis', 'e-réputation', 'SEO local'],
+      },
+    },
+  },
+  // Respond to Google Reviews - ES
+  'es:respond-google-reviews': {
+    component: RespondGoogleReviewsES,
+    meta: {
+      title: 'Cómo Responder a las Reseñas de Google: Guía Completa para Empresas',
+      slug: 'respond-google-reviews',
+      description: 'Aprende a responder eficazmente a las reseñas de Google para mejorar tu reputación online, fidelizar clientes y potenciar tu SEO local.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-google', 'respuesta-resenas', 'reputacion-online', 'seo-local', 'gestion-resenas'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 15,
+      wordCount: 3500,
+      seo: {
+        title: 'Cómo Responder a las Reseñas de Google: Guía Completa 2026 | ReplyStack',
+        description: 'Guía completa para responder a las reseñas de Google: plantillas, buenas prácticas, errores a evitar. Mejora tu reputación online y tu SEO local.',
+        keywords: ['responder reseñas google', 'respuesta reseñas google', 'gestión reseñas', 'reputación online', 'SEO local'],
+      },
+    },
+  },
+  // Respond to Google Reviews - PT
+  'pt:respond-google-reviews': {
+    component: RespondGoogleReviewsPT,
+    meta: {
+      title: 'Como Responder às Avaliações do Google: Guia Completo para Empresas',
+      slug: 'respond-google-reviews',
+      description: 'Aprenda a responder eficazmente às avaliações do Google para melhorar sua reputação online, fidelizar clientes e impulsionar seu SEO local.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-google', 'resposta-avaliacoes', 'reputacao-online', 'seo-local', 'gestao-avaliacoes'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 15,
+      wordCount: 3500,
+      seo: {
+        title: 'Como Responder às Avaliações do Google: Guia Completo 2026 | ReplyStack',
+        description: 'Guia completo para responder às avaliações do Google: templates, boas práticas, erros a evitar. Melhore sua reputação online e seu SEO local.',
+        keywords: ['responder avaliações google', 'resposta avaliações google', 'gestão avaliações', 'reputação online', 'SEO local'],
+      },
+    },
+  },
+  // Reviews Boost Local SEO - EN
+  'en:reviews-boost-local-seo': {
+    component: ReviewsBoostLocalSeoEN,
+    meta: {
+      title: 'How Google Reviews Boost Your Local SEO: Complete Guide',
+      slug: 'reviews-boost-local-seo',
+      description: 'Discover how Google reviews improve your local SEO ranking, increase visibility, and attract more customers to your business.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Local SEO Expert',
+      },
+      category: 'guides',
+      tags: ['local-seo', 'google-reviews', 'local-ranking', 'google-visibility', 'google-business'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 14,
+      wordCount: 3200,
+      seo: {
+        title: 'How Google Reviews Boost Your Local SEO | ReplyStack',
+        description: 'Complete guide on Google reviews impact on local SEO: ranking factors, best practices, and strategies to improve your visibility.',
+        keywords: ['reviews local seo', 'google reviews seo', 'local pack ranking', 'local search optimization', 'reviews impact seo'],
+      },
+    },
+  },
+  // Reviews Boost Local SEO - FR
+  'fr:reviews-boost-local-seo': {
+    component: ReviewsBoostLocalSeoFR,
+    meta: {
+      title: 'Comment les Avis Google Boostent votre SEO Local : Guide Complet',
+      slug: 'reviews-boost-local-seo',
+      description: 'Découvrez comment les avis Google améliorent votre référencement local, augmentent votre visibilité et attirent plus de clients dans votre établissement.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en SEO local',
+      },
+      category: 'guides',
+      tags: ['seo-local', 'avis-google', 'referencement-local', 'visibilite-google', 'google-business'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 14,
+      wordCount: 3200,
+      seo: {
+        title: 'Comment les Avis Google Boostent votre SEO Local | ReplyStack',
+        description: 'Guide complet sur l\'impact des avis Google sur votre SEO local : facteurs de classement, bonnes pratiques et stratégies pour améliorer votre visibilité.',
+        keywords: ['avis google seo', 'seo local avis', 'local pack google', 'référencement local', 'impact avis seo'],
+      },
+    },
+  },
+  // Reviews Boost Local SEO - ES
+  'es:reviews-boost-local-seo': {
+    component: ReviewsBoostLocalSeoES,
+    meta: {
+      title: 'Cómo las Reseñas de Google Impulsan tu SEO Local: Guía Completa',
+      slug: 'reviews-boost-local-seo',
+      description: 'Descubre cómo las reseñas de Google mejoran tu posicionamiento local, aumentan tu visibilidad y atraen más clientes a tu negocio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en SEO local',
+      },
+      category: 'guides',
+      tags: ['seo-local', 'resenas-google', 'posicionamiento-local', 'visibilidad-google', 'google-business'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 14,
+      wordCount: 3200,
+      seo: {
+        title: 'Cómo las Reseñas de Google Impulsan tu SEO Local | ReplyStack',
+        description: 'Guía completa sobre el impacto de las reseñas de Google en tu SEO local: factores de clasificación, buenas prácticas y estrategias para mejorar tu visibilidad.',
+        keywords: ['reseñas google seo', 'seo local reseñas', 'local pack google', 'posicionamiento local', 'impacto reseñas seo'],
+      },
+    },
+  },
+  // Reviews Boost Local SEO - PT
+  'pt:reviews-boost-local-seo': {
+    component: ReviewsBoostLocalSeoPT,
+    meta: {
+      title: 'Como as Avaliações do Google Impulsionam seu SEO Local: Guia Completo',
+      slug: 'reviews-boost-local-seo',
+      description: 'Descubra como as avaliações do Google melhoram seu posicionamento local, aumentam sua visibilidade e atraem mais clientes para seu negócio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em SEO local',
+      },
+      category: 'guides',
+      tags: ['seo-local', 'avaliacoes-google', 'posicionamento-local', 'visibilidade-google', 'google-business'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 14,
+      wordCount: 3200,
+      seo: {
+        title: 'Como as Avaliações do Google Impulsionam seu SEO Local | ReplyStack',
+        description: 'Guia completo sobre o impacto das avaliações do Google no seu SEO local: fatores de classificação, boas práticas e estratégias para melhorar sua visibilidade.',
+        keywords: ['avaliações google seo', 'seo local avaliações', 'local pack google', 'posicionamento local', 'impacto avaliações seo'],
+      },
+    },
+  },
+  // Get More 5-Star Reviews - EN
+  'en:get-more-5-star-reviews': {
+    component: GetMore5StarReviewsEN,
+    meta: {
+      title: 'How to Get More 5-Star Google Reviews: Proven Strategies',
+      slug: 'get-more-5-star-reviews',
+      description: 'Discover the best strategies to get more 5-star Google reviews. Ethical techniques, optimal timing, and effective request scripts.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['5-star-reviews', 'google-reviews', 'online-reputation', 'customer-satisfaction', 'google-business'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 16,
+      wordCount: 3800,
+      seo: {
+        title: 'How to Get More 5-Star Google Reviews | ReplyStack',
+        description: 'Complete guide to getting more 5-star reviews: optimal timing, request techniques, and strategies to turn satisfied customers into ambassadors.',
+        keywords: ['get 5 star reviews', 'more positive reviews', 'increase review rating', 'customer reviews strategy', 'ask for reviews'],
+      },
+    },
+  },
+  // Get More 5-Star Reviews - FR
+  'fr:get-more-5-star-reviews': {
+    component: GetMore5StarReviewsFR,
+    meta: {
+      title: 'Comment Obtenir Plus d\'Avis 5 Étoiles sur Google : Stratégies Éprouvées',
+      slug: 'get-more-5-star-reviews',
+      description: 'Découvrez les meilleures stratégies pour obtenir plus d\'avis 5 étoiles sur Google. Techniques éthiques, timing optimal et scripts de demande efficaces.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-5-etoiles', 'avis-google', 'reputation-en-ligne', 'satisfaction-client', 'google-business'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 16,
+      wordCount: 3800,
+      seo: {
+        title: 'Comment Obtenir Plus d\'Avis 5 Étoiles sur Google | ReplyStack',
+        description: 'Guide complet pour obtenir plus d\'avis 5 étoiles : timing optimal, techniques de demande, et stratégies pour transformer vos clients satisfaits en ambassadeurs.',
+        keywords: ['obtenir avis 5 étoiles', 'plus avis positifs', 'augmenter note google', 'stratégie avis clients', 'demander avis'],
+      },
+    },
+  },
+  // Get More 5-Star Reviews - ES
+  'es:get-more-5-star-reviews': {
+    component: GetMore5StarReviewsES,
+    meta: {
+      title: 'Cómo Conseguir Más Reseñas de 5 Estrellas en Google: Estrategias Probadas',
+      slug: 'get-more-5-star-reviews',
+      description: 'Descubre las mejores estrategias para conseguir más reseñas de 5 estrellas en Google. Técnicas éticas, timing óptimo y scripts de solicitud efectivos.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-5-estrellas', 'resenas-google', 'reputacion-online', 'satisfaccion-cliente', 'google-business'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 16,
+      wordCount: 3800,
+      seo: {
+        title: 'Cómo Conseguir Más Reseñas de 5 Estrellas en Google | ReplyStack',
+        description: 'Guía completa para conseguir más reseñas de 5 estrellas: timing óptimo, técnicas de solicitud y estrategias para convertir clientes satisfechos en embajadores.',
+        keywords: ['conseguir reseñas 5 estrellas', 'más reseñas positivas', 'aumentar valoración google', 'estrategia reseñas clientes', 'pedir reseñas'],
+      },
+    },
+  },
+  // Get More 5-Star Reviews - PT
+  'pt:get-more-5-star-reviews': {
+    component: GetMore5StarReviewsPT,
+    meta: {
+      title: 'Como Conseguir Mais Avaliações de 5 Estrelas no Google: Estratégias Comprovadas',
+      slug: 'get-more-5-star-reviews',
+      description: 'Descubra as melhores estratégias para conseguir mais avaliações de 5 estrelas no Google. Técnicas éticas, timing ideal e scripts de solicitação eficazes.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-5-estrelas', 'avaliacoes-google', 'reputacao-online', 'satisfacao-cliente', 'google-business'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 16,
+      wordCount: 3800,
+      seo: {
+        title: 'Como Conseguir Mais Avaliações de 5 Estrelas no Google | ReplyStack',
+        description: 'Guia completo para conseguir mais avaliações de 5 estrelas: timing ideal, técnicas de solicitação e estratégias para transformar clientes satisfeitos em embaixadores.',
+        keywords: ['conseguir avaliações 5 estrelas', 'mais avaliações positivas', 'aumentar nota google', 'estratégia avaliações clientes', 'pedir avaliações'],
+      },
+    },
+  },
+  // Reputation Artisans - EN
+  'en:reputation-artisans': {
+    component: ReputationArtisansEN,
+    meta: {
+      title: 'Online Reputation for Contractors: The Complete 2026 Guide',
+      slug: 'reputation-artisans',
+      description: 'Online reputation guide for contractors, plumbers, electricians, carpenters. How to get Google reviews, respond to customers, and grow your business.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['contractor-reviews', 'plumber-reputation', 'google-reviews-contractor', 'online-reputation', 'electrician-reviews'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Online Reputation for Contractors: The Complete 2026 Guide | ReplyStack',
+        description: 'Online reputation guide for contractors, plumbers, electricians, carpenters. How to get Google reviews, respond to customers, and grow your business.',
+        keywords: ['contractor reviews', 'plumber reputation', 'google reviews contractor', 'online reputation contractor', 'electrician reviews'],
+      },
+    },
+  },
+  // Reputation Artisans - FR
+  'fr:reputation-artisans': {
+    component: ReputationArtisansFR,
+    meta: {
+      title: 'Réputation en Ligne pour Artisans : Le Guide Complet 2026',
+      slug: 'reputation-artisans',
+      description: 'Guide e-réputation pour artisans, plombiers, électriciens, menuisiers. Comment obtenir des avis Google, répondre aux clients, développer votre activité.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-artisan', 'reputation-plombier', 'avis-google-artisan', 'e-reputation-artisan', 'avis-electricien'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Réputation en Ligne pour Artisans : Le Guide Complet 2026 | ReplyStack',
+        description: 'Guide e-réputation pour artisans, plombiers, électriciens, menuisiers. Comment obtenir des avis Google, répondre aux clients, développer votre activité.',
+        keywords: ['avis artisan', 'reputation plombier', 'avis google artisan', 'e-réputation artisan', 'avis electricien'],
+      },
+    },
+  },
+  // Reputation Artisans - ES
+  'es:reputation-artisans': {
+    component: ReputationArtisansES,
+    meta: {
+      title: 'Reputación Online para Profesionales: La Guía Completa 2026',
+      slug: 'reputation-artisans',
+      description: 'Guía de e-reputación para profesionales, fontaneros, electricistas, carpinteros. Cómo conseguir reseñas en Google, responder a clientes y hacer crecer tu negocio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-profesionales', 'reputacion-fontanero', 'resenas-google-profesional', 'e-reputacion-profesional', 'resenas-electricista'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputación Online para Profesionales: La Guía Completa 2026 | ReplyStack',
+        description: 'Guía de e-reputación para profesionales, fontaneros, electricistas, carpinteros. Cómo conseguir reseñas en Google, responder a clientes y hacer crecer tu negocio.',
+        keywords: ['reseñas profesionales', 'reputación fontanero', 'reseñas google profesional', 'e-reputación profesional', 'reseñas electricista'],
+      },
+    },
+  },
+  // Reputation Artisans - PT
+  'pt:reputation-artisans': {
+    component: ReputationArtisansPT,
+    meta: {
+      title: 'Reputação Online para Profissionais de Serviços: O Guia Completo 2026',
+      slug: 'reputation-artisans',
+      description: 'Guia de e-reputação para profissionais de serviços, encanadores, eletricistas, carpinteiros. Como conseguir avaliações no Google, responder clientes e crescer seu negócio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-profissionais', 'reputacao-encanador', 'avaliacoes-google-profissional', 'e-reputacao-profissional', 'avaliacoes-eletricista'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputação Online para Profissionais de Serviços: O Guia Completo 2026 | ReplyStack',
+        description: 'Guia de e-reputação para profissionais de serviços, encanadores, eletricistas, carpinteiros. Como conseguir avaliações no Google, responder clientes e crescer seu negócio.',
+        keywords: ['avaliações profissionais', 'reputação encanador', 'avaliações google profissional', 'e-reputação profissional', 'avaliações eletricista'],
+      },
+    },
+  },
+  // E-commerce Negative Reviews - EN
+  'en:ecommerce-negative-reviews': {
+    component: EcommerceNegativeReviewsEN,
+    meta: {
+      title: 'E-commerce: Turn Negative Reviews Into Sales Opportunities',
+      slug: 'ecommerce-negative-reviews',
+      description: 'Complete guide for e-commerce: how to respond to negative reviews to increase conversions. Amazon, Google, product reviews. Strategies + templates.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['ecommerce-reviews', 'negative-reviews', 'amazon-reviews', 'product-reviews', 'ecommerce-reputation'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 20,
+      wordCount: 4500,
+      seo: {
+        title: 'E-commerce: Turn Negative Reviews Into Sales Opportunities | ReplyStack',
+        description: 'Complete guide for e-commerce: how to respond to negative reviews to increase conversions. Amazon, Google, product reviews.',
+        keywords: ['ecommerce negative reviews', 'respond amazon reviews', 'negative product reviews', 'ecommerce review management', 'ecommerce reputation'],
+      },
+    },
+  },
+  // E-commerce Negative Reviews - FR
+  'fr:ecommerce-negative-reviews': {
+    component: EcommerceNegativeReviewsFR,
+    meta: {
+      title: 'E-commerce : Transformez les Avis Négatifs en Opportunités de Vente',
+      slug: 'ecommerce-negative-reviews',
+      description: 'Guide complet pour e-commerce : comment répondre aux avis négatifs pour augmenter vos conversions. Amazon, Google, avis produits. Stratégies + templates.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-ecommerce', 'avis-negatifs', 'avis-amazon', 'avis-produits', 'reputation-ecommerce'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 20,
+      wordCount: 4500,
+      seo: {
+        title: 'E-commerce : Transformez les Avis Négatifs en Opportunités de Vente | ReplyStack',
+        description: 'Guide complet pour e-commerce : comment répondre aux avis négatifs pour augmenter vos conversions. Amazon, Google, avis produits.',
+        keywords: ['avis négatifs ecommerce', 'répondre avis amazon', 'avis produits négatifs', 'gestion avis ecommerce', 'réputation ecommerce'],
+      },
+    },
+  },
+  // E-commerce Negative Reviews - ES
+  'es:ecommerce-negative-reviews': {
+    component: EcommerceNegativeReviewsES,
+    meta: {
+      title: 'E-commerce: Transforma Reseñas Negativas en Oportunidades de Venta',
+      slug: 'ecommerce-negative-reviews',
+      description: 'Guía completa para e-commerce: cómo responder a reseñas negativas para aumentar conversiones. Amazon, Google, reseñas de productos. Estrategias + plantillas.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-ecommerce', 'resenas-negativas', 'resenas-amazon', 'resenas-productos', 'reputacion-ecommerce'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 20,
+      wordCount: 4500,
+      seo: {
+        title: 'E-commerce: Transforma Reseñas Negativas en Oportunidades de Venta | ReplyStack',
+        description: 'Guía completa para e-commerce: cómo responder a reseñas negativas para aumentar conversiones. Amazon, Google, reseñas de productos.',
+        keywords: ['reseñas negativas ecommerce', 'responder reseñas amazon', 'reseñas productos negativas', 'gestión reseñas ecommerce', 'reputación ecommerce'],
+      },
+    },
+  },
+  // E-commerce Negative Reviews - PT
+  'pt:ecommerce-negative-reviews': {
+    component: EcommerceNegativeReviewsPT,
+    meta: {
+      title: 'E-commerce: Transforme Avaliações Negativas em Oportunidades de Venda',
+      slug: 'ecommerce-negative-reviews',
+      description: 'Guia completo para e-commerce: como responder a avaliações negativas para aumentar conversões. Amazon, Google, avaliações de produtos. Estratégias + templates.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-ecommerce', 'avaliacoes-negativas', 'avaliacoes-amazon', 'avaliacoes-produtos', 'reputacao-ecommerce'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 20,
+      wordCount: 4500,
+      seo: {
+        title: 'E-commerce: Transforme Avaliações Negativas em Oportunidades de Venda | ReplyStack',
+        description: 'Guia completo para e-commerce: como responder a avaliações negativas para aumentar conversões. Amazon, Google, avaliações de produtos.',
+        keywords: ['avaliações negativas ecommerce', 'responder avaliações amazon', 'avaliações produtos negativas', 'gestão avaliações ecommerce', 'reputação ecommerce'],
       },
     },
   },
