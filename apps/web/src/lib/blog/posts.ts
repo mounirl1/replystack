@@ -65,6 +65,18 @@ import AutoRepairReputationFR from '@/content/blog/guides/auto-repair-reputation
 import AutoRepairReputationES from '@/content/blog/guides/auto-repair-reputation/index.es.mdx';
 import AutoRepairReputationPT from '@/content/blog/guides/auto-repair-reputation/index.pt.mdx';
 
+// Import blog articles - Healthcare Reviews
+import HealthcareReviewsEN from '@/content/blog/guides/healthcare-reviews/index.en.mdx';
+import HealthcareReviewsFR from '@/content/blog/guides/healthcare-reviews/index.fr.mdx';
+import HealthcareReviewsES from '@/content/blog/guides/healthcare-reviews/index.es.mdx';
+import HealthcareReviewsPT from '@/content/blog/guides/healthcare-reviews/index.pt.mdx';
+
+// Import blog articles - Beauty Salon Reputation
+import BeautySalonReputationEN from '@/content/blog/guides/beauty-salon-reputation/index.en.mdx';
+import BeautySalonReputationFR from '@/content/blog/guides/beauty-salon-reputation/index.fr.mdx';
+import BeautySalonReputationES from '@/content/blog/guides/beauty-salon-reputation/index.es.mdx';
+import BeautySalonReputationPT from '@/content/blog/guides/beauty-salon-reputation/index.pt.mdx';
+
 // Blog posts registry with components and metadata
 interface BlogPostRegistry {
   component: ComponentType;
@@ -1157,6 +1169,206 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Reputação Online para Oficinas Mecânicas: Guia Completo para Obter Mais Avaliações | ReplyStack',
         description: 'Guia de reputação para oficinas mecânicas, mecânicos, funilarias. Como conseguir avaliações Google, responder a clientes, fazer crescer seu negócio.',
         keywords: ['avaliações oficina', 'reputação mecânico', 'avaliações google oficina', 'e-reputação oficina mecânica', 'opiniões mecânico'],
+      },
+    },
+  },
+  // Healthcare Reviews - EN
+  'en:healthcare-reviews': {
+    component: HealthcareReviewsEN,
+    meta: {
+      title: 'Google Reviews for Healthcare Professionals: The Complete 2026 Guide',
+      slug: 'healthcare-reviews',
+      description: 'Reputation guide for doctors, dentists, physical therapists, nurses. How to manage Google reviews, respond to patients, grow your practice.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['google-reviews-doctor', 'dentist-reputation', 'patient-reviews', 'healthcare-e-reputation', 'medical-practice-reviews'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Google Reviews for Healthcare Professionals: The Complete 2026 Guide | ReplyStack',
+        description: 'Reputation guide for doctors, dentists, physical therapists, nurses. How to manage Google reviews, respond to patients, grow your practice.',
+        keywords: ['google reviews doctor', 'dentist reputation', 'patient reviews', 'healthcare e-reputation', 'medical practice reviews'],
+      },
+    },
+  },
+  // Healthcare Reviews - FR
+  'fr:healthcare-reviews': {
+    component: HealthcareReviewsFR,
+    meta: {
+      title: 'Avis Google pour Professionnels de Santé : Le Guide Complet 2026',
+      slug: 'healthcare-reviews',
+      description: 'Guide e-réputation pour médecins, dentistes, kinés, infirmiers. Comment gérer les avis Google, répondre aux patients, développer votre patientèle.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-google-medecin', 'reputation-dentiste', 'avis-patients', 'e-reputation-sante', 'avis-google-cabinet-medical'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Avis Google pour Professionnels de Santé : Le Guide Complet 2026 | ReplyStack',
+        description: 'Guide e-réputation pour médecins, dentistes, kinés, infirmiers. Comment gérer les avis Google, répondre aux patients, développer votre patientèle.',
+        keywords: ['avis google médecin', 'reputation dentiste', 'avis patients', 'e-réputation santé', 'avis google cabinet médical'],
+      },
+    },
+  },
+  // Healthcare Reviews - ES
+  'es:healthcare-reviews': {
+    component: HealthcareReviewsES,
+    meta: {
+      title: 'Reseñas Google para Profesionales de la Salud: La Guía Completa 2026',
+      slug: 'healthcare-reviews',
+      description: 'Guía de reputación para médicos, dentistas, fisioterapeutas, enfermeros. Cómo gestionar reseñas Google, responder a pacientes, hacer crecer tu consulta.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-google-medico', 'reputacion-dentista', 'opiniones-pacientes', 'e-reputacion-salud', 'resenas-clinica-medica'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reseñas Google para Profesionales de la Salud: La Guía Completa 2026 | ReplyStack',
+        description: 'Guía de reputación para médicos, dentistas, fisioterapeutas, enfermeros. Cómo gestionar reseñas Google, responder a pacientes, hacer crecer tu consulta.',
+        keywords: ['reseñas google médico', 'reputación dentista', 'opiniones pacientes', 'e-reputación salud', 'reseñas clínica médica'],
+      },
+    },
+  },
+  // Healthcare Reviews - PT
+  'pt:healthcare-reviews': {
+    component: HealthcareReviewsPT,
+    meta: {
+      title: 'Avaliações Google para Profissionais de Saúde: O Guia Completo 2026',
+      slug: 'healthcare-reviews',
+      description: 'Guia de reputação para médicos, dentistas, fisioterapeutas, enfermeiros. Como gerenciar avaliações Google, responder a pacientes, fazer crescer seu consultório.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-google-medico', 'reputacao-dentista', 'opinioes-pacientes', 'e-reputacao-saude', 'avaliacoes-clinica-medica'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Avaliações Google para Profissionais de Saúde: O Guia Completo 2026 | ReplyStack',
+        description: 'Guia de reputação para médicos, dentistas, fisioterapeutas, enfermeiros. Como gerenciar avaliações Google, responder a pacientes, fazer crescer seu consultório.',
+        keywords: ['avaliações google médico', 'reputação dentista', 'opiniões pacientes', 'e-reputação saúde', 'avaliações clínica médica'],
+      },
+    },
+  },
+  // Beauty Salon Reputation - EN
+  'en:beauty-salon-reputation': {
+    component: BeautySalonReputationEN,
+    meta: {
+      title: 'Beauty Salon Reputation: The Complete Guide to Getting More Reviews',
+      slug: 'beauty-salon-reputation',
+      description: 'Reputation guide for hair salons, beauty salons, spas, barbershops. How to get Google reviews, retain clients, grow your business.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Online Reputation Expert',
+      },
+      category: 'guides',
+      tags: ['hair-salon-reviews', 'beauty-salon-reputation', 'google-reviews-hairdresser', 'esthetician-e-reputation', 'barbershop-reviews'],
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Beauty Salon Reputation: The Complete Guide to Getting More Reviews | ReplyStack',
+        description: 'Reputation guide for hair salons, beauty salons, spas, barbershops. How to get Google reviews, retain clients, grow your business.',
+        keywords: ['hair salon reviews', 'beauty salon reputation', 'google reviews hairdresser', 'esthetician e-reputation', 'barbershop reviews'],
+      },
+    },
+  },
+  // Beauty Salon Reputation - FR
+  'fr:beauty-salon-reputation': {
+    component: BeautySalonReputationFR,
+    meta: {
+      title: 'E-Réputation Salon de Beauté : Le Guide Complet pour Obtenir Plus d\'Avis',
+      slug: 'beauty-salon-reputation',
+      description: 'Guide e-réputation pour salons de coiffure, instituts de beauté, spas, barbershops. Comment obtenir des avis Google, fidéliser vos clients, développer votre activité.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Expert en e-réputation',
+      },
+      category: 'guides',
+      tags: ['avis-salon-coiffure', 'reputation-institut-beaute', 'avis-google-coiffeur', 'e-reputation-estheticienne', 'avis-barbershop'],
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'E-Réputation Salon de Beauté : Le Guide Complet pour Obtenir Plus d\'Avis | ReplyStack',
+        description: 'Guide e-réputation pour salons de coiffure, instituts de beauté, spas, barbershops. Comment obtenir des avis Google, fidéliser vos clients, développer votre activité.',
+        keywords: ['avis salon coiffure', 'reputation institut beauté', 'avis google coiffeur', 'e-réputation esthéticienne', 'avis barbershop'],
+      },
+    },
+  },
+  // Beauty Salon Reputation - ES
+  'es:beauty-salon-reputation': {
+    component: BeautySalonReputationES,
+    meta: {
+      title: 'Reputación Online para Salones de Belleza: Guía Completa para Conseguir Más Reseñas',
+      slug: 'beauty-salon-reputation',
+      description: 'Guía de reputación para peluquerías, salones de belleza, spas, barberías. Cómo conseguir reseñas Google, fidelizar clientes, hacer crecer tu negocio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Experto en reputación online',
+      },
+      category: 'guides',
+      tags: ['resenas-peluqueria', 'reputacion-salon-belleza', 'resenas-google-peluquero', 'e-reputacion-esteticista', 'resenas-barberia'],
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputación Online para Salones de Belleza: Guía Completa para Conseguir Más Reseñas | ReplyStack',
+        description: 'Guía de reputación para peluquerías, salones de belleza, spas, barberías. Cómo conseguir reseñas Google, fidelizar clientes, hacer crecer tu negocio.',
+        keywords: ['reseñas peluquería', 'reputación salon belleza', 'reseñas google peluquero', 'e-reputación esteticista', 'reseñas barbería'],
+      },
+    },
+  },
+  // Beauty Salon Reputation - PT
+  'pt:beauty-salon-reputation': {
+    component: BeautySalonReputationPT,
+    meta: {
+      title: 'Reputação Online para Salões de Beleza: Guia Completo para Obter Mais Avaliações',
+      slug: 'beauty-salon-reputation',
+      description: 'Guia de reputação para salões de cabeleireiro, salões de beleza, spas, barbearias. Como conseguir avaliações Google, fidelizar clientes, fazer crescer seu negócio.',
+      date: '2026-01-15',
+      author: {
+        name: 'ReplyStack Team',
+        role: 'Especialista em reputação online',
+      },
+      category: 'guides',
+      tags: ['avaliacoes-salao-cabeleireiro', 'reputacao-salao-beleza', 'avaliacoes-google-cabeleireiro', 'e-reputacao-esteticista', 'avaliacoes-barbearia'],
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+      readingTime: 18,
+      wordCount: 4200,
+      seo: {
+        title: 'Reputação Online para Salões de Beleza: Guia Completo para Obter Mais Avaliações | ReplyStack',
+        description: 'Guia de reputação para salões de cabeleireiro, salões de beleza, spas, barbearias. Como conseguir avaliações Google, fidelizar clientes, fazer crescer seu negócio.',
+        keywords: ['avaliações salão cabeleireiro', 'reputação salão beleza', 'avaliações google cabeleireiro', 'e-reputação esteticista', 'avaliações barbearia'],
       },
     },
   },
