@@ -2,8 +2,9 @@ import { useState, useEffect, type ReactElement } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
-import { Menu, X, ChevronDown, Chrome } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
+import { ChromeIcon } from '@/components/ui/ExtensionCTA';
 import { EXTENSION_URLS } from '@/config/extensions';
 import {
   getSectorsForLocation,
@@ -23,6 +24,20 @@ export function Header(): ReactElement {
   const currentLang = extractLanguageCode(i18n.language);
   const sectorBasePath = getSectorBasePath(currentLang);
   const headerSectors = getSectorsForLocation('header', currentLang);
+
+  // Get features path based on language
+  const getFeaturesPath = () => {
+    switch (currentLang) {
+      case 'fr':
+        return '/fr/fonctionnalites';
+      case 'es':
+        return '/es/funcionalidades';
+      case 'pt':
+        return '/pt/funcionalidades';
+      default:
+        return '/features';
+    }
+  };
 
   // Handle scroll for sticky header effect
   useEffect(() => {
@@ -57,12 +72,12 @@ export function Header(): ReactElement {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            <a
-              href="/#features"
+            <Link
+              to={getFeaturesPath()}
               className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors rounded-lg hover:bg-gray-50"
             >
               {t('nav.features')}
-            </a>
+            </Link>
 
             {/* Solutions Mega Menu */}
             <div
@@ -155,7 +170,7 @@ export function Header(): ReactElement {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02]"
                 >
-                  <Chrome size={16} />
+                  <ChromeIcon size={16} />
                   {t('extension.install')}
                 </a>
               </>
@@ -175,12 +190,12 @@ export function Header(): ReactElement {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100 py-4 -mx-4 px-4">
             <div className="flex flex-col gap-1">
-              <a
-                href="/#features"
+              <Link
+                to={getFeaturesPath()}
                 className="px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium rounded-lg"
               >
                 {t('nav.features')}
-              </a>
+              </Link>
 
               {/* Mobile Solutions */}
               <button
@@ -252,7 +267,7 @@ export function Header(): ReactElement {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-3 rounded-full"
                     >
-                      <Chrome size={16} />
+                      <ChromeIcon size={16} />
                       {t('extension.install')}
                     </a>
                   </>

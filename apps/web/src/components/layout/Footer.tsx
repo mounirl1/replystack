@@ -92,6 +92,20 @@ export function Footer(): ReactElement {
   };
   const comparisons = getComparisons();
 
+  // Get features path based on language
+  const getFeaturesPath = () => {
+    switch (currentLang) {
+      case 'fr':
+        return '/fr/fonctionnalites';
+      case 'es':
+        return '/es/funcionalidades';
+      case 'pt':
+        return '/pt/funcionalidades';
+      default:
+        return '/features';
+    }
+  };
+
   return (
     <footer className="bg-gray-50 border-t border-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,9 +132,9 @@ export function Footer(): ReactElement {
                 </Link>
               </li>
               <li>
-                <a href="/#features" className="hover:text-emerald-600 transition-colors">
+                <Link to={getFeaturesPath()} className="hover:text-emerald-600 transition-colors">
                   {t('footer.features')}
-                </a>
+                </Link>
               </li>
               <li>
                 <ExtensionLink />

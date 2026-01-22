@@ -1,10 +1,33 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Chrome, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { EXTENSION_URLS, detectBrowser } from '@/config/extensions';
 
+// Chrome icon component (lucide-react Chrome icon is deprecated)
+export function ChromeIcon({ size = 20, className = '' }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="4" />
+      <line x1="21.17" y1="8" x2="12" y2="8" />
+      <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+      <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+    </svg>
+  );
+}
+
 // Firefox icon component (Lucide doesn't have one)
-function FirefoxIcon({ size = 20, className = '' }: { size?: number; className?: string }) {
+export function FirefoxIcon({ size = 20, className = '' }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -58,7 +81,7 @@ export function ExtensionCTA({
         onClick={isFirefox ? handleFirefoxClick : handleChromeClick}
         className={`inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-sm ${className}`}
       >
-        {isFirefox ? <FirefoxIcon size={16} /> : <Chrome size={16} />}
+        {isFirefox ? <FirefoxIcon size={16} /> : <ChromeIcon size={16} />}
         {t('extension.install')}
       </button>
     );
@@ -73,7 +96,7 @@ export function ExtensionCTA({
         onClick={isFirefox ? handleFirefoxClick : handleChromeClick}
         className={`inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-lg ${className}`}
       >
-        {isFirefox ? <FirefoxIcon size={24} /> : <Chrome size={24} />}
+        {isFirefox ? <FirefoxIcon size={24} /> : <ChromeIcon size={24} />}
         {isFirefox ? t('extension.addToFirefox') : t('extension.addToChrome')}
       </button>
     );
@@ -87,7 +110,7 @@ export function ExtensionCTA({
       onClick={isFirefox ? handleFirefoxClick : handleChromeClick}
       className={`inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full transition-all bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:scale-[1.02] ${className}`}
     >
-      {isFirefox ? <FirefoxIcon size={20} /> : <Chrome size={20} />}
+      {isFirefox ? <FirefoxIcon size={20} /> : <ChromeIcon size={20} />}
       {isFirefox ? t('extension.addToFirefox') : t('extension.addToChrome')}
     </button>
   );

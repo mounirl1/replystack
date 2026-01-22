@@ -32,6 +32,7 @@ const ComparePage = lazy(() => import('@/pages/compare/ComparePage').then(m => (
 const AlternativesPage = lazy(() => import('@/pages/alternatives/AlternativesPage').then(m => ({ default: m.AlternativesPage })));
 const Contact = lazy(() => import('@/pages/Contact').then(m => ({ default: m.Contact })));
 const Privacy = lazy(() => import('@/pages/Privacy').then(m => ({ default: m.Privacy })));
+const Features = lazy(() => import('@/pages/Features').then(m => ({ default: m.Features })));
 
 // Loading component for Suspense fallback
 function LoadingSpinner() {
@@ -65,6 +66,10 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/fr/fonctionnalites" element={<Features />} />
+          <Route path="/es/funcionalidades" element={<Features />} />
+          <Route path="/pt/funcionalidades" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
           {/* Blog routes - EN (default) */}
           <Route path="/blog" element={<BlogIndex />} />

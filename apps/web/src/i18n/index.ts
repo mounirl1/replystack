@@ -13,6 +13,7 @@ import enOnboarding from './locales/en/onboarding.json';
 import enBlog from './locales/en/blog.json';
 import enSectors from './locales/en/sectors.json';
 import enContact from './locales/en/contact.json';
+import enFeatures from './locales/en/features.json';
 
 import frCommon from './locales/fr/common.json';
 import frLanding from './locales/fr/landing.json';
@@ -24,6 +25,7 @@ import frOnboarding from './locales/fr/onboarding.json';
 import frBlog from './locales/fr/blog.json';
 import frSectors from './locales/fr/sectors.json';
 import frContact from './locales/fr/contact.json';
+import frFeatures from './locales/fr/features.json';
 
 import esCommon from './locales/es/common.json';
 import esLanding from './locales/es/landing.json';
@@ -34,6 +36,7 @@ import esSettings from './locales/es/settings.json';
 import esOnboarding from './locales/es/onboarding.json';
 import esBlog from './locales/es/blog.json';
 import esSectors from './locales/es/sectors.json';
+import esFeatures from './locales/es/features.json';
 
 import itCommon from './locales/it/common.json';
 import itLanding from './locales/it/landing.json';
@@ -52,6 +55,7 @@ import ptSettings from './locales/pt/settings.json';
 import ptOnboarding from './locales/pt/onboarding.json';
 import ptBlog from './locales/pt/blog.json';
 import ptSectors from './locales/pt/sectors.json';
+import ptFeatures from './locales/pt/features.json';
 
 export const supportedLanguages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -79,6 +83,7 @@ i18n
         blog: enBlog,
         sectors: enSectors,
         contact: enContact,
+        features: enFeatures,
       },
       fr: {
         common: frCommon,
@@ -91,6 +96,7 @@ i18n
         blog: frBlog,
         sectors: frSectors,
         contact: frContact,
+        features: frFeatures,
       },
       es: {
         common: esCommon,
@@ -102,6 +108,7 @@ i18n
         onboarding: esOnboarding,
         blog: esBlog,
         sectors: esSectors,
+        features: esFeatures,
       },
       it: {
         common: itCommon,
@@ -122,11 +129,12 @@ i18n
         onboarding: ptOnboarding,
         blog: ptBlog,
         sectors: ptSectors,
+        features: ptFeatures,
       },
     },
     fallbackLng: 'en',
     defaultNS: 'common',
-    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding', 'blog', 'sectors', 'contact'],
+    ns: ['common', 'landing', 'pricing', 'auth', 'dashboard', 'settings', 'onboarding', 'blog', 'sectors', 'contact', 'features'],
     interpolation: {
       escapeValue: false,
     },

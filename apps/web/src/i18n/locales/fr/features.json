@@ -1,0 +1,232 @@
+{
+  "seo": {
+    "title": "Fonctionnalités ReplyStack : Tout pour Gérer Vos Avis Clients",
+    "description": "Découvrez toutes les fonctionnalités ReplyStack : réponses IA, extension Chrome, dashboard centralisé, profils de réponse, analytics. Essai gratuit.",
+    "keywords": "fonctionnalités replystack, outil gestion avis, réponse automatique avis, extension chrome avis, dashboard avis clients"
+  },
+  "hero": {
+    "badge": "Plateforme Complète",
+    "title": "Fonctionnalités",
+    "titleHighlight": "ReplyStack",
+    "subtitle": "Tout ce dont vous avez besoin pour gérer vos avis clients efficacement, sur toutes les plateformes.",
+    "viewPricing": "Voir les tarifs"
+  },
+  "features": {
+    "ai-responses": {
+      "title": "Réponses IA Personnalisées",
+      "description": "Générez des réponses personnalisées en un clic. Notre IA analyse le contexte, le sentiment et s'adapte à votre ton."
+    },
+    "chrome-extension": {
+      "title": "Extension Chrome",
+      "description": "Répondez directement sur les plateformes avec notre extension. Fonctionne sur Google, TripAdvisor, Booking et plus."
+    },
+    "dashboard": {
+      "title": "Dashboard Centralisé",
+      "description": "Tous vos avis en un seul endroit. Filtrez par plateforme, note, statut. Ne ratez plus jamais un avis."
+    },
+    "response-profiles": {
+      "title": "Profils de Réponse",
+      "description": "Personnalisez le ton, la longueur, la signature de l'IA. Vos réponses reflètent votre identité de marque."
+    },
+    "multi-location": {
+      "title": "Multi-Établissements",
+      "description": "Gérez tous vos établissements depuis une seule interface. Idéal pour les chaînes et franchises."
+    },
+    "analytics": {
+      "title": "Analytics & Rapports",
+      "description": "Suivez l'évolution de votre réputation. Note moyenne, volume, taux de réponse, analyse de sentiment."
+    },
+    "alerts": {
+      "title": "Alertes & Notifications",
+      "description": "Notifications en temps réel pour les nouveaux avis. Alertes email pour les avis négatifs."
+    },
+    "security": {
+      "title": "Sécurité & Conformité",
+      "description": "Conforme RGPD, hébergement en Europe, chiffrement SSL. Vos données sont protégées."
+    }
+  },
+  "aiResponses": {
+    "badge": "Technologie IA",
+    "title": "Génération Intelligente en 1 Clic",
+    "description": "ReplyStack analyse chaque avis et génère une réponse parfaitement adaptée. Contexte, sentiment, thèmes — tout est pris en compte.",
+    "features": {
+      "context": {
+        "title": "Analyse du contexte",
+        "desc": "note, sentiment, thèmes abordés"
+      },
+      "tone": {
+        "title": "Ton personnalisé",
+        "desc": "professionnel, chaleureux, formel ou décontracté"
+      },
+      "length": {
+        "title": "Longueur adaptée",
+        "desc": "courte, moyenne ou détaillée selon vos préférences"
+      },
+      "multilingual": {
+        "title": "Multilingue",
+        "desc": "réponses en 7 langues dont français, anglais, espagnol, portugais"
+      }
+    },
+    "results": {
+      "time": "par réponse",
+      "consistency": "cohérence",
+      "responseRate": "taux de réponse"
+    },
+    "howItWorks": "Comment ça marche ?",
+    "steps": {
+      "step1": "Nouvel avis reçu",
+      "step2": "L'IA analyse le contenu et le contexte",
+      "step3": "Vous validez ou ajustez en 1 clic",
+      "step4": "Publication directe sur la plateforme"
+    }
+  },
+  "extension": {
+    "badge": "Extension Chrome",
+    "title": "Reply Assistant",
+    "subtitle": "Notre extension Chrome s'intègre nativement dans les interfaces de gestion des plateformes d'avis. Répondez directement où vous travaillez.",
+    "table": {
+      "platform": "Plateforme",
+      "reading": "Lecture",
+      "aiResponse": "Réponse IA"
+    },
+    "benefits": {
+      "noHabitChange": "Pas besoin de changer vos habitudes",
+      "worksWithoutApi": "Fonctionne sur les plateformes sans API",
+      "autoSync": "Synchronisation automatique avec le dashboard"
+    }
+  },
+  "profiles": {
+    "badge": "Profils de Réponse",
+    "title": "Personnalisez le Style de Vos Réponses",
+    "description": "Chaque entreprise a son identité. Les Profils de Réponse permettent à l'IA de générer des réponses qui vous ressemblent.",
+    "demoTitle": "Profil de Réponse",
+    "demo": {
+      "tone": "Ton",
+      "length": "Longueur",
+      "signature": "Signature",
+      "signatureExample": "votre hôte",
+      "language": "Langue par défaut",
+      "languages": "7 langues disponibles"
+    },
+    "tones": {
+      "professional": "Professionnel",
+      "warm": "Chaleureux",
+      "formal": "Formel",
+      "casual": "Décontracté"
+    },
+    "lengths": {
+      "short": "Courte",
+      "medium": "Moyenne",
+      "detailed": "Détaillée"
+    },
+    "customizable": {
+      "businessDesc": "Description de votre établissement",
+      "strengths": "Points forts à mettre en avant",
+      "avoidMentions": "Éléments à ne jamais mentionner",
+      "greetings": "Formules de politesse préférées",
+      "keywords": "Mots-clés de votre marque"
+    }
+  },
+  "analytics": {
+    "badge": "Analytics",
+    "title": "Mesurez Votre Performance",
+    "subtitle": "Suivez l'évolution de votre e-réputation avec des métriques claires.",
+    "metrics": {
+      "avgRating": {
+        "title": "Note Moyenne",
+        "desc": "Par plateforme et globale"
+      },
+      "evolution": {
+        "title": "Évolution",
+        "desc": "Tendance sur 30/90/365 jours"
+      },
+      "volume": {
+        "title": "Volume d'Avis",
+        "desc": "Nouveaux avis par période"
+      },
+      "responseRate": {
+        "title": "Taux de Réponse",
+        "desc": "% d'avis avec réponse"
+      },
+      "responseTime": {
+        "title": "Temps de Réponse",
+        "desc": "Délai moyen de réponse"
+      },
+      "sentiment": {
+        "title": "Sentiment",
+        "desc": "Analyse des thèmes positifs/négatifs"
+      }
+    },
+    "reports": {
+      "title": "Rapports",
+      "pdf": "Export PDF",
+      "csv": "Export CSV",
+      "alerts": "Alertes personnalisables"
+    }
+  },
+  "security": {
+    "badge": "Sécurité",
+    "title": "Vos Données Sont Protégées",
+    "subtitle": "Nous prenons la sécurité de vos données au sérieux. Protection de niveau entreprise pour vos informations.",
+    "badges": {
+      "ssl": {
+        "title": "Chiffrement SSL/TLS",
+        "desc": "Chiffrement niveau bancaire"
+      },
+      "euHosting": {
+        "title": "Hébergement en Europe",
+        "desc": "Données stockées en UE"
+      },
+      "gdpr": {
+        "title": "Conforme RGPD",
+        "desc": "Conformité vie privée complète"
+      },
+      "noDataSale": {
+        "title": "Aucune Revente de Données",
+        "desc": "Vos données restent les vôtres"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Plans & Tarifs",
+    "subtitle": "Choisissez le plan adapté à vos besoins. Commencez gratuitement, évoluez quand vous voulez.",
+    "table": {
+      "plan": "Plan",
+      "price": "Prix",
+      "responses": "Réponses IA",
+      "locations": "Établissements"
+    },
+    "free": "Gratuit",
+    "month": "mois",
+    "unlimited": "Illimité",
+    "seeDetails": "Voir les tarifs détaillés"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "items": {
+      "firefox": {
+        "question": "L'extension fonctionne-t-elle sur Firefox ?",
+        "answer": "Actuellement Chrome uniquement. Firefox est prévu pour 2026."
+      },
+      "editResponses": {
+        "question": "Puis-je modifier les réponses générées avant envoi ?",
+        "answer": "Oui, toutes les réponses sont modifiables avant publication. Vous avez le contrôle total sur ce qui est envoyé."
+      },
+      "aggregation": {
+        "question": "Comment fonctionne l'agrégation des avis ?",
+        "answer": "Via notre extension (pour TripAdvisor, Booking...) et via API officielle (Google, Facebook)."
+      },
+      "dataSecure": {
+        "question": "Mes données sont-elles sécurisées ?",
+        "answer": "Oui, hébergement européen, chiffrement SSL, conformité RGPD. Nous ne vendons ni ne partageons jamais vos données."
+      }
+    }
+  },
+  "cta": {
+    "title": "Commencez Gratuitement",
+    "subtitle": "Testez ReplyStack sans engagement avec 15 réponses IA offertes par mois.",
+    "noCreditCard": "Pas de carte bancaire requise",
+    "setup": "Configuration en 2 minutes",
+    "cancelAnytime": "Annulation à tout moment"
+  }
+}

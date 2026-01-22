@@ -1,0 +1,232 @@
+{
+  "seo": {
+    "title": "ReplyStack Features: Everything to Manage Your Customer Reviews",
+    "description": "Discover all ReplyStack features: AI responses, Chrome extension, centralized dashboard, response profiles, analytics. Free trial available.",
+    "keywords": "replystack features, review management tool, automatic review response, chrome extension reviews, customer review dashboard"
+  },
+  "hero": {
+    "badge": "Complete Platform",
+    "title": "ReplyStack",
+    "titleHighlight": "Features",
+    "subtitle": "Everything you need to manage your customer reviews efficiently, across all platforms.",
+    "viewPricing": "View Pricing"
+  },
+  "features": {
+    "ai-responses": {
+      "title": "AI-Powered Responses",
+      "description": "Generate personalized responses in one click. Our AI analyzes context, sentiment, and adapts to your tone."
+    },
+    "chrome-extension": {
+      "title": "Chrome Extension",
+      "description": "Respond directly on platforms with our extension. Works on Google, TripAdvisor, Booking, and more."
+    },
+    "dashboard": {
+      "title": "Centralized Dashboard",
+      "description": "All your reviews in one place. Filter by platform, rating, status. Never miss a review."
+    },
+    "response-profiles": {
+      "title": "Response Profiles",
+      "description": "Customize AI tone, length, signature. Your responses reflect your brand identity."
+    },
+    "multi-location": {
+      "title": "Multi-Location",
+      "description": "Manage all your locations from one interface. Perfect for chains and franchises."
+    },
+    "analytics": {
+      "title": "Analytics & Reports",
+      "description": "Track your reputation evolution. Average rating, volume, response rate, sentiment analysis."
+    },
+    "alerts": {
+      "title": "Alerts & Notifications",
+      "description": "Real-time notifications for new reviews. Email alerts for negative reviews."
+    },
+    "security": {
+      "title": "Security & Compliance",
+      "description": "GDPR compliant, EU hosting, SSL encryption. Your data is protected."
+    }
+  },
+  "aiResponses": {
+    "badge": "AI Technology",
+    "title": "Smart Generation in 1 Click",
+    "description": "ReplyStack analyzes each review and generates a perfectly tailored response. Context, sentiment, topics — everything is taken into account.",
+    "features": {
+      "context": {
+        "title": "Context analysis",
+        "desc": "rating, sentiment, topics mentioned"
+      },
+      "tone": {
+        "title": "Custom tone",
+        "desc": "professional, warm, formal, or casual"
+      },
+      "length": {
+        "title": "Adaptive length",
+        "desc": "short, medium, or detailed based on your preferences"
+      },
+      "multilingual": {
+        "title": "Multilingual",
+        "desc": "responses in 7 languages including English, French, Spanish, Portuguese"
+      }
+    },
+    "results": {
+      "time": "per response",
+      "consistency": "consistency",
+      "responseRate": "response rate"
+    },
+    "howItWorks": "How it works",
+    "steps": {
+      "step1": "New review received",
+      "step2": "AI analyzes content and context",
+      "step3": "You validate or adjust in 1 click",
+      "step4": "Direct publication on platform"
+    }
+  },
+  "extension": {
+    "badge": "Chrome Extension",
+    "title": "Reply Assistant",
+    "subtitle": "Our Chrome extension integrates natively into review platform management interfaces. Respond directly where you work.",
+    "table": {
+      "platform": "Platform",
+      "reading": "Reading",
+      "aiResponse": "AI Response"
+    },
+    "benefits": {
+      "noHabitChange": "No need to change your habits",
+      "worksWithoutApi": "Works on platforms without API",
+      "autoSync": "Automatic sync with dashboard"
+    }
+  },
+  "profiles": {
+    "badge": "Response Profiles",
+    "title": "Customize Your Response Style",
+    "description": "Every business has its identity. Response Profiles allow the AI to generate responses that match your brand.",
+    "demoTitle": "Response Profile",
+    "demo": {
+      "tone": "Tone",
+      "length": "Length",
+      "signature": "Signature",
+      "signatureExample": "your host",
+      "language": "Default language",
+      "languages": "7 languages available"
+    },
+    "tones": {
+      "professional": "Professional",
+      "warm": "Warm",
+      "formal": "Formal",
+      "casual": "Casual"
+    },
+    "lengths": {
+      "short": "Short",
+      "medium": "Medium",
+      "detailed": "Detailed"
+    },
+    "customizable": {
+      "businessDesc": "Description of your business",
+      "strengths": "Key strengths to highlight",
+      "avoidMentions": "Things to never mention",
+      "greetings": "Preferred greetings",
+      "keywords": "Brand keywords"
+    }
+  },
+  "analytics": {
+    "badge": "Analytics",
+    "title": "Measure Your Performance",
+    "subtitle": "Track the evolution of your online reputation with clear metrics.",
+    "metrics": {
+      "avgRating": {
+        "title": "Average Rating",
+        "desc": "By platform and overall"
+      },
+      "evolution": {
+        "title": "Evolution",
+        "desc": "Trend over 30/90/365 days"
+      },
+      "volume": {
+        "title": "Review Volume",
+        "desc": "New reviews per period"
+      },
+      "responseRate": {
+        "title": "Response Rate",
+        "desc": "% of reviews with response"
+      },
+      "responseTime": {
+        "title": "Response Time",
+        "desc": "Average response delay"
+      },
+      "sentiment": {
+        "title": "Sentiment",
+        "desc": "Analysis of positive/negative themes"
+      }
+    },
+    "reports": {
+      "title": "Reports",
+      "pdf": "PDF export",
+      "csv": "CSV export",
+      "alerts": "Custom alerts"
+    }
+  },
+  "security": {
+    "badge": "Security",
+    "title": "Your Data is Protected",
+    "subtitle": "We take your data security seriously. Enterprise-grade protection for your business information.",
+    "badges": {
+      "ssl": {
+        "title": "SSL/TLS Encryption",
+        "desc": "Bank-level encryption"
+      },
+      "euHosting": {
+        "title": "EU Hosting",
+        "desc": "Data stored in Europe"
+      },
+      "gdpr": {
+        "title": "GDPR Compliant",
+        "desc": "Full privacy compliance"
+      },
+      "noDataSale": {
+        "title": "No Data Resale",
+        "desc": "Your data stays yours"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Plans & Pricing",
+    "subtitle": "Choose the plan that fits your needs. Start free, upgrade anytime.",
+    "table": {
+      "plan": "Plan",
+      "price": "Price",
+      "responses": "AI Responses",
+      "locations": "Locations"
+    },
+    "free": "Free",
+    "month": "month",
+    "unlimited": "Unlimited",
+    "seeDetails": "See detailed pricing"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "firefox": {
+        "question": "Does the extension work on Firefox?",
+        "answer": "Currently Chrome only. Firefox is planned for 2026."
+      },
+      "editResponses": {
+        "question": "Can I edit generated responses before sending?",
+        "answer": "Yes, all responses are editable before publication. You have full control over what gets sent."
+      },
+      "aggregation": {
+        "question": "How does review aggregation work?",
+        "answer": "Via our extension (for TripAdvisor, Booking...) and via official API (Google, Facebook)."
+      },
+      "dataSecure": {
+        "question": "Is my data secure?",
+        "answer": "Yes, European hosting, SSL encryption, GDPR compliant. We never sell or share your data."
+      }
+    }
+  },
+  "cta": {
+    "title": "Get Started for Free",
+    "subtitle": "Try ReplyStack with no commitment — 15 free AI responses per month.",
+    "noCreditCard": "No credit card required",
+    "setup": "2-minute setup",
+    "cancelAnytime": "Cancel anytime"
+  }
+}
