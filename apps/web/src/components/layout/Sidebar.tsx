@@ -45,7 +45,7 @@ const getNavItems = ({ pendingCount, t }: GetNavItemsParams): NavItem[] => [
     onboardingId: 'reviews-link',
   },
   { icon: <History size={20} />, label: t('nav.history'), href: '/history', onboardingId: 'history-link' },
-  { icon: <BarChart3 size={20} />, label: t('nav.analytics'), href: '/analytics', badge: t('sidebar.soon'), disabled: true },
+  { icon: <BarChart3 size={20} />, label: t('nav.analytics'), href: '/analytics/sentiment', onboardingId: 'analytics-link' },
 ];
 
 interface SidebarProps {

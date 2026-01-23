@@ -234,5 +234,70 @@
     "published": "Published",
     "notPublished": "Not published",
     "latestResponse": "Latest response"
+  },
+  "sentiment": {
+    "pageTitle": "Sentiment Analytics",
+    "pageDescription": "Understand customer sentiment across all your reviews",
+    "backToDashboard": "Back to Dashboard",
+    "noData": "No data",
+    "stable": "Stable",
+    "positive": "Positive",
+    "neutral": "Neutral",
+    "negative": "Negative",
+    "widget": {
+      "title": "Sentiment Overview",
+      "viewDetails": "View Analytics",
+      "score": "Score",
+      "reviews": "reviews analyzed"
+    },
+    "summary": {
+      "title": "Sentiment Analysis",
+      "analyzed": "{{count}} reviews analyzed",
+      "empty": {
+        "title": "No sentiment data yet",
+        "description": "Sentiment analysis will appear once you have reviews with analyzed sentiment."
+      }
+    },
+    "trends": {
+      "title": "Sentiment Trends",
+      "granularity": {
+        "day": "Day",
+        "week": "Week",
+        "month": "Month"
+      },
+      "empty": {
+        "title": "No trend data yet",
+        "description": "Trend analysis will appear once you have more reviews over time."
+      }
+    },
+    "themes": {
+      "title": "Top Themes",
+      "description": "Based on {{count}} reviews",
+      "mentions": "mentions",
+      "labels": {
+        "service": "Service",
+        "cleanliness": "Cleanliness",
+        "price": "Price",
+        "quality": "Quality",
+        "welcome": "Welcome",
+        "location": "Location",
+        "ambiance": "Ambiance",
+        "food": "Food",
+        "staff": "Staff",
+        "comfort": "Comfort"
+      },
+      "filters": {
+        "all": "All"
+      },
+      "legend": {
+        "positive": "Mostly positive",
+        "neutral": "Mixed/Neutral",
+        "negative": "Mostly negative"
+      },
+      "empty": {
+        "title": "No themes detected",
+        "description": "Theme analysis will appear once enough reviews have been analyzed."
+      }
+    }
   }
 }

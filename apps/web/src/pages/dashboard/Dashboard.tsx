@@ -17,6 +17,7 @@ import { userApi, repliesApi, locationsApi, type UsageStats, type Response, type
 import { Card, CardHeader, StatCard, StatCardSkeleton } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge, PlanBadge } from '@/components/ui/Badge';
+import { SentimentWidget } from '@/components/sentiment';
 
 export function Dashboard() {
   const { t } = useTranslation('dashboard');
@@ -117,6 +118,9 @@ export function Dashboard() {
           </>
         )}
       </div>
+
+      {/* Sentiment Analytics Widget */}
+      <SentimentWidget locationId={primaryLocation?.id} />
 
       {/* Extension CTA - Moved up */}
       <Card className="!bg-gradient-to-br from-primary-600 to-primary-700 !border-0" padding="lg" data-onboarding="extension-cta">

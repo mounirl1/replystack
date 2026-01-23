@@ -234,5 +234,70 @@
     "published": "Publié",
     "notPublished": "Non publié",
     "latestResponse": "Dernière réponse"
+  },
+  "sentiment": {
+    "pageTitle": "Analytics Sentiment",
+    "pageDescription": "Comprenez le sentiment de vos clients à travers tous vos avis",
+    "backToDashboard": "Retour au tableau de bord",
+    "noData": "Aucune donnée",
+    "stable": "Stable",
+    "positive": "Positif",
+    "neutral": "Neutre",
+    "negative": "Négatif",
+    "widget": {
+      "title": "Aperçu du sentiment",
+      "viewDetails": "Voir les analytics",
+      "score": "Score",
+      "reviews": "avis analysés"
+    },
+    "summary": {
+      "title": "Analyse de sentiment",
+      "analyzed": "{{count}} avis analysés",
+      "empty": {
+        "title": "Pas encore de données de sentiment",
+        "description": "L'analyse de sentiment apparaîtra une fois que vos avis auront été analysés."
+      }
+    },
+    "trends": {
+      "title": "Évolution du sentiment",
+      "granularity": {
+        "day": "Jour",
+        "week": "Semaine",
+        "month": "Mois"
+      },
+      "empty": {
+        "title": "Pas encore de tendances",
+        "description": "L'analyse des tendances apparaîtra lorsque vous aurez plus d'avis dans le temps."
+      }
+    },
+    "themes": {
+      "title": "Thèmes principaux",
+      "description": "Basé sur {{count}} avis",
+      "mentions": "mentions",
+      "labels": {
+        "service": "Service",
+        "cleanliness": "Propreté",
+        "price": "Prix",
+        "quality": "Qualité",
+        "welcome": "Accueil",
+        "location": "Emplacement",
+        "ambiance": "Ambiance",
+        "food": "Nourriture",
+        "staff": "Personnel",
+        "comfort": "Confort"
+      },
+      "filters": {
+        "all": "Tous"
+      },
+      "legend": {
+        "positive": "Plutôt positif",
+        "neutral": "Mitigé/Neutre",
+        "negative": "Plutôt négatif"
+      },
+      "empty": {
+        "title": "Aucun thème détecté",
+        "description": "L'analyse des thèmes apparaîtra lorsque suffisamment d'avis auront été analysés."
+      }
+    }
   }
 }

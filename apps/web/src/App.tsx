@@ -25,6 +25,7 @@ const ResponseStylePage = lazy(() => import('@/pages/dashboard/settings/Response
 const PlatformsPage = lazy(() => import('@/pages/dashboard/settings/PlatformsPage').then(m => ({ default: m.PlatformsPage })));
 const LanguagePage = lazy(() => import('@/pages/dashboard/settings/LanguagePage').then(m => ({ default: m.LanguagePage })));
 const SupportedPlatforms = lazy(() => import('@/pages/dashboard/SupportedPlatforms').then(m => ({ default: m.SupportedPlatforms })));
+const SentimentAnalytics = lazy(() => import('@/pages/dashboard/SentimentAnalytics').then(m => ({ default: m.SentimentAnalytics })));
 const BlogIndex = lazy(() => import('@/pages/blog/BlogIndex').then(m => ({ default: m.BlogIndex })));
 const BlogPost = lazy(() => import('@/pages/blog/BlogPost').then(m => ({ default: m.BlogPost })));
 const CompareIndex = lazy(() => import('@/pages/compare/CompareIndex').then(m => ({ default: m.CompareIndex })));
@@ -134,6 +135,7 @@ function App() {
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/history" element={<History />} />
           <Route path="/platforms" element={<SupportedPlatforms />} />
+          <Route path="/analytics/sentiment" element={<SentimentAnalytics />} />
 
           {/* Settings routes with nested layout */}
           <Route path="/settings" element={<SettingsLayout />}>
