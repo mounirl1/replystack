@@ -21,6 +21,9 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * @property string|null $name
  * @property string $plan
+ * @property bool $is_super_admin
+ * @property string|null $external_user_id
+ * @property string|null $external_source
  * @property string $ai_provider
  * @property int $monthly_quota
  * @property int $quota_used_month
@@ -56,6 +59,9 @@ class User extends Authenticatable
         'email',
         'password',
         'plan',
+        'is_super_admin',
+        'external_user_id',
+        'external_source',
         'ai_provider',
         'monthly_quota',
         'quota_used_month',
@@ -103,6 +109,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'monthly_quota' => 'integer',
             'quota_used_month' => 'integer',
+            'is_super_admin' => 'boolean',
         ];
     }
 
@@ -260,5 +267,49 @@ class User extends Authenticatable
     public function scopeInOrganization($query, int $organizationId)
     {
         return $query->where('organization_id', $organizationId);
+    }
+
+    /**
+     * Scope to find user by external ID and source.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $externalId
+     * @param string $source
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeByExternalId($query, string $externalId, string $source = 'triggerflow')
+    {
+        return $query->where('external_user_id', $externalId)
+            ->where('external_source', $source);
+    }
+
+    /**
+     * Check if the user is a super admin.
+     *
+     * @return bool
+     */
+    public function isSuperAdmin(): bool
+    {
+        return $this->is_super_admin === true;
+    }
+
+    /**
+     * Check if this user is linked to an external system.
+     *
+     * @return bool
+     */
+    public function isLinkedExternally(): bool
+    {
+        return !empty($this->external_user_id) && !empty($this->external_source);
+    }
+
+    /**
+     * Check if this user is from TriggerFlow.
+     *
+     * @return bool
+     */
+    public function isFromTriggerFlow(): bool
+    {
+        return $this->external_source === 'triggerflow';
     }
 }

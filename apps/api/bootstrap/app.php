@@ -21,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
         // Register custom middleware aliases
         $middleware->alias([
             'quota' => \App\Http\Middleware\CheckQuota::class,
+            'triggerflow.auth' => \App\Http\Middleware\ValidateTriggerFlowToken::class,
+            'super-admin' => \App\Http\Middleware\SuperAdmin::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

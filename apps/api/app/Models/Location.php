@@ -39,9 +39,13 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
+ * @property string|null $external_facility_id
+ * @property string|null $external_source
+ *
  * @property-read User $user
  * @property-read Organization|null $organization
  * @property-read \Illuminate\Database\Eloquent\Collection|Review[] $reviews
+ * @property-read \Illuminate\Database\Eloquent\Collection|ReviewConnection[] $reviewConnections
  * @property-read LocationResponseProfile|null $responseProfile
  */
 class Location extends Model
@@ -76,6 +80,8 @@ class Location extends Model
      */
     protected $fillable = [
         'organization_id',
+        'external_facility_id',
+        'external_source',
         'user_id',
         'name',
         'address',
@@ -156,6 +162,16 @@ class Location extends Model
     public function responseProfile(): HasOne
     {
         return $this->hasOne(LocationResponseProfile::class);
+    }
+
+    /**
+     * Get the review connections for the location.
+     *
+     * @return HasMany<ReviewConnection>
+     */
+    public function reviewConnections(): HasMany
+    {
+        return $this->hasMany(ReviewConnection::class);
     }
 
     /**
@@ -365,5 +381,42 @@ class Location extends Model
                 $q->whereNull('facebook_token_expires_at')
                     ->orWhere('facebook_token_expires_at', '>', now());
             });
+    }
+
+    /**
+     * Scope to find location by external ID and source.
+     */
+    public function scopeByExternalId($query, string $externalId, string $source = 'triggerflow')
+    {
+        return $query->where('external_facility_id', $externalId)
+            ->where('external_source', $source);
+    }
+
+    /**
+     * Check if this location is linked to an external system.
+     */
+    public function isLinkedExternally(): bool
+    {
+        return !empty($this->external_facility_id) && !empty($this->external_source);
+    }
+
+    /**
+     * Get the review connection for a specific platform.
+     */
+    public function getConnectionForPlatform(string $platform): ?ReviewConnection
+    {
+        return $this->reviewConnections()
+            ->where('platform', $platform)
+            ->first();
+    }
+
+    /**
+     * Get all active review connections.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection<int, ReviewConnection>
+     */
+    public function getActiveConnections()
+    {
+        return $this->reviewConnections()->active()->get();
     }
 }

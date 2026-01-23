@@ -3,12 +3,16 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ConnectionController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\GoogleBusinessController;
 use App\Http\Controllers\Api\LemonSqueezyController;
 use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\ReviewSummaryController;
 use App\Http\Controllers\Api\ReviewSyncController;
+use App\Http\Controllers\Api\SuperAdmin\ReviewConnectionController as SuperAdminReviewConnectionController;
+use App\Http\Controllers\Api\TriggerFlowController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Webhook\ApifyWebhookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -137,3 +141,63 @@ Route::post('/lemonsqueezy/webhook', [LemonSqueezyController::class, 'webhook'])
 // OAuth callbacks (no auth - returning from Google/Facebook)
 Route::get('/oauth/google/callback', [OAuthController::class, 'googleCallback']);
 Route::get('/oauth/facebook/callback', [OAuthController::class, 'facebookCallback']);
+
+// =============================================================================
+// TriggerFlow Integration Routes
+// =============================================================================
+// These routes are authenticated via TriggerFlow token validation
+Route::middleware(['triggerflow.auth', 'throttle:60,1'])->prefix('triggerflow')->group(function () {
+    // Location management
+    Route::post('/locations/sync', [TriggerFlowController::class, 'syncLocation']);
+    Route::delete('/locations/{externalId}', [TriggerFlowController::class, 'deleteLocation']);
+
+    // Reviews
+    Route::get('/locations/{externalId}/reviews', [TriggerFlowController::class, 'getReviews']);
+    Route::get('/locations/{externalId}/stats', [TriggerFlowController::class, 'getStats']);
+
+    // Connections
+    Route::get('/locations/{externalId}/connections', [TriggerFlowController::class, 'getConnections']);
+    Route::post('/locations/{externalId}/connections', [TriggerFlowController::class, 'createConnection']);
+
+    // Reply generation (with quota check)
+    Route::middleware('quota')->post('/replies/generate', [TriggerFlowController::class, 'generateReply']);
+
+    // Google OAuth
+    Route::get('/google/auth-url', [TriggerFlowController::class, 'getGoogleAuthUrl']);
+    Route::post('/google/callback', [TriggerFlowController::class, 'handleGoogleCallback']);
+});
+
+// =============================================================================
+// Google Business Profile Routes
+// =============================================================================
+Route::middleware(['auth:sanctum', 'throttle:60,1'])->prefix('google-business')->group(function () {
+    Route::get('/{connection}/accounts', [GoogleBusinessController::class, 'getAccounts']);
+    Route::get('/{connection}/locations', [GoogleBusinessController::class, 'getLocations']);
+    Route::post('/{connection}/select', [GoogleBusinessController::class, 'selectLocation']);
+    Route::post('/{connection}/sync', [GoogleBusinessController::class, 'syncReviews']);
+    Route::delete('/{connection}', [GoogleBusinessController::class, 'disconnect']);
+    Route::get('/{connection}/status', [GoogleBusinessController::class, 'status']);
+});
+
+// =============================================================================
+// Super Admin Routes
+// =============================================================================
+Route::middleware(['auth:sanctum', 'super-admin', 'throttle:60,1'])->prefix('super-admin')->group(function () {
+    // Location connections
+    Route::get('/locations/{location}/connections', [SuperAdminReviewConnectionController::class, 'index']);
+
+    // Connection management
+    Route::patch('/connections/{connection}/apify', [SuperAdminReviewConnectionController::class, 'toggleApify']);
+    Route::post('/connections/{connection}/scrape', [SuperAdminReviewConnectionController::class, 'triggerScrape']);
+
+    // Apify management
+    Route::get('/apify-connections', [SuperAdminReviewConnectionController::class, 'listApifyConnections']);
+    Route::get('/apify-requests', [SuperAdminReviewConnectionController::class, 'listApifyRequests']);
+    Route::get('/apify-requests/{apifyRequest}', [SuperAdminReviewConnectionController::class, 'showApifyRequest']);
+    Route::get('/apify-stats', [SuperAdminReviewConnectionController::class, 'apifyStats']);
+});
+
+// =============================================================================
+// Webhooks (no auth, signature verified in controller)
+// =============================================================================
+Route::post('/webhooks/apify', [ApifyWebhookController::class, 'handle']);

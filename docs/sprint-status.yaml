@@ -1,0 +1,190 @@
+version: "6.0.0"
+project_name: "ReplyStack"
+project_level: 2
+current_sprint: 1
+sprint_plan_path: "docs/sprint-plan-replystack-2026-01-23.md"
+
+sprints:
+  - sprint_number: 1
+    start_date: "2026-01-27"
+    end_date: "2026-02-07"
+    capacity_points: 40
+    committed_points: 34
+    completed_points: 8
+    status: "in_progress"
+    goal: "Livrer l'analytics sentiment complet et améliorer la qualité"
+    stories:
+      - story_id: "STORY-001"
+        title: "Backend - Service d'analyse de sentiment"
+        points: 8
+        status: "done"
+        assigned_to: "dev1"
+        epic: "Analytics Sentiment"
+        priority: "SHOULD"
+        document: "docs/stories/STORY-001.md"
+        completed_at: "2026-01-23"
+
+      - story_id: "STORY-002"
+        title: "Backend - API endpoints analytics sentiment"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Analytics Sentiment"
+        priority: "SHOULD"
+        depends_on: ["STORY-001"]
+
+      - story_id: "STORY-003"
+        title: "Frontend - Dashboard Analytics Sentiment"
+        points: 8
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Analytics Sentiment"
+        priority: "SHOULD"
+        depends_on: ["STORY-002"]
+
+      - story_id: "STORY-004"
+        title: "Alertes tendances négatives"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Analytics Sentiment"
+        priority: "COULD"
+        depends_on: ["STORY-001"]
+
+      - story_id: "STORY-005"
+        title: "Tests unitaires services critiques"
+        points: 3
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Qualité"
+        priority: "SHOULD"
+        depends_on: ["STORY-001"]
+
+      - story_id: "STORY-006"
+        title: "Amélioration détection langue"
+        points: 2
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Traduction"
+        priority: "SHOULD"
+
+      - story_id: "STORY-007"
+        title: "Monitoring et alertes production"
+        points: 2
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Ops"
+        priority: "SHOULD"
+
+      - story_id: "STORY-008"
+        title: "Documentation API (OpenAPI)"
+        points: 1
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Docs"
+        priority: "COULD"
+
+  - sprint_number: 2
+    start_date: "2026-02-10"
+    end_date: "2026-02-21"
+    capacity_points: 40
+    committed_points: 31
+    completed_points: 0
+    status: "planned"
+    goal: "Migration TriggerFlow → ReplyStack (gestion des avis centralisée)"
+    stories:
+      - story_id: "STORY-TF-001"
+        title: "Migrations et modèles de données"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        document: "docs/stories/STORY-TF-001.md"
+
+      - story_id: "STORY-TF-002"
+        title: "Authentification TriggerFlow SSO"
+        points: 3
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        depends_on: ["STORY-TF-001"]
+        document: "docs/stories/STORY-TF-002.md"
+
+      - story_id: "STORY-TF-003"
+        title: "Intégration Google Business API"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        depends_on: ["STORY-TF-001"]
+        document: "docs/stories/STORY-TF-003.md"
+
+      - story_id: "STORY-TF-004"
+        title: "Intégration Apify (Scraping Premium)"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Migration TriggerFlow"
+        priority: "SHOULD"
+        depends_on: ["STORY-TF-001"]
+        document: "docs/stories/STORY-TF-004.md"
+
+      - story_id: "STORY-TF-005"
+        title: "API REST TriggerFlow"
+        points: 5
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        depends_on: ["STORY-TF-001", "STORY-TF-002"]
+        document: "docs/stories/STORY-TF-005.md"
+
+      - story_id: "STORY-TF-006"
+        title: "Jobs de synchronisation"
+        points: 3
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        depends_on: ["STORY-TF-003", "STORY-TF-004"]
+        document: "docs/stories/STORY-TF-006.md"
+
+      - story_id: "STORY-TF-007"
+        title: "Interface Super Admin Apify"
+        points: 2
+        status: "not_started"
+        assigned_to: "dev2"
+        epic: "Migration TriggerFlow"
+        priority: "SHOULD"
+        depends_on: ["STORY-TF-001"]
+        document: "docs/stories/STORY-TF-007.md"
+
+      - story_id: "STORY-TF-008"
+        title: "Tests et validation"
+        points: 3
+        status: "not_started"
+        assigned_to: "dev1"
+        epic: "Migration TriggerFlow"
+        priority: "MUST"
+        depends_on: ["STORY-TF-001", "STORY-TF-002", "STORY-TF-003", "STORY-TF-004", "STORY-TF-005", "STORY-TF-006", "STORY-TF-007"]
+        document: "docs/stories/STORY-TF-008.md"
+
+velocity:
+  sprint_1: null  # Will be filled when sprint completes
+  sprint_2: null
+  rolling_average: null
+
+team:
+  size: 2
+  sprint_length_weeks: 2
+  capacity_per_sprint: 40
+
+metrics:
+  total_stories: 16
+  total_points: 65
+  must_have_points: 21
+  should_have_points: 35
+  could_have_points: 9

@@ -76,4 +76,32 @@ return [
         'redirect' => env('FACEBOOK_REDIRECT_URI'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | TriggerFlow Integration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for TriggerFlow SSO integration. ReplyStack validates
+    | TriggerFlow tokens by calling the TriggerFlow API.
+    |
+    */
+    'triggerflow' => [
+        'api_url' => env('TRIGGERFLOW_API_URL'),
+        'api_key' => env('TRIGGERFLOW_API_KEY'), // For M2M calls if needed
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Apify Scraping Service
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for Apify actor runs to scrape reviews from platforms
+    | that don't have APIs (TripAdvisor, Booking, Airbnb).
+    |
+    */
+    'apify' => [
+        'api_token' => env('APIFY_API_TOKEN'),
+        'webhook_url' => env('APIFY_WEBHOOK_URL'),
+    ],
+
 ];
