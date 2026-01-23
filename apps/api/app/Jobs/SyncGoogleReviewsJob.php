@@ -35,7 +35,7 @@ class SyncGoogleReviewsJob implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct(
-        public ReviewConnection $connection
+        public ReviewConnection $reviewConnection
     ) {
         $this->onQueue('sync-reviews');
     }
@@ -46,32 +46,32 @@ class SyncGoogleReviewsJob implements ShouldQueue
     public function handle(GoogleBusinessReviewService $reviewService): void
     {
         // Refresh connection from DB
-        $this->connection->refresh();
+        $this->reviewConnection->refresh();
 
         // Check if connection is still valid
-        if (!$this->connection->is_active || !$this->connection->has_valid_token) {
+        if (!$this->reviewConnection->is_active || !$this->reviewConnection->has_valid_token) {
             Log::warning('Google sync skipped - connection not valid', [
-                'connection_id' => $this->connection->id,
-                'is_active' => $this->connection->is_active,
-                'has_valid_token' => $this->connection->has_valid_token,
+                'connection_id' => $this->reviewConnection->id,
+                'is_active' => $this->reviewConnection->is_active,
+                'has_valid_token' => $this->reviewConnection->has_valid_token,
             ]);
             return;
         }
 
         // Check sync lock
-        if ($this->connection->isSyncLocked()) {
+        if ($this->reviewConnection->isSyncLocked()) {
             Log::info('Google sync skipped - already locked', [
-                'connection_id' => $this->connection->id,
+                'connection_id' => $this->reviewConnection->id,
             ]);
             return;
         }
 
         // Acquire sync lock
-        $this->connection->markSyncStarted('api');
+        $this->reviewConnection->markSyncStarted('api');
 
         Log::info('Starting Google reviews sync', [
-            'connection_id' => $this->connection->id,
-            'location_id' => $this->connection->location_id,
+            'connection_id' => $this->reviewConnection->id,
+            'location_id' => $this->reviewConnection->location_id,
         ]);
 
         try {
@@ -81,7 +81,7 @@ class SyncGoogleReviewsJob implements ShouldQueue
             do {
                 // Fetch reviews from Google
                 $result = $reviewService->getReviews(
-                    $this->connection,
+                    $this->reviewConnection,
                     pageSize: 50,
                     pageToken: $pageToken
                 );
@@ -89,13 +89,13 @@ class SyncGoogleReviewsJob implements ShouldQueue
                 foreach ($result['reviews'] as $googleReview) {
                     // Transform and upsert review
                     $reviewData = $reviewService->transformReview($googleReview);
-                    $reviewData['location_id'] = $this->connection->location_id;
-                    $reviewData['review_connection_id'] = $this->connection->id;
+                    $reviewData['location_id'] = $this->reviewConnection->location_id;
+                    $reviewData['review_connection_id'] = $this->reviewConnection->id;
                     $reviewData['sync_source'] = 'api';
 
                     Review::updateOrCreate(
                         [
-                            'location_id' => $this->connection->location_id,
+                            'location_id' => $this->reviewConnection->location_id,
                             'platform' => 'google',
                             'external_id' => $reviewData['external_id'],
                         ],
@@ -115,19 +115,19 @@ class SyncGoogleReviewsJob implements ShouldQueue
             } while ($pageToken);
 
             // Mark sync as successful
-            $this->connection->markSyncSuccess();
+            $this->reviewConnection->markSyncSuccess();
 
             Log::info('Google reviews sync completed', [
-                'connection_id' => $this->connection->id,
+                'connection_id' => $this->reviewConnection->id,
                 'reviews_synced' => $totalSynced,
             ]);
 
         } catch (\Exception $e) {
             // Mark sync as failed
-            $this->connection->markSyncFailed($e->getMessage());
+            $this->reviewConnection->markSyncFailed($e->getMessage());
 
             Log::error('Google reviews sync failed', [
-                'connection_id' => $this->connection->id,
+                'connection_id' => $this->reviewConnection->id,
                 'error' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
             ]);
@@ -142,12 +142,12 @@ class SyncGoogleReviewsJob implements ShouldQueue
      */
     public function failed(\Throwable $exception): void
     {
-        $this->connection->markSyncFailed(
+        $this->reviewConnection->markSyncFailed(
             'Sync failed after maximum retries: ' . $exception->getMessage()
         );
 
         Log::error('Google reviews sync job failed permanently', [
-            'connection_id' => $this->connection->id,
+            'connection_id' => $this->reviewConnection->id,
             'error' => $exception->getMessage(),
         ]);
     }

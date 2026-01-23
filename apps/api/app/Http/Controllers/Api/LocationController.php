@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Location;
+use App\Services\Sentiment\NegativeTrendService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -162,6 +163,116 @@ class LocationController extends Controller
 
         return response()->json([
             'message' => __('api.locations.deleted'),
+        ]);
+    }
+
+    /**
+     * Get alert settings for a location.
+     */
+    public function getAlertSettings(Location $location): JsonResponse
+    {
+        $user = Auth::user();
+
+        if (!$this->userCanAccessLocation($user, $location)) {
+            return response()->json([
+                'message' => __('api.locations.not_found'),
+            ], 404);
+        }
+
+        return response()->json([
+            'alerts_enabled' => $location->alerts_enabled,
+            'alert_email' => $location->alert_email,
+            'has_slack_webhook' => !empty($location->alert_slack_webhook),
+            'alert_negative_threshold' => $location->alert_negative_threshold,
+            'alert_negative_window_days' => $location->alert_negative_window_days,
+            'alert_sentiment_threshold' => $location->alert_sentiment_threshold,
+            'alert_on_1_star' => $location->alert_on_1_star,
+            'alert_on_2_star' => $location->alert_on_2_star,
+            'alert_on_negative_trend' => $location->alert_on_negative_trend,
+            'alert_on_theme_spike' => $location->alert_on_theme_spike,
+            'last_trend_alert_at' => $location->last_trend_alert_at,
+            'last_review_alert_at' => $location->last_review_alert_at,
+        ]);
+    }
+
+    /**
+     * Update alert settings for a location.
+     */
+    public function updateAlertSettings(Request $request, Location $location): JsonResponse
+    {
+        $user = Auth::user();
+
+        if (!$this->userCanAccessLocation($user, $location)) {
+            return response()->json([
+                'message' => __('api.locations.not_found'),
+            ], 404);
+        }
+
+        // Check plan - alerts require at least Pro plan
+        if (!$user->hasPlanOrHigher('pro')) {
+            return response()->json([
+                'message' => __('api.alerts.pro_required'),
+                'upgrade_required' => true,
+            ], 403);
+        }
+
+        $validated = $request->validate([
+            'alerts_enabled' => 'sometimes|boolean',
+            'alert_email' => 'nullable|email|max:255',
+            'alert_slack_webhook' => 'nullable|url|max:500',
+            'alert_negative_threshold' => 'sometimes|integer|min:1|max:50',
+            'alert_negative_window_days' => 'sometimes|integer|min:1|max:30',
+            'alert_sentiment_threshold' => 'sometimes|numeric|min:0.1|max:0.9',
+            'alert_on_1_star' => 'sometimes|boolean',
+            'alert_on_2_star' => 'sometimes|boolean',
+            'alert_on_negative_trend' => 'sometimes|boolean',
+            'alert_on_theme_spike' => 'sometimes|boolean',
+        ]);
+
+        $location->update($validated);
+
+        return response()->json([
+            'message' => __('api.alerts.settings_updated'),
+            'settings' => [
+                'alerts_enabled' => $location->alerts_enabled,
+                'alert_email' => $location->alert_email,
+                'has_slack_webhook' => !empty($location->alert_slack_webhook),
+                'alert_negative_threshold' => $location->alert_negative_threshold,
+                'alert_negative_window_days' => $location->alert_negative_window_days,
+                'alert_sentiment_threshold' => $location->alert_sentiment_threshold,
+                'alert_on_1_star' => $location->alert_on_1_star,
+                'alert_on_2_star' => $location->alert_on_2_star,
+                'alert_on_negative_trend' => $location->alert_on_negative_trend,
+                'alert_on_theme_spike' => $location->alert_on_theme_spike,
+            ],
+        ]);
+    }
+
+    /**
+     * Get current negative trend analysis for a location.
+     */
+    public function getTrendAnalysis(Location $location, NegativeTrendService $trendService): JsonResponse
+    {
+        $user = Auth::user();
+
+        if (!$this->userCanAccessLocation($user, $location)) {
+            return response()->json([
+                'message' => __('api.locations.not_found'),
+            ], 404);
+        }
+
+        // Check plan - trend analysis requires at least Pro plan
+        if (!$user->hasPlanOrHigher('pro')) {
+            return response()->json([
+                'message' => __('api.analytics.pro_required'),
+                'upgrade_required' => true,
+            ], 403);
+        }
+
+        $result = $trendService->analyze($location);
+
+        return response()->json([
+            'analysis' => $result->toArray(),
         ]);
     }
 

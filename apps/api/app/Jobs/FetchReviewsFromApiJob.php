@@ -35,19 +35,14 @@ class FetchReviewsFromApiJob implements ShouldQueue
     public $backoff = [60, 300, 900];
 
     /**
-     * The queue this job should be dispatched to.
-     *
-     * @var string
-     */
-    public $queue = 'reviews';
-
-    /**
      * Create a new job instance.
      */
     public function __construct(
         public Location $location,
         public string $platform
-    ) {}
+    ) {
+        $this->onQueue('reviews');
+    }
 
     /**
      * Execute the job.

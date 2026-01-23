@@ -1,5 +1,8 @@
 <?php
 
+use App\Jobs\CheckNegativeTrendsJob;
+use App\Services\Monitoring\AlertService;
+use App\Services\Monitoring\HealthCheckService;
 use App\Services\Quota\QuotaService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
@@ -36,6 +39,21 @@ Schedule::call(function () {
 Schedule::command('reviews:fetch-api')
     ->twiceDaily(6, 18)
     ->name('reviews:fetch-api')
+    ->withoutOverlapping()
+    ->onOneServer();
+
+// Health monitoring - run every 5 minutes, send alerts if unhealthy
+Schedule::command('monitor:health --alert')
+    ->everyFiveMinutes()
+    ->name('monitor:health')
+    ->withoutOverlapping()
+    ->onOneServer()
+    ->runInBackground();
+
+// Negative trend alerts - run every hour to check for declining sentiment
+Schedule::job(new CheckNegativeTrendsJob())
+    ->hourly()
+    ->name('alerts:negative-trends')
     ->withoutOverlapping()
     ->onOneServer();
 

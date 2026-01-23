@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\ConnectionController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\GoogleBusinessController;
 use App\Http\Controllers\Api\LemonSqueezyController;
+use App\Http\Controllers\Api\MonitoringController;
 use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\ReviewSummaryController;
@@ -36,13 +37,10 @@ Route::get('/', function () {
     ]);
 });
 
-// Health check endpoint
-Route::get('/health', function () {
-    return response()->json([
-        'status' => 'ok',
-        'timestamp' => now()->toIso8601String(),
-    ]);
-});
+// Health check endpoints
+Route::get('/health', [MonitoringController::class, 'health']);
+Route::get('/health/detailed', [MonitoringController::class, 'healthDetailed']);
+Route::get('/health/metrics', [MonitoringController::class, 'metrics']);
 
 // Contact form (public, rate limited to prevent spam)
 Route::post('/contact', [ContactController::class, 'send'])
@@ -109,6 +107,11 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
     Route::get('/locations/{location}/connections', [ConnectionController::class, 'index']);
     Route::put('/locations/{location}/management-urls', [ConnectionController::class, 'updateManagementUrls']);
     Route::put('/locations/{location}/auto-fetch', [ConnectionController::class, 'toggleAutoFetch']);
+
+    // Location Alert Settings (Pro+ plan required)
+    Route::get('/locations/{location}/alerts', [App\Http\Controllers\Api\LocationController::class, 'getAlertSettings']);
+    Route::put('/locations/{location}/alerts', [App\Http\Controllers\Api\LocationController::class, 'updateAlertSettings']);
+    Route::get('/locations/{location}/trend-analysis', [App\Http\Controllers\Api\LocationController::class, 'getTrendAnalysis']);
 
     // Response Profiles
     Route::get('/locations/{location}/response-profile', [App\Http\Controllers\Api\ResponseProfileController::class, 'show']);

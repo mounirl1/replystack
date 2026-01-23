@@ -52,4 +52,15 @@ return [
         'saved' => 'Profil de réponse enregistré avec succès.',
         'reset' => 'Profil de réponse réinitialisé.',
     ],
+
+    // Alertes
+    'alerts' => [
+        'pro_required' => 'Les paramètres d\'alertes nécessitent un plan Pro ou supérieur.',
+        'settings_updated' => 'Paramètres d\'alertes mis à jour avec succès.',
+    ],
+
+    // Analytics
+    'analytics' => [
+        'pro_required' => 'L\'analyse des tendances nécessite un plan Pro ou supérieur.',
+    ],
 ];

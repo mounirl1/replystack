@@ -33,6 +33,8 @@ return [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+        // Alerts webhook for monitoring
+        'alerts_webhook_url' => env('SLACK_ALERTS_WEBHOOK_URL'),
     ],
 
     'anthropic' => [

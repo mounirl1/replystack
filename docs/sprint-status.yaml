@@ -10,7 +10,7 @@ sprints:
     end_date: "2026-02-07"
     capacity_points: 40
     committed_points: 34
-    completed_points: 21
+    completed_points: 34
     status: "in_progress"
     goal: "Livrer l'analytics sentiment complet et améliorer la qualité"
     stories:
@@ -47,44 +47,49 @@ sprints:
       - story_id: "STORY-004"
         title: "Alertes tendances négatives"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Analytics Sentiment"
         priority: "COULD"
         depends_on: ["STORY-001"]
+        completed_at: "2026-01-23"
 
       - story_id: "STORY-005"
         title: "Tests unitaires services critiques"
         points: 3
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Qualité"
         priority: "SHOULD"
         depends_on: ["STORY-001"]
+        completed_at: "2026-01-23"
 
       - story_id: "STORY-006"
         title: "Amélioration détection langue"
         points: 2
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Traduction"
         priority: "SHOULD"
+        completed_at: "2026-01-23"
 
       - story_id: "STORY-007"
         title: "Monitoring et alertes production"
         points: 2
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Ops"
         priority: "SHOULD"
+        completed_at: "2026-01-23"
 
       - story_id: "STORY-008"
         title: "Documentation API (OpenAPI)"
         points: 1
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Docs"
         priority: "COULD"
+        completed_at: "2026-01-23"
 
   - sprint_number: 2
     start_date: "2026-02-10"

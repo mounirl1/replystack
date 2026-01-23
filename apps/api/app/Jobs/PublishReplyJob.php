@@ -35,19 +35,14 @@ class PublishReplyJob implements ShouldQueue
     public $backoff = [30, 120, 300];
 
     /**
-     * The queue this job should be dispatched to.
-     *
-     * @var string
-     */
-    public $queue = 'reviews';
-
-    /**
      * Create a new job instance.
      */
     public function __construct(
         public Review $review,
         public Response $response
-    ) {}
+    ) {
+        $this->onQueue('reviews');
+    }
 
     /**
      * Execute the job.

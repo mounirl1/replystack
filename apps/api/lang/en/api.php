@@ -52,4 +52,15 @@ return [
         'saved' => 'Response profile saved successfully.',
         'reset' => 'Response profile reset to defaults.',
     ],
+
+    // Alerts
+    'alerts' => [
+        'pro_required' => 'Alert settings require a Pro plan or higher.',
+        'settings_updated' => 'Alert settings updated successfully.',
+    ],
+
+    // Analytics
+    'analytics' => [
+        'pro_required' => 'Trend analysis requires a Pro plan or higher.',
+    ],
 ];

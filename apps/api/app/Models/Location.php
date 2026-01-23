@@ -36,6 +36,18 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property \Carbon\Carbon|null $last_api_fetch_at
  * @property \Carbon\Carbon|null $last_extension_fetch_at
  * @property bool $auto_fetch_enabled
+ * @property bool $alerts_enabled
+ * @property string|null $alert_email
+ * @property string|null $alert_slack_webhook
+ * @property int $alert_negative_threshold
+ * @property int $alert_negative_window_days
+ * @property float $alert_sentiment_threshold
+ * @property bool $alert_on_1_star
+ * @property bool $alert_on_2_star
+ * @property bool $alert_on_negative_trend
+ * @property bool $alert_on_theme_spike
+ * @property \Carbon\Carbon|null $last_trend_alert_at
+ * @property \Carbon\Carbon|null $last_review_alert_at
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
@@ -61,6 +73,7 @@ class Location extends Model
         'google_access_token',
         'google_refresh_token',
         'facebook_access_token',
+        'alert_slack_webhook',
     ];
 
     /**
@@ -103,6 +116,18 @@ class Location extends Model
         'last_api_fetch_at',
         'last_extension_fetch_at',
         'auto_fetch_enabled',
+        'alerts_enabled',
+        'alert_email',
+        'alert_slack_webhook',
+        'alert_negative_threshold',
+        'alert_negative_window_days',
+        'alert_sentiment_threshold',
+        'alert_on_1_star',
+        'alert_on_2_star',
+        'alert_on_negative_trend',
+        'alert_on_theme_spike',
+        'last_trend_alert_at',
+        'last_review_alert_at',
     ];
 
     /**
@@ -121,6 +146,17 @@ class Location extends Model
             'last_api_fetch_at' => 'datetime',
             'last_extension_fetch_at' => 'datetime',
             'auto_fetch_enabled' => 'boolean',
+            'alerts_enabled' => 'boolean',
+            'alert_slack_webhook' => 'encrypted',
+            'alert_negative_threshold' => 'integer',
+            'alert_negative_window_days' => 'integer',
+            'alert_sentiment_threshold' => 'float',
+            'alert_on_1_star' => 'boolean',
+            'alert_on_2_star' => 'boolean',
+            'alert_on_negative_trend' => 'boolean',
+            'alert_on_theme_spike' => 'boolean',
+            'last_trend_alert_at' => 'datetime',
+            'last_review_alert_at' => 'datetime',
         ];
     }
 
@@ -418,5 +454,92 @@ class Location extends Model
     public function getActiveConnections()
     {
         return $this->reviewConnections()->active()->get();
+    }
+
+    // ==================== ALERT METHODS ====================
+
+    /**
+     * Check if alerts are enabled for this location.
+     */
+    public function hasAlertsEnabled(): bool
+    {
+        return $this->alerts_enabled && $this->hasAlertChannel();
+    }
+
+    /**
+     * Check if at least one alert channel is configured.
+     */
+    public function hasAlertChannel(): bool
+    {
+        return !empty($this->alert_email) || !empty($this->alert_slack_webhook);
+    }
+
+    /**
+     * Check if a trend alert can be sent (cooldown period expired).
+     */
+    public function canSendTrendAlert(int $cooldownMinutes = 60): bool
+    {
+        if (!$this->hasAlertsEnabled() || !$this->alert_on_negative_trend) {
+            return false;
+        }
+
+        if ($this->last_trend_alert_at === null) {
+            return true;
+        }
+
+        return $this->last_trend_alert_at->addMinutes($cooldownMinutes)->isPast();
+    }
+
+    /**
+     * Check if a review alert can be sent (cooldown period expired).
+     */
+    public function canSendReviewAlert(int $cooldownMinutes = 15): bool
+    {
+        if (!$this->hasAlertsEnabled()) {
+            return false;
+        }
+
+        if ($this->last_review_alert_at === null) {
+            return true;
+        }
+
+        return $this->last_review_alert_at->addMinutes($cooldownMinutes)->isPast();
+    }
+
+    /**
+     * Mark that a trend alert was sent.
+     */
+    public function markTrendAlertSent(): void
+    {
+        $this->update(['last_trend_alert_at' => now()]);
+    }
+
+    /**
+     * Mark that a review alert was sent.
+     */
+    public function markReviewAlertSent(): void
+    {
+        $this->update(['last_review_alert_at' => now()]);
+    }
+
+    /**
+     * Scope to filter locations with alerts enabled.
+     */
+    public function scopeWithAlertsEnabled($query)
+    {
+        return $query->where('alerts_enabled', true)
+            ->where(function ($q) {
+                $q->whereNotNull('alert_email')
+                    ->orWhereNotNull('alert_slack_webhook');
+            });
+    }
+
+    /**
+     * Scope to filter locations that want negative trend alerts.
+     */
+    public function scopeWithNegativeTrendAlerts($query)
+    {
+        return $query->withAlertsEnabled()
+            ->where('alert_on_negative_trend', true);
     }
 }
