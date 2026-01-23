@@ -7,6 +7,7 @@ use App\Enums\ResponseTone;
 use App\Models\Location;
 use App\Models\LocationResponseProfile;
 use App\Models\User;
+use App\Services\Language\LanguageDetectorService;
 
 /**
  * Service for generating AI-powered review replies.
@@ -33,7 +34,8 @@ class ReplyGeneratorService
     ];
 
     public function __construct(
-        private readonly AIProviderFactory $providerFactory
+        private readonly AIProviderFactory $providerFactory,
+        private readonly LanguageDetectorService $languageDetector
     ) {}
 
     /**
@@ -97,7 +99,7 @@ class ReplyGeneratorService
 
         // Detect language if set to auto
         $detectedLanguage = $language === 'auto'
-            ? $this->detectLanguage($review['content'] ?? '')
+            ? $this->languageDetector->detectLanguageCode($review['content'] ?? '')
             : $language;
 
         return [
@@ -240,6 +242,11 @@ PROMPT;
             'it' => 'italien',
             'pt' => 'portugais',
             'nl' => 'neerlandais',
+            'ja' => 'japonais',
+            'zh' => 'chinois',
+            'ko' => 'coreen',
+            'ar' => 'arabe',
+            'ru' => 'russe',
         ];
 
         $languageName = $languageNames[$language] ?? $language;
@@ -257,36 +264,6 @@ PROMPT;
             $rating == 3 => "Cet avis est mitige. Remercie pour le feedback constructif et mentionne les points d'amelioration.",
             default => 'Cet avis est positif. Remercie chaleureusement et invite a revenir.',
         };
-    }
-
-    /**
-     * Detect language from text content.
-     *
-     * Simple pattern-based detection. In production, could use a dedicated service.
-     */
-    private function detectLanguage(string $text): string
-    {
-        $patterns = [
-            'fr' => '/\b(le|la|les|de|du|des|et|est|sont|nous|vous|merci|bonjour|tres|bien|avec)\b/i',
-            'en' => '/\b(the|is|are|was|were|have|has|thank|hello|great|good|very|with)\b/i',
-            'es' => '/\b(el|la|los|las|de|del|y|es|son|gracias|hola|muy|bien|con)\b/i',
-            'de' => '/\b(der|die|das|und|ist|sind|haben|danke|guten|sehr|gut|mit)\b/i',
-            'it' => '/\b(il|la|i|le|di|del|e|e|sono|grazie|buon|molto|bene|con)\b/i',
-            'pt' => '/\b(o|a|os|as|de|do|e|e|sao|obrigado|bom|muito|bem|com)\b/i',
-            'nl' => '/\b(de|het|een|en|is|zijn|hebben|dank|goed|zeer|wel|met)\b/i',
-        ];
-
-        $scores = [];
-        foreach ($patterns as $lang => $pattern) {
-            preg_match_all($pattern, $text, $matches);
-            $scores[$lang] = count($matches[0]);
-        }
-
-        arsort($scores);
-        $topLang = array_key_first($scores);
-
-        // Return the language with highest score, default to 'en' if no matches
-        return ($scores[$topLang] ?? 0) > 0 ? $topLang : 'en';
     }
 
     /**

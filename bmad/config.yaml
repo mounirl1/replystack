@@ -1,0 +1,45 @@
+# BMAD Method v6 - Project Configuration
+# Generated: 2026-01-22
+
+project_name: "ReplyStack"
+project_type: "monorepo"
+project_level: 2
+
+# Output configuration
+output_folder: "docs"
+
+# BMM (BMAD Method Management) paths
+bmm:
+  workflow_status_file: "docs/bmm-workflow-status.yaml"
+  sprint_status_file: "docs/sprint-status.yaml"
+
+# Project paths
+paths:
+  docs: "docs"
+  stories: "docs/stories"
+  tests: "tests"
+
+# Monorepo specific paths
+monorepo:
+  apps:
+    api: "apps/api"
+    web: "apps/web"
+    extension: "apps/extension"
+  packages:
+    shared: "packages/shared"
+
+# Project context
+context:
+  description: "AI-powered review reply platform with browser extension"
+  tech_stack:
+    backend: "Laravel 12"
+    frontend: "React 19 + TypeScript + Vite"
+    extension: "Plasmo (React)"
+    database: "MySQL 8"
+    cache: "Redis"
+    ai: "Gemini 2.0 Flash / Mistral"
+  integrations:
+    - "TriggerFlow (SSO integration)"
+    - "Google Business Profile API"
+    - "Apify (premium scraping)"
+    - "Lemon Squeezy (payments)"
