@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\OAuthController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\ReviewSummaryController;
 use App\Http\Controllers\Api\ReviewSyncController;
+use App\Http\Controllers\Api\SentimentController;
 use App\Http\Controllers\Api\SuperAdmin\ReviewConnectionController as SuperAdminReviewConnectionController;
 use App\Http\Controllers\Api\TriggerFlowController;
 use App\Http\Controllers\Api\UserController;
@@ -84,6 +85,14 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
         Route::post('/summarize', [ReviewSummaryController::class, 'generate'])->middleware('quota');
         Route::post('/fetch', [ReviewController::class, 'triggerFetch']);
         Route::post('/sync', [ReviewSyncController::class, 'sync']);
+
+        // Sentiment Analytics (STORY-002)
+        Route::prefix('sentiment')->group(function () {
+            Route::get('/summary', [SentimentController::class, 'summary']);
+            Route::get('/trends', [SentimentController::class, 'trends']);
+            Route::get('/themes', [SentimentController::class, 'themes']);
+        });
+
         Route::get('/{review}', [ReviewController::class, 'show']);
         Route::patch('/{review}/status', [ReviewController::class, 'updateStatus']);
         Route::post('/{review}/publish', [ReviewController::class, 'publish']);

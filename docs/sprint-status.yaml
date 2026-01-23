@@ -10,7 +10,7 @@ sprints:
     end_date: "2026-02-07"
     capacity_points: 40
     committed_points: 34
-    completed_points: 8
+    completed_points: 13
     status: "in_progress"
     goal: "Livrer l'analytics sentiment complet et améliorer la qualité"
     stories:
@@ -27,11 +27,12 @@ sprints:
       - story_id: "STORY-002"
         title: "Backend - API endpoints analytics sentiment"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Analytics Sentiment"
         priority: "SHOULD"
         depends_on: ["STORY-001"]
+        completed_at: "2026-01-23"
 
       - story_id: "STORY-003"
         title: "Frontend - Dashboard Analytics Sentiment"
