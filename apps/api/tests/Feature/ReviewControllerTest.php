@@ -85,9 +85,9 @@ class ReviewControllerTest extends TestCase
         $response->assertStatus(200);
         $this->assertCount(3, $response->json('data'));
 
-        // Test filter by rating
+        // Test filter by rating (using array filter for ratings 3, 4, 5)
         $response = $this->withHeader('Authorization', 'Bearer ' . $this->token)
-            ->getJson('/api/reviews?rating_min=3');
+            ->getJson('/api/reviews?rating[]=3&rating[]=4&rating[]=5');
 
         $response->assertStatus(200);
         $this->assertCount(5, $response->json('data'));

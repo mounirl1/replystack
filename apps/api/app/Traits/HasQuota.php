@@ -18,7 +18,7 @@ trait HasQuota
     /**
      * Plans that have unlimited quota.
      */
-    protected static array $unlimitedPlans = ['enterprise'];
+    protected static array $unlimitedPlans = ['pro', 'business', 'enterprise'];
 
     /**
      * Check if the user has remaining quota for generating replies.

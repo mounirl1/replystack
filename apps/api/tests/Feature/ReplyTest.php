@@ -5,7 +5,9 @@ namespace Tests\Feature;
 use App\Models\Location;
 use App\Models\Response;
 use App\Models\User;
-use App\Services\AI\ClaudeService;
+use App\Services\AI\AIProviderFactory;
+use App\Services\AI\Contracts\AIProviderContract;
+use App\Services\AI\GeminiService;
 use App\Services\AI\ReplyGeneratorService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery;
@@ -17,12 +19,29 @@ class ReplyTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Test that validation fails with missing required fields.
+     * Test that rating-only reviews (without content) are valid.
      */
-    public function test_generate_requires_review_content(): void
+    public function test_generate_allows_rating_only_reviews(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->create([
+            'plan' => 'free',
+            'monthly_quota' => 10,
+            'quota_used_month' => 0,
+        ]);
         $token = $user->createToken('api-token')->plainTextToken;
+
+        // Mock the GeminiService (default provider)
+        $this->mock(GeminiService::class, function (MockInterface $mock) {
+            $mock->shouldReceive('generateCompletion')
+                ->once()
+                ->andReturn([
+                    'content' => 'Thank you for your 5-star rating!',
+                    'tokens_used' => 50,
+                    'generation_time_ms' => 500,
+                ]);
+            $mock->shouldReceive('getProviderName')
+                ->andReturn('gemini');
+        });
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
             ->postJson('/api/replies/generate', [
@@ -31,8 +50,8 @@ class ReplyTest extends TestCase
                 'platform' => 'google',
             ]);
 
-        $response->assertStatus(422)
-            ->assertJsonValidationErrors(['review_content']);
+        // Should succeed since content is now optional
+        $response->assertStatus(200);
     }
 
     /**
@@ -97,7 +116,7 @@ class ReplyTest extends TestCase
     }
 
     /**
-     * Test successful reply generation with mocked Claude service.
+     * Test successful reply generation with mocked AI provider.
      */
     public function test_can_generate_reply_successfully(): void
     {
@@ -108,8 +127,8 @@ class ReplyTest extends TestCase
         ]);
         $token = $user->createToken('api-token')->plainTextToken;
 
-        // Mock the ClaudeService
-        $this->mock(ClaudeService::class, function (MockInterface $mock) {
+        // Mock the GeminiService (default provider)
+        $this->mock(GeminiService::class, function (MockInterface $mock) {
             $mock->shouldReceive('generateCompletion')
                 ->once()
                 ->andReturn([
@@ -117,6 +136,8 @@ class ReplyTest extends TestCase
                     'tokens_used' => 150,
                     'generation_time_ms' => 1200,
                 ]);
+            $mock->shouldReceive('getProviderName')
+                ->andReturn('gemini');
         });
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
@@ -180,8 +201,8 @@ class ReplyTest extends TestCase
         $user = User::factory()->pro()->create();
         $token = $user->createToken('api-token')->plainTextToken;
 
-        // Mock the ClaudeService
-        $this->mock(ClaudeService::class, function (MockInterface $mock) {
+        // Mock the GeminiService (default provider)
+        $this->mock(GeminiService::class, function (MockInterface $mock) {
             $mock->shouldReceive('generateCompletion')
                 ->once()
                 ->andReturn([
@@ -189,6 +210,8 @@ class ReplyTest extends TestCase
                     'tokens_used' => 100,
                     'generation_time_ms' => 800,
                 ]);
+            $mock->shouldReceive('getProviderName')
+                ->andReturn('gemini');
         });
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
@@ -219,8 +242,8 @@ class ReplyTest extends TestCase
         ]);
         $token = $user->createToken('api-token')->plainTextToken;
 
-        // Mock the ClaudeService
-        $this->mock(ClaudeService::class, function (MockInterface $mock) {
+        // Mock the GeminiService (default provider)
+        $this->mock(GeminiService::class, function (MockInterface $mock) {
             $mock->shouldReceive('generateCompletion')
                 ->once()
                 ->andReturn([
@@ -228,6 +251,8 @@ class ReplyTest extends TestCase
                     'tokens_used' => 100,
                     'generation_time_ms' => 800,
                 ]);
+            $mock->shouldReceive('getProviderName')
+                ->andReturn('gemini');
         });
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
@@ -343,9 +368,8 @@ class ReplyTest extends TestCase
      */
     public function test_language_detection(): void
     {
-        $service = new ReplyGeneratorService(
-            Mockery::mock(ClaudeService::class)
-        );
+        $mockFactory = Mockery::mock(AIProviderFactory::class);
+        $service = new ReplyGeneratorService($mockFactory);
 
         // Use reflection to test private method
         $reflection = new \ReflectionClass($service);
@@ -370,9 +394,8 @@ class ReplyTest extends TestCase
      */
     public function test_validates_tone(): void
     {
-        $service = new ReplyGeneratorService(
-            Mockery::mock(ClaudeService::class)
-        );
+        $mockFactory = Mockery::mock(AIProviderFactory::class);
+        $service = new ReplyGeneratorService($mockFactory);
 
         // Valid tone
         $this->assertEmpty($service->validateOptions(['tone' => 'professional']));
@@ -388,11 +411,10 @@ class ReplyTest extends TestCase
      */
     public function test_validates_review_data(): void
     {
-        $service = new ReplyGeneratorService(
-            Mockery::mock(ClaudeService::class)
-        );
+        $mockFactory = Mockery::mock(AIProviderFactory::class);
+        $service = new ReplyGeneratorService($mockFactory);
 
-        // Valid data
+        // Valid data (content is now optional for rating-only reviews)
         $this->assertEmpty($service->validateReviewData([
             'content' => 'Great service!',
             'rating' => 5,
@@ -400,13 +422,12 @@ class ReplyTest extends TestCase
             'platform' => 'google',
         ]));
 
-        // Missing content
-        $errors = $service->validateReviewData([
+        // Missing content is now valid (rating-only reviews)
+        $this->assertEmpty($service->validateReviewData([
             'rating' => 5,
             'author' => 'John',
             'platform' => 'google',
-        ]);
-        $this->assertNotEmpty($errors);
+        ]));
 
         // Invalid rating
         $errors = $service->validateReviewData([
