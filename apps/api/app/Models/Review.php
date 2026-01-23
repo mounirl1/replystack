@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
  *
  * @property int $id
  * @property int $location_id
+ * @property int|null $review_connection_id
  * @property string $platform
  * @property string $external_id
  * @property string|null $platform_review_id
@@ -26,19 +27,26 @@ use Illuminate\Support\Str;
  * @property string|null $language
  * @property \Carbon\Carbon|null $published_at
  * @property string $status
+ * @property string|null $sync_source
  * @property \Carbon\Carbon|null $replied_at
  * @property bool $has_response
  * @property string|null $response_content
  * @property \Carbon\Carbon|null $response_published_at
+ * @property float|null $sentiment_score
+ * @property string|null $sentiment_label
+ * @property array|null $sentiment_themes
+ * @property \Carbon\Carbon|null $sentiment_analyzed_at
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
  * @property-read Location $location
+ * @property-read ReviewConnection|null $reviewConnection
  * @property-read \Illuminate\Database\Eloquent\Collection|Response[] $responses
  * @property-read Response|null $latestResponse
  * @property-read string $time_ago
  * @property-read string $content_excerpt
  * @property-read bool $can_publish_via_api
+ * @property-read string $sentiment_emoji
  */
 class Review extends Model
 {
@@ -51,9 +59,11 @@ class Review extends Model
      */
     protected $fillable = [
         'location_id',
+        'review_connection_id',
         'platform',
         'external_id',
         'platform_review_id',
+        'sync_source',
         'author_name',
         'author_avatar',
         'rating',
@@ -65,6 +75,10 @@ class Review extends Model
         'has_response',
         'response_content',
         'response_published_at',
+        'sentiment_score',
+        'sentiment_label',
+        'sentiment_themes',
+        'sentiment_analyzed_at',
     ];
 
     /**
@@ -80,6 +94,9 @@ class Review extends Model
             'response_published_at' => 'datetime',
             'rating' => 'integer',
             'has_response' => 'boolean',
+            'sentiment_score' => 'float',
+            'sentiment_themes' => 'array',
+            'sentiment_analyzed_at' => 'datetime',
         ];
     }
 
@@ -91,6 +108,16 @@ class Review extends Model
     public function location(): BelongsTo
     {
         return $this->belongsTo(Location::class);
+    }
+
+    /**
+     * Get the review connection that this review belongs to.
+     *
+     * @return BelongsTo<ReviewConnection, Review>
+     */
+    public function reviewConnection(): BelongsTo
+    {
+        return $this->belongsTo(ReviewConnection::class);
     }
 
     /**
@@ -252,6 +279,72 @@ class Review extends Model
         return $query->orderByDesc('published_at');
     }
 
+    // ==================== SENTIMENT SCOPES ====================
+
+    /**
+     * Scope to filter reviews that have been sentiment analyzed.
+     */
+    public function scopeWithSentiment($query)
+    {
+        return $query->whereNotNull('sentiment_analyzed_at');
+    }
+
+    /**
+     * Scope to filter reviews without sentiment analysis.
+     */
+    public function scopeWithoutSentiment($query)
+    {
+        return $query->whereNull('sentiment_analyzed_at');
+    }
+
+    /**
+     * Scope to filter reviews with positive sentiment.
+     */
+    public function scopePositiveSentiment($query)
+    {
+        return $query->where('sentiment_label', 'positive');
+    }
+
+    /**
+     * Scope to filter reviews with negative sentiment.
+     */
+    public function scopeNegativeSentiment($query)
+    {
+        return $query->where('sentiment_label', 'negative');
+    }
+
+    /**
+     * Scope to filter reviews with neutral sentiment.
+     */
+    public function scopeNeutralSentiment($query)
+    {
+        return $query->where('sentiment_label', 'neutral');
+    }
+
+    /**
+     * Scope to filter reviews containing a specific theme.
+     */
+    public function scopeWithTheme($query, string $theme)
+    {
+        return $query->whereJsonContains('sentiment_themes', $theme);
+    }
+
+    /**
+     * Scope to filter reviews with sentiment score above threshold.
+     */
+    public function scopeSentimentAbove($query, float $threshold)
+    {
+        return $query->where('sentiment_score', '>=', $threshold);
+    }
+
+    /**
+     * Scope to filter reviews with sentiment score below threshold.
+     */
+    public function scopeSentimentBelow($query, float $threshold)
+    {
+        return $query->where('sentiment_score', '<', $threshold);
+    }
+
     // ==================== ACCESSORS ====================
 
     /**
@@ -311,5 +404,58 @@ class Review extends Model
             'yelp' => $location->yelp_management_url,
             default => null,
         };
+    }
+
+    /**
+     * Get emoji representation of sentiment.
+     */
+    public function getSentimentEmojiAttribute(): string
+    {
+        return match ($this->sentiment_label) {
+            'positive' => "\u{1F60A}", // 😊
+            'negative' => "\u{1F61E}", // 😞
+            'neutral' => "\u{1F610}",  // 😐
+            default => "\u{2753}",     // ❓
+        };
+    }
+
+    /**
+     * Check if the review has been sentiment analyzed.
+     */
+    public function hasSentimentAnalysis(): bool
+    {
+        return $this->sentiment_analyzed_at !== null;
+    }
+
+    /**
+     * Check if the sentiment is positive.
+     */
+    public function hasSentimentPositive(): bool
+    {
+        return $this->sentiment_label === 'positive';
+    }
+
+    /**
+     * Check if the sentiment is negative.
+     */
+    public function hasSentimentNegative(): bool
+    {
+        return $this->sentiment_label === 'negative';
+    }
+
+    /**
+     * Check if the sentiment is neutral.
+     */
+    public function hasSentimentNeutral(): bool
+    {
+        return $this->sentiment_label === 'neutral';
+    }
+
+    /**
+     * Check if the review has a specific theme.
+     */
+    public function hasTheme(string $theme): bool
+    {
+        return is_array($this->sentiment_themes) && in_array($theme, $this->sentiment_themes, true);
     }
 }
