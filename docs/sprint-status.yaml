@@ -11,7 +11,7 @@ sprints:
     capacity_points: 40
     committed_points: 34
     completed_points: 34
-    status: "in_progress"
+    status: "completed"
     goal: "Livrer l'analytics sentiment complet et améliorer la qualité"
     stories:
       - story_id: "STORY-001"
@@ -180,9 +180,9 @@ sprints:
         document: "docs/stories/STORY-TF-008.md"
 
 velocity:
-  sprint_1: null  # Will be filled when sprint completes
+  sprint_1: 34  # Completed: 34/34 points
   sprint_2: null
-  rolling_average: null
+  rolling_average: 34
 
 team:
   size: 2

@@ -9,6 +9,7 @@ use App\Services\AI\AIProviderFactory;
 use App\Services\AI\Contracts\AIProviderContract;
 use App\Services\AI\GeminiService;
 use App\Services\AI\ReplyGeneratorService;
+use App\Services\Language\LanguageDetectorService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery;
 use Mockery\MockInterface;
@@ -364,29 +365,23 @@ class ReplyTest extends TestCase
     }
 
     /**
-     * Test language detection.
+     * Test language detection via LanguageDetectorService.
      */
     public function test_language_detection(): void
     {
-        $mockFactory = Mockery::mock(AIProviderFactory::class);
-        $service = new ReplyGeneratorService($mockFactory);
-
-        // Use reflection to test private method
-        $reflection = new \ReflectionClass($service);
-        $method = $reflection->getMethod('detectLanguage');
-        $method->setAccessible(true);
+        $service = new LanguageDetectorService();
 
         // French text
-        $this->assertEquals('fr', $method->invoke($service, 'Bonjour, le service était très bien, merci beaucoup!'));
+        $this->assertEquals('fr', $service->detect('Bonjour, le service était très bien, merci beaucoup!')->language);
 
         // English text
-        $this->assertEquals('en', $method->invoke($service, 'Hello, the service was very good, thank you very much!'));
+        $this->assertEquals('en', $service->detect('Hello, the service was very good, thank you very much!')->language);
 
         // Spanish text
-        $this->assertEquals('es', $method->invoke($service, 'Hola, el servicio fue muy bueno, muchas gracias!'));
+        $this->assertEquals('es', $service->detect('Hola, el servicio fue muy bueno, muchas gracias!')->language);
 
         // German text
-        $this->assertEquals('de', $method->invoke($service, 'Hallo, der Service war sehr gut, danke sehr!'));
+        $this->assertEquals('de', $service->detect('Hallo, der Service war sehr gut, danke sehr!')->language);
     }
 
     /**
@@ -395,7 +390,8 @@ class ReplyTest extends TestCase
     public function test_validates_tone(): void
     {
         $mockFactory = Mockery::mock(AIProviderFactory::class);
-        $service = new ReplyGeneratorService($mockFactory);
+        $mockLanguageDetector = Mockery::mock(LanguageDetectorService::class);
+        $service = new ReplyGeneratorService($mockFactory, $mockLanguageDetector);
 
         // Valid tone
         $this->assertEmpty($service->validateOptions(['tone' => 'professional']));
@@ -412,7 +408,8 @@ class ReplyTest extends TestCase
     public function test_validates_review_data(): void
     {
         $mockFactory = Mockery::mock(AIProviderFactory::class);
-        $service = new ReplyGeneratorService($mockFactory);
+        $mockLanguageDetector = Mockery::mock(LanguageDetectorService::class);
+        $service = new ReplyGeneratorService($mockFactory, $mockLanguageDetector);
 
         // Valid data (content is now optional for rating-only reviews)
         $this->assertEmpty($service->validateReviewData([
