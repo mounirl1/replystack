@@ -71,7 +71,7 @@ ReplyStack a besoin d'un tableau de bord administrateur pour suivre la santé bu
 
 ### Out of Scope
 
-- Interface frontend (à créer dans une story séparée si nécessaire)
+- ~~Interface frontend (à créer dans une story séparée si nécessaire)~~ **DONE** - Frontend créé
 - Alertes automatiques (future story)
 - Export CSV/PDF des rapports
 - Historique détaillé des transactions Lemon Squeezy
@@ -477,6 +477,11 @@ Si une précision absolue est requise, une future story pourra intégrer l'API C
 - 17 tests feature + 8 tests unitaires (100% passants)
 - Support SQLite et MySQL pour les agrégations temporelles
 - 2 critères non implémentés (AC-008 historique MRR, AC-013 delta %)
+- **Frontend**: Page SuperAdminDashboard.tsx créée avec:
+  - Vue d'ensemble des métriques clés
+  - Sélecteur de période (7j, 30j, 90j, 12m)
+  - Graphiques et tableaux de données
+  - Accessible via `/super-admin` (super admins uniquement)
 
 ---
 
