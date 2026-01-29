@@ -52,6 +52,28 @@ return [
         'model' => env('MISTRAL_MODEL', 'mistral-small-latest'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | AI Pricing (for cost estimation)
+    |--------------------------------------------------------------------------
+    |
+    | Cost per 1 million tokens (USD) for each AI provider.
+    | Used by Super Admin dashboard to estimate AI costs.
+    | These are blended rates (weighted average of input/output).
+    |
+    */
+    'ai_pricing' => [
+        'gemini' => [
+            'cost_per_million_tokens' => env('AI_GEMINI_COST_PER_MILLION', 0.2325),
+        ],
+        'mistral' => [
+            'cost_per_million_tokens' => env('AI_MISTRAL_COST_PER_MILLION', 0.25),
+        ],
+        'claude' => [
+            'cost_per_million_tokens' => env('AI_CLAUDE_COST_PER_MILLION', 0.80),
+        ],
+    ],
+
     'lemonsqueezy' => [
         'api_key' => env('LEMONSQUEEZY_API_KEY'),
         'store_id' => env('LEMONSQUEEZY_STORE_ID'),
