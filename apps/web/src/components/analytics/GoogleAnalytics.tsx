@@ -39,7 +39,19 @@ export function initGA(): void {
     window.dataLayer.push(args);
   };
 
+  // Set default consent state (denied) - this must come before gtag.js loads
+  window.gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+  });
+
   window.gtag('js', new Date());
+
+  // Grant consent for analytics (user already accepted cookies at this point)
+  window.gtag('consent', 'update', {
+    'analytics_storage': 'granted',
+  });
+
   window.gtag('config', GA_MEASUREMENT_ID, {
     send_page_view: false, // We'll handle page views manually for SPA
   });
