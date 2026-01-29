@@ -27,7 +27,7 @@ import {
   Star,
   MessageSquare,
 } from 'lucide-react';
-import { ExtensionCTA, ChromeIcon } from '@/components/ui/ExtensionCTA';
+import { ChromeIcon } from '@/components/ui/ExtensionCTA';
 import { extractLanguageCode } from '@/config/sectors';
 
 // Platform data with support status
@@ -126,6 +126,7 @@ const plans = [
 
 export function Features(): ReactElement {
   const { t, i18n } = useTranslation('features');
+  const { t: tc } = useTranslation('common');
 
   const currentLang = extractLanguageCode(i18n.language);
   const pricingPath = currentLang === 'en' ? '/pricing' : `/${currentLang}/pricing`;
@@ -204,7 +205,13 @@ export function Features(): ReactElement {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <ExtensionCTA variant="hero" />
+              <Link
+                to="/register"
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-lg"
+              >
+                {tc('buttons.startFree')}
+                <ArrowRight size={20} />
+              </Link>
               <Link
                 to={pricingPath}
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-gray-300 hover:bg-gray-50 transition-all"
@@ -393,7 +400,13 @@ export function Features(): ReactElement {
 
           {/* CTA */}
           <div className="text-center mt-10">
-            <ExtensionCTA variant="default" />
+            <Link
+              to="/register"
+              className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full transition-all bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 hover:scale-[1.02]"
+            >
+              {tc('buttons.startFree')}
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
@@ -672,7 +685,13 @@ export function Features(): ReactElement {
             {t('cta.subtitle')}
           </p>
 
-          <ExtensionCTA variant="hero" />
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center gap-3 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] hover:bg-emerald-50 text-lg"
+          >
+            {tc('buttons.startFree')}
+            <ArrowRight size={20} />
+          </Link>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-sm text-emerald-100">
             <span className="flex items-center gap-1">

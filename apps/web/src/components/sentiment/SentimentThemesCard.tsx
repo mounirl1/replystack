@@ -33,7 +33,6 @@ function ThemeBadge({ theme }: { theme: SentimentTheme }) {
   const total = positive + neutral + negative;
 
   let dominantSentiment: 'positive' | 'neutral' | 'negative' = 'neutral';
-  let dominantPercent = 0;
 
   if (total > 0) {
     const positivePercent = (positive / total) * 100;
@@ -42,13 +41,10 @@ function ThemeBadge({ theme }: { theme: SentimentTheme }) {
 
     if (positivePercent > negativePercent && positivePercent > neutralPercent) {
       dominantSentiment = 'positive';
-      dominantPercent = positivePercent;
     } else if (negativePercent > positivePercent && negativePercent > neutralPercent) {
       dominantSentiment = 'negative';
-      dominantPercent = negativePercent;
     } else {
       dominantSentiment = 'neutral';
-      dominantPercent = neutralPercent;
     }
   }
 

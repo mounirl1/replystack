@@ -2,11 +2,10 @@ import { useParams, useLocation, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MDXProvider } from '@mdx-js/react';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, Clock, Globe, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, Globe, CheckCircle, XCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import { mdxComponents } from '@/components/blog/MDXComponents';
 import { TableOfContents, useTableOfContents } from '@/components/blog/TableOfContents';
 import { ShareButtons } from '@/components/blog/ShareButtons';
-import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 
 // Import comparison articles - English
 import ReplyStackVsBirdeyeEN from '@/content/compare/replystack-vs-birdeye/index.mdx';
@@ -441,7 +440,13 @@ export function ComparePage() {
                 <p className="text-gray-600 mb-6">
                   Start responding to reviews smarter and faster. Free plan includes 15 AI responses per month.
                 </p>
-                <ExtensionCTA variant="hero" />
+                <Link
+                  to="/register"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-lg"
+                >
+                  Start Free
+                  <ArrowRight size={20} />
+                </Link>
               </div>
 
               {/* Share */}
@@ -463,7 +468,13 @@ export function ComparePage() {
                   <p className="text-xs text-gray-600 mb-3">
                     15 AI responses/month, no credit card
                   </p>
-                  <ExtensionCTA variant="compact" />
+                  <Link
+                    to="/register"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-sm"
+                  >
+                    Start Free
+                    <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             </aside>

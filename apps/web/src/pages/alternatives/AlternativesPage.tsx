@@ -2,11 +2,10 @@ import { useParams, useLocation, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MDXProvider } from '@mdx-js/react';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, CheckCircle, XCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import { mdxComponents } from '@/components/blog/MDXComponents';
 import { TableOfContents, useTableOfContents } from '@/components/blog/TableOfContents';
 import { ShareButtons } from '@/components/blog/ShareButtons';
-import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 
 // Import alternatives/hub articles - English
 import BestReviewManagementSoftwareEN from '@/content/alternatives/best-review-management-software.en.mdx';
@@ -335,7 +334,13 @@ export function AlternativesPage() {
                 <p className="text-gray-600 mb-6">
                   {labels.ctaText}
                 </p>
-                <ExtensionCTA variant="hero" />
+                <Link
+                  to="/register"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-lg"
+                >
+                  {labels.tryFree}
+                  <ArrowRight size={20} />
+                </Link>
               </div>
 
               {/* Share */}
@@ -357,7 +362,13 @@ export function AlternativesPage() {
                   <p className="text-xs text-gray-600 mb-3">
                     {labels.freeResponses}
                   </p>
-                  <ExtensionCTA variant="compact" />
+                  <Link
+                    to="/register"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-sm"
+                  >
+                    {labels.tryFree}
+                    <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             </aside>

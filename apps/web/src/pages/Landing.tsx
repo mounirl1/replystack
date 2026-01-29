@@ -19,7 +19,6 @@ import {
   Sparkles,
   CheckCircle2,
 } from 'lucide-react';
-import { ExtensionCTA } from '@/components/ui/ExtensionCTA';
 import { ComparisonTable, FAQAccordion, TestimonialsGrid } from '@/components/landing';
 import {
   getSectorsForLocation,
@@ -125,7 +124,10 @@ export function Landing(): ReactElement {
 
             {/* CTAs */}
             <div className="flex flex-col items-center gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <ExtensionCTA variant="hero" />
+              <Link to="/register" className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] text-lg">
+                {tc('buttons.startFree')}
+                <ArrowRight size={20} />
+              </Link>
               <Link to="/pricing" className="text-gray-600 hover:text-gray-900 font-medium transition-colors flex items-center gap-1">
                 {t('hero.viewPricing')}
                 <ArrowRight size={16} />
@@ -463,7 +465,10 @@ export function Landing(): ReactElement {
               <p className="text-xl text-emerald-100 mb-10 max-w-xl mx-auto">
                 {t('cta.subtitle')}
               </p>
-              <ExtensionCTA variant="default" className="justify-center" />
+              <Link to="/register" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full transition-all bg-white text-emerald-600 hover:bg-emerald-50 shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                {tc('buttons.startFree')}
+                <ArrowRight size={18} />
+              </Link>
               <p className="mt-6 text-sm text-emerald-200">
                 {t('hero.noCreditCard')} • {tc('extension.freeForever')}
               </p>

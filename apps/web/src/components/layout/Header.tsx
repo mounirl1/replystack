@@ -2,10 +2,8 @@ import { useState, useEffect, type ReactElement } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
-import { ChromeIcon } from '@/components/ui/ExtensionCTA';
-import { EXTENSION_URLS } from '@/config/extensions';
 import {
   getSectorsForLocation,
   getSectorBasePath,
@@ -164,15 +162,13 @@ export function Header(): ReactElement {
                 >
                   {t('nav.signIn')}
                 </Link>
-                <a
-                  href={EXTENSION_URLS.chrome}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/register"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 transition-all hover:scale-[1.02]"
                 >
-                  <ChromeIcon size={16} />
-                  {t('extension.install')}
-                </a>
+                  {t('buttons.startFree')}
+                  <ArrowRight size={16} />
+                </Link>
               </>
             )}
           </div>
@@ -261,15 +257,13 @@ export function Header(): ReactElement {
                     >
                       {t('nav.signIn')}
                     </Link>
-                    <a
-                      href={EXTENSION_URLS.chrome}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/register"
                       className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold px-5 py-3 rounded-full"
                     >
-                      <ChromeIcon size={16} />
-                      {t('extension.install')}
-                    </a>
+                      {t('buttons.startFree')}
+                      <ArrowRight size={16} />
+                    </Link>
                   </>
                 )}
               </div>

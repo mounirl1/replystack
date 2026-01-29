@@ -31,7 +31,6 @@ function TrendLine({ data }: { data: SentimentTrends['data'] }) {
 
   // Calculate chart dimensions
   const chartHeight = 180;
-  const chartWidth = 100; // percentage
   const padding = { top: 10, bottom: 30, left: 0, right: 0 };
 
   const points = data.map((point, index) => {
@@ -134,7 +133,7 @@ function formatPeriodLabel(period: string): string {
   // Handle different period formats
   if (period.includes('-W')) {
     // Week format: 2024-W01
-    const [year, week] = period.split('-W');
+    const week = period.split('-W')[1];
     return `W${week}`;
   }
   if (period.match(/^\d{4}-\d{2}$/)) {

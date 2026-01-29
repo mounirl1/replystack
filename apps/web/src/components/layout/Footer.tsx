@@ -2,7 +2,6 @@ import { type ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
-import { ExtensionLink } from '@/components/ui/ExtensionCTA';
 import {
   getSectorsForLocation,
   getSectorBasePath,
@@ -137,7 +136,9 @@ export function Footer(): ReactElement {
                 </Link>
               </li>
               <li>
-                <ExtensionLink />
+                <Link to="/register" className="hover:text-emerald-600 transition-colors">
+                  {t('buttons.startFree')}
+                </Link>
               </li>
             </ul>
           </div>
