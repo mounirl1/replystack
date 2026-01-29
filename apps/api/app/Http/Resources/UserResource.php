@@ -45,6 +45,7 @@ class UserResource extends JsonResource
             ),
             'email_verified_at' => $this->email_verified_at?->toIso8601String(),
             'created_at' => $this->created_at->toIso8601String(),
+            'is_super_admin' => (bool) $this->is_super_admin,
         ];
     }
 

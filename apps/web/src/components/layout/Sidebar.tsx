@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   ChevronRight,
   LogOut,
+  Shield,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -32,21 +33,37 @@ interface NavItem {
 interface GetNavItemsParams {
   pendingCount?: number;
   t: (key: string) => string;
+  isSuperAdmin?: boolean;
 }
 
-const getNavItems = ({ pendingCount, t }: GetNavItemsParams): NavItem[] => [
-  { icon: <Home size={20} />, label: t('nav.dashboard'), href: '/dashboard', onboardingId: 'dashboard-link' },
-  {
-    icon: <MessageSquare size={20} />,
-    label: t('nav.reviews'),
-    href: '/reviews',
-    badge: pendingCount && pendingCount > 0 ? pendingCount : undefined,
-    badgeType: 'count',
-    onboardingId: 'reviews-link',
-  },
-  { icon: <History size={20} />, label: t('nav.history'), href: '/history', onboardingId: 'history-link' },
-  { icon: <BarChart3 size={20} />, label: t('nav.analytics'), href: '/analytics/sentiment', onboardingId: 'analytics-link' },
-];
+const getNavItems = ({ pendingCount, t, isSuperAdmin }: GetNavItemsParams): NavItem[] => {
+  const items: NavItem[] = [
+    { icon: <Home size={20} />, label: t('nav.dashboard'), href: '/dashboard', onboardingId: 'dashboard-link' },
+    {
+      icon: <MessageSquare size={20} />,
+      label: t('nav.reviews'),
+      href: '/reviews',
+      badge: pendingCount && pendingCount > 0 ? pendingCount : undefined,
+      badgeType: 'count',
+      onboardingId: 'reviews-link',
+    },
+    { icon: <History size={20} />, label: t('nav.history'), href: '/history', onboardingId: 'history-link' },
+    { icon: <BarChart3 size={20} />, label: t('nav.analytics'), href: '/analytics/sentiment', onboardingId: 'analytics-link' },
+  ];
+
+  // Add super admin link if user is super admin
+  if (isSuperAdmin) {
+    items.push({
+      icon: <Shield size={20} />,
+      label: 'Super Admin',
+      href: '/super-admin',
+      badge: 'Admin',
+      badgeType: 'default',
+    });
+  }
+
+  return items;
+};
 
 interface SidebarProps {
   collapsed?: boolean;
@@ -66,7 +83,7 @@ export function Sidebar({ collapsed = false, onToggle }: SidebarProps) {
     enabled: !!user,
   });
 
-  const navItems = getNavItems({ pendingCount: reviewStats?.pending, t });
+  const navItems = getNavItems({ pendingCount: reviewStats?.pending, t, isSuperAdmin: user?.is_super_admin });
 
   const quotaUsed = quota?.used ?? 0;
   const quotaLimit = quota?.is_unlimited ? null : (typeof quota?.limit === 'number' ? quota.limit : 10);
