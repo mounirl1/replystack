@@ -6,7 +6,8 @@ const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXX
 
 declare global {
   interface Window {
-    dataLayer: unknown[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dataLayer: any[];
     gtag: (...args: unknown[]) => void;
   }
 }
@@ -27,26 +28,32 @@ export function initGA(): void {
     return;
   }
 
-  // Initialize dataLayer and gtag FIRST (standard Google implementation)
-  window.dataLayer = window.dataLayer || [];
-
-  // Use the exact Google implementation with function declaration
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = gtag;
-
-  // These commands will be queued and processed when gtag.js loads
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    send_page_view: false, // We'll handle page views manually for SPA
-  });
-
-  // NOW load the script (after gtag is defined)
+  // Create script element
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
+
+  // Initialize dataLayer and gtag (using Google's recommended pattern)
+  window.dataLayer = window.dataLayer || [];
+  // Must use 'arguments' object, not spread syntax, for gtag.js compatibility
+  window.gtag = function () {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
+  } as Window['gtag'];
+
+  // User has already accepted cookies at this point (checked before calling initGA)
+  // Grant consent before loading the script
+  window.gtag('consent', 'default', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'denied',
+  });
+
+  window.gtag('js', new Date());
+
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    send_page_view: false, // We'll handle page views manually for SPA
+  });
 }
 
 /**
