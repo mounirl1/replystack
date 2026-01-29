@@ -27,30 +27,26 @@ export function initGA(): void {
     return;
   }
 
-  // Create script element
+  // Initialize dataLayer and gtag FIRST (standard Google implementation)
+  window.dataLayer = window.dataLayer || [];
+
+  // Use the exact Google implementation with function declaration
+  function gtag(...args: unknown[]) {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+
+  // These commands will be queued and processed when gtag.js loads
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    send_page_view: false, // We'll handle page views manually for SPA
+  });
+
+  // NOW load the script (after gtag is defined)
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
-
-  // Initialize dataLayer and gtag
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
-  };
-
-  // User has already accepted cookies at this point (checked before calling initGA)
-  // Grant consent before loading the script
-  window.gtag('consent', 'default', {
-    'analytics_storage': 'granted',
-    'ad_storage': 'denied',
-  });
-
-  window.gtag('js', new Date());
-
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    send_page_view: false, // We'll handle page views manually for SPA
-  });
 }
 
 /**
