@@ -66,6 +66,7 @@ export function trackPageView(path: string, title?: string): void {
   window.gtag('event', 'page_view', {
     page_path: path,
     page_title: title || document.title,
+    send_to: GA_MEASUREMENT_ID,
   });
 }
 
@@ -78,7 +79,10 @@ export function trackEvent(
 ): void {
   if (!window.gtag) return;
 
-  window.gtag('event', eventName, parameters);
+  window.gtag('event', eventName, {
+    ...parameters,
+    send_to: GA_MEASUREMENT_ID,
+  });
 }
 
 /**
