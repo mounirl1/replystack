@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\ReviewSummaryController;
 use App\Http\Controllers\Api\ReviewSyncController;
 use App\Http\Controllers\Api\SentimentController;
+use App\Http\Controllers\Api\SuperAdmin\DashboardController as SuperAdminDashboardController;
 use App\Http\Controllers\Api\SuperAdmin\ReviewConnectionController as SuperAdminReviewConnectionController;
 use App\Http\Controllers\Api\TriggerFlowController;
 use App\Http\Controllers\Api\UserController;
@@ -195,6 +196,16 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->prefix('google-business')-
 // Super Admin Routes
 // =============================================================================
 Route::middleware(['auth:sanctum', 'super-admin', 'throttle:60,1'])->prefix('super-admin')->group(function () {
+    // Dashboard (STORY-009)
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/overview', [SuperAdminDashboardController::class, 'overview']);
+        Route::get('/users', [SuperAdminDashboardController::class, 'users']);
+        Route::get('/revenue', [SuperAdminDashboardController::class, 'revenue']);
+        Route::get('/ai-costs', [SuperAdminDashboardController::class, 'aiCosts']);
+        Route::get('/trends', [SuperAdminDashboardController::class, 'trends']);
+        Route::post('/clear-cache', [SuperAdminDashboardController::class, 'clearCache']);
+    });
+
     // Location connections
     Route::get('/locations/{location}/connections', [SuperAdminReviewConnectionController::class, 'index']);
 

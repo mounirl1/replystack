@@ -40,6 +40,7 @@ export interface User {
   name: string | null;
   plan: 'free' | 'starter' | 'pro' | 'business' | 'enterprise';
   quota_remaining: number | 'unlimited';
+  is_super_admin?: boolean;
 }
 
 export interface QuotaStatus {
