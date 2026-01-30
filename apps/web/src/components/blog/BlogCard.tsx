@@ -18,11 +18,11 @@ export function BlogCard({ post, variant = 'default' }: BlogCardProps) {
 
   if (variant === 'featured') {
     return (
-      <article className="group relative bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-        <Link to={url} className="block">
-          {/* Featured image */}
+      <article className="group relative rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+        <Link to={url} className="block relative">
+          {/* Full-bleed image */}
           {post.featuredImage && (
-            <div className="aspect-[16/9] overflow-hidden">
+            <div className="aspect-[16/8] overflow-hidden">
               <img
                 src={post.featuredImage.src}
                 alt={post.featuredImage.alt}
@@ -32,7 +32,8 @@ export function BlogCard({ post, variant = 'default' }: BlogCardProps) {
             </div>
           )}
 
-          <div className="p-6">
+          {/* Overlay with gradient */}
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/90 to-transparent pt-16 px-6 pb-6">
             {/* Category badge */}
             <span
               className={`inline-block px-2.5 py-1 text-xs font-medium rounded-full ${getCategoryColor(post.category)}`}
@@ -48,32 +49,28 @@ export function BlogCard({ post, variant = 'default' }: BlogCardProps) {
             {/* Description */}
             <p className="text-gray-600 mt-2 line-clamp-2">{post.description}</p>
 
-            {/* Meta */}
-            <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
-              <div className="flex items-center gap-1.5">
-                <Calendar size={14} />
-                <span>{formattedDate}</span>
+            {/* Meta + Author */}
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-1.5">
+                  <Calendar size={14} />
+                  <span>{formattedDate}</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Clock size={14} />
+                  <span>{t('article.readingTime', { minutes: post.readingTime })}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Clock size={14} />
-                <span>{t('article.readingTime', { minutes: post.readingTime })}</span>
-              </div>
-            </div>
 
-            {/* Author */}
-            <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-100">
-              {post.author.avatar && (
-                <img
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-              )}
-              <div>
-                <p className="text-sm font-medium text-gray-900">{post.author.name}</p>
-                {post.author.role && (
-                  <p className="text-xs text-gray-500">{post.author.role}</p>
+              <div className="flex items-center gap-2">
+                {post.author.avatar && (
+                  <img
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                    className="w-7 h-7 rounded-full object-cover"
+                  />
                 )}
+                <p className="text-sm font-medium text-gray-900">{post.author.name}</p>
               </div>
             </div>
           </div>

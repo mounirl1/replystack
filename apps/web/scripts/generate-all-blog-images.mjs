@@ -35,7 +35,7 @@ const ALL_IMAGES = [
     alt: 'Auto repair shop online reputation management',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration of an auto repair garage with a large smartphone screen showing 5 gold stars. A car on a lift in the background, a wrench icon and a speech bubble with a star. Color scheme: blue (#2563EB), green (#10B981), orange (#F59E0B), white background. Modern minimalist vector-like style with soft shadows. No text, words, numbers or letters anywhere in the image.',
+    prompt: 'Photorealistic image of a clean modern auto repair garage interior with warm lighting. A mechanic in a blue uniform smiles while holding a tablet showing glowing 5-star reviews. A polished car on a hydraulic lift in the background, tools neatly organized on the wall. Shallow depth of field, golden hour light streaming through the garage door. Professional commercial photography style, 8k quality. No text, words, numbers or letters anywhere in the image.',
   },
   {
     slug: 'auto-repair-reputation',
@@ -64,7 +64,7 @@ const ALL_IMAGES = [
     alt: 'Beauty salon online reputation management',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration of a modern beauty salon interior with a large floating phone showing gold stars. Scissors, hair dryer, and makeup brush icons arranged decoratively. A mirror reflecting positive review bubbles. Color scheme: blue (#2563EB), green (#10B981), pink (#EC4899), white background. Elegant minimalist vector style with soft shadows. No text, words, numbers or letters anywhere.',
+    prompt: 'Photorealistic image of a luxurious modern beauty salon with soft pink and white decor. A stylist at an elegant station with a large mirror, fresh flowers, and premium hair products. A smartphone on the counter displays glowing 5-star reviews. Soft natural light from large windows, bokeh background. Professional lifestyle photography, high-end commercial aesthetic, 8k quality. No text, words, numbers or letters anywhere.',
   },
   {
     slug: 'beauty-salon-reputation',
@@ -180,7 +180,7 @@ const ALL_IMAGES = [
     alt: 'Healthcare professional online review management',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration of a medical cross symbol combined with a review star rating display. A stethoscope icon, a shield with a privacy lock, and a smartphone showing patient review bubbles. Color scheme: blue (#2563EB), green (#10B981), light teal accents, white background. Clean professional medical style with soft shadows. No text, words, numbers or letters anywhere.',
+    prompt: 'Photorealistic image of a modern medical office reception area with clean white and teal decor. A doctor in a white coat uses a tablet at a sleek front desk. A stethoscope rests on the counter beside a small potted plant. Warm professional lighting, shallow depth of field with a softly blurred waiting area. Healthcare commercial photography, 8k quality. No text, words, numbers or letters anywhere.',
   },
   {
     slug: 'healthcare-reviews',
@@ -238,7 +238,7 @@ const ALL_IMAGES = [
     alt: 'Online reputation for contractors and tradespeople',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration of a contractor toolbox with a hard hat on top, next to a large smartphone showing gold star reviews. Small icons: hammer, saw, paintbrush. A Google Maps pin nearby. Color scheme: blue (#2563EB), orange (#F59E0B) for construction elements, green (#10B981) accents, white background. Modern vector style. No text, words, numbers or letters anywhere.',
+    prompt: 'Photorealistic image of a skilled tradesperson standing proudly in front of a beautifully renovated home exterior. Wearing a clean work vest, holding a tool belt, with a finished woodwork project visible. Warm golden hour sunlight, suburban neighborhood background softly blurred. Professional portrait photography of a craftsman, 8k quality. No text, words, numbers or letters anywhere.',
   },
   {
     slug: 'reputation-artisans',
@@ -325,7 +325,7 @@ const ALL_IMAGES = [
     alt: 'Respond to reviews in 2 minutes a day',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration of a stopwatch showing 2 minutes with review speech bubbles being quickly processed through a funnel. Lightning bolt symbols suggest speed. A relaxed business person silhouette watches confidently. Color scheme: blue (#2563EB), green (#10B981), amber (#F59E0B) for stopwatch, white background. Dynamic modern vector style. No text, words, numbers or letters anywhere.',
+    prompt: 'Photorealistic image of a business owner casually checking a smartphone while enjoying coffee at a modern cafe table. The phone screen glows with notification badges. A laptop sits open nearby with a clean dashboard visible. Morning light streams through a window, relaxed confident expression. Lifestyle business photography, shallow depth of field, 8k quality. No text, words, numbers or letters anywhere.',
   },
   {
     slug: 'respond-reviews-2-minutes-day',
@@ -383,7 +383,7 @@ const ALL_IMAGES = [
     alt: 'How Google reviews boost local SEO',
     width: 1200,
     height: 630,
-    prompt: 'Professional flat design illustration showing a Google Maps pin rising upward on a search results page, propelled by gold stars and review bubbles. A bar chart shows SEO ranking improvement. A local storefront at the base. Color scheme: blue (#2563EB), green (#10B981), amber (#F59E0B), red (#EF4444) for map pin, white background. Modern vector style. No text, words, numbers or letters anywhere.',
+    prompt: 'Photorealistic image of a charming local storefront on a main street with a prominent Google Maps pin hovering above it. The shop has a warm inviting facade with an awning, potted plants, and large windows. Blue sky with soft clouds, other shops visible down the street with bokeh effect. Commercial real estate photography style, vibrant colors, 8k quality. No text, words, numbers or letters anywhere.',
   },
   {
     slug: 'reviews-boost-local-seo',
