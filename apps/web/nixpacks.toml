@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_22", "chromium"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
 cmds = ["npm install -g pnpm && export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm install --no-frozen-lockfile"]
 
 [phases.build]
-cmds = ["export PATH=\"$(npm config get prefix)/bin:$PATH\" && PUPPETEER_SKIP_DOWNLOAD=1 PUPPETEER_EXECUTABLE_PATH=$(which chromium) pnpm build"]
+cmds = ["export PATH=\"$(npm config get prefix)/bin:$PATH\" && pnpm build"]
 
 [start]
 cmd = "npx serve -s dist -l ${PORT:-8080}"
