@@ -57,7 +57,7 @@ export default defineConfig({
         // Manual chunks for better caching
         manualChunks: {
           // React core - keep react and react-dom together for proper initialization
-          'vendor-react': ['react', 'react-dom', 'scheduler'],
+          'vendor-react': ['react', 'react-dom'],
           // React Router in its own chunk
           'vendor-router': ['react-router', 'react-router-dom'],
           // React Query
