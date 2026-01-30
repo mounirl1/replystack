@@ -88,9 +88,9 @@
   <url>
     <loc>https://www.reply-stack.app/blog/respond-negative-reviews</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/respond-negative-reviews"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/respond-negative-reviews"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/respond-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-google-negatifs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-negativas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-negativas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -101,9 +101,9 @@
   <url>
     <loc>https://www.reply-stack.app/blog/review-response-templates</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/review-response-templates"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/review-response-templates"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/review-response-templates"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/review-response-templates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/templates-reponses-avis"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/plantillas-respuestas-resenas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/templates-respostas-avaliacoes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/review-response-templates"/>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -114,9 +114,9 @@
   <url>
     <loc>https://www.reply-stack.app/blog/get-more-google-reviews</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/get-more-google-reviews"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/get-more-google-reviews"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/get-more-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/obtenir-plus-avis-google"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/conseguir-mas-resenas-google"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/conseguir-mais-avaliacoes-google"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -125,12 +125,12 @@
 
   <!-- Blog: Online Reputation Strategy -->
   <url>
-    <loc>https://www.reply-stack.app/blog/online-reputation-strategy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/online-reputation-strategy"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/online-reputation-strategy"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/online-reputation-strategy"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/online-reputation-strategy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/online-reputation-strategy"/>
+    <loc>https://www.reply-stack.app/blog/complete-online-reputation-strategy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/strategie-e-reputation-complete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/estrategia-reputacion-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/estrategia-reputacao-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -140,13 +140,188 @@
   <url>
     <loc>https://www.reply-stack.app/blog/respond-reviews-2-minutes-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/respond-reviews-2-minutes-day"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/respond-reviews-2-minutes-day"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/respond-reviews-2-minutes-day"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-2-minutes-jour"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-2-minutos-dia"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
     <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Respond to Negative Reviews - FR -->
+  <url>
+    <loc>https://www.reply-stack.app/fr/blog/repondre-avis-google-negatifs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-google-negatifs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-negativas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-negativas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/es/blog/responder-resenas-negativas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-google-negatifs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-negativas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-negativas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/pt/blog/responder-avaliacoes-negativas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-google-negatifs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-negativas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-negativas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-negative-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: Review Response Templates - FR/ES/PT -->
+  <url>
+    <loc>https://www.reply-stack.app/fr/blog/templates-reponses-avis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/templates-reponses-avis"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/plantillas-respuestas-resenas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/templates-respostas-avaliacoes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/es/blog/plantillas-respuestas-resenas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/templates-reponses-avis"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/plantillas-respuestas-resenas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/templates-respostas-avaliacoes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/pt/blog/templates-respostas-avaliacoes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/templates-reponses-avis"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/plantillas-respuestas-resenas"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/templates-respostas-avaliacoes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/review-response-templates"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: Get More Google Reviews - FR/ES/PT -->
+  <url>
+    <loc>https://www.reply-stack.app/fr/blog/obtenir-plus-avis-google</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/obtenir-plus-avis-google"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/conseguir-mas-resenas-google"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/conseguir-mais-avaliacoes-google"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/es/blog/conseguir-mas-resenas-google</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/obtenir-plus-avis-google"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/conseguir-mas-resenas-google"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/conseguir-mais-avaliacoes-google"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/pt/blog/conseguir-mais-avaliacoes-google</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/obtenir-plus-avis-google"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/conseguir-mas-resenas-google"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/conseguir-mais-avaliacoes-google"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/get-more-google-reviews"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: Online Reputation Strategy - FR/ES/PT -->
+  <url>
+    <loc>https://www.reply-stack.app/fr/blog/strategie-e-reputation-complete</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/strategie-e-reputation-complete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/estrategia-reputacion-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/estrategia-reputacao-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/es/blog/estrategia-reputacion-online-completa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/strategie-e-reputation-complete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/estrategia-reputacion-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/estrategia-reputacao-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/pt/blog/estrategia-reputacao-online-completa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/strategie-e-reputation-complete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/estrategia-reputacion-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/estrategia-reputacao-online-completa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/complete-online-reputation-strategy"/>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: Respond to Reviews in 2 Minutes - FR/ES/PT -->
+  <url>
+    <loc>https://www.reply-stack.app/fr/blog/repondre-avis-2-minutes-jour</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-2-minutes-jour"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/es/blog/responder-resenas-2-minutos-dia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-2-minutes-jour"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.reply-stack.app/pt/blog/responder-avaliacoes-2-minutos-dia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.reply-stack.app/fr/blog/repondre-avis-2-minutes-jour"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.reply-stack.app/es/blog/responder-resenas-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.reply-stack.app/pt/blog/responder-avaliacoes-2-minutos-dia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.reply-stack.app/blog/respond-reviews-2-minutes-day"/>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Blog: Respond to Google Reviews -->
@@ -478,20 +653,6 @@
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- ==================== AUTH PAGES (low priority) ==================== -->
-
-  <url>
-    <loc>https://www.reply-stack.app/login</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.reply-stack.app/register</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
   </url>
 
 </urlset>

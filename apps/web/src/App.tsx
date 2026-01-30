@@ -67,12 +67,21 @@ function App() {
         {/* Public routes */}
         <Route element={<Layout />}>
           <Route path="/" element={<Landing />} />
+          <Route path="/fr" element={<Landing />} />
+          <Route path="/es" element={<Landing />} />
+          <Route path="/pt" element={<Landing />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/fr/pricing" element={<Pricing />} />
+          <Route path="/es/pricing" element={<Pricing />} />
+          <Route path="/pt/pricing" element={<Pricing />} />
           <Route path="/features" element={<Features />} />
           <Route path="/fr/fonctionnalites" element={<Features />} />
           <Route path="/es/funcionalidades" element={<Features />} />
           <Route path="/pt/funcionalidades" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/fr/contact" element={<Contact />} />
+          <Route path="/es/contact" element={<Contact />} />
+          <Route path="/pt/contact" element={<Contact />} />
           {/* Blog routes - EN (default) */}
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -129,6 +138,9 @@ function App() {
 
         {/* Legal pages (standalone, no layout) */}
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/fr/privacy" element={<Privacy />} />
+        <Route path="/es/privacy" element={<Privacy />} />
+        <Route path="/pt/privacy" element={<Privacy />} />
 
         {/* Protected dashboard routes with new layout */}
         <Route element={<DashboardLayout />}>
