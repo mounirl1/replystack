@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
+import remarkFrontmatter from 'remark-frontmatter';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import path from 'path';
@@ -12,7 +13,7 @@ export default defineConfig({
   plugins: [
     // MDX support - must come before React plugin
     mdx({
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [remarkFrontmatter, remarkGfm],
       rehypePlugins: [
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: 'wrap' }],
