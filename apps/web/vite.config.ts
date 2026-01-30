@@ -59,7 +59,7 @@ export default defineConfig({
           // React core - keep react and react-dom together for proper initialization
           'vendor-react': ['react', 'react-dom'],
           // React Router in its own chunk
-          'vendor-router': ['react-router', 'react-router-dom'],
+          'vendor-router': ['react-router-dom'],
           // React Query
           'vendor-query': ['@tanstack/react-query'],
           // i18n libraries
