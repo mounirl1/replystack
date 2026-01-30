@@ -107,6 +107,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Learn how to respond to negative reviews professionally. 5 principles, concrete examples, and templates to transform criticism into opportunities.',
         keywords: ['negative reviews', 'review response', 'customer feedback', 'reputation management'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-negative-reviews.webp',
+        alt: 'Complete guide to responding to negative reviews',
+      },
     },
   },
   'en:review-response-templates': {
@@ -130,6 +134,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Review Response Templates That Work (Copy & Paste) 2026',
         description: '20 ready-to-use templates for responding to customer reviews. Positive, negative, and special cases covered. Copy, personalize, and publish.',
         keywords: ['review templates', 'response templates', 'customer reviews', 'review management'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-review-response-templates.webp',
+        alt: '20 review response templates ready to use',
       },
     },
   },
@@ -155,6 +163,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: '15 proven strategies to get more Google reviews. QR codes, emails, SMS, optimal timing. Practical guide with free templates.',
         keywords: ['get more google reviews', 'ask customers for reviews', 'increase google reviews', 'collect google reviews', 'google review strategy'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-google-reviews.webp',
+        alt: 'Complete guide to getting more Google reviews',
+      },
     },
   },
   'en:respond-reviews-2-minutes-day': {
@@ -178,6 +190,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Respond to Reviews in 2 Minutes a Day: The Efficient Method 2026',
         description: 'Learn how to manage all your customer reviews in just 2 minutes a day. Optimized workflow, templates, AI tools. Practical guide.',
         keywords: ['respond reviews quickly', 'efficient review management', 'review workflow', 'save time google reviews', 'automate review responses'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-reviews-2-minutes-day.webp',
+        alt: 'Respond to reviews in 2 minutes a day',
       },
     },
   },
@@ -204,6 +220,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Apprenez à répondre aux avis négatifs de manière professionnelle. 5 principes, exemples concrets et modèles pour transformer les critiques en opportunités.',
         keywords: ['avis négatifs', 'répondre avis google', 'e-réputation', 'gestion avis clients'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-negative-reviews.webp',
+        alt: 'Complete guide to responding to negative reviews',
+      },
     },
   },
   'fr:templates-reponses-avis': {
@@ -227,6 +247,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Templates de Réponses aux Avis Clients (Copier-Coller) 2026',
         description: '20 modèles prêts à l\'emploi pour répondre aux avis clients. Avis positifs, négatifs et cas particuliers. Copiez, personnalisez et publiez.',
         keywords: ['templates avis', 'modèles réponse', 'avis clients', 'gestion avis'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-review-response-templates.webp',
+        alt: '20 review response templates ready to use',
       },
     },
   },
@@ -252,6 +276,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: '15 stratégies éprouvées pour obtenir plus d\'avis Google. QR codes, emails, SMS, timing optimal. Guide pratique avec templates gratuits.',
         keywords: ['obtenir plus avis google', 'demander avis clients', 'augmenter avis google', 'collecter avis google', 'stratégie avis google'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-google-reviews.webp',
+        alt: 'Complete guide to getting more Google reviews',
+      },
     },
   },
   'fr:repondre-avis-2-minutes-jour': {
@@ -275,6 +303,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Répondre aux Avis en 2 Minutes par Jour : La Méthode Efficace 2026',
         description: 'Apprenez à gérer tous vos avis clients en seulement 2 minutes par jour. Workflow optimisé, templates, outils IA. Guide pratique.',
         keywords: ['répondre avis rapidement', 'gestion avis efficace', 'workflow avis clients', 'gagner temps avis google', 'automatiser réponses avis'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-reviews-2-minutes-day.webp',
+        alt: 'Respond to reviews in 2 minutes a day',
       },
     },
   },
@@ -301,6 +333,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Aprenda a responder a reseñas negativas de forma profesional. Ejemplos concretos, errores a evitar y estrategias para proteger su reputación.',
         keywords: ['reseñas negativas', 'responder reseña google', 'reputación online', 'gestión reseñas'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-negative-reviews.webp',
+        alt: 'Complete guide to responding to negative reviews',
+      },
     },
   },
   'es:plantillas-respuestas-resenas': {
@@ -324,6 +360,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Plantillas de Respuestas a Reseñas de Clientes (Copiar y Pegar) 2026',
         description: '20 plantillas profesionales para responder a reseñas en Google, TripAdvisor, Facebook. Reseñas positivas y negativas. Copie, personalice, publique.',
         keywords: ['plantillas reseñas', 'modelos respuesta', 'reseñas clientes', 'gestión reseñas'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-review-response-templates.webp',
+        alt: '20 review response templates ready to use',
       },
     },
   },
@@ -349,6 +389,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: '15 estrategias probadas para conseguir más reseñas en Google. Códigos QR, emails, SMS, timing óptimo. Guía práctica con plantillas gratis.',
         keywords: ['conseguir más reseñas google', 'pedir reseñas clientes', 'aumentar reseñas google', 'recopilar opiniones google', 'estrategia reseñas google'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-google-reviews.webp',
+        alt: 'Complete guide to getting more Google reviews',
+      },
     },
   },
   'es:responder-resenas-2-minutos-dia': {
@@ -372,6 +416,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Responder a Reseñas en 2 Minutos al Día: El Método Eficiente 2026',
         description: 'Aprende a gestionar todas tus reseñas de clientes en solo 2 minutos al día. Workflow optimizado, plantillas, herramientas IA. Guía práctica.',
         keywords: ['responder reseñas rápido', 'gestión reseñas eficiente', 'workflow reseñas clientes', 'ahorrar tiempo reseñas google', 'automatizar respuestas reseñas'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-reviews-2-minutes-day.webp',
+        alt: 'Respond to reviews in 2 minutes a day',
       },
     },
   },
@@ -398,6 +446,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Aprenda a responder a avaliações negativas de forma profissional. Exemplos concretos, erros a evitar e estratégias para proteger a sua reputação.',
         keywords: ['avaliações negativas', 'responder avaliação google', 'reputação online', 'gestão avaliações'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-negative-reviews.webp',
+        alt: 'Complete guide to responding to negative reviews',
+      },
     },
   },
   'pt:templates-respostas-avaliacoes': {
@@ -421,6 +473,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: '20 Templates de Respostas a Avaliações de Clientes (Copiar e Colar) 2026',
         description: '20 modelos profissionais para responder a avaliações no Google, TripAdvisor, Facebook. Avaliações positivas e negativas. Copie, personalize, publique.',
         keywords: ['templates avaliações', 'modelos resposta', 'avaliações clientes', 'gestão avaliações'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-review-response-templates.webp',
+        alt: '20 review response templates ready to use',
       },
     },
   },
@@ -446,6 +502,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: '15 estratégias comprovadas para conseguir mais avaliações no Google. QR codes, emails, SMS, timing ideal. Guia prático com modelos grátis.',
         keywords: ['conseguir mais avaliações google', 'pedir avaliações clientes', 'aumentar avaliações google', 'coletar avaliações google', 'estratégia avaliações google'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-google-reviews.webp',
+        alt: 'Complete guide to getting more Google reviews',
+      },
     },
   },
   'pt:responder-avaliacoes-2-minutos-dia': {
@@ -469,6 +529,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Responder a Avaliações em 2 Minutos por Dia: O Método Eficiente 2026',
         description: 'Aprenda a gerenciar todas as suas avaliações de clientes em apenas 2 minutos por dia. Workflow otimizado, modelos, ferramentas IA. Guia prático.',
         keywords: ['responder avaliações rápido', 'gestão avaliações eficiente', 'workflow avaliações clientes', 'economizar tempo avaliações google', 'automatizar respostas avaliações'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-reviews-2-minutes-day.webp',
+        alt: 'Respond to reviews in 2 minutes a day',
       },
     },
   },
@@ -495,6 +559,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Build an effective online reputation strategy in 2026. Audit, monitoring, responses, KPIs. Complete guide with action plan and tools.',
         keywords: ['online reputation strategy', 'reputation management', 'business reputation online', 'reputation plan', 'improve online reputation'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-online-reputation-strategy.webp',
+        alt: 'Complete online reputation management strategy',
+      },
     },
   },
   // Online Reputation Strategy - FR
@@ -519,6 +587,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Stratégie E-réputation Complète 2026 : Le Guide Ultime',
         description: 'Construisez une stratégie e-réputation efficace en 2026. Audit, monitoring, réponses, KPIs. Guide complet avec plan d\'action et outils.',
         keywords: ['stratégie e-réputation', 'gestion réputation en ligne', 'e-réputation entreprise', 'plan e-réputation', 'améliorer réputation internet'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-online-reputation-strategy.webp',
+        alt: 'Complete online reputation management strategy',
       },
     },
   },
@@ -545,6 +617,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Construye una estrategia de reputación online efectiva en 2026. Auditoría, monitoreo, respuestas, KPIs. Guía completa con plan de acción y herramientas.',
         keywords: ['estrategia reputación online', 'gestión reputación internet', 'reputación digital empresa', 'plan reputación online', 'mejorar reputación internet'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-online-reputation-strategy.webp',
+        alt: 'Complete online reputation management strategy',
+      },
     },
   },
   // Online Reputation Strategy - PT
@@ -569,6 +645,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Estratégia de Reputação Online Completa 2026: O Guia Definitivo',
         description: 'Construa uma estratégia de reputação online eficaz em 2026. Auditoria, monitoramento, respostas, KPIs. Guia completo com plano de ação e ferramentas.',
         keywords: ['estratégia reputação online', 'gestão reputação internet', 'reputação digital empresa', 'plano reputação online', 'melhorar reputação internet'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-online-reputation-strategy.webp',
+        alt: 'Complete online reputation management strategy',
       },
     },
   },
@@ -595,6 +675,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Complete guide to responding to Google reviews: templates, best practices, mistakes to avoid. Improve your online reputation and local SEO.',
         keywords: ['respond google reviews', 'google review response', 'reply to reviews', 'review management', 'local SEO'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-google-reviews.webp',
+        alt: 'How to respond to Google reviews effectively',
+      },
     },
   },
   // Respond to Google Reviews - FR
@@ -619,6 +703,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Répondre aux Avis Google : Guide Complet 2026 | ReplyStack',
         description: 'Guide complet pour répondre aux avis Google : templates, bonnes pratiques, erreurs à éviter. Améliorez votre e-réputation et votre SEO local.',
         keywords: ['répondre avis google', 'réponse avis google', 'gestion avis', 'e-réputation', 'SEO local'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-google-reviews.webp',
+        alt: 'How to respond to Google reviews effectively',
       },
     },
   },
@@ -645,6 +733,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía completa para responder a las reseñas de Google: plantillas, buenas prácticas, errores a evitar. Mejora tu reputación online y tu SEO local.',
         keywords: ['responder reseñas google', 'respuesta reseñas google', 'gestión reseñas', 'reputación online', 'SEO local'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-respond-google-reviews.webp',
+        alt: 'How to respond to Google reviews effectively',
+      },
     },
   },
   // Respond to Google Reviews - PT
@@ -669,6 +761,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Como Responder às Avaliações do Google: Guia Completo 2026 | ReplyStack',
         description: 'Guia completo para responder às avaliações do Google: templates, boas práticas, erros a evitar. Melhore sua reputação online e seu SEO local.',
         keywords: ['responder avaliações google', 'resposta avaliações google', 'gestão avaliações', 'reputação online', 'SEO local'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-respond-google-reviews.webp',
+        alt: 'How to respond to Google reviews effectively',
       },
     },
   },
@@ -695,6 +791,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Complete guide on Google reviews impact on local SEO: ranking factors, best practices, and strategies to improve your visibility.',
         keywords: ['reviews local seo', 'google reviews seo', 'local pack ranking', 'local search optimization', 'reviews impact seo'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-reviews-boost-local-seo.webp',
+        alt: 'How Google reviews boost local SEO',
+      },
     },
   },
   // Reviews Boost Local SEO - FR
@@ -719,6 +819,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Comment les Avis Google Boostent votre SEO Local | ReplyStack',
         description: 'Guide complet sur l\'impact des avis Google sur votre SEO local : facteurs de classement, bonnes pratiques et stratégies pour améliorer votre visibilité.',
         keywords: ['avis google seo', 'seo local avis', 'local pack google', 'référencement local', 'impact avis seo'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-reviews-boost-local-seo.webp',
+        alt: 'How Google reviews boost local SEO',
       },
     },
   },
@@ -745,6 +849,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía completa sobre el impacto de las reseñas de Google en tu SEO local: factores de clasificación, buenas prácticas y estrategias para mejorar tu visibilidad.',
         keywords: ['reseñas google seo', 'seo local reseñas', 'local pack google', 'posicionamiento local', 'impacto reseñas seo'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-reviews-boost-local-seo.webp',
+        alt: 'How Google reviews boost local SEO',
+      },
     },
   },
   // Reviews Boost Local SEO - PT
@@ -769,6 +877,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Como as Avaliações do Google Impulsionam seu SEO Local | ReplyStack',
         description: 'Guia completo sobre o impacto das avaliações do Google no seu SEO local: fatores de classificação, boas práticas e estratégias para melhorar sua visibilidade.',
         keywords: ['avaliações google seo', 'seo local avaliações', 'local pack google', 'posicionamento local', 'impacto avaliações seo'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-reviews-boost-local-seo.webp',
+        alt: 'How Google reviews boost local SEO',
       },
     },
   },
@@ -795,6 +907,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Complete guide to getting more 5-star reviews: optimal timing, request techniques, and strategies to turn satisfied customers into ambassadors.',
         keywords: ['get 5 star reviews', 'more positive reviews', 'increase review rating', 'customer reviews strategy', 'ask for reviews'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-5-star-reviews.webp',
+        alt: 'Strategies to get more 5-star reviews',
+      },
     },
   },
   // Get More 5-Star Reviews - FR
@@ -819,6 +935,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Comment Obtenir Plus d\'Avis 5 Étoiles sur Google | ReplyStack',
         description: 'Guide complet pour obtenir plus d\'avis 5 étoiles : timing optimal, techniques de demande, et stratégies pour transformer vos clients satisfaits en ambassadeurs.',
         keywords: ['obtenir avis 5 étoiles', 'plus avis positifs', 'augmenter note google', 'stratégie avis clients', 'demander avis'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-5-star-reviews.webp',
+        alt: 'Strategies to get more 5-star reviews',
       },
     },
   },
@@ -845,6 +965,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía completa para conseguir más reseñas de 5 estrellas: timing óptimo, técnicas de solicitud y estrategias para convertir clientes satisfechos en embajadores.',
         keywords: ['conseguir reseñas 5 estrellas', 'más reseñas positivas', 'aumentar valoración google', 'estrategia reseñas clientes', 'pedir reseñas'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-5-star-reviews.webp',
+        alt: 'Strategies to get more 5-star reviews',
+      },
     },
   },
   // Get More 5-Star Reviews - PT
@@ -869,6 +993,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Como Conseguir Mais Avaliações de 5 Estrelas no Google | ReplyStack',
         description: 'Guia completo para conseguir mais avaliações de 5 estrelas: timing ideal, técnicas de solicitação e estratégias para transformar clientes satisfeitos em embaixadores.',
         keywords: ['conseguir avaliações 5 estrelas', 'mais avaliações positivas', 'aumentar nota google', 'estratégia avaliações clientes', 'pedir avaliações'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-get-more-5-star-reviews.webp',
+        alt: 'Strategies to get more 5-star reviews',
       },
     },
   },
@@ -895,6 +1023,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Online reputation guide for contractors, plumbers, electricians, carpenters. How to get Google reviews, respond to customers, and grow your business.',
         keywords: ['contractor reviews', 'plumber reputation', 'google reviews contractor', 'online reputation contractor', 'electrician reviews'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-reputation-artisans.webp',
+        alt: 'Online reputation for contractors and tradespeople',
+      },
     },
   },
   // Reputation Artisans - FR
@@ -919,6 +1051,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Réputation en Ligne pour Artisans : Le Guide Complet 2026 | ReplyStack',
         description: 'Guide e-réputation pour artisans, plombiers, électriciens, menuisiers. Comment obtenir des avis Google, répondre aux clients, développer votre activité.',
         keywords: ['avis artisan', 'reputation plombier', 'avis google artisan', 'e-réputation artisan', 'avis electricien'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-reputation-artisans.webp',
+        alt: 'Online reputation for contractors and tradespeople',
       },
     },
   },
@@ -945,6 +1081,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía de e-reputación para profesionales, fontaneros, electricistas, carpinteros. Cómo conseguir reseñas en Google, responder a clientes y hacer crecer tu negocio.',
         keywords: ['reseñas profesionales', 'reputación fontanero', 'reseñas google profesional', 'e-reputación profesional', 'reseñas electricista'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-reputation-artisans.webp',
+        alt: 'Online reputation for contractors and tradespeople',
+      },
     },
   },
   // Reputation Artisans - PT
@@ -969,6 +1109,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Reputação Online para Profissionais de Serviços: O Guia Completo 2026 | ReplyStack',
         description: 'Guia de e-reputação para profissionais de serviços, encanadores, eletricistas, carpinteiros. Como conseguir avaliações no Google, responder clientes e crescer seu negócio.',
         keywords: ['avaliações profissionais', 'reputação encanador', 'avaliações google profissional', 'e-reputação profissional', 'avaliações eletricista'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-reputation-artisans.webp',
+        alt: 'Online reputation for contractors and tradespeople',
       },
     },
   },
@@ -995,6 +1139,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Complete guide for e-commerce: how to respond to negative reviews to increase conversions. Amazon, Google, product reviews.',
         keywords: ['ecommerce negative reviews', 'respond amazon reviews', 'negative product reviews', 'ecommerce review management', 'ecommerce reputation'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-ecommerce-negative-reviews.webp',
+        alt: 'Turning negative e-commerce reviews into opportunities',
+      },
     },
   },
   // E-commerce Negative Reviews - FR
@@ -1019,6 +1167,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'E-commerce : Transformez les Avis Négatifs en Opportunités de Vente | ReplyStack',
         description: 'Guide complet pour e-commerce : comment répondre aux avis négatifs pour augmenter vos conversions. Amazon, Google, avis produits.',
         keywords: ['avis négatifs ecommerce', 'répondre avis amazon', 'avis produits négatifs', 'gestion avis ecommerce', 'réputation ecommerce'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-ecommerce-negative-reviews.webp',
+        alt: 'Turning negative e-commerce reviews into opportunities',
       },
     },
   },
@@ -1045,6 +1197,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía completa para e-commerce: cómo responder a reseñas negativas para aumentar conversiones. Amazon, Google, reseñas de productos.',
         keywords: ['reseñas negativas ecommerce', 'responder reseñas amazon', 'reseñas productos negativas', 'gestión reseñas ecommerce', 'reputación ecommerce'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-ecommerce-negative-reviews.webp',
+        alt: 'Turning negative e-commerce reviews into opportunities',
+      },
     },
   },
   // E-commerce Negative Reviews - PT
@@ -1069,6 +1225,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'E-commerce: Transforme Avaliações Negativas em Oportunidades de Venda | ReplyStack',
         description: 'Guia completo para e-commerce: como responder a avaliações negativas para aumentar conversões. Amazon, Google, avaliações de produtos.',
         keywords: ['avaliações negativas ecommerce', 'responder avaliações amazon', 'avaliações produtos negativas', 'gestão avaliações ecommerce', 'reputação ecommerce'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-ecommerce-negative-reviews.webp',
+        alt: 'Turning negative e-commerce reviews into opportunities',
       },
     },
   },
@@ -1095,6 +1255,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Reputation guide for auto repair shops, mechanics, body shops. How to get Google reviews, respond to customers, grow your customer base.',
         keywords: ['auto repair reviews', 'mechanic reputation', 'google reviews garage', 'auto shop e-reputation', 'car repair reviews'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-auto-repair-reputation.webp',
+        alt: 'Auto repair shop online reputation management',
+      },
     },
   },
   // Auto Repair Reputation - FR
@@ -1119,6 +1283,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'E-Réputation Garage Auto : Le Guide Complet pour Obtenir Plus d\'Avis | ReplyStack',
         description: 'Guide e-réputation pour garages automobiles, mécaniciens, carrossiers. Comment obtenir des avis Google, répondre aux clients, développer votre clientèle.',
         keywords: ['avis garage', 'reputation garagiste', 'avis google garage', 'e-réputation garage automobile', 'avis mécanicien'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-auto-repair-reputation.webp',
+        alt: 'Auto repair shop online reputation management',
       },
     },
   },
@@ -1145,6 +1313,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía de reputación para talleres mecánicos, mecánicos, carrocerías. Cómo conseguir reseñas Google, responder a clientes, hacer crecer tu negocio.',
         keywords: ['reseñas taller', 'reputación mecánico', 'reseñas google taller', 'e-reputación taller mecánico', 'opiniones mecánico'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-auto-repair-reputation.webp',
+        alt: 'Auto repair shop online reputation management',
+      },
     },
   },
   // Auto Repair Reputation - PT
@@ -1169,6 +1341,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Reputação Online para Oficinas Mecânicas: Guia Completo para Obter Mais Avaliações | ReplyStack',
         description: 'Guia de reputação para oficinas mecânicas, mecânicos, funilarias. Como conseguir avaliações Google, responder a clientes, fazer crescer seu negócio.',
         keywords: ['avaliações oficina', 'reputação mecânico', 'avaliações google oficina', 'e-reputação oficina mecânica', 'opiniões mecânico'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-auto-repair-reputation.webp',
+        alt: 'Auto repair shop online reputation management',
       },
     },
   },
@@ -1195,6 +1371,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Reputation guide for doctors, dentists, physical therapists, nurses. How to manage Google reviews, respond to patients, grow your practice.',
         keywords: ['google reviews doctor', 'dentist reputation', 'patient reviews', 'healthcare e-reputation', 'medical practice reviews'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-healthcare-reviews.webp',
+        alt: 'Healthcare professional online review management',
+      },
     },
   },
   // Healthcare Reviews - FR
@@ -1219,6 +1399,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Avis Google pour Professionnels de Santé : Le Guide Complet 2026 | ReplyStack',
         description: 'Guide e-réputation pour médecins, dentistes, kinés, infirmiers. Comment gérer les avis Google, répondre aux patients, développer votre patientèle.',
         keywords: ['avis google médecin', 'reputation dentiste', 'avis patients', 'e-réputation santé', 'avis google cabinet médical'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-healthcare-reviews.webp',
+        alt: 'Healthcare professional online review management',
       },
     },
   },
@@ -1245,6 +1429,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía de reputación para médicos, dentistas, fisioterapeutas, enfermeros. Cómo gestionar reseñas Google, responder a pacientes, hacer crecer tu consulta.',
         keywords: ['reseñas google médico', 'reputación dentista', 'opiniones pacientes', 'e-reputación salud', 'reseñas clínica médica'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-healthcare-reviews.webp',
+        alt: 'Healthcare professional online review management',
+      },
     },
   },
   // Healthcare Reviews - PT
@@ -1269,6 +1457,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Avaliações Google para Profissionais de Saúde: O Guia Completo 2026 | ReplyStack',
         description: 'Guia de reputação para médicos, dentistas, fisioterapeutas, enfermeiros. Como gerenciar avaliações Google, responder a pacientes, fazer crescer seu consultório.',
         keywords: ['avaliações google médico', 'reputação dentista', 'opiniões pacientes', 'e-reputação saúde', 'avaliações clínica médica'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-healthcare-reviews.webp',
+        alt: 'Healthcare professional online review management',
       },
     },
   },
@@ -1295,6 +1487,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Reputation guide for hair salons, beauty salons, spas, barbershops. How to get Google reviews, retain clients, grow your business.',
         keywords: ['hair salon reviews', 'beauty salon reputation', 'google reviews hairdresser', 'esthetician e-reputation', 'barbershop reviews'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-beauty-salon-reputation.webp',
+        alt: 'Beauty salon online reputation management',
+      },
     },
   },
   // Beauty Salon Reputation - FR
@@ -1319,6 +1515,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'E-Réputation Salon de Beauté : Le Guide Complet pour Obtenir Plus d\'Avis | ReplyStack',
         description: 'Guide e-réputation pour salons de coiffure, instituts de beauté, spas, barbershops. Comment obtenir des avis Google, fidéliser vos clients, développer votre activité.',
         keywords: ['avis salon coiffure', 'reputation institut beauté', 'avis google coiffeur', 'e-réputation esthéticienne', 'avis barbershop'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-beauty-salon-reputation.webp',
+        alt: 'Beauty salon online reputation management',
       },
     },
   },
@@ -1345,6 +1545,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         description: 'Guía de reputación para peluquerías, salones de belleza, spas, barberías. Cómo conseguir reseñas Google, fidelizar clientes, hacer crecer tu negocio.',
         keywords: ['reseñas peluquería', 'reputación salon belleza', 'reseñas google peluquero', 'e-reputación esteticista', 'reseñas barbería'],
       },
+      featuredImage: {
+        src: '/blog/images/hero-beauty-salon-reputation.webp',
+        alt: 'Beauty salon online reputation management',
+      },
     },
   },
   // Beauty Salon Reputation - PT
@@ -1369,6 +1573,10 @@ const blogPosts: Record<string, BlogPostRegistry> = {
         title: 'Reputação Online para Salões de Beleza: Guia Completo para Obter Mais Avaliações | ReplyStack',
         description: 'Guia de reputação para salões de cabeleireiro, salões de beleza, spas, barbearias. Como conseguir avaliações Google, fidelizar clientes, fazer crescer seu negócio.',
         keywords: ['avaliações salão cabeleireiro', 'reputação salão beleza', 'avaliações google cabeleireiro', 'e-reputação esteticista', 'avaliações barbearia'],
+      },
+      featuredImage: {
+        src: '/blog/images/hero-beauty-salon-reputation.webp',
+        alt: 'Beauty salon online reputation management',
       },
     },
   },
