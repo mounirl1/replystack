@@ -233,11 +233,15 @@ async function main() {
   console.log(`\n⚡ Prerender server listening on http://localhost:${PORT}`);
   console.log(`📄 ${ROUTES.length} routes to prerender\n`);
 
-  // Launch browser
-  const browser = await puppeteer.default.launch({
+  // Launch browser (use system Chromium on CI/Railway if available)
+  const launchOptions = {
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+  };
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+  const browser = await puppeteer.default.launch(launchOptions);
 
   let rendered = 0;
   let failed = 0;
