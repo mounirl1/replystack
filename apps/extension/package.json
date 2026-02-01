@@ -56,9 +56,7 @@
     ],
     "permissions": [
       "storage",
-      "activeTab",
-      "alarms",
-      "tabs"
+      "alarms"
     ],
     "privacy_policy_url": "https://www.reply-stack.app/privacy"
   }
