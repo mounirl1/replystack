@@ -153,6 +153,9 @@ importers:
       globals:
         specifier: ^16.5.0
         version: 16.5.0
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
       postcss:
         specifier: ^8.5.0
         version: 8.5.6

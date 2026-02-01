@@ -12,18 +12,37 @@ import ReplyStackVsBirdeyeEN from '@/content/compare/replystack-vs-birdeye/index
 import ReplyStackVsPodiumEN from '@/content/compare/replystack-vs-podium/index.mdx';
 import ReplyStackVsTalkbackAIEN from '@/content/compare/replystack-vs-talkbackai/index.mdx';
 import ReplyStackVsNiceJobEN from '@/content/compare/replystack-vs-nicejob/index.mdx';
+import ReplyStackVsGuestSuiteEN from '@/content/compare/replystack-vs-guest-suite/index.mdx';
+import ReplyStackVsSoLikeEN from '@/content/compare/replystack-vs-solike/index.mdx';
 // Import comparison articles - French
-import ReplyStackVsGuestSuiteFR from '@/content/compare/replystack-vs-guest-suite/index.mdx';
-import ReplyStackVsSoLikeFR from '@/content/compare/replystack-vs-solike/index.mdx';
-import ReplyStackVsCustplaceFR from '@/content/compare/replystack-vs-custplace/index.mdx';
 import ReplyStackVsBirdeyeFR from '@/content/compare/replystack-vs-birdeye/index.fr.mdx';
+import ReplyStackVsPodiumFR from '@/content/compare/replystack-vs-podium/index.fr.mdx';
+import ReplyStackVsTalkbackAIFR from '@/content/compare/replystack-vs-talkbackai/index.fr.mdx';
+import ReplyStackVsNiceJobFR from '@/content/compare/replystack-vs-nicejob/index.fr.mdx';
+import ReplyStackVsGuestSuiteFR from '@/content/compare/replystack-vs-guest-suite/index.fr.mdx';
+import ReplyStackVsSoLikeFR from '@/content/compare/replystack-vs-solike/index.fr.mdx';
+import ReplyStackVsCustplaceEN from '@/content/compare/replystack-vs-custplace/index.mdx';
+import ReplyStackVsCustplaceFR from '@/content/compare/replystack-vs-custplace/index.fr.mdx';
+import ReplyStackVsCustplaceES from '@/content/compare/replystack-vs-custplace/index.es.mdx';
+import ReplyStackVsCustplacePT from '@/content/compare/replystack-vs-custplace/index.pt.mdx';
 // Import comparison articles - Spanish
 import ReplyStackVsBirdeyeES from '@/content/compare/replystack-vs-birdeye/index.es.mdx';
 import ReplyStackVsPodiumES from '@/content/compare/replystack-vs-podium/index.es.mdx';
+import ReplyStackVsTalkbackAIES from '@/content/compare/replystack-vs-talkbackai/index.es.mdx';
+import ReplyStackVsNiceJobES from '@/content/compare/replystack-vs-nicejob/index.es.mdx';
+import ReplyStackVsGuestSuiteES from '@/content/compare/replystack-vs-guest-suite/index.es.mdx';
+import ReplyStackVsSoLikeES from '@/content/compare/replystack-vs-solike/index.es.mdx';
+import ReplyStackVsReviEN from '@/content/compare/replystack-vs-revi/index.mdx';
+import ReplyStackVsReviFR from '@/content/compare/replystack-vs-revi/index.fr.mdx';
 import ReplyStackVsReviES from '@/content/compare/replystack-vs-revi/index.es.mdx';
+import ReplyStackVsReviPT from '@/content/compare/replystack-vs-revi/index.pt.mdx';
 // Import comparison articles - Portuguese
 import ReplyStackVsBirdeyePT from '@/content/compare/replystack-vs-birdeye/index.pt.mdx';
 import ReplyStackVsPodiumPT from '@/content/compare/replystack-vs-podium/index.pt.mdx';
+import ReplyStackVsTalkbackAIPT from '@/content/compare/replystack-vs-talkbackai/index.pt.mdx';
+import ReplyStackVsNiceJobPT from '@/content/compare/replystack-vs-nicejob/index.pt.mdx';
+import ReplyStackVsGuestSuitePT from '@/content/compare/replystack-vs-guest-suite/index.pt.mdx';
+import ReplyStackVsSoLikePT from '@/content/compare/replystack-vs-solike/index.pt.mdx';
 
 // Hardcoded article data (will be dynamic later)
 const articles: Record<string, {
@@ -39,6 +58,7 @@ const articles: Record<string, {
     availableLanguages: string[];
   };
 }> = {
+  // --- Birdeye (EN, FR, ES, PT) ---
   'en:replystack-vs-birdeye': {
     component: ReplyStackVsBirdeyeEN,
     meta: {
@@ -50,84 +70,6 @@ const articles: Record<string, {
       readingTime: 10,
       language: 'en',
       availableLanguages: ['en', 'fr', 'es', 'pt'],
-    },
-  },
-  'en:replystack-vs-podium': {
-    component: ReplyStackVsPodiumEN,
-    meta: {
-      title: 'ReplyStack vs Podium: Which Review Tool Fits Your Business?',
-      metaTitle: 'ReplyStack vs Podium: Which Review Tool Fits Your Business?',
-      metaDescription: 'Podium costs $249/month. We tested both platforms for 3 weeks. Here\'s our honest comparison for small businesses. Free plan available.',
-      competitor: 'Podium',
-      date: '2026-01-10',
-      readingTime: 12,
-      language: 'en',
-      availableLanguages: ['en', 'es', 'pt'],
-    },
-  },
-  'en:replystack-vs-talkbackai': {
-    component: ReplyStackVsTalkbackAIEN,
-    meta: {
-      title: 'ReplyStack vs TalkbackAI: Comparing Two Chrome Extension Approaches',
-      metaTitle: 'ReplyStack vs TalkbackAI: Comparing Two Chrome Extension Approaches',
-      metaDescription: 'Both offer Chrome extensions for review responses. We tested both to find the key differences. See which fits your business better.',
-      competitor: 'TalkbackAI',
-      date: '2026-01-10',
-      readingTime: 14,
-      language: 'en',
-      availableLanguages: ['en'],
-    },
-  },
-  'en:replystack-vs-nicejob': {
-    component: ReplyStackVsNiceJobEN,
-    meta: {
-      title: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
-      metaTitle: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
-      metaDescription: 'NiceJob helps collect reviews. ReplyStack helps respond to them. Which do you need? Our comparison helps you decide. Free plans available.',
-      competitor: 'NiceJob',
-      date: '2026-01-10',
-      readingTime: 12,
-      language: 'en',
-      availableLanguages: ['en'],
-    },
-  },
-  'fr:replystack-vs-guest-suite': {
-    component: ReplyStackVsGuestSuiteFR,
-    meta: {
-      title: 'ReplyStack vs Guest Suite : Quelle Solution pour Gérer vos Avis Clients ?',
-      metaTitle: 'ReplyStack vs Guest Suite : Comparatif pour les PME Françaises',
-      metaDescription: 'Guest Suite est sur devis. ReplyStack démarre gratuitement. Nous avons testé les deux. Voici notre analyse pour les entreprises françaises.',
-      competitor: 'Guest Suite',
-      date: '2026-01-10',
-      readingTime: 14,
-      language: 'fr',
-      availableLanguages: ['fr'],
-    },
-  },
-  'fr:replystack-vs-solike': {
-    component: ReplyStackVsSoLikeFR,
-    meta: {
-      title: 'ReplyStack vs SoLike : Quel Outil pour Répondre à vos Avis ?',
-      metaTitle: 'ReplyStack vs SoLike : Comparatif des Solutions de Réponse aux Avis',
-      metaDescription: 'SoLike à 29€/mois, spécialisé hôtellerie. ReplyStack dès 0€, multi-secteurs. Comparatif détaillé pour choisir le bon outil de réponse aux avis.',
-      competitor: 'SoLike',
-      date: '2026-01-10',
-      readingTime: 12,
-      language: 'fr',
-      availableLanguages: ['fr'],
-    },
-  },
-  'fr:replystack-vs-custplace': {
-    component: ReplyStackVsCustplaceFR,
-    meta: {
-      title: 'ReplyStack vs Custplace : Quelle Solution de Gestion d\'Avis Choisir ?',
-      metaTitle: 'ReplyStack vs Custplace : Comparatif pour la Gestion d\'Avis',
-      metaDescription: 'Custplace cible les grandes marques. ReplyStack s\'adresse aux PME. Comparatif détaillé pour choisir la solution adaptée à votre entreprise.',
-      competitor: 'Custplace',
-      date: '2026-01-10',
-      readingTime: 14,
-      language: 'fr',
-      availableLanguages: ['fr'],
     },
   },
   'fr:replystack-vs-birdeye': {
@@ -156,32 +98,6 @@ const articles: Record<string, {
       availableLanguages: ['en', 'fr', 'es', 'pt'],
     },
   },
-  'es:replystack-vs-podium': {
-    component: ReplyStackVsPodiumES,
-    meta: {
-      title: 'ReplyStack vs Podium: ¿Cuál Herramienta de Reseñas Elegir?',
-      metaTitle: 'ReplyStack vs Podium: Comparativa para Elegir la Herramienta Adecuada',
-      metaDescription: 'Podium cuesta $249/mes. ReplyStack ofrece plan gratuito. Comparamos ambas plataformas para ayudarle a decidir. Prueba gratis disponible.',
-      competitor: 'Podium',
-      date: '2026-01-10',
-      readingTime: 14,
-      language: 'es',
-      availableLanguages: ['en', 'es', 'pt'],
-    },
-  },
-  'es:replystack-vs-revi': {
-    component: ReplyStackVsReviES,
-    meta: {
-      title: 'ReplyStack vs Revi: ¿Cuál Herramienta de Reseñas Elegir?',
-      metaTitle: 'ReplyStack vs Revi: Comparativa de Herramientas de Reseñas',
-      metaDescription: 'Revi es una solución española de gestión de reseñas. ReplyStack ofrece extensión Chrome universal. Comparamos ambas para ayudarle a elegir.',
-      competitor: 'Revi',
-      date: '2026-01-10',
-      readingTime: 12,
-      language: 'es',
-      availableLanguages: ['es'],
-    },
-  },
   'pt:replystack-vs-birdeye': {
     component: ReplyStackVsBirdeyePT,
     meta: {
@@ -195,6 +111,46 @@ const articles: Record<string, {
       availableLanguages: ['en', 'fr', 'es', 'pt'],
     },
   },
+  // --- Podium (EN, FR, ES, PT) ---
+  'en:replystack-vs-podium': {
+    component: ReplyStackVsPodiumEN,
+    meta: {
+      title: 'ReplyStack vs Podium: Which Review Tool Fits Your Business?',
+      metaTitle: 'ReplyStack vs Podium: Which Review Tool Fits Your Business?',
+      metaDescription: 'Podium costs $249/month. We tested both platforms for 3 weeks. Here\'s our honest comparison for small businesses. Free plan available.',
+      competitor: 'Podium',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-podium': {
+    component: ReplyStackVsPodiumFR,
+    meta: {
+      title: 'ReplyStack vs Podium : Comparatif Complet 2026',
+      metaTitle: 'ReplyStack vs Podium : Quel Outil Choisir en 2026 ? | Comparatif',
+      metaDescription: 'Découvrez les différences entre ReplyStack et Podium pour la gestion des avis clients. Fonctionnalités, prix, avantages et inconvénients comparés.',
+      competitor: 'Podium',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-podium': {
+    component: ReplyStackVsPodiumES,
+    meta: {
+      title: 'ReplyStack vs Podium: ¿Cuál Herramienta de Reseñas Elegir?',
+      metaTitle: 'ReplyStack vs Podium: Comparativa para Elegir la Herramienta Adecuada',
+      metaDescription: 'Podium cuesta $249/mes. ReplyStack ofrece plan gratuito. Comparamos ambas plataformas para ayudarle a decidir. Prueba gratis disponible.',
+      competitor: 'Podium',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
   'pt:replystack-vs-podium': {
     component: ReplyStackVsPodiumPT,
     meta: {
@@ -205,7 +161,325 @@ const articles: Record<string, {
       date: '2026-01-10',
       readingTime: 14,
       language: 'pt',
-      availableLanguages: ['en', 'es', 'pt'],
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- TalkbackAI (EN, FR, ES, PT) ---
+  'en:replystack-vs-talkbackai': {
+    component: ReplyStackVsTalkbackAIEN,
+    meta: {
+      title: 'ReplyStack vs TalkbackAI: Comparing Two Chrome Extension Approaches',
+      metaTitle: 'ReplyStack vs TalkbackAI: Comparing Two Chrome Extension Approaches',
+      metaDescription: 'Both offer Chrome extensions for review responses. We tested both to find the key differences. See which fits your business better.',
+      competitor: 'TalkbackAI',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-talkbackai': {
+    component: ReplyStackVsTalkbackAIFR,
+    meta: {
+      title: 'ReplyStack vs TalkbackAI : Comparatif Complet 2026',
+      metaTitle: 'ReplyStack vs TalkbackAI : Quelle Extension Choisir ? | Comparatif 2026',
+      metaDescription: 'Comparez ReplyStack et TalkbackAI pour la génération de réponses aux avis. Extensions Chrome, fonctionnalités IA, prix et verdict détaillé.',
+      competitor: 'TalkbackAI',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-talkbackai': {
+    component: ReplyStackVsTalkbackAIES,
+    meta: {
+      title: 'ReplyStack vs TalkbackAI: Comparativa Completa 2026',
+      metaTitle: 'ReplyStack vs TalkbackAI: ¿Qué Extensión Elegir? | Comparativa 2026',
+      metaDescription: 'Compara ReplyStack y TalkbackAI para generar respuestas a reseñas. Extensiones Chrome, funciones IA, precios y veredicto detallado.',
+      competitor: 'TalkbackAI',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-talkbackai': {
+    component: ReplyStackVsTalkbackAIPT,
+    meta: {
+      title: 'ReplyStack vs TalkbackAI: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs TalkbackAI: Qual Extensão Escolher? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e TalkbackAI para gerar respostas a avaliações. Extensões Chrome, funcionalidades IA, preços e veredito detalhado.',
+      competitor: 'TalkbackAI',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- NiceJob (EN, FR, ES, PT) ---
+  'en:replystack-vs-nicejob': {
+    component: ReplyStackVsNiceJobEN,
+    meta: {
+      title: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
+      metaTitle: 'ReplyStack vs NiceJob: Review Generation vs Review Response',
+      metaDescription: 'NiceJob helps collect reviews. ReplyStack helps respond to them. Which do you need? Our comparison helps you decide. Free plans available.',
+      competitor: 'NiceJob',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-nicejob': {
+    component: ReplyStackVsNiceJobFR,
+    meta: {
+      title: 'ReplyStack vs NiceJob : Comparatif Complet 2026',
+      metaTitle: 'ReplyStack vs NiceJob : Quel Logiciel Avis Clients ? | Comparatif 2026',
+      metaDescription: 'Comparez ReplyStack et NiceJob pour la gestion des avis clients. Collecte, réponses IA, automatisation et prix détaillés dans ce comparatif.',
+      competitor: 'NiceJob',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-nicejob': {
+    component: ReplyStackVsNiceJobES,
+    meta: {
+      title: 'ReplyStack vs NiceJob: Comparativa Completa 2026',
+      metaTitle: 'ReplyStack vs NiceJob: ¿Qué Software de Reseñas Elegir? | Comparativa 2026',
+      metaDescription: 'Compara ReplyStack y NiceJob para la gestión de reseñas. Recolección, respuestas IA, automatización y precios detallados en esta comparativa.',
+      competitor: 'NiceJob',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-nicejob': {
+    component: ReplyStackVsNiceJobPT,
+    meta: {
+      title: 'ReplyStack vs NiceJob: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs NiceJob: Qual Software de Avaliações Escolher? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e NiceJob para gestão de avaliações. Coleta, respostas IA, automação e preços detalhados neste comparativo.',
+      competitor: 'NiceJob',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- Guest Suite (EN, FR, ES, PT) ---
+  'en:replystack-vs-guest-suite': {
+    component: ReplyStackVsGuestSuiteEN,
+    meta: {
+      title: 'ReplyStack vs Guest Suite: Complete Comparison 2026',
+      metaTitle: 'ReplyStack vs Guest Suite: Which Review Software to Choose? | Comparison 2026',
+      metaDescription: 'Compare ReplyStack and Guest Suite for customer review management. Features, AI responses, pricing and detailed verdict in this comprehensive guide.',
+      competitor: 'Guest Suite',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-guest-suite': {
+    component: ReplyStackVsGuestSuiteFR,
+    meta: {
+      title: 'ReplyStack vs Guest Suite : Quelle Solution pour Gérer vos Avis Clients ?',
+      metaTitle: 'ReplyStack vs Guest Suite : Comparatif pour les PME Françaises',
+      metaDescription: 'Guest Suite est sur devis. ReplyStack démarre gratuitement. Nous avons testé les deux. Voici notre analyse pour les entreprises françaises.',
+      competitor: 'Guest Suite',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-guest-suite': {
+    component: ReplyStackVsGuestSuiteES,
+    meta: {
+      title: 'ReplyStack vs Guest Suite: Comparativa Completa 2026',
+      metaTitle: 'ReplyStack vs Guest Suite: ¿Qué Software de Reseñas Elegir? | Comparativa 2026',
+      metaDescription: 'Compara ReplyStack y Guest Suite para gestión de reseñas. Funcionalidades, respuestas IA, precios y veredicto detallado en esta guía.',
+      competitor: 'Guest Suite',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-guest-suite': {
+    component: ReplyStackVsGuestSuitePT,
+    meta: {
+      title: 'ReplyStack vs Guest Suite: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs Guest Suite: Qual Software de Avaliações Escolher? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e Guest Suite para gestão de avaliações. Funcionalidades, respostas IA, preços e veredito detalhado neste guia.',
+      competitor: 'Guest Suite',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- SoLike (EN, FR, ES, PT) ---
+  'en:replystack-vs-solike': {
+    component: ReplyStackVsSoLikeEN,
+    meta: {
+      title: 'ReplyStack vs SoLike: Complete Comparison 2026',
+      metaTitle: 'ReplyStack vs SoLike: Which AI Review Response Tool? | Comparison 2026',
+      metaDescription: 'Compare ReplyStack and SoLike for AI review responses. Chrome extensions, features, pricing and detailed verdict for hotels and businesses.',
+      competitor: 'SoLike',
+      date: '2026-01-15',
+      readingTime: 12,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-solike': {
+    component: ReplyStackVsSoLikeFR,
+    meta: {
+      title: 'ReplyStack vs SoLike : Quel Outil pour Répondre à vos Avis ?',
+      metaTitle: 'ReplyStack vs SoLike : Comparatif des Solutions de Réponse aux Avis',
+      metaDescription: 'SoLike à 29€/mois, spécialisé hôtellerie. ReplyStack dès 0€, multi-secteurs. Comparatif détaillé pour choisir le bon outil de réponse aux avis.',
+      competitor: 'SoLike',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-solike': {
+    component: ReplyStackVsSoLikeES,
+    meta: {
+      title: 'ReplyStack vs SoLike: Comparativa Completa 2026',
+      metaTitle: 'ReplyStack vs SoLike: ¿Qué Herramienta de Respuesta IA? | Comparativa 2026',
+      metaDescription: 'Compara ReplyStack y SoLike para respuestas IA a reseñas. Extensiones Chrome, funcionalidades, precios y veredicto para hoteles y negocios.',
+      competitor: 'SoLike',
+      date: '2026-01-15',
+      readingTime: 12,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-solike': {
+    component: ReplyStackVsSoLikePT,
+    meta: {
+      title: 'ReplyStack vs SoLike: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs SoLike: Qual Ferramenta de Resposta IA? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e SoLike para respostas IA a avaliações. Extensões Chrome, funcionalidades, preços e veredito para hotéis e negócios.',
+      competitor: 'SoLike',
+      date: '2026-01-15',
+      readingTime: 12,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- Custplace (EN, FR, ES, PT) ---
+  'en:replystack-vs-custplace': {
+    component: ReplyStackVsCustplaceEN,
+    meta: {
+      title: 'ReplyStack vs Custplace: Complete Comparison 2026',
+      metaTitle: 'ReplyStack vs Custplace: Which Review Platform? | Comparison 2026',
+      metaDescription: 'Compare ReplyStack and Custplace for review management. Features, AI responses, pricing and detailed verdict for businesses seeking reputation solutions.',
+      competitor: 'Custplace',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-custplace': {
+    component: ReplyStackVsCustplaceFR,
+    meta: {
+      title: 'ReplyStack vs Custplace : Quelle Solution de Gestion d\'Avis Choisir ?',
+      metaTitle: 'ReplyStack vs Custplace : Comparatif pour la Gestion d\'Avis',
+      metaDescription: 'Custplace cible les grandes marques. ReplyStack s\'adresse aux PME. Comparatif détaillé pour choisir la solution adaptée à votre entreprise.',
+      competitor: 'Custplace',
+      date: '2026-01-10',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-custplace': {
+    component: ReplyStackVsCustplaceES,
+    meta: {
+      title: 'ReplyStack vs Custplace: Comparativa Completa 2026',
+      metaTitle: 'ReplyStack vs Custplace: ¿Qué Plataforma de Reseñas? | Comparativa 2026',
+      metaDescription: 'Compara ReplyStack y Custplace para gestión de reseñas. Funcionalidades, respuestas IA, precios y veredicto para empresas que buscan soluciones de reputación.',
+      competitor: 'Custplace',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-custplace': {
+    component: ReplyStackVsCustplacePT,
+    meta: {
+      title: 'ReplyStack vs Custplace: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs Custplace: Qual Plataforma de Avaliações? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e Custplace para gestão de avaliações. Funcionalidades, respostas IA, preços e veredito para empresas que buscam soluções de reputação.',
+      competitor: 'Custplace',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  // --- Revi (EN, FR, ES, PT) ---
+  'en:replystack-vs-revi': {
+    component: ReplyStackVsReviEN,
+    meta: {
+      title: 'ReplyStack vs Revi: Complete Comparison 2026',
+      metaTitle: 'ReplyStack vs Revi: Which Review Platform? | Comparison 2026',
+      metaDescription: 'Compare ReplyStack and Revi for review management. Features, AI responses, pricing and detailed verdict for e-commerce and local businesses.',
+      competitor: 'Revi',
+      date: '2026-01-15',
+      readingTime: 12,
+      language: 'en',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'fr:replystack-vs-revi': {
+    component: ReplyStackVsReviFR,
+    meta: {
+      title: 'ReplyStack vs Revi : Comparatif Complet 2026',
+      metaTitle: 'ReplyStack vs Revi : Quelle Plateforme d\'Avis ? | Comparatif 2026',
+      metaDescription: 'Comparez ReplyStack et Revi pour la gestion des avis. Fonctionnalités, réponses IA, tarifs et verdict détaillé pour e-commerce et commerces locaux.',
+      competitor: 'Revi',
+      date: '2026-01-15',
+      readingTime: 14,
+      language: 'fr',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'es:replystack-vs-revi': {
+    component: ReplyStackVsReviES,
+    meta: {
+      title: 'ReplyStack vs Revi: ¿Cuál Herramienta de Reseñas Elegir?',
+      metaTitle: 'ReplyStack vs Revi: Comparativa de Herramientas de Reseñas',
+      metaDescription: 'Revi es una solución española de gestión de reseñas. ReplyStack ofrece extensión Chrome universal. Comparamos ambas para ayudarle a elegir.',
+      competitor: 'Revi',
+      date: '2026-01-10',
+      readingTime: 12,
+      language: 'es',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
+    },
+  },
+  'pt:replystack-vs-revi': {
+    component: ReplyStackVsReviPT,
+    meta: {
+      title: 'ReplyStack vs Revi: Comparativo Completo 2026',
+      metaTitle: 'ReplyStack vs Revi: Qual Plataforma de Avaliações? | Comparativo 2026',
+      metaDescription: 'Compare ReplyStack e Revi para gestão de avaliações. Funcionalidades, respostas IA, preços e veredito detalhado para e-commerce e negócios locais.',
+      competitor: 'Revi',
+      date: '2026-01-15',
+      readingTime: 12,
+      language: 'pt',
+      availableLanguages: ['en', 'fr', 'es', 'pt'],
     },
   },
 };

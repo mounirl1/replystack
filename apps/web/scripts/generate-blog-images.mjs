@@ -168,6 +168,68 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+/**
+ * Generate images from a pre-parsed list (used by publish-multilingual.mjs).
+ * Each image must have: id, filename, prompt, width, height.
+ */
+export async function generateImagesFromList(images) {
+  if (images.length === 0) {
+    console.log('No images to generate.');
+    return [];
+  }
+
+  // Filter to only images that have prompts
+  const toGenerate = images.filter(img => img.prompt);
+  if (toGenerate.length === 0) {
+    console.log('No images with prompts found.');
+    return [];
+  }
+
+  console.log(`Found ${toGenerate.length} image(s) to generate.\n`);
+
+  if (!fs.existsSync(IMAGES_DIR)) {
+    fs.mkdirSync(IMAGES_DIR, { recursive: true });
+  }
+
+  const token = getReplicateToken();
+  const generated = [];
+
+  for (let i = 0; i < toGenerate.length; i++) {
+    const img = toGenerate[i];
+    const outputPath = path.join(IMAGES_DIR, img.filename);
+
+    if (fs.existsSync(outputPath)) {
+      console.log(`[${i + 1}/${toGenerate.length}] SKIP "${img.id}" - ${img.filename} already exists`);
+      generated.push(img);
+      continue;
+    }
+
+    console.log(`[${i + 1}/${toGenerate.length}] Generating "${img.id}" (${img.width || 800}x${img.height || 450})...`);
+    console.log(`  Prompt: ${img.prompt.substring(0, 80)}...`);
+
+    try {
+      const output = await callReplicate(token, img.prompt, img.width, img.height);
+      const imageUrl = Array.isArray(output) ? output[0] : output;
+
+      console.log(`  Downloading and converting to WebP...`);
+      await downloadAndConvertToWebp(imageUrl, outputPath);
+
+      console.log(`  Saved: ${img.filename}`);
+      generated.push(img);
+    } catch (err) {
+      console.error(`  ERROR generating "${img.id}": ${err.message}`);
+    }
+
+    if (i < toGenerate.length - 1) {
+      console.log(`  Waiting ${DELAY_BETWEEN_REQUESTS_MS / 1000}s (rate limit)...\n`);
+      await sleep(DELAY_BETWEEN_REQUESTS_MS);
+    }
+  }
+
+  console.log(`\nDone! ${generated.length}/${toGenerate.length} images generated.`);
+  return generated;
+}
+
 export async function generateImagesForArticle(articlePath) {
   const content = fs.readFileSync(articlePath, 'utf-8');
   const { yamlStr } = parseYamlFrontmatter(content);

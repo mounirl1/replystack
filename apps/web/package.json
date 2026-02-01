@@ -15,6 +15,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "publish-article": "node scripts/publish-article.mjs",
+    "publish": "node scripts/publish-multilingual.mjs",
     "generate-images": "node scripts/generate-blog-images.mjs"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "js-yaml": "^4.1.1",
     "postcss": "^8.5.0",
     "puppeteer": "^24.36.1",
     "rehype-autolink-headings": "^7.1.0",
