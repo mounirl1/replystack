@@ -30,7 +30,7 @@ jobs:
       - name: Build & Prerender
         working-directory: apps/web
         env:
-          VITE_API_URL: https://api.reply-stack.app
+          VITE_API_URL: https://api.reply-stack.app/api
           VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
         run: pnpm build
 
