@@ -7,6 +7,12 @@ return [
         'logged_in' => 'Accesso effettuato con successo.',
         'logged_out' => 'Disconnessione effettuata con successo.',
         'all_devices_logged_out' => 'Tutti i dispositivi sono stati disconnessi.',
+        'invalid_magic_token' => 'Token magico non valido o scaduto.',
+        'magic_token_valid' => 'Token magico convalidato con successo.',
+        'password_reset_link_sent' => 'Se esiste un account con questa email, riceverai un link per reimpostare.',
+        'invalid_reset_token' => 'Token di reimpostazione non valido o scaduto.',
+        'reset_token_expired' => 'Questo link di reimpostazione è scaduto. Per favore richiedine uno nuovo.',
+        'password_reset_success' => 'Password reimpostata con successo.',
     ],
 
     // Validation

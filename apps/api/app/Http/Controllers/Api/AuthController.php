@@ -3,16 +3,22 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\ForgotPasswordRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Resources\UserResource;
+use App\Mail\PasswordResetMail;
 use App\Models\Location;
 use App\Models\MagicToken;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 /**
  * Authentication Controller
@@ -208,6 +214,118 @@ class AuthController extends Controller
             'user' => new UserResource($user),
             'token' => $apiToken,
             'redirect_url' => $magicToken->redirect_url,
+        ]);
+    }
+
+    /**
+     * Send a password reset link to the given email.
+     *
+     * Always returns success to prevent email enumeration attacks.
+     *
+     * @param ForgotPasswordRequest $request
+     * @return JsonResponse
+     */
+    public function forgotPassword(ForgotPasswordRequest $request): JsonResponse
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            // Delete any existing tokens for this email
+            DB::table('password_reset_tokens')->where('email', $request->email)->delete();
+
+            // Generate a new token
+            $token = Str::random(64);
+
+            // Store the token
+            DB::table('password_reset_tokens')->insert([
+                'email' => $request->email,
+                'token' => Hash::make($token),
+                'created_at' => now(),
+            ]);
+
+            // Build reset URL
+            $frontendUrl = config('app.frontend_url', 'https://www.reply-stack.app');
+            $resetUrl = "{$frontendUrl}/reset-password?token={$token}&email=" . urlencode($request->email);
+
+            // Send email
+            Mail::to($user->email)->send(new PasswordResetMail(
+                resetUrl: $resetUrl,
+                userName: $user->name ?? explode('@', $user->email)[0],
+            ));
+        }
+
+        // Always return success to prevent email enumeration
+        return response()->json([
+            'message' => __('api.auth.password_reset_link_sent'),
+        ]);
+    }
+
+    /**
+     * Reset the user's password with a valid token.
+     *
+     * @param ResetPasswordRequest $request
+     * @return JsonResponse
+     */
+    public function resetPassword(ResetPasswordRequest $request): JsonResponse
+    {
+        // Find the token record
+        $tokenRecord = DB::table('password_reset_tokens')
+            ->where('email', $request->email)
+            ->first();
+
+        if (!$tokenRecord) {
+            return response()->json([
+                'message' => __('api.auth.invalid_reset_token'),
+            ], 400);
+        }
+
+        // Check if token is expired (60 minutes)
+        $createdAt = \Carbon\Carbon::parse($tokenRecord->created_at);
+        if ($createdAt->addMinutes(60)->isPast()) {
+            // Delete expired token
+            DB::table('password_reset_tokens')->where('email', $request->email)->delete();
+
+            return response()->json([
+                'message' => __('api.auth.reset_token_expired'),
+            ], 400);
+        }
+
+        // Verify token
+        if (!Hash::check($request->token, $tokenRecord->token)) {
+            return response()->json([
+                'message' => __('api.auth.invalid_reset_token'),
+            ], 400);
+        }
+
+        // Find user and update password
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => __('api.auth.invalid_reset_token'),
+            ], 400);
+        }
+
+        // Update password
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        // Delete the used token
+        DB::table('password_reset_tokens')->where('email', $request->email)->delete();
+
+        // Revoke all existing tokens for security
+        $user->tokens()->delete();
+
+        // Create a new token for immediate login
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        // Load organization relationship
+        $user->load('organization');
+
+        return response()->json([
+            'message' => __('api.auth.password_reset_success'),
+            'user' => new UserResource($user),
+            'token' => $token,
         ]);
     }
 }

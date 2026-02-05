@@ -7,6 +7,12 @@ return [
         'logged_in' => 'Login realizado com sucesso.',
         'logged_out' => 'Logout realizado com sucesso.',
         'all_devices_logged_out' => 'Todos os dispositivos foram desconectados.',
+        'invalid_magic_token' => 'Token mágico inválido ou expirado.',
+        'magic_token_valid' => 'Token mágico validado com sucesso.',
+        'password_reset_link_sent' => 'Se uma conta existir com este email, você receberá um link de redefinição.',
+        'invalid_reset_token' => 'Token de redefinição inválido ou expirado.',
+        'reset_token_expired' => 'Este link de redefinição expirou. Por favor solicite um novo.',
+        'password_reset_success' => 'Senha redefinida com sucesso.',
     ],
 
     // Validation

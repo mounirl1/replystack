@@ -16,6 +16,8 @@ const Pricing = lazy(() => import('@/pages/Pricing').then(m => ({ default: m.Pri
 const SectorPage = lazy(() => import('@/pages/SectorPage').then(m => ({ default: m.SectorPage })));
 const Login = lazy(() => import('@/pages/auth/Login').then(m => ({ default: m.Login })));
 const Register = lazy(() => import('@/pages/auth/Register').then(m => ({ default: m.Register })));
+const ForgotPassword = lazy(() => import('@/pages/auth/ForgotPassword').then(m => ({ default: m.ForgotPassword })));
+const ResetPassword = lazy(() => import('@/pages/auth/ResetPassword').then(m => ({ default: m.ResetPassword })));
 const MagicAuth = lazy(() => import('@/pages/auth/MagicAuth').then(m => ({ default: m.MagicAuth })));
 const Dashboard = lazy(() => import('@/pages/dashboard/Dashboard').then(m => ({ default: m.Dashboard })));
 const Reviews = lazy(() => import('@/pages/dashboard/Reviews'));
@@ -131,6 +133,8 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
 
         {/* Magic auth (no layout needed) */}

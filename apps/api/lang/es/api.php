@@ -7,6 +7,12 @@ return [
         'logged_in' => 'Inicio de sesión exitoso.',
         'logged_out' => 'Cierre de sesión exitoso.',
         'all_devices_logged_out' => 'Todos los dispositivos han sido desconectados.',
+        'invalid_magic_token' => 'Token mágico inválido o expirado.',
+        'magic_token_valid' => 'Token mágico validado con éxito.',
+        'password_reset_link_sent' => 'Si existe una cuenta con este email, recibirás un enlace de restablecimiento.',
+        'invalid_reset_token' => 'Token de restablecimiento inválido o expirado.',
+        'reset_token_expired' => 'Este enlace de restablecimiento ha expirado. Por favor solicita uno nuevo.',
+        'password_reset_success' => 'Contraseña restablecida con éxito.',
     ],
 
     // Validation

@@ -110,6 +110,16 @@ export const authApi = {
     const response = await api.get<{ user: User }>('/auth/user');
     return response.data.user;
   },
+
+  forgotPassword: async (email: string) => {
+    const response = await api.post<{ message: string }>('/auth/forgot-password', { email });
+    return response.data;
+  },
+
+  resetPassword: async (data: { email: string; token: string; password: string; password_confirmation: string }) => {
+    const response = await api.post<{ token: string; user: User; message: string }>('/auth/reset-password', data);
+    return response.data;
+  },
 };
 
 // User API

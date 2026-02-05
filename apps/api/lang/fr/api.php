@@ -7,6 +7,12 @@ return [
         'logged_in' => 'Connexion réussie.',
         'logged_out' => 'Déconnexion réussie.',
         'all_devices_logged_out' => 'Tous les appareils ont été déconnectés.',
+        'invalid_magic_token' => 'Token magique invalide ou expiré.',
+        'magic_token_valid' => 'Token magique validé avec succès.',
+        'password_reset_link_sent' => 'Si un compte existe avec cet email, vous recevrez un lien de réinitialisation.',
+        'invalid_reset_token' => 'Token de réinitialisation invalide ou expiré.',
+        'reset_token_expired' => 'Ce lien de réinitialisation a expiré. Veuillez en demander un nouveau.',
+        'password_reset_success' => 'Mot de passe réinitialisé avec succès.',
     ],
 
     // Validation

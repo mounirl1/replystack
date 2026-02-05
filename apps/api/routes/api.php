@@ -53,6 +53,8 @@ Route::prefix('auth')->group(function () {
     Route::middleware('throttle:5,1')->group(function () {
         Route::post('/register', [AuthController::class, 'register']);
         Route::post('/login', [AuthController::class, 'login']);
+        Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
+        Route::post('/reset-password', [AuthController::class, 'resetPassword']);
     });
 
     // Magic token validation (public, one-time use)

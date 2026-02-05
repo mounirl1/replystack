@@ -7,6 +7,12 @@ return [
         'logged_in' => 'Login successful.',
         'logged_out' => 'Logout successful.',
         'all_devices_logged_out' => 'All devices have been logged out.',
+        'invalid_magic_token' => 'Invalid or expired magic token.',
+        'magic_token_valid' => 'Magic token validated successfully.',
+        'password_reset_link_sent' => 'If an account exists with this email, you will receive a password reset link.',
+        'invalid_reset_token' => 'Invalid or expired reset token.',
+        'reset_token_expired' => 'This reset link has expired. Please request a new one.',
+        'password_reset_success' => 'Password reset successfully.',
     ],
 
     // Validation
