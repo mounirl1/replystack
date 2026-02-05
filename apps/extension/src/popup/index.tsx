@@ -332,6 +332,17 @@ function IndexPopup() {
               />
             </div>
 
+            <div className="flex justify-end">
+              <a
+                href={`${process.env.PLASMO_PUBLIC_WEB_URL || 'http://localhost:5173'}/forgot-password`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-primary-600 hover:text-primary-700 font-medium"
+              >
+                {t('popup.forgotPassword')}
+              </a>
+            </div>
+
             <button
               type="submit"
               disabled={isLoggingIn}
