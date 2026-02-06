@@ -50,7 +50,7 @@ export function Landing(): ReactElement {
       {/* SEO Meta Tags */}
       <Helmet>
         <title>ReplyStack - Répondez aux avis clients 10x plus vite avec l'IA</title>
-        <meta name="description" content="Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes. Extension Chrome/Firefox pour Google, TripAdvisor, Booking et plus." />
+        <meta name="description" content="Générez des réponses professionnelles et personnalisées aux avis clients en quelques secondes. Extension Chrome pour Google, TripAdvisor, Booking et plus." />
         <meta name="keywords" content="réponse avis clients, IA, intelligence artificielle, Google Business, TripAdvisor, Booking, e-réputation, gestion avis" />
 
         {/* Open Graph */}
@@ -75,7 +75,7 @@ export function Landing(): ReactElement {
             "@type": "SoftwareApplication",
             "name": "ReplyStack",
             "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web, Chrome, Firefox",
+            "operatingSystem": "Web, Chrome",
             "description": "AI-powered review response platform for businesses",
             "offers": {
               "@type": "Offer",
@@ -143,7 +143,7 @@ export function Landing(): ReactElement {
               <span className="hidden sm:block">•</span>
               <span className="flex items-center gap-1">
                 <Chrome size={16} className="text-emerald-500" />
-                Extension Chrome & Firefox
+                Extension Chrome
               </span>
             </div>
 

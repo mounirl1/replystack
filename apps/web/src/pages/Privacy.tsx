@@ -55,7 +55,7 @@ export function Privacy() {
               <ul className="list-disc pl-6 text-gray-600 space-y-1 mb-6">
                 <li>The ReplyStack website and web application</li>
                 <li>The ReplyStack dashboard</li>
-                <li>The ReplyStack browser extension for Chrome and Firefox</li>
+                <li>The ReplyStack browser extension for Chrome</li>
                 <li>Any related services and communications</li>
               </ul>
 

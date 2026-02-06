@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Chrome, CreditCard, Trash2, ArrowUpRight, AlertTriangle } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { userApi, stripeApi } from '@/services/api';
+import { EXTENSION_URL } from '@/config/extensions';
 import { Card, CardHeader } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -188,18 +189,13 @@ export function Settings() {
         </p>
         <div className="flex flex-wrap gap-3">
           <a
-            href="#"
+            href={EXTENSION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-light-border dark:border-dark-border text-sm font-medium text-text-dark-primary dark:text-text-primary hover:bg-light-hover dark:hover:bg-dark-hover transition-colors"
           >
             <Chrome size={18} />
             {t('extension.chrome')}
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-light-border dark:border-dark-border text-sm font-medium text-text-dark-primary dark:text-text-primary hover:bg-light-hover dark:hover:bg-dark-hover transition-colors"
-          >
-            🦊
-            {t('extension.firefox')}
           </a>
         </div>
       </Card>

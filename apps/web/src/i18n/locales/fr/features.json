@@ -204,10 +204,6 @@
   "faq": {
     "title": "Questions Fréquentes",
     "items": {
-      "firefox": {
-        "question": "L'extension fonctionne-t-elle sur Firefox ?",
-        "answer": "Actuellement Chrome uniquement. Firefox est prévu pour 2026."
-      },
       "editResponses": {
         "question": "Puis-je modifier les réponses générées avant envoi ?",
         "answer": "Oui, toutes les réponses sont modifiables avant publication. Vous avez le contrôle total sur ce qui est envoyé."

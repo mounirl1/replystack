@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { userApi, repliesApi, locationsApi, type UsageStats, type Response, type Location } from '@/services/api';
+import { EXTENSION_URL } from '@/config/extensions';
 import { Card, CardHeader, StatCard, StatCardSkeleton } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge, PlanBadge } from '@/components/ui/Badge';
@@ -135,18 +136,13 @@ export function Dashboard() {
           </div>
           <div className="flex gap-3 flex-shrink-0">
             <a
-              href="#"
+              href={EXTENSION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-primary-700 px-5 py-2.5 rounded-xl font-medium hover:bg-primary-50 transition-colors"
             >
               <Chrome size={18} />
               {t('extensionCta.chrome')}
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 bg-white/10 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-white/20 transition-colors border border-white/20"
-            >
-              🦊
-              {t('extensionCta.firefox')}
             </a>
           </div>
         </div>

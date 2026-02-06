@@ -80,9 +80,6 @@
   "extension": {
     "install": "Install Extension",
     "addToChrome": "Add to Chrome",
-    "addToFirefox": "Add to Firefox",
-    "alsoOnChrome": "Also on Chrome",
-    "alsoOnFirefox": "Also on Firefox",
     "recommended": "Recommended",
     "freeForever": "Free forever"
   },

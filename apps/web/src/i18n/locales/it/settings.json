@@ -25,8 +25,7 @@
     "title": "Estensione browser",
     "description": "Collega la tua estensione a questo account",
     "instructions": "Installa la nostra estensione del browser e accedi con le tue credenziali ReplyStack per generare risposte IA direttamente sulle piattaforme di recensioni.",
-    "chrome": "Estensione Chrome",
-    "firefox": "Add-on Firefox"
+    "chrome": "Estensione Chrome"
   },
   "danger": {
     "title": "Zona pericolosa",

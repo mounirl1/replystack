@@ -25,8 +25,7 @@
     "title": "Browser Extension",
     "description": "Connect your extension to this account",
     "instructions": "Install our browser extension and sign in with your ReplyStack credentials to generate AI replies directly on review platforms.",
-    "chrome": "Chrome Extension",
-    "firefox": "Firefox Add-on"
+    "chrome": "Chrome Extension"
   },
   "danger": {
     "title": "Danger Zone",

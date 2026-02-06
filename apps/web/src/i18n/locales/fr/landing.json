@@ -142,7 +142,7 @@
     },
     "browserExtension": {
       "title": "Extension navigateur",
-      "description": "Répondez directement depuis n'importe quelle plateforme avec nos extensions Chrome et Firefox."
+      "description": "Répondez directement depuis n'importe quelle plateforme avec notre extension Chrome."
     },
     "analytics": {
       "title": "Tableau de bord analytique",
@@ -174,7 +174,7 @@
     "steps": [
       {
         "title": "Installez l'extension",
-        "description": "Téléchargez notre extension Chrome ou Firefox en 30 secondes. Gratuit et sans engagement.",
+        "description": "Téléchargez notre extension Chrome en 30 secondes. Gratuit et sans engagement.",
         "icon": "🔌"
       },
       {
@@ -232,7 +232,7 @@
       },
       {
         "question": "Comment installer l'extension ?",
-        "answer": "Rendez-vous sur le Chrome Web Store ou Firefox Add-ons, recherchez 'ReplyStack' et cliquez sur 'Ajouter'. L'extension s'installe en 30 secondes et vous guide dans la configuration de votre profil."
+        "answer": "Rendez-vous sur le Chrome Web Store, recherchez 'ReplyStack' et cliquez sur 'Ajouter'. L'extension s'installe en 30 secondes et vous guide dans la configuration de votre profil."
       }
     ]
   },

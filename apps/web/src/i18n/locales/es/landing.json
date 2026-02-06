@@ -90,7 +90,7 @@
     },
     "browserExtension": {
       "title": "Extensión del navegador",
-      "description": "Responde directamente desde cualquier plataforma con nuestras extensiones de Chrome y Firefox."
+      "description": "Responde directamente desde cualquier plataforma con nuestra extensión de Chrome."
     },
     "analytics": {
       "title": "Panel de análisis",

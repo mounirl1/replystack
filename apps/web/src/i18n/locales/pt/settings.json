@@ -25,8 +25,7 @@
     "title": "Extensão do navegador",
     "description": "Conecte sua extensão a esta conta",
     "instructions": "Instale nossa extensão do navegador e faça login com suas credenciais do ReplyStack para gerar respostas com IA diretamente nas plataformas de avaliação.",
-    "chrome": "Extensão Chrome",
-    "firefox": "Add-on Firefox"
+    "chrome": "Extensão Chrome"
   },
   "danger": {
     "title": "Zona de perigo",

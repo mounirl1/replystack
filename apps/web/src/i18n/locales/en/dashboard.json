@@ -46,8 +46,7 @@
   "extensionCta": {
     "title": "Install the Browser Extension",
     "description": "Reply to reviews directly from Google Business, TripAdvisor, and more. Generate AI-powered responses in seconds.",
-    "chrome": "Chrome",
-    "firefox": "Firefox"
+    "chrome": "Chrome"
   },
   "history": {
     "title": "Response History",

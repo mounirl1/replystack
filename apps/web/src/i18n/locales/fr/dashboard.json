@@ -46,8 +46,7 @@
   "extensionCta": {
     "title": "Installez l'extension navigateur",
     "description": "Répondez aux avis directement depuis Google Business, TripAdvisor et plus encore. Générez des réponses IA en quelques secondes.",
-    "chrome": "Chrome",
-    "firefox": "Firefox"
+    "chrome": "Chrome"
   },
   "history": {
     "title": "Historique des réponses",

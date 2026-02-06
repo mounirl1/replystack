@@ -142,7 +142,7 @@
     },
     "browserExtension": {
       "title": "Browser Extension",
-      "description": "Reply directly from any review platform with our Chrome and Firefox extensions."
+      "description": "Reply directly from any review platform with our Chrome extension."
     },
     "analytics": {
       "title": "Analytics Dashboard",
@@ -174,7 +174,7 @@
     "steps": [
       {
         "title": "Install the extension",
-        "description": "Download our Chrome or Firefox extension in 30 seconds. Free and no commitment.",
+        "description": "Download our Chrome extension in 30 seconds. Free and no commitment.",
         "icon": "🔌"
       },
       {
@@ -232,7 +232,7 @@
       },
       {
         "question": "How do I install the extension?",
-        "answer": "Go to the Chrome Web Store or Firefox Add-ons, search for 'ReplyStack' and click 'Add'. The extension installs in 30 seconds and guides you through profile setup."
+        "answer": "Go to the Chrome Web Store, search for 'ReplyStack' and click 'Add'. The extension installs in 30 seconds and guides you through profile setup."
       }
     ]
   },

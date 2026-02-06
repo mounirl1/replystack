@@ -25,8 +25,7 @@
     "title": "Extension navigateur",
     "description": "Connectez votre extension à ce compte",
     "instructions": "Installez notre extension navigateur et connectez-vous avec vos identifiants ReplyStack pour générer des réponses IA directement sur les plateformes d'avis.",
-    "chrome": "Extension Chrome",
-    "firefox": "Module Firefox"
+    "chrome": "Extension Chrome"
   },
   "danger": {
     "title": "Zone de danger",

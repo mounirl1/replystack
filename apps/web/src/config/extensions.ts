@@ -1,11 +1,12 @@
 /**
  * Extension store URLs configuration
- * Update EXTENSION_ID with your actual Chrome Web Store extension ID
  */
 
+export const EXTENSION_URL = 'https://chromewebstore.google.com/detail/replystack-ai-review-repl/lndladejifmbadjgnbigjdiiochocddh';
+
+// Legacy export for backwards compatibility
 export const EXTENSION_URLS = {
-  chrome: 'https://chromewebstore.google.com/detail/replystack/YOUR_EXTENSION_ID',
-  firefox: 'https://addons.mozilla.org/firefox/addon/replystack/',
+  chrome: EXTENSION_URL,
 } as const;
 
 /**
@@ -23,20 +24,16 @@ export function detectBrowser(): 'chrome' | 'firefox' | 'safari' | 'edge' | 'oth
 }
 
 /**
- * Get the recommended extension URL based on browser
+ * Check if the current browser supports the extension
  */
-export function getRecommendedExtensionUrl(): string {
+export function isBrowserSupported(): boolean {
   const browser = detectBrowser();
+  return browser === 'chrome' || browser === 'edge';
+}
 
-  // Edge can use Chrome extensions
-  if (browser === 'chrome' || browser === 'edge') {
-    return EXTENSION_URLS.chrome;
-  }
-
-  if (browser === 'firefox') {
-    return EXTENSION_URLS.firefox;
-  }
-
-  // Default to Chrome for Safari and others
-  return EXTENSION_URLS.chrome;
+/**
+ * Get the extension URL
+ */
+export function getExtensionUrl(): string {
+  return EXTENSION_URL;
 }

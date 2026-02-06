@@ -665,7 +665,7 @@ export function Features(): ReactElement {
           </div>
 
           <div className="space-y-6">
-            {['firefox', 'editResponses', 'aggregation', 'dataSecure'].map((faq) => (
+            {['editResponses', 'aggregation', 'dataSecure'].map((faq) => (
               <div key={faq} className="border-b border-gray-100 pb-6">
                 <h3 className="font-bold text-gray-900 mb-2">{t(`faq.items.${faq}.question`)}</h3>
                 <p className="text-gray-600">{t(`faq.items.${faq}.answer`)}</p>
