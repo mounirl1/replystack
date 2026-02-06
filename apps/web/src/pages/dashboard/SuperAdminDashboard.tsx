@@ -11,11 +11,15 @@ import {
   BarChart3,
   PieChart,
   Calendar,
+  LayoutDashboard,
+  MapPin,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Card, CardHeader, StatCard, StatCardSkeleton } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { Tabs } from '@/components/ui/Tabs';
+import { LocationsTab } from '@/components/super-admin/LocationsTab';
 import {
   superAdminApi,
   type DashboardOverview,
@@ -25,11 +29,18 @@ import {
 } from '@/services/superAdmin';
 
 type Period = '7d' | '30d' | '90d' | '12m';
+type TabId = 'overview' | 'locations';
+
+const tabs = [
+  { id: 'overview' as const, label: 'Overview', icon: <LayoutDashboard className="w-4 h-4" /> },
+  { id: 'locations' as const, label: 'Locations', icon: <MapPin className="w-4 h-4" /> },
+];
 
 export function SuperAdminDashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  const [activeTab, setActiveTab] = useState<TabId>('overview');
   const [overview, setOverview] = useState<DashboardOverview | null>(null);
   const [userStats, setUserStats] = useState<UserStats | null>(null);
   const [aiCosts, setAiCosts] = useState<AICostsStats | null>(null);
@@ -154,18 +165,33 @@ export function SuperAdminDashboard() {
         </div>
         <div className="flex items-center gap-3">
           <Badge variant="warning">Admin Only</Badge>
-          <Button
-            variant="outline"
-            size="sm"
-            leftIcon={<RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />}
-            onClick={handleRefresh}
-            disabled={isRefreshing}
-          >
-            Refresh
-          </Button>
+          {activeTab === 'overview' && (
+            <Button
+              variant="outline"
+              size="sm"
+              leftIcon={<RefreshCw size={16} className={isRefreshing ? 'animate-spin' : ''} />}
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+            >
+              Refresh
+            </Button>
+          )}
         </div>
       </div>
 
+      {/* Tabs */}
+      <Tabs
+        tabs={tabs}
+        activeTab={activeTab}
+        onChange={(id) => setActiveTab(id as TabId)}
+      />
+
+      {/* Locations Tab */}
+      {activeTab === 'locations' && <LocationsTab />}
+
+      {/* Overview Tab Content */}
+      {activeTab === 'overview' && (
+        <>
       {/* Period Selector */}
       <Card padding="sm">
         <div className="flex items-center gap-2 flex-wrap">
@@ -546,6 +572,8 @@ export function SuperAdminDashboard() {
         <p className="text-center text-xs text-text-tertiary">
           Last updated: {new Date(overview.generated_at).toLocaleString()}
         </p>
+      )}
+        </>
       )}
     </div>
   );

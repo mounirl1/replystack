@@ -105,6 +105,47 @@ export interface TrendsData {
   range: number;
 }
 
+// Location types for super admin
+export interface SuperAdminLocation {
+  id: number;
+  name: string;
+  address: string | null;
+  created_at: string;
+  reviews_count: number;
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    plan: 'free' | 'starter' | 'pro' | 'business' | 'enterprise';
+  } | null;
+  platforms: {
+    google: boolean;
+    tripadvisor: boolean;
+    booking: boolean;
+    yelp: boolean;
+    facebook: boolean;
+  };
+}
+
+export interface LocationsListParams {
+  page?: number;
+  per_page?: number;
+  search?: string;
+  sort_by?: 'name' | 'created_at' | 'reviews_count';
+  sort_order?: 'asc' | 'desc';
+}
+
+export interface LocationsListResponse {
+  data: SuperAdminLocation[];
+  meta: {
+    current_page: number;
+    last_page: number;
+    total: number;
+    from: number | null;
+    to: number | null;
+  };
+}
+
 // Super Admin API
 export const superAdminApi = {
   getOverview: async (): Promise<DashboardOverview> => {
@@ -139,6 +180,11 @@ export const superAdminApi = {
 
   clearCache: async (): Promise<{ message: string }> => {
     const response = await api.post<{ message: string }>('/super-admin/dashboard/clear-cache');
+    return response.data;
+  },
+
+  getLocations: async (params: LocationsListParams = {}): Promise<LocationsListResponse> => {
+    const response = await api.get<LocationsListResponse>('/super-admin/locations', { params });
     return response.data;
   },
 };

@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\ReviewSummaryController;
 use App\Http\Controllers\Api\ReviewSyncController;
 use App\Http\Controllers\Api\SentimentController;
 use App\Http\Controllers\Api\SuperAdmin\DashboardController as SuperAdminDashboardController;
+use App\Http\Controllers\Api\SuperAdmin\LocationController as SuperAdminLocationController;
 use App\Http\Controllers\Api\SuperAdmin\ReviewConnectionController as SuperAdminReviewConnectionController;
 use App\Http\Controllers\Api\TriggerFlowController;
 use App\Http\Controllers\Api\UserController;
@@ -207,6 +208,9 @@ Route::middleware(['auth:sanctum', 'super-admin', 'throttle:60,1'])->prefix('sup
         Route::get('/trends', [SuperAdminDashboardController::class, 'trends']);
         Route::post('/clear-cache', [SuperAdminDashboardController::class, 'clearCache']);
     });
+
+    // Locations list
+    Route::get('/locations', [SuperAdminLocationController::class, 'index']);
 
     // Location connections
     Route::get('/locations/{location}/connections', [SuperAdminReviewConnectionController::class, 'index']);
