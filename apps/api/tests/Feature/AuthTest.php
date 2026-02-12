@@ -20,6 +20,7 @@ class AuthTest extends TestCase
             'password' => 'Password123',
             'password_confirmation' => 'Password123',
             'name' => 'Test User',
+            'cf_turnstile_response' => 'test-token',
         ]);
 
         $response->assertStatus(201)
@@ -288,6 +289,7 @@ class AuthTest extends TestCase
             'email' => 'test@example.com',
             'password' => 'Password123',
             'password_confirmation' => 'Password123',
+            'cf_turnstile_response' => 'test-token',
         ]);
 
         $response->assertStatus(201)

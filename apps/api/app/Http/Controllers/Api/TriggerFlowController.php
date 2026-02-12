@@ -148,6 +148,10 @@ class TriggerFlowController extends Controller
             $query->where('published_at', '>=', $request->from_date);
         }
 
+        if ($request->has('to_date')) {
+            $query->where('published_at', '<=', $request->to_date);
+        }
+
         // Cursor pagination
         $reviews = $query->cursorPaginate($request->get('per_page', 50));
 

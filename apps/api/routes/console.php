@@ -57,6 +57,20 @@ Schedule::job(new CheckNegativeTrendsJob())
     ->withoutOverlapping()
     ->onOneServer();
 
+// Sync Google reviews every hour via ReviewConnection-based sync
+Schedule::command('reviews:sync --platform=google')
+    ->hourly()
+    ->name('reviews:sync-google')
+    ->withoutOverlapping()
+    ->onOneServer();
+
+// Sync external reviews (Apify: TripAdvisor, Booking, Airbnb) every 6 hours
+Schedule::command('reviews:sync --platform=apify')
+    ->everySixHours()
+    ->name('reviews:sync-apify')
+    ->withoutOverlapping()
+    ->onOneServer();
+
 /*
 |--------------------------------------------------------------------------
 | Manual Artisan Commands

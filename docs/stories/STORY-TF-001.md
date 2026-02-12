@@ -3,7 +3,7 @@
 **Epic:** Migration TriggerFlow → ReplyStack
 **Priority:** MUST
 **Story Points:** 5
-**Status:** Not Started
+**Status:** Done
 **Assigned To:** Dev 1
 **Created:** 2026-01-23
 **Sprint:** 2

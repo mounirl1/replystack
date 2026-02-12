@@ -102,6 +102,13 @@ class ReviewConnectionController extends Controller
             $query->where('platform', $request->platform);
         }
 
+        // Filter by location_id
+        if ($request->has('location_id')) {
+            $query->whereHas('reviewConnection', function ($q) use ($request) {
+                $q->where('location_id', $request->location_id);
+            });
+        }
+
         $requests = $query->cursorPaginate(50);
 
         return response()->json([

@@ -21,8 +21,8 @@ class ApifyService
 
     public function __construct()
     {
-        $this->apiToken = config('services.apify.api_token', '');
-        $this->webhookUrl = config('services.apify.webhook_url', '');
+        $this->apiToken = config('services.apify.api_token') ?? '';
+        $this->webhookUrl = config('services.apify.webhook_url') ?? '';
     }
 
     /**

@@ -1,7 +1,7 @@
 version: "6.0.0"
 project_name: "ReplyStack"
 project_level: 2
-current_sprint: 1
+current_sprint: 2
 sprint_plan_path: "docs/sprint-plan-replystack-2026-01-23.md"
 
 sprints:
@@ -96,93 +96,101 @@ sprints:
     end_date: "2026-02-21"
     capacity_points: 40
     committed_points: 31
-    completed_points: 0
-    status: "planned"
+    completed_points: 31
+    status: "completed"
     goal: "Migration TriggerFlow → ReplyStack (gestion des avis centralisée)"
     stories:
       - story_id: "STORY-TF-001"
         title: "Migrations et modèles de données"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         document: "docs/stories/STORY-TF-001.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-002"
         title: "Authentification TriggerFlow SSO"
         points: 3
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         depends_on: ["STORY-TF-001"]
         document: "docs/stories/STORY-TF-002.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-003"
         title: "Intégration Google Business API"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         depends_on: ["STORY-TF-001"]
         document: "docs/stories/STORY-TF-003.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-004"
         title: "Intégration Apify (Scraping Premium)"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Migration TriggerFlow"
         priority: "SHOULD"
         depends_on: ["STORY-TF-001"]
         document: "docs/stories/STORY-TF-004.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-005"
         title: "API REST TriggerFlow"
         points: 5
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         depends_on: ["STORY-TF-001", "STORY-TF-002"]
+        completed_at: "2026-02-12"
         document: "docs/stories/STORY-TF-005.md"
 
       - story_id: "STORY-TF-006"
         title: "Jobs de synchronisation"
         points: 3
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         depends_on: ["STORY-TF-003", "STORY-TF-004"]
         document: "docs/stories/STORY-TF-006.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-007"
         title: "Interface Super Admin Apify"
         points: 2
-        status: "not_started"
+        status: "done"
         assigned_to: "dev2"
         epic: "Migration TriggerFlow"
         priority: "SHOULD"
         depends_on: ["STORY-TF-001"]
         document: "docs/stories/STORY-TF-007.md"
+        completed_at: "2026-02-12"
 
       - story_id: "STORY-TF-008"
         title: "Tests et validation"
         points: 3
-        status: "not_started"
+        status: "done"
         assigned_to: "dev1"
         epic: "Migration TriggerFlow"
         priority: "MUST"
         depends_on: ["STORY-TF-001", "STORY-TF-002", "STORY-TF-003", "STORY-TF-004", "STORY-TF-005", "STORY-TF-006", "STORY-TF-007"]
         document: "docs/stories/STORY-TF-008.md"
+        completed_at: "2026-02-12"
 
 velocity:
   sprint_1: 34  # Completed: 34/34 points
-  sprint_2: null
-  rolling_average: 34
+  sprint_2: 31
+  rolling_average: 32
 
 team:
   size: 2

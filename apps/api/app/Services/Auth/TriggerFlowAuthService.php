@@ -26,8 +26,8 @@ class TriggerFlowAuthService
 
     public function __construct()
     {
-        $this->apiUrl = config('services.triggerflow.api_url');
-        $this->apiKey = config('services.triggerflow.api_key', '');
+        $this->apiUrl = config('services.triggerflow.api_url') ?? '';
+        $this->apiKey = config('services.triggerflow.api_key') ?? '';
     }
 
     /**

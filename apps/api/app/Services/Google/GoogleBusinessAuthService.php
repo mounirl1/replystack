@@ -26,9 +26,9 @@ class GoogleBusinessAuthService
 
     public function __construct()
     {
-        $this->clientId = config('services.google.client_id', '');
-        $this->clientSecret = config('services.google.client_secret', '');
-        $this->redirectUri = config('services.google.redirect', '');
+        $this->clientId = config('services.google.client_id') ?? '';
+        $this->clientSecret = config('services.google.client_secret') ?? '';
+        $this->redirectUri = config('services.google.redirect') ?? '';
     }
 
     /**
