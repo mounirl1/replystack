@@ -46,6 +46,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property bool $alert_on_2_star
  * @property bool $alert_on_negative_trend
  * @property bool $alert_on_theme_spike
+ * @property string $alert_recap_frequency
+ * @property string|null $alert_recap_emails
  * @property \Carbon\Carbon|null $last_trend_alert_at
  * @property \Carbon\Carbon|null $last_review_alert_at
  * @property \Carbon\Carbon $created_at
@@ -126,6 +128,8 @@ class Location extends Model
         'alert_on_2_star',
         'alert_on_negative_trend',
         'alert_on_theme_spike',
+        'alert_recap_frequency',
+        'alert_recap_emails',
         'last_trend_alert_at',
         'last_review_alert_at',
     ];

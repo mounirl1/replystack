@@ -184,19 +184,28 @@ class GoogleBusinessReviewService
         // Map star rating
         $rating = $this->mapStarRating($googleReview['starRating'] ?? null);
 
+        $ownerReply = $googleReview['reviewReply']['comment'] ?? null;
+
         return [
             'external_id' => $reviewId,
             'platform' => 'google',
             'platform_review_id' => $googleReview['reviewId'] ?? $reviewId,
+            'google_review_id' => $googleReview['name'] ?? null,
             'author_name' => $googleReview['reviewer']['displayName'] ?? 'Anonymous',
             'author_avatar' => $googleReview['reviewer']['profilePhotoUrl'] ?? null,
             'rating' => $rating,
+            'normalized_rating' => $rating,
             'content' => $googleReview['comment'] ?? '',
             'published_at' => isset($googleReview['createTime'])
                 ? \Carbon\Carbon::parse($googleReview['createTime'])
                 : now(),
+            'can_reply' => true,
+            'reply' => $ownerReply,
+            'reply_date' => isset($googleReview['reviewReply']['updateTime'])
+                ? \Carbon\Carbon::parse($googleReview['reviewReply']['updateTime'])
+                : null,
             'has_response' => isset($googleReview['reviewReply']),
-            'response_content' => $googleReview['reviewReply']['comment'] ?? null,
+            'response_content' => $ownerReply,
             'response_published_at' => isset($googleReview['reviewReply']['updateTime'])
                 ? \Carbon\Carbon::parse($googleReview['reviewReply']['updateTime'])
                 : null,

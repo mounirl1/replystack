@@ -177,13 +177,29 @@ Route::middleware(['triggerflow.auth', 'throttle:60,1'])->prefix('triggerflow')-
     // Reviews
     Route::get('/locations/{externalId}/reviews', [TriggerFlowController::class, 'getReviews']);
     Route::get('/locations/{externalId}/stats', [TriggerFlowController::class, 'getStats']);
+    Route::patch('/reviews/{reviewId}', [TriggerFlowController::class, 'updateReview']);
+    Route::post('/reviews/{reviewId}/reply', [TriggerFlowController::class, 'replyToReview']);
 
-    // Connections
+    // Connections - CRUD + sync
     Route::get('/locations/{externalId}/connections', [TriggerFlowController::class, 'getConnections']);
     Route::post('/locations/{externalId}/connections', [TriggerFlowController::class, 'createConnection']);
+    Route::get('/locations/{externalId}/connections/{connectionId}', [TriggerFlowController::class, 'showConnection']);
+    Route::patch('/locations/{externalId}/connections/{connectionId}', [TriggerFlowController::class, 'updateConnection']);
+    Route::delete('/locations/{externalId}/connections/{connectionId}', [TriggerFlowController::class, 'deleteConnection']);
+    Route::post('/locations/{externalId}/connections/{connectionId}/sync', [TriggerFlowController::class, 'syncConnection']);
+    Route::post('/locations/{externalId}/sync-all', [TriggerFlowController::class, 'syncAllConnections']);
 
-    // Reply generation (with quota check)
-    Route::middleware('quota')->post('/replies/generate', [TriggerFlowController::class, 'generateReply']);
+    // Alerts
+    Route::get('/locations/{externalId}/alerts', [TriggerFlowController::class, 'getAlerts']);
+    Route::put('/locations/{externalId}/alerts', [TriggerFlowController::class, 'updateAlerts']);
+
+    // Reply generation (no quota check for TF users - unlimited)
+    Route::post('/replies/generate', [TriggerFlowController::class, 'generateReply']);
+    Route::post('/replies/bulk-generate', [TriggerFlowController::class, 'bulkGenerateReplies']);
+
+    // Group / Multi-facility
+    Route::get('/facilities/children', [TriggerFlowController::class, 'getFacilityChildren']);
+    Route::get('/facilities/group-platforms', [TriggerFlowController::class, 'getGroupPlatforms']);
 
     // Google OAuth
     Route::get('/google/auth-url', [TriggerFlowController::class, 'getGoogleAuthUrl']);

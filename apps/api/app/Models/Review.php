@@ -32,6 +32,18 @@ use Illuminate\Support\Str;
  * @property bool $has_response
  * @property string|null $response_content
  * @property \Carbon\Carbon|null $response_published_at
+ * @property int|null $normalized_rating
+ * @property string|null $title
+ * @property string|null $positive_comment
+ * @property string|null $negative_comment
+ * @property string|null $reviewer_country
+ * @property string|null $reply
+ * @property \Carbon\Carbon|null $reply_date
+ * @property bool $can_reply
+ * @property string|null $stay_date
+ * @property string|null $room_type
+ * @property string|null $traveler_type
+ * @property string|null $google_review_id
  * @property float|null $sentiment_score
  * @property string|null $sentiment_label
  * @property array|null $sentiment_themes
@@ -46,6 +58,8 @@ use Illuminate\Support\Str;
  * @property-read string $time_ago
  * @property-read string $content_excerpt
  * @property-read bool $can_publish_via_api
+ * @property-read string $full_comment
+ * @property-read bool $has_reply
  * @property-read string $sentiment_emoji
  */
 class Review extends Model
@@ -75,6 +89,18 @@ class Review extends Model
         'has_response',
         'response_content',
         'response_published_at',
+        'normalized_rating',
+        'title',
+        'positive_comment',
+        'negative_comment',
+        'reviewer_country',
+        'reply',
+        'reply_date',
+        'can_reply',
+        'stay_date',
+        'room_type',
+        'traveler_type',
+        'google_review_id',
         'sentiment_score',
         'sentiment_label',
         'sentiment_themes',
@@ -94,6 +120,9 @@ class Review extends Model
             'response_published_at' => 'datetime',
             'rating' => 'integer',
             'has_response' => 'boolean',
+            'normalized_rating' => 'integer',
+            'reply_date' => 'datetime',
+            'can_reply' => 'boolean',
             'sentiment_score' => 'float',
             'sentiment_themes' => 'array',
             'sentiment_analyzed_at' => 'datetime',
@@ -279,6 +308,49 @@ class Review extends Model
         return $query->orderByDesc('published_at');
     }
 
+    /**
+     * Scope to filter reviews that have a reply.
+     */
+    public function scopeWithReply($query)
+    {
+        return $query->whereNotNull('reply')->where('reply', '!=', '');
+    }
+
+    /**
+     * Scope to filter reviews without a reply.
+     */
+    public function scopeWithoutReply($query)
+    {
+        return $query->where(function ($q) {
+            $q->whereNull('reply')->orWhere('reply', '');
+        });
+    }
+
+    /**
+     * Scope to filter by normalized ratings (array of 1-5).
+     */
+    public function scopeByRatings($query, array $ratings)
+    {
+        return $query->whereIn('normalized_rating', $ratings);
+    }
+
+    /**
+     * Scope for text search across review fields.
+     */
+    public function scopeSearch($query, string $term)
+    {
+        $like = '%' . $term . '%';
+
+        return $query->where(function ($q) use ($like) {
+            $q->where('author_name', 'LIKE', $like)
+                ->orWhere('content', 'LIKE', $like)
+                ->orWhere('title', 'LIKE', $like)
+                ->orWhere('positive_comment', 'LIKE', $like)
+                ->orWhere('negative_comment', 'LIKE', $like)
+                ->orWhere('reply', 'LIKE', $like);
+        });
+    }
+
     // ==================== SENTIMENT SCOPES ====================
 
     /**
@@ -457,5 +529,51 @@ class Review extends Model
     public function hasTheme(string $theme): bool
     {
         return is_array($this->sentiment_themes) && in_array($theme, $this->sentiment_themes, true);
+    }
+
+    // ==================== TRIGGERFLOW ACCESSORS ====================
+
+    /**
+     * Get the full comment combining positive and negative for Booking.
+     */
+    public function getFullCommentAttribute(): string
+    {
+        if ($this->platform === 'booking' && ($this->positive_comment || $this->negative_comment)) {
+            $parts = [];
+            if (!empty($this->positive_comment)) {
+                $parts[] = $this->positive_comment;
+            }
+            if (!empty($this->negative_comment)) {
+                $parts[] = $this->negative_comment;
+            }
+
+            return implode("\n\n", $parts);
+        }
+
+        return $this->content ?? '';
+    }
+
+    /**
+     * Check if the review has a reply (owner response).
+     */
+    public function getHasReplyAttribute(): bool
+    {
+        return !empty($this->reply);
+    }
+
+    // ==================== STATIC HELPERS ====================
+
+    /**
+     * Normalize a rating to the 1-5 scale based on platform.
+     */
+    public static function normalizeRating(float $rating, string $platform): int
+    {
+        return match ($platform) {
+            'booking' => (int) max(1, min(5, round($rating / 2))),       // 1-10 → 1-5
+            'tripadvisor' => $rating > 5
+                ? (int) max(1, min(5, round($rating / 10)))              // 1-50 → 1-5
+                : (int) max(1, min(5, round($rating))),                  // 1-5 → 1-5
+            default => (int) max(1, min(5, round($rating))),             // Already 1-5
+        };
     }
 }

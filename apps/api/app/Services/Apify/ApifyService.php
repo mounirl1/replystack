@@ -256,17 +256,31 @@ class ApifyService
      */
     private function transformTripAdvisorReview(array $review): array
     {
+        $rawRating = (float) ($review['rating'] ?? $review['bubbleRating'] ?? 0);
+        $normalizedRating = \App\Models\Review::normalizeRating($rawRating, 'tripadvisor');
+
+        $ownerReply = $review['ownerResponse']['text'] ?? null;
+
         return [
             'external_id' => $review['id'] ?? md5(json_encode($review)),
             'platform' => 'tripadvisor',
             'author_name' => $review['user']['username'] ?? $review['author'] ?? 'Anonymous',
             'author_avatar' => $review['user']['avatar'] ?? null,
-            'rating' => (int) ($review['rating'] ?? $review['bubbleRating'] ?? 0),
+            'rating' => (int) $rawRating,
+            'normalized_rating' => $normalizedRating,
+            'title' => $review['title'] ?? null,
             'content' => $review['text'] ?? $review['reviewText'] ?? '',
+            'reviewer_country' => $review['user']['location'] ?? $review['userLocation'] ?? null,
+            'traveler_type' => $review['tripType'] ?? $review['travelerType'] ?? null,
+            'stay_date' => $review['stayDate'] ?? $review['travelDate'] ?? null,
             'published_at' => $this->parseDate($review['publishedDate'] ?? $review['date'] ?? null),
-            'has_response' => !empty($review['ownerResponse']),
-            'response_content' => $review['ownerResponse']['text'] ?? null,
-            'status' => !empty($review['ownerResponse']) ? 'replied' : 'pending',
+            'reply' => $ownerReply,
+            'reply_date' => isset($review['ownerResponse']['publishedDate'])
+                ? $this->parseDate($review['ownerResponse']['publishedDate'])
+                : null,
+            'has_response' => !empty($ownerReply),
+            'response_content' => $ownerReply,
+            'status' => !empty($ownerReply) ? 'replied' : 'pending',
         ];
     }
 
@@ -275,26 +289,42 @@ class ApifyService
      */
     private function transformBookingReview(array $review): array
     {
-        // Booking reviews often have positive and negative parts
-        $content = trim(
-            ($review['positive'] ?? '') . "\n\n" . ($review['negative'] ?? '')
-        );
+        $positive = $review['positive'] ?? $review['pros'] ?? '';
+        $negative = $review['negative'] ?? $review['cons'] ?? '';
 
-        if (empty($content) && isset($review['text'])) {
+        $content = trim($positive . "\n\n" . $negative);
+        if (empty(trim($content)) && isset($review['text'])) {
             $content = $review['text'];
         }
+
+        $rawRating = (float) ($review['score'] ?? $review['rating'] ?? 0);
+        $normalizedRating = \App\Models\Review::normalizeRating($rawRating, 'booking');
+
+        $ownerReply = $review['hotelResponse'] ?? null;
 
         return [
             'external_id' => $review['id'] ?? $review['reviewId'] ?? md5(json_encode($review)),
             'platform' => 'booking',
             'author_name' => $review['reviewer']['name'] ?? $review['author'] ?? 'Anonymous',
             'author_avatar' => $review['reviewer']['avatar'] ?? null,
-            'rating' => (int) round(($review['score'] ?? $review['rating'] ?? 0) / 2), // Booking uses 1-10 scale
+            'rating' => (int) $rawRating,
+            'normalized_rating' => $normalizedRating,
+            'title' => $review['title'] ?? $review['headline'] ?? null,
             'content' => $content,
-            'published_at' => $this->parseDate($review['date'] ?? $review['stayDate'] ?? null),
-            'has_response' => !empty($review['hotelResponse']),
-            'response_content' => $review['hotelResponse'] ?? null,
-            'status' => !empty($review['hotelResponse']) ? 'replied' : 'pending',
+            'positive_comment' => !empty($positive) ? $positive : null,
+            'negative_comment' => !empty($negative) ? $negative : null,
+            'reviewer_country' => $review['reviewer']['country'] ?? $review['countryName'] ?? null,
+            'stay_date' => $review['stayDate'] ?? $review['checkin'] ?? null,
+            'room_type' => $review['roomType'] ?? $review['room'] ?? null,
+            'traveler_type' => $review['travelerType'] ?? $review['groupName'] ?? null,
+            'published_at' => $this->parseDate($review['date'] ?? $review['reviewDate'] ?? null),
+            'reply' => $ownerReply,
+            'reply_date' => isset($review['hotelResponseDate'])
+                ? $this->parseDate($review['hotelResponseDate'])
+                : null,
+            'has_response' => !empty($ownerReply),
+            'response_content' => $ownerReply,
+            'status' => !empty($ownerReply) ? 'replied' : 'pending',
         ];
     }
 
@@ -303,17 +333,25 @@ class ApifyService
      */
     private function transformAirbnbReview(array $review): array
     {
+        $rawRating = (float) ($review['rating'] ?? 0);
+        $normalizedRating = \App\Models\Review::normalizeRating($rawRating, 'airbnb');
+
+        $ownerReply = $review['response']['comments'] ?? (is_string($review['response'] ?? null) ? $review['response'] : null);
+
         return [
             'external_id' => $review['id'] ?? md5(json_encode($review)),
             'platform' => 'airbnb',
             'author_name' => $review['reviewer']['firstName'] ?? $review['author'] ?? 'Anonymous',
             'author_avatar' => $review['reviewer']['pictureUrl'] ?? null,
-            'rating' => (int) ($review['rating'] ?? 0),
+            'rating' => (int) $rawRating,
+            'normalized_rating' => $normalizedRating,
             'content' => $review['comments'] ?? $review['text'] ?? '',
+            'reviewer_country' => $review['reviewer']['location'] ?? null,
             'published_at' => $this->parseDate($review['createdAt'] ?? $review['date'] ?? null),
-            'has_response' => !empty($review['response']),
-            'response_content' => $review['response']['comments'] ?? $review['response'] ?? null,
-            'status' => !empty($review['response']) ? 'replied' : 'pending',
+            'reply' => $ownerReply,
+            'has_response' => !empty($ownerReply),
+            'response_content' => $ownerReply,
+            'status' => !empty($ownerReply) ? 'replied' : 'pending',
         ];
     }
 

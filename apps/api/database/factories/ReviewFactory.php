@@ -36,6 +36,21 @@ class ReviewFactory extends Factory
     }
 
     /**
+     * Auto-set normalized_rating from rating after making.
+     */
+    public function configure(): static
+    {
+        return $this->afterMaking(function (Review $review) {
+            if ($review->normalized_rating === null && $review->rating !== null) {
+                $review->normalized_rating = Review::normalizeRating(
+                    (float) $review->rating,
+                    $review->platform ?? 'google'
+                );
+            }
+        });
+    }
+
+    /**
      * Configure the review as positive (4-5 stars).
      */
     public function positive(): static
@@ -117,6 +132,51 @@ class ReviewFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'language' => 'en',
             'content' => 'Great experience! The service was impeccable and the staff very welcoming.',
+        ]);
+    }
+
+    /**
+     * Configure the review as a Booking.com review with positive/negative comments.
+     */
+    public function booking(): static
+    {
+        $originalRating = fake()->numberBetween(2, 10);
+
+        return $this->state(fn (array $attributes) => [
+            'platform' => 'booking',
+            'rating' => $originalRating,
+            'normalized_rating' => (int) max(1, min(5, round($originalRating / 2))),
+            'positive_comment' => 'Great location and comfortable bed.',
+            'negative_comment' => 'The breakfast could be better.',
+            'content' => "Great location and comfortable bed.\n\nThe breakfast could be better.",
+            'reviewer_country' => fake()->country(),
+            'stay_date' => fake()->date('Y-m'),
+            'room_type' => fake()->randomElement(['Double Room', 'Suite', 'Single Room', 'Family Room']),
+            'traveler_type' => fake()->randomElement(['Couple', 'Solo traveler', 'Family', 'Group of friends']),
+        ]);
+    }
+
+    /**
+     * Configure the review with a reply (owner response).
+     */
+    public function withReply(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'reply' => 'Thank you for your feedback! We appreciate your kind words.',
+            'reply_date' => fake()->dateTimeBetween('-2 weeks', 'now'),
+            'status' => 'replied',
+        ]);
+    }
+
+    /**
+     * Configure the review as a Google review that can receive replies.
+     */
+    public function googleCanReply(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'platform' => 'google',
+            'can_reply' => true,
+            'google_review_id' => 'accounts/123/locations/456/reviews/' . fake()->uuid(),
         ]);
     }
 }

@@ -34,6 +34,11 @@ class CheckQuota
             ], 401);
         }
 
+        // TriggerFlow users have unlimited quota
+        if ($user->external_source === 'triggerflow') {
+            return $next($request);
+        }
+
         if (!$user->hasQuotaRemaining()) {
             return response()->json([
                 'error' => 'QuotaExceeded',

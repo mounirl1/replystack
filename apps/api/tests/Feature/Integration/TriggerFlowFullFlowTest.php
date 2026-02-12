@@ -162,10 +162,16 @@ class TriggerFlowFullFlowTest extends TestCase
                         'rating',
                         'content',
                         'status',
+                        'has_reply',
+                        'full_comment',
                     ],
                 ],
-                'next_cursor',
-                'has_more',
+                'pagination' => [
+                    'current_page',
+                    'last_page',
+                    'per_page',
+                    'total',
+                ],
             ]);
 
         // All reviews should belong to the correct location
@@ -185,9 +191,14 @@ class TriggerFlowFullFlowTest extends TestCase
             ->assertJsonStructure([
                 'stats' => [
                     'total_reviews',
+                    'average_rating',
+                    'rating_distribution',
+                    'reviews_with_reply',
+                    'reviews_without_reply',
+                    'reply_rate',
+                    'recent_reviews_count',
                     'pending_count',
                     'replied_count',
-                    'average_rating',
                     'positive_count',
                     'negative_count',
                 ],
@@ -208,7 +219,7 @@ class TriggerFlowFullFlowTest extends TestCase
         // All reviews are Google platform
         $byPlatform = $statsResponse->json('by_platform');
         $this->assertCount(1, $byPlatform);
-        $this->assertEquals('google', $byPlatform[0]->platform ?? $byPlatform[0]['platform']);
+        $this->assertEquals('google', $byPlatform[0]['platform']);
 
         // =====================================================================
         // Step 6: Get connections to verify everything is linked

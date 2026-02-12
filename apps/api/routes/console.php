@@ -71,6 +71,13 @@ Schedule::command('reviews:sync --platform=apify')
     ->withoutOverlapping()
     ->onOneServer();
 
+// Review recap emails - daily at 08:00
+Schedule::command('reviews:send-recaps')
+    ->dailyAt('08:00')
+    ->name('reviews:send-recaps')
+    ->withoutOverlapping()
+    ->onOneServer();
+
 /*
 |--------------------------------------------------------------------------
 | Manual Artisan Commands

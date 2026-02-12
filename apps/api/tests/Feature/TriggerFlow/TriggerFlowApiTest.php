@@ -243,8 +243,7 @@ class TriggerFlowApiTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonStructure([
                 'reviews',
-                'next_cursor',
-                'has_more',
+                'pagination' => ['current_page', 'last_page', 'per_page', 'total'],
             ])
             ->assertJsonCount(5, 'reviews');
     }
@@ -328,9 +327,14 @@ class TriggerFlowApiTest extends TestCase
             ->assertJsonStructure([
                 'stats' => [
                     'total_reviews',
+                    'average_rating',
+                    'rating_distribution',
+                    'reviews_with_reply',
+                    'reviews_without_reply',
+                    'reply_rate',
+                    'recent_reviews_count',
                     'pending_count',
                     'replied_count',
-                    'average_rating',
                     'positive_count',
                     'negative_count',
                 ],
@@ -460,7 +464,6 @@ class TriggerFlowApiTest extends TestCase
                 'tone',
                 'language',
                 'tokens_used',
-                'quota_remaining',
             ]);
     }
 }
