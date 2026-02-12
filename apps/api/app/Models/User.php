@@ -6,6 +6,7 @@ use App\Traits\HasQuota;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -44,7 +45,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property-read int|string $quota_limit
  * @property-read int $quota_used
  */
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasApiTokens, HasFactory, HasQuota, Notifiable;
@@ -71,6 +72,7 @@ class User extends Authenticatable
         'lemon_order_id',
         'lemon_variant_id',
         'organization_id',
+        'email_verified_at',
     ];
 
     /**

@@ -88,6 +88,11 @@ return [
         'variant_business_yearly' => env('LEMONSQUEEZY_VARIANT_BUSINESS_YEARLY'),
     ],
 
+    'turnstile' => [
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+        'site_key' => env('TURNSTILE_SITE_KEY'),
+    ],
+
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),

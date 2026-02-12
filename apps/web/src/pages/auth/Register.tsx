@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
@@ -6,6 +6,9 @@ import { translateApiError, translateValidationErrors } from '@/utils/apiErrors'
 import { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { TurnstileWidget } from '@/components/auth/TurnstileWidget';
+
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
 
 export function Register() {
   const { t } = useTranslation('auth');
@@ -16,8 +19,22 @@ export function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleTurnstileVerify = useCallback((token: string) => {
+    setTurnstileToken(token);
+    // Clear turnstile error if present
+    setErrors((prev) => {
+      const { cf_turnstile_response: _, ...rest } = prev;
+      return rest;
+    });
+  }, []);
+
+  const handleTurnstileError = useCallback(() => {
+    setTurnstileToken('');
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,11 +51,16 @@ export function Register() {
       return;
     }
 
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setErrors({ cf_turnstile_response: t('register.errors.turnstileRequired') });
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      await register(email, password, passwordConfirmation, name || undefined);
-      navigate('/dashboard');
+      await register(email, password, passwordConfirmation, name || undefined, turnstileToken || undefined);
+      navigate('/verify-email');
     } catch (err) {
       if (err instanceof AxiosError) {
         const responseErrors = err.response?.data?.errors;
@@ -144,6 +166,20 @@ export function Register() {
           />
           {errors.password_confirmation && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400">{errors.password_confirmation}</p>}
         </div>
+
+        {TURNSTILE_SITE_KEY && (
+          <div>
+            <TurnstileWidget
+              siteKey={TURNSTILE_SITE_KEY}
+              onVerify={handleTurnstileVerify}
+              onError={handleTurnstileError}
+              onExpire={handleTurnstileError}
+            />
+            {errors.cf_turnstile_response && (
+              <p className="mt-1.5 text-xs text-red-500 dark:text-red-400 text-center">{errors.cf_turnstile_response}</p>
+            )}
+          </div>
+        )}
 
         <button
           type="submit"

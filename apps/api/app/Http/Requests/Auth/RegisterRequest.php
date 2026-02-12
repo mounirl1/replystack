@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Rules\TurnstileRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
@@ -12,6 +13,7 @@ use Illuminate\Validation\Rules\Password;
  * @property string $password
  * @property string $password_confirmation
  * @property string|null $name
+ * @property string|null $cf_turnstile_response
  */
 class RegisterRequest extends FormRequest
 {
@@ -30,7 +32,7 @@ class RegisterRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'email' => [
                 'required',
                 'string',
@@ -52,6 +54,24 @@ class RegisterRequest extends FormRequest
                 'max:255',
             ],
         ];
+
+        // Require Turnstile token unless request comes from browser extension
+        if (!$this->isFromExtension()) {
+            $rules['cf_turnstile_response'] = ['required', 'string', new TurnstileRule()];
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Check if the request originates from a browser extension.
+     */
+    protected function isFromExtension(): bool
+    {
+        $origin = $this->header('Origin', '');
+
+        return str_starts_with($origin, 'chrome-extension://')
+            || str_starts_with($origin, 'moz-extension://');
     }
 
     /**
@@ -68,6 +88,7 @@ class RegisterRequest extends FormRequest
             'password.required' => 'Le mot de passe est requis.',
             'password.confirmed' => 'La confirmation du mot de passe ne correspond pas.',
             'password.min' => 'Le mot de passe doit contenir au moins 8 caractères.',
+            'cf_turnstile_response.required' => 'Please complete the CAPTCHA verification.',
         ];
     }
 
@@ -82,6 +103,7 @@ class RegisterRequest extends FormRequest
             'email' => 'adresse email',
             'password' => 'mot de passe',
             'name' => 'nom',
+            'cf_turnstile_response' => 'CAPTCHA',
         ];
     }
 }

@@ -92,7 +92,7 @@ export interface Response {
 
 // Auth API
 export const authApi = {
-  register: async (data: { email: string; password: string; password_confirmation: string; name?: string }) => {
+  register: async (data: { email: string; password: string; password_confirmation: string; name?: string; cf_turnstile_response?: string }) => {
     const response = await api.post<{ token: string; user: User }>('/auth/register', data);
     return response.data;
   },
@@ -118,6 +118,16 @@ export const authApi = {
 
   resetPassword: async (data: { email: string; token: string; password: string; password_confirmation: string }) => {
     const response = await api.post<{ token: string; user: User; message: string }>('/auth/reset-password', data);
+    return response.data;
+  },
+
+  verifyEmail: async (token: string) => {
+    const response = await api.get<{ message: string }>(`/auth/verify-email/${token}`);
+    return response.data;
+  },
+
+  resendVerificationEmail: async () => {
+    const response = await api.post<{ message: string }>('/auth/verify-email/resend');
     return response.data;
   },
 };

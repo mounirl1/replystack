@@ -58,6 +58,11 @@ Route::prefix('auth')->group(function () {
         Route::post('/reset-password', [AuthController::class, 'resetPassword']);
     });
 
+    // Email verification (public, rate limited)
+    Route::middleware('throttle:5,1')->group(function () {
+        Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail']);
+    });
+
     // Magic token validation (public, one-time use)
     Route::get('/magic-token/{token}', [AuthController::class, 'validateMagicToken']);
 
@@ -67,6 +72,8 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout-all', [AuthController::class, 'revokeAllTokens']);
         Route::get('/user', [AuthController::class, 'user']);
         Route::post('/magic-token', [AuthController::class, 'createMagicToken']);
+        Route::post('/verify-email/resend', [AuthController::class, 'resendVerificationEmail'])
+            ->middleware('throttle:3,1');
     });
 });
 

@@ -7,7 +7,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
   loginWithToken: (token: string, user: User) => void;
-  register: (email: string, password: string, passwordConfirmation: string, name?: string) => Promise<void>;
+  register: (email: string, password: string, passwordConfirmation: string, name?: string, cfTurnstileResponse?: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -53,12 +53,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(user);
   };
 
-  const register = async (email: string, password: string, passwordConfirmation: string, name?: string) => {
+  const register = async (email: string, password: string, passwordConfirmation: string, name?: string, cfTurnstileResponse?: string) => {
     const { token, user } = await authApi.register({
       email,
       password,
       password_confirmation: passwordConfirmation,
       name,
+      cf_turnstile_response: cfTurnstileResponse,
     });
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));

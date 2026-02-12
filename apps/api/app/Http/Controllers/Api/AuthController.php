@@ -8,6 +8,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Resources\UserResource;
+use App\Mail\EmailVerificationMail;
 use App\Mail\PasswordResetMail;
 use App\Models\Location;
 use App\Models\MagicToken;
@@ -53,6 +54,9 @@ class AuthController extends Controller
             'default_tone' => 'professional',
             'default_language' => 'auto',
         ]);
+
+        // Send email verification
+        $this->sendVerificationEmail($user);
 
         $token = $user->createToken('api-token')->plainTextToken;
 
@@ -327,5 +331,108 @@ class AuthController extends Controller
             'user' => new UserResource($user),
             'token' => $token,
         ]);
+    }
+
+    /**
+     * Verify email address with token.
+     *
+     * @param string $token
+     * @return JsonResponse
+     */
+    public function verifyEmail(string $token): JsonResponse
+    {
+        $record = DB::table('email_verification_tokens')
+            ->where('token', $token)
+            ->first();
+
+        if (!$record) {
+            return response()->json([
+                'message' => __('api.auth.invalid_verification_token'),
+            ], 400);
+        }
+
+        // Check if token is expired (24 hours)
+        $createdAt = \Carbon\Carbon::parse($record->created_at);
+        if ($createdAt->addHours(24)->isPast()) {
+            DB::table('email_verification_tokens')->where('id', $record->id)->delete();
+
+            return response()->json([
+                'message' => __('api.auth.verification_token_expired'),
+            ], 400);
+        }
+
+        $user = User::find($record->user_id);
+
+        if (!$user) {
+            DB::table('email_verification_tokens')->where('id', $record->id)->delete();
+
+            return response()->json([
+                'message' => __('api.auth.invalid_verification_token'),
+            ], 400);
+        }
+
+        // Mark email as verified
+        $user->email_verified_at = now();
+        $user->save();
+
+        // Delete all verification tokens for this user
+        DB::table('email_verification_tokens')->where('user_id', $user->id)->delete();
+
+        return response()->json([
+            'message' => __('api.auth.email_verified'),
+        ]);
+    }
+
+    /**
+     * Resend verification email.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function resendVerificationEmail(Request $request): JsonResponse
+    {
+        /** @var User $user */
+        $user = $request->user();
+
+        if ($user->email_verified_at) {
+            return response()->json([
+                'message' => __('api.auth.email_already_verified'),
+            ]);
+        }
+
+        $this->sendVerificationEmail($user);
+
+        return response()->json([
+            'message' => __('api.auth.verification_email_sent'),
+        ]);
+    }
+
+    /**
+     * Send verification email to user.
+     */
+    protected function sendVerificationEmail(User $user): void
+    {
+        // Delete any existing tokens for this user
+        DB::table('email_verification_tokens')->where('user_id', $user->id)->delete();
+
+        // Generate a new token
+        $token = Str::random(64);
+
+        // Store the token
+        DB::table('email_verification_tokens')->insert([
+            'user_id' => $user->id,
+            'token' => $token,
+            'created_at' => now(),
+        ]);
+
+        // Build verification URL
+        $frontendUrl = config('app.frontend_url', 'https://www.reply-stack.app');
+        $verificationUrl = "{$frontendUrl}/verify-email?token={$token}";
+
+        // Send email
+        Mail::to($user->email)->send(new EmailVerificationMail(
+            verificationUrl: $verificationUrl,
+            userName: $user->name ?? explode('@', $user->email)[0],
+        ));
     }
 }
