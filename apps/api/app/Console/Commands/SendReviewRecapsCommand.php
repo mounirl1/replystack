@@ -17,30 +17,23 @@ class SendReviewRecapsCommand extends Command
         $today = now();
         $sent = 0;
 
-        // Daily recaps
-        Location::where('alert_recap_frequency', 'daily')
-            ->where('alerts_enabled', true)
-            ->each(function (Location $location) use ($alertService, &$sent) {
-                $alertService->sendRecap($location, now()->subDay()->toDateTimeString());
-                $sent++;
-            });
+        $frequenciesToProcess = [
+            'daily' => now()->subDay(),
+        ];
 
-        // Weekly recaps (on Mondays)
         if ($today->isMonday()) {
-            Location::where('alert_recap_frequency', 'weekly')
-                ->where('alerts_enabled', true)
-                ->each(function (Location $location) use ($alertService, &$sent) {
-                    $alertService->sendRecap($location, now()->subWeek()->toDateTimeString());
-                    $sent++;
-                });
+            $frequenciesToProcess['weekly'] = now()->subWeek();
         }
 
-        // Monthly recaps (on 1st of month)
         if ($today->day === 1) {
-            Location::where('alert_recap_frequency', 'monthly')
+            $frequenciesToProcess['monthly'] = now()->subMonth();
+        }
+
+        foreach ($frequenciesToProcess as $frequency => $since) {
+            Location::where('alert_recap_frequency', $frequency)
                 ->where('alerts_enabled', true)
-                ->each(function (Location $location) use ($alertService, &$sent) {
-                    $alertService->sendRecap($location, now()->subMonth()->toDateTimeString());
+                ->each(function (Location $location) use ($alertService, $since, &$sent) {
+                    $alertService->sendRecap($location, $since->toDateTimeString());
                     $sent++;
                 });
         }

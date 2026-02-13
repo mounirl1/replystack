@@ -27,94 +27,78 @@ class ApifyService
 
     /**
      * Request TripAdvisor reviews scraping.
-     *
-     * @param ReviewConnection $connection
-     * @param int|null $limit Maximum number of reviews to fetch
-     * @return ApifyRequest
-     * @throws \Exception
      */
-    public function requestTripAdvisorReviews(ReviewConnection $connection, ?int $limit = 100): ApifyRequest
+    public function requestTripAdvisorReviews(ReviewConnection $connection, int $limit = 100): ApifyRequest
     {
         $this->validateConnection($connection, 'tripadvisor');
 
-        $actorId = ApifyRequest::getActorIdForPlatform('tripadvisor');
-        $input = [
-            'startUrls' => [
-                ['url' => $connection->platform_url],
-            ],
-            'maxReviews' => $limit ?? 100,
-            'includeReviews' => true,
-            'language' => 'all',
-        ];
+        $input = $this->buildBaseInput($connection->platform_url, $limit);
+        $input['language'] = 'all';
 
-        return $this->runActor($connection, $actorId, 'tripadvisor', $input, $limit);
+        return $this->runActor(
+            $connection,
+            ApifyRequest::getActorIdForPlatform('tripadvisor'),
+            'tripadvisor',
+            $input,
+            $limit
+        );
     }
 
     /**
      * Request Booking.com reviews scraping.
-     *
-     * @param ReviewConnection $connection
-     * @param int|null $limit Maximum number of reviews to fetch
-     * @return ApifyRequest
-     * @throws \Exception
      */
-    public function requestBookingReviews(ReviewConnection $connection, ?int $limit = 100): ApifyRequest
+    public function requestBookingReviews(ReviewConnection $connection, int $limit = 100): ApifyRequest
     {
         $this->validateConnection($connection, 'booking');
 
-        $actorId = ApifyRequest::getActorIdForPlatform('booking');
-        $input = [
-            'startUrls' => [
-                ['url' => $connection->platform_url],
-            ],
-            'maxReviews' => $limit ?? 100,
-            'includeReviews' => true,
-        ];
-
-        return $this->runActor($connection, $actorId, 'booking', $input, $limit);
+        return $this->runActor(
+            $connection,
+            ApifyRequest::getActorIdForPlatform('booking'),
+            'booking',
+            $this->buildBaseInput($connection->platform_url, $limit),
+            $limit
+        );
     }
 
     /**
      * Request Airbnb reviews scraping.
-     *
-     * @param ReviewConnection $connection
-     * @param int|null $limit Maximum number of reviews to fetch
-     * @return ApifyRequest
-     * @throws \Exception
      */
-    public function requestAirbnbReviews(ReviewConnection $connection, ?int $limit = 100): ApifyRequest
+    public function requestAirbnbReviews(ReviewConnection $connection, int $limit = 100): ApifyRequest
     {
         $this->validateConnection($connection, 'airbnb');
 
-        $actorId = ApifyRequest::getActorIdForPlatform('airbnb');
-        $input = [
-            'startUrls' => [
-                ['url' => $connection->platform_url],
-            ],
-            'maxReviews' => $limit ?? 100,
-            'includeReviews' => true,
-        ];
-
-        return $this->runActor($connection, $actorId, 'airbnb', $input, $limit);
+        return $this->runActor(
+            $connection,
+            ApifyRequest::getActorIdForPlatform('airbnb'),
+            'airbnb',
+            $this->buildBaseInput($connection->platform_url, $limit),
+            $limit
+        );
     }
 
     /**
-     * Run an Apify actor.
-     *
-     * @param ReviewConnection $connection
-     * @param string $actorId
-     * @param string $platform
-     * @param array $input
-     * @param int|null $reviewsRequested
-     * @return ApifyRequest
-     * @throws \Exception
+     * Build the base input array common to all Apify actor runs.
+     */
+    private function buildBaseInput(string $platformUrl, int $maxReviews): array
+    {
+        return [
+            'startUrls' => [
+                ['url' => $platformUrl],
+            ],
+            'maxReviews' => $maxReviews,
+            'includeReviews' => true,
+        ];
+    }
+
+    /**
+     * Run an Apify actor and create a local tracking record.
      */
     private function runActor(
         ReviewConnection $connection,
         string $actorId,
         string $platform,
         array $input,
-        ?int $reviewsRequested
+        int $reviewsRequested
     ): ApifyRequest {
         $this->ensureConfigured();
 
@@ -162,10 +146,6 @@ class ApifyService
 
     /**
      * Get the status of an Apify run.
-     *
-     * @param string $runId
-     * @return array
-     * @throws \Exception
      */
     public function getRunStatus(string $runId): array
     {
@@ -188,10 +168,6 @@ class ApifyService
 
     /**
      * Get the results of a completed Apify run.
-     *
-     * @param string $runId
-     * @return array
-     * @throws \Exception
      */
     public function getRunResults(string $runId): array
     {
@@ -214,9 +190,6 @@ class ApifyService
 
     /**
      * Abort a running Apify actor.
-     *
-     * @param string $runId
-     * @return bool
      */
     public function abortRun(string $runId): bool
     {
@@ -236,10 +209,6 @@ class ApifyService
 
     /**
      * Transform Apify review data to our format.
-     *
-     * @param array $apifyReview Raw review from Apify
-     * @param string $platform
-     * @return array
      */
     public function transformReview(array $apifyReview, string $platform): array
     {

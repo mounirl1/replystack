@@ -24,11 +24,7 @@ class GoogleBusinessReviewService
     /**
      * Get reviews for a location.
      *
-     * @param ReviewConnection $connection
-     * @param int $pageSize Number of reviews to fetch (max 50)
-     * @param string|null $pageToken Token for pagination
      * @return array{reviews: array, nextPageToken: string|null, totalReviewCount: int}
-     * @throws \Exception
      */
     public function getReviews(
         ReviewConnection $connection,
@@ -73,11 +69,6 @@ class GoogleBusinessReviewService
 
     /**
      * Reply to a review.
-     *
-     * @param Review $review
-     * @param string $comment Reply text
-     * @return bool
-     * @throws \Exception
      */
     public function replyToReview(Review $review, string $comment): bool
     {
@@ -125,10 +116,6 @@ class GoogleBusinessReviewService
 
     /**
      * Delete a reply to a review.
-     *
-     * @param Review $review
-     * @return bool
-     * @throws \Exception
      */
     public function deleteReply(Review $review): bool
     {
@@ -172,9 +159,6 @@ class GoogleBusinessReviewService
 
     /**
      * Transform Google API review data to our format.
-     *
-     * @param array $googleReview
-     * @return array
      */
     public function transformReview(array $googleReview): array
     {
@@ -184,7 +168,11 @@ class GoogleBusinessReviewService
         // Map star rating
         $rating = $this->mapStarRating($googleReview['starRating'] ?? null);
 
+        $hasReply = isset($googleReview['reviewReply']);
         $ownerReply = $googleReview['reviewReply']['comment'] ?? null;
+        $replyDate = isset($googleReview['reviewReply']['updateTime'])
+            ? \Carbon\Carbon::parse($googleReview['reviewReply']['updateTime'])
+            : null;
 
         return [
             'external_id' => $reviewId,
@@ -201,23 +189,16 @@ class GoogleBusinessReviewService
                 : now(),
             'can_reply' => true,
             'reply' => $ownerReply,
-            'reply_date' => isset($googleReview['reviewReply']['updateTime'])
-                ? \Carbon\Carbon::parse($googleReview['reviewReply']['updateTime'])
-                : null,
-            'has_response' => isset($googleReview['reviewReply']),
+            'reply_date' => $replyDate,
+            'has_response' => $hasReply,
             'response_content' => $ownerReply,
-            'response_published_at' => isset($googleReview['reviewReply']['updateTime'])
-                ? \Carbon\Carbon::parse($googleReview['reviewReply']['updateTime'])
-                : null,
-            'status' => isset($googleReview['reviewReply']) ? 'replied' : 'pending',
+            'response_published_at' => $replyDate,
+            'status' => $hasReply ? 'replied' : 'pending',
         ];
     }
 
     /**
-     * Map Google star rating to numeric value.
-     *
-     * @param string|null $starRating
-     * @return int
+     * Map Google star rating string to numeric value.
      */
     private function mapStarRating(?string $starRating): int
     {

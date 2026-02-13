@@ -17,10 +17,6 @@ class CheckQuota
 {
     /**
      * Handle an incoming request.
-     *
-     * @param Request $request
-     * @param Closure(Request): (Response) $next
-     * @return Response
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -59,9 +55,6 @@ class CheckQuota
 
     /**
      * Get the appropriate quota exceeded message based on user's plan.
-     *
-     * @param User $user
-     * @return string
      */
     private function getQuotaMessage(User $user): string
     {
@@ -74,9 +67,6 @@ class CheckQuota
 
     /**
      * Get the quota reset date for the user.
-     *
-     * @param User $user
-     * @return string|null
      */
     private function getResetDate(User $user): ?string
     {

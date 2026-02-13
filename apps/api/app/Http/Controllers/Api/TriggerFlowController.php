@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Location;
 use App\Models\Review;
 use App\Models\ReviewConnection;
-use App\Services\Apify\ApifyService;
+use App\Models\User;
 use App\Services\AI\ReplyGeneratorService;
+use App\Services\Apify\ApifyService;
 use App\Services\Google\GoogleBusinessAuthService;
 use App\Services\Google\GoogleBusinessReviewService;
 use Illuminate\Http\JsonResponse;
@@ -521,12 +522,9 @@ class TriggerFlowController extends Controller
             return $this->locationNotFound();
         }
 
-        $connection = $location->reviewConnections()
-            ->withCount('reviews')
-            ->find($connectionId);
-
+        $connection = $location->reviewConnections()->withCount('reviews')->find($connectionId);
         if (!$connection) {
-            return response()->json(['message' => 'Connection not found'], 404);
+            return $this->connectionNotFound();
         }
 
         $avgRating = Review::where('review_connection_id', $connection->id)
@@ -569,9 +567,9 @@ class TriggerFlowController extends Controller
             return $this->locationNotFound();
         }
 
-        $connection = $location->reviewConnections()->find($connectionId);
+        $connection = $this->findConnection($location, $connectionId);
         if (!$connection) {
-            return response()->json(['message' => 'Connection not found'], 404);
+            return $this->connectionNotFound();
         }
 
         $connection->update($request->only(['is_active', 'label', 'platform_url']));
@@ -596,9 +594,9 @@ class TriggerFlowController extends Controller
             return $this->locationNotFound();
         }
 
-        $connection = $location->reviewConnections()->find($connectionId);
+        $connection = $this->findConnection($location, $connectionId);
         if (!$connection) {
-            return response()->json(['message' => 'Connection not found'], 404);
+            return $this->connectionNotFound();
         }
 
         $connection->delete();
@@ -620,9 +618,9 @@ class TriggerFlowController extends Controller
             return $this->locationNotFound();
         }
 
-        $connection = $location->reviewConnections()->find($connectionId);
+        $connection = $this->findConnection($location, $connectionId);
         if (!$connection) {
-            return response()->json(['message' => 'Connection not found'], 404);
+            return $this->connectionNotFound();
         }
 
         if (!$connection->is_active) {
@@ -783,9 +781,6 @@ class TriggerFlowController extends Controller
         // Verify all reviews belong to user's locations
         $userLocationIds = Location::where('user_id', $user->id)->pluck('id')->toArray();
         $reviews = $reviews->filter(fn ($r) => in_array($r->location_id, $userLocationIds));
-
-        // Cache previous responses per location for context
-        $previousResponsesCache = [];
 
         $results = [];
         $totalGenerated = 0;
@@ -1096,7 +1091,7 @@ class TriggerFlowController extends Controller
     /**
      * Find a location by external ID for the given user.
      */
-    private function findLocation($user, string $externalId): ?Location
+    private function findLocation(User $user, string $externalId): ?Location
     {
         return Location::byExternalId($externalId, 'triggerflow')
             ->where('user_id', $user->id)
@@ -1104,9 +1099,17 @@ class TriggerFlowController extends Controller
     }
 
     /**
+     * Find a connection belonging to a location, or return null.
+     */
+    private function findConnection(Location $location, int $connectionId): ?ReviewConnection
+    {
+        return $location->reviewConnections()->find($connectionId);
+    }
+
+    /**
      * Find a review that belongs to one of the user's locations.
      */
-    private function findUserReview($user, int $reviewId): ?Review
+    private function findUserReview(User $user, int $reviewId): ?Review
     {
         $locationIds = Location::where('user_id', $user->id)->pluck('id');
 
@@ -1118,7 +1121,7 @@ class TriggerFlowController extends Controller
     /**
      * Get validated location IDs for the user.
      */
-    private function getUserLocationIds($user, array $requestedIds): array
+    private function getUserLocationIds(User $user, array $requestedIds): array
     {
         return Location::where('user_id', $user->id)
             ->where('external_source', 'triggerflow')
@@ -1133,6 +1136,14 @@ class TriggerFlowController extends Controller
     private function locationNotFound(): JsonResponse
     {
         return response()->json(['message' => 'Location not found'], 404);
+    }
+
+    /**
+     * Return a standard 404 response for missing connection.
+     */
+    private function connectionNotFound(): JsonResponse
+    {
+        return response()->json(['message' => 'Connection not found'], 404);
     }
 
     /**
