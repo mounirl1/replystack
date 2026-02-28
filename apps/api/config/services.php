@@ -79,13 +79,13 @@ return [
         'store_id' => env('LEMONSQUEEZY_STORE_ID'),
         'webhook_secret' => env('LEMONSQUEEZY_WEBHOOK_SECRET'),
         // Monthly variants
-        'variant_starter_monthly' => env('LEMONSQUEEZY_VARIANT_STARTER_MONTHLY'),
-        'variant_pro_monthly' => env('LEMONSQUEEZY_VARIANT_PRO_MONTHLY'),
-        'variant_business_monthly' => env('LEMONSQUEEZY_VARIANT_BUSINESS_MONTHLY'),
+        'variant_starter_monthly' => env('LEMONSQUEEZY_STARTER_MONTHLY_VARIANT_ID'),
+        'variant_pro_monthly' => env('LEMONSQUEEZY_PRO_MONTHLY_VARIANT_ID'),
+        'variant_business_monthly' => env('LEMONSQUEEZY_BUSINESS_MONTHLY_VARIANT_ID'),
         // Yearly variants
-        'variant_starter_yearly' => env('LEMONSQUEEZY_VARIANT_STARTER_YEARLY'),
-        'variant_pro_yearly' => env('LEMONSQUEEZY_VARIANT_PRO_YEARLY'),
-        'variant_business_yearly' => env('LEMONSQUEEZY_VARIANT_BUSINESS_YEARLY'),
+        'variant_starter_yearly' => env('LEMONSQUEEZY_STARTER_YEARLY_VARIANT_ID'),
+        'variant_pro_yearly' => env('LEMONSQUEEZY_PRO_YEARLY_VARIANT_ID'),
+        'variant_business_yearly' => env('LEMONSQUEEZY_BUSINESS_YEARLY_VARIANT_ID'),
     ],
 
     'turnstile' => [

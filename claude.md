@@ -723,9 +723,9 @@ export const GoogleBusinessAdapter: PlatformAdapter = {
 
 | Plan | Prix       | Quotas   | Features |
 |------|------------|----------|----------|
-| **Free** | 0€         | 15/mois  | Extension seule, watermark |
-| **Starter** | 9,90€/mois | 50/mois  | + Dashboard lecture, 2 tons |
-| **Pro** | 29€/mois   | 200/mois | + Analytics, tous tons, alertes |
+| **Free** | 0€         | 15/mois  | Extension, dashboard, tous tons |
+| **Starter** | 9,90€/mois | 50/mois  | + Tout Free |
+| **Pro** | 29€/mois   | 200/mois | + Analytics, alertes |
 | **Business** | 79€/mois   | 500/mois | + 10 locations, 5 users, Slack |
 | **Enterprise** | Sur devis  | sur devis | + API, white-label, SSO |
 
