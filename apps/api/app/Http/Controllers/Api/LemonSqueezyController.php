@@ -76,6 +76,8 @@ class LemonSqueezyController extends Controller
 
                 return response()->json([
                     'error' => 'Failed to create checkout session',
+                    'debug' => $response->json(),
+                    'status_code' => $response->status(),
                 ], 500);
             }
 
