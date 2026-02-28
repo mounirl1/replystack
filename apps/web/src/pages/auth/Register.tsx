@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
 import { translateApiError, translateValidationErrors } from '@/utils/apiErrors';
@@ -13,7 +13,12 @@ const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
 export function Register() {
   const { t } = useTranslation('auth');
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { register } = useAuth();
+
+  // Read plan selection from query params (coming from Pricing page)
+  const selectedPlan = searchParams.get('plan');
+  const selectedBilling = searchParams.get('billing');
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -60,7 +65,12 @@ export function Register() {
 
     try {
       await register(email, password, passwordConfirmation, name || undefined, turnstileToken || undefined);
-      navigate('/verify-email');
+      // If user came from pricing with a plan, go to checkout page
+      if (selectedPlan && ['starter', 'pro', 'business'].includes(selectedPlan)) {
+        navigate(`/checkout?plan=${selectedPlan}&billing=${selectedBilling || 'yearly'}`);
+      } else {
+        navigate('/dashboard');
+      }
     } catch (err) {
       if (err instanceof AxiosError) {
         const responseErrors = err.response?.data?.errors;

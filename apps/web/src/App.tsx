@@ -20,6 +20,7 @@ const ForgotPassword = lazy(() => import('@/pages/auth/ForgotPassword').then(m =
 const ResetPassword = lazy(() => import('@/pages/auth/ResetPassword').then(m => ({ default: m.ResetPassword })));
 const VerifyEmail = lazy(() => import('@/pages/auth/VerifyEmail').then(m => ({ default: m.VerifyEmail })));
 const MagicAuth = lazy(() => import('@/pages/auth/MagicAuth').then(m => ({ default: m.MagicAuth })));
+const Checkout = lazy(() => import('@/pages/Checkout').then(m => ({ default: m.Checkout })));
 const Dashboard = lazy(() => import('@/pages/dashboard/Dashboard').then(m => ({ default: m.Dashboard })));
 const Reviews = lazy(() => import('@/pages/dashboard/Reviews'));
 const History = lazy(() => import('@/pages/dashboard/History').then(m => ({ default: m.History })));
@@ -138,6 +139,9 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
         </Route>
+
+        {/* Checkout (standalone page, no layout) */}
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* Magic auth (no layout needed) */}
         <Route path="/auth/magic" element={<MagicAuth />} />

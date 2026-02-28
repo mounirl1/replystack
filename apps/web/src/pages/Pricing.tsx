@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/contexts/AuthContext';
@@ -19,6 +19,38 @@ export function Pricing() {
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<BillingCycle>('yearly');
   const { currency, setManualCurrency } = useCurrency();
+  const { refreshUser } = useAuth();
+
+  // Load Lemon.js for overlay checkout
+  useEffect(() => {
+    if (document.querySelector('script[src*="lemon.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://app.lemonsqueezy.com/js/lemon.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  }, []);
+
+  // Setup LemonSqueezy event handler for authenticated users
+  const setupLemonSqueezyEvents = useCallback(() => {
+    if ((window as any).LemonSqueezy) {
+      (window as any).LemonSqueezy.Setup({
+        eventHandler: (data: any) => {
+          if (data.event === 'Checkout.Success') {
+            // Refresh user data to get updated plan
+            refreshUser();
+            setTimeout(() => navigate('/dashboard'), 2000);
+          }
+        },
+      });
+    }
+  }, [refreshUser, navigate]);
+
+  useEffect(() => {
+    setupLemonSqueezyEvents();
+    // Re-setup after script loads
+    const timer = setTimeout(setupLemonSqueezyEvents, 1000);
+    return () => clearTimeout(timer);
+  }, [setupLemonSqueezyEvents]);
 
   // Get currency symbol for display
   const currencySymbol = getCurrencySymbol(currency);
@@ -101,24 +133,33 @@ export function Pricing() {
   ];
 
   const handleSelectPlan = async (planId: string) => {
-    if (!isAuthenticated) {
-      navigate('/register');
-      return;
-    }
-
     if (planId === 'free') {
+      if (!isAuthenticated) {
+        navigate('/register');
+      }
       return;
     }
 
+    if (!isAuthenticated) {
+      navigate(`/register?plan=${planId}&billing=${billingCycle}`);
+      return;
+    }
+
+    // Authenticated user: open LemonSqueezy overlay directly
     setLoadingPlan(planId);
     try {
       const { url } = await lemonSqueezyApi.createCheckout(
         planId as 'starter' | 'pro' | 'business',
         billingCycle
       );
-      window.location.href = url;
+      if ((window as any).LemonSqueezy) {
+        (window as any).LemonSqueezy.Url.Open(url);
+      } else {
+        window.location.href = url;
+      }
     } catch (error) {
       console.error('Failed to create checkout session:', error);
+    } finally {
       setLoadingPlan(null);
     }
   };
