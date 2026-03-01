@@ -18,14 +18,30 @@ export interface AuthState {
 }
 
 /**
+ * Get the storage API for auth tokens.
+ *
+ * Uses chrome.storage.session for the token (cleared on browser close, not
+ * accessible to other extensions) and chrome.storage.local for user profile data.
+ */
+function getTokenStorage(): chrome.storage.StorageArea {
+  // chrome.storage.session is only available in MV3 extensions
+  return chrome.storage.session ?? chrome.storage.local;
+}
+
+/**
  * Get the current auth state from storage.
  */
 export async function getAuthState(): Promise<AuthState> {
+  const tokenStorage = getTokenStorage();
+
   return new Promise((resolve) => {
-    chrome.storage.local.get(['token', 'user'], (result) => {
-      resolve({
-        token: result.token || null,
-        user: result.user || null,
+    // Token from session storage, user profile from local
+    tokenStorage.get(['token'], (tokenResult) => {
+      chrome.storage.local.get(['user'], (userResult) => {
+        resolve({
+          token: tokenResult.token || null,
+          user: userResult.user || null,
+        });
       });
     });
   });
@@ -35,9 +51,15 @@ export async function getAuthState(): Promise<AuthState> {
  * Set the auth state in storage.
  */
 export async function setAuthState(token: string, user: AuthUser): Promise<void> {
+  const tokenStorage = getTokenStorage();
+
   return new Promise((resolve) => {
-    chrome.storage.local.set({ token, user }, () => {
-      resolve();
+    // Store token in session storage (cleared on browser close)
+    tokenStorage.set({ token }, () => {
+      // Store non-sensitive user profile in local storage
+      chrome.storage.local.set({ user }, () => {
+        resolve();
+      });
     });
   });
 }
@@ -46,9 +68,13 @@ export async function setAuthState(token: string, user: AuthUser): Promise<void>
  * Clear the auth state from storage.
  */
 export async function clearAuthState(): Promise<void> {
+  const tokenStorage = getTokenStorage();
+
   return new Promise((resolve) => {
-    chrome.storage.local.remove(['token', 'user'], () => {
-      resolve();
+    tokenStorage.remove(['token'], () => {
+      chrome.storage.local.remove(['user'], () => {
+        resolve();
+      });
     });
   });
 }
@@ -83,8 +109,8 @@ export async function hasQuotaRemaining(): Promise<boolean> {
  * Update the user's quota in storage.
  */
 export async function updateUserQuota(quota: number | 'unlimited'): Promise<void> {
-  const { user } = await getAuthState();
-  if (user) {
+  const { user, token } = await getAuthState();
+  if (user && token) {
     user.quota_remaining = quota;
     await chrome.storage.local.set({ user });
   }

@@ -39,13 +39,15 @@ class AuthController extends Controller
      */
     public function register(RegisterRequest $request): JsonResponse
     {
-        $user = User::create([
+        $user = new User();
+        $user->forceFill([
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'name' => $request->name,
             'plan' => 'free',
             'monthly_quota' => 10,
         ]);
+        $user->save();
 
         // Create default location for the user
         Location::create([
@@ -83,8 +85,8 @@ class AuthController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        // Revoke all existing tokens for this user (optional: single session)
-        // $user->tokens()->delete();
+        // Revoke all existing tokens for security (prevents token accumulation)
+        $user->tokens()->delete();
 
         $token = $user->createToken('api-token')->plainTextToken;
 
@@ -176,6 +178,22 @@ class AuthController extends Controller
         $user = $request->user();
 
         $redirectUrl = $request->input('redirect_url');
+
+        // Validate redirect_url against whitelist to prevent open redirect
+        if ($redirectUrl) {
+            $allowedHosts = [
+                'reply-stack.app',
+                'www.reply-stack.app',
+                'localhost',
+            ];
+
+            $parsed = parse_url($redirectUrl);
+            $host = $parsed['host'] ?? '';
+
+            if (!in_array($host, $allowedHosts, true)) {
+                $redirectUrl = null; // Discard untrusted redirect
+            }
+        }
 
         $magicToken = MagicToken::generateFor($user, $redirectUrl);
 
@@ -341,30 +359,40 @@ class AuthController extends Controller
      */
     public function verifyEmail(string $token): JsonResponse
     {
-        $record = DB::table('email_verification_tokens')
-            ->where('token', $token)
-            ->first();
+        // Tokens are stored hashed; we must iterate over user's tokens and check each
+        // Since tokens are scoped per-user via the email link, we check all recent tokens
+        $records = DB::table('email_verification_tokens')
+            ->where('created_at', '>=', now()->subHours(24))
+            ->get();
 
-        if (!$record) {
+        $matchedRecord = null;
+        foreach ($records as $record) {
+            if (Hash::check($token, $record->token)) {
+                $matchedRecord = $record;
+                break;
+            }
+        }
+
+        if (!$matchedRecord) {
             return response()->json([
                 'message' => __('api.auth.invalid_verification_token'),
             ], 400);
         }
 
         // Check if token is expired (24 hours)
-        $createdAt = \Carbon\Carbon::parse($record->created_at);
+        $createdAt = \Carbon\Carbon::parse($matchedRecord->created_at);
         if ($createdAt->addHours(24)->isPast()) {
-            DB::table('email_verification_tokens')->where('id', $record->id)->delete();
+            DB::table('email_verification_tokens')->where('id', $matchedRecord->id)->delete();
 
             return response()->json([
                 'message' => __('api.auth.verification_token_expired'),
             ], 400);
         }
 
-        $user = User::find($record->user_id);
+        $user = User::find($matchedRecord->user_id);
 
         if (!$user) {
-            DB::table('email_verification_tokens')->where('id', $record->id)->delete();
+            DB::table('email_verification_tokens')->where('id', $matchedRecord->id)->delete();
 
             return response()->json([
                 'message' => __('api.auth.invalid_verification_token'),
@@ -418,10 +446,10 @@ class AuthController extends Controller
         // Generate a new token
         $token = Str::random(64);
 
-        // Store the token
+        // Store the hashed token (plaintext sent via email, hash stored in DB)
         DB::table('email_verification_tokens')->insert([
             'user_id' => $user->id,
-            'token' => $token,
+            'token' => Hash::make($token),
             'created_at' => now(),
         ]);
 

@@ -40,7 +40,7 @@ class MakeSuperAdmin extends Command
             return Command::SUCCESS;
         }
 
-        $user->update(['is_super_admin' => true]);
+        $user->forceFill(['is_super_admin' => true])->save();
 
         $this->info("User '{$email}' has been granted super admin privileges.");
         return Command::SUCCESS;

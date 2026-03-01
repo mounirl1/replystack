@@ -64,14 +64,26 @@ class RegisterRequest extends FormRequest
     }
 
     /**
-     * Check if the request originates from a browser extension.
+     * Check if the request originates from the ReplyStack browser extension.
+     *
+     * Validates against configured extension IDs to prevent Origin header spoofing.
      */
     protected function isFromExtension(): bool
     {
         $origin = $this->header('Origin', '');
 
-        return str_starts_with($origin, 'chrome-extension://')
-            || str_starts_with($origin, 'moz-extension://');
+        $chromeId = config('services.extension.chrome_id');
+        $firefoxId = config('services.extension.firefox_id');
+
+        if ($chromeId && $origin === "chrome-extension://{$chromeId}") {
+            return true;
+        }
+
+        if ($firefoxId && $origin === "moz-extension://{$firefoxId}") {
+            return true;
+        }
+
+        return false;
     }
 
     /**

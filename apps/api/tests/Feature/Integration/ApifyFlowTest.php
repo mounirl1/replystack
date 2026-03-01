@@ -20,9 +20,14 @@ class ApifyFlowTest extends TestCase
     protected Location $location;
     protected ReviewConnection $connection;
 
+    protected string $webhookSecret = 'test-apify-webhook-secret';
+
     protected function setUp(): void
     {
         parent::setUp();
+
+        // Configure webhook secret for authentication
+        config(['services.apify.webhook_secret' => $this->webhookSecret]);
 
         // Create super admin
         $this->superAdmin = User::factory()->create([
@@ -38,6 +43,14 @@ class ApifyFlowTest extends TestCase
         $this->connection = ReviewConnection::factory()->tripadvisor()->create([
             'location_id' => $this->location->id,
         ]);
+    }
+
+    /**
+     * Helper to build the webhook URL with authentication token.
+     */
+    protected function webhookUrl(): string
+    {
+        return '/api/webhooks/apify?token=' . $this->webhookSecret;
     }
 
     /**
@@ -85,7 +98,7 @@ class ApifyFlowTest extends TestCase
         // =====================================================================
         Queue::fake();
 
-        $webhookResponse = $this->postJson('/api/webhooks/apify', [
+        $webhookResponse = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             'resource' => [
                 'id' => 'test-run-123',
@@ -130,7 +143,7 @@ class ApifyFlowTest extends TestCase
         // Simulate Apify webhook for ACTOR.RUN.FAILED
         Queue::fake();
 
-        $webhookResponse = $this->postJson('/api/webhooks/apify', [
+        $webhookResponse = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.FAILED',
             'resource' => [
                 'id' => 'test-run-fail-456',
@@ -172,7 +185,7 @@ class ApifyFlowTest extends TestCase
 
         Queue::fake();
 
-        $webhookResponse = $this->postJson('/api/webhooks/apify', [
+        $webhookResponse = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.ABORTED',
             'resource' => [
                 'id' => 'test-run-abort-789',
@@ -205,7 +218,7 @@ class ApifyFlowTest extends TestCase
 
         Queue::fake();
 
-        $webhookResponse = $this->postJson('/api/webhooks/apify', [
+        $webhookResponse = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.TIMED_OUT',
             'resource' => [
                 'id' => 'test-run-timeout-101',
@@ -274,7 +287,7 @@ class ApifyFlowTest extends TestCase
     {
         Queue::fake();
 
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             'resource' => [
                 'id' => 'unknown-run-999',
@@ -293,7 +306,7 @@ class ApifyFlowTest extends TestCase
      */
     public function test_webhook_with_missing_run_id_returns_400(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             'resource' => [],
         ]);

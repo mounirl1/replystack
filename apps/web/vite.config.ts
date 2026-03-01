@@ -71,8 +71,8 @@ export default defineConfig({
     },
     // Increase chunk size warning limit (default is 500kB)
     chunkSizeWarningLimit: 600,
-    // Enable source maps for production (helps debugging)
-    sourcemap: true,
+    // Disable source maps in production to prevent source code exposure
+    sourcemap: false,
     // Minification with esbuild (faster than terser)
     minify: 'esbuild',
   },

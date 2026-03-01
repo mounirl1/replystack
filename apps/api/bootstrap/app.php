@@ -26,5 +26,8 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        // In production, don't expose stack traces or internal details in API responses
+        $exceptions->shouldRenderJsonWhen(function ($request) {
+            return $request->is('api/*') || $request->expectsJson();
+        });
     })->create();

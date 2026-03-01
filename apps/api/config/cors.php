@@ -21,10 +21,10 @@ return [
 
     'allowed_origins' => explode(',', env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:3000')),
 
-    'allowed_origins_patterns' => [
-        '#^chrome-extension://.*$#',
-        '#^moz-extension://.*$#',
-    ],
+    'allowed_origins_patterns' => array_filter([
+        env('EXTENSION_CHROME_ID') ? '#^chrome-extension://' . preg_quote(env('EXTENSION_CHROME_ID'), '#') . '$#' : null,
+        env('EXTENSION_FIREFOX_ID') ? '#^moz-extension://' . preg_quote(env('EXTENSION_FIREFOX_ID'), '#') . '$#' : null,
+    ]),
 
     'allowed_headers' => ['*'],
 

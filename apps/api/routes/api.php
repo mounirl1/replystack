@@ -40,9 +40,12 @@ Route::get('/', function () {
 });
 
 // Health check endpoints
-Route::get('/health', [MonitoringController::class, 'health']);
-Route::get('/health/detailed', [MonitoringController::class, 'healthDetailed']);
-Route::get('/health/metrics', [MonitoringController::class, 'metrics']);
+Route::get('/health', [MonitoringController::class, 'health']); // Public - for load balancers
+// Detailed health & metrics require super-admin auth
+Route::middleware(['auth:sanctum', 'super-admin'])->group(function () {
+    Route::get('/health/detailed', [MonitoringController::class, 'healthDetailed']);
+    Route::get('/health/metrics', [MonitoringController::class, 'metrics']);
+});
 
 // Contact form (public, rate limited to prevent spam)
 Route::post('/contact', [ContactController::class, 'send'])
@@ -63,8 +66,10 @@ Route::prefix('auth')->group(function () {
         Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail']);
     });
 
-    // Magic token validation (public, one-time use)
-    Route::get('/magic-token/{token}', [AuthController::class, 'validateMagicToken']);
+    // Magic token validation (public, one-time use, rate limited)
+    Route::middleware('throttle:5,1')->group(function () {
+        Route::get('/magic-token/{token}', [AuthController::class, 'validateMagicToken']);
+    });
 
     // Protected routes
     Route::middleware('auth:sanctum')->group(function () {

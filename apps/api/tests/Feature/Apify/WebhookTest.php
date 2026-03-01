@@ -18,9 +18,14 @@ class WebhookTest extends TestCase
     protected ReviewConnection $connection;
     protected ApifyRequest $apifyRequest;
 
+    protected string $webhookSecret = 'test-apify-webhook-secret';
+
     protected function setUp(): void
     {
         parent::setUp();
+
+        // Configure webhook secret for authentication
+        config(['services.apify.webhook_secret' => $this->webhookSecret]);
 
         $user = User::factory()->create();
         $location = Location::factory()->create(['user_id' => $user->id]);
@@ -36,6 +41,14 @@ class WebhookTest extends TestCase
         ]);
     }
 
+    /**
+     * Helper to build the webhook URL with authentication token.
+     */
+    protected function webhookUrl(): string
+    {
+        return '/api/webhooks/apify?token=' . $this->webhookSecret;
+    }
+
     // =========================================================================
     // Success Event Tests
     // =========================================================================
@@ -47,7 +60,7 @@ class WebhookTest extends TestCase
     {
         Queue::fake();
 
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             'resource' => [
                 'id' => 'run-abc-123',
@@ -76,7 +89,7 @@ class WebhookTest extends TestCase
      */
     public function test_handles_failed_event(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.FAILED',
             'resource' => [
                 'id' => 'run-abc-123',
@@ -98,7 +111,7 @@ class WebhookTest extends TestCase
      */
     public function test_handles_aborted_event(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.ABORTED',
             'resource' => [
                 'id' => 'run-abc-123',
@@ -118,7 +131,7 @@ class WebhookTest extends TestCase
      */
     public function test_handles_timed_out_event(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.TIMED_OUT',
             'resource' => [
                 'id' => 'run-abc-123',
@@ -142,7 +155,7 @@ class WebhookTest extends TestCase
      */
     public function test_returns_400_for_missing_run_id(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             // No resource.id or runId
         ]);
@@ -156,7 +169,7 @@ class WebhookTest extends TestCase
      */
     public function test_returns_200_for_unknown_run_id(): void
     {
-        $response = $this->postJson('/api/webhooks/apify', [
+        $response = $this->postJson($this->webhookUrl(), [
             'eventType' => 'ACTOR.RUN.SUCCEEDED',
             'resource' => [
                 'id' => 'run-unknown-999',

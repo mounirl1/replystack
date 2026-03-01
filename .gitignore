@@ -11,6 +11,8 @@ build
 .env
 .env.local
 .env.*.local
+# Note: .env.production files currently contain only public values (URLs, site keys)
+# but new ones should use .env.production.local for secrets
 
 # IDE
 .idea

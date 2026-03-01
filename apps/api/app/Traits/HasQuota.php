@@ -201,11 +201,11 @@ trait HasQuota
             'enterprise' => ['monthly_quota' => 0], // 0 = unlimited
         ];
 
-        $this->update([
+        $this->forceFill([
             'plan' => $plan,
             'monthly_quota' => $quotas[$plan]['monthly_quota'],
             'quota_used_month' => 0,
             'quota_reset_at' => Carbon::now(),
-        ]);
+        ])->save();
     }
 }

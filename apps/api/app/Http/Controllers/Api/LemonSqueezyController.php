@@ -176,7 +176,8 @@ class LemonSqueezyController extends Controller
 
         Log::info('LemonSqueezy webhook received', [
             'event' => $eventName,
-            'payload' => $payload,
+            'subscription_id' => $payload['data']['attributes']['id'] ?? null,
+            'user_id' => $payload['meta']['custom_data']['user_id'] ?? null,
         ]);
 
         try {
@@ -246,12 +247,12 @@ class LemonSqueezyController extends Controller
         $variantId = $attributes['variant_id'];
         $plan = $this->determinePlanFromVariant($variantId);
 
-        $user->update([
+        $user->forceFill([
             'lemon_customer_id' => $attributes['customer_id'],
             'lemon_subscription_id' => $attributes['id'],
             'lemon_variant_id' => $variantId,
             'plan' => $plan,
-        ]);
+        ])->save();
 
         // Set quota based on plan
         $user->setQuotaForPlan($plan);
@@ -283,10 +284,10 @@ class LemonSqueezyController extends Controller
 
         // Check if plan changed
         if ($user->plan !== $newPlan) {
-            $user->update([
+            $user->forceFill([
                 'lemon_variant_id' => $newVariantId,
                 'plan' => $newPlan,
-            ]);
+            ])->save();
 
             // Update quota for new plan
             $user->setQuotaForPlan($newPlan);
@@ -315,11 +316,11 @@ class LemonSqueezyController extends Controller
         }
 
         // Downgrade to free plan
-        $user->update([
+        $user->forceFill([
             'plan' => 'free',
             'lemon_subscription_id' => null,
             'lemon_variant_id' => null,
-        ]);
+        ])->save();
 
         // Set free plan quota
         $user->setQuotaForPlan('free');

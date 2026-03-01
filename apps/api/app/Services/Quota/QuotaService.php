@@ -152,12 +152,12 @@ class QuotaService
     {
         $monthlyQuota = $this->getQuotaConfigForPlan($newPlan);
 
-        $user->update([
+        $user->forceFill([
             'plan' => $newPlan,
             'monthly_quota' => $monthlyQuota,
             'quota_used_month' => 0,
             'quota_reset_at' => Carbon::now(),
-        ]);
+        ])->save();
 
         Log::info('User plan upgraded', [
             'user_id' => $user->id,

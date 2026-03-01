@@ -324,12 +324,12 @@ PROMPT;
         // Limit maximum length to prevent excessively long inputs
         $text = mb_substr($text, 0, 5000);
 
-        // Remove potential prompt injection patterns
+        // Remove potential prompt injection patterns (case-insensitive)
         // These patterns could be used to escape the user content section
         $dangerousPatterns = [
             '{{',           // Template markers
             '}}',
-            '<|',           // Claude system tokens
+            '<|',           // Claude/GPT system tokens
             '|>',
             '```',          // Code blocks (could be used to inject instructions)
             'PROMPT',       // Prevent breaking out of heredoc
@@ -337,10 +337,22 @@ PROMPT;
             'System:',      // Prevent fake system messages
             'Assistant:',   // Prevent fake assistant messages
             'Human:',       // Prevent fake human messages
+            'User:',        // Prevent fake user messages (Gemini/Mistral)
+            'Model:',       // Prevent fake model messages (Gemini)
+            '[INST]',       // Mistral instruction tokens
+            '[/INST]',
         ];
 
-        foreach ($dangerousPatterns as $pattern) {
-            $text = str_replace($pattern, '', $text);
+        // Apply filter in a loop until stable (prevents bypass via nesting)
+        $maxIterations = 5;
+        for ($i = 0; $i < $maxIterations; $i++) {
+            $previous = $text;
+            foreach ($dangerousPatterns as $pattern) {
+                $text = str_ireplace($pattern, '', $text);
+            }
+            if ($text === $previous) {
+                break;
+            }
         }
 
         // Normalize whitespace (collapse multiple spaces/newlines)

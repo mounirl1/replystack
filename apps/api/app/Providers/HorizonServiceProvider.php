@@ -38,14 +38,8 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
                 return false;
             }
 
-            // Allow enterprise plan users
-            if (in_array($user->plan, ['enterprise'])) {
-                return true;
-            }
-
-            // Allow admin emails from config
-            $admins = config('horizon.admins', []);
-            return in_array($user->email, $admins);
+            // Only super admins can access Horizon in production
+            return $user->isSuperAdmin();
         });
     }
 }

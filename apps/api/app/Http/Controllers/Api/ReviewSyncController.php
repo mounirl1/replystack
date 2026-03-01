@@ -63,9 +63,11 @@ class ReviewSyncController extends Controller
     {
         $user = $request->user();
 
-        // Get user's locations with their non-API platforms
+        // Get user's locations with their non-API platforms (guard against NULL organization_id)
         $locations = Location::where('user_id', $user->id)
-            ->orWhere('organization_id', $user->organization_id)
+            ->when($user->organization_id, function ($q) use ($user) {
+                $q->orWhere('organization_id', $user->organization_id);
+            })
             ->where('auto_fetch_enabled', true)
             ->get();
 

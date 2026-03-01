@@ -59,12 +59,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'plan',
-        'is_super_admin',
         'external_user_id',
         'external_source',
         'ai_provider',
-        'monthly_quota',
         'quota_used_month',
         'quota_reset_at',
         'lemon_customer_id',
@@ -72,8 +69,17 @@ class User extends Authenticatable implements MustVerifyEmail
         'lemon_order_id',
         'lemon_variant_id',
         'organization_id',
-        'email_verified_at',
     ];
+
+    /**
+     * Attributes that can only be set via forceFill() in trusted code paths.
+     * These are NOT mass-assignable to prevent privilege escalation.
+     *
+     * - is_super_admin: Only via artisan command
+     * - plan: Only via LemonSqueezy webhook / TriggerFlow sync
+     * - monthly_quota: Only via plan changes
+     * - email_verified_at: Only via verification flow
+     */
 
     /**
      * The attributes that should be hidden for serialization.

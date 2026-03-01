@@ -131,6 +131,17 @@ return [
     'apify' => [
         'api_token' => env('APIFY_API_TOKEN'),
         'webhook_url' => env('APIFY_WEBHOOK_URL'),
+        'webhook_secret' => env('APIFY_WEBHOOK_SECRET'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Browser Extension
+    |--------------------------------------------------------------------------
+    */
+    'extension' => [
+        'chrome_id' => env('EXTENSION_CHROME_ID'),
+        'firefox_id' => env('EXTENSION_FIREFOX_ID'),
     ],
 
 ];

@@ -8,6 +8,7 @@ use App\Models\ApifyRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * ApifyWebhookController
@@ -23,13 +24,14 @@ class ApifyWebhookController extends Controller
      */
     public function handle(Request $request): JsonResponse
     {
+        $this->verifyWebhookToken($request);
+
         $eventType = $request->input('eventType');
         $runId = $request->input('resource.id') ?? $request->input('runId');
 
         Log::info('Apify webhook received', [
             'event_type' => $eventType,
             'run_id' => $runId,
-            'payload' => $request->all(),
         ]);
 
         if (empty($runId)) {
@@ -144,5 +146,30 @@ class ApifyWebhookController extends Controller
             'apify_request_id' => $apifyRequest->id,
             'run_id' => $apifyRequest->run_id,
         ]);
+    }
+
+    /**
+     * Verify the webhook request using a shared secret token.
+     *
+     * The token must be passed as a query parameter: /webhooks/apify?token=SECRET
+     * Configure APIFY_WEBHOOK_SECRET in .env.
+     */
+    private function verifyWebhookToken(Request $request): void
+    {
+        $secret = config('services.apify.webhook_secret');
+
+        if (empty($secret)) {
+            Log::error('Apify webhook secret not configured');
+            throw new AccessDeniedHttpException('Webhook authentication not configured.');
+        }
+
+        $token = $request->query('token');
+
+        if (!$token || !hash_equals($secret, $token)) {
+            Log::warning('Apify webhook authentication failed', [
+                'ip' => $request->ip(),
+            ]);
+            throw new AccessDeniedHttpException('Invalid webhook token.');
+        }
     }
 }

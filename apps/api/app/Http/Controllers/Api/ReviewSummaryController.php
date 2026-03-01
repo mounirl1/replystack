@@ -151,9 +151,11 @@ class ReviewSummaryController extends Controller
      */
     private function getFilteredReviews($user, array $filters)
     {
-        // Get user's location IDs
+        // Get user's location IDs (guard against NULL organization_id leaking data)
         $userLocationIds = Location::where('user_id', $user->id)
-            ->orWhere('organization_id', $user->organization_id)
+            ->when($user->organization_id, function ($q) use ($user) {
+                $q->orWhere('organization_id', $user->organization_id);
+            })
             ->pluck('id');
 
         $query = Review::query()

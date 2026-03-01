@@ -129,8 +129,9 @@ class TriggerFlowAuthService
             return $user;
         }
 
-        // Create new user
-        return User::create([
+        // Create new user (use forceFill for guarded plan/monthly_quota fields)
+        $user = new User();
+        $user->forceFill([
             'email' => $triggerFlowUser['email'],
             'name' => $triggerFlowUser['name'] ?? null,
             'password' => bcrypt(str()->random(32)), // Random password, won't be used
@@ -138,7 +139,9 @@ class TriggerFlowAuthService
             'monthly_quota' => $this->mapQuota($triggerFlowUser['plan'] ?? 'free'),
             'external_user_id' => $externalUserId,
             'external_source' => 'triggerflow',
-        ]);
+        ])->save();
+
+        return $user;
     }
 
     /**
@@ -156,7 +159,7 @@ class TriggerFlowAuthService
             $updates['name'] = $triggerFlowUser['name'];
         }
 
-        // Sync plan if changed
+        // Sync plan if changed (use forceFill for guarded plan/monthly_quota fields)
         if (isset($triggerFlowUser['plan'])) {
             $newPlan = $this->mapPlan($triggerFlowUser['plan']);
             if ($user->plan !== $newPlan) {
@@ -166,7 +169,7 @@ class TriggerFlowAuthService
         }
 
         if (!empty($updates)) {
-            $user->update($updates);
+            $user->forceFill($updates)->save();
         }
     }
 
